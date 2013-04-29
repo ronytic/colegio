@@ -1,0 +1,51 @@
+<?php include_once($folder."login/check.php");?>
+<?php
+include_once(RAIZ."class/curso.php");
+$curso=new curso;
+?>
+<?php include_once($folder."cabecerahtml.php");?>
+<script language="javascript" src="<?php echo $folder?>js/listar/curso.js"></script>
+<script language="javascript" src="<?php echo $folder?>js/<?php echo $jsFile?>"></script>
+<script language="javascript" type="text/javascript">
+/*		$(document).ready(function(e) {
+            $().datepicker();
+        });*/
+    	<?php
+		if($archivoInicial!="" || !empty($archivoInicial)){
+			?>
+			$(document).ready(function(e) {
+	            $.post('<?php echo $archivoInicial;?>',{'CodCurso':CodCurso},respuesta1);	    
+            });
+			<?php
+		}
+		?>
+    </script>
+<?php include_once($folder."cabecera.php");?>
+<div class="span4">
+	<div class="box">
+        <div class="box-header"><h2><?php echo $idioma['Curso']?></h2></div>
+        <div class="box-content">
+            <select class="span12" id="selectcurso" data-placeholder="Seleccione un Curso">
+            <?php
+			$i=0;
+            foreach($curso->mostrar() as $cu){$i++;
+                ?><option value="<?php echo $cu['CodCurso'];?>" <?php echo $i==1?'selected="selected"':'';?>><?php echo $cu['Nombre'];?></option><?php
+            }
+            ?>
+            </select>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-header"><h2><?php if($icono1!=""){?><i class="<?php echo $icono1;?>"></i><span class="break"></span><?php }?> <?php echo $idioma[$subtitulo1];?></h2></div>
+        <div class="box-content" id="configuracion">
+            
+        </div>
+    </div>
+</div>
+<div class="span8">
+	<div class="box">
+    	<div class="box-header"><h2><?php if($icono2!=""){?><i class="<?php echo $icono2;?>"></i><span class="break"></span><?php }?> <?php echo $idioma[$subtitulo2];?></h2></div>
+        <div class="box-content" id="respuesta"></div>
+    </div>
+</div>
+<?php include_once($folder."pie.php");?>
