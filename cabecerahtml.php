@@ -1,5 +1,12 @@
 <?php include_once("login/check.php");?>
 <?php
+/*Codigo para ver qen que menu nos encontramos*/
+$rurl=str_replace("index.php","",$_SERVER['SCRIPT_NAME']);
+$rurl=str_replace("/".$directory,"",$rurl);
+$rurl=explode("/",$rurl);
+$rmenu=array_shift($rurl)."/";
+$rsubmenu=implode("/",$rurl);
+/*Fin de Obtenemos para el Menu*/
 $Nivel=$_SESSION['Nivel'];
 $CodUsuario=$_SESSION['CodUsuarioLog'];
 include_once("class/config.php");

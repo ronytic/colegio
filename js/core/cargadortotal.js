@@ -7,4 +7,5 @@ function inicio(){
          $(this).parent().find('ul.oculto').slideUp("fast");
     });
 	
+	$("ul.nav-stacked li.funo.active > a").click();
 }

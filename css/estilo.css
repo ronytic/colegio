@@ -28,6 +28,9 @@ label.msg{
 	vertical-align:middle	
 }
 /*Fin de las Correcciones del Framework*/
+.nav li:link{
+	background-color:#F00;	
+}
 .oculto{
 	display:none;	
 }
@@ -68,4 +71,7 @@ footer{
 }
 footer p a{
 	color:#999;
+}
+.selecciona{
+	background-color:#D6D6D6 !important;	
 }

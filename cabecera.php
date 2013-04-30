@@ -60,8 +60,8 @@
                         <?php
                         	foreach($menu->mostrar($Nivel) as $m){
 								?>
-                                <li class="funo">
-                                	<a href="#"><i class="<?php echo $m['Imagen'];?>"></i><span> <?php echo $m['Nombre'];?></span></a>
+                                <li class="funo <?php if ($rmenu==$m['Url']){ echo'active';}?>">
+                                	<a href="#" ><i class="<?php echo $m['Imagen'];?> "></i><span class=""> <?php echo $m['Nombre'];?></span></a>
             					<?php 
 								$subm=$submenu->mostrar($Nivel,$m['CodMenu']);
 								if(count($subm)){
@@ -70,7 +70,7 @@
 									<?php
 									foreach($subm as $sm){
 										?>
-                                        <li> <a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?>"><i class="icon-chevron-right"></i><span><?php echo $sm['Nombre'];?></span></a></li>
+                                        <li class="<?php echo $rsubmenu==$sm['Url']?'selecciona':'';?>"> <a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?>"><i class="icon-chevron-right"></i><span><?php echo $sm['Nombre'];?></span></a></li>
                                         <?php		
 									}
 									?>
