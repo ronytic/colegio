@@ -48,6 +48,18 @@ $idioma['Telefono']="Teléfono";
 $idioma['AbrirOtraVentana']="Abrir en Otra Ventana";
 $idioma['Ninguno']="Ninguno";
 $idioma['Por']="Por";
+$idioma['Docente']='Docente';
+$idioma['Dia']="Día";
+$idioma['FechaAcceso']="Fecha Acceso";
+$idioma['HoraAcceso']="Hora Acceso";
+$idioma['Volver']="Volver";
+$idioma['Regresar']="Regresar";
+$idioma['Atras']="Atras";
+$idioma['BuscarAlumnoPor']="Buscar alumno por...";
+$idioma['BuscarCursoPor']="Buscar curso por...";
+
+//Titulos de Página
+$idioma['HojaCasilleros']="Hoja de Casilleros";
 //Rude
 $idioma['RegistrarRude']="Registrar Rude";
 $idioma['ModificarRude']="Modificar Rude";
@@ -119,4 +131,10 @@ $idioma['Campo2']="Campo 2";
 $idioma['DibujarBorde']="Dibujar Borde";
 $idioma['DibujarSombra']="Dibujar Sombra";
 $idioma['SoloCasillasBlanco']="Solo Casillas en Blanco";
+
+//Docente
+$idioma['FrecuenciaAcceso']="Frecuencia de Accesos";
+$idioma['CantidadAcceso']="Cantidad de Accesos";
+$idioma['UltimoAcceso']="Ultimo Acceso";
+$idioma['DescargarHojaCasilleros']="Descargar Hoja de Casilleros";
 ?>

@@ -17,8 +17,7 @@ if(!empty($_POST)){
 	$rud=$rude->mostrarTodoDatos($CodAlumno);
 	if(count($rud)>=1){
 		echo $idioma['RudeYaRegistrado']
-		?>
-			: <span class="resaltar"><?php echo mb_strtoupper($alu['Paterno']." ".$alu['Materno']." ".$alu['Nombres'],"utf8");?></span>. <hr />	<?php echo $idioma['QuiereModificarlo'];?>
+		?>: <span class="resaltar"><strong><?php echo mb_strtoupper($alu['Paterno']." ".$alu['Materno']." ".$alu['Nombres'],"utf8");?></strong></span>. <hr />	<?php echo $idioma['QuiereModificarlo'];?>
 		<a href="../editarrude/?CodAlumno=<?php echo $CodAlumno?>" class="btn btn-success">Click</a>
 		<?php
 		exit();	

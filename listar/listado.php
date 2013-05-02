@@ -28,6 +28,7 @@ $curso=new curso;
 	<div class="box">
         <div class="box-header"><h2><?php echo $idioma['Curso']?></h2></div>
         <div class="box-content">
+        	<input type="search" placeholder="<?php echo $idioma['BuscarCursoPor']?>" id="icurso" class="span12"/>
             <select class="span12" id="selectcurso" data-placeholder="Seleccione un Curso">
             <?php
 			$i=0;
@@ -41,6 +42,7 @@ $curso=new curso;
     <div class="box">
         <div class="box-header"><h2><i class="icon-user"></i><span class="break"></span><?php echo $idioma['Alumnos']?></h2></div>
         <div class="box-content">
+        	<input type="search" placeholder="<?php echo $idioma['BuscarAlumnoPor']?>" id="ialumno" class="span12"/>
             <select class="span12" id="selectalumno" data-placeholder="Seleccione un Alumno">
             	
             </select>

@@ -104,4 +104,15 @@ function mayuscula($texto){
 function minuscula($texto){
 	return mb_strtolower($texto,"utf8");
 }
+function fecha2Str($fecha,$t=1){
+	if(!empty($fecha)){
+		if($t==1){
+			return date("d-m-Y",strtotime($fecha));	
+		}else{
+			return date("Y-m-d",strtotime($fecha));	
+		}
+	}else{
+		return $fecha;	
+	}
+}
 ?>

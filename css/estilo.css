@@ -75,3 +75,7 @@ footer p a{
 .selecciona{
 	background-color:#D6D6D6 !important;	
 }
+
+td.centrar,.centrar{
+	text-align:center;	
+}

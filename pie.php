@@ -127,6 +127,7 @@
 	</script>
     <script src="<?php echo $folder;?>js/core/framework/bootstrap.js" language="javascript"></script>
     <script src="<?php echo $folder;?>js/core/plugins/jquery.chosen.min.js" language="javascript"></script>
+        <script src="<?php echo $folder;?>js/core/plugins/jquery.listado.js" language="javascript"></script>
     <script src="<?php echo $folder;?>js/core/ui/jquery.ui.core.js" language="javascript"></script>
     <script src="<?php echo $folder;?>js/core/ui/jquery.ui.datepicker.js" language="javascript"></script>		
     
