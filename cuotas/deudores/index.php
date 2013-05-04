@@ -1,7 +1,7 @@
 <?php
 include_once("../../login/check.php");
 $folder="../../";
-$titulo="Ver Deudores";
+$titulo="NVerDeudores";
 $jsFile="cuotas/deudores.js";
 $archivoInicial="formulario.php";
 $subtitulo1="Formulario";

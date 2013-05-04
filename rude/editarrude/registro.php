@@ -68,29 +68,29 @@ if(!empty($_POST)){
         <div class="box-content">
 	    	<table class="table-hover">
     	    	<tr><td colspan="3">Idiomas</td></tr>
-                <tr><td>Lengua Materna</td><td>::</td><td><select name="lenguaMaterna"><option value="CASTELLANO" selected="selected">CASTELLANO</option><option value="AYMARA">AYMARA</option><option value="INGLES">INGLES</option></select></td></tr>
+                <tr><td>Lengua Materna</td><td>::</td><td><select name="lenguaMaterna" class="span12"><option value="CASTELLANO" selected="selected">CASTELLANO</option><option value="AYMARA">AYMARA</option><option value="INGLES">INGLES</option></select></td></tr>
                 <tr class="contenido"><td>Lenguas del Estudiantes</td><td>::</td><td>
                 	<table>
-                	<tr><td>Castellano:</td> <td><select name="lenguaCastellano"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
+                	<tr><td>Castellano:</td> <td><select name="lenguaCastellano" class="span12"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
                     
-                	<tr><td>Ingles: </td><td><select name="lenguaIngles"><option value="1">SI</option><option value="0" selected="selected">NO</option></select></td></tr>
-                    <tr><td>Aymara: </td><td><select name="lenguaAymara"><option value="1">SI</option><option value="0" selected="selected">NO</option></select></td></tr>
+                	<tr><td>Ingles: </td><td><select name="lenguaIngles" class="span12"><option value="1">SI</option><option value="0" selected="selected">NO</option></select></td></tr>
+                    <tr><td>Aymara: </td><td><select name="lenguaAymara" class="span12"><option value="1">SI</option><option value="0" selected="selected">NO</option></select></td></tr>
                     </table>
                     </td></tr>
-                <tr><td>Se Identifica</td><td>::</td><td><select name="identificaA"><option value="MESTIZO" selected="selected">MESTIZO</option><option value="AYMARA">AYMARA</option><option value="QUECHUA">QUECHUA</option></select></td></tr>
+                <tr><td>Se Identifica</td><td>::</td><td><select name="identificaA" class="span12"><option value="MESTIZO" selected="selected">MESTIZO</option><option value="AYMARA">AYMARA</option><option value="QUECHUA">QUECHUA</option></select></td></tr>
                 <tr><td colspan="3">Salud</td></tr>
-                <tr><td>¿Tiene un Centro de Salud a su Alrededor?</td><td>::</td><td><select name="centroSalud"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
-                <tr><td>¿Cuantas veces acudió el año pasado?</td><td>::</td><td><select name="vecesSalud"><option value="1a2">1 a 2 veces</option><option value="3a5">3 a 5 veces</option><option value="6a+">6 o más veces</option><option value="ninguna">Ninguna</option></select></td></tr>
-                <tr><td>Discapacidad o Deficiencia Mental</td><td>::</td><td><select name="deficiencia"><option value="1">SI</option><option value="0" selected="selected">NO</option></select></td></tr>
+                <tr><td>¿Tiene un Centro de Salud a su Alrededor?</td><td>::</td><td><select name="centroSalud" class="span12"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
+                <tr><td>¿Cuantas veces acudió el año pasado?</td><td>::</td><td><select name="vecesSalud" class="span12"><option value="1a2">1 a 2 veces</option><option value="3a5">3 a 5 veces</option><option value="6a+">6 o más veces</option><option value="ninguna">Ninguna</option></select></td></tr>
+                <tr><td>Discapacidad o Deficiencia Mental</td><td>::</td><td><select name="deficiencia" class="span12"><option value="1">SI</option><option value="0" selected="selected">NO</option></select></td></tr>
                 <tr><td colspan="3">Acceso de Servicios Basicos</td></tr>
-                <tr><td>Agua Potable a Domicilio</td><td>::</td><td><select name="aguaPotable"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
-                <tr><td>Electricidad Red Publica</td><td>::</td><td><select name="electricidad"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
-                <tr><td>Alcantarillado</td><td>::</td><td><select name="alcantarillado"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
-                <tr><td>¿El estudiante trabaja?</td><td>::</td><td><select name="trabaja" ><option value="NOTRABAJA" selected="selected">NO TRABAJA</option><option value="EMPLEADO">EMPLEADO</option><option value="INDEPENDIENTE" >INDEPENDIENTE</option><option value="DOMESTICOCASA" >TRABAJO DOMESTICO EN CASA</option></select></td></tr>
+                <tr><td>Agua Potable a Domicilio</td><td>::</td><td><select name="aguaPotable" class="span12"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
+                <tr><td>Electricidad Red Publica</td><td>::</td><td><select name="electricidad" class="span12"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
+                <tr><td>Alcantarillado</td><td>::</td><td><select name="alcantarillado" class="span12"><option value="1" selected="selected">SI</option><option value="0">NO</option></select></td></tr>
+                <tr><td>¿El estudiante trabaja?</td><td>::</td><td><select name="trabaja" class="span12"><option value="NOTRABAJA" selected="selected">NO TRABAJA</option><option value="EMPLEADO">EMPLEADO</option><option value="INDEPENDIENTE" >INDEPENDIENTE</option><option value="DOMESTICOCASA" >TRABAJO DOMESTICO EN CASA</option></select></td></tr>
                 <tr><td>¿El estudiante tiene acceso a?</td><td>::</td><td>
-                    ¿Internet en casa?<select name="internet" id="internet"><option value="1" <?php echo $alu['InternetCasa']?'selected="selected"':'';?>>SI</option><option value="0" <?php echo !$alu['InternetCasa']?'selected="selected"':'';?>>NO</option></select>
+                    ¿Internet en casa?<select name="internet" id="internet" class="span12"><option value="1" <?php echo $alu['InternetCasa']?'selected="selected"':'';?>>SI</option><option value="0" <?php echo !$alu['InternetCasa']?'selected="selected"':'';?>>NO</option></select>
                     </td></tr>
-                <tr><td>¿El estudiante se traslada en?</td><td>::</td><td><select name="traslado"><option value="APIE" <?php echo $alu['Transporte']=="APIE"?'selected="selected"':'';?>>A PIE</option><option value="MINIBUS" <?php echo $alu['Transporte']=="MINIBUS"?'selected="selected"':'';?>>MINIBUS</option></select></td></tr>
+                <tr><td>¿El estudiante se traslada en?</td><td>::</td><td><select name="traslado" class="span12"><option value="APIE" <?php echo $alu['Transporte']=="APIE"?'selected="selected"':'';?>>A PIE</option><option value="MINIBUS" <?php echo $alu['Transporte']=="MINIBUS"?'selected="selected"':'';?>>MINIBUS</option></select></td></tr>
                 <tr><td>Tiempo que tarda el Estudiante</td><td>::</td><td><input type="text" name="tiempo" value="Menos de media Hora" readonly="readonly"/></td></tr>
         	</table>
         </div>
@@ -117,7 +117,7 @@ if(!empty($_POST)){
                     </select></td></tr>
                 <tr><td>Idioma que habla con frecuencia</td><td>::</td><td><input type="text" name="idiomaP" value="<?php echo mb_strtoupper($alu['IdiomaP'],"utf8");?>"/></td></tr>
                 <tr><td>Telefono del Padre</td><td>::</td><td><input type="text" name="telefonoP" value="<?php echo mb_strtoupper($al['CelularP'],"utf8");?>"/></td></tr>
-                <tr><td>Grado de Parentesco </td><td>::</td><td><select name="parentescoP">
+                <tr><td>Grado de Parentesco </td><td>::</td><td><select name="parentescoP" class="span12">
                 	<option value="---" <?php echo $alu['ParentescoP']=="---"?'selected="selected"':'';?>>---</option>
                     <option value="PADRE" <?php echo $alu['ParentescoP']=="PADRE"?'selected="selected"':'';?>>PADRE</option>
                     <option value="ABUELO" <?php echo $alu['ParentescoP']=="ABUELO"?'selected="selected"':'';?>>ABUELO</option>
@@ -136,7 +136,7 @@ if(!empty($_POST)){
             	<tr><td>Apellidos</td><td>::</td><td><input type="text" name="paternoM" value="<?php echo mb_strtoupper($al['ApellidosMadre'],"utf8");?>"/></td></tr>
                 <tr><td>Nombres</td><td>::</td><td><input type="text" name="nombresM" value="<?php echo mb_strtoupper($al['NombreMadre'],"utf8");?>"/></td></tr>
                 <tr><td>Ocupación Laboral</td><td>::</td><td><input type="text" name="ocupacionM" value="<?php echo mb_strtoupper($al['OcupMadre'],"utf8");?>"/></td></tr>
-                <tr><td>Mayor Grado de Instrucción </td><td>::</td><td><select name="instruccionM">
+                <tr><td>Mayor Grado de Instrucción </td><td>::</td><td><select name="instruccionM" class="span12">
                 	<option value="NINGUNA" <?php echo $alu['InstruccionM']=="NINGUNA"?'selected="selected"':'';?>>NINGUNA</option>
                     <option value="PRIMARIA" <?php echo $alu['InstruccionM']=="PRIMARIA"?'selected="selected"':'';?>>PRIMARIA</option>
                     <option value="SECUNDARIA" <?php echo $alu['InstruccionM']=="SECUNDARIA"?'selected="selected"':'';?>>SECUNDARIA</option>

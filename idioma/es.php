@@ -24,6 +24,21 @@ $idioma['ReporteImpresion']="Este Reporte Generado es para Imprimir";
 //Menu
 $idioma['Menu']="Menú";
 $idioma['Inicio']="Inicio";
+
+//Navegación
+$idioma['NInscripcionAlumnoNuevo']="Inscripción Alumno Nuevo";
+$idioma['NTarjetaCuotas']="Tarjeta de Cuotas";
+$idioma['NRegistrarRude']="Registrar Rude";
+$idioma['NModificarRude']="Modificar Rude";
+$idioma['NImpresionRude']="Impresión de Rude";
+$idioma['NPagarCuotas']="Pagar Cuotas";
+$idioma['NVerDeudores']="Ver Deudores";
+$idioma['NArqueoCaja']="Arqueo de Caja";
+$idioma['NAlumnoPorCurso']="Alumno por Curso";
+$idioma['NAlumnoPorCursoPersonalizado']="Alumno por Curso Personalizado";
+$idioma['NReporteBecados']="Reporte Becados";
+$idioma['NTodosLosBecados']="Todos los Becados";
+$idioma['NFrecuenciaAccesos']="Frecuencia de Accesos";
 //Generales
 $idioma['Curso']="Curso";
 $idioma['Alumnos']="Alumnos";
@@ -34,6 +49,9 @@ $idioma['PagarCuotas']="Pagar Cuotas";
 
 $idioma['Configuracion']="Configuración";
 
+$idioma['Hombres']="Hombres";
+$idioma['Mujeres']="Mujeres";
+$idioma['AmbosSexos']="Ambos Sexos";
 $idioma['Curso']="Curso";
 $idioma['Nombre']="Nombre";
 $idioma['Nombres']="Nombres";
@@ -57,6 +75,7 @@ $idioma['Regresar']="Regresar";
 $idioma['Atras']="Atras";
 $idioma['BuscarAlumnoPor']="Buscar alumno por...";
 $idioma['BuscarCursoPor']="Buscar curso por...";
+$idioma['BuscarDocentePor']="Buscar docente por...";
 
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
@@ -106,7 +125,11 @@ $idioma['Nit']="NIT";
 $idioma['FacturarA']="Facturar A";
 $idioma['APagar']="A Pagar";
 $idioma['Estado']="Estado";
+$idioma['Menor']="Menor";
 $idioma['Observaciones']="Observaciones";
+$idioma['Revisar']="Revisar";
+$idioma['Igual']="Igual";
+$idioma['ALa']="A la";
 //Deudores
 $idioma['ArqueoCaja']="Arqueo de Caja";
 $idioma['AlumnosMora']="Alumnos con Mora";
@@ -137,4 +160,5 @@ $idioma['FrecuenciaAcceso']="Frecuencia de Accesos";
 $idioma['CantidadAcceso']="Cantidad de Accesos";
 $idioma['UltimoAcceso']="Ultimo Acceso";
 $idioma['DescargarHojaCasilleros']="Descargar Hoja de Casilleros";
+$idioma['VerFechas']="Ver Fechas";
 ?>

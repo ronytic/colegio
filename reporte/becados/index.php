@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Reporte de Becados";
+$titulo="NReporteBecados";
 $jsFile="reporte/becados.js";
 $folder="../../";
 $horizontal=2;

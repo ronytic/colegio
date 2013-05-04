@@ -1,7 +1,7 @@
 <?php
 include_once("../../login/check.php");
 $folder="../../";
-$titulo="Total de Becados";
+$titulo="NTodosLosBecados";
 include_once("../../cabecerahtml.php");
 //header("Location:../../impresion/reporte/becadostotal.php");
 ?>

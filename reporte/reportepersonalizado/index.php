@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Reporte de Alumnos por Curso";
+$titulo="NAlumnoPorCursoPersonalizado";
 
 $subtitulo1="Configuracion";
 $subtitulo2="Reporte";

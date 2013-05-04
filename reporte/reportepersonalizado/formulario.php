@@ -9,7 +9,7 @@ if(isset($_POST)){
                                 <option value="1">Hombres</option>
                                 <option value="0">Mujeres</option>
                             </select></td></tr>-->
-        <tr><td><?php echo $idioma['Campo1']?></td><td><select name="campo1" class="input-medium">
+        <tr><td><?php echo $idioma['Campo1']?></td><td><select name="campo1" class="input-medium span10">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
         						<option value="FechaNac"><?php echo $idioma['FechaNac']?></option>
                                 <option value="Ci"><?php echo $idioma['Ci']?></option>
@@ -18,7 +18,7 @@ if(isset($_POST)){
                                 <option value="CelularP"><?php echo $idioma['CelularP']?></option>
 								<option value="CelularM"><?php echo $idioma['CelularM']?></option>
 								</select></td></tr>
-         <tr><td><?php echo $idioma['Campo1']?></td><td><select name="campo2" class="input-medium">
+         <tr><td><?php echo $idioma['Campo2']?></td><td><select name="campo2" class="input-medium span10">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
         						<option value="FechaNac"><?php echo $idioma['FechaNac']?></option>
                                 <option value="Ci"><?php echo $idioma['Ci']?></option>

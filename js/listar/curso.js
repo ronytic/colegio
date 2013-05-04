@@ -1,8 +1,9 @@
 var CodCurso;
 $(document).on("ready",inicio);
 function inicio(){
+	buscadorLista($("#tcurso"),$("#selectcurso"));
+	//$("#selectcurso").chosen();
 	CodCurso=$("#selectcurso").val();
-	$("#selectcurso").chosen();
 	$("#selectcurso").change(function(e) {
 		var valor=$(this).val();
         CodCurso=valor;

@@ -2,7 +2,7 @@
 include_once("../../login/check.php");
 include_once("../../class/docente.php");
 include_once("../../class/logusuario.php");
-$titulo="Frecuencia de Acceso de Docentes";
+$titulo="NFrecuenciaAccesos";
 $folder="../../";
 $docente=new docente;
 $logusuario=new logusuario;
@@ -37,7 +37,7 @@ $logusuario=new logusuario;
                 <td><?php echo $doc['Paterno']?> <?php echo $doc['Materno']?> <?php echo $doc['Nombres']?></td>
                 <td class="centrar"><?php echo $Cantidad;?></td>
                 <td class="der"><?php echo fecha2Str($lu['FechaLog']);?></td>
-                <td><a class="btn btn-info btn-small " href="fechas.php?Cod=<?php echo $doc['CodDocente']?>">Ver Fechas</a></td></tr>
+                <td><a class="btn btn-info btn-small " href="fechas.php?Cod=<?php echo $doc['CodDocente']?>"><?php echo $idioma['VerFechas']?></a></td></tr>
         <?php	
         }
         ?>

@@ -41,7 +41,7 @@ if(!empty($_POST)){
                 <td><input type="text" value="<?php echo $cuotas['Factura']?>" size="4" id="f<?php echo $cuotas['CodCuota'];?>" class="ku input-mini" rel="<?php echo $cuotas['CodCuota'];?>"/></td>
                 <td>
                 	<input type="checkbox" id="c<?php echo $cuotas['CodCuota']?>" <?php echo $cuotas['Cancelado']?'checked="checked"':'';?> rel="<?php echo $cuotas['CodCuota']?>" class="cuotas"/>
-                    <label class="msg" for="c<?php echo $cuotas['CodCuota']?>"><?php echo $cuotas['Cancelado']?"Cancelado":"Pendiente";?></label></td>
+                    <label class="msg hidden-phone hidden-tablet" for="c<?php echo $cuotas['CodCuota']?>"><?php echo $cuotas['Cancelado']?"Cancelado":"Pendiente";?></label></td>
                 <td><input type="text" value="<?php echo $cuotas['Observaciones']?>" size="10" id="o<?php echo $cuotas['CodCuota'];?>"/ class="ku input-small" rel="<?php echo $cuotas['CodCuota'];?>"></td>
 				<td><input type="text" value="<?php if($cuotas['Cancelado'])echo date("d-m-Y",strtotime($cuotas['Fecha']));else echo date("d-m-Y");?>" size="5" id="fe<?php echo $cuotas['CodCuota'];?>"/ class="ku fechass input-small" rel="<?php echo $cuotas['CodCuota'];?>"></td>
             </tr>

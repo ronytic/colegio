@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Inscripción Alumno Nuevo";
+$titulo="NInscripcionAlumnoNuevo";
 $folder="../../";
 include_once("../../class/alumno.php");
 include_once("../../class/curso.php");

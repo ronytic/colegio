@@ -100,7 +100,7 @@
                 <a href="#">Dashboard</a> <span class="divider">/</span>
             </li>
 			<?php */?>
-			<?php echo $titulo;?>
+			<?php echo $idioma[$titulo];?>
 		</ul>
 	</div>
 <div class="sortable row-fluid">

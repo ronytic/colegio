@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Ver Rude";
+$titulo="NImpresionRude";
 $subtitulo1="RudeAlumno";
 $folder="../../";
 $jsFile="rude/verrude.js";

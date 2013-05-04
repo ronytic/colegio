@@ -2,12 +2,10 @@ var CodCurso;
 var CodAlumno;
 $(document).on("ready",inicio);
 function inicio(){
-	//$("#selectcurso").chosen();
 	buscadorLista($("#icurso"),$("#selectcurso"),0);
-	
 //	buscadorLista($("#ialumno"),$("#selectalumno"));
 	
-//	.chosen();		
+		
 	$("#selectcurso").change(function(e) {
 		var valor=$(this).val();
         CodCurso=valor;
@@ -32,7 +30,7 @@ function inicio(){
 	});
 }
 function alumnos(data){
-	$("#selectalumno").html(data).trigger("liszt:updated");
+	$("#selectalumno").html(data)//.trigger("liszt:updated");
 	buscadorLista($("#ialumno"),$("#selectalumno"));
 	var valor=$("#selectalumno:first").val();
     CodAlumno=valor;

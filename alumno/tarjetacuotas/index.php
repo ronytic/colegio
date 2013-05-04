@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Tarjeta de Cuotas";
+$titulo="NTarjetaCuotas";
 $subtitulo1="TarjetaCuotas";
 $folder="../../";
 $icono="icon-print";

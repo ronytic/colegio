@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Registro del RUDE";
+$titulo="NRegistrarRude";
 $subtitulo1="RegistrarRude";
 $folder="../../";
 $jsFile="rude/rude.js";

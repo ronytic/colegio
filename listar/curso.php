@@ -21,11 +21,12 @@ $curso=new curso;
 		?>
     </script>
 <?php include_once($folder."cabecera.php");?>
-<div class="span4">
+<div class="span3">
 	<div class="box">
         <div class="box-header"><h2><?php echo $idioma['Curso']?></h2></div>
         <div class="box-content">
-            <select class="span12" id="selectcurso" data-placeholder="Seleccione un Curso">
+        	<input type="search" id="tcurso" class="span12" placeholder="<?php echo $idioma['BuscarCursoPor']?>"/>
+            <select class="span12" id="selectcurso" data-placeholder="<?php echo $idioma['BuscarCursoPor']?>">
             <?php
 			$i=0;
             foreach($curso->mostrar() as $cu){$i++;
@@ -42,7 +43,7 @@ $curso=new curso;
         </div>
     </div>
 </div>
-<div class="span8">
+<div class="span9">
 	<div class="box">
     	<div class="box-header"><h2><?php if($icono2!=""){?><i class="<?php echo $icono2;?>"></i><span class="break"></span><?php }?> <?php echo $idioma[$subtitulo2];?></h2></div>
         <div class="box-content" id="respuesta"></div>

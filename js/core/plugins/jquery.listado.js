@@ -24,11 +24,11 @@ function buscadorLista(input, listas,  mover) {
         var filter = $(this).val();
         if(filter) {
 		  $matches = $(list).find('a:Contains(' + filter + ')').parent();
-		  $('li', list).not($matches).slideUp();
-		  $('li:first', list).not($matches).slideUp();
+		  $('li', list).not($matches).slideUp("fast");
+		  //$('li:first', list).not($matches).slideUp("fast");
 		  $matches.slideDown();
         } else {
-          $(list).find("li").slideDown();
+          $(list).find("li").slideDown(0);
         }
         return false;
       })
