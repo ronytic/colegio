@@ -8,10 +8,10 @@ $docente=new docente;
 	<script language="javascript" type="text/javascript" src="<?php echo $folder;?>js/<?php echo $jsFile;?>"></script>
     <script language="javascript" type="text/javascript">
     	<?php
-		if(!empty($archivoInicial)){
+		if(!empty($archivoInicial) || $archivoInicial!=""){
 			?>
 			$(document).ready(function(e) {
-	            $.post('<?php echo $archivoInicial;?>',{'CodDocente':CodDocente},respuesta1);	    
+	            $.post('<?php echo $archivoInicial;?>',{'CodDocente':CodDocente},respuestaInicial);	    
             });
 			<?php
 		}
@@ -38,19 +38,19 @@ $docente=new docente;
 		<?php if ($uno==1): ?>
 		<div class="span9 box">
 			<div class="Alumnos">
-				<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $subtitulo1;?></h2></div>
+				<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma[$subtitulo1];?></h2></div>
 				<div class="box-content" id="contenido1">
 				</div>
 			</div>
 		</div>
 		<?php else: ?>
 		<div class="span3 box">
-			<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $subtitulo1;?>ddd</h2></div>
+			<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma[$subtitulo1];?></h2></div>
 			<div class="box-content" id="contenido1">
 			</div>
 		</div>
-		<div class="span5 box">
-            <div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $subtitulo2;?></h2></div>
+		<div class="span6 box">
+            <div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma[$subtitulo2];?></h2></div>
             <div class="box-content" id="contenido2">
             </div>
 		</div>

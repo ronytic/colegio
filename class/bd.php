@@ -227,7 +227,7 @@ class bd{
 		elseif($activo==0):
 			$condicion=" and Activo=0";
 		endif;
-		return $this->getRecords("$Codigo ".$condicion);
+		return $this->getRecords("Cod".ucfirst(mb_strtolower($this->tabla,"utf8"))."=$Codigo ".$condicion);
 	}
 	function mostrarTodoRegistro($where='',$activo=1)
 	{

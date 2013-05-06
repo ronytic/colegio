@@ -39,6 +39,7 @@ $idioma['NAlumnoPorCursoPersonalizado']="Alumno por Curso Personalizado";
 $idioma['NReporteBecados']="Reporte Becados";
 $idioma['NTodosLosBecados']="Todos los Becados";
 $idioma['NFrecuenciaAccesos']="Frecuencia de Accesos";
+$idioma['NModificarDatosDocente']="Modificar Datos Docente";
 //Generales
 $idioma['Curso']="Curso";
 $idioma['Alumnos']="Alumnos";
@@ -48,6 +49,7 @@ $idioma['BoletaDatos']="Boleta de Datos";
 $idioma['PagarCuotas']="Pagar Cuotas";
 
 $idioma['Configuracion']="Configuración";
+$idioma['Guardar']="Guardar";
 
 $idioma['Hombres']="Hombres";
 $idioma['Mujeres']="Mujeres";
@@ -55,6 +57,7 @@ $idioma['AmbosSexos']="Ambos Sexos";
 $idioma['Curso']="Curso";
 $idioma['Nombre']="Nombre";
 $idioma['Nombres']="Nombres";
+$idioma['Apellido']="Apellido";
 $idioma['Apellidos']="Apellidos";
 $idioma['Apellido Paterno']="Apellido Paterno";
 $idioma['Apellido Materno']="Apellido Materno";
@@ -62,6 +65,30 @@ $idioma['Colegio']="Colegio";
 $idioma['Rude']="Rude";
 $idioma['Paterno']="Paterno";
 $idioma['Materno']="Materno";
+$idioma['Contraseña']="Contraseña";
+$idioma['Sexo']="Sexo";
+$idioma['FechaNacimiento']="Fecha de Nacimiento";
+$idioma['Departamento']="Departamento";
+$idioma['Provincia']="Provincia";
+$idioma['Direccion']="Dirección";
+$idioma['Celular']="Celular";
+$idioma['EstadoCivil']="Estado Civil";
+$idioma['Email']="Email";
+$idioma['Dato']="Dato";
+$idioma['Datos']="Datos";
+$idioma['DatosPersonales']="Datos Personales";
+$idioma['DatosTrabajo']="Datos de Trabajo";
+$idioma['Cargo']="Cargo";
+$idioma['Antiguedad']="Antiguedad";
+$idioma['Categoria']="Categoria";
+$idioma['CargaHoraria']="Carga Horaria";
+$idioma['Observacion']="Observación";
+$idioma['DatosFormacionProfesional']="Datos de Formación Profesional";
+$idioma['Universidad']="Universidad";
+$idioma['AñoIngreso']="Año de Ingreso";
+$idioma['AñoEgreso']="Año de Egreso";
+$idioma['AñoTitulacion']="Año de Titulación";
+$idioma['Titulo']="Título";
 $idioma['Telefono']="Teléfono";
 $idioma['AbrirOtraVentana']="Abrir en Otra Ventana";
 $idioma['Ninguno']="Ninguno";
@@ -76,7 +103,9 @@ $idioma['Atras']="Atras";
 $idioma['BuscarAlumnoPor']="Buscar alumno por...";
 $idioma['BuscarCursoPor']="Buscar curso por...";
 $idioma['BuscarDocentePor']="Buscar docente por...";
-
+$idioma['Ingrese']="Ingrese";
+$idioma['IngreseSu']="Ingrese su ";
+$idioma['IngreseSus']="Ingrese sus ";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Rude
@@ -140,7 +169,7 @@ $idioma['Total']="Total";
 //Reporte
 $idioma['NominaAlumnos']="Nomina de Alumnos";
 $idioma['FechaNac']="FechaNac";
-$idioma['Ci']="Ci";
+$idioma['Ci']="CI";
 $idioma['TelefonoCasa']="TelefonoCasa";
 $idioma['CelularP']="CelularP";
 $idioma['CelularM']="CelularM";
@@ -161,4 +190,8 @@ $idioma['CantidadAcceso']="Cantidad de Accesos";
 $idioma['UltimoAcceso']="Ultimo Acceso";
 $idioma['DescargarHojaCasilleros']="Descargar Hoja de Casilleros";
 $idioma['VerFechas']="Ver Fechas";
+$idioma['VerDatosDocente']="Ver Datos del Docente";
+$idioma['ModificarDatosDocente']="Modificar Datos del Docente";
+$idioma['ReporteDatosDocente']="Reporte Datos del Docente";
+$idioma['DatosDocente']="Datos del Docente";
 ?>

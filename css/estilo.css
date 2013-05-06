@@ -80,3 +80,8 @@ td.centrar,.centrar{
 	text-align:center;	
 }
 input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:searchfield !important;}
+/*Corregir el Texto*/
+.resaltar{
+	font-weight:bold;	
+}
+/*Fin de Corregir el Texto*/

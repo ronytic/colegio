@@ -1,11 +1,12 @@
 <?php  
 include_once '../../login/check.php';
-if(!empty($_POST)):
+if(isset($_POST)):
 ?>
-<form action="datos.php" method="post">
-	<input type="hidden" name="CodDocente" value="<?php echo $_POST['CodDocente']; ?>">
-	<input type="submit" value="Ver datos del docente" class="corner-all">
-</form>
+	<input type="button" value="<?php echo $idioma['VerDatosDocente']?>" class="btn btn-success span12" id="verdatos">
+    <br /><br />
+    <input type="button" value="<?php echo $idioma['ModificarDatosDocente']?>" class="btn btn-info span12" id="modificardatos">
+    <br /><br />
+    <input type="button" value="<?php echo $idioma['ReporteDatosDocente']?>" class="btn  span12" id="reportedatos">
 <?php 
 endif
 ?>
