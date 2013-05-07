@@ -6,8 +6,8 @@ $folder="../../";
 $CodDocente=$_POST['CodDocente'];
 $docente=new docente;
 $doc=array_shift($docente->mostrarRegistro($CodDocente));
-$ima=$folder."imagenes/docentes/".$doc['CodDocente'].".jpg";
-if(!file_exists($ima)){
+$ima=$folder."imagenes/docentes/".$doc['Foto'];
+if(!file_exists($ima) || empty($doc['Foto'])){
 	 $ima=$folder."imagenes/docentes/0.jpg";	
 }
 ?>
@@ -36,7 +36,7 @@ if(!file_exists($ima)){
         </tr>
         <tr>
             <td><?php echo $idioma['Sexo']?></td>
-            <td><?php echo $doc['Sexo']?'Masculino':'Femenino'?></td>
+            <td><?php echo $doc['Sexo']?$idioma['Masculino']:$idioma['Femenino']?></td>
         </tr>
         <tr>
             <td><?php echo $idioma['Ci']?></td>

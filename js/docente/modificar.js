@@ -10,5 +10,8 @@ function respuestaInicial(data){
 	})
 	.on("click","#reportedatos",function(){
 		$.post("reportedatos.php",{"CodDocente":CodDocente},function(data){$("#contenido2").html(data)});
+	})
+	.on("click","#nuevodocente",function(){
+		$.post("nuevo.php",{"CodDocente":CodDocente},function(data){$("#contenido2").html(data)});
 	});
 }

@@ -32,5 +32,21 @@ function inicio(){
 		 
 	});
 	
-
+	$(document).on('click','.enlacepost',function(e){
+		e.preventDefault();
+		var dest=$(this).attr("href")!=""?$(this).attr("href"):$(this).attr("data-destino");
+		var mensaje=$(this).attr("data-mensaje");
+		var resp=$(this).attr("data-respuesta");
+		var campos=$(this).attr("data-campos");
+		if(mensaje!=""){
+			if(confirm(mensaje)){
+				$.post(dest,campos,function(data){$(resp).html(data)})
+			}
+		}else{
+			$.post(dest,campos,function(data){$(resp).html(data)})
+		}
+	});
+	$(document).on('click','#actualizarventana',function(){
+		location.reload();	
+	});
 }

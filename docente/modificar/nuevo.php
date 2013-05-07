@@ -3,15 +3,12 @@ include_once '../../login/check.php';
 include_once '../../class/docente.php';
 if(isset($_POST)){
 $folder="../../";
-$CodDocente=$_POST['CodDocente'];
 $docente=new docente;
-$doc=array_shift($docente->mostrarRegistro($CodDocente));
-$ima=$folder."imagenes/docentes/".$doc['Foto'];
-if(!file_exists($ima)  || empty($doc['Foto'])){
-	 $ima=$folder."imagenes/docentes/0.jpg";	
-}
+$doc=$docente->estadoTabla();
+$CodDocente=$doc['Auto_increment'];
+//$doc=array_shift($docente->mostrarRegistro($CodDocente));
 ?>
-<form action="actualizar.php" method="post" class="formulario" enctype="multipart/form-data">
+<form action="guardar.php" method="post" class="formulario" enctype="multipart/form-data">
 	<input type="hidden" name="CodDocente" value="<?php echo $CodDocente?>">
     <div id="respuestaformulario"></div>
     <div class="box-header"><h2><?php echo $idioma['DatosPersonales']?></h2></div>
@@ -20,9 +17,6 @@ if(!file_exists($ima)  || empty($doc['Foto'])){
     <table class="table table-bordered table-hover">
     	<tr>
         	<td colspan="2">
-            	<div class="thumbnail pull-right span3">
-    				<img src="<?php echo $ima?>"/>
-    			</div>
                 <?php echo $idioma['Foto']?>:<br />
                 <input type="file" name="Foto" accept="image/*">
     		</td>
@@ -41,7 +35,7 @@ if(!file_exists($ima)  || empty($doc['Foto'])){
         </tr>
         <tr>
             <td><?php echo $idioma['Sexo']?></td>
-            <td><?php campo("Sexo","select",array(1=>$idioma['Masculino'],0=>$idioma['Femenino']),"span12",1,"",0,"",$doc['Sexo'])?></td>
+            <td><?php campo("Sexo","select",array("1"=>$idioma['Masculino'],"0"=>$idioma['Femenino']),"span12",1)?></td>
         </tr>
         <tr>
             <td><?php echo $idioma['Ci']?></td>
@@ -80,10 +74,7 @@ if(!file_exists($ima)  || empty($doc['Foto'])){
             <td><?php echo $idioma['Email']?></td>
             <td><?php campo("Email","email",$doc['Email'],"span12",0,$idioma['IngreseSu'].$idioma['Email']);  ?></td>
         </tr>
-        <tr class="resaltar">
-            <td><?php echo $idioma['Contraseña']?></td>
-            <td class="resaltar"><span id="pass"><?php echo $doc['Password'] ?></span> <a href="cambiarcontrasena.php" class="btn btn-danger btn-mini enlacepost" data-campos="CodDocente=<?php echo $CodDocente?>" data-respuesta="#pass" data-mensaje="<?php echo $idioma['SeguroCambiarContraseña']?>	"><?php echo $idioma['CambiarContraseña']?></a></td>
-        </tr>
+        
     </table>
     </div>
 <div class="box box-header"><h2><?php echo $idioma['DatosFormacionProfesional']?></h2></div>

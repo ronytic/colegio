@@ -114,7 +114,7 @@ class bd{
 		else
 			$query ="INSERT INTO {$nombretabla} ($campos) VALUES ($datos)";
 			
-		//echo $query;
+		//echo $query."<br>";
 		//echo "NO ESTA HABILITADO EL REGISTRO";
 		return mysql_query($query);
 	}
@@ -145,8 +145,8 @@ class bd{
 		}
 		$datos=implode(",",$data);
 		$nombretabla=mb_strtolower($this->tabla,"utf8");
-		//echo "UPDATE {$nombretabla} SET $datos $where";
-		mysql_query ("UPDATE $nombretabla SET $datos $where");
+		echo "UPDATE {$nombretabla} SET $datos $where";
+		//return mysql_query ("UPDATE $nombretabla SET $datos $where");
 	}
 	function vaciar(){
 		mysql_query("TRUNCATE TABLE {$this->tabla}");
@@ -215,7 +215,7 @@ class bd{
 		}
 		
 		//print_r($Values);
-		$this->insertRow($Values,1);
+		return $this->insertRow($Values,1);
 	}
 	function mostrarRegistro($Codigo,$activo=1){
 	
@@ -250,7 +250,7 @@ class bd{
 		return $this->getRecords($where.$condicion);
 	}
 	function actualizarRegistro($values,$Codigo){
-		$this->updateRow($values,"$Codigo" );	
+		$this->updateRow($values,"Cod".ucfirst(mb_strtolower($this->tabla,"utf8"))."=$Codigo" );	
 	}
 }
 

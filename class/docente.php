@@ -23,7 +23,7 @@ class docente extends bd{
 		return $this->getRecords("Usuario='$Usuario' and Password='$Password'");
 	}
 	function actualizarDocente($values,$where){
-		$this->updateRow($values,$where);	
+		return $this->updateRow($values,$where);	
 	}
 }
 ?>

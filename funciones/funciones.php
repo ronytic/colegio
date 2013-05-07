@@ -1,5 +1,6 @@
 <?php
-function campo($nombre,$tipo="text",$valores="",$clase="",$required=0,$placeholder="",$autofocus=0,$adicional=array(),$valorseleccion=""){
+function campo($nombre,$tipo="text",$valores="",$clase="",$required=0,$placeholder="",$autofocus=0,$adicional=array(),$valorseleccion=NULL){
+	global $idioma;
 	if($tipo=="" && empty($tipo)){$tipo="text";}
 	if(empty($adicional) && $adicional==""){$adicional=array();}
 	
@@ -8,9 +9,10 @@ function campo($nombre,$tipo="text",$valores="",$clase="",$required=0,$placehold
         	<textarea id="<?php echo $nombre;?>" name="<?php echo $nombre;?>" class="<?php echo $clase;?>" <?php echo $autofocus==1?'autofocus':'';?><?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> placeholder="<?php echo $placeholder;?>" <?php echo $required==1?'required="required"':'';?>><?php echo $valores?></textarea>
 			<?php }break;
 			
-		case "select":{?>
-        	<select id="<?php echo $nombre;?>" name="<?php echo $nombre;?>" <?php echo $autofocus==1?'autofocus':'';?><?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> class="<?php echo $clase;?>" <?php echo $required==1?'required="required"':'';?>><option value="">Seleccionar</option>
-            	<?php foreach($valores as $k=>$v){?><option value="<?php echo $k;?>" <?php echo $valorseleccion==$k?'selected':'';?>><?php echo $v;?></option><?php	}?>
+		case "select":{
+			?>
+        	<select id="<?php echo $nombre;?>" name="<?php echo $nombre;?>" <?php echo $autofocus==1?'autofocus':'';?><?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> class="<?php echo $clase;?>" <?php echo $required==1?'required="required"':'';?>><?php  if(empty($valorseleccion)){?><option value="" selected="selected"><?php echo $idioma['Seleccionar']?></option><?php }?>
+            	<?php foreach($valores as $k=>$v){?><option value="<?php echo $k;?>" <?php echo (string)$valorseleccion==(string)$k?'selected':'';?>><?php echo $v;?></option><?php	}?>
             </select>
 			<?php }break;	
 		
@@ -143,5 +145,44 @@ function fecha2Str($fecha,$t=1){
 	}else{
 		return $fecha;	
 	}
+}
+function subirArchivo($archivo,$directorio="imagenes/",$tipo=array()){
+	global $folder;
+	$directorio=$folder.$directorio;
+	
+//	print_r($archivo);
+	if(!isset($archivo)){
+		return false;
+	}else{
+		if(empty($tipo)){
+			copy($archivo['tmp_name'],$directorio.$archivo['name']);	
+		}else{
+			if(in_array($archivo['type'],$tipo)){
+				copy($archivo['tmp_name'],$directorio.$archivo['name']);
+			}
+		}
+		return $archivo['name'];
+	}
+}
+function quitarSimbolos($string){
+    $string = trim($string);
+    $string = str_replace(array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),$string);
+    $string = str_replace(array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),$string);
+    $string = str_replace(array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),$string);
+    $string = str_replace(array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),$string);
+    $string = str_replace(array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),$string);
+    $string = str_replace(array('ñ', 'Ñ', 'ç', 'Ç'),array('n', 'N', 'c', 'C',),$string);
+ //Esta parte se encarga de eliminar cualquier caracter extraño
+    $string = str_replace(array("\\", "¨", "º", "-", "~","#", "@", "|", "!", "\"","·", "$", "%", "&", "/","(", ")", "?", "'", "¡","¿", "[", "^", "`", "]","+", "}", "{", "¨", "´",">", "< ", ";", ",", ":",".", " "),'',$string);
+    return $string;
+}
+function generarPalabra($longitud=3){
+	$strC = "BCDFGHJKLMNPRSTVYZ";
+	$strV = "AEIOU";
+	$cad = "";
+	for($i=0;$i<$longitud;$i++) {
+	$cad .= substr($strC,rand(0,strlen($strC)-1),1).substr($strV,rand(0,strlen($strV)-1),1);
+	}
+	return $cad;	
 }
 ?>

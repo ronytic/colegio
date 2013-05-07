@@ -2,7 +2,7 @@
 $idioma=array();
 //Login
 $idioma['Usuario']="Usuario";
-$idioma['Contrasena']="Contraseña";
+
 $idioma['Ingresar']="Ingresar";
 $idioma['Comunicados']="Comunicados";
 $idioma['Idioma']="Idioma";
@@ -66,6 +66,7 @@ $idioma['Rude']="Rude";
 $idioma['Paterno']="Paterno";
 $idioma['Materno']="Materno";
 $idioma['Contraseña']="Contraseña";
+$idioma['CambiarContraseña']="Cambiar Contraseña";
 $idioma['Sexo']="Sexo";
 $idioma['FechaNacimiento']="Fecha de Nacimiento";
 $idioma['Departamento']="Departamento";
@@ -76,6 +77,8 @@ $idioma['EstadoCivil']="Estado Civil";
 $idioma['Email']="Email";
 $idioma['Dato']="Dato";
 $idioma['Datos']="Datos";
+$idioma['Foto']="Foto";
+$idioma['Fotos']="Fotos";
 $idioma['DatosPersonales']="Datos Personales";
 $idioma['DatosTrabajo']="Datos de Trabajo";
 $idioma['Cargo']="Cargo";
@@ -104,8 +107,19 @@ $idioma['BuscarAlumnoPor']="Buscar alumno por...";
 $idioma['BuscarCursoPor']="Buscar curso por...";
 $idioma['BuscarDocentePor']="Buscar docente por...";
 $idioma['Ingrese']="Ingrese";
+$idioma['Femenino']="Femenino";
+$idioma['Masculino']="Masculino";
 $idioma['IngreseSu']="Ingrese su ";
 $idioma['IngreseSus']="Ingrese sus ";
+$idioma['DatosGuardadosCorrectamente']="Los datos se guardaron Correctamente";
+$idioma['DatosGuardadosError']="Hubo un EROR al Guardar los datos, Revise los datos e Intente Nuevamente ";
+$idioma['SeguroCambiarContraseña']="¿Está seguro que desea cambiar la contraseña?";
+$idioma['NoseCambiaraPosteriormente']="No se Cambiará Posteriormente";
+$idioma['NoseGuardo']="No se Guardo";
+$idioma['Actualizar']="Actualizar";
+$idioma['ActualizarPagina']="Actualizar Página";
+$idioma['ActualizarVentana']="Actualizar Ventana";
+$idioma['Seleccionar']="Seleccionar";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Rude
@@ -193,5 +207,8 @@ $idioma['VerFechas']="Ver Fechas";
 $idioma['VerDatosDocente']="Ver Datos del Docente";
 $idioma['ModificarDatosDocente']="Modificar Datos del Docente";
 $idioma['ReporteDatosDocente']="Reporte Datos del Docente";
+$idioma['ReporteTodosDocente']="Reporte Datos del Docente";
 $idioma['DatosDocente']="Datos del Docente";
+$idioma['ReporteTodosDatosDocente']="Reporte Todos los Docentes";
+$idioma['RegistroNuevoDocente']="Registro Nuevo Docente";
 ?>
