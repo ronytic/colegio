@@ -31,7 +31,6 @@ $usu=array_shift($usu);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
 	<!-- Inicio: Meta -->
 	<meta charset="utf-8">
 	<title><?php echo $idioma['TituloSistema']?></title>

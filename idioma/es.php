@@ -120,6 +120,7 @@ $idioma['Actualizar']="Actualizar";
 $idioma['ActualizarPagina']="Actualizar Página";
 $idioma['ActualizarVentana']="Actualizar Ventana";
 $idioma['Seleccionar']="Seleccionar";
+$idioma['ExportarExcel']="Exportar tabla a excel";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Rude

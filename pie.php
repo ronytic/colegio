@@ -135,6 +135,7 @@
     <script src="<?php echo $folder;?>js/core/cargadortotal.js?<?php echo rand()?>" language="javascript"></script>
     <script language="javascript" src="<?php echo $folder;?>js/core/cargadortotalfinal.js"></script>
 		<!-- Fin: JavaScript-->
-	
+
+<iframe id="respuestaexcel"></iframe>
 </body>
 </html>

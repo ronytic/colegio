@@ -19,6 +19,7 @@ if(!empty($_POST)){
         </thead>
         <tr class="contenido"><td><?php echo $CantidadTotal['CantidadTotal'];?> Alumnos</td></tr>
     </table>
+    <a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
     <table class="table table-condensed table-hover table-striped table-bordered">
     	<thead>
     	<tr class="cabecera"><th>Fechas</th><th>Cantidad Total</th></tr>
@@ -29,6 +30,7 @@ if(!empty($_POST)){
         }
 		?>
     </table>
+    <a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
     <table class="table table-hover table-bordered table-striped" id="cantidades">
     	<thead>
     	<tr class="cabecera"><th>Cursos</th><th>Cantidad Total</th><th>Varones</th><th>Mujeres</th><th colspan="2">Nuevos</th></tr>
