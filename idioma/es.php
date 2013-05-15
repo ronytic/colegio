@@ -121,6 +121,11 @@ $idioma['ActualizarPagina']="Actualizar Página";
 $idioma['ActualizarVentana']="Actualizar Ventana";
 $idioma['Seleccionar']="Seleccionar";
 $idioma['ExportarExcel']="Exportar tabla a excel";
+$idioma['Activo']="Activo";
+$idioma['Desactivar']="Desactivar";
+$idioma['ReporteGeneral']="Reporte General";
+$idioma['ReporteGeneralImpresion']="Reporte para Impresión";
+$idioma['Buscador']="Buscador";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Rude
@@ -212,4 +217,5 @@ $idioma['ReporteTodosDocente']="Reporte Datos del Docente";
 $idioma['DatosDocente']="Datos del Docente";
 $idioma['ReporteTodosDatosDocente']="Reporte Todos los Docentes";
 $idioma['RegistroNuevoDocente']="Registro Nuevo Docente";
+
 ?>

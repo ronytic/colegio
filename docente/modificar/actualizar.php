@@ -31,7 +31,8 @@ if(isset($_POST)){
 				"DTAntiguedad"=>"'$DTAntiguedad'",
 				"DTCategoria"=>"'$DTCategoria'",
 				"Observacion"=>"'$Observacion'",
-				"Usuario"=>"'$Usuario'"
+				"Usuario"=>"'$Usuario'",
+				"Activo"=>"'$Activo'"
 	);
 	if($NombreFoto=subirArchivo($_FILES['Foto'],"imagenes/docentes/")){
 		$valores=array_merge(array("Foto"=>"'$NombreFoto'"),$valores);	
@@ -42,6 +43,7 @@ if(isset($_POST)){
 	<div class="alert alert-success">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
 		<?php echo $idioma['DatosGuardadosCorrectamente']?>	
+		<a href="" id="actualizarventana" class="btn"><?php echo $idioma['ActualizarVentana']?></a>
 	</div>
 	<?php
 	}else{

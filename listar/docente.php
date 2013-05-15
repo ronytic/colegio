@@ -27,7 +27,7 @@ $docente=new docente;
 				<?php
 					foreach($docente->listar() as $doc){
 						?>
-						<option value="<?php echo $doc ['CodDocente'];?>" ><?php echo $doc['Paterno'];?> <?php echo $doc['Materno'];?> <?php echo $doc['Nombres'];?></option>
+						<option value="<?php echo $doc ['CodDocente'];?>" <?php echo $doc['CodDocente']==$_GET['CodDocente']?'selected="selected"':'';?>><?php echo $doc['Paterno'];?> <?php echo $doc['Materno'];?> <?php echo $doc['Nombres'];?></option>
 						<?php	
 					}
 				?>

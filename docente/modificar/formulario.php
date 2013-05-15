@@ -9,8 +9,6 @@ if(isset($_POST)):
     <br /><br />
     <input type="button" value="<?php echo $idioma['ReporteDatosDocente']?>" class="btn  span12" id="reportedatos">
     <br /><br />
-    <input type="button" value="<?php echo $idioma['ReporteTodosDatosDocente']?>" class="btn  span12" id="reportetododatos">
-    <br /><br />
     <input type="button" value="<?php echo $idioma['RegistroNuevoDocente']?>" class="btn  span12 btn-inverse" id="nuevodocente">
 <?php 
 endif

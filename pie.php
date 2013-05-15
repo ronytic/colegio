@@ -136,6 +136,6 @@
     <script language="javascript" src="<?php echo $folder;?>js/core/cargadortotalfinal.js"></script>
 		<!-- Fin: JavaScript-->
 
-<iframe id="respuestaexcel"></iframe>
+<!--<iframe id="respuestaexcel"></iframe>-->
 </body>
 </html>

@@ -2,13 +2,12 @@ function buscadorLista(input, listas,  mover) {
 	if(isNaN(mover)){
 		mover=1;	
 	}
-//	$=jQuery;
 	jQuery.expr[':'].Contains = function(a,i,m){
 		return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
   	};
 	var name=$(listas).attr("name");
   	$(listas).css("display","none");
-	$(listas).next().remove();
+	$(listas).next(".r-contenedor").remove();
 	var cont='<div class=" r-contenedor"><ul class="r-listado">';
 	listas.find("option").each(function(){
 		var v=$(this).val()

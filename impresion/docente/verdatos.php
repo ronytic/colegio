@@ -5,12 +5,9 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	$titulo=$idioma['DatosDocente'];
 	class PDF extends PPDF{
 		function Cabecera(){
-			global $CursoTexto,$idioma;
 			$this->Pagina();
 			$this->ln();
-
 		}
-		
 	}
 	
 	include_once("../../class/docente.php");

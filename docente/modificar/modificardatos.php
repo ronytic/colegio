@@ -138,6 +138,10 @@ if(!file_exists($ima)  || empty($doc['Foto'])){
             <td><?php echo $idioma['Observacion']?></td>
             <td><?php campo("Observacion","text",$doc['Observacion'],"span12",1,$idioma['IngreseSu'].$idioma['Observacion']); ?></td>
         </tr>
+        <tr>
+            <td><?php echo $idioma['Docente']?> <?php echo $idioma['Activo']?></td>
+            <td><?php campo("Activo","select",array("1"=>$idioma["Activo"],"0"=>$idioma["Desactivar"]),"span12",1,"",0,"",$doc['Activo']); ?></td>
+        </tr>
     </table>
     <input type="submit" value="<?php echo $idioma['Guardar']?>" class="btn">
 </div>
