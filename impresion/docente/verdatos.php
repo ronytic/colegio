@@ -15,10 +15,9 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	extract($_GET);
 	$doc=array_shift($docente->mostrarRegistro($CodDocente));
 	$ima="../../imagenes/docentes/".$doc['Foto'];
-	if(!file_exists($ima)){
+	if(!file_exists($ima) || empty($doc['Foto'])){
 		 $ima="../../imagenes/docentes/0.jpg";	
 	}
-		
 	$pdf=new PDF("P","mm","letter");//612,792
 	$pdf->AddPage();
 	$borde=0;

@@ -17,7 +17,7 @@ include_once("fpdf/fpdf.php");
 	class PPDF extends FPDF{
 		var $ancho=176;
 		function Header(){
-			
+			if($this->orientation=="P"){$this->ancho=176;}else{$this->ancho=246;}
 			$this->SetLeftMargin(18);
 			
 			global $title,$gestion,$titulo,$logo,$idioma;
@@ -40,7 +40,7 @@ include_once("fpdf/fpdf.php");
 				$this->Cabecera();	
 			}
 			$this->ln();
-			if($this->orientation=="P"){$this->ancho=176;}else{$this->ancho=246;}
+			
 			$this->Cell($this->ancho,0,"",1,1);
 			$this->ln(1);
 		}

@@ -1,7 +1,7 @@
 <?php
 $host="localhost";
 $user="root";
-$pass="";
+$pass="admina";
 $database="csb2013";
 
 /*$user="redcampu_csb";

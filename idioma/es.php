@@ -217,5 +217,7 @@ $idioma['ReporteTodosDocente']="Reporte Datos del Docente";
 $idioma['DatosDocente']="Datos del Docente";
 $idioma['ReporteTodosDatosDocente']="Reporte Todos los Docentes";
 $idioma['RegistroNuevoDocente']="Registro Nuevo Docente";
-
+$idioma['AñoI']="Año Ing";
+$idioma['AñoE']="Año Eg";
+$idioma['AñoT']="Año Tit";
 ?>

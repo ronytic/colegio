@@ -5,6 +5,8 @@ if(isset($_POST)){
 	$docente=new docente;
 	$listado=$_POST['listado'];
 	?>
+    <a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
+    <hr />
     <table class="table table-bordered table-hover">
     	<thead>
         	<tr><th>N</th><th><?php echo $idioma['Paterno']?></th><th><?php echo $idioma['Materno']?></th><th><?php echo $idioma['Nombres']?></th>
@@ -35,7 +37,7 @@ if(isset($_POST)){
             <?php if($listado=="DatosPersonales"){?>
             <td><?php echo $doc['Sexo']=='0'?'F':'M';?></td>
             <td><?php echo capitalizar($doc['Ci'])?></td>
-            <td><?php echo date("d-m-Y",strtotime($doc['FechaNac']))?></td>
+            <td><?php echo fecha2Str($doc['FechaNac'])?></td>
             <td><?php echo capitalizar($doc['Telefono'])?></td>
             <td><?php echo capitalizar($doc['Celular'])?></td>
             <?php }elseif($listado=="DatosFormacionProfesional"){?>
