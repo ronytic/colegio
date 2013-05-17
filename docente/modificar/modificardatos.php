@@ -24,7 +24,9 @@ if(!file_exists($ima)  || empty($doc['Foto'])){
     				<img src="<?php echo $ima?>"/>
     			</div>
                 <?php echo $idioma['Foto']?>:<br />
-                <input type="file" name="Foto" accept="image/*">
+                <div class="custom-input-file">
+                <input type="file" name="Foto" accept="image/*" class="span12">
+                </div>
     		</td>
         </tr>
         <tr>

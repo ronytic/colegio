@@ -18,7 +18,7 @@ $CodDocente=$doc['Auto_increment'];
     	<tr>
         	<td colspan="2">
                 <?php echo $idioma['Foto']?>:<br />
-                <input type="file" name="Foto" accept="image/*">
+                <input type="file" name="Foto" accept="image/*" class="span12">
     		</td>
         </tr>
         <tr>
