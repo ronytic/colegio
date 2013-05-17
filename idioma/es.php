@@ -40,6 +40,7 @@ $idioma['NReporteBecados']="Reporte Becados";
 $idioma['NTodosLosBecados']="Todos los Becados";
 $idioma['NFrecuenciaAccesos']="Frecuencia de Accesos";
 $idioma['NModificarDatosDocente']="Modificar Datos Docente";
+$idioma['NImpresionBoletin']="Impresión de Boletín";
 //Generales
 $idioma['Curso']="Curso";
 $idioma['Alumnos']="Alumnos";
@@ -126,6 +127,7 @@ $idioma['Desactivar']="Desactivar";
 $idioma['ReporteGeneral']="Reporte General";
 $idioma['ReporteGeneralImpresion']="Reporte para Impresión";
 $idioma['Buscador']="Buscador";
+$idioma['Gestion']="Gestión";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Rude
@@ -220,4 +222,16 @@ $idioma['RegistroNuevoDocente']="Registro Nuevo Docente";
 $idioma['AñoI']="Año Ing";
 $idioma['AñoE']="Año Eg";
 $idioma['AñoT']="Año Tit";
+
+//Notas
+$idioma['Boletin']="Boletín";
+$idioma['RegistrarImpresion']="Registrar Impresión";
+$idioma['EstadisticaAgenda']="Estadistica de la Agenda";
+$idioma['Faltas']="Faltas";
+$idioma['Atrasos']="Atrasos";
+$idioma['Licencias']="Licencias";
+$idioma['NoRespondeTelf']="No Responde Telf";
+$idioma['NotificacionPadres']="Notificación Padres";
+$idioma['Felicitaciones']="Felicitaciones";
+$idioma['RevisarConstantemente']="Se les insinua revisar constantemente las observaciones por Internet";
 ?>
