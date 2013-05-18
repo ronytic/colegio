@@ -22,6 +22,10 @@ function inicio(){
 				target: '#resultadoformulario'
 			})
 		});*/
+		
+		/*Respuesta de Registro de Impresión*/
+		
+		/*Fin de registro de Impresión*/
     });
 	$(document).on('submit','form.formulario', function(e) {
 		e.preventDefault(); // prevent native submit
@@ -49,6 +53,28 @@ function inicio(){
 	$(document).on('click','#actualizarventana',function(e){
 		location.reload();	
 	});
+	/*Registro de Impresión*/
+	$(document).on('click','#registrarimpresion',function(e){
+		e.preventDefault();
+		var archivo=$(this).attr('data-archivo');
+		var alumno=$(this).attr('data-alumno');
+		$.post(folder+'registroimpresion/guardar.php',{'archivo':archivo,'CodAlumno':alumno},function(){});
+		$("#mostrarimpresion").click();
+		$('html, body').animate({scrollTop:$("#mostrarimpresion").position().top-200},300);
+	});
+	$(document).on('click','#mostrarimpresion',function(e){
+		e.preventDefault();
+		var archivo=$("#registrarimpresion").attr('data-archivo');
+		var alumno=$("#registrarimpresion").attr('data-alumno');
+		$.post(folder+'registroimpresion/mostrar.php',{'archivo':archivo,'CodAlumno':alumno},function(data){$('#respuestaimpresion').html(data)});	
+	});
+	$(document).on('click','#eliminarimpresion',function(e){
+		e.preventDefault();
+		var codigo=$(this).attr('rel');
+		$.post(folder+'registroimpresion/eliminar.php',{'codigo':codigo},function(data){$("#mostrarimpresion").click()});	
+	});
+	/*Fin de Registro de Impresión*/
+
 	$(document).on('click','#exportarexcel',function(e){
 		e.preventDefault();
 		var html='<table border="1">'+$(this).next("table").html()+'</table>';

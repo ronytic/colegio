@@ -14,10 +14,12 @@ if(isset($_POST)){
 	$url="../../impresion/notas/$nombrearchivo?CodAlumno=$CodAlumno&CodCurso=$CodCurso&mf=". md5("lock");
 	?>
     <a href="<?php echo $url;?>" class="btn btn-danger" target="_blank"><?php echo $idioma['AbrirOtraVentana']?></a>
-    <a href="#" class="btn btn-success" id="registrarimpresion"><?php echo $idioma['RegistrarImpresion']?></a>
+    <a href="#" class="btn btn-success" id="registrarimpresion" data-archivo="Boletin" data-alumno="<?php echo $CodAlumno;?>"><?php echo $idioma['RegistrarImpresion']?></a>
     <hr />
-    <iframe width="100%" height="750" src="<?php echo $url;?>"></iframe>
-    <div id="respuestaimpresiones"></div>
+    <strong><?php echo $idioma['ReporteImpresion'];?></strong>
+    <iframe width="100%" height="800" src="<?php echo $url;?>"></iframe>
+    <a href="#" class="btn" id="mostrarimpresion" data-archivo="boletin"><?php echo $idioma['MostrarImpresion']?></a>
+    <div id="respuestaimpresion"></div>
 	<?php
 }
 ?>

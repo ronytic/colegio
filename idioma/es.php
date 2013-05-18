@@ -44,6 +44,7 @@ $idioma['NImpresionBoletin']="Impresión de Boletín";
 //Generales
 $idioma['Curso']="Curso";
 $idioma['Alumnos']="Alumnos";
+$idioma['Alumnas']="Alumnas";
 $idioma['Estadísticas']="Estadísticas";
 $idioma['TarjetaCuotas']="Tarjeta de Cuotas";
 $idioma['BoletaDatos']="Boleta de Datos";
@@ -128,6 +129,12 @@ $idioma['ReporteGeneral']="Reporte General";
 $idioma['ReporteGeneralImpresion']="Reporte para Impresión";
 $idioma['Buscador']="Buscador";
 $idioma['Gestion']="Gestión";
+$idioma['Fecha']="Fecha";
+$idioma['Fechas']="Fechas";
+$idioma['Hora']="Hora";
+$idioma['CantidadTotal']="Cantidad Total";
+$idioma['Cursos']="Cursos";
+$idioma['Eliminar']="Eliminar";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Rude
@@ -162,14 +169,18 @@ $idioma['Desde']="Desde";
 $idioma['Hasta']="Hasta";
 //Estadisticas
 $idioma['NoHayAlumnoNuevo']="No Existen Alumnos Registrados para este Curso";
-
+$idioma['VerAlumnosNuevos']="Ver Alumnos Nuevos";
+$idioma['CantidadTotalInscritos']="Cantidad Total de Inscritos";
+$idioma['Nuevos']="Nuevos";
+$idioma['AlumnosNuevos']="Alumnos Nuevos";
+$idioma['TodoColegio']="Todo el Colegio";
 //Cuotas
 $idioma['Factura']="Factura";
 $idioma['Cuota']="Cuota";
 $idioma['Total']="Total";
 $idioma['Monto']="Monto";
 $idioma['FechaPago']="Fecha de Pago";
-$idioma['Fecha']="Fecha";
+$idioma['Archivo']="Archivo";
 $idioma['MontoPagar']="Monto a Pagar";
 $idioma['Descuento']="Descuento";
 $idioma['Nit']="NIT";
@@ -226,6 +237,7 @@ $idioma['AñoT']="Año Tit";
 //Notas
 $idioma['Boletin']="Boletín";
 $idioma['RegistrarImpresion']="Registrar Impresión";
+$idioma['MostrarImpresion']="Mostrar Impresión";
 $idioma['EstadisticaAgenda']="Estadistica de la Agenda";
 $idioma['Faltas']="Faltas";
 $idioma['Atrasos']="Atrasos";
