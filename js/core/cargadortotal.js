@@ -79,12 +79,13 @@ function inicio(){
 		e.preventDefault();
 		var html='<table border="1">'+$(this).next("table").html()+'</table>';
 		//alert(datos);
-		while (html.indexOf('á') != -1) html = html.replace('á', '&aacute;');
-  while (html.indexOf('é') != -1) html = html.replace('é', '&eacute;');
-  while (html.indexOf('í') != -1) html = html.replace('í', '&iacute;');
-  while (html.indexOf('ó') != -1) html = html.replace('ó', '&oacute;');
-  while (html.indexOf('ú') != -1) html = html.replace('ú', '&uacute;');
-  while (html.indexOf('º') != -1) html = html.replace('º', '&ordm;');
+while (html.indexOf('á') != -1) html = html.replace('á', '&aacute;');
+while (html.indexOf('é') != -1) html = html.replace('é', '&eacute;');
+while (html.indexOf('í') != -1) html = html.replace('í', '&iacute;');
+while (html.indexOf('ó') != -1) html = html.replace('ó', '&oacute;');
+while (html.indexOf('ú') != -1) html = html.replace('ú', '&uacute;');
+while (html.indexOf('ñ') != -1) html = html.replace('ñ', '&ntilde;');
+while (html.indexOf('º') != -1) html = html.replace('º', '&ordm;');
 		/*window.open('data:application/vnd.ms-excel;Content-Disposition:attachment;file=export_filename.xls;name=hebe.xls,' +encodeURIComponent(html));
     e.preventDefault();
 		//$.post(folder+"exportar/excel.php",{'dataexcel':datos},function(data){$("#respuestaexcel").html(data)});		*/

@@ -19,7 +19,7 @@ include_once("fpdf/fpdf.php");
 		function Header(){
 			if($this->orientation=="P"){$this->ancho=176;}else{$this->ancho=246;}
 			$this->SetLeftMargin(18);
-			
+			$this->SetAutoPageBreak(true,15);
 			global $title,$gestion,$titulo,$logo,$idioma;
 			$fecha=date("d-m-Y");
 			
@@ -42,7 +42,7 @@ include_once("fpdf/fpdf.php");
 			$this->ln();
 			
 			$this->Cell($this->ancho,0,"",1,1);
-			$this->ln(1);
+			$this->Ln(0.1);
 		}
 		function Pagina(){
 			global $idioma;
@@ -103,7 +103,8 @@ include_once("fpdf/fpdf.php");
 		}
 		function Footer()
 		{	global $lema;
-			$this->SetAutoPageBreak(true,15);
+			//$this->Cell($this->ancho,0,"",1,1);
+			
 			// Posición: a 1,5 cm del final
 			$this->SetY(-15);
 			// Arial italic 8

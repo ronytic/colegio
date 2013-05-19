@@ -75,7 +75,7 @@ class alumno extends bd{
 		return $this->getRecords($Where." and $Retiro","Paterno,Materno,Nombres");
 	}
 	
-	function mostrarAlumnosCurso($CodCurso,$Sexo,$Retirado=0){
+	function mostrarAlumnosCurso($CodCurso,$Sexo=2,$Retirado=0){
 		$this->campos=array('CodAlumno,LOWER(Paterno) as Paterno,LOWER(Materno) as Materno,LOWER(Nombres) as Nombres,TelefonoCasa,Ci,FechaNac,Rude,CelularP,CelularM');
 		if($Retirado==2){
 			$Retiro="Retirado=0 and Retirado=1";

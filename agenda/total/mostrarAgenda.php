@@ -9,7 +9,7 @@ if(isset($_POST)){
 	$agenda=new agenda;
 	$materia=new materias;
 	$observaciones=new observaciones;
-	$config=new configuracion;
+	$config=new config;
 	//Cantidad de Observaciones
 	$CodObser=$observaciones->CodObservaciones(1);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
@@ -60,9 +60,9 @@ if(isset($_POST)){
 	$CantFelicitacion=array_shift($CantFelicitacion);
 	$Total=$CantObser['Cantidad']+$CantFaltas['Cantidad']+$CantAtrasos['Cantidad']+$CantLicencias['Cantidad']+$CantNotificacion['Cantidad']+$CantNoContestan['Cantidad']+$CantFelicitacion['Cantidad'];
 	?>
-    <table class="tabla">
+    <table class="table table-condensed">
     	<tr class="cabecera">
-    		<td>Observaciones</td><td>Faltas</td><td>Atrasos</td><td>Licencias</td><td><span title="Notificación a los Padres">Not.Padres</span></td><td><span title="No Contestan llamada">No Cont cel</span></td><td>Felicitaciones</td><td><span title="total">Tot</span></td>
+    		<td>Observaciones</td><td>Faltas</td><td>Atrasos</td><td>Licencias</td><!--<td><span title="Notificación a los Padres">Not.Padres</span></td><td><span title="No Contestan llamada">No Cont cel</span></td><td>Felicitaciones</td><td><span title="total">Tot</span></td>-->
     	</tr>
     	<tr class="contenido">
         	<td class="centrar"><?php echo $CantObser['Cantidad'];?></td>
@@ -75,7 +75,7 @@ if(isset($_POST)){
             <td class="centrar"><?php echo $Total;?></td>
         </tr>
     </table>
-    <table class="tabla">
+    <table class="table">
     	<tr class="cabecera"><td width="20">Materia</td><td width="110">Observación</td><td>Detalle</td><td>Fecha</td><td>Acciones</td></tr>
         <?php
 		$cnf=array_shift($config->mostrarConfig("InicioTrimestre2"));
@@ -92,7 +92,7 @@ if(isset($_POST)){
 				$clase="";	
 			}
 			?>
-           	<tr class="contenido <?php echo $clase; if($a['Resaltar'])echo " naranja";?> <?php if($a['Resaltar2'])echo "amarillo";?>"><td><?php echo $m['Nombre']?></td><td><?php echo $o['Nombre']?></td><td><?php echo $a['Detalle'];?></td><td><?php echo date("d-m-Y",strtotime($a['Fecha']));?></td><td><input type="checkbox" class="resaltar" rel="<?php echo $a['CodAgenda'];?>" title="Revisado" <?php if($a['Resaltar2'])echo 'checked="checked"';?>/><a href="#" class="botonSecE corner-all eliminar" title="Eliminar" rel="<?php echo $a['CodAgenda'];?>">x</a></td></tr>
+           	<tr class="contenido <?php echo $clase; if($a['Resaltar'])echo " naranja";?> <?php if($a['Resaltar2'])echo "amarillo";?>"><td><?php echo $m['Nombre']?></td><td><?php echo $o['Nombre']?></td><td><?php echo $a['Detalle'];?></td><td><?php echo date("d-m-Y",strtotime($a['Fecha']));?></td><td><input type="checkbox" class="resaltar" rel="<?php echo $a['CodAgenda'];?>" title="Revisado" <?php if($a['Resaltar2'])echo 'checked="checked"';?>/><a href="#" class="btn btn-mini eliminar" title="Eliminar" rel="<?php echo $a['CodAgenda'];?>">x</a></td></tr>
             <?php
 		}
 		?>

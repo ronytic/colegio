@@ -9,8 +9,8 @@ if(!empty($_POST)){
     <hr />
     <strong><?php echo $idioma['ReporteImpresion'];?></strong>
     <iframe src="<?php echo $url?>" height="450" width="100%" name="pdf"></iframe>
-    <a href="#" class="btn" id="mostrarimpresion" data-archivo="boletin"><?php echo $idioma['MostrarImpresion']?></a>
-<div id="respuestaimpresion"></div>
+    <a href="#" class="btn" id="mostrarimpresion"><?php echo $idioma['MostrarImpresion']?></a>
+	<div id="respuestaimpresion"></div>
 	<?php	
 }
 ?>

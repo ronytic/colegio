@@ -1,11 +1,11 @@
 <?php
 include_once("../../login/check.php");
-include_once("../../class/materias.php");
-include_once("../../class/alumno.php");
-include_once("../../class/curso.php");
-include_once("../../class/observaciones.php");
 if(!empty($_GET['CodAl'])){
-	$titulo="Agenda Digital";
+	include_once("../../class/materias.php");
+	include_once("../../class/alumno.php");
+	include_once("../../class/curso.php");
+	include_once("../../class/observaciones.php");
+	$titulo="AgendaDigital";
 	$folder="../../";
 	$CodAlumno=$_GET['CodAl'];
 	$_SESSION['CodAl']=$CodAlumno;
@@ -13,7 +13,7 @@ if(!empty($_GET['CodAl'])){
 	$observaciones=new observaciones;
 	$alumno=new alumno;
 	$curso=new curso;
-	$al=$alumno->mostrarDatos($CodAlumno);
+	$al=$alumno->mostrarTodoDatos($CodAlumno);
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
@@ -27,52 +27,75 @@ if(!empty($_GET['CodAl'])){
 	
     </script>
     <?php include_once($folder."cabecera.php");?>
-     <div class="container_12" id="cuerpo">
-     <div class="grid_9">Nombre: <span class="azulT"><?php echo ucwords($al['Paterno']." ".$al['Materno']." ".$al['Nombres'])?></span> Curso: <span class="azulT"><?php echo $cur['Nombre']?></span></div>
-     <div class="grid_3"><div class="botones" style="position:fixed;padding:2px;"><a class="boton corner-all" id="registrar">Registrar</a><a class="boton corner-all" id="terminar">Terminar</a></div></div>
-     <div class="clear"></div>
-     <div class="grid_2">
-     	<div class="titulo corner-tl corner-tr">Materias</div>
-		<div class="cuerpo">
+
+     <div class="span9 box">
+     	<div class="box-header"><?php echo $idioma['DatosPersonales']?></div>
+     	<div class="box-content">
+     		<?php echo $idioma['Nombre']?>: <strong><span class="text-info"><?php echo capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres'])?></span></strong> <?php echo $idioma['Curso']?>: <strong><span class="text-info"><?php echo $cur['Nombre']?></span></strong></div>
+     </div>
+      
+     <div class="span3 box" >
+     
+       	<div class="" style="background-color:#F00;">
+        	<div class="box-header"><?php echo $idioma['Acciones']?></div>
+            <div class="box-content">
+            	<a class="btn" id="registrar"><?php echo $idioma['Registrar']?></a> <a class="btn" id="terminar"><?php echo $idioma['Terminar']?></a>
+            </div>
+        </div>
+     </div>
+</div>
+<div class="sortable row-fluid">
+     <div class="span3">
+     	<div class="box-header"><?php echo $idioma['Materias']?></div>
+		<div class="box-content">
+        	<input type="search" name="sMateria" class="span12"/>
+        	<select name="Materia" class="span12">
         	<?php
             	foreach($materia->mostrarMaterias() as $m){
 				?>
-                <li><input type="radio" name="Materia" value="<?php echo $m['CodMateria'];?>" id="materia<?php echo $m['CodMateria'];?>" class="radio"/><label class="lradio capital" for="materia<?php echo $m['CodMateria'];?>"><?php echo $m['Nombre'];?></label></li>
+                <option value="<?php echo $m['CodMateria'];?>" ><?php echo $m['Nombre'];?></option>
                 <?php
 				}
 			?>
+            </select>
         </div>
      </div>
-     <div class="grid_3">
-     	<div class="titulo corner-tl corner-tr">Observación</div>
-        <div class="cuerpo">
+     
+     <div class="span3">
+     	<div class="">
+     	<div class="box-header"><?php echo $idioma['Observacion']?></div>
+        <div class="box-content">
+        <input type="search" name="sObservaciones" class="span12" placeholder="<?php echo $idioma['']?>"/>
+        	<select name="Observaciones">
         	<?php
             	foreach($observaciones->mostrarObservaciones() as $o){
 				?>
-                <li><input type="radio" name="Observaciones" value="<?php echo $o['CodObservacion'];?>" id="obs<?php echo $o['CodObservacion'];?>" class="radio"/><label class="lradio capital" for="obs<?php echo $o['CodObservacion'];?>"><?php echo $o['Nombre'];?></label></li>
+                <option value="<?php echo $o['CodObservacion'];?>"><?php echo $o['Nombre'];?></option>
                 <?php
 				}
 			?>
+            </select>
         </div>
-        <div class="titulo corner-tr corner-tl">Detalle</div>
-        <div class="cuerpo centrar">
+        </div>
+        <div class="box-header"><?php echo $idioma['Detalle']?></div>
+        <div class="box-content">
         
-        	Fecha<input name="fecha" placeholder="Fecha de la Observación" type="text" value="<?php echo date("Y-m-d")?>" id="fecha"/>
+        	Fecha <input name="fecha" placeholder="Fecha de la Observación" type="text" value="<?php echo date("Y-m-d")?>" id="fecha" class="span6"/>
             <div id="fechac"></div>
-            Detalle:   <hr /><a class="botonSec completar">Archivador</a> <a class="botonSec completar">Material de Higiene</a> <a class="botonSec completar">Actividad</a> <a class="botonSec completar">Teoría</a> <a class="botonSec completar">Sistematización</a> <a class="botonSec completar">Instrumento</a> <a class="botonSec completar">Falto</a> <a class="botonSec completar">Exposición</a> <a class="botonSec completar">No Ingreso</a> <a class="botonSec completar">No Atiende en clases</a> <a class="botonSec completar">Juega y distrae</a> <a class="botonSec completar">Lectura</a> <a class="botonSec completar">Falta Ajedrez</a> <a class="botonSec completar">Licencia Ajedrez</a><hr />
-        	<textarea name="detalle" cols="22" rows="3"></textarea>
+            <?php echo $idioma['Detalle']?>: <br /><a class="btn btn-mini completar">Archivador</a> <a class="btn btn-mini completar">Material de Higiene</a> <a class="btn btn-mini completar">Actividad</a> <a class="btn btn-mini completar">Teoría</a> <a class="btn btn-mini completar">Sistematización</a> <a class="btn btn-mini completar">Instrumento</a> <a class="btn btn-mini completar">Falto</a> <a class="btn btn-mini completar">Exposición</a> <a class="btn btn-mini completar">No Ingreso</a> <a class="btn btn-mini completar">No Atiende en clases</a> <a class="btn btn-mini completar">Juega y distrae</a> <a class="btn btn-mini completar">Lectura</a> <a class="btn btn-mini completar">Falta Ajedrez</a> <a class="btn btn-mini completar">Licencia Ajedrez</a><hr />
+        	<textarea name="detalle" cols="22" rows="3" class="span12"></textarea>
             <label for="im">Importante</label><input type="checkbox" id="im" name="importante" />
         </div>
      </div>
-     <div class="grid_7">
-        <div class="titulo corner-tr corner-tl">Lista de Observaciones</div>
-        <div class="cuerpo" id="respuesta">
+     <div class="span6">
+        <div class="box-header">Lista de Observaciones</div>
+        <div class="box-content" id="respuesta">
 			
         </div>
      </div>
      <div class="clear"></div>
-     </div>
-     <?php	include_once($folder."footer.php");?>
+
+     <?php	include_once($folder."pie.php");?>
     <?php
 }
 ?>

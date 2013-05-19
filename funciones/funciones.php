@@ -21,7 +21,7 @@ function campo($nombre,$tipo="text",$valores="",$clase="",$required=0,$placehold
 			}break;
 			
 		case "submit":{
-            ?><input type="<?php echo $tipo;?>" id="<?php echo $nombre;?>" name="<?php echo $nombre;?>"<?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> value="<?php echo $texto;?>" class="<?php echo $clase;?>" <?php echo $required==1?'required="required"':'';?>/><?php
+            ?><input type="<?php echo $tipo;?>" id="<?php echo $nombre;?>" name="<?php echo $nombre;?>"<?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> value="<?php echo $valores;?>" class="<?php echo $clase;?>" <?php echo $required==1?'required="required"':'';?>/><?php
 			}break;
 			
 		default:{
@@ -145,6 +145,14 @@ function fecha2Str($fecha,$t=1){
 	}else{
 		return $fecha;	
 	}
+}
+function sacarIniciales($texto){
+	$iniciales="";
+	$datos=explode(" ",$texto);
+	for($i=0;$i<count($datos);$i++){
+		$iniciales.=$datos[$i][0];
+	}
+	return mb_strtoupper($iniciales,"utf8");		
 }
 function subirArchivo($archivo,$directorio="imagenes/",$tipo=array()){
 	global $folder;

@@ -77,7 +77,10 @@ footer p a{
 }
 
 td.centrar,.centrar{
-	text-align:center;	
+	text-align:center !important;	
+}
+td.der,.der{
+	text-align:right !important;	
 }
 input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:searchfield !important;}
 /*Corregir el Texto*/
@@ -85,3 +88,18 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
 	font-weight:bold;	
 }
 /*Fin de Corregir el Texto*/
+/*Correción del Calendario*/
+.box-content .ui-datepicker {
+    width: 100%;
+    padding: 0;
+  }
+.box-content  .ui-widget {
+    font-size: 0.9em;
+  }
+.box-content  .ui-datepicker table {
+    font-size: 0.7em;
+  }
+.box-content .ui-datepicker td a {
+	text-align:center;	
+}
+/*Fin de Correción del Calendario*/

@@ -41,6 +41,7 @@ $idioma['NTodosLosBecados']="Todos los Becados";
 $idioma['NFrecuenciaAccesos']="Frecuencia de Accesos";
 $idioma['NModificarDatosDocente']="Modificar Datos Docente";
 $idioma['NImpresionBoletin']="Impresión de Boletín";
+$idioma['NAgendaDigital']="Agenda Digital";
 //Generales
 $idioma['Curso']="Curso";
 $idioma['Alumnos']="Alumnos";
@@ -137,6 +138,11 @@ $idioma['Cursos']="Cursos";
 $idioma['Eliminar']="Eliminar";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
+//Alumno
+$idioma['SeparacionDatos']="La separación de varios datos se lo realiza con el \"/\" (shif+7)(Símbolo Dividido)";
+$idioma['NombresAdicionales']="Nombres Adicionales";
+$idioma['CursosAdicionales']="Cursos Adicionales";
+$idioma['Adicionar']="Adicionar";
 //Rude
 $idioma['RegistrarRude']="Registrar Rude";
 $idioma['ModificarRude']="Modificar Rude";
@@ -246,4 +252,14 @@ $idioma['NoRespondeTelf']="No Responde Telf";
 $idioma['NotificacionPadres']="Notificación Padres";
 $idioma['Felicitaciones']="Felicitaciones";
 $idioma['RevisarConstantemente']="Se les insinua revisar constantemente las observaciones por Internet";
+//Agenda
+$idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
+$idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
+$idioma['ReporteImprimir']="Reporte para Imprimir";
+$idioma['AgendaReporteGeneral']="Agenda Reporte General";
+$idioma['Acciones']="Acciones";
+$idioma['Registrar']="Registrar";
+$idioma['Terminar']="Terminar";
+$idioma['Materias']="Materias";
+$idioma['Detalle']="Detalle";
 ?>

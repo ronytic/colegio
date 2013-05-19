@@ -5,7 +5,6 @@ function inicio(){
 	buscadorLista($("#icurso"),$("#selectcurso"),0);
 //	buscadorLista($("#ialumno"),$("#selectalumno"));
 	
-		
 	$("#selectcurso").change(function(e) {
 		var valor=$(this).val();
         CodCurso=valor;

@@ -166,7 +166,7 @@ if(!empty($_POST)){
                 <tr><td class="der"><label for="CedulaIdP">C.I. del Padre</label></td><td>::</td><td><input type="checkbox" name="CedulaIdP" id="CedulaIdP" <?php echo $doc['CedulaIdP']?'checked="checked"':'';?>/></td></tr>
                 <tr><td class="der"><label for="CedulaIdM">C.I. de la Madre</label></td><td>::</td><td><input type="checkbox" name="CedulaIdM" id="CedulaIdM" <?php echo $doc['CedulaIdM']?'checked="checked"':'';?>/></td></tr>
                 <tr><td colspan="3">Observaciones Documentos<textarea name="ObservacionesDoc" rows="5" cols="30"><?php echo $doc['Observaciones'];?></textarea></td></tr>
-<tr><td><input type="submit" value="Actualizar Datos Rude" class="corner-all"/></td><td></td><td></td></tr>
+<tr><td><input type="submit" value="Actualizar Datos Rude" class="btn"/></td><td></td><td></td></tr>
             </table>
         </div>
     </form>
