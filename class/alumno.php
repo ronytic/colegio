@@ -98,6 +98,10 @@ class alumno extends bd{
 		$this->campos=array('*');
 		return $this->getRecords("MontoBeca!=0 and $Retiro","CodCurso,Paterno,Materno,Nombres");
 	}
+	function mostrarDatosCodBarra($Where){
+		$this->campos=array('*');
+		return $this->getRecords($Where);
+	}
 	function actualizarDatosAlumno($values,$CodAlumno){
 		$this->updateRow($values,"CodAlumno=$CodAlumno");	
 	}
@@ -119,10 +123,7 @@ class alumno extends bd{
 	}
 	
 	
-	function mostrarDatosCodBarra($Where){
-		$this->campos=array('*');
-		return $this->getRecords($Where);
-	}
+	
 	function contarInscritosCurso($CodAlumno){
 		$this->campos=array('count(*) as CantidadTotal');
 		return $this->getRecords("Retirado=0 and CodCurso=(SELECT CodCurso FROM alumno WHERE CodAlumno=$CodAlumno)");

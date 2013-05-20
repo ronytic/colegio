@@ -17,8 +17,10 @@ if(!empty($_POST)){
     <hr />
     <div id="respuesta1">
     <a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover table-bordered table-striped">
+    <thead>
     <tr><th colspan="2"><?php echo $idioma['Curso']?>:</th><td colspan="10"><?php echo $cur['Nombre']?></td></tr>
+    
 	<tr>
     	<th>N</th>
     	<th><?php echo $idioma['Paterno']?></th>
@@ -33,6 +35,7 @@ if(!empty($_POST)){
         <th><span title="<?php echo $idioma['Felicitaciones'];?>"><?php echo sacarIniciales($idioma['Felicitaciones'])?></span><span class="hidden-phone hidden-tablet hidden-desktop"> - <?php echo $idioma['Felicitaciones'];?></span></th>
         <th><span title="<?php echo $idioma['Total'];?>"><?php echo sacarIniciales($idioma['Total'])?></span><span class="hidden-phone hidden-tablet hidden-desktop"> - <?php echo $idioma['Total'];?></span></th>
 	</tr>
+    </thead>
 	<?php
 	$i=0;
 	foreach($alumno->mostrarAlumnosCurso($CodCurso) as $al){$i++;

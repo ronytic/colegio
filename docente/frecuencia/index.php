@@ -15,7 +15,7 @@ $logusuario=new logusuario;
     <div class="box-content">
         <table class="table table-condensed table-striped table-hover table-bordered">
         <thead>
-        <tr class="cabecera"><th>Nº</th><th><?php echo $idioma['Docente']?></th><th><?php echo $idioma['CantidadAcceso']?></th><th><?php echo $idioma['UltimoAcceso']?></th></tr>
+        <tr class="cabecera"><th>Nº</th><th><?php echo $idioma['Docente']?></th><th><?php echo $idioma['CantidadAcceso']?></th><th colspan="2"><?php echo $idioma['UltimoAcceso']?></th></tr>
         </thead>
         <?php
         $i=0;

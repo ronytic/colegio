@@ -7,8 +7,10 @@ if(!empty($_POST)){
 	$Fecha=date("Y-m-d");
 	$Hora=date("H:i:s");
 	$CodUsuario=$_SESSION['CodUsuarioLog'];
+	$Nivel=$_SESSION['Nivel'];
 	$values=array('CodUsuarioElimina'=>$CodUsuario,
-				'Visible'=>0,
+				'NivelElimina'=>$Nivel,
+				'Activo'=>0,
 				'FechaElimina'=>"'$Fecha'",
 				'HoraElimina'=>"'$Hora'"
 	);

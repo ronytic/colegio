@@ -3,37 +3,29 @@ $(document).ready(function(e) {
 	buscadorLista($("input[name=sObservaciones]"),$("select[name=Observaciones]"));
 	
     $("#fechac").datepicker({altField: "#fecha", maxDate:"0 D",dateFormat: 'dd-mm-yy'});
-	var materia=$('input[name=Materia]:first');
-	var CodMateria=materia.val();
-	materia.next().addClass("seleccionado");
-	$('input[name=Materia]').change(function(){
-			materia.next().removeClass("seleccionado");
-			$(this).next().addClass("seleccionado");
-			materia=$(this);
-			CodMateria=$(this).val();
-	});
-	var observacion=$('input[name=Observaciones]:first');
-	var CodObs=materia.val();
-	observacion.next().addClass("seleccionado");
-	$('input[name=Observaciones]').change(function(){
-			observacion.next().removeClass("seleccionado");
-			$(this).next().addClass("seleccionado");
-			observacion=$(this);
-			CodObs=$(this).val();
-	});
-	$("#registrar").click(function(e) {
+	$(".registrar").click(function(e) {
 		var Fecha=$("#fecha").val();
 		var Detalle=$("textarea[name=detalle]").val();
 		var Resaltar=$("input[name=importante]").attr("checked");
+		var CodObs=$("select[name=Observaciones]").val();
+		var CodMateria=$("select[name=Materia]").val();
 		Resaltar=Resaltar?1:0;
 		$.post("registrarAgenda.php",{'CodCurso':CodCurso,'CodMateria':CodMateria,'CodObs':CodObs,'Fecha':Fecha,'Detalle':Detalle,'Resaltar':Resaltar},resultado);
+		$('html, body').animate({scrollTop:$("#respuesta").position().top-200},300);
     });
 	$("#terminar").click(function(e) {
-		window.location='./';
+		window.location='./?CodCurso='+CodCurso;
     });
 	$(".completar").click(function(e) {
-        var valor=$(this).html();
+        var valor=$(this).attr('rel');
 		$("textarea[name=detalle]").val(valor);
+    });
+	$(".reporteimprimir").click(function(e) {
+		e.preventDefault();
+        $.post("reporteimprimir.php",mostrar);
+    });
+	$(".reportegeneral").click(function(e) {
+        $.post("mostrarAgenda.php",mostrar);
     });
 	$.post("mostrarAgenda.php",mostrar);
 });
@@ -55,7 +47,7 @@ function recarga(){
     	$(".eliminar").click(function(e) {
     	    e.preventDefault();
 			var Cod=$(this).attr("rel");
-			if(confirm("¿Seguro que desea eliminar este registro?"))
+			if(confirm(mensajeg['EliminarRegistro']))
 				$.post("eliminaRegistro.php",{'CodAgenda':Cod},resultado);
 	    });    
 		$(".resaltar").change(function(e) {

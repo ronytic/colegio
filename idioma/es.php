@@ -42,6 +42,7 @@ $idioma['NFrecuenciaAccesos']="Frecuencia de Accesos";
 $idioma['NModificarDatosDocente']="Modificar Datos Docente";
 $idioma['NImpresionBoletin']="Impresión de Boletín";
 $idioma['NAgendaDigital']="Agenda Digital";
+$idioma['NRevisarAgendaCodigo']="Revisar agenda por código de Barra";
 //Generales
 $idioma['Curso']="Curso";
 $idioma['Alumnos']="Alumnos";
@@ -109,7 +110,11 @@ $idioma['Atras']="Atras";
 $idioma['BuscarAlumnoPor']="Buscar alumno por...";
 $idioma['BuscarCursoPor']="Buscar curso por...";
 $idioma['BuscarDocentePor']="Buscar docente por...";
+$idioma['BuscarMateriaPor']="Buscar materia por...";
+$idioma['BuscarObservacionesPor']="Buscar observaciones por...";
+$idioma['IngreseDetalle']="Ingrese Detalle";
 $idioma['Ingrese']="Ingrese";
+$idioma['IngreseFecha']="Ingrese la Fecha";
 $idioma['Femenino']="Femenino";
 $idioma['Masculino']="Masculino";
 $idioma['IngreseSu']="Ingrese su ";
@@ -136,6 +141,9 @@ $idioma['Hora']="Hora";
 $idioma['CantidadTotal']="Cantidad Total";
 $idioma['Cursos']="Cursos";
 $idioma['Eliminar']="Eliminar";
+$idioma['Importante']="Importante";
+$idioma['Trimestre']="Trimestre";
+$idioma['Bimestre']="Bimestre";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Alumno
@@ -212,6 +220,8 @@ $idioma['Ci']="CI";
 $idioma['TelefonoCasa']="TelefonoCasa";
 $idioma['CelularP']="CelularP";
 $idioma['CelularM']="CelularM";
+$idioma['CelularPadre']="Celular Padre";
+$idioma['CelularMadre']="Celular Madre";
 $idioma['Reporte']="Reporte";
 $idioma['MontoBeca']="Monto de Beca";
 $idioma['AlumnoBecado']="Alumno Becado";
@@ -261,5 +271,19 @@ $idioma['Acciones']="Acciones";
 $idioma['Registrar']="Registrar";
 $idioma['Terminar']="Terminar";
 $idioma['Materias']="Materias";
+$idioma['Materia']="Materia";
 $idioma['Detalle']="Detalle";
+$idioma['AgendaDigital']="Agenda Digital";
+$idioma['ListaObservaciones']="Lista de Observaciones";
+$idioma['Revisado']="Revisado";
+$idioma['Estadistica']="Estadistica";
+$idioma['ReporteIndependienteAgenda']="Reporte Independiente de la Agenda";
+$idioma['RegistroAgenda']="Registro de la Agenda";
+$idioma['Periodo']="Periodo";
+$idioma['IngresarCodigoBarra']="Ingrese el código de Barra";
+$idioma['CodigoBarra']="Código de Barra";
+$idioma['NoSeEncontroCodigo']="No se encontro el código de barra";
+/*Mensajes Globales Javascript*/
+$idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?"
+/*Fin Mensajes*/
 ?>

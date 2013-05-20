@@ -124,13 +124,16 @@
 	
     <script language="javascript">
 		var folder="<?php echo $folder?>";
+		var mensajeg=Array();
+		mensajeg['EliminarRegistro']="<?php echo $idioma['EliminarRegistro']?>";
 	</script>
     <script src="<?php echo $folder;?>js/core/framework/bootstrap.js" language="javascript"></script>
-    <script src="<?php echo $folder;?>js/core/plugins/jquery.chosen.min.js" language="javascript"></script>
+    <!--<script src="<?php echo $folder;?>js/core/plugins/jquery.chosen.min.js" language="javascript"></script>-->
         <script src="<?php echo $folder;?>js/core/plugins/jquery.listado.js" language="javascript"></script>
     <script src="<?php echo $folder;?>js/core/ui/jquery.ui.core.js" language="javascript"></script>
     <script src="<?php echo $folder;?>js/core/ui/jquery.ui.datepicker.js" language="javascript"></script>		
-     <script src="<?php echo $folder;?>js/core/plugins/jquery.form.js" language="javascript"></script>	
+     <script src="<?php echo $folder;?>js/core/plugins/jquery.form.js" language="javascript"></script>
+     <script src="<?php echo $folder;?>js/core/plugins/jquery.stickytableheaders.min.js" language="javascript"></script>	
     
     <script src="<?php echo $folder;?>js/core/cargadortotal.js?<?php echo rand()?>" language="javascript"></script>
     <script language="javascript" src="<?php echo $folder;?>js/core/cargadortotalfinal.js"></script>

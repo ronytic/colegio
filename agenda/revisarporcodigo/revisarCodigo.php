@@ -1,6 +1,5 @@
 <?php
 include_once("../../login/check.php");
-include_once("../../config.php");
 include_once("../../class/alumno.php");
 if(!empty($_POST)){
 	$alumno=new alumno;
@@ -12,7 +11,7 @@ if(!empty($_POST)){
 		$CodAlumno=$al['CodAlumno'];
 		echo json_encode(array("CodAlumno"=>"$CodAlumno","Msg"=>"OK"));
 	}else{
-		echo json_encode(array("Error"=>"NO SE PUDO ENCONTRAR EL CODIGO DE BARRA","Msg"=>"NO"));	
+		echo json_encode(array("Error"=>$idioma['NoSeEncontroCodigo'],"Msg"=>"NO"));	
 	}
 }
 ?>

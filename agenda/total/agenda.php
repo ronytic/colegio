@@ -5,18 +5,25 @@ if(!empty($_GET['CodAl'])){
 	include_once("../../class/alumno.php");
 	include_once("../../class/curso.php");
 	include_once("../../class/observaciones.php");
+	include_once("../../class/observacionesfrecuentes.php");
 	$titulo="AgendaDigital";
 	$folder="../../";
 	$CodAlumno=$_GET['CodAl'];
 	$_SESSION['CodAl']=$CodAlumno;
 	$materia=new materias;
 	$observaciones=new observaciones;
+	$observacionesfrecuentes=new observacionesfrecuentes;
 	$alumno=new alumno;
 	$curso=new curso;
 	$al=$alumno->mostrarTodoDatos($CodAlumno);
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
+	
+	$ima=$folder."imagenes/alumnos/".$al['Foto'];
+	if(!file_exists($ima) || empty($al['Foto'])){
+	 $ima=$folder."imagenes/alumnos/0.jpg";	
+}
 	?>
     <?php include_once($folder."cabecerahtml.php");?>
     <script language="javascript" type="text/javascript" src="../../js/agenda/registro.js"></script>
@@ -31,15 +38,26 @@ if(!empty($_GET['CodAl'])){
      <div class="span9 box">
      	<div class="box-header"><?php echo $idioma['DatosPersonales']?></div>
      	<div class="box-content">
-     		<?php echo $idioma['Nombre']?>: <strong><span class="text-info"><?php echo capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres'])?></span></strong> <?php echo $idioma['Curso']?>: <strong><span class="text-info"><?php echo $cur['Nombre']?></span></strong></div>
+            	<table class="tabla">
+                    <tr>
+                    	<td rowspan="4"><img src="<?php echo $ima?>" class="img-polaroid" width="100"/></td><td><?php echo $idioma['Nombre']?>:</td>
+                        <td colspan="3" class="text-info x2"><?php echo capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres'])?></span></td></tr>
+                    <tr>
+                    	<td><?php echo $idioma['Curso']?>:</td><td class="text-info"><?php echo $cur['Nombre']?></span></td>
+                    <td><?php echo $idioma['Telefono']?>:</td><td class="text-info"><?php echo $al['TelefonoCasa']?> <?php echo $al['Celular']?></span></td></tr>
+                    <tr><td><?php echo $idioma['CelularM']?>:</td><td class="text-info"><?php echo $al['CelularM']?></td><td><?php echo $idioma['CelularP']?>:</td><td class="text-info"><?php echo $al['CelularP']?></td></tr>
+                </table>
+        </div>
      </div>
       
      <div class="span3 box" >
      
-       	<div class="" style="background-color:#F00;">
+       	<div class="" style="">
         	<div class="box-header"><?php echo $idioma['Acciones']?></div>
             <div class="box-content">
-            	<a class="btn" id="registrar"><?php echo $idioma['Registrar']?></a> <a class="btn" id="terminar"><?php echo $idioma['Terminar']?></a>
+            	<a class="btn btn-danger registrar"><?php echo $idioma['Registrar']?></a> <a class="btn" id="terminar"><?php echo $idioma['Terminar']?></a><br /><br />
+                <a class="btn reportegeneral"><?php echo $idioma['ReporteGeneral']?></a>
+                <a class="btn btn-info reporteimprimir"><?php echo $idioma['ReporteImprimir']?></a>
             </div>
         </div>
      </div>
@@ -48,7 +66,7 @@ if(!empty($_GET['CodAl'])){
      <div class="span3">
      	<div class="box-header"><?php echo $idioma['Materias']?></div>
 		<div class="box-content">
-        	<input type="search" name="sMateria" class="span12"/>
+        	<input type="search" name="sMateria" class="span12" placeholder="<?php echo $idioma['BuscarMateriaPor']?>"/>
         	<select name="Materia" class="span12">
         	<?php
             	foreach($materia->mostrarMaterias() as $m){
@@ -63,9 +81,9 @@ if(!empty($_GET['CodAl'])){
      
      <div class="span3">
      	<div class="">
-     	<div class="box-header"><?php echo $idioma['Observacion']?></div>
+     	<div class="box-header"><?php echo $idioma['Observaciones']?></div>
         <div class="box-content">
-        <input type="search" name="sObservaciones" class="span12" placeholder="<?php echo $idioma['']?>"/>
+        <input type="search" name="sObservaciones" class="span12" placeholder="<?php echo $idioma['BuscarObservacionesPor']?>"/>
         	<select name="Observaciones">
         	<?php
             	foreach($observaciones->mostrarObservaciones() as $o){
@@ -79,16 +97,25 @@ if(!empty($_GET['CodAl'])){
         </div>
         <div class="box-header"><?php echo $idioma['Detalle']?></div>
         <div class="box-content">
-        
-        	Fecha <input name="fecha" placeholder="Fecha de la Observación" type="text" value="<?php echo date("Y-m-d")?>" id="fecha" class="span6"/>
+        	<?php echo $idioma['Fecha']?>:
+            <?php campo("fecha","text",date("Y-m-d"),"span6",1,$idioma['IngreseFecha'])?>
             <div id="fechac"></div>
-            <?php echo $idioma['Detalle']?>: <br /><a class="btn btn-mini completar">Archivador</a> <a class="btn btn-mini completar">Material de Higiene</a> <a class="btn btn-mini completar">Actividad</a> <a class="btn btn-mini completar">Teoría</a> <a class="btn btn-mini completar">Sistematización</a> <a class="btn btn-mini completar">Instrumento</a> <a class="btn btn-mini completar">Falto</a> <a class="btn btn-mini completar">Exposición</a> <a class="btn btn-mini completar">No Ingreso</a> <a class="btn btn-mini completar">No Atiende en clases</a> <a class="btn btn-mini completar">Juega y distrae</a> <a class="btn btn-mini completar">Lectura</a> <a class="btn btn-mini completar">Falta Ajedrez</a> <a class="btn btn-mini completar">Licencia Ajedrez</a><hr />
-        	<textarea name="detalle" cols="22" rows="3" class="span12"></textarea>
-            <label for="im">Importante</label><input type="checkbox" id="im" name="importante" />
+            <?php echo $idioma['Detalle']?>: <br />
+            <?php foreach($observacionesfrecuentes->mostrarObservacionesFrecuentes() as $of){?>
+            <a class="btn btn-mini completar" rel="<?php echo $of['Valor']?>"><?php echo $of['Nombre']?></a>
+            <?php }?>
+            <br />
+        	<textarea name="detalle" cols="22" rows="3" class="span12" placeholder="<?php echo $idioma['IngreseDetalle']?>"></textarea>
+            <div class="alert alert-error">
+            <label for="im" class="checkbox text-error"><?php echo $idioma['Importante']?><input type="checkbox" id="im" name="importante" /></label>
+            </div>
         </div>
+        <div class="box-content">
+            	<a class="btn btn-danger registrar" id=""><?php echo $idioma['Registrar']?></a> <a class="btn" id="terminar"><?php echo $idioma['Terminar']?></a>
+            </div>
      </div>
      <div class="span6">
-        <div class="box-header">Lista de Observaciones</div>
+        <div class="box-header"><?php echo $idioma['ListaObservaciones']?></div>
         <div class="box-content" id="respuesta">
 			
         </div>

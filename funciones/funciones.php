@@ -154,6 +154,21 @@ function sacarIniciales($texto){
 	}
 	return mb_strtoupper($iniciales,"utf8");		
 }
+function recortarTexto($texto, $limite=100,$terminador="..."){   
+    $texto = trim($texto);
+    $texto = strip_tags($texto);
+    $tamano = strlen($texto);
+    $resultado = '';
+    if($tamano <= $limite){
+        return $texto;
+    }else{
+        $texto = substr($texto, 0, $limite);
+        $palabras = explode(' ', $texto);
+        $resultado = implode(' ', $palabras);
+        $resultado .= $terminador;
+    }   
+    return $resultado;
+}
 function subirArchivo($archivo,$directorio="imagenes/",$tipo=array()){
 	global $folder;
 	$directorio=$folder.$directorio;
@@ -163,13 +178,13 @@ function subirArchivo($archivo,$directorio="imagenes/",$tipo=array()){
 		return false;
 	}else{
 		if(empty($tipo)){
-			copy($archivo['tmp_name'],$directorio.$archivo['name']);	
+			copy($archivo['tmp_name'],$directorio.quitarSimbolos($archivo['name']));	
 		}else{
 			if(in_array($archivo['type'],$tipo)){
-				copy($archivo['tmp_name'],$directorio.$archivo['name']);
+				copy($archivo['tmp_name'],$directorio.quitarSimbolos($archivo['name']));
 			}
 		}
-		return $archivo['name'];
+		return quitarSimbolos($archivo['name']);
 	}
 }
 function quitarSimbolos($string){

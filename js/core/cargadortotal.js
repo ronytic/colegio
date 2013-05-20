@@ -1,5 +1,6 @@
 $(document).on("ready",inicio);
 function inicio(){
+	/*Menu*/
 	var menu=$("ul.nav-stacked li.funo > a");
 	menu.toggle(function(e) {
          $(this).parent().find('ul.oculto').slideDown("fast");
@@ -8,13 +9,19 @@ function inicio(){
     });
 	
 	$("ul.nav-stacked li.funo.active > a").click();
-	
+	/*Fin Menu*/
+	/*Gestionar Tabla*/
+	$(window).trigger('resize.stickyTableHeaders');
+	$("table").stickyTableHeaders();
+	/*Fin Gestionar Tabla*/
 	$(document).ajaxStop(function() {
 	
     }).ajaxSuccess(function(event, XMLHttpRequest, ajaxOptions) {
         $("input[type=date]").datepicker({changeMonth: true,changeYear: true,yearRange:"c-100:c+10"});
-		
-		
+		/*Gestionar Tabla*/
+		$(window).trigger('resize.stickyTableHeaders');
+		$("table").stickyTableHeaders()
+		/*Fin Gestionar Tabla*/
 		/*$('form.formulario').on('submit', function(e) {
 			alert("asd");
 			e.preventDefault(); // prevent native submit
@@ -70,8 +77,10 @@ function inicio(){
 	});
 	$(document).on('click','#eliminarimpresion',function(e){
 		e.preventDefault();
-		var codigo=$(this).attr('rel');
-		$.post(folder+'registroimpresion/eliminar.php',{'codigo':codigo},function(data){$("#mostrarimpresion").click()});	
+		if(confirm(mensajeg['EliminarRegistro'])){
+			var codigo=$(this).attr('rel');
+			$.post(folder+'registroimpresion/eliminar.php',{'codigo':codigo},function(data){$("#mostrarimpresion").click()});	
+		}
 	});
 	/*Fin de Registro de Impresión*/
 
@@ -111,4 +120,9 @@ while (html.indexOf('º') != -1) html = html.replace('º', '&ordm;');
         //just in case, prevent default behaviour
         e.preventDefault();
 	});
+	/*
+	$(window).scroll(function(e) {
+        //alert($(this).scrollTop());
+    });*/
+	
 }

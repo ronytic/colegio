@@ -17,7 +17,7 @@ include_once("fpdf/fpdf.php");
 	class PPDF extends FPDF{
 		var $ancho=176;
 		function Header(){
-			if($this->orientation=="P"){$this->ancho=176;}else{$this->ancho=246;}
+			if($this->CurOrientation=="P"){$this->ancho=176;}else{$this->ancho=246;}
 			$this->SetLeftMargin(18);
 			$this->SetAutoPageBreak(true,15);
 			global $title,$gestion,$titulo,$logo,$idioma;
@@ -32,7 +32,7 @@ include_once("fpdf/fpdf.php");
 			$this->Cell(55,4,utf8_decode($gestion),0,0,"C");
 			$this->ln(10);	
 			$this->Fuente("B",18);
-			$this->Cell($this->ancho,4,utf8_decode($titulo),0,5,"C");
+			$this->Cell($this->ancho,4,utf8_decode($titulo.$this->orientation),0,5,"C");
 			$this->ln(5);
 			$this->CuadroCabecera(30,$idioma['FechaActual'].": ",20,$fecha);
 			$this->ln(5);

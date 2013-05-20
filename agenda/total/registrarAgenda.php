@@ -7,6 +7,7 @@ if(!empty($_POST)){
 	$hora=date("H:i:s");
 	$FechaObs=date("Y-m-d",strtotime($_POST['Fecha']));
 	$CodUsuario=$_SESSION['CodUsuarioLog'];
+	$Nivel=$_SESSION['Nivel'];
 	$agendaValues=array(
 				"CodAgenda"=>'NULL',
 				'CodCurso'=>$_POST['CodCurso'],
@@ -16,10 +17,11 @@ if(!empty($_POST)){
 				'Fecha'=>"'$FechaObs'",
 				'FechaRegistro'=>"'$fecha'",
 				'HoraRegistro'=>"'$hora'",
+				'Activo'=>1,
 				'Detalle'=>"'{$_POST['Detalle']}'",
 				'CodUsuario'=>$CodUsuario,
+				'Nivel'=>$Nivel,
 				'Resaltar'=>$_POST['Resaltar'],
-				'Visible'=>1
 		);
 		//print_r($agendaValues);
 		$res=$agenda->insertarRegistro($agendaValues);
