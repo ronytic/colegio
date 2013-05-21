@@ -2,6 +2,9 @@
 include_once($folder."login/check.php");
 include_once($folder."class/docente.php");
 $docente=new docente;
+if(isset($cantidad)){
+	$cantidad=2;	
+}
 	?>
 	<?php include_once($folder."cabecerahtml.php");?>
 	<script language="javascript" type="text/javascript" src="<?php echo $folder;?>js/listar/docente.js"></script>
@@ -35,11 +38,16 @@ $docente=new docente;
 				</div>
 			</div>
 		</div>
-		<?php if ($uno==1): ?>
-		<div class="span9 box">
-			<div class="Alumnos">
+		<?php if ($direccion=="-"): ?>
+		<div class="span9">
+			<div class="box">
 				<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma[$subtitulo1];?></h2></div>
 				<div class="box-content" id="contenido1">
+				</div>
+			</div>
+            <div class="box">
+				<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma[$subtitulo2];?></h2></div>
+				<div class="box-content" id="contenido2">
 				</div>
 			</div>
 		</div>

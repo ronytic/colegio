@@ -13,7 +13,7 @@ $curso=new curso;
     	<?php
 		if($archivoInicial!="" || !empty($archivoInicial)){
 			?>
-			$(document).ready(function(e) {
+			$(document).on("ready",function(e) {
 	            $.post('<?php echo $archivoInicial;?>',{'CodCurso':CodCurso},respuesta1);	    
             });
 			<?php

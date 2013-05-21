@@ -17,6 +17,7 @@ include_once("fpdf/fpdf.php");
 	class PPDF extends FPDF{
 		var $ancho=176;
 		function Header(){
+			global $idioma;
 			if($this->CurOrientation=="P"){$this->ancho=176;}else{$this->ancho=246;}
 			$this->SetLeftMargin(18);
 			$this->SetAutoPageBreak(true,15);
@@ -47,7 +48,7 @@ include_once("fpdf/fpdf.php");
 		function Pagina(){
 			global $idioma;
 			$this->AliasNbPages();
-			$this->CuadroCabecera(15,$idioma['Pagina'].":",20,$this->PageNo()." de {nb}");
+			$this->CuadroCabecera(15,$idioma['Pagina'].":",20,$this->PageNo()." ".$idioma['De']." {nb}");
 		}
 		function Fuente($tipo="B",$tam=10){
 			$this->SetFillColor(234,234,234);

@@ -1,0 +1,10 @@
+<?php
+include_once("../../login/check.php");
+$titulo="NNotasPromedioDocentes";
+$subtitulo1="Configuracion";
+$folder="../../";
+$jsFile="notas/vernotas.js";
+$archivoInicial="formulario.php";
+$direccion="-";
+include_once("../../listar/docente.php");
+?>

@@ -53,14 +53,19 @@ class alumno extends bd{
 		}
 		return $this->getRecords("a.CodAlumno=r.CodAlumno and r.CodigoSie!='' and CodCurso=$CodCurso and $Retiro","Paterno,Materno,Nombres");
 	}
-	function mostrarDatosPersonales($CodAlumno,$tipo=false){
+	function mostrarDatosPersonales($CodAlumno,$Retirado=0,$tipo=false){
 		$this->tabla="alumno a, curso c";
+		if($Retirado==2){
+			$Retiro="Retirado=0 and Retirado=1";
+		}else{
+			$Retiro="Retirado=$Retirado";	
+		}
 		if(!$tipo){
 			$this->campos=array("a.CodAlumno, LOWER(a.Paterno) as Paterno, LOWER(a.Materno) as Materno, LOWER(a.Nombres) as Nombres, LOWER(c.Nombre) as Nombre");
 		}else{
 			$this->campos=array("a.CodAlumno, UPPER(a.Paterno) as Paterno, UPPER(a.Materno) as Materno, UPPER(a.Nombres) as Nombres, UPPER(c.Nombre) as Nombre");
 		}
-		return $this->getRecords(" a.CodAlumno=$CodAlumno and a.CodCurso=c.CodCurso");
+		return $this->getRecords(" a.CodAlumno=$CodAlumno and a.CodCurso=c.CodCurso  and $Retiro");
 	}
 	
 	
