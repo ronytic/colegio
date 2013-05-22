@@ -11,6 +11,14 @@ $conf=new config;
 $ma=$al->estadoTabla();
 $confgKinder=array_shift($conf->mostrarConfig("MontoKinder"));
 $confgGeneral=array_shift($conf->mostrarConfig("MontoGeneral"));
+$cursovalor=array();
+foreach($curso->listar() as $cur){
+	$cursovalor[$cur['CodCurso']]=$cur['Nombre'];
+}
+$sexovalor=array("1"=>$idioma['Hombre'],"0"=>$idioma['Mujer']);
+
+$ciextvalor=array("LP"=>"LP","CH"=>"CH","SC"=>"SC","PA"=>"PA","BN"=>"BN","OR"=>"OR","PT"=>"PT","CQ"=>"CQ","TR"=>"TR");
+$sinovalor=array(0=>$idioma["No"],1=>$idioma["Si"]);
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
 <script language="javascript" type="text/javascript" src="../../js/alumno/inscripcion.js"></script>
@@ -19,146 +27,225 @@ var MontoKinder=<?php echo $confgKinder['Valor']?>;
 var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
 </script>
 <?php include_once($folder."cabecera.php");?>
-
 <form action="../guardarAlumno.php" method="post" onSubmit="if(this.Curso.value==0){alert('Selecciona el Curso');return false;}" class="form-horizontal">
 <div class="box span6">
 	<div class="box-header">
-		<h2><i class="icon-user"></i><span class="break"></span>Datos del Alumno</h2>
+		<h2><i class="icon-user"></i><span class="break"></span><?php echo $idioma['DatosPersonales']?></h2>
 	</div>
 	<div class="box-content">
-			<?php
-            campos("Nombre","nombre1","","",1,"span12");
-			campos("Nombre","nombre2","","",1,"input-medium");
-			campos("Nombrse","nombrse","radio","",1,"");
-			campos("Nombre","nombrse","radio","",1);
-			campos("Nombre","nombre","checkbox","",1);
-			campos("Nombre","nombre","checkbox","",1);
-			campos("Nombre","nombre","file","",1,"span12");
-			campos("Nombre","nombre","select",array("1"=>"num1"),1,"span6");
-			?>
-            <div class="controls">
-  <input class="span5" type="text" placeholder=".span5">
-</div>
-<div class="controls controls-row"> 	
-  <input class="span4" type="text" placeholder=".span4">
-  <input class="span1" type="text" placeholder=".span1">
-</div>
-        	<div class="control-group">
-            <label class="control-label" for="inputPassword">Password</label>
-    <div class="controls">
-    
-      <label class="checkbox inline">
-        <input type="checkbox">me asda 
-      </label>
-       </div>
-       <div class="controls">
-     <label class="checkbox inline">
-        <input type="checkbox"> Remember me
-      </label>
-       </div>
-       <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox" required="required"> Remember me
-      </label>
-    </div>
-    </div>
-    <div class="control-group">
-            <label class="control-label" for="inputPassword">Password</label>
-    <div class="controls">
-    
-      <label class="checkbox inline">
-        <input type="radio" name="n1"> Remember 
-      </label>
-      </div>
-      <div class="controls">
-     <label class="checkbox inline">
-        <input type="radio" name="n1" required="required"> Remember me
-      </label>
-      </div>
-      <div class="controls">
-      <label class="checkbox inline">
-        <input type="radio" name="n1" required="required"> Remember me
-      </label>
-    </div>
-    </div>
-    <?php campoMI("ROnald");?>
-    <?php campoM("nina","nina","radio","",1);?>
-    <?php campoM("layme","layme","radio","",1);?>
-    <?php campoM("laymes","laymes","text","",1);?>
-    <?php campoMF();?>
-        	<table border="0">
-            	<tr><td class="der">Matricula</td><td>::</td><td><input name="Matricula" type="text" id="matricula" value="<?php echo $ma['Auto_increment']?>" size="30" readonly/></td></tr>
-                <tr><td class="der">Curso</td><td>::</td><td><select name="Curso" id="curso" autofocus required><option value="">Selecciona el Curso</option><?php foreach($curso->listar() as $cur){
-														?><option value="<?php echo $cur['CodCurso']?>"><?php echo $cur['Nombre']?></option><?php	
-													}?></select></td></tr>
-                <tr><td class="der">Apellido Paterno</td><td>::</td><td><input name="Paterno" type="text" size="30" required/></td></tr>
-                <tr><td class="der">Apellido Materno</td><td>::</td><td><input name="Materno" type="text" size="30" required/></td></tr>
-                <tr><td class="der">Nombres</td><td>::</td><td><input name="Nombres" type="text" size="30" required /></td></tr>
-                <tr><td class="der">Sexo</td><td>::</td><td><input type="radio" name="Sexo" id="h" value="1" required/><label for="h">Hombre</label> <input type="radio" name="Sexo" id="m" value="0" required /><label for="m">Mujer</label></td></tr>
-                <tr><td class="der">Lugar de Nacimiento</td><td>::</td><td><input type="text" name="LugarNac" placeholder="La Paz" value="La Paz"></td></tr>
-                <tr><td class="der">Fecha de Nacimiento</td><td>::</td><td><input type="text" name="FechaNac" id="FechaNac" size="10" required autocomplete="off"/> (Ej:23-07-1990)</td></tr>
-                <tr><td class="der">Cedula de Identidad</td><td>::</td><td><input name="Ci" type="text" id="Ci" required/><select name="CiExt"><option value="LP">LP</option><option value="CH">CH</option><option value="SC">SC</option><option value="PA">PA</option><option value="BN">BN</option><option value="OR">OR</option><option value="PT">PT</option><option value="CQ">CQ</option><option value="TR">TR</option></select></td></tr>
-                <tr><td class="der">Zona</td><td>::</td><td><input name="Zona" type="text"  id="Zona" size="30" class="oculto"/></td></tr>
-                <tr><td class="der">Calle</td><td>::</td><td><input name="Calle" type="text"  id="Zona" size="30" class="oculto"/></td></tr>
-                <tr><td class="der">Número</td><td>::</td><td><input name="Numero" type="text"  id="Zona" size="30" class="oculto"/></td></tr>
-                <tr><td class="der">Teléfono Casa</td><td>::</td><td><input name="TelefonoCasa" type="text" id="FechaNac" size="30" class="oculto"/></td></tr>
-                <tr><td class="der">Celular</td><td>::</td><td><input name="Celular" type="text" size="30" class="oculto"/></td></tr>
-            </table>
+        <table border="0" class="tabla table-hover">
+            <tr>
+                <td class="der"><?php echo $idioma['Matricula']?></td>
+                <td><?php campo("Matricula","text",$ma['Auto_increment'],"span12",1,"asd",0,array("readonly"=>"readonly"))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Curso']?></td>
+                <td><?php campo("Curso","select",$cursovalor,"span12",1)?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Paterno']?></td>
+                <td><?php campo("Paterno","text","","span12",1,"",0,array("maxlength"=>25))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Materno']?></td>
+                <td><?php campo("Materno","text","","span12",1,"",0,array("maxlength"=>25))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Nombres']?></td>
+                <td><?php campo("Nombres","text","","span12",1,"",0,array("maxlength"=>40))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Sexo']?></td>
+                <td><?php campo("Sexo","select",$sexovalor,"span8",1,"",0)?></td></tr>
+            <tr>
+                <td class="der"><?php echo $idioma['LugarNacimiento']?></td>
+                <td><?php campo("LugarNac","text","La Paz","span12",1,"La Paz",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['FechaNacimiento']?></td>
+                <td><?php campo("FechaNac","text","","span6",1,"",0,array("maxlength"=>10))?> (Ej:23-07-1990)</td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['CedulaIdentidad']?></td>
+                <td><?php campo("Ci","text","","span6",0,"",0,array("maxlength"=>12))?>
+                    <?php campo("CiExt","select",$ciextvalor,"span6",1,"",0,array("maxlength"=>10),"LP")?></td>
+            </tr>
+            <tr>
+                <td class="der">Zona</td>
+                <td><?php campo("Zona","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+                <td class="der">Calle</td>
+                <td><?php campo("Calle","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+                <td class="der">Número</td>
+                <td><?php campo("Numero","text","","span12",0,"",0,array("maxlength"=>30))?></td></tr>
+            <tr>
+                <td class="der">Teléfono Casa</td>
+                <td><?php campo("TelefonoCasa","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+                <td class="der">Celular</td>
+                <td><?php campo("Celular","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+        </table>
 	</div>
+    <div class="box-header"><h2><?php echo $idioma['DatosAcademicos']?></h2></div>
     <div class="box-content">
-        	<table border="0">
-            	<tr><td class="der">Procedencia</td><td>::</td><td><input type="text" name="Procedencia" size="30"/></td></tr>
-                <tr><td class="der">Repitente</td><td>::</td><td><input type="radio" name="Repitente" value="0" id="rn" checked="checked" class="inline"/><label for="rn">No</label><input type="radio" name="Repitente" value="1" id="rs" class="inline"/><label for="rs">Si</label></td></tr>
-                <tr><td class="der">Traspaso</td><td>::</td><td><input type="radio" name="Traspaso" value="0" id="tn" checked="checked"/><label for="tn">No</label><input type="radio" name="Traspaso" value="1" id="ts"/><label for="ts">Si</label></td></tr>
-                <tr><td class="der">Becado</td><td>::</td><td><input type="radio" name="Becado" value="0" id="bn" checked="checked"/><label for="bn">No</label><input type="radio" name="Becado" value="1" id="bs"/><label for="bs">Si</label></td></tr>
-                <tr><td class="der">Monto de Beca</td><td>::</td><td><input type="text" name="MontoBeca" id="MontoBeca" value="0" size="7" maxlength="7" />Bs - <input type="text" name="PorcentajeBeca" id="PorcentajeBeca" value="0" size="6" maxlength="6" />%</td></tr>
-                <tr><td class="der">Monto a Pagar</td><td>::</td><td><input name="MontoPagar" id="MontoPagar" readonly type="text"/> Bs</td></tr>
-                <tr><td class="der">Retirado</td><td>::</td><td><input type="radio" name="Retirado" value="0" id="n" checked="checked"/><label for="n">No</label><input type="radio" name="Retirado" value="1" id="s"/><label for="s">Si</label></td></tr>
-                 <tr><td class="der">Fecha de Retiro</td><td>::</td><td><input type="text" name="FechaRetiro" id="FechaRetiro" size="10"/>(Ej:23-07-1990)</td></tr>
-                 <tr><td class="der">Rude</td><td>::</td><td><input type="text" name="Rude" /></td></tr>
-                 <!--<tr><td class="der">Foto</td><td>::</td><td><input type="file" name="Foto" disabled="disabled"/></td></tr>-->
-                 <tr><td class="der">Observaciones</td><td>::</td><td><textarea name="Observaciones" cols="30" rows="5"></textarea></td></tr>
-             </table>
- </div>
- </div>
+        <table class="tabla table-hover">
+            <tr>
+                <td class="der"><?php echo $idioma['Procedencia']?></td>
+                <td><?php campo("Procedencia","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Repitente']?></td>
+                <td><?php campo("Repitente","select",$sinovalor,"span12",1,"",0,array("maxlength"=>30),0)?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Traspaso']?></td>
+                <td><?php campo("Traspaso","select",$sinovalor,"span12",1,"",0,array("maxlength"=>30),0)?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Becado']?></td>
+                <td><?php campo("Becado","select",$sinovalor,"span12",1,"",0,array("maxlength"=>30),0)?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['MontoBeca']?></td>
+                <td><?php campo("MontoBeca","text","0","span5",0,"",0,array("maxlength"=>7))?>Bs - <?php campo("PorcentajeBeca","text","0","span5",0,"",0,array("maxlength"=>6))?>%</td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['MontoPagar']?></td>
+                <td><?php campo("MontoPagar","text","0","span5",0,"",0,array("maxlength"=>30,"readonly"=>"readonly"))?>Bs</td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Retirado']?></td>
+                <td><?php campo("Retirado","select",$sinovalor,"span12",0,"",0,array("maxlength"=>30),0)?></td>
+             </tr>
+             <tr>
+                <td class="der"><?php echo $idioma['FechaRetiro']?></td>
+                <td><?php campo("FechaRetiro","text","","span12",0,"",0,array("maxlength"=>10))?>(Ej:23-07-1990)</td>
+             </tr>
+             <tr>
+                <td class="der"><?php echo $idioma['Rude']?></td>
+                <td><?php campo("Rude","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+             </tr>
+             <tr>
+                <td class="der"><?php echo $idioma['Foto']?></td>
+                <td><?php campo("Foto","File","","span12",0,"",0,array("accept"=>"image/*"))?></td>
+             </tr>
+             <tr>
+                <td class="der"><?php echo $idioma['Observaciones']?></td>
+                <td><?php campo("Observaciones","textarea","","span12",0,"",0,array("cols"=>30,"rows"=>5))?></td>
+             </tr>
+         </table>
+	</div>
+</div>
  <div class="box span6">
  	<div class="box-header">
-    	Datos del Padre de Familia
+    	<?php echo $idioma['DatosPadreFamilia']?>
     </div>
     <div class="box-content">
-        <div class="cuerpo oculto">
-        	<table border="0">
-            	<tr><td class="der">Apellidos del Padre</td><td>::</td><td><input type="text" name="ApellidosPadre" size="50" value="" /></td></tr>
-            	<tr><td class="der">Nombre del Padre</td><td>::</td><td><input type="text" name="NombrePadre" size="50" /></td></tr>
-                <tr><td class="der">C.I. Padre</td><td>::</td><td><input type="text" name="CiPadre" id="CiPadre"  /><select name="CiExtP"><option value="LP">LP</option><option value="CH">CH</option><option value="SC">SC</option><option value="PA">PA</option><option value="BN">BN</option><option value="OR">OR</option><option value="PT">PT</option><option value="CQ">CQ</option><option value="TR">TR</option></select></td></tr>
-                <tr><td class="der">Ocupación del Padre</td><td>::</td><td><input type="text" name="OcupPadre" size="30" /></td></tr>
-                <tr><td class="der">Celular Padre</td><td>::</td><td><input type="text" name="CelularP" size="30" /></td></tr>
-                <tr><td class="der">Apellidos de la Madre</td><td>::</td><td><input type="text" name="ApellidosMadre" size="50" value="" /></td></tr>
-               	<tr><td class="der">Nombre de la Madre</td><td>::</td><td><input type="text" name="NombreMadre" size="50" /></td></tr>
-                <tr><td class="der">C.I.Madre</td><td>::</td><td><input type="text" name="CiMadre" id="CiMadre" /><select name="CiExtM"><option value="LP">LP</option><option value="CH">CH</option><option value="SC">SC</option><option value="PA">PA</option><option value="BN">BN</option><option value="OR">OR</option><option value="PT">PT</option><option value="CQ">CQ</option><option value="TR">TR</option></select></td></tr>
-                 <tr><td class="der">Ocupación de la Madre</td><td>::</td><td><input type="text" name="OcupMadre" size="30" /></td></tr>
-                 <tr><td class="der">Celular Madre</td><td>::</td><td><input name="CelularM" type="text" id="CelularM" size="30"/></td></tr>
-                 <tr><td class="der">Email</td><td>::</td><td><input type="text" name="Email" size="30"/></td></tr>
-            </table>
-       </div>
-        	<table border="0">
-            	<tr><td class="der">NIT</td><td>::</td><td><input name="Nit" type="text" id="Nit" size="30" required/></td></tr>
-                <tr><td class="der">Nombre a Facturar</td><td>::</td><td><input name="FacturaA" type="text" size="30" required/></td></tr>
-          		
-            </table>
-            <hr />
-            <table border="0">
-            	<tr><td class="der"><label for="cn">Certificado de Nacimiento</label></td><td>::</td><td><input type="checkbox" name="CertificadoNac" id="cn"/></td></tr>
-                <tr><td class="der"><label for="le">Libreta Escolar</label></td><td>::</td><td><input type="checkbox" name="LibretaEsc" id="le"/></td></tr>
-                 <tr><td class="der"><label for="lv">Libreta de Vacunas</label></td><td>::</td><td><input type="checkbox" name="LibretaVac" id="lv"/></td></tr>
-                <tr><td class="der"><label for="CedulaId">C.I. del Alumno</label></td><td>::</td><td><input type="checkbox" name="CedulaId" id="CedulaId"/></td></tr>
-                <tr><td class="der"><label for="CedulaIdP">C.I. del Padre</label></td><td>::</td><td><input type="checkbox" name="CedulaIdP" id="CedulaIdP"/></td></tr>
-                <tr><td class="der"><label for="CedulaIdM">C.I. de la Madre</label></td><td>::</td><td><input type="checkbox" name="CedulaIdM" id="CedulaIdM"/></td></tr>
-                <tr><td class="der">Observaciones Documentos</td><td>::</td><td><textarea name="ObservacionesDoc" rows="5" cols="30"><?php echo $alumno['Obs1']."\n"?><?php echo $alumno['Obs2']?></textarea></td></tr>
-                <tr><td></td><td></td><td><input type="submit" value="Registrar Alumno" class="corner-all"/><input type="reset" class="corner-all" value="Vaciar"></td></tr>
-            </table>
-           </div> 
-        </div>
-    </form>
-
+        <table class="tabla table-hover">
+            <tr>
+                <td class="der"><?php echo $idioma['ApellidosPadre']?></td>
+                <td><?php campo("ApellidosPadre","text","","span12",0,"",0,array("maxlength"=>50))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['NombrePadre']?></td>
+                <td><?php campo("NombrePadre","text","","span12",0,"",0,array("maxlength"=>50))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['CiPadre']?></td>
+                <td><?php campo("CiPadre","text","","span12",0,"",0,array("maxlength"=>20))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['OcupacionPadre']?></td>
+                <td><?php campo("OcupPadre","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['CelularPadre']?></td>
+                <td><?php campo("CelularP","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+            	<td colspan="2"><hr /></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['ApellidosMadre']?></td>
+                <td><?php campo("ApellidosMadre","text","","span12",0,"",0,array("maxlength"=>50))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['NombreMadre']?></td>
+                <td><?php campo("NombreMadre","text","","span12",0,"",0,array("maxlength"=>50))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['CiMadre']?></td>
+                <td><?php campo("CiMadre","text","","span12",0,"",0,array("maxlength"=>20))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['OcupacionMadre']?></td>
+                <td><?php campo("OcupMadre","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['CelularMadre']?></td>
+                <td><?php campo("CelularM","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Email']?></td>
+                <td><?php campo("Email","email","","span12",0,"",0,array("maxlength"=>50))?></td>
+            </tr>
+        </table>
+	</div>
+    <div class="box-header"><h2><?php echo $idioma['DatosFactura']?></h2></div>
+    <div class="box-content">
+        <table class="tabla">
+            <tr>
+            	<td class="der"><?php echo $idioma['NIT']?></td>
+                <td><?php campo("Nit","text","","span12",1,"",0,array("maxlength"=>30))?></td>
+			</tr>
+            <tr>
+            	<td class="der"><?php echo $idioma['NombreFacturar']?></td>
+                <td><?php campo("FacturaA","text","","span12",1,"",0,array("maxlength"=>30))?></td>
+			</tr>
+        </table>
+	</div>
+    <div class="box-header"><h2><?php echo $idioma['Documentos']?></h2></div>
+	<div class="box-content">
+		<table class="tabla">
+			<tr>
+            	<td class="der"><?php echo $idioma['CertificadoNacimiento']?></td>
+                <td><?php campo("CertificadoNac","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            </tr>
+            <tr>
+            	<td class="der"><?php echo $idioma['LibretaEscolar']?></td>
+                <td><?php campo("LibretaEsc","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            </tr>
+            <tr>
+             	<td class="der"><?php echo $idioma['LibretaVacunas']?></td>
+                <td><?php campo("LibretaVac","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            </tr>
+            <tr>
+             	<td class="der"><?php echo $idioma['CIAlumno']?></td>
+                <td><?php campo("CedulaId","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            </tr>
+			<tr>
+            	<td class="der"><?php echo $idioma['CIPadre']?></td>
+                <td><?php campo("CedulaIdP","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            </tr>
+            <tr>
+            	<td class="der"><?php echo $idioma['CIMadre']?></td>
+                <td><?php campo("CedulaIdM","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            </tr>
+            <tr>
+            	<td class="der"><?php echo $idioma['ObservacionesDocumentos']?></td>
+                <td><?php campo("ObservacionesDoc","textarea","","span12",0,"",0,array("cols"=>30,"rows"=>5),0)?></td>
+            </tr>
+        </table>
+	</div> 
+    <div class="box-content">
+    	<input type="submit" value="<?php echo $idioma['RegistrarAlumno']?>" class="btn btn-success"/>
+        <input type="reset" class="btn" value="<?php echo $idioma['Vaciar']?>">
+    </div>
+</div>
+</form>
 <?php include_once($folder."pie.php");?>

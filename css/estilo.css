@@ -178,6 +178,11 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
 .x2{
 	font-size:2em !important;	
 }
+/*Inicio de la Tabla*/
+.tabla{
+	width:100%;
+}
 .tabla  td{
 	padding:5px;
 }
+/*Fin de la tabla*/

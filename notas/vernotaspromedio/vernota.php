@@ -13,12 +13,12 @@ $curso=new curso;
 $casilleros=new casilleros;
 $docentemateriacurso=new docentemateriacurso;
 $materias=new materias;
-$config=new configuracion;
+$config=new config;
 $CodDocente=$_SESSION['CodDocente'];
-$cnf=array_shift($config->mostrarConfig("TotalTrimestre"));
-$totalTrimestre=$cnf["Valor"];
-$cnf=array_shift($config->mostrarConfig("TrimestreActual"));
-$trimestreActual=$cnf["Valor"];
+$cnf=($config->mostrarConfig("TotalPeriodo"));
+$TotalPeriodo=$cnf["Valor"];
+//$cnf=($config->mostrarConfig("TrimestreActual");
+//$trimestreActual=$cnf["Valor"];
 
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
@@ -30,58 +30,57 @@ $(document).ready(function(e) {
 </script>
 
 <?php include_once($folder."cabecera.php");?>
-<div class="container_12" id="cuerpo">
-	<div class="grid_2">
-		<div class="titulo corner-tl corner-tr">Curso</div>    
-        <div class="cuerpo"><?php
-                
-                foreach($docentemateriacurso->mostrarDocenteCurso($CodDocente) as $cur){
-                    $c=$curso->mostrarCurso($cur['CodCurso']);
-                    $c=$c=array_shift($c);
+<div class="span12 box">
+	<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma['Configuracion']?></h2></div>
+    <div class="box-content">
+        <div class="row-fluid">
+            <div class="span4 box">
+                <div class="box-header"><h2><?php echo $idioma["Curso"]?></h2></div>    
+                <div class="box-content">
+                    <select name="Curso" class="span12">
+                    <?php foreach($docentemateriacurso->mostrarDocenteOrdenCurso($CodDocente) as $cur){
+                        $c=$curso->mostrarCurso($cur['CodCurso']);
+                        $c=array_shift($c);
+                    ?><option value="<?php echo $c['CodCurso'];?>"><?php echo $c['Nombre'];?></option>
+                    <?php }?>
+                    </select>
+                </div>
+            </div>
+            <div class="span4 box">
+                <div class="box-header"><h2><?php echo $idioma["Materia"]?></h2></div>    
+                <div class="box-content">
+                <select name="Materia" class="span12">
+                    <?php foreach($docentemateriacurso->mostrarDocenteMateria($CodDocente) as $docMat){
+                        $m=$materias->mostrarMateria($docMat['CodMateria']);
+                        $m=array_shift($m);
                     ?>
-                    <li><input type="radio" name="Curso" value="<?php echo $c['CodCurso'];?>" id="curso<?php echo $c['CodCurso'];?>" class="radio"/><label class="lradio capital" for="curso<?php echo $c['CodCurso'];?>"><?php echo $c['Nombre'];?></label></li>
-                    <?php
-                }
-            ?>
-        </div>
-	</div>
-    <div class="grid_2">
-        <div class="titulo corner-tl corner-tr">Materia</div>    
-        <div class="cuerpo">
-		<?php
-            
-            foreach($docentemateriacurso->mostrarDocenteMateria($CodDocente) as $docMat){
-                $m=$materias->mostrarMateria($docMat['CodMateria']);
-                $m=array_shift($m);
-                ?>
-                <li><input type="radio" name="Materia" value="<?php echo $m['CodMateria'];?>" id="materia<?php echo $m['CodMateria'];?>" class="radio"/><label class="lradio capital" for="materia<?php echo $m['CodMateria'];?>"><?php echo $m['Nombre'];?></label></li>
-                <?php
-            }
-        ?>
-		</div>
-	</div>
-    <div class="grid_2">
-    	<div class="titulo corner-top">Trimestre</div>
-        <div class="cuerpo">
-        	<? for($i=1;$i<=$totalTrimestre;$i++){?>
-        	<li><input type="radio" name="Trimestre" value="<?php echo $i;?>" id="trimestre<?php echo $i;?>" class="radio" <?php echo $trimestreActual==$i?'checked="checked"':'';?>/><label class="lradio capital" for="trimestre<?php echo $i;?>"><?php echo $i;?></label></li>
-			<?php
-			}
-			?>
-        
+                    <option value="<?php echo $m['CodMateria'];?>"><?php echo $m['Nombre'];?></option>
+                    <?php }?>
+                </select>
+                </div>
+            </div>
+            <div class="span4 box">
+                <div class="box-header"><h2><?php echo $idioma["Periodo"]?></h2></div>
+                <div class="box-content">
+                    <select name="Periodo" class="span12">
+                    <?php for($i=1;$i<=$TotalPeriodo;$i++){?>
+                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                    <?php }?>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="clear"></div>
-    <div class="grid_12">
-    	<div class="titulo corner-tl corner-tr">Reporte para impresión</div>
+</div>
+<div class="row-fluid">
+    <div class="span12 box">
+    	<div class="box-header">Reporte para impresión</div>
         El reporte de impresión esta en formato PDF,<span class="resaltar">HAGA CLICK DERECHO SOBRE EL INFORME y SELECCIONE IMPRIMIR, el Reporte esta en tamaño CARTA</span> 
-        <div class="cuerpo" id="alumnos">
+        <div class="box-content" id="alumnos">
         	
         </div>
     </div>
     
-    <div class="clear"></div>
-</div>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -95,5 +94,5 @@ $(document).ready(function(e) {
   })();
 
 </script>
-<?php include_once($folder."footer.php");?>
+<?php include_once($folder."pie.php");?>
 
