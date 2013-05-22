@@ -142,12 +142,9 @@ class alumno extends bd{
 	function loginAlumno($Usuario,$Password){
 		$this->campos=array("count(*) as Can,CodAlumno as CodUsuario");	
 		return $this->getRecords("UsuarioAlumno='$Usuario' and Password='$Password'");
-	}
+	}*/
 	function insertarAlumno($Values){
 		$this->insertRow($Values,1);
 	}
-
-	*/
-	
 }
 ?>

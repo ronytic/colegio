@@ -3,7 +3,7 @@
 <?php include_once("cabecera.php");?>
     <div class="box-small span3">
         <a data-rel="tooltip" title="55% visits growth." class="box-small-link" href="#">
-            <div id="visits-count">465<br><br>alumnos</div>
+            <div id="visits-count">465<br><br>Alumnos</div>
         </a>
         <div class="box-small-title">Asistencia</div>
         <span id="visits-count-n"class="notification green">+ 65%</span>

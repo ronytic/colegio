@@ -157,6 +157,8 @@ $idioma['Eliminar']="Eliminar";
 $idioma['Importante']="Importante";
 $idioma['Trimestre']="Trimestre";
 $idioma['Bimestre']="Bimestre";
+$idioma['RegistrarAlumno']="Registrar Alumno";
+$idioma['Vaciar']="Vaciar";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Alumno
@@ -179,6 +181,19 @@ $idioma['ApellidosMadre']="Apellidos Madre";
 $idioma['NombreMadre']="Nombre Madre";
 $idioma['CiMadre']="C.I. Madre";
 $idioma['OcupacionMadre']="Ocupación Madre";
+$idioma['CertificadoNacimiento']="Certificado de Nacimiento";
+$idioma['LibretaEscolar']="Libreta Escolar";
+$idioma['LibretaVacunas']="Libreta Vacunas";
+$idioma['CiAlumno']="C.I. Alumno";
+$idioma['NombreFacturar']="Nombre a Facturar";
+$idioma['Nit']="Nit";
+$idioma['ObservacionesDocumentos']="Observaciones Documentos";
+$idioma['FechaRetiro']="FechaRetiro";
+$idioma['Retirado']="Retirado";
+$idioma['Traspaso']="Traspaso";
+$idioma['Repitente']="Repitente";
+$idioma['Becado']="Becado";
+$idioma['Procedencia']="Procedencia";
 //Rude
 $idioma['RegistrarRude']="Registrar Rude";
 $idioma['ModificarRude']="Modificar Rude";

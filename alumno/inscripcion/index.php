@@ -9,8 +9,8 @@ $al=new alumno;
 $curso=new curso;
 $conf=new config;
 $ma=$al->estadoTabla();
-$confgKinder=array_shift($conf->mostrarConfig("MontoKinder"));
-$confgGeneral=array_shift($conf->mostrarConfig("MontoGeneral"));
+$confgKinder=$conf->mostrarConfig("MontoKinder");
+$confgGeneral=$conf->mostrarConfig("MontoGeneral");
 $cursovalor=array();
 foreach($curso->listar() as $cur){
 	$cursovalor[$cur['CodCurso']]=$cur['Nombre'];
@@ -27,7 +27,7 @@ var MontoKinder=<?php echo $confgKinder['Valor']?>;
 var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
 </script>
 <?php include_once($folder."cabecera.php");?>
-<form action="../guardarAlumno.php" method="post" onSubmit="if(this.Curso.value==0){alert('Selecciona el Curso');return false;}" class="form-horizontal">
+<form action="../guardaralumno.php" method="post" onSubmit="if(this.Curso.value==0){alert('Selecciona el Curso');return false;}" enctype="multipart/form-data">
 <div class="box span6">
 	<div class="box-header">
 		<h2><i class="icon-user"></i><span class="break"></span><?php echo $idioma['DatosPersonales']?></h2>
@@ -89,6 +89,10 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
                 <td class="der">Celular</td>
                 <td><?php campo("Celular","text","","span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
+            <tr>
+                <td class="der"><?php echo $idioma['Foto']?></td>
+                <td><?php campo("Foto","File","","span12",0,"",0,array("accept"=>"image/*"))?></td>
+            </tr>
         </table>
 	</div>
     <div class="box-header"><h2><?php echo $idioma['DatosAcademicos']?></h2></div>
@@ -129,10 +133,6 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
              <tr>
                 <td class="der"><?php echo $idioma['Rude']?></td>
                 <td><?php campo("Rude","text","","span12",0,"",0,array("maxlength"=>30))?></td>
-             </tr>
-             <tr>
-                <td class="der"><?php echo $idioma['Foto']?></td>
-                <td><?php campo("Foto","File","","span12",0,"",0,array("accept"=>"image/*"))?></td>
              </tr>
              <tr>
                 <td class="der"><?php echo $idioma['Observaciones']?></td>
@@ -200,7 +200,7 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
     <div class="box-content">
         <table class="tabla">
             <tr>
-            	<td class="der"><?php echo $idioma['NIT']?></td>
+            	<td class="der"><?php echo $idioma['Nit']?></td>
                 <td><?php campo("Nit","text","","span12",1,"",0,array("maxlength"=>30))?></td>
 			</tr>
             <tr>
@@ -225,15 +225,15 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
                 <td><?php campo("LibretaVac","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
             <tr>
-             	<td class="der"><?php echo $idioma['CIAlumno']?></td>
+             	<td class="der"><?php echo $idioma['CiAlumno']?></td>
                 <td><?php campo("CedulaId","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
 			<tr>
-            	<td class="der"><?php echo $idioma['CIPadre']?></td>
+            	<td class="der"><?php echo $idioma['CiPadre']?></td>
                 <td><?php campo("CedulaIdP","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
             <tr>
-            	<td class="der"><?php echo $idioma['CIMadre']?></td>
+            	<td class="der"><?php echo $idioma['CiMadre']?></td>
                 <td><?php campo("CedulaIdM","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
             <tr>

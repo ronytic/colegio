@@ -184,5 +184,6 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
 }
 .tabla  td{
 	padding:5px;
+	vertical-align:middle;
 }
 /*Fin de la tabla*/

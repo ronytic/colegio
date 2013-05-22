@@ -172,19 +172,24 @@ function recortarTexto($texto, $limite=100,$terminador="..."){
 function subirArchivo($archivo,$directorio="imagenes/",$tipo=array()){
 	global $folder;
 	$directorio=$folder.$directorio;
-	
+	//Sacar nombre
+	$cortado=explode(".",$archivo['name']);
+	$tipoarchivo=array_pop($cortado);
+	$nombre=implode(".",$cortado);
+	//echo $nombre.".".$tipoarchivo;
+	//Fin de Sacar Nombre
 //	print_r($archivo);
 	if(!isset($archivo)){
 		return false;
 	}else{
 		if(empty($tipo)){
-			copy($archivo['tmp_name'],$directorio.quitarSimbolos($archivo['name']));	
+			copy($archivo['tmp_name'],$directorio.quitarSimbolos($nombre).".".$tipoarchivo);	
 		}else{
 			if(in_array($archivo['type'],$tipo)){
-				copy($archivo['tmp_name'],$directorio.quitarSimbolos($archivo['name']));
+				copy($archivo['tmp_name'],$directorio.quitarSimbolos($nombre).".".$tipoarchivo);
 			}
 		}
-		return quitarSimbolos($archivo['name']);
+		return quitarSimbolos($nombre).".".$tipoarchivo;
 	}
 }
 function quitarSimbolos($string){
@@ -207,5 +212,24 @@ function generarPalabra($longitud=3){
 	$cad .= substr($strC,rand(0,strlen($strC)-1),1).substr($strV,rand(0,strlen($strV)-1),1);
 	}
 	return $cad;	
+}
+function usuarioPadre($cipadre,$cimadre){
+	if($cipadre!="" && !ereg("---*",$cipadre)){
+		$usuarioP=$cipadre;
+		$usuarioP=trim($usuarioP);
+	}else{
+		$usuarioP=$cimadre;
+		$usuarioP=trim($usuarioP);
+	}
+	$usuario=mb_strtolower($usuarioP,"UTF-8");
+	$dato='';
+	for($j=0;$j<=strlen($usuario);$j++){
+		if(ereg("[0-9]",$usuario[$j]))
+		$dato.=$usuario[$j];
+	}	
+	if(strlen($dato)==0){
+		$dato=usuarioPadre($dato,$cimadre);	
+	}
+	return $dato;
 }
 ?>
