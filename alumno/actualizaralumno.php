@@ -1,7 +1,6 @@
 <?php
 include_once("../login/check.php");
 include_once("../class/alumno.php");
-include_once("../class/tmp_alumno.php");
 include_once("../class/cuota.php");
 include_once("../class/documento.php");
 include_once("../class/config.php");
@@ -10,10 +9,11 @@ if(!empty($_POST)){
 	$al=new alumno;
 	$cuota=new cuota;
 	$doc=new documento;
-	$tmpalumno=new tmp_alumno;
 	$conf=new config;
-	if(isset($_POST['CodAlumno'])){$CodAl=$_POST['CodAlumno'];}
-	$Matricula=$_POST['Matricula'];
+	/**/
+	
+	
+	$CodAl=$_POST['Matricula'];
 	$CodCurso=$_POST['Curso'];
 	$Paterno=$_POST['Paterno'];
 	$Materno=$_POST['Materno'];
@@ -22,7 +22,7 @@ if(!empty($_POST)){
 	$LugarNac=$_POST['LugarNac'];
 	$FechaNac=date("Y-m-d",strtotime($_POST['FechaNac']));
 	$Ci=$_POST['Ci'];
-//	$CiExt=$_POST['CiExt'];
+	$CiExt=$_POST['CiExt'];
 	$Zona=$_POST['Zona'];
 	$Calle=$_POST['Calle'];
 	$Numero=$_POST['Numero'];
@@ -39,6 +39,7 @@ if(!empty($_POST)){
 	$FechaRetiro=$_POST['FechaRetiro'];
 	$Rude=$_POST['Rude'];
 	$Observaciones=$_POST['Observaciones'];
+	//=$_POST[''];
 	$ApellidosPadre=$_POST['ApellidosPadre'];
 	$NombrePadre=$_POST['NombrePadre'];
 	$CiPadre=$_POST['CiPadre'];
@@ -63,11 +64,9 @@ if(!empty($_POST)){
 	$CedulaIdP=$_POST['CedulaIdP'];
 	$CedulaIdM=$_POST['CedulaIdM'];
 	$ObservacionesDoc=$_POST['ObservacionesDoc'];
-	$autoIncrement=$al->estadoTabla();
-	$CodAlumno=$autoIncrement['Auto_increment'];
 	$FechaInsc=date("Y-m-d");
-	$HoraIns=date("H:i:s");
-	//Obtenemos el Codigo de Barra
+	$HoraIns=date(" H:i:s");
+	$CodAlumno=$CodAl;
 	$cnf=($conf->mostrarConfig("CodBarra"));
 	$CodBarra=trim($cnf['Valor']).$CodAlumno;
 	$CodUsuarioAlumno=trim(minuscula(quitarSimbolos($Paterno))).$CodAlumno;
@@ -76,7 +75,6 @@ if(!empty($_POST)){
 	$PasswordP=rand(1000,9999);
 	
 	$UsuarioPadre=usuarioPadre($CiPadre,$CiMadre);
-	
 	if($CodCurso==1){
 		$cnf=$conf->mostrarConfig("MontoKinder");	
 		$MontoGeneral=$cnf['Valor'];
@@ -85,9 +83,7 @@ if(!empty($_POST)){
 		$MontoGeneral=$cnf['Valor'];	
 	}
 	
-	$valuesDoc=array('CodDocumento'=>'Null',
-					'CodAlumno'=>$CodAlumno,
-					'CertificadoNac'=>$CertificadoNac,
+	$valuesDoc=array('CertificadoNac'=>$CertificadoNac,
 					'LibretaEsc'=>$LibretaEsc,
 					'LibretaVac'=>$LibretaVac,
 					'CedulaId'=>$CedulaId,
@@ -101,13 +97,13 @@ if(!empty($_POST)){
 				'Materno'=>"LOWER('$Materno')",
 				'Nombres'=>"LOWER('$Nombres')",
 				'Sexo'=>$Sexo,
-				'LugarNac'=>"LOWER('$LugarNac')",
+				'LugarNac'=>"'$LugarNac'",
 				'FechaNac'=>"'$FechaNac'",
 				'Ci'=>"'$Ci'",
-//				'CiExt'=>"'$CiExt'",
+				'CiExt'=>"'$CiExt'",
 				'Zona'=>"LOWER('$Zona')",
 				'Calle'=>"LOWER('$Calle')",
-				'Numero'=>"LOWER('$Numero')",
+				'Numero'=>"'$Numero'",
 				'TelefonoCasa'=>"'$TelefonoCasa'",
 				'Celular'=>"'$Celular'",
 				'Procedencia'=>"LOWER('$Procedencia')",
@@ -144,41 +140,27 @@ if(!empty($_POST)){
 				'UsuarioPadre'=>"'$UsuarioPadre'"
 			);
 	
+
 	$fechaCuota=date("Y-m-d H:i:s");
 	for($i=1;$i<=10;$i++){
 		if($i==1){
-			$valuesCuota=array('CodCuota'=>'NULL',
-							'CodAlumno'=>$CodAlumno,
-							'Numero'=>$i,
+			$valuesCuota=array(
 							'MontoPagar'=>$MontoGeneral,
-							'Factura'=>"''",
-							'Cancelado'=>0,
-							'Fecha'=>"'$fechaCuota'",
-							'Observaciones'=>"''"
 							);
 		}else{
-			$valuesCuota=array('CodCuota'=>'NULL',
-							'CodAlumno'=>$CodAlumno,
-							'Numero'=>$i,
+			$valuesCuota=array(
 							'MontoPagar'=>$MontoPagar,
-							'Factura'=>"''",
-							'Cancelado'=>0,
-							'Fecha'=>"'$fechaCuota'",
-							'Observaciones'=>"''"
 							);	
 		}
 		//echo "<br>";
-		//print_r($valuesCuota);
-		$cuota->guardar($valuesCuota);
+//		print_r($valuesCuota);echo "<br>";
+		$cuota->actualizarCuota($valuesCuota," CodAlumno=$CodAlumno and Numero=$i");
 	}
 	if($NombreFoto=subirArchivo($_FILES['Foto'],"imagenes/alumnos/")){
 		$valuesAl=array_merge(array("Foto"=>"'$NombreFoto'"),$valuesAl);	
 	}
-	//print_r($valuesAl);
-	$al->insertarAlumno($valuesAl);
-	$doc->guardarDocumento($valuesDoc);
-	
-	if(isset($CodAl)){$tmpalumno->actualizarVisor($CodAl);}
-	header("Location:../alumno/boletadatos/?CodAlumno=".$CodAlumno);
+	$al->actualizarDatosAlumno($valuesAl,$CodAlumno);
+	$doc->actualizarDocumento($valuesDoc,$CodAlumno);
+	header("Location:../alumno/datosalumno/?CodAlumno=541");
 }
 ?>

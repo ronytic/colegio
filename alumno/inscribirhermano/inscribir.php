@@ -1,16 +1,25 @@
 <?php
 include_once("../../login/check.php");
-$titulo="NInscripcionAlumnoNuevo";
+if(isset($_GET)){
+$CodAlumno=$_GET['CodAlumno'];
+$titulo="NInscribirHermano";
 $folder="../../";
 include_once("../../class/alumno.php");
 include_once("../../class/curso.php");
 include_once("../../class/config.php");
-$al=new alumno;
+include_once("../../class/documento.php");
+$alumno=new alumno;
 $curso=new curso;
 $conf=new config;
-$ma=$al->estadoTabla();
+$documento=new documento;
+$ma=$alumno->estadoTabla();
 $confgKinder=$conf->mostrarConfig("MontoKinder");
 $confgGeneral=$conf->mostrarConfig("MontoGeneral");
+$doc=$documento->mostrarDocumento($CodAlumno);
+$doc=array_shift($doc);
+$al=$alumno->mostrarTodoDatos($CodAlumno);
+$al=array_shift($al);
+
 $cursovalor=array();
 foreach($curso->listar() as $cur){
 	$cursovalor[$cur['CodCurso']]=$cur['Nombre'];
@@ -36,7 +45,7 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
         <table border="0" class="tabla table-hover">
             <tr>
                 <td class="der"><?php echo $idioma['Matricula']?></td>
-                <td><?php campo("Matricula","text",$ma['Auto_increment'],"span12",1,"asd",0,array("readonly"=>"readonly"))?></td>
+                <td><?php campo("Matricula","text",$ma['Auto_increment'],"span12",1,"",0,array("readonly"=>"readonly"))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Curso']?></td>
@@ -44,11 +53,11 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Paterno']?></td>
-                <td><?php campo("Paterno","text","","span12",1,"",0,array("maxlength"=>25))?></td>
+                <td><?php campo("Paterno","text",capitalizar($al["Paterno"]),"span12",1,"",0,array("maxlength"=>25))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Materno']?></td>
-                <td><?php campo("Materno","text","","span12",1,"",0,array("maxlength"=>25))?></td>
+                <td><?php campo("Materno","text",capitalizar($al["Materno"]),"span12",1,"",0,array("maxlength"=>25))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Nombres']?></td>
@@ -71,18 +80,18 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Zona']?></td>
-                <td><?php campo("Zona","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("Zona","text",capitalizar($al["Zona"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Calle']?></td>
-                <td><?php campo("Calle","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("Calle","text",capitalizar($al["Calle"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Numero']?></td>
-                <td><?php campo("Numero","text","","span12",0,"",0,array("maxlength"=>30))?></td></tr>
+                <td><?php campo("Numero","text",capitalizar($al["Numero"]),"span12",0,"",0,array("maxlength"=>30))?></td></tr>
             <tr>
                 <td class="der"><?php echo $idioma['TelefonoCasa']?></td>
-                <td><?php campo("TelefonoCasa","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("TelefonoCasa","text",capitalizar($al["TelefonoCasa"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Celular']?></td>
@@ -148,46 +157,46 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
         <table class="tabla table-hover">
             <tr>
                 <td class="der"><?php echo $idioma['ApellidosPadre']?></td>
-                <td><?php campo("ApellidosPadre","text","","span12",0,"",0,array("maxlength"=>50))?></td>
+                <td><?php campo("ApellidosPadre","text",capitalizar($al["ApellidosPadre"]),"span12",0,"",0,array("maxlength"=>50))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['NombrePadre']?></td>
-                <td><?php campo("NombrePadre","text","","span12",0,"",0,array("maxlength"=>50))?></td>
+                <td><?php campo("NombrePadre","text",capitalizar($al["NombrePadre"]),"span12",0,"",0,array("maxlength"=>50))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['CiPadre']?></td>
-                <td><?php campo("CiPadre","text","","span12",0,"",0,array("maxlength"=>20))?></td>
+                <td><?php campo("CiPadre","text",capitalizar($al["CiPadre"]),"span12",0,"",0,array("maxlength"=>20))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['OcupacionPadre']?></td>
-                <td><?php campo("OcupPadre","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("OcupPadre","text",capitalizar($al["OcupPadre"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['CelularPadre']?></td>
-                <td><?php campo("CelularP","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("CelularP","text",capitalizar($al["CelularP"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
             <tr>
             	<td colspan="2"><hr /></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['ApellidosMadre']?></td>
-                <td><?php campo("ApellidosMadre","text","","span12",0,"",0,array("maxlength"=>50))?></td>
+                <td><?php campo("ApellidosMadre","text",capitalizar($al["ApellidosMadre"]),"span12",0,"",0,array("maxlength"=>50))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['NombreMadre']?></td>
-                <td><?php campo("NombreMadre","text","","span12",0,"",0,array("maxlength"=>50))?></td>
+                <td><?php campo("NombreMadre","text",capitalizar($al["NombreMadre"]),"span12",0,"",0,array("maxlength"=>50))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['CiMadre']?></td>
-                <td><?php campo("CiMadre","text","","span12",0,"",0,array("maxlength"=>20))?></td>
+                <td><?php campo("CiMadre","text",capitalizar($al["CiMadre"]),"span12",0,"",0,array("maxlength"=>20))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['OcupacionMadre']?></td>
-                <td><?php campo("OcupMadre","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("OcupMadre","text",capitalizar($al["OcupMadre"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['CelularMadre']?></td>
-                <td><?php campo("CelularM","text","","span12",0,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("CelularM","text",capitalizar($al["CelularM"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Email']?></td>
@@ -200,11 +209,11 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
         <table class="tabla">
             <tr>
             	<td class="der"><?php echo $idioma['Nit']?></td>
-                <td><?php campo("Nit","text","","span12",1,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("Nit","text",capitalizar($al["Nit"]),"span12",1,"",0,array("maxlength"=>30))?></td>
 			</tr>
             <tr>
             	<td class="der"><?php echo $idioma['NombreFacturar']?></td>
-                <td><?php campo("FacturaA","text","","span12",1,"",0,array("maxlength"=>30))?></td>
+                <td><?php campo("FacturaA","text",capitalizar($al["FacturaA"]),"span12",1,"",0,array("maxlength"=>30))?></td>
 			</tr>
         </table>
 	</div>
@@ -229,11 +238,11 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
 			<tr>
             	<td class="der"><?php echo $idioma['CiPadre']?></td>
-                <td><?php campo("CedulaIdP","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+                <td><?php campo("CedulaIdP","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),$doc['CedulaIdP'])?></td>
             </tr>
             <tr>
             	<td class="der"><?php echo $idioma['CiMadre']?></td>
-                <td><?php campo("CedulaIdM","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+                <td><?php campo("CedulaIdM","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),$doc['CedulaIdM'])?></td>
             </tr>
             <tr>
             	<td class="der"><?php echo $idioma['ObservacionesDocumentos']?></td>
@@ -248,3 +257,4 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
 </div>
 </form>
 <?php include_once($folder."pie.php");?>
+<?php }?>

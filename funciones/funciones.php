@@ -136,7 +136,7 @@ function minuscula($texto){
 	return mb_strtolower($texto,"utf8");
 }
 function fecha2Str($fecha,$t=1){
-	if(!empty($fecha)){
+	if(!empty($fecha) && $fecha!="0000-00-00"){
 		if($t==1){
 			return date("d-m-Y",strtotime($fecha));	
 		}else{
@@ -179,7 +179,7 @@ function subirArchivo($archivo,$directorio="imagenes/",$tipo=array()){
 	//echo $nombre.".".$tipoarchivo;
 	//Fin de Sacar Nombre
 //	print_r($archivo);
-	if(!isset($archivo)){
+	if(!isset($archivo) || $archivo['size']<=0){
 		return false;
 	}else{
 		if(empty($tipo)){

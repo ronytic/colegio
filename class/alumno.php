@@ -32,7 +32,7 @@ class alumno extends bd{
 	function mostrarTodoDatos($CodAlumno,$Retirado=0){
 		$this->campos=array('*');
 		if($Retirado==2){
-			$Retiro="Retirado=0 and Retirado=1";
+			$Retiro="(Retirado=0 OR Retirado=1)";
 		}else{
 			$Retiro="Retirado=$Retirado";	
 		}
@@ -47,7 +47,7 @@ class alumno extends bd{
 		$this->tabla="alumno a,rude r";
 		$this->campos=array('*');
 		if($Retirado==2){
-			$Retiro="Retirado=0 and Retirado=1";
+			$Retiro="(Retirado=0 OR Retirado=1)";
 		}else{
 			$Retiro="Retirado=$Retirado";	
 		}
@@ -56,7 +56,7 @@ class alumno extends bd{
 	function mostrarDatosPersonales($CodAlumno,$Retirado=0,$tipo=false){
 		$this->tabla="alumno a, curso c";
 		if($Retirado==2){
-			$Retiro="Retirado=0 and Retirado=1";
+			$Retiro="(Retirado=0 OR Retirado=1)";
 		}else{
 			$Retiro="Retirado=$Retirado";	
 		}
@@ -73,7 +73,7 @@ class alumno extends bd{
 	function mostrarDatosAlumnosWhere($Where,$Retirado=0){
 		$this->campos=array('*');
 		if($Retirado==2){
-			$Retiro="Retirado=0 and Retirado=1";
+			$Retiro="(Retirado=0 OR Retirado=1)";
 		}else{
 			$Retiro="Retirado=$Retirado";	
 		}

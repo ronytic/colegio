@@ -8,14 +8,14 @@ function inicio(){
 	$("#selectcurso").change(function(e) {
 		var valor=$(this).val();
         CodCurso=valor;
-		$.post(folder+"listar/alumnos.php",{"CodCurso":CodCurso},alumnos);
+		$.post(folder+"listar/alumnostmp.php",{"CodCurso":CodCurso},alumnos);
     });
 	var valor=$("#selectcurso").val();
 	CodCurso=valor;
 	if(CodAlumno!=""){
-		$.post(folder+"listar/alumnos.php",{"CodCurso":CodCurso,"CodAlumno":CodAlumno},alumnos);		
+		$.post(folder+"listar/alumnostmp.php",{"CodCurso":CodCurso,"CodAlumno":CodAlumno},alumnos);		
 	}else{
-		$.post(folder+"listar/alumnos.php",{"CodCurso":CodCurso},alumnos);	
+		$.post(folder+"listar/alumnostmp.php",{"CodCurso":CodCurso},alumnos);	
 	}
 	
 	$("#selectalumno").on("change",function(){

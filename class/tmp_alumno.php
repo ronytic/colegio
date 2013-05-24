@@ -6,9 +6,32 @@ class tmp_alumno extends bd{
 	function estadoTabla(){
 		return $this->statusTable();
 	}
-	function mostrarAlumnos($CodCurso){
+	function mostrarDatosAlumnos($CodCurso){
 		$this->campos=array('CodAlumno,LOWER(Paterno) as Paterno,LOWER(Materno) as Materno,LOWER(Nombres) as Nombres');
 		return $this->getRecords(" CodCurso=$CodCurso and Activo=1","Paterno,Materno,Nombres");
+	}
+	function mostrarTodoDatos($CodAlumno,$Retirado=0){
+		$this->campos=array('*');
+		if($Retirado==2){
+			$Retiro="(Retirado=0 OR Retirado=1)";
+		}else{
+			$Retiro="Retirado=$Retirado";	
+		}
+		return $this->getRecords(" CodAlumno=$CodAlumno and $Retiro");
+	}
+	function mostrarDatosPersonales($CodAlumno,$Retirado=0,$tipo=false){
+		$this->tabla="tmp_alumno a";
+		if($Retirado==2){
+			$Retiro="(a.Retirado=0 OR a.Retirado=1)";
+		}else{
+			$Retiro="a.Retirado=$Retirado";	
+		}
+		if(!$tipo){
+			$this->campos=array("a.CodAlumno, LOWER(a.Paterno) as Paterno, LOWER(a.Materno) as Materno, LOWER(a.Nombres) as Nombres");
+		}else{
+			$this->campos=array("a.CodAlumno, UPPER(a.Paterno) as Paterno, UPPER(a.Materno) as Materno, UPPER(a.Nombres) as Nombres");
+		}
+		return $this->getRecords(" a.CodAlumno=$CodAlumno and $Retiro");
 	}
 	function mostrarDatos($CodAlumno){
 		$this->campos=array('*');
@@ -16,7 +39,7 @@ class tmp_alumno extends bd{
 	}	
 	function actualizarVisor($CodAlumno){
 		$this->campos=array("Activo");
-		$this->updateRecord("CodAlumno=$CodAlumno",array("0"));
+		$this->updateRow(array("Activo"=>0),"CodAlumno=$CodAlumno");
 	}
 }
 ?>

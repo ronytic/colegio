@@ -52,7 +52,7 @@ $(document).ready(function(e) {
 		$("#PorcentajeBeca").val(PorcentajeBeca.toFixed(2));
     });
 	MontoBeca=$("#MontoBeca").val();
-	$("#PorcentajeBeca").val(MontoBeca*100/MontoGeneral);	
+	$("#PorcentajeBeca").val((MontoBeca*100/MontoGeneral).toFixed(2));	
 	$("#PorcentajeBeca").keyup(function(e) {
 		var valor=$(this).val();
 		var MontoBeca=0;

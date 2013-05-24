@@ -1,18 +1,33 @@
 <?php
 include_once("../login/check.php");
-include_once("../class/alumno.php");
-include_once("../class/tmp_alumno.php");
-include_once("../class/cuota.php");
-include_once("../class/documento.php");
-include_once("../class/config.php");
 if(!empty($_POST)){
+	include_once("../class/alumno.php");
+	include_once("../class/tmp_alumno.php");
+	include_once("../class/cuota.php");
+	include_once("../class/documento.php");
+	include_once("../class/config.php");
+	include_once("../class/rude.php");
+	include_once("../class/tmp_rude.php");
 	$folder="../";
-	$al=new alumno;
+	$alumno=new alumno;
 	$cuota=new cuota;
-	$doc=new documento;
+	$documento=new documento;
 	$tmpalumno=new tmp_alumno;
 	$conf=new config;
-	if(isset($_POST['CodAlumno'])){$CodAl=$_POST['CodAlumno'];}
+	$classrude=new rude;
+	$tmp_rude=new tmp_rude;
+	
+	$CodAlu=$_POST['CodAlu'];
+
+	$tmprude=$tmp_rude->mostrarDatos($CodAlu);
+	$tmprude=array_shift($tmprude);
+//	print_r($tmprude);	
+//	exit();
+	/**/
+	//$cnf=$conf->mostrarConfig();
+	
+	
+	$CodAlu=$_POST['CodAlu'];
 	$Matricula=$_POST['Matricula'];
 	$CodCurso=$_POST['Curso'];
 	$Paterno=$_POST['Paterno'];
@@ -22,7 +37,7 @@ if(!empty($_POST)){
 	$LugarNac=$_POST['LugarNac'];
 	$FechaNac=date("Y-m-d",strtotime($_POST['FechaNac']));
 	$Ci=$_POST['Ci'];
-//	$CiExt=$_POST['CiExt'];
+	$CiExt=$_POST['CiExt'];
 	$Zona=$_POST['Zona'];
 	$Calle=$_POST['Calle'];
 	$Numero=$_POST['Numero'];
@@ -39,6 +54,7 @@ if(!empty($_POST)){
 	$FechaRetiro=$_POST['FechaRetiro'];
 	$Rude=$_POST['Rude'];
 	$Observaciones=$_POST['Observaciones'];
+	//=$_POST[''];
 	$ApellidosPadre=$_POST['ApellidosPadre'];
 	$NombrePadre=$_POST['NombrePadre'];
 	$CiPadre=$_POST['CiPadre'];
@@ -63,18 +79,18 @@ if(!empty($_POST)){
 	$CedulaIdP=$_POST['CedulaIdP'];
 	$CedulaIdM=$_POST['CedulaIdM'];
 	$ObservacionesDoc=$_POST['ObservacionesDoc'];
-	$autoIncrement=$al->estadoTabla();
+	$autoIncrement=$alumno->estadoTabla();
 	$CodAlumno=$autoIncrement['Auto_increment'];
 	$FechaInsc=date("Y-m-d");
-	$HoraIns=date("H:i:s");
+	$HoraIns=date(" H:i:s");
 	//Obtenemos el Codigo de Barra
 	$cnf=($conf->mostrarConfig("CodBarra"));
 	$CodBarra=trim($cnf['Valor']).$CodAlumno;
-	$CodUsuarioAlumno=trim(minuscula(quitarSimbolos($Paterno))).$CodAlumno;
-
+	$CodUsuarioAlumno=trim(mb_strtolower(quitarSimbolos($Paterno),"UTF-8")).$CodAlumno;
+	
+	
 	$Password=rand(1000,9999);
 	$PasswordP=rand(1000,9999);
-	
 	$UsuarioPadre=usuarioPadre($CiPadre,$CiMadre);
 	
 	if($CodCurso==1){
@@ -104,7 +120,7 @@ if(!empty($_POST)){
 				'LugarNac'=>"LOWER('$LugarNac')",
 				'FechaNac'=>"'$FechaNac'",
 				'Ci'=>"'$Ci'",
-//				'CiExt'=>"'$CiExt'",
+				'CiExt'=>"'$CiExt'",
 				'Zona'=>"LOWER('$Zona')",
 				'Calle'=>"LOWER('$Calle')",
 				'Numero'=>"LOWER('$Numero')",
@@ -174,11 +190,55 @@ if(!empty($_POST)){
 	if($NombreFoto=subirArchivo($_FILES['Foto'],"imagenes/alumnos/")){
 		$valuesAl=array_merge(array("Foto"=>"'$NombreFoto'"),$valuesAl);	
 	}
-	//print_r($valuesAl);
-	$al->insertarAlumno($valuesAl);
-	$doc->guardarDocumento($valuesDoc);
+	$alumno->insertarAlumno($valuesAl);
+	$documento->guardarDocumento($valuesDoc);
 	
-	if(isset($CodAl)){$tmpalumno->actualizarVisor($CodAl);}
+	$valuesRude=array(
+		'CodAlumno'=>$CodAlumno,
+		'PaisN'=>"'".$tmprude['PaisN']."'",
+		'ProvinciaN'=>"'".$tmprude['ProvinciaN']."'",
+		'LocalidadN'=>"'".$tmprude['LocalidadN']."'",
+		'Documento'=>$tmprude['Documento'],
+		'CertOfi'=>"'".$tmprude['CertOfi']."'",
+		'CertLibro'=>"'".$tmprude['CertLibro']."'",
+		'CertPartida'=>"'".$tmprude['CertPartida']."'",
+		'CertFolio'=>"'".$tmprude['CertFolio']."'",
+		'Paralelo'=>"'".$tmprude['Paralelo']."'",
+		'Turno'=>"'".$tmprude['Turno']."'",
+		'CodigoSie'=>"''",
+		'NombreUnidad'=>"''",
+		'ProvinciaE'=>"'".$tmprude['ProvinciaE']."'",
+		'MunicipioE'=>"'".$tmprude['MunicipioE']."'",
+		'ComunidadE'=>"'".$tmprude['ComunidadE']."'",
+		'LenguaMater'=>"'".$tmprude['LenguaMater']."'",
+		'CastellanoI'=>$tmprude['CastellanoI'],
+		'AymaraI'=>$tmprude['AymaraI'],
+		'InglesI'=>$tmprude['InglesI'],
+		'PerteneceA'=>"'".$tmprude['PerteneceA']."'",
+		'CentroSalud'=>$tmprude['CentroSalud'],
+		'VecesCentro'=>"'".$tmprude['VecesCentro']."'",
+		'Discapacidad'=>"'".$tmprude['Discapacidad']."'",
+		'AguaDomicilio'=>$tmprude['AguaDomicilio'],
+		'Electricidad'=>$tmprude['Electricidad'],
+		'Alcantarillado'=>$tmprude['Alcantarillado'],
+		'Trabaja'=>"'".$tmprude['Trabaja']."'",
+		'InternetCasa'=>$tmprude['InternetCasa'],
+		'Transporte'=>"'".$tmprude['Transporte']."'",
+		'TiempoLlegada'=>"'".$tmprude['TiempoLlegada']."'",
+		'InstruccionP'=>"'".$tmprude['InstruccionP']."'",
+		'IdiomaP'=>"'".$tmprude['IdiomaP']."'",
+		'ParentescoP'=>"'".$tmprude['ParentescoP']."'",
+		'InstruccionM'=>"'".$tmprude['InstruccionM']."'",
+		'IdiomaM'=>"'".$tmprude['IdiomaM']."'",
+		'Lugar'=>"'".$tmprude['Lugar']."'",
+		'FechaReg'=>"'".date("Y-m-d H:i:s")."'",
+	);
+	
+	$classrude->insertarAlumno($valuesRude);
+	
+	
+	
+	$tmpalumno->actualizarVisor($CodAlu);
 	header("Location:../alumno/boletadatos/?CodAlumno=".$CodAlumno);
 }
 ?>

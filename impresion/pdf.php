@@ -68,6 +68,10 @@ include_once("fpdf/fpdf.php");
 			$this->Fuente("",$tam);
 			$this->Cell($txtAncho,5,utf8_decode($txt),$borde,0,$align,$relleno);	
 		}
+		function CuadroCuerpoMulti($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tam=9){
+			$this->Fuente("",$tam);
+			$this->MultiCell($txtAncho,5,utf8_decode($txt),$borde,$align,$relleno);	
+		}
 		function CuadroCuerpoPersonalizado($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tipo=""){
 			$this->Fuente($tipo);
 			$this->Cell($txtAncho,5,utf8_decode($txt),$borde,0,$align,$relleno);	
