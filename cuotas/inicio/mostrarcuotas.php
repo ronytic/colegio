@@ -17,6 +17,7 @@ if(count($cuotas)){
 	}
 	$MontoTotal=number_format($MontoTotal,2)
 	?>
+    <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
 	<table class="table table-bordered table-striped table-hover">
     <thead>
     	<tr><th colspan="5" class="der"><?php echo $idioma['Total']?> <?php echo $idioma['Dia']?></th><th colspan="2" class="der"><?php echo $MontoTotal?></th></tr>

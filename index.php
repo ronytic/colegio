@@ -33,7 +33,7 @@
             <?php campo("FechaCuotas","text",date("d-m-Y"),"input-medium")?>
             <a href="cuotas/pagar/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RgistrarNuevosPagos']?></a>
             <hr>
-            <div id="listadocuotas" style="height:400px;overflow-y:auto"></div>
+            <div id="listadocuotas" style="max-height:400px;overflow-y:auto"></div>
         </div>
     </div>
     <div class="span6 box">
