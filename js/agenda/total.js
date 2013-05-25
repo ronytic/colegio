@@ -1,6 +1,7 @@
 var file="#";
 $(document).on("ready",inicia);
 function inicia(){
+	$('#respuesta').html('<img src="'+folder+'imagenes/cargador/cargador.gif"/>');
 	$('#selectcurso').change(function(){
 		$('#respuesta').html('<img src="'+folder+'imagenes/cargador/cargador.gif"/>');
 		$.post("estadistica.php",{'CodCurso':CodCurso},respuesta);
