@@ -231,7 +231,10 @@ class bd{
 	}
 	function mostrarTodoRegistro($where='',$activo=1)
 	{
-		$this->campos=array('*');
+			
+		if(empty($this->campos)){
+			$this->campos=array('*');
+		}
 		if($activo==""):
 			$condicion="";	
 		elseif($activo==1):
@@ -249,8 +252,11 @@ class bd{
 		endif;
 		return $this->getRecords($where.$condicion);
 	}
-	function actualizarRegistro($values,$Codigo){
-		$this->updateRow($values,"Cod".ucfirst(mb_strtolower($this->tabla,"utf8"))."=$Codigo" );	
+	function actualizarRegistro($values,$Where){
+		return $this->updateRow($values,$Where);	
+	}
+	function eliminarRegistro($Where){
+		return $this->updateRow(array("Activo"=>"0"),$Where);	
 	}
 }
 

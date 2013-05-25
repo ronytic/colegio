@@ -84,9 +84,13 @@ function inicio(){
 	});
 	/*Fin de Registro de Impresión*/
 
+	/*Exportar Excel*/
 	$(document).on('click','#exportarexcel',function(e){
 		e.preventDefault();
-		var html='<table border="1">'+$(this).next("table").html()+'</table>';
+		var tabla=$(this).next("table").clone();
+		tabla.find("thead:eq(0)").remove();
+		//alert(tabla.find("thead").html().remove());
+		var html='<table border="1">'+tabla.html()+'</table>';
 		//alert(datos);
 while (html.indexOf('á') != -1) html = html.replace('á', '&aacute;');
 while (html.indexOf('é') != -1) html = html.replace('é', '&eacute;');
@@ -120,6 +124,7 @@ while (html.indexOf('º') != -1) html = html.replace('º', '&ordm;');
         //just in case, prevent default behaviour
         e.preventDefault();
 	});
+	/*Fin de Exportar Excel*/
 	/*
 	$(window).scroll(function(e) {
         //alert($(this).scrollTop());

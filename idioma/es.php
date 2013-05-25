@@ -52,6 +52,8 @@ $idioma['NNotasPromedioDocentes']="Notas Promedio de Docentes";
 $idioma['NModificarDatosAlumno']="Modificar datos del Alumno";
 $idioma['NDatosAlumnos']="Datos de Alumnos";
 $idioma['NAlumnosGestionAnterior']="Alumnos Gestión Anterior";
+$idioma['NAgendaActividades']="Agenda de Actividades";
+$idioma['NExportarBaseDatos']="Exportar Base Datos";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -155,6 +157,7 @@ $idioma['Gestion']="Gestión";
 $idioma['Fecha']="Fecha";
 $idioma['Fechas']="Fechas";
 $idioma['Hora']="Hora";
+$idioma['Horas']="Horas";
 $idioma['CantidadTotal']="Cantidad Total";
 $idioma['Cursos']="Cursos";
 $idioma['Eliminar']="Eliminar";
@@ -163,8 +166,31 @@ $idioma['Trimestre']="Trimestre";
 $idioma['Bimestre']="Bimestre";
 $idioma['RegistrarAlumno']="Registrar Alumno";
 $idioma['Vaciar']="Vaciar";
+$idioma['Cancelar']="Cancelar";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
+//Agenda de Actividades
+$idioma['CalendarioActividades']="Calendario de Actividades";
+$idioma['Eventos']="Eventos";
+$idioma['Actividad']="Actividad";
+$idioma['FechaInicio']="Fecha Inicio";
+$idioma['FechaActividad']="Fecha Actividad";
+$idioma['HoraInicio']="Hora Inicio";
+$idioma['HoraFin']="Hora Fin";
+$idioma['Prioridad']="Prioridad";
+$idioma['Estado']="Estado";
+$idioma['Bajo']="Bajo";
+$idioma['Normal']="Normal";
+$idioma['Pendiente']="Pendiente";
+$idioma['Completado']="Completado";
+$idioma['RegistrarNuevaActividad']="Registrar Nueva Actividad";
+$idioma['RegistrarActividad']="Registrar Actividad";
+$idioma['GuardarActividad']="Guardar Actividad";
+$idioma['ActualizarActividad']="Actualizar Actividad";
+$idioma['ListaActividades']="Lista de Actividades";
+$idioma['NoHayActividadesParaLaFechaSeleccionada']="No Hay Actividades para la Fecha seleccionada";
+$idioma['AgendaActividades']="Agenda de Actividades";
+$idioma['Hoy']="Hoy";
 //Alumno
 $idioma['SeparacionDatos']="La separación de varios datos se lo realiza con el \"/\" (shif+7)(Símbolo Dividido)";
 $idioma['NombresAdicionales']="Nombres Adicionales";
@@ -215,6 +241,7 @@ $idioma['Calle']="Calle";
 $idioma['Numero']="Número";
 $idioma['ActualizarDatosAlumno']="Actualizar Datos de Alumno";
 $idioma['ReInscribirAlumno']="ReInscribir Alumno";
+$idioma['NoExisteAlumnos']="No Existe Alumnos";
 //Rude
 $idioma['RegistrarRude']="Registrar Rude";
 $idioma['ModificarRude']="Modificar Rude";
@@ -317,7 +344,7 @@ $idioma['AñoT']="Año Tit";
 //Notas
 $idioma['Boletin']="Boletín";
 $idioma['RegistrarImpresion']="Registrar Impresión";
-$idioma['MostrarImpresion']="Mostrar Impresión";
+$idioma['MostrarImpresion']="Mostrar Registro de Impresión";
 $idioma['EstadisticaAgenda']="Estadistica de la Agenda";
 $idioma['Faltas']="Faltas";
 $idioma['Atrasos']="Atrasos";
@@ -365,6 +392,25 @@ $idioma['Periodo']="Periodo";
 $idioma['IngresarCodigoBarra']="Ingrese el código de Barra";
 $idioma['CodigoBarra']="Código de Barra";
 $idioma['NoSeEncontroCodigo']="No se encontro el código de barra";
+//Seguridad
+$idioma['Estructura']="Estructura";
+$idioma['TablasActualizar']="Tablas a Actualizar";
+$idioma['Generar']="Generar";
+$idioma['SqlExportacion']="Sql de Exportación";
+$idioma['TablasAInternet']="Tablas a Internet";
+$idioma['GenerarArchivo']="Generar Archivo";
+$idioma['Internet']="Internet";
+$idioma['Cargando']="Cargando";
+$idioma['SubirDatosInternet']="Subir Datos a Internet";
+$idioma['TengaPaciencia']="tenga paciencia";
+$idioma['DatosSubidoCorrectamente']="SUS DATOS SE SUBIERON CORRECTAMENTE";
+$idioma['DatosSubidoIncorrectamente']="ERROR, INTENTELO NUEVAMENTE";
+
+//Inicio
+$idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
+$idioma['FechaCuotas']="Fecha de Cuotas";
+$idioma['RgistrarNuevosPagos']="Rgistrar Nuevos Pagos";
+$idioma['NoHayPagoCuotasFecha']="No hay Pago de Cuotas en esta Fecha";
 /*Mensajes Globales Javascript*/
 $idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?"
 /*Fin Mensajes*/

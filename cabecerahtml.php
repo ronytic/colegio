@@ -1,4 +1,11 @@
-<?php include_once("login/check.php");?>
+<?php include_once("login/check.php");
+/*Agenda de Actividades*/
+include_once("class/agendaactividades.php");
+$agendaac=new agendaactividades;
+$cant=$agendaac->cantidadActividades();
+$cantagendaactividades=array_shift($cant);
+/*Fin de Cantidad de Actividades*/
+?>
 <?php
 /*Codigo para ver qen que menu nos encontramos*/
 $rurl=str_replace("index.php","",$_SERVER['SCRIPT_NAME']);

@@ -1,2 +1,3 @@
 Options All -Indexes
 ErrorDocument 404  "USTED NO ESTA AUTORIZADO"
+php_value memory_limit 64M

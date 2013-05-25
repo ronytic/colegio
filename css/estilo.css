@@ -98,7 +98,7 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
 /*Fin de Corregir el Texto*/
 /*Correción del Calendario*/
 .box-content .ui-datepicker {
-    width: 100%;
+    width: 100% !important;
     padding: 0;
   }
 .box-content  .ui-widget {
@@ -112,6 +112,9 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
 }
 .box-content .ui-widget-header{
 	border:none 	
+}
+.ui-datepicker-calendar thead th{
+	background-color:#FFF;	
 }
 /*Fin de Correción del Calendario*/
 /*Cuadro de Mensajes*/
@@ -187,3 +190,6 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
 	vertical-align:middle;
 }
 /*Fin de la tabla*/
+.completado td{
+	color:#CCC;	
+}

@@ -17,8 +17,8 @@
 					<a class="btn" href="#">
 						<i class="icon-warning-sign"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Notificacion']?></span> <span class="label label-important hidden-phone">0</span> <span class="label label-success hidden-phone">0</span>
 					</a>
-					<a class="btn" href="#">
-						<i class="icon-tasks"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Agenda']?></span> <span class="label label-warning hidden-phone">0</span>
+					<a class="btn" href="<?php echo $folder?>agendaactividades/">
+						<i class="icon-tasks"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Agenda']?></span> <span class="label label-warning hidden-phone"><?php echo $cantagendaactividades['Cantidad']?></span>
 					</a>
 					<a class="btn" href="#">
 						<i class="icon-envelope"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Mensajes']?></span> <span class="label label-success hidden-phone">0</span>
