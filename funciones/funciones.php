@@ -149,8 +149,17 @@ function fecha2Str($fecha,$t=1){
 		return $fecha;
 	}
 }
+function acortarPalabra($texto,$cantidad=1,$separador=" "){
+	$cantidad--;
+	$datos=array();
+	$separado=explode($separador,$texto);
+	for($i=0;$i<=$cantidad;$i++){
+		array_push($datos,$separado[$i]);
+	}
+	return implode($separador,$datos);
+}
 function hora2Str($fecha,$t=1){
-	if(!empty($fecha) && $fecha!="0000-00-00"){
+	if(!empty($fecha) && $fecha!="00:00"){
 		if($t==1){
 			return date("H:i",strtotime($fecha));	
 		}else{

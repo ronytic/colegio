@@ -10,8 +10,8 @@ class agenda extends bd{
 		return $this->getRecords("CodUsuario=$CodDocente and CodCurso=$CodCurso and Activo=1"," FechaRegistro,HoraRegistro",0,0,0,1);
 	}
 	function mostrarRegistroMateria($CodDocente,$CodCurso,$Materia){
-		$this->campos=array("*");	
-		return $this->getRecords("CodUsuario=$CodDocente and CodCurso=$CodCurso and CodMateria=$Materia and Activo=1"," FechaRegistro",0,0,0,1);
+		$this->campos=array("*");	//CodUsuario=$CodDocente and 
+		return $this->getRecords("CodCurso=$CodCurso and CodMateria=$Materia and Activo=1"," Fecha DESC,HoraRegistro",0,0,0,1);
 	}
 	function mostrarRegistroAlumno($CodDocente,$CodCurso,$Materia,$CodAlumno){
 		$this->campos=array("*");	

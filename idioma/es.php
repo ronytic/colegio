@@ -54,6 +54,7 @@ $idioma['NDatosAlumnos']="Datos de Alumnos";
 $idioma['NAlumnosGestionAnterior']="Alumnos Gestión Anterior";
 $idioma['NAgendaActividades']="Agenda de Actividades";
 $idioma['NExportarBaseDatos']="Exportar Base Datos";
+$idioma['NRegistroAgenda']="Registro de Agenda";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -156,6 +157,7 @@ $idioma['Buscador']="Buscador";
 $idioma['Gestion']="Gestión";
 $idioma['Fecha']="Fecha";
 $idioma['Fechas']="Fechas";
+$idioma['FechaHoy']="Fecha Hoy";
 $idioma['Hora']="Hora";
 $idioma['Horas']="Horas";
 $idioma['CantidadTotal']="Cantidad Total";
@@ -392,6 +394,12 @@ $idioma['Periodo']="Periodo";
 $idioma['IngresarCodigoBarra']="Ingrese el código de Barra";
 $idioma['CodigoBarra']="Código de Barra";
 $idioma['NoSeEncontroCodigo']="No se encontro el código de barra";
+$idioma['Urgente']="Urgente";
+$idioma['Citacion']="Citación";
+$idioma['AgendaAlumnos']="Agenda de Alumnos";
+$idioma['ParaEliminarAnotacionConsulteRegente']="Para eliminar una anotación, consulte al Regente";
+$idioma['BusquePor']="Busque por...";
+$idioma['BusquedaEspecificaSeleccionado']="Búsqueda Especifica por lo seleccionado";
 //Seguridad
 $idioma['Estructura']="Estructura";
 $idioma['TablasActualizar']="Tablas a Actualizar";
@@ -405,6 +413,21 @@ $idioma['SubirDatosInternet']="Subir Datos a Internet";
 $idioma['TengaPaciencia']="tenga paciencia";
 $idioma['DatosSubidoCorrectamente']="SUS DATOS SE SUBIERON CORRECTAMENTE";
 $idioma['DatosSubidoIncorrectamente']="ERROR, INTENTELO NUEVAMENTE";
+
+//Tareas
+$idioma['NRegistroTareas']="Registro de Tareas";
+$idioma['Tarea']="Tarea";
+$idioma['TareasGuardadas']="Tareas Guardadas";
+$idioma['NombreTarea']="Nombre de la Tarea";
+$idioma['DescripcionTarea']="Descripción Tarea";
+$idioma['FechaPresentacion']="Fecha de Presentación";
+$idioma['GuardarTarea']="Guardar Tarea";
+$idioma['Ej:PracticaOrtografia']="Ej:Practica de Ortografía";
+$idioma['CompleteFechaPresentacion']="Complete la Fecha de presentación";
+$idioma['CompleteNombreTarea']="Complete el nombre de la tarea";
+$idioma['CompleteDescripcionTarea']="Complete la descripción de la tarea";
+$idioma['Descripcion']="Descripción";
+$idioma['NoHayTareasRegistradas']="No hay tareas registradas";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
