@@ -71,7 +71,7 @@ switch($Nivel){
                     
 					<ul class="dropdown-menu">
                     	<li><a><?php echo $Apodo;?></a></li>
-						<li><a href="<?php echo $folder;?>usuario/configuracion.php"><?php echo $idioma['Configuracion']?></a></li>
+						<li><a href="<?php echo $folder;?>usuario/configuracion/"><?php echo $idioma['Configuracion']?></a></li>
 						<li class="divider"></li>
 						<li><a href="<?php echo $folder;?>login/logout.php"><?php echo $idioma['Salir']?></a></li>
 					</ul>

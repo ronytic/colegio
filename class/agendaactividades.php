@@ -11,7 +11,7 @@ class agendaactividades extends bd{
 		$Nivel=$_SESSION['Nivel'];
 		$Fecha=date("Y-m-d");
 		$CodUsuario=$_SESSION['CodUsuarioLog'];// and CodUsuario='$CodUsuario'
-		return $this->mostrarTodoRegistro("( (Usuarios=0 and CodUsuario=$CodUsuario and Nivel=$Nivel) or Usuarios LIKE '%$Nivel%') and Nivel='$Nivel' and FechaActividad='$Fecha'");
+		return $this->mostrarTodoRegistro("( (Usuarios=0 and CodUsuario=$CodUsuario and Nivel=$Nivel) or Usuarios LIKE '%$Nivel%') and FechaActividad='$Fecha'");
 			
 	}
 	function mostrarActividades($where){

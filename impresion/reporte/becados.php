@@ -2,11 +2,11 @@
 include_once("../../login/check.php");
 if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	include_once("../pdf.php");
-	$titulo=$idioma['AlumnoBecado'];
+	$titulo=$idioma['AlumnosBecados'];
 	class PDF extends PPDF{
 		function Cabecera(){
 			global $CursoTexto,$idioma;
-			$this->CuadroCabecera(15,"Curso:",40,$CursoTexto['Nombre']);
+			$this->CuadroCabecera(15,$idioma['Curso'].":",40,$CursoTexto['Nombre']);
 			$this->Pagina();
 			$this->ln();
 			$this->TituloCabecera(15,"Nº");

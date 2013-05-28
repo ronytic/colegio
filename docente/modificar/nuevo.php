@@ -18,6 +18,7 @@ $CodDocente=$doc['Auto_increment'];
     	<tr>
         	<td colspan="2">
                 <?php echo $idioma['Foto']?>:<br />
+                <br /><small><?php echo $idioma['ImagenRecomendada']?> <br /><?php echo $idioma['TipoArchivo']?> "jpg" <br /><?php echo $idioma['TamanoArchivo']?> 200x200</small>
                 <input type="file" name="Foto" accept="image/*" class="span12">
     		</td>
         </tr>

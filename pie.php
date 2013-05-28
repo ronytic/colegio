@@ -126,6 +126,7 @@
 		var folder="<?php echo $folder?>";
 		var mensajeg=Array();
 		mensajeg['EliminarRegistro']="<?php echo $idioma['EliminarRegistro']?>";
+		var DispositivoMovil=0;
 	</script>
     <script src="<?php echo $folder;?>js/core/framework/bootstrap.js" language="javascript"></script>
     <script src="<?php echo $folder;?>js/core/plugins/jquery.chosen.min.js" language="javascript"></script>

@@ -1,11 +1,9 @@
 $(document).on("ready",function(){
 	$(".calendario").datepicker({altField: "#FechaActividad",dateFormat: 'dd-mm-yy',numberOfMonths: 2,showButtonPanel: true});	
-	if(!jQuery.browser.mobile){
-	$("#ParaQuien").chosen({width: "100%"});
+	if(!DispositivoMovil){
+		$("#ParaQuien").data("placeholder","Seleccione...").chosen({width: "100%",});
 	}
-	if(jQuery.browser.mobile){
-		alert("asd");	
-	}
+
 	$(document).on("change","#HoraInicio",function(){
 		var valor=$(this).val();
 		$("#HoraFin").val(valor).attr("min",valor);
@@ -36,15 +34,18 @@ $(document).on("ready",function(){
 				$("#CodAgendaActividades").val(id);
 				$("#FechaActividad").val(data.FechaActividad);
 				$("#HoraInicio").val(data.HoraInicio)//.attr("min",data.HoraInicio);
-				$("#HoraFin").val(data.HoraFin)//.attr("min",data.HoraFin);
+				$("#HoraFin").val(data.HoraFin).attr("min",'00:00');
 				$("#Estado").val(data.Estado);
 				$("#Prioridad").val(data.Prioridad);
 				$("#Detalle").val(data.Detalle);
+				$("#ParaQuien").val('');
 				usuarios=(data.Usuarios).split(",");
 				for(i=0;i<(usuarios.length);i++){
 					$("#ParaQuien>option[value="+usuarios[i]+"]").attr("selected","selected");
 				}
-				$("#ParaQuien").trigger("liszt:updated")
+				if(!DispositivoMovil){
+					$("#ParaQuien").trigger("liszt:updated")
+				}
 				$("#Guardar").val(data.Boton);
 				
 				$('html, body').animate({scrollTop:$("form.formulario").position().top-200},300);
@@ -56,4 +57,9 @@ function mostrarActividades(){
 	$.post("mostraractividades.php",{"Fecha":Fecha},function(data){
 		$("#listadoactividades").html(data)
 	});
+}
+function vaciar(){
+	//alert("asd");
+	window.location.href="#mostraractividades";
+	$("#vaciar").click();	
 }

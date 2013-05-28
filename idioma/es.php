@@ -59,6 +59,8 @@ $idioma['NRegistroAgenda']="Registro de Agenda";
 $idioma['NRegistroNotas']="Registro de Notas";
 $idioma['NReporteNotas']="Reporte de Notas";
 $idioma['NCambiarNombresCasilleros']="Cambiar Nombres de Casilleros";
+$idioma['NVerNotasDocentes']="Ver Notas de Docentes";
+$idioma['NConfiguracionUsuario']="Configuración de Usuario";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -178,6 +180,9 @@ $idioma['RegistrarAlumno']="Registrar Alumno";
 $idioma['Vaciar']="Vaciar";
 $idioma['Cancelar']="Cancelar";
 $idioma['Y']="y";
+$idioma['ImagenRecomendada']="Imágen Recomendada";
+$idioma['TipoArchivo']="Tipo de Archivo";
+$idioma['TamanoArchivo']="Tamaño Archivo";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Agenda de Actividades
@@ -210,6 +215,7 @@ $idioma['Secretaria']="Secretaria";
 $idioma['Regente']="Regente";
 $idioma['PadreFamilia']="Padre de Familia";
 $idioma['Alumnos']="Alumnos";
+$idioma['SoloParaMi']="Solo Para Mi";
 //Alumno
 $idioma['SeparacionDatos']="La separación de varios datos se lo realiza con el \"/\" (shif+7)(Símbolo Dividido)";
 $idioma['NombresAdicionales']="Nombres Adicionales";
@@ -334,7 +340,7 @@ $idioma['CelularPadre']="Celular Padre";
 $idioma['CelularMadre']="Celular Madre";
 $idioma['Reporte']="Reporte";
 $idioma['MontoBeca']="Monto de Beca";
-$idioma['AlumnoBecado']="Alumno Becado";
+$idioma['AlumnosBecados']="Alumnos Becados";
 $idioma['VerReporte']="Ver Reporte";
 $idioma['TodoBecados']="Todos los Becados";
 $idioma['Campo1']="Campo 1";
@@ -412,6 +418,8 @@ $idioma['GuardarNombres']="Guardar Nombres";
 $idioma['NotasGuardadoCorrectamente']="Sus Notas sean guardado Correctamente";
 $idioma['NombresGuardadoCorrectamente']="Sus Nombres sean guardado Correctamente";
 $idioma['NotaExcedidaLimite']="Nota Excedida del limite de";
+$idioma['VerNotas']="Ver Notas";
+$idioma['ModificarNotas']="Modificar Notas";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
@@ -473,6 +481,13 @@ $idioma['CompleteNombreTarea']="Complete el nombre de la tarea";
 $idioma['CompleteDescripcionTarea']="Complete la descripción de la tarea";
 $idioma['Descripcion']="Descripción";
 $idioma['NoHayTareasRegistradas']="No hay tareas registradas";
+
+//Datos del Usuario
+$idioma['DatosUsuario']="Datos del Usuario";
+$idioma['GuardarConfiguracion']="Guardar Configuración";
+$idioma['SobreNombre']="SobreNombre";
+$idioma['RepetirContrasena']="Repetir Contraseña";
+$idioma['ContrasenaNoIgual']="Contraseña No son Iguales";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";

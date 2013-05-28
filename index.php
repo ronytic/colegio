@@ -3,6 +3,7 @@
 <script language="javascript" type="text/javascript" src="js/inicio.js"></script>
 <?php include_once("cabecera.php");?>
     <div class="box-small span3">
+    <?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2||$_SESSION['Nivel']==4||$_SESSION['Nivel']==5):?>
         <a data-rel="tooltip" title="65% de asistentes" class="box-small-link" href="#">
             <div id="visits-count">465<br><br>Alumnos</div>
         </a>
@@ -23,9 +24,11 @@
         <div class="box-small-title">Faltas</div>
         <span id="members-count-n" class="notification red">10%</span>
     </div>
+    <?php endif;?>
 </div>
 
 <div class="row-fluid">
+	<?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2):?>
 	<div class="span6 box">
     	<div class="box-header"><h2><?php echo $idioma['EstadisticasInstantaneaPagoCuotas']?></h2><div class="box-icon"><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizarcuotas"><i class="icon-refresh"></i></a></div></div>
         <div class="box-content">
@@ -36,6 +39,8 @@
             <div id="listadocuotas" style="max-height:400px;overflow-y:auto"></div>
         </div>
     </div>
+    <?php endif;?>
+    <?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2 ||$_SESSION['Nivel']==4 ||$_SESSION['Nivel']==5 ):?>
     <div class="span6 box">
     	<div class="box-header"><?php echo $idioma['ObservacionesAgenda']?> - <?php echo $idioma['DiaHoy']?><div class="box-icon"><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizaragenda"><i class="icon-refresh"></i></a></div></div>
         <div class="box-content">
@@ -45,6 +50,7 @@
             <div id="listadoagenda" style="max-height:400px;overflow-y:auto;position:relative"></div>
         </div>
     </div>
+    <?php endif;?>
 </div>
 <div class="row-fluid">
 	<div class="span8 box">
@@ -57,42 +63,46 @@
             <div id="listadoactividades"></div>
         </div>
     </div>
+    <?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2):?>
     <div class="span4 box">
     	<div class="box-header">Accesos de Usuarios al Sistema</div>
-        <div class="box-content"><ul class="dashboard-list">
-							<li>
-								<a href="#">
-									<img class="dashboard-avatar" alt="Lucas" src="img/avatar.jpg">
-								</a>
-								<strong>Nombre:</strong> <a href="#">Jaime</a><br>
-								<strong>Fecha:</strong> 17/05/2013<br>
-								<strong>Estado:</strong> <span class="label label-success">En Linea</span>                                  
-							</li>
-							<li>
-								<a href="#">
-									<img class="dashboard-avatar" alt="Bill" src="img/avatar.jpg">
-								</a>
-								<strong>Nombre:</strong> <a href="#">Marco</a><br>
-								<strong>Fecha:</strong> 17/05/2013<br>
-								<strong>Estado:</strong> <span class="label label-warning">Sin Uso</span>                                 
-							</li>
-							<li>
-								<a href="#">
-									<img class="dashboard-avatar" alt="Jane" src="img/avatar.jpg">
-								</a>
-								<strong>Nombre:</strong> <a href="#">Reynaldo</a><br>
-								<strong>Since:</strong> 17/05/2013<br>
-								<strong>Estado:</strong> <span class="label label-important">Fuera de Linea</span>                                  
-							</li>
-							<li>
-								<a href="#">
-									<img class="dashboard-avatar" alt="Kate" src="img/avatar.jpg">
-								</a>
-								<strong>Nombre:</strong> <a href="#">Marco</a><br>
-								<strong>Fecha:</strong> 17/05/2013<br>
-								<strong>Estado:</strong> <span class="label label-info">En Linea</span>                                  
-							</li>
-						</ul></div>
+        <div class="box-content">
+        	<ul class="dashboard-list">
+            <li>
+                <a href="#">
+                    <img class="dashboard-avatar" alt="Lucas" src="img/avatar.jpg">
+                </a>
+                <strong>Nombre:</strong> <a href="#">Jaime</a><br>
+                <strong>Fecha:</strong> 17/05/2013<br>
+                <strong>Estado:</strong> <span class="label label-success">En Linea</span>                                  
+            </li>
+            <li>
+                <a href="#">
+                    <img class="dashboard-avatar" alt="Bill" src="img/avatar.jpg">
+                </a>
+                <strong>Nombre:</strong> <a href="#">Marco</a><br>
+                <strong>Fecha:</strong> 17/05/2013<br>
+                <strong>Estado:</strong> <span class="label label-warning">Sin Uso</span>                                 
+            </li>
+            <li>
+                <a href="#">
+                    <img class="dashboard-avatar" alt="Jane" src="img/avatar.jpg">
+                </a>
+                <strong>Nombre:</strong> <a href="#">Reynaldo</a><br>
+                <strong>Since:</strong> 17/05/2013<br>
+                <strong>Estado:</strong> <span class="label label-important">Fuera de Linea</span>                                  
+            </li>
+            <li>
+                <a href="#">
+                    <img class="dashboard-avatar" alt="Kate" src="img/avatar.jpg">
+                </a>
+                <strong>Nombre:</strong> <a href="#">Marco</a><br>
+                <strong>Fecha:</strong> 17/05/2013<br>
+                <strong>Estado:</strong> <span class="label label-info">En Linea</span>                                  
+            </li>
+			</ul>
+        </div>
     </div>
+    <?php endif;?>
 </div>
 <?php include_once("pie.php");?>

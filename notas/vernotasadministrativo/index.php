@@ -1,0 +1,9 @@
+<?php
+include_once("../../login/check.php");
+$titulo="NVerNotasDocentes";
+$subtitulo1="Configuracion";
+$folder="../../";
+$jsFile="notas/vernotasadministrativo.js";
+$archivoInicial="formulario.php";
+include_once("../../listar/docente.php");
+?>

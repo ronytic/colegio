@@ -37,7 +37,7 @@ function mostrarCuotas(){
 	});
 }
 function mostrarAgenda(){
-	var Fecha=$("#FechaCuotas").val();
+	var Fecha=$("#FechaAgenda").val();
 	$.post("agenda/inicio/mostraragenda.php",{"Fecha":Fecha,'Botones':"0"},function(data){
 		$("#listadoagenda").html(data).stickyTableHeaders()
 		$(window).trigger('resize.stickyTableHeaders');

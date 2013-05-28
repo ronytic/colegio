@@ -24,6 +24,7 @@ if(!file_exists($ima)  || empty($doc['Foto'])){
     				<img src="<?php echo $ima?>"/>
     			</div>
                 <?php echo $idioma['Foto']?>:<br />
+                <br /><small><?php echo $idioma['ImagenRecomendada']?> <br /><?php echo $idioma['TipoArchivo']?> "jpg" <br /><?php echo $idioma['TamanoArchivo']?> 200x200</small>
                 <div class="custom-input-file">
                 <input type="file" name="Foto" accept="image/*" class="span12">
                 </div>

@@ -6,22 +6,26 @@ extract($_POST);
 include_once("../class/agendaactividades.php");
 $agendaactividades=new agendaactividades;
 $Nivel=$_SESSION['Nivel'];
-$Usuarios=implode(",",$ParaQuien);
+
+if(in_array("0",$ParaQuien)){
+	$UsuariosAgenda="0";
+}else{
+	$UsuariosAgenda=implode(",",$ParaQuien);
+}
 $valores=array("FechaActividad"=>"'".fecha2Str($FechaActividad,0)."'",
 				"HoraInicio"=>"'$HoraInicio'",
 				"HoraFin"=>"'$HoraFin'",
 				"Prioridad"=>"'$Prioridad'",
 				"Estado"=>"'$Estado'",
-				"Usuarios"=>"'$Usuarios'",
+				"Usuarios"=>"'$UsuariosAgenda'",
 				"Detalle"=>"'$Detalle'",
-				"Usuarios"=>"'$Nivel'",
 	);
 	if($agendaactividades->insertarActividad($valores)){?>
 		<div class="alert alert-success">
     	<button type="button" class="close" data-dismiss="alert">&times;</button>
     	<?php echo $idioma['DatosGuardadosCorrectamente']?>
 		</div>
-		<script language="javascript">mostrarActividades();$("#vaciar").click();</script>
+		<script language="javascript">mostrarActividades();vaciar();</script>
 	<?php }else{?>
 		<div class="alert alert-error">
 	    <button type="button" class="close" data-dismiss="alert">&times;</button>

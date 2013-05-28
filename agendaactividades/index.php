@@ -4,7 +4,15 @@ $folder="../";
 $titulo="NAgendaActividades";
 $prioridadvalor=array("-1"=>$idioma['Bajo'],"0"=>$idioma['Normal'],"1"=>$idioma['Importante']);
 $estadovalor=array("0"=>$idioma['Pendiente'],"1"=>$idioma["Completado"]);
-$paraquien=array("0"=>"SoloParaMi","1"=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']);
+$paraquien=array("0"=>$idioma["SoloParaMi"]);
+switch($_SESSION['Nivel']){
+	case 1:{$paraquien=array_merge($paraquien,array("1"=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
+	case 2:{$paraquien=array_merge($paraquien,array(2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
+	case 3:{$paraquien=array_merge($paraquien,array(3=>$idioma['Docente']));}break;
+	case 4:{$paraquien=array_merge($paraquien,array(3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
+	case 5:{$paraquien=array_merge($paraquien,array(5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
+}
+array("1"=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos'])
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
 <script type="text/javascript" src="../js/agendaactividades/calendario.js"></script>
@@ -41,16 +49,20 @@ $paraquien=array("0"=>"SoloParaMi","1"=>$idioma['Administrador'],2=>$idioma['Dir
             	<td><?php echo $idioma['Estado']?></td><td><?php echo campo("Estado","select",$estadovalor,"span12",1,"",0,"",0)?></td>
             </tr>-->
             <tr>
-            	<td colspan="2"><?php echo $idioma['ParaQuien']?><br><small><label>Doce<input type="checkbox"></label></small>
-                <?php campo("ParaQuien","select",$paraquien,"span12",1,"",0,array("multiple"=>"multiple","size"=>count($paraquien),"title"=>"asd"),"0")?>
-                
+            	<td colspan="2"><?php echo $idioma['ParaQuien']?><br>
+                	<select name="ParaQuien[]" id="ParaQuien" multiple="multiple" required>
+                    
+                    <?php foreach($paraquien as $pqk=>$pqv){?>
+                    	<option value="<?php echo $pqk?>"<?php echo $pqk==0?'selected':''?>><?php echo $pqv?></option>
+                	<?php }?>
+                	</select>
                 </td>
             </tr>
             <tr>
             	<td><?php echo $idioma['Detalle']?></td><td><?php echo campo("Detalle","textarea","","span12",1,$idioma["IngreseSu"].$idioma['Detalle'],0,array("rows"=>3))?></td>
             </tr>
         </table>
-        <input type="submit" class="btn btn-success" value="<?php echo $idioma['GuardarActividad']?>" id="Guardar"> <!--<input type="reset" class="btn" value="<?php echo $idioma['Vaciar']?>" id="vaciar">--><a  class="btn" id="vaciar" href="./"><?php echo $idioma['Cancelar']?></a>
+        <input type="submit" class="btn btn-success" value="<?php echo $idioma['GuardarActividad']?>" id="Guardar"> <a  class="btn" id="vaciar" href="./"><?php echo $idioma['Cancelar']?></a>
         </form>
     </div>
 </div>
@@ -59,6 +71,7 @@ $paraquien=array("0"=>"SoloParaMi","1"=>$idioma['Administrador'],2=>$idioma['Dir
 <div class="box">
     	<div class="box-header"><h2><i class="icon-tasks"></i><span class="break"></span><?php echo $idioma['ListaActividades']?></h2></div>
         <div class="box-content">
+        	<a name="mostraractividades"></a>
             <div id="listadoactividades" style=""></div>
         </div>
     </div>
