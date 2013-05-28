@@ -1,10 +1,16 @@
 <?php
 include_once("../class/config.php");
 include_once("../class/anuncioslogin.php");
+$idiomano=0;
 if($_COOKIE['Idioma']=="" || empty($_COOKIE['Idioma'])){
 	include_once("../idioma/es.php");	
 }else{
-	include_once("../idioma/".$_COOKIE['Idioma'].".php");	
+	if(file_exists("../idioma/".$_COOKIE['Idioma'].".php")){
+		include_once("../idioma/".$_COOKIE['Idioma'].".php");
+	}else{
+		$idiomano=1;
+		include_once("../idioma/es.php");	
+	}
 }
 $anuncioslogin=new anuncioslogin;
 $config=new config;
@@ -47,6 +53,15 @@ $LogoIcono=$cnf['Valor'];
                 <h4>Unidad Educativa Privada</h4>
                 <h2>"SANTA BÁRBARA"</h2>
                 <hr />
+                	<?php
+                    if($idiomano==1){
+                    ?>
+                    <div class="alert alert-warning">
+                    	<button type="button" class="close" data-dismiss="alert">&times;</button>
+                    	<?php echo $idioma['IdiomaNoEncontrado']?>
+                    </div>
+                    <?php
+                    }?>
                     <?php
                     if(isset($_GET['incompleto'])){
                     ?>
@@ -75,7 +90,8 @@ $LogoIcono=$cnf['Valor'];
                     </form>
                     <a href="#" class="ayuda"><?php echo $idioma['NoPuedeIngresar']?></a>
                     <hr class="plomo"/>
-                    <span><?php echo $idioma['Idioma']?>:</span><a href="i.php?i=es" class="idioma <?php echo $_COOKIE['Idioma']=='es'?' plomo':'';?>">Castellano</a> | <a href="i.php?i=ay" class="idioma <?php echo $_COOKIE['Idioma']=='ay'?' plomo':'';?>">Aymara</a>
+                    <span><?php echo $idioma['Idioma']?>:</span>
+                    <a href="i.php?i=es" class="idioma <?php echo $_COOKIE['Idioma']=='es'?' plomo':'';?>">Castellano</a>|<a href="i.php?i=ay" class="idioma <?php echo $_COOKIE['Idioma']=='ay'?' plomo':'';?>">Aymara</a>|<a href="i.php?i=qu" class="idioma <?php echo $_COOKIE['Idioma']=='qu'?' plomo':'';?>">Quechua</a>|<a href="i.php?i=gu" class="idioma <?php echo $_COOKIE['Idioma']=='gu'?' plomo':'';?>">Guarani</a>|<a href="i.php?i=en" class="idioma <?php echo $_COOKIE['Idioma']=='en'?' plomo':'';?>">Ingles</a>
             </div>
     	</div>
 		<div class="offset1 span6">

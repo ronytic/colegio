@@ -11,6 +11,7 @@ $idioma['Pie']="Sistema Académico Administrativo";
 $idioma['NoComunicados']="NO HAY COMUNICADOS";
 $idioma['NoDatos']="Por favor introdusca TODOS los DATOS.";
 $idioma['DatosErroneos']="El USUARIO o la CONTRASEÑA son incorrectos, verifique e intente nuevamente.";
+$idioma['IdiomaNoEncontrado']="Idioma no Encontrado";
 //Inicio
 $idioma['TituloSistema']="Sistema Académico Administrativo para Colegios";
 $idioma['Configuracion']="Configuración";
