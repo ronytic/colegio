@@ -54,6 +54,7 @@ function cargando(){
 	$("#alumnos").html('<img src="'+folder+'imagenes/cargador/cargador.gif"/>');	
 }
 function alumnosnotas(data){
+	$("html,body").animate({scrollTop:$("#alumnos").position().top-40},750);
 	$("#alumnos").html(data)
 	//Para Mantener Seleccionado
 	$(".nota").mousedown(function(e){$(this).select();}).mouseup(function(e){e.preventDefault();});

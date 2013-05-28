@@ -34,6 +34,7 @@ function cargando(){
 }
 function alumnosnotas(data){
 	$("#alumnos").html(data)
+	$("html,body").animate({scrollTop:$("#alumnos").position().top-40},750);
 	$(".nombre").change(function(e) {
         var valor=$(this).val();
 		var nombre=$(this).attr("name");

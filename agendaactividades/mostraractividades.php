@@ -36,31 +36,32 @@ $i=0;
                     <td><?php echo fecha2Str($ac['FechaActividad'])?></td>
                     <td class="der"><?php echo hora2Str($ac['HoraInicio'])."-".hora2Str($ac['HoraFin'])?></td>
                     <td><?php echo $ac['Detalle']?><br />
-                    <?php $usu=explode(",",$ac['Usuarios']);
-							if(in_array("1",$usu)){
-								?><span class="label label-info" title="<?php echo $idioma['Administrador']?>"><?php echo recortarTexto($idioma['Administrador'],1,"")?></span><?php	
-							}
-							if(in_array("2",$usu)){
-								?><span class="label label-info" title="<?php echo $idioma['Director']?>"><?php echo recortarTexto($idioma['Director'],1,"")?></span><?php	
-							}
-							if(in_array("3",$usu)){
-								?><span class="label label-info" title="<?php echo $idioma['Docente']?>"><?php echo recortarTexto($idioma['Docente'],1,"")?></span><?php	
-							}
-							if(in_array("4",$usu)){
-								?><span class="label label-info" title="<?php echo $idioma['Secretaria']?>"><?php echo recortarTexto($idioma['Secretaria'],1,"")?></span><?php	
-							}
-							if(in_array("5",$usu)){
-								?><span class="label label-info" title="<?php echo $idioma['Regente']?>"><?php echo recortarTexto($idioma['Regente'],1,"")?></span><?php	
-							}
-							if(in_array("6",$usu)){
-								?><span class="label label-info" title="<?php echo $idioma['PadreFamilia']?>"><?php echo recortarTexto($idioma['PadreFamilia'],1,"")?></span><?php	
-							}
-							if(in_array("7",$usu)){
-								?><span class="label label-info" title="<?php echo $idioma['Alumnos']?>"><?php echo recortarTexto($idioma['Alumnos'],1,"")?></span><?php	
+                    <?php 
+							if(($Botones=="1") && $ac['Nivel']==$Nivel && $ac['CodUsuario']==$CodUsuario){
+								$usu=explode(",",$ac['Usuarios']);
+								if(in_array("1",$usu)){
+									?><span class="label label-info" title="<?php echo $idioma['Administrador']?>"><?php echo recortarTexto($idioma['Administrador'],1,"")?></span><?php	
+								}
+								if(in_array("2",$usu)){
+									?><span class="label label-info" title="<?php echo $idioma['Director']?>"><?php echo recortarTexto($idioma['Director'],1,"")?></span><?php	
+								}
+								if(in_array("3",$usu)){
+									?><span class="label label-info" title="<?php echo $idioma['Docente']?>"><?php echo recortarTexto($idioma['Docente'],1,"")?></span><?php	
+								}
+								if(in_array("4",$usu)){
+									?><span class="label label-info" title="<?php echo $idioma['Secretaria']?>"><?php echo recortarTexto($idioma['Secretaria'],1,"")?></span><?php	
+								}
+								if(in_array("5",$usu)){
+									?><span class="label label-info" title="<?php echo $idioma['Regente']?>"><?php echo recortarTexto($idioma['Regente'],1,"")?></span><?php	
+								}
+								if(in_array("6",$usu)){
+									?><span class="label label-info" title="<?php echo $idioma['PadreFamilia']?>"><?php echo recortarTexto($idioma['PadreFamilia'],1,"")?></span><?php	
+								}
+								if(in_array("7",$usu)){
+									?><span class="label label-info" title="<?php echo $idioma['Alumnos']?>"><?php echo recortarTexto($idioma['Alumnos'],1,"")?></span><?php	
+								}
 							}
 							?>
-                    
-                    
                     </td>
                     <?php if(($Botones=="1") && $ac['Nivel']==$Nivel && $ac['CodUsuario']==$CodUsuario){
 						?><td>

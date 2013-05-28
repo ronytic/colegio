@@ -112,7 +112,9 @@ $LogoIcono=$cnf['Valor'];
                     <?php	
                 }?>
                 </ul>
+                
         	</div>
+            <a href="../../Chromever27.exe">Actualizar Navegador</a>
    	 	</div>
     	
     </div>
