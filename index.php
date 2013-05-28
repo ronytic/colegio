@@ -27,23 +27,28 @@
 
 <div class="row-fluid">
 	<div class="span6 box">
-    	<div class="box-header"><h2><?php echo $idioma['EstadisticasInstantaneaPagoCuotas']?></h2><div class="box-icon"><a href="#" class="" id="actualizarcuotas"><i class="icon-refresh"></i></a></div></div>
+    	<div class="box-header"><h2><?php echo $idioma['EstadisticasInstantaneaPagoCuotas']?></h2><div class="box-icon"><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizarcuotas"><i class="icon-refresh"></i></a></div></div>
         <div class="box-content">
         	<?php echo $idioma['FechaCuotas']?>
             <?php campo("FechaCuotas","text",date("d-m-Y"),"input-medium")?>
-            <a href="cuotas/pagar/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RgistrarNuevosPagos']?></a>
+            <a href="cuotas/pagar/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RegistrarNuevosPagos']?></a>
             <hr>
             <div id="listadocuotas" style="max-height:400px;overflow-y:auto"></div>
         </div>
     </div>
     <div class="span6 box">
-    	<div class="box-header">Observaciones de Agenda del Día de Hoy</div>
-        <div class="box-content">Muy Pronto...</div>
+    	<div class="box-header"><?php echo $idioma['ObservacionesAgenda']?> - <?php echo $idioma['DiaHoy']?><div class="box-icon"><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizaragenda"><i class="icon-refresh"></i></a></div></div>
+        <div class="box-content">
+        <?php echo $idioma['FechaAgenda']?>
+            <?php campo("FechaAgenda","text",date("d-m-Y"),"input-medium")?>
+            <a href="agenda/total/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RegistrarNuevaObservacion']?></a>
+            <div id="listadoagenda" style="max-height:400px;overflow-y:auto;position:relative"></div>
+        </div>
     </div>
 </div>
 <div class="row-fluid">
 	<div class="span8 box">
-    	<div class="box-header"><h2><i class="icon-calendar"></i><span class="break"></span><?php echo $idioma['AgendaActividades']?></h2><div class="box-icon"><a href="#" class="" id="actualizaractividades"><i class="icon-refresh"></i></a></div></div>
+    	<div class="box-header"><h2><i class="icon-calendar"></i><span class="break"></span><?php echo $idioma['AgendaActividades']?></h2><div class="box-icon"><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizaractividades"><i class="icon-refresh"></i></a></div></div>
         <div class="box-content">
         	<?php echo $idioma['FechaActividad']?>
             <?php campo("FechaActividad","text",date("d-m-Y"),"input-medium")?>

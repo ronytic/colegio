@@ -1,5 +1,11 @@
 $(document).on("ready",function(){
 	$(".calendario").datepicker({altField: "#FechaActividad",dateFormat: 'dd-mm-yy',numberOfMonths: 2,showButtonPanel: true});	
+	if(!jQuery.browser.mobile){
+	$("#ParaQuien").chosen({width: "100%"});
+	}
+	if(jQuery.browser.mobile){
+		alert("asd");	
+	}
 	$(document).on("change","#HoraInicio",function(){
 		var valor=$(this).val();
 		$("#HoraFin").val(valor).attr("min",valor);
@@ -17,6 +23,11 @@ $(document).on("ready",function(){
 			});	
 		}
 	});
+	/*$("#ParaQuien>option").toggle(function(e) {
+        $(this,":selected").attr("selected","selected").css("backgroundColor","red");
+    },function(e) {
+        $(this,":selected").attr("selected","").css("backgroundColor","");
+    });*/
 	$(document).on("click","#modificar",function(e){
 		e.preventDefault();
 		id=$(this).attr("rel");
@@ -29,7 +40,13 @@ $(document).on("ready",function(){
 				$("#Estado").val(data.Estado);
 				$("#Prioridad").val(data.Prioridad);
 				$("#Detalle").val(data.Detalle);
+				usuarios=(data.Usuarios).split(",");
+				for(i=0;i<(usuarios.length);i++){
+					$("#ParaQuien>option[value="+usuarios[i]+"]").attr("selected","selected");
+				}
+				$("#ParaQuien").trigger("liszt:updated")
 				$("#Guardar").val(data.Boton);
+				
 				$('html, body').animate({scrollTop:$("form.formulario").position().top-200},300);
 			},"json");
 	});

@@ -10,8 +10,8 @@ class agendaactividades extends bd{
 		$this->campos=array("count(*) as Cantidad");
 		$Nivel=$_SESSION['Nivel'];
 		$Fecha=date("Y-m-d");
-		$CodUsuario=$_SESSION['CodUsuarioLog'];
-		return $this->mostrarTodoRegistro("Usuarios LIKE '%$Nivel%' and Nivel='$Nivel' and CodUsuario='$CodUsuario' and FechaActividad='$Fecha'");
+		$CodUsuario=$_SESSION['CodUsuarioLog'];// and CodUsuario='$CodUsuario'
+		return $this->mostrarTodoRegistro("( (Usuarios=0 and CodUsuario=$CodUsuario and Nivel=$Nivel) or Usuarios LIKE '%$Nivel%') and Nivel='$Nivel' and FechaActividad='$Fecha'");
 			
 	}
 	function mostrarActividades($where){

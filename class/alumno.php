@@ -133,8 +133,7 @@ class alumno extends bd{
 		$this->campos=array('count(*) as CantidadTotal');
 		return $this->getRecords("Retirado=0 and CodCurso=(SELECT CodCurso FROM alumno WHERE CodAlumno=$CodAlumno)");
 	}
-	
-	
+	*/
 	function loginPadre($Usuario,$Password){
 		$this->campos=array("count(*) as Can,CodAlumno as CodUsuario");	
 		return $this->getRecords("UsuarioPadre='$Usuario' and PasswordP='$Password'");
@@ -142,7 +141,7 @@ class alumno extends bd{
 	function loginAlumno($Usuario,$Password){
 		$this->campos=array("count(*) as Can,CodAlumno as CodUsuario");	
 		return $this->getRecords("UsuarioAlumno='$Usuario' and Password='$Password'");
-	}*/
+	}
 	function insertarAlumno($Values){
 		$this->insertRow($Values,1);
 	}

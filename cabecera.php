@@ -1,3 +1,42 @@
+<?php
+switch($Nivel){
+	case 3:{include_once("class/docente.php");
+			$docente1=new docente;
+			$datosUsuario=$docente1->mostrarDocente($CodUsuario);
+			$datosUsuario=array_shift($datosUsuario);
+			$Apodo=$idioma["Docente"];	
+			$ApellidoPSis=$datosUsuario['Paterno'];
+			$ApellidoMSis=$datosUsuario['Materno'];
+			$NombresSis=$datosUsuario['Nombres'];
+	}break;
+	case 6:{include_once("class/alumno.php");
+			$alumnosis=new alumno;
+			$datosUsuario=$alumnosis->mostrarDatosPersonales($CodUsuario);
+			$datosUsuario=array_shift($datosUsuario);
+			$Apodo=$idioma['PadreFamilia'];
+			$ApellidoPSis=$datosUsuario['Paterno'];
+			$ApellidoMSis=$datosUsuario['Materno'];
+			$NombresSis=$datosUsuario['Nombres'];
+	}break;
+	case 7:{include_once("class/alumno.php");
+			$alumnosis=new alumno;
+			$datosUsuario=$alumnosis->mostrarDatosPersonales($CodUsuario);
+			$datosUsuario=array_shift($datosUsuario);
+			$Apodo=$idioma['Alumno'];
+			$ApellidoPSis=$datosUsuario['Paterno'];
+			$ApellidoMSis=$datosUsuario['Materno'];
+			$NombresSis=$datosUsuario['Nombres'];
+	}break;
+	default:{
+		//Usuario: 1,2,4,5
+		$datosUsuario=$usuario->mostrarDatos($CodUsuario);
+		$datosUsuario=array_shift($datosUsuario);
+		$Apodo=$datosUsuario['Nick'];
+		$ApellidoPSis=$datosUsuario['Paterno'];
+		$ApellidoMSis=$datosUsuario['Materno'];
+		$NombresSis=$datosUsuario['Nombres'];
+	}break;
+}?>
 </head>
 
 <body>
@@ -25,13 +64,13 @@
 					</a>
                     
 					<!-- Inicio: Menu de usuario -->
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title=" <?php echo $usu['Nick'];?>">
-						<i class="icon-user"></i><span class="hidden-phone hidden-tablet"> <?php echo $usu['Nombres'];?></span>
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title=" <?php echo $Apodo;?>">
+						<i class="icon-user"></i><span class="hidden-phone hidden-tablet"> <?php echo acortarPalabra(capitalizar($NombresSis));?></span>
 						<span class="caret"></span>
 					</a>
                     
 					<ul class="dropdown-menu">
-                    	<li><a><?php echo $usu['Nick'];?></a></li>
+                    	<li><a><?php echo $Apodo;?></a></li>
 						<li><a href="<?php echo $folder;?>usuario/configuracion.php"><?php echo $idioma['Configuracion']?></a></li>
 						<li class="divider"></li>
 						<li><a href="<?php echo $folder;?>login/logout.php"><?php echo $idioma['Salir']?></a></li>

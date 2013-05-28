@@ -4,10 +4,11 @@ $folder="../";
 $titulo="NAgendaActividades";
 $prioridadvalor=array("-1"=>$idioma['Bajo'],"0"=>$idioma['Normal'],"1"=>$idioma['Importante']);
 $estadovalor=array("0"=>$idioma['Pendiente'],"1"=>$idioma["Completado"]);
+$paraquien=array("0"=>"SoloParaMi","1"=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']);
 ?>
-<?php include_once("../cabecerahtml.php");?>
+<?php include_once($folder."cabecerahtml.php");?>
 <script type="text/javascript" src="../js/agendaactividades/calendario.js"></script>
-<?php include_once("../cabecera.php");?>
+<?php include_once($folder."cabecera.php");?>
 <div class="span8">
 	<div class="box">
         <div class="box-header"><h2><i class="icon-calendar"></i><span class="break"></span><?php echo $idioma['CalendarioActividades']?></h2></div>
@@ -40,6 +41,12 @@ $estadovalor=array("0"=>$idioma['Pendiente'],"1"=>$idioma["Completado"]);
             	<td><?php echo $idioma['Estado']?></td><td><?php echo campo("Estado","select",$estadovalor,"span12",1,"",0,"",0)?></td>
             </tr>-->
             <tr>
+            	<td colspan="2"><?php echo $idioma['ParaQuien']?><br><small><label>Doce<input type="checkbox"></label></small>
+                <?php campo("ParaQuien","select",$paraquien,"span12",1,"",0,array("multiple"=>"multiple","size"=>count($paraquien),"title"=>"asd"),"0")?>
+                
+                </td>
+            </tr>
+            <tr>
             	<td><?php echo $idioma['Detalle']?></td><td><?php echo campo("Detalle","textarea","","span12",1,$idioma["IngreseSu"].$idioma['Detalle'],0,array("rows"=>3))?></td>
             </tr>
         </table>
@@ -56,4 +63,4 @@ $estadovalor=array("0"=>$idioma['Pendiente'],"1"=>$idioma["Completado"]);
         </div>
     </div>
 </div>
-<?php include_once("../pie.php");?>
+<?php include_once($folder."pie.php");?>

@@ -95,7 +95,7 @@ if(!empty($_POST)){
 				"Referencia"=>"'$referencia'",
 				"Lenguaje"=>"'$lenguaje'"
 			);
-			$logusuario->insertarRegistro($valuesLog,1);
+			$logusuario->insertarRegistro($valuesLog,0);
 			//mysql_query("INSERT INTO logusuarios VALUES(NULL,$codUsuario,$Nivel,'$url','$fecha','$hora','$agente','$ip','$referencia','$lenguaje')");
 			$_SESSION['CodUsuarioLog']=$codUsuario;
 			$_SESSION['login']=1;

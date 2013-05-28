@@ -34,6 +34,9 @@ $LogoIcono=$cnf['Valor'];
 <script type="text/javascript" language="javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" language="javascript" src="../js/bootstrap.js"></script>
 <script type="text/javascript" language="javascript" src="js/login.js"></script>
+<script language="javascript" type="text/javascript">
+	RedirigirLogin=1;
+</script>
 </head>
 <body>
 <div class="container-fluid">

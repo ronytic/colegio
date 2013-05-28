@@ -32,8 +32,6 @@ $v=$config->mostrarConfig("LogoIcono");
 $LogoIcono=$v['Valor'];
 $v=$config->mostrarConfig("Sigla");
 $Sigla=$v['Valor'];
-$usu=$usuario->mostrarDatos($CodUsuario);
-$usu=array_shift($usu);
 ?>
 <!DOCTYPE html>
 <html lang="en">

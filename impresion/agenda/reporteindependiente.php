@@ -24,49 +24,49 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	$CodObser=$observaciones->CodObservaciones(1);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantObser=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones);
+	$CantObser=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones,$_GET['CodMateria']);
 	$CantObser=array_shift($CantObser);
 	//Cantidad de Faltas
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(2);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantFaltas=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones);
+	$CantFaltas=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones,$_GET['CodMateria']);
 	$CantFaltas=array_shift($CantFaltas);
 	//Cantidad de Atrasos
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(3);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantAtrasos=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones);
+	$CantAtrasos=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones,$_GET['CodMateria']);
 	$CantAtrasos=array_shift($CantAtrasos);
 	//Cantidad de Licencias
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(4);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantLicencias=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones);
+	$CantLicencias=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones,$_GET['CodMateria']);
 	$CantLicencias=array_shift($CantLicencias);
 	//Cantidad de Felicitaciones
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(5);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantNotificacion=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones);
+	$CantNotificacion=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones,$_GET['CodMateria']);
 	$CantNotificacion=array_shift($CantNotificacion);
 	//Cantidad de No contestan
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(6);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantNoContestan=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones);
+	$CantNoContestan=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones,$_GET['CodMateria']);
 	$CantNoContestan=array_shift($CantNoContestan);
 	//Cantidad de Felicitaciones
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(7);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantFelicitacion=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones);
+	$CantFelicitacion=$agenda->CantidadObservaciones($CodAlumno,$CodigosObservaciones,$_GET['CodMateria']);
 	$CantFelicitacion=array_shift($CantFelicitacion);
 	$Total=$CantObser['Cantidad']+$CantFaltas['Cantidad']+$CantAtrasos['Cantidad']+$CantLicencias['Cantidad']+$CantNotificacion['Cantidad']+$CantNoContestan['Cantidad']+$CantFelicitacion['Cantidad'];
 	
@@ -103,6 +103,15 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 		$fechaFinTrimestre3=$cnf['Valor'];
 	}
 	/*Fin de Sacando Información de Trimestre*/
+	
+	if(isset($_GET['CodMateria'])){
+		$CodMateria=$_GET['CodMateria'];
+		$mat=$materia->mostrarMateria(CodMateria);
+		$mat=array_shift($mat);
+		$ag=$agenda->mostrarRegistroMateriaAlumno(0,$al['CodCurso'],$CodMateria,$CodAlumno);
+	}else{
+		$ag=$agenda->mostrarRegistros($CodAlumno);
+	}
 	
 	$ima="../../imagenes/alumnos/".$al['Foto'];
 	if(!file_exists($ima) || empty($al['Foto'])){
@@ -144,6 +153,11 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	$pdf->ln();
 	$pdf->CuadroCuerpoPersonalizado(40,$idioma["CelularMadre"].": ",0,"L",$borde,"B");
 	$pdf->CuadroCuerpo(100,$al['CelularM'],0,"",$borde);
+	if(isset($mat)){
+		$pdf->ln();
+		$pdf->CuadroCuerpoPersonalizado(40,$idioma["SoloMateria"].": ",0,"L",$borde,"B");
+		$pdf->CuadroCuerpo(100,$mat['Nombre'],0,"",$borde);
+	}
 	
 	$pdf->Ln();$pdf->Ln();
 	$pdf->CuadroCuerpoPersonalizado(176,$idioma["Estadistica"],1,"",0,"B");
@@ -182,7 +196,7 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	$pdf->CuadroCuerpoPersonalizado(10,recortartexto($idioma["Periodo"],5,""),1,"C",1,"B");
 	$pdf->Ln();
 	$i=0;
-	foreach($agenda->mostrarRegistros($CodAlumno) as $a){$i++;
+	foreach($ag as $a){$i++;
 		$tipo=0;
 		$mensaje="";
 			if($cur['Bimestre']){

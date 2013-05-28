@@ -9,9 +9,17 @@ class agenda extends bd{
 		$this->campos=array("*");	
 		return $this->getRecords("CodUsuario=$CodDocente and CodCurso=$CodCurso and Activo=1"," FechaRegistro,HoraRegistro",0,0,0,1);
 	}
+	function mostrarRegistroFecha($Fecha){
+		$this->campos=array("*");	//CodUsuario=$CodDocente and 
+		return $this->getRecords("Fecha='$Fecha' and Activo=1"," Fecha DESC,HoraRegistro",0,0,0,1);
+	}
 	function mostrarRegistroMateria($CodDocente,$CodCurso,$Materia){
 		$this->campos=array("*");	//CodUsuario=$CodDocente and 
 		return $this->getRecords("CodCurso=$CodCurso and CodMateria=$Materia and Activo=1"," Fecha DESC,HoraRegistro",0,0,0,1);
+	}
+	function mostrarRegistroMateriaAlumno($CodDocente,$CodCurso,$Materia,$CodAlumno){
+		$this->campos=array("*");	//CodUsuario=$CodDocente and 
+		return $this->getRecords("CodCurso=$CodCurso and CodMateria=$Materia and CodAlumno=$CodAlumno and Activo=1"," FechaRegistro DESC,HoraRegistro",0,0,0,1);
 	}
 	function mostrarRegistroAlumno($CodDocente,$CodCurso,$Materia,$CodAlumno){
 		$this->campos=array("*");	
@@ -33,9 +41,25 @@ class agenda extends bd{
 		$this->campos=array("*");
 		return $this->getRecords("CodAlumno=$CodAlumno and Activo=1","Fecha DESC,HoraRegistro",0,0,0,1);
 	}
-	function CantidadObservaciones($CodAlumno,$CodObservaciones){
+	function CantidadObservaciones($CodAlumno="",$CodObservaciones,$CodMateria="",$Fecha=""){
 		$this->campos=array("count(*) as Cantidad");
-		return $this->getRecords("CodObservacion IN($CodObservaciones) and Activo=1 and CodAlumno=$CodAlumno");
+		if($CodMateria==""){
+			$Materia="";
+		}else{
+			$Materia="and CodMateria=$CodMateria";
+		}
+		if($CodAlumno==""){
+			$CodAl="";
+		}else{
+			$CodAl="and CodAlumno=$CodAlumno";
+		}
+		if($Fecha==""){
+			$fech="";
+		}else{
+			$fech="and Fecha='$Fecha'";
+		}
+		
+		return $this->getRecords("CodObservacion IN($CodObservaciones) and Activo=1 $CodAl $Materia $fech");
 	}
 	function actualizarAgendaE($values,$where){
 		$this->updateRow($values,$where);	

@@ -21,6 +21,7 @@ $idioma['Agenda']="Agenda";
 $idioma['Salir']="Salir";
 
 $idioma['ReporteImpresion']="Este Reporte Generado es para Imprimir";
+$idioma['TamanoCarta']="Tamaño Carta";
 //Menu
 $idioma['Menu']="Menú";
 $idioma['Inicio']="Inicio";
@@ -55,11 +56,15 @@ $idioma['NAlumnosGestionAnterior']="Alumnos Gestión Anterior";
 $idioma['NAgendaActividades']="Agenda de Actividades";
 $idioma['NExportarBaseDatos']="Exportar Base Datos";
 $idioma['NRegistroAgenda']="Registro de Agenda";
+$idioma['NRegistroNotas']="Registro de Notas";
+$idioma['NReporteNotas']="Reporte de Notas";
+$idioma['NCambiarNombresCasilleros']="Cambiar Nombres de Casilleros";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
 $idioma['De']="de";
 $idioma['Curso']="Curso";
+$idioma['Alumno']="Alumno";
 $idioma['Alumnos']="Alumnos";
 $idioma['Alumnas']="Alumnas";
 $idioma['Estadísticas']="Estadísticas";
@@ -67,8 +72,10 @@ $idioma['TarjetaCuotas']="Tarjeta de Cuotas";
 $idioma['BoletaDatos']="Boleta de Datos";
 $idioma['PagarCuotas']="Pagar Cuotas";
 
+$idioma['Modificar']="Modificar";
 $idioma['Configuracion']="Configuración";
 $idioma['Guardar']="Guardar";
+$idioma['PadreFamilia']="Padre de Familia";
 
 $idioma['Hombre']="Hombre";
 $idioma['Mujer']="Mujer";
@@ -124,6 +131,7 @@ $idioma['FechaAcceso']="Fecha Acceso";
 $idioma['HoraAcceso']="Hora Acceso";
 $idioma['Volver']="Volver";
 $idioma['Regresar']="Regresar";
+$idioma['Contrasena']="Contraseña";
 $idioma['Atras']="Atras";
 $idioma['BuscarAlumnoPor']="Buscar alumno por...";
 $idioma['BuscarCursoPor']="Buscar curso por...";
@@ -169,6 +177,7 @@ $idioma['Bimestre']="Bimestre";
 $idioma['RegistrarAlumno']="Registrar Alumno";
 $idioma['Vaciar']="Vaciar";
 $idioma['Cancelar']="Cancelar";
+$idioma['Y']="y";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Agenda de Actividades
@@ -193,6 +202,14 @@ $idioma['ListaActividades']="Lista de Actividades";
 $idioma['NoHayActividadesParaLaFechaSeleccionada']="No Hay Actividades para la Fecha seleccionada";
 $idioma['AgendaActividades']="Agenda de Actividades";
 $idioma['Hoy']="Hoy";
+$idioma['ParaQuien']="¿Para Quien?";
+$idioma['Administrador']="Administrador";
+$idioma['Director']="Director";
+$idioma['Docente']="Docente";
+$idioma['Secretaria']="Secretaria";
+$idioma['Regente']="Regente";
+$idioma['PadreFamilia']="Padre de Familia";
+$idioma['Alumnos']="Alumnos";
 //Alumno
 $idioma['SeparacionDatos']="La separación de varios datos se lo realiza con el \"/\" (shif+7)(Símbolo Dividido)";
 $idioma['NombresAdicionales']="Nombres Adicionales";
@@ -373,6 +390,28 @@ $idioma['PromediosBajos']="Promedios Bajos";
 $idioma['ReportePromedio']="Promedio Notas";
 $idioma['ReportePromedioUnidad']="Promedio Notas Unidad Educativa";
 $idioma['ReportePromedioNotasAnual']="Reporte de Promedio de Notas Anual";
+$idioma['NotaAprobacion']="Nota de Aprobación";
+$idioma['NotaCalifcacion']="Nota de Califcación";
+$idioma['NoExisteCasillerosRegistradosParaEste']="No Existe Casilleros Registrados para este";
+$idioma['GuardarNota']="Guardar Nota";
+$idioma['RegistroNotas']="Registro de Notas";
+$idioma['RegistroImprimir']="Registro para Imprimir";
+$idioma['CambiarNombreCasillas']="Cambiar nombre Casillas";
+$idioma['Resultado']="Resultado";
+$idioma['Final']="Final";
+$idioma['Dps']="Dps";
+$idioma['NotaFinal']="Nota Final";
+$idioma['ReporteNotas']="Reporte de Notas";
+$idioma['Ejemplo']="Ejemplo";
+$idioma['ExamenFinal']="Exámen Final";
+$idioma['Carpeta']="Carpeta";
+$idioma['Laboratorio']="Laboratorio";
+$idioma['TrabajoPractico']="Trabajo Práctico";
+$idioma['NombresCasilleros']="Nombres de casilleros";
+$idioma['GuardarNombres']="Guardar Nombres";
+$idioma['NotasGuardadoCorrectamente']="Sus Notas sean guardado Correctamente";
+$idioma['NombresGuardadoCorrectamente']="Sus Nombres sean guardado Correctamente";
+$idioma['NotaExcedidaLimite']="Nota Excedida del limite de";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
@@ -400,6 +439,12 @@ $idioma['AgendaAlumnos']="Agenda de Alumnos";
 $idioma['ParaEliminarAnotacionConsulteRegente']="Para eliminar una anotación, consulte al Regente";
 $idioma['BusquePor']="Busque por...";
 $idioma['BusquedaEspecificaSeleccionado']="Búsqueda Especifica por lo seleccionado";
+$idioma['Error']="Error";
+$idioma['FalloRegistro']="Fallo de Registro";
+$idioma['SoloMateria']="Solo la Materia";
+$idioma['VerAgenda']="Ver Agenda";
+$idioma['ObservacionesAgenda']="Observaciones de Agenda";
+$idioma['DiaHoy']="Día de Hoy";
 //Seguridad
 $idioma['Estructura']="Estructura";
 $idioma['TablasActualizar']="Tablas a Actualizar";
@@ -432,7 +477,9 @@ $idioma['NoHayTareasRegistradas']="No hay tareas registradas";
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";
-$idioma['RgistrarNuevosPagos']="Rgistrar Nuevos Pagos";
+$idioma['FechaAgenda']="Fecha de Agenda";
+$idioma['RegistrarNuevosPagos']="Registrar Nuevos Pagos";
+$idioma['RegistrarNuevaObservacion']="Registrar Nueva Observación";
 $idioma['NoHayPagoCuotasFecha']="No hay Pago de Cuotas en esta Fecha";
 /*Mensajes Globales Javascript*/
 $idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?"

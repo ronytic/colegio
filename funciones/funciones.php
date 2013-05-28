@@ -11,7 +11,7 @@ function campo($nombre,$tipo="text",$valores="",$clase="",$required=0,$placehold
 			
 		case "select":{
 			?>
-        	<select id="<?php echo $nombre;?>" name="<?php echo $nombre;?>" <?php echo $autofocus==1?'autofocus':'';?><?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> class="<?php echo $clase;?>" <?php echo $required==1?'required="required"':'';?>><?php  if(empty($valorseleccion) && $required=="0"){?><option value="" selected="selected"><?php echo $idioma['Seleccionar']?></option><?php }?>
+        	<select id="<?php echo $nombre;?>" name="<?php echo $nombre;?>" <?php echo $autofocus==1?'autofocus':'';?><?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> class="<?php echo $clase;?>" <?php echo $required==1?'required="required"':'';?>><?php  if(empty($valorseleccion) && $required==0){?><option value="" selected="selected"><?php echo $idioma['Seleccionar']?></option><?php }?>
             	<?php foreach($valores as $k=>$v){?><option value="<?php echo $k;?>" <?php echo (string)$valorseleccion==(string)$k?'selected':'';?>><?php echo $v;?></option><?php	}?>
             </select>
 			<?php }break;	

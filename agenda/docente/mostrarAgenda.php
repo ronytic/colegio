@@ -61,7 +61,7 @@ if(!empty($_POST)){
 		$ag=$agenda->mostrarRegistroCurso($CodDocente,$CodCurso);
 	}*/
 	if(isset($_POST['CodAlumno'])){
-		$ag=$agenda->mostrarRegistroAlumno($CodDocente,$CodCurso,$CodMateria,$_POST['CodAlumno']);
+		$ag=$agenda->mostrarRegistroMateriaAlumno($CodDocente,$CodCurso,$CodMateria,$_POST['CodAlumno']);
 	}else{
 		$ag=$agenda->mostrarRegistroMateria($CodDocente,$CodCurso,$CodMateria);
 	}

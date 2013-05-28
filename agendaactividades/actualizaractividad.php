@@ -6,11 +6,13 @@ extract($_POST);
 include_once("../class/agendaactividades.php");
 $agendaactividades=new agendaactividades;
 $Nivel=$_SESSION['Nivel'];
+$Usuarios=implode(",",$ParaQuien);
 $valores=array("FechaActividad"=>"'".fecha2Str($FechaActividad,0)."'",
 				"HoraInicio"=>"'$HoraInicio'",
 				"HoraFin"=>"'$HoraFin'",
 				"Prioridad"=>"'$Prioridad'",
 				"Estado"=>"'$Estado'",
+				"Usuarios"=>"'$Usuarios'",
 				"Detalle"=>"'$Detalle'",
 				"Usuarios"=>"'$Nivel'",
 	);

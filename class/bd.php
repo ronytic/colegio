@@ -210,8 +210,8 @@ class bd{
 				$Values['CodUsuario']="$CodUsuario";
 			}
 			$Values['Activo']=1;
-		}else{
-			$Values=array_merge	($Values,array("Activo"=>1));	
+		}else{//,array("Activo"=>1)
+			$Values=array_merge	($Values);	
 		}
 		
 		//print_r($Values);

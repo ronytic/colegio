@@ -29,7 +29,9 @@ if(!empty($_GET['CodAl'])){
     <script language="javascript" type="text/javascript" src="../../js/agenda/registro.js"></script>
     <script language="javascript">var CodCurso
 	$(document).ready(function(e) {
-    CodCurso=<?php echo $al['CodCurso']?>;    
+    CodCurso=<?php echo $al['CodCurso']?>;   
+	Error="<?php echo $idioma['Error']?>"; 
+	FalloRegistro="<?php echo $idioma['FalloRegistro']?>"; 
     });
 	
     </script>
@@ -58,6 +60,9 @@ if(!empty($_GET['CodAl'])){
             	<a class="btn btn-danger registrar"><?php echo $idioma['Registrar']?></a> <a class="btn" id="terminar"><?php echo $idioma['Terminar']?></a><br /><br />
                 <a class="btn reportegeneral"><?php echo $idioma['ReporteGeneral']?></a>
                 <a class="btn btn-info reporteimprimir"><?php echo $idioma['ReporteImprimir']?></a>
+                <div class="alert alert-info">
+                <label for="Busqueda" ><?php echo $idioma["BusquedaEspecificaSeleccionado"]?>:<?php campo("Busqueda","checkbox","1","")?></label> 
+                </div>
             </div>
         </div>
      </div>

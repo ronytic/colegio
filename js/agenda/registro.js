@@ -22,19 +22,41 @@ $(document).ready(function(e) {
     });
 	$(".reporteimprimir").click(function(e) {
 		e.preventDefault();
-        $.post("reporteimprimir.php",mostrar);
+		Busqueda=$("#Busqueda").attr("checked")?true:false;
+		if(Busqueda){
+			var CodMateria=$("select[name=Materia]").val();
+			$.post("reporteimprimir.php",{'CodMateria':CodMateria},mostrar);
+		}else{
+        	$.post("reporteimprimir.php",mostrar);
+		}
     });
 	$(".reportegeneral").click(function(e) {
-        $.post("mostrarAgenda.php",mostrar);
+       mostrarAgenda(); 
     });
-	$.post("mostrarAgenda.php",mostrar);
+	/*Busqueda Especifica*/
+	$("#Busqueda").change(function(e) {
+		mostrarAgenda();
+    });
+	$('select[name=Materia]').change(function(){
+		mostrarAgenda();
+	});
+	/*Fin Busqueda Especifica*/
+	mostrarAgenda();
 });
-function resultado(data){
-	
-	if(data=='OK'){
-		$.post("mostrarAgenda.php",mostrar);
+function mostrarAgenda(){
+	Busqueda=$("#Busqueda").attr("checked")?true:false;
+	if(Busqueda){
+		var CodMateria=$("select[name=Materia]").val();
+		$.post("mostrarAgenda.php",{'CodMateria':CodMateria},mostrar);	
 	}else{
-		alert("Falló el Registro. error:"+data)	
+		$.post("mostrarAgenda.php",mostrar);	
+	}
+}
+function resultado(data){
+	if(data=='OK'){
+		mostrarAgenda();
+	}else{
+		alert(FalloRegistro+" "+Error+": "+data)	
 	}
 	
 }

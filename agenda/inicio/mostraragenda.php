@@ -7,110 +7,72 @@ include_once("../../class/materias.php");
 include_once("../../class/config.php");
 include_once("../../class/observaciones.php");
 if(isset($_POST)){
-	$CodAl=$_SESSION['CodAl'];
+	$Fecha=fecha2Str($_POST['Fecha'],0);
+	//$CodAl=$_SESSION['CodAl'];
 	$alumno=new alumno;
 	$curso=new curso;
 	$agenda=new agenda;
 	$materia=new materias;
 	$observaciones=new observaciones;
 	$config=new config;
-	$al=$alumno->mostrarTodoDatos($CodAl);
-	$al=array_shift($al);
-	$cur=$curso->mostrarCurso($al['CodCurso']);
-	$cur=array_shift($cur);
+
 	//Cantidad de Observaciones
 	$CodObser=$observaciones->CodObservaciones(1);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantObser=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria']);
+	$CantObser=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria'],$Fecha);
 	$CantObser=array_shift($CantObser);
 	//Cantidad de Faltas
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(2);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantFaltas=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria']);
+	$CantFaltas=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria'],$Fecha);
 	$CantFaltas=array_shift($CantFaltas);
 	//Cantidad de Atrasos
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(3);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantAtrasos=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria']);
+	$CantAtrasos=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria'],$Fecha);
 	$CantAtrasos=array_shift($CantAtrasos);
 	//Cantidad de Licencias
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(4);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantLicencias=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria']);
+	$CantLicencias=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria'],$Fecha);
 	$CantLicencias=array_shift($CantLicencias);
 	//Cantidad de Felicitaciones
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(5);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantNotificacion=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria']);
+	$CantNotificacion=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria'],$Fecha);
 	$CantNotificacion=array_shift($CantNotificacion);
 	//Cantidad de No contestan
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(6);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantNoContestan=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria']);
+	$CantNoContestan=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria'],$Fecha);
 	$CantNoContestan=array_shift($CantNoContestan);
 	//Cantidad de Felicitaciones
 	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(7);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);
-	$CantFelicitacion=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria']);
+	$CantFelicitacion=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones,$_POST['CodMateria'],$Fecha);
 	$CantFelicitacion=array_shift($CantFelicitacion);
 	$Total=$CantObser['Cantidad']+$CantFaltas['Cantidad']+$CantAtrasos['Cantidad']+$CantLicencias['Cantidad']+$CantNotificacion['Cantidad']+$CantNoContestan['Cantidad']+$CantFelicitacion['Cantidad'];
 	
-	/*Sacando Fecha de Trimestre*/
-	if($cur['Bimestre']){
-		$cnf=$config->mostrarConfig("InicioBimestre1");
-		$fechaInicioBimestre1=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("FinBimestre1");
-		$fechaFinBimestre1=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("InicioBimestre2");
-		$fechaInicioBimestre2=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("FinBimestre2");
-		$fechaFinBimestre2=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("InicioBimestre3");
-		$fechaInicioBimestre3=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("FinBimestre3");
-		$fechaFinBimestre3=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("InicioBimestre4");
-		$fechaInicioBimestre4=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("FinBimestre4");
-		$fechaFinBimestre4=$cnf['Valor'];
-	}else{
-		$cnf=$config->mostrarConfig("InicioTrimestre1");
-		$fechaInicioTrimestre1=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("FinTrimestre1");
-		$fechaFinTrimestre1=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("InicioTrimestre2");
-		$fechaInicioTrimestre2=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("FinTrimestre2");
-		$fechaFinTrimestre2=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("InicioTrimestre3");
-		$fechaInicioTrimestre3=$cnf['Valor'];
-		$cnf=$config->mostrarConfig("FinTrimestre3");
-		$fechaFinTrimestre3=$cnf['Valor'];
-	}
-	/*Fin de Sacando Información de Trimestre*/
-	if(isset($_POST['CodMateria'])){
-		$CodMateria=$_POST['CodMateria'];
-		$ag=$agenda->mostrarRegistroMateriaAlumno(0,$al['CodCurso'],$CodMateria,$CodAl);
-	}else{
-		$ag=$agenda->mostrarRegistros($CodAl);
-	}
+	
+	$ag=$agenda->mostrarRegistroFecha($Fecha);
 	?>
     <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
-    <table class="table table-condensed table-bordered">
+    <table class="table table-condensed table-bordered inicio">
     	<thead>
+        <tr><th width="75" colspan="1"><?php echo $idioma['Fecha']?></th><th colspan="3"><?php echo fecha2Str($Fecha)?></th></tr>
     	<tr>
     		<th><?php echo $idioma['Observaciones']?></th>
             <th colspan="2"><?php echo $idioma['Felicitaciones']?></th>
@@ -145,14 +107,53 @@ if(isset($_POST)){
     <?php
 	?>
     <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
-    <table class="table table-hover table-bordered table-striped table-condensed">
+    <table class="table table-hover table-bordered table-striped table-condensed inicio">
     <thead>
-    	<tr class="cabecera"><th width="20" style="min-width:20px;"></th><th><?php echo $idioma['Materia']?></th><th width="100"><?php echo $idioma['Observacion']?></th><th><?php echo $idioma['Detalle']?></th><th width="75"><?php echo $idioma['Fecha']?></th><th></th></tr>
+    	<tr><th  colspan="3"><?php echo $idioma['Fecha']?></th><th colspan="4"><?php echo fecha2Str($Fecha)?></th></tr>
+    	<tr class="cabecera"><th width="10" style="min-width:10px;"></th><th><?php echo $idioma['Nombre']?></th><th><?php echo recortarTexto($idioma['Curso'],3,"")?></th><th><?php echo recortarTexto($idioma['Materia'],3,"")?></th><th width="100"><?php echo recortarTexto($idioma['Observacion'],3,"")?></th><th><?php echo $idioma['Detalle']?></th><th></th></tr>
         </thead>
         <?php
-		
-		
 		foreach($ag as $a){
+			$al=$alumno->mostrarTodoDatos($a['CodAlumno']);
+			$al=array_shift($al);
+			
+			$cur=$curso->mostrarCurso($al['CodCurso']);
+			$cur=array_shift($cur);
+			
+			/*Sacando Fecha de Trimestre*/
+			if($cur['Bimestre']){
+				$cnf=$config->mostrarConfig("InicioBimestre1");
+				$fechaInicioBimestre1=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("FinBimestre1");
+				$fechaFinBimestre1=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("InicioBimestre2");
+				$fechaInicioBimestre2=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("FinBimestre2");
+				$fechaFinBimestre2=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("InicioBimestre3");
+				$fechaInicioBimestre3=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("FinBimestre3");
+				$fechaFinBimestre3=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("InicioBimestre4");
+				$fechaInicioBimestre4=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("FinBimestre4");
+				$fechaFinBimestre4=$cnf['Valor'];
+			}else{
+				$cnf=$config->mostrarConfig("InicioTrimestre1");
+				$fechaInicioTrimestre1=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("FinTrimestre1");
+				$fechaFinTrimestre1=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("InicioTrimestre2");
+				$fechaInicioTrimestre2=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("FinTrimestre2");
+				$fechaFinTrimestre2=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("InicioTrimestre3");
+				$fechaInicioTrimestre3=$cnf['Valor'];
+				$cnf=$config->mostrarConfig("FinTrimestre3");
+				$fechaFinTrimestre3=$cnf['Valor'];
+			}
+			/*Fin de Sacando Información de Trimestre*/
+			
 			$tipo=0;
 			$mensaje="";
 			$m=$materia->mostrarMateria($a['CodMateria']);
@@ -183,14 +184,13 @@ if(isset($_POST)){
 						case 4:{?><div class="cnegro" title="<?php echo $mensaje?>"></div><?php }break;	
 					}
 					?><?php if($a['Resaltar']){?><div class="crojo" title="<?php echo $idioma['Importante']?>"></div><?php }?></td>
-            	<td class="<?php echo $resaltar?>"><?php echo $m['Nombre']?></td>
+                <td class="<?php echo $resaltar?>"><?php echo capitalizar($al['Paterno'])?> <?php echo capitalizar(acortarPalabra($al['Nombres']))?></td>
+                <td class="<?php echo $resaltar?>"><?php echo $cur['Abreviado']?></td>
+            	<td class="<?php echo $resaltar?>"><?php echo $m['Abreviado']?></td>
                 <td class="<?php echo $resaltar?>"><?php echo $o['Nombre']?></td>
                 <td class="<?php echo $resaltar?>"><?php echo $a['Detalle'];?></td>
-                <td class="<?php echo $resaltar?>"><?php echo date("d-m-Y",strtotime($a['Fecha']));?></td>
-                <td class="centrar">
-                	
-                    <input type="checkbox" class="resaltar checkbox" rel="<?php echo $a['CodAgenda'];?>" title="<?php echo $idioma['Revisado']?>" <?php if($a['Resaltar2'])echo 'checked="checked"';?>/><br />
-                    <a href="#" class="btn btn-mini eliminar" title="<?php echo $idioma['Eliminar']?>"  rel="<?php echo $a['CodAgenda'];?>">x</a>
+				<td class="centrar">
+                    <a href="agenda/total/agenda.php?CodAl=<?php echo $a['CodAlumno']?>" class="btn btn-mini" title="<?php echo $idioma['VerAgenda']?>"><i class="icon-book"></i></a>
                 </td>
 			</tr>
             <?php
