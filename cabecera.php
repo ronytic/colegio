@@ -40,6 +40,7 @@ switch($Nivel){
 </head>
 
 <body>
+	<div id="contenedorcargando"><img src="<?php echo $folder?>imagenes/cargador/cargador.gif"></div>
 		<!-- inicio: Cabecera -->
 	<div class="navbar">
 		<div class="navbar-inner">

@@ -42,6 +42,7 @@ $curso=new curso;
     <div class="box">
         <div class="box-header"><h2><i class="icon-user"></i><span class="break"></span><?php echo $idioma['Alumnos']?></h2></div>
         <div class="box-content">
+        	<div id="cargandoralumnos"></div>
         	<input type="search" placeholder="<?php echo $idioma['BuscarAlumnoPor']?>" id="ialumno" class="span12"/>
             <select class="span12" id="selectalumno" data-placeholder="Seleccione un Alumno">
             	

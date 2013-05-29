@@ -12,7 +12,7 @@ if(isset($_POST)){
 			"Nick"=>"'$Nick'",
 			"Idioma"=>"'$Idioma'",
 		);
-
+	$_SESSION['Idioma']="$Idioma";
 	if((!empty($Pass)) || $Pass!=""){
 		$valores=array_merge(array("Pass"=>"'$Pass'"),$valores);
 	}

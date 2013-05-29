@@ -1,3 +1,18 @@
+/*Cargador*/
+#contenedorcargando{
+	position:fixed;
+	top:0px;
+	left:45%;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	padding:2px;
+	margin:0px;
+	background-color:#FFF;
+	/*box-shadow:#CCC    0px 0px 2px inset;*/
+	display:none;
+}
+/*Fin de Cargador*/
 /* Inicio de Correcciones del Framework*/
 .form-horizontal .control-group{
 	margin-bottom:5px;	

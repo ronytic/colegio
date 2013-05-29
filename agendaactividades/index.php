@@ -6,15 +6,16 @@ $prioridadvalor=array("-1"=>$idioma['Bajo'],"0"=>$idioma['Normal'],"1"=>$idioma[
 $estadovalor=array("0"=>$idioma['Pendiente'],"1"=>$idioma["Completado"]);
 $paraquien=array("0"=>$idioma["SoloParaMi"]);
 switch($_SESSION['Nivel']){
-	case 1:{$paraquien=array_merge($paraquien,array("1"=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
-	case 2:{$paraquien=array_merge($paraquien,array(2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
-	case 3:{$paraquien=array_merge($paraquien,array(3=>$idioma['Docente']));}break;
-	case 4:{$paraquien=array_merge($paraquien,array(3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
+	case 1:{$paraquien=array_merge($paraquien,array(1=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docentes'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
+	case 2:{$paraquien=array_merge($paraquien,array(2=>$idioma['Director'],3=>$idioma['Docentes'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
+	case 3:{$paraquien=array_merge($paraquien,array(3=>$idioma['Docentes']));}break;
+	case 4:{$paraquien=array_merge($paraquien,array(3=>$idioma['Docentes'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
 	case 5:{$paraquien=array_merge($paraquien,array(5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
 }
 array("1"=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos'])
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
+<script type="text/javascript" src="../js/core/plugins/jquery.chosen.min.js" language="javascript"></script>
 <script type="text/javascript" src="../js/agendaactividades/calendario.js"></script>
 <?php include_once($folder."cabecera.php");?>
 <div class="span8">
