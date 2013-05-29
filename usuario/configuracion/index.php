@@ -24,6 +24,11 @@ include_once($folder."cabecerahtml.php");
 <span class="span12 box">
 	<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma['DatosUsuario']?></h2></div>
     <div class="box-content">
+    <?php if(isset($_GET['s'])):?>
+    <div class="alert alert-success"><?php echo $idioma['DatosGuardadosCorrectamente']?>
+    	<button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <?php endif;?>
     <form action="guardaradmin.php" method="post" enctype="multipart/form-data" id="datos" autocomplete="off">
     	<table class="table table-hover table-striped table-bordered">
         	<tr><td><?php echo $idioma['Nombres']?>:</td><td><?php campo("Nombres","text",$usuconf['Nombres'],"span6",1)?></td></tr>

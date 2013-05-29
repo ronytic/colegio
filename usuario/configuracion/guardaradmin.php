@@ -21,6 +21,6 @@ if(isset($_POST)){
 		$valores=array_merge(array("Foto"=>"'$Foto'"),$valores);	
 	}
 	$usuario->actualizarDatos($valores,$_SESSION['CodUsuarioLog']);
-	header("Location:index.php");
+	header("Location:index.php?s=1");
 }
 ?>

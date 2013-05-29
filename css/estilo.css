@@ -11,6 +11,7 @@
 	background-color:#FFF;
 	/*box-shadow:#CCC    0px 0px 2px inset;*/
 	display:none;
+	z-index:9999;
 }
 /*Fin de Cargador*/
 /* Inicio de Correcciones del Framework*/
@@ -56,6 +57,9 @@ label.msg{
 }
 .oculto{
 	display:none;	
+}
+.submenu{
+
 }
 .submenu li a span{
 	text-decoration:none;
@@ -220,7 +224,7 @@ tr:hover td.celeste{
 	vertical-align:middle !important;	
 }
 .x2{
-	font-size:2em !important;	
+	font-size:2em !important;
 }
 /*Inicio de la Tabla*/
 .tabla{
@@ -233,4 +237,8 @@ tr:hover td.celeste{
 /*Fin de la tabla*/
 .completado td{
 	color:#CCC;	
+}
+.resaltarfila td{
+	font-weight:bold;
+	
 }
