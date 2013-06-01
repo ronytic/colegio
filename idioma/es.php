@@ -349,9 +349,11 @@ $idioma['VerReporte']="Ver Reporte";
 $idioma['TodoBecados']="Todos los Becados";
 $idioma['Campo1']="Campo 1";
 $idioma['Campo2']="Campo 2";
+$idioma['Campo3']="Campo 3";
 $idioma['DibujarBorde']="Dibujar Borde";
 $idioma['DibujarSombra']="Dibujar Sombra";
 $idioma['SoloCasillasBlanco']="Solo Casillas en Blanco";
+$idioma['DibujarSombreado']="Dibujar Sombreado";
 
 //Docente
 $idioma['FrecuenciaAcceso']="Frecuencia de Accesos";

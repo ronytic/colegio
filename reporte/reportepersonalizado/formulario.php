@@ -27,6 +27,15 @@ if(isset($_POST)){
                                 <option value="CelularP"><?php echo $idioma['CelularP']?></option>
 								<option value="CelularM"><?php echo $idioma['CelularM']?></option>
 								</select></td></tr>
+		<tr><td><?php echo $idioma['Campo3']?></td><td><select name="campo3" class="input-medium span10">
+        						<option value=""><?php echo $idioma['Ninguno']?></option>
+        						<option value="FechaNac"><?php echo $idioma['FechaNac']?></option>
+                                <option value="Ci"><?php echo $idioma['Ci']?></option>
+                                <option value="TelefonoCasa"><?php echo $idioma['TelefonoCasa']?></option>
+                                <option value="Rude"><?php echo $idioma['Rude']?></option>
+                                <option value="CelularP"><?php echo $idioma['CelularP']?></option>
+								<option value="CelularM"><?php echo $idioma['CelularM']?></option>
+								</select></td></tr>
           <tr><td><?php echo $idioma['DibujarBorde']?></td><td><input type="checkbox" name="borde"/></td></tr>
           <tr><td><?php echo $idioma['DibujarSombreado']?></td><td><input type="checkbox" name="sombreado" checked="checked"/></td></tr>
           <tr><td><?php echo $idioma['SoloCasillasBlanco']?></td><td><input type="checkbox" name="blanco"/>
