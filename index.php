@@ -105,4 +105,5 @@
     </div>
     <?php endif;?>
 </div>
-<?php include_once("pie.php");?>
+<script type="text/javascript">
+</script><?php include_once("pie.php");?>

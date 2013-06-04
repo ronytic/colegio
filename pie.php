@@ -127,6 +127,22 @@
 		var mensajeg=Array();
 		mensajeg['EliminarRegistro']="<?php echo $idioma['EliminarRegistro']?>";
 		var DispositivoMovil=0;
+		
+		/*$(document).on("ready",function(){
+			//alert(screen.width+"W - "+$(document).width()+" V");	
+			//maximizar()
+			var offset = (navigator.userAgent.indexOf("Mac") != -1 ||
+			navigator.userAgent.indexOf("Gecko") != -1 ||
+			navigator.appName.indexOf("Netscape") != -1) ? 0 : 4;
+			window.moveTo(-offset, -offset);
+			window.resizeTo(screen.availWidth + (2 * offset),
+			screen.availHeight + (2 * offset));
+		});
+		
+		function maximizar(){
+		//window.moveTo(0,0);
+		window.resizeTo(screen.width,screen.height);
+		}*/
 	</script>
 	<script src="<?php echo $folder;?>js/core/framework/bootstrap.js" language="javascript"></script>
     <script src="<?php echo $folder;?>js/core/plugins/jquery.listado.js" language="javascript"></script>
