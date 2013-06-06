@@ -17,15 +17,15 @@ if(!empty($_POST['CodDocente'])){
     <table class="table table-bordered">
         <tr>
             <td><?php echo $idioma['PeriodoActual']?>:<br />
-            	<select name="Periodo">
+            	<select name="Periodo" class="span12">
             	<?php for($i=1;$i<=4;$i++){?>
 					<option value="<?php echo $i;?>" <?php echo ($i==$PeriodoActual)?'selected="selected"':'';?>>
 						<?php echo $i;?>
                         <?php switch($i){
-							case 1:{echo "1 Bimestre - Trimestre";}break;
-							case 2:{echo "2 Bimestre - Trimestre";}break;
-							case 3:{echo "3 Bimestre - Trimestre";}break;
-							case 4:{echo "4 Bimestre";}break;
+							case 1:{echo "Bimestre - Trimestre";}break;
+							case 2:{echo "Bimestre - Trimestre";}break;
+							case 3:{echo "Bimestre - Trimestre";}break;
+							case 4:{echo "Bimestre";}break;
 						}?>
 					</option>
                 <?php }?>
