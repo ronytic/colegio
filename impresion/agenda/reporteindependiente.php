@@ -106,7 +106,7 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	
 	if(isset($_GET['CodMateria'])){
 		$CodMateria=$_GET['CodMateria'];
-		$mat=$materia->mostrarMateria(CodMateria);
+		$mat=$materia->mostrarMateria($CodMateria);
 		$mat=array_shift($mat);
 		$ag=$agenda->mostrarRegistroMateriaAlumno(0,$al['CodCurso'],$CodMateria,$CodAlumno);
 	}else{

@@ -1,12 +1,12 @@
 <?php
 include_once("../../login/check.php");
+print_r($_POST);
+
 if(!empty($_POST)){
-	include_once("../../class/config.php");
 	include_once("../../class/alumno.php");
 	include_once("../../class/casilleros.php");
 	include_once("../../class/docentemateriacurso.php");
 	include_once("../../class/registronotas.php");
-	
 	include_once("../../class/curso.php");
 	include_once("../../class/materias.php");
 	include_once("../../class/docente.php");
@@ -17,11 +17,10 @@ if(!empty($_POST)){
 	$casilleros=new casilleros;
 	$config=new configuracion;
 	$docentemateriacurso=new docentemateriacurso;
-	$cnf=array_shift($config->mostrarConfig("TrimestreActual"));
-	$trimestre=$cnf['Valor'];
 	$casillas=$casilleros->estadoTabla();
 	//$docM=array_shift($docM);
 	$registroNotas=new registronotas;
+	$Periodo=$_POST['Periodo'];
 	$CodDocente=$_POST['CodDocente'];
 	$CodMateria=$_POST['CodMateria'];
 	$CodCurso=$_POST['CodCurso'];
@@ -34,6 +33,8 @@ if(!empty($_POST)){
 	$docmateriacurso=array_shift($docentemateriacurso->mostrarDocenteMateriaCursoSexo($CodDocente,$CodMateria,$CodCurso,$SexoAlumno));
 	$CodCasilleros=$casillas['Auto_increment'];
 	//echo "<br>$CodDocenteMateria<br>";
+	$casillas
+	exit();
 	$valDM=array('CodCasilleros'=>$CodCasilleros,
 				'CodDocenteMateriaCurso'=>$docmateriacurso['CodDocenteMateriaCurso'],
 				'Casilleros'=>$Casillas,
@@ -41,6 +42,7 @@ if(!empty($_POST)){
 				'FormulaCalificaciones'=>"'$Formula'",
 				'Dps'=>$Dps
 				);
+				exit();
 	for($i=1;$i<=15;$i++){
 		if($i<=$Casillas){
 			$valDM['NombreCasilla'.$i]="'Casilla $i'";

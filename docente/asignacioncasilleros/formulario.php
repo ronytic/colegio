@@ -14,7 +14,7 @@ if(!empty($_POST['CodDocente'])){
 	$docentemateriacurso=new docentemateriacurso;
 	$docmateriaCurso=array_shift($docentemateriacurso->mostrarDocenteGrupo($CodDocente,"SexoAlumno"));
 	?>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover">
         <tr>
             <td><?php echo $idioma['PeriodoActual']?>:<br />
             	<select name="Periodo" class="span12">
@@ -30,11 +30,6 @@ if(!empty($_POST['CodDocente'])){
 					</option>
                 <?php }?>
                 </select>
-				<?php switch($PeriodoActual){
-					case 1:{echo "1º Trimestre";}break;
-					case 2:{echo "2º Trimestre";}break;
-					case 3:{echo "3º Trimestre";}break;
-				}?>
 			</td>
         </tr>
         <tr>
@@ -104,8 +99,8 @@ if(!empty($_POST['CodDocente'])){
             	<input type="text" name="aprobacion" class="nocap span12" value="70" readonly="readonly" maxlength="3" size="3">
             </td>
 		</tr>
-        <tr><td><input type="submit" value="<?php echo $idioma['Guardar']?>" class="btn btn-success guardar"></td></tr>
     </table>
+    <input type="submit" value="<?php echo $idioma['Guardar']?>" class="btn btn-success guardar">
     <?php
 }
 ?>

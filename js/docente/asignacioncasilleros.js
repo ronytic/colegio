@@ -1,4 +1,5 @@
 function lanzadorC(CodDocente){
+	cargandoG("#contenido1");
 	$.post('formulario.php',{'CodDocente':CodDocente},respuestaInicial);
 }
 var valorbimestre;
@@ -43,7 +44,7 @@ function respuestaInicial(data){
        $('#formula').click(); 
     });
 	$(".guardar").click(function(e) {
-		
+		var Periodo=$("select[name=Periodo]").val();
 		var CodMateria=$("select[name=materia]").val();
 		var CodCurso=$("select[name=curso]").val();
 		var SexoAlumno=$("select[name=alumno]").val();
@@ -52,7 +53,7 @@ function respuestaInicial(data){
 		var Tope=$("input[name=tope]").val();
 		var Dps=$("select[name=dps]").val();
 		if(confirm("¿Esta seguro de guardar esta configuración del Docente, Curso, Materia y el Tipo del Alumno?\n NO SE PODRA CAMBIAR ESTA CONFIGURACIÓN POSTERIORMENTE")){
-			$.post('guardar.php',{'CodDocente':CodDocente,'CodMateria':CodMateria,'CodCurso':CodCurso,'SexoAlumno':SexoAlumno,'Casillas':Casillas,'Formula':Formula,'Dps':Dps,'Tope':Tope},respuesta2);
+			$.post('guardar.php',{'Periodo':Periodo,'CodDocente':CodDocente,'CodMateria':CodMateria,'CodCurso':CodCurso,'SexoAlumno':SexoAlumno,'Casillas':Casillas,'Formula':Formula,'Dps':Dps,'Tope':Tope},respuesta2);
 		}
 		//
 		
