@@ -1,7 +1,8 @@
 function lanzadorC(CodDocente){
-	$.post('formulario.php',{'CodDocente':CodDocente},respuesta1);
+	$.post('formulario.php',{'CodDocente':CodDocente},respuestaInicial);
 }
-function respuesta1(data){
+var valorbimestre;
+function respuestaInicial(data){
 	$('#contenido1').html(data);
 	var valorcurso=parseInt($("select[name=curso]").val());
 	$('#formula').click(function(e) {
@@ -10,15 +11,14 @@ function respuesta1(data){
 		for(i=3;i<=Casillas;i++){
 			Texto+=' n'+i+' +';
 		}
-		Texto+=' '+Casillas+' /'
+		if(!valorbimestre){Texto+=' '+Casillas+' /';}
 		$("textarea[name=formula]").val(Texto);
     });
 	cambiarDps();
 	$("select[name=curso]").change(cambiarDps);
 	function cambiarDps(e) {
-		
-
-		var valordps=parseInt($("select[name=curso]>option:selected").attr("rel"));
+		valorbimestre=parseInt($("select[name=curso]>option:selected").attr("data-bimestre"));
+		var valordps=parseInt($("select[name=curso]>option:selected").attr("data-dps"));
 		var notatope=parseInt($("select[name=curso]>option:selected").attr("data-tope"));
 		var notaaprobacion=parseInt($("select[name=curso]>option:selected").attr("data-aprobacion"));
 		var not=0;
@@ -29,8 +29,14 @@ function respuesta1(data){
 		}
 		$("input[name=tope]").val(not)
 		$("input[name=aprobacion]").val(notaaprob);
-				var CodCurso=$("select[name=curso]").val();
-				$.post("materias.php",{'CodDocente':CodDocente,'CodCurso':CodCurso},function(data){$("select[name=materia]").html(data)});
+		if(valorbimestre==1){
+			$("select[name=casillas]").val(4).attr("disabled","disabled");
+		}else{
+			$("select[name=casillas]").val($("select[name=casillas]").val()).removeAttr("disabled");
+		}
+		$('#formula').click();
+		var CodCurso=$("select[name=curso]").val();
+		$.post("materias.php",{'CodDocente':CodDocente,'CodCurso':CodCurso},function(data){$("select[name=materia]").html(data)});
     }
 	$('#formula').click(); 
 	$("select[name=casillas]").change(function(e) {

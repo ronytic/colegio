@@ -62,6 +62,7 @@ $idioma['NReporteNotas']="Reporte de Notas";
 $idioma['NCambiarNombresCasilleros']="Cambiar Nombres de Casilleros";
 $idioma['NVerNotasDocentes']="Ver Notas de Docentes";
 $idioma['NConfiguracionUsuario']="Configuración de Usuario";
+$idioma['NAsignacionCasilleros']="Asignación de Casilleros de Notas";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -79,7 +80,7 @@ $idioma['Modificar']="Modificar";
 $idioma['Configuracion']="Configuración";
 $idioma['Guardar']="Guardar";
 $idioma['PadreFamilia']="Padre de Familia";
-
+$idioma['Sistema']="Sistema";
 $idioma['Hombre']="Hombre";
 $idioma['Mujer']="Mujer";
 $idioma['Hombres']="Hombres";
@@ -371,7 +372,14 @@ $idioma['RegistroNuevoDocente']="Registro Nuevo Docente";
 $idioma['AñoI']="Año Ing";
 $idioma['AñoE']="Año Eg";
 $idioma['AñoT']="Año Tit";
-
+$idioma['PromedioPorDefecto']="Promedio por Defecto";
+$idioma['NotaTopeCasilleros']="Nota Tope Casilleros";
+$idioma['NotaAprobacion']="Nota de Aprobación";
+$idioma['FormulaCalificacion']="Formula de Calificación";
+$idioma['NumeroCasillas']="Número de Casillas";
+$idioma['PromedioPorDefecto']="Promedio por Defecto";
+$idioma['SoloVarones']="Solo Varones";
+$idioma['SoloMujeres']="Solo Mujeres";
 //Notas
 $idioma['Boletin']="Boletín";
 $idioma['RegistrarImpresion']="Registrar Impresión";
@@ -444,6 +452,7 @@ $idioma['Estadistica']="Estadistica";
 $idioma['ReporteIndependienteAgenda']="Reporte Independiente de la Agenda";
 $idioma['RegistroAgenda']="Registro de la Agenda";
 $idioma['Periodo']="Periodo";
+$idioma['PeriodoActual']="Periodo Actual";
 $idioma['IngresarCodigoBarra']="Ingrese el código de Barra";
 $idioma['CodigoBarra']="Código de Barra";
 $idioma['NoSeEncontroCodigo']="No se encontro el código de barra";

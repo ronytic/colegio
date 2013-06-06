@@ -71,9 +71,11 @@ switch($Nivel){
 					</a>
                     
 					<ul class="dropdown-menu">
-                    	<li><a><?php echo $Apodo;?></a></li>
+                    	<li class="disabled"><a><?php echo $Apodo;?></a></li>
 						<li><a href="<?php echo $folder;?>usuario/configuracion/"><?php echo $idioma['Configuracion']?></a></li>
 						<li class="divider"></li>
+                        <li><a href="<?php echo $folder;?>../csb2012/"><?php echo $idioma['Sistema']?> 2012</a></li>
+                        <li class="divider"></li>
 						<li><a href="<?php echo $folder;?>login/logout.php"><?php echo $idioma['Salir']?></a></li>
 					</ul>
                     

@@ -32,8 +32,8 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$pdf->SetFont("Arial","",11);
 	$al=array_shift($alumno->mostrarTodoDatos($CodAlumno));
 	$cur=array_shift($curso->mostrarCurso($CodCurso));
-	$cnf=($config->mostrarConfig("TrimestreActual"));
-	$trimestre=$cnf['Valor'];
+	$cnf=($config->mostrarConfig("PeriodoActual"));
+	$PeriodoActual=$cnf['Valor'];
 	$cnf=($config->mostrarConfig("Anio"));
 	$anio=$cnf['Valor'];
 	//Sacar el Codigo del del trimestre desde ahi
@@ -83,7 +83,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		$regNotas=array_shift($regNotas);
 		$sumanotas+=$regNotas['NotaFinal'];
 		///Primer Bimestre
-		if($trimestre>=1){
+		if($PeriodoActual>=1){
 			/*$pdf->SetXY($boletin4x+63,$boletin4y+80+$i);
 			$pdf->Cell(6,4,$regNotas['Resultado'],$bordeC,0,"R");//Nota
 			$pdf->SetXY($boletin4x+75,$boletin4y+80+$i);
@@ -94,12 +94,12 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 			$cont++;
 		}
 			
-		$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($mat['CodMateria'],$CodCurso,$al['Sexo'],1));
+		$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($mat['CodMateria'],$CodCurso,$al['Sexo'],2));
 		$regNotas=$registronotas->notasBoletin($CodAlumno,$casillas['CodCasilleros']);
 		$regNotas=array_shift($regNotas);
 		$sumanotas+=$regNotas['NotaFinal'];
 		//Segundo Bimestre
-		if($trimestre>=2){
+		if($PeriodoActual>=2){
 			/*$pdf->SetXY($boletin4x+95,$boletin4y+80+$i);
 			$pdf->Cell(6,4,$regNotas['Resultado'],$bordeC,0,"R");//Nota
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
@@ -114,12 +114,12 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		}
 		
 		
-		$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($mat['CodMateria'],$CodCurso,$al['Sexo'],1));
+		$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($mat['CodMateria'],$CodCurso,$al['Sexo'],3));
 		$regNotas=$registronotas->notasBoletin($CodAlumno,$casillas['CodCasilleros']);
 		$regNotas=array_shift($regNotas);
 		$sumanotas+=$regNotas['NotaFinal'];
 		///Tercer Bimestre
-		if($trimestre>=3){
+		if($PeriodoActual>=3){
 			/*$pdf->SetXY($boletin4x+127,$boletin4y+80+$i);
 			$pdf->Cell(6,4,$regNotas['Resultado'],$bordeC,0,"R");//Nota
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
@@ -134,12 +134,12 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		}
 		
 		
-		$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($mat['CodMateria'],$CodCurso,$al['Sexo'],1));
+		$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($mat['CodMateria'],$CodCurso,$al['Sexo'],4));
 		$regNotas=$registronotas->notasBoletin($CodAlumno,$casillas['CodCasilleros']);
 		$regNotas=array_shift($regNotas);
 		$sumanotas+=$regNotas['NotaFinal'];
 		///Cuarto Bimestre
-		if($trimestre>=4){
+		if($PeriodoActual>=4){
 			/*$pdf->SetXY($boletin4x+127,$boletin4y+80+$i);
 			$pdf->Cell(6,4,$regNotas['Resultado'],$bordeC,0,"R");//Nota
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
