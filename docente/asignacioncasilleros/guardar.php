@@ -15,7 +15,6 @@ if(!empty($_POST)){
 	$docente=new docente;
 	$alumno=new alumno;
 	$casilleros=new casilleros;
-	$config=new configuracion;
 	$docentemateriacurso=new docentemateriacurso;
 	$casillas=$casilleros->estadoTabla();
 	//$docM=array_shift($docM);
@@ -33,7 +32,9 @@ if(!empty($_POST)){
 	$docmateriacurso=array_shift($docentemateriacurso->mostrarDocenteMateriaCursoSexo($CodDocente,$CodMateria,$CodCurso,$SexoAlumno));
 	$CodCasilleros=$casillas['Auto_increment'];
 	//echo "<br>$CodDocenteMateria<br>";
-	$casillas
+	$casi=$casilleros->mostrarTrimestre($docmateriacurso['CodDocenteMateriaCurso'],$Periodo);
+	//$casi=array_shift($casi);
+	echo count($casi);
 	exit();
 	$valDM=array('CodCasilleros'=>$CodCasilleros,
 				'CodDocenteMateriaCurso'=>$docmateriacurso['CodDocenteMateriaCurso'],
