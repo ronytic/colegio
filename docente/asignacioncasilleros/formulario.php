@@ -104,3 +104,7 @@ if(!empty($_POST['CodDocente'])){
     <?php
 }
 ?>
+<script language="javascript" type="text/javascript">
+var GuardarConfiguracionCasilleros="<?php echo $idioma['GuardarConfiguracionCasilleros']?>";
+var NoSePodraModificar="<?php echo $idioma['NoSePodraModificar']?>";
+</script>

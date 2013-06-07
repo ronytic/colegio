@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-print_r($_POST);
+//print_r($_POST);
 if(!empty($_POST)){
 	include_once("../../class/alumno.php");
 	include_once("../../class/casilleros.php");
@@ -43,10 +43,17 @@ if(!empty($_POST)){
 	
 	
 	if(count($casi)){
-		echo $idioma['CasillerosRegistrado'];
+		?>
+        <strong>
+		<?php echo $idioma['CasillerosRegistrado'];?>
+		<br />
+		<?php echo $idioma['ReviseLosDatos'];?>
+        </strong>
+        <?php
+		
 		exit();
 	}
-		
+
 	$CodCasilleros=$casillas['Auto_increment'];
 	$valDM=array('CodCasilleros'=>$CodCasilleros,
 				'CodDocenteMateriaCurso'=>$docmateriacurso['CodDocenteMateriaCurso'],
@@ -55,7 +62,7 @@ if(!empty($_POST)){
 				'FormulaCalificaciones'=>"'$Formula'",
 				'Dps'=>$Dps
 				);
-				exit();
+				
 	for($i=1;$i<=15;$i++){
 		if($i<=$Casillas){
 			if($cur['Bimestre']){//Sacando para Cursos por Bimestre
@@ -75,7 +82,7 @@ if(!empty($_POST)){
 			$valDM['LimiteCasilla'.$i]=0;
 		}
 	}
-	$casilleros->insertar($valDM);
+	$casilleros->insertarRegistro($valDM);
 	//print_r($valDM);
 	//print_r($valDM);
 	foreach($alumno->mostrarAlumnosCurso($CodCurso,$SexoAlumno) as $al){
@@ -91,24 +98,26 @@ if(!empty($_POST)){
 		$valRN['Resultado']=0;
 		$valRN['Dps']=0;
 		$valRN['NotaFinal']=0;
-		$registroNotas->insertar($valRN);
+		$registroNotas->insertarRegistro($valRN);
 	}
 	//print_r($_POST);
 	
 	//Sacar Datos para mostrar
 	
-	
-	echo "Los Casilleros se han registrado Correctamente con los Siguientes Datos:";
 	?>
+    
+	<strong><?php echo $idioma["CasillerosRegistradosCorrectamente"];?></strong>
     <br />
-    <table class="tabla">
-    	<tr><td>Curso:</td><td><?php echo $cur['Nombre']?></td></tr>
-        <tr><td>Materia:</td><td><?php echo $ma['Nombre']?></td></tr>
-        <tr><td>Docente:</td><td><?php echo ucwords($doc['Paterno'])?> <?php echo ucwords($doc['Materno'])?> <?php echo ucwords($doc['Nombres'])?></td></tr>
-        <tr><td>Casilleros</td><td><?php echo $Casillas?></td></tr>
-        <tr><td>Trimestre</td><td><?php echo $trimestre?></td></tr>
-        <tr><td>Nota Tope de Casillero</td><td><?php echo $Tope?></td></tr>
-        <tr><td>Dps</td><td><?php echo $Dps?'Si':'No';?></td></tr>
+    <strong><?php echo $idioma["ConLosSiguientesDatos"];?>:</strong>
+    <br />
+    <table class="table table-striped table-bordered table-hover">
+    	<tr><td><?php echo $idioma["Curso"];?>:</td><td><?php echo $cur['Nombre']?></td></tr>
+        <tr><td><?php echo $idioma["Materia"];?>:</td><td><?php echo $ma['Nombre']?></td></tr>
+        <tr><td><?php echo $idioma["Docente"];?>:</td><td><?php echo ucwords($doc['Paterno'])?> <?php echo ucwords($doc['Materno'])?> <?php echo ucwords($doc['Nombres'])?></td></tr>
+        <tr><td><?php echo $idioma["Casilleros"];?></td><td><?php echo $Casillas?></td></tr>
+        <tr><td><?php echo $cur['Bimestre']?$idioma['Bimestre']:$idioma["Trimestre"];?></td><td><?php echo $Periodo?></td></tr>
+        <tr><td><?php echo $idioma["NotaTopeCasilleros"];?>:</td><td><?php echo $Tope?></td></tr>
+        <tr><td><?php echo $idioma["Dps"];?>:</td><td><?php echo $Dps?$idioma['Si']:$idioma['No'];?></td></tr>
     </table>
     <?php
 }

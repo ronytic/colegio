@@ -81,7 +81,12 @@ function alumnosnotas(data){
     });
 }
 function enviarNota(e){
+	
 	var Nota=parseInt($(this).val());
+	if(isNaN(Nota)){
+		//$(this).val('0');
+		Nota=0;
+	}
 	var CodAlumno=$(this).attr('data-row');
 	var Col=$(this).attr('data-col');
 	var CodCasilleros=$(this).attr('data-cod');

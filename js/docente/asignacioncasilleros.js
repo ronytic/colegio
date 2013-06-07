@@ -52,7 +52,7 @@ function respuestaInicial(data){
 		var Formula=$("textarea[name=formula]").val();
 		var Tope=$("input[name=tope]").val();
 		var Dps=$("select[name=dps]").val();
-		if(confirm("¿Esta seguro de guardar esta configuración del Docente, Curso, Materia y el Tipo del Alumno?\n NO SE PODRA CAMBIAR ESTA CONFIGURACIÓN POSTERIORMENTE")){
+		if(confirm(GuardarConfiguracionCasilleros+"\n"+NoSePodraModificar)){
 			$.post('guardar.php',{'Periodo':Periodo,'CodDocente':CodDocente,'CodMateria':CodMateria,'CodCurso':CodCurso,'SexoAlumno':SexoAlumno,'Casillas':Casillas,'Formula':Formula,'Dps':Dps,'Tope':Tope},respuesta2);
 		}
 		//

@@ -381,6 +381,12 @@ $idioma['PromedioPorDefecto']="Promedio por Defecto";
 $idioma['SoloVarones']="Solo Varones";
 $idioma['SoloMujeres']="Solo Mujeres";
 $idioma['CasillerosRegistrado']="Casilleros ya Registrados";
+$idioma['ReviseLosDatos']="Revise los Datos que desea Guardar";
+$idioma['CasillerosRegistradosCorrectamente']="Los Casilleros se han registrado Correctamente";
+$idioma['ConLosSiguientesDatos']="ConLosSiguientesDatos";
+$idioma['Casilleros']="Casilleros";
+$idioma['GuardarConfiguracionCasilleros']="¿Esta seguro de guardar esta configuración del Docente, Curso, Materia y el Tipo del Alumno?";
+$idioma['NoSePodraModificar']="NO SE PODRÁ CAMBIAR ESTA CONFIGURACIÓN POSTERIORMENTE";
 
 $idioma['Ser']="Ser";
 $idioma['Saber']="Saber";
