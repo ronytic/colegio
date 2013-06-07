@@ -22,10 +22,10 @@ if(!empty($_POST['CodDocente'])){
 					<option value="<?php echo $i;?>" <?php echo ($i==$PeriodoActual)?'selected="selected"':'';?>>
 						<?php echo $i;?>
                         <?php switch($i){
-							case 1:{echo "Bimestre - Trimestre";}break;
-							case 2:{echo "Bimestre - Trimestre";}break;
-							case 3:{echo "Bimestre - Trimestre";}break;
-							case 4:{echo "Bimestre";}break;
+							case 1:{echo $idioma["Bimestre"]." - ".$idioma["Trimestre"];}break;
+							case 2:{echo $idioma["Bimestre"]." - ".$idioma["Trimestre"];}break;
+							case 3:{echo $idioma["Bimestre"]." - ".$idioma["Trimestre"];}break;
+							case 4:{echo $idioma["Bimestre"];}break;
 						}?>
 					</option>
                 <?php }?>

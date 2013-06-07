@@ -380,6 +380,12 @@ $idioma['NumeroCasillas']="Número de Casillas";
 $idioma['PromedioPorDefecto']="Promedio por Defecto";
 $idioma['SoloVarones']="Solo Varones";
 $idioma['SoloMujeres']="Solo Mujeres";
+$idioma['CasillerosRegistrado']="Casilleros ya Registrados";
+
+$idioma['Ser']="Ser";
+$idioma['Saber']="Saber";
+$idioma['Hacer']="Hacer";
+$idioma['Decidir']="Decidir";
 //Notas
 $idioma['Boletin']="Boletín";
 $idioma['RegistrarImpresion']="Registrar Impresión";

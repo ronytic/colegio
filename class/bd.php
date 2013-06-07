@@ -75,7 +75,7 @@ class bd{
 		$camposs =implode (', ', $this->campos);
 		$nombretabla=mb_strtolower($this->tabla,"utf8");
 		$query ="SELECT $camposs FROM {$nombretabla} $where $group $order $count";
-		echo $query."<br>";
+		//echo $query."<br>";
 		return $this->sql ($query);
 	}  
 	public function getRecord ($id)
@@ -116,7 +116,7 @@ class bd{
 			
 		//echo $query."<br>";
 		//echo "NO ESTA HABILITADO EL REGISTRO";
-		return mysql_query($query);
+		//return mysql_query($query);
 	}
 	public function deleteRecord ($where_str){
 		$where =$where_str ? "WHERE $where_str" : "";

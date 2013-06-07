@@ -1,7 +1,6 @@
 <?php
 include_once("../../login/check.php");
 print_r($_POST);
-
 if(!empty($_POST)){
 	include_once("../../class/alumno.php");
 	include_once("../../class/casilleros.php");
@@ -17,6 +16,9 @@ if(!empty($_POST)){
 	$casilleros=new casilleros;
 	$docentemateriacurso=new docentemateriacurso;
 	$casillas=$casilleros->estadoTabla();
+	
+	
+	
 	//$docM=array_shift($docM);
 	$registroNotas=new registronotas;
 	$Periodo=$_POST['Periodo'];
@@ -30,24 +32,44 @@ if(!empty($_POST)){
 	$Tope=$_POST['Tope'];
 	//print_r($docM);
 	$docmateriacurso=array_shift($docentemateriacurso->mostrarDocenteMateriaCursoSexo($CodDocente,$CodMateria,$CodCurso,$SexoAlumno));
-	$CodCasilleros=$casillas['Auto_increment'];
+	
 	//echo "<br>$CodDocenteMateria<br>";
 	$casi=$casilleros->mostrarTrimestre($docmateriacurso['CodDocenteMateriaCurso'],$Periodo);
-	//$casi=array_shift($casi);
-	echo count($casi);
-	exit();
+	
+	/*Sacando Datos de tablas*/
+	$ma=array_shift($materias->mostrarMateria($docmateriacurso['CodMateria']));
+	$doc=array_shift($docente->mostrarDocente($docmateriacurso['CodDocente']));
+	$cur=array_shift($curso->mostrarCurso($docmateriacurso['CodCurso']));
+	
+	
+	if(count($casi)){
+		echo $idioma['CasillerosRegistrado'];
+		exit();
+	}
+		
+	$CodCasilleros=$casillas['Auto_increment'];
 	$valDM=array('CodCasilleros'=>$CodCasilleros,
 				'CodDocenteMateriaCurso'=>$docmateriacurso['CodDocenteMateriaCurso'],
 				'Casilleros'=>$Casillas,
-				'Trimestre'=>$trimestre,
+				'Trimestre'=>$Periodo,
 				'FormulaCalificaciones'=>"'$Formula'",
 				'Dps'=>$Dps
 				);
 				exit();
 	for($i=1;$i<=15;$i++){
 		if($i<=$Casillas){
-			$valDM['NombreCasilla'.$i]="'Casilla $i'";
-			$valDM['LimiteCasilla'.$i]=$Tope;
+			if($cur['Bimestre']){//Sacando para Cursos por Bimestre
+				switch($i){
+					case 1:{$valDM['NombreCasilla'.$i]="'Ser'";$valDM['LimiteCasilla'.$i]=20;}break;
+					case 2:{$valDM['NombreCasilla'.$i]="'Saber'";$valDM['LimiteCasilla'.$i]=30;}break;
+					case 3:{$valDM['NombreCasilla'.$i]="'Hacer'";$valDM['LimiteCasilla'.$i]=30;}break;
+					case 4:{$valDM['NombreCasilla'.$i]="'Decidir'";$valDM['LimiteCasilla'.$i]=20;}break;
+				}
+			}else{//Sacnado para Fines de Bimestre
+				$valDM['NombreCasilla'.$i]="'Casilla $i'";
+				$valDM['LimiteCasilla'.$i]=$Tope;
+			}
+			
 		}else{
 			$valDM['NombreCasilla'.$i]="'Casilla $i'";
 			$valDM['LimiteCasilla'.$i]=0;
@@ -60,7 +82,7 @@ if(!empty($_POST)){
 		$valRN=array('CodRegistroNotas'=>'NULL',
 					'CodCasilleros'=>$CodCasilleros,
 					'CodAlumno'=>$al['CodAlumno'],
-					'Trimestre'=>$trimestre,
+					'Trimestre'=>$Periodo,
 					);
 		for($i=1;$i<=15;$i++){
 			$valRN['Nota'.$i]=0;	
@@ -74,9 +96,7 @@ if(!empty($_POST)){
 	//print_r($_POST);
 	
 	//Sacar Datos para mostrar
-	$ma=array_shift($materias->mostrarMateria($docmateriacurso['CodMateria']));
-	$doc=array_shift($docente->mostrarDocente($docmateriacurso['CodDocente']));
-	$cur=array_shift($curso->mostrarCurso($docmateriacurso['CodCurso']));
+	
 	
 	echo "Los Casilleros se han registrado Correctamente con los Siguientes Datos:";
 	?>
