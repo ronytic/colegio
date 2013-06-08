@@ -67,10 +67,10 @@ if(!empty($_POST)){
 		if($i<=$Casillas){
 			if($cur['Bimestre']){//Sacando para Cursos por Bimestre
 				switch($i){
-					case 1:{$valDM['NombreCasilla'.$i]="'Ser'";$valDM['LimiteCasilla'.$i]=20;}break;
-					case 2:{$valDM['NombreCasilla'.$i]="'Saber'";$valDM['LimiteCasilla'.$i]=30;}break;
-					case 3:{$valDM['NombreCasilla'.$i]="'Hacer'";$valDM['LimiteCasilla'.$i]=30;}break;
-					case 4:{$valDM['NombreCasilla'.$i]="'Decidir'";$valDM['LimiteCasilla'.$i]=20;}break;
+					case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;}break;
+					case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;}break;
+					case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;}break;
+					case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;}break;
 				}
 			}else{//Sacnado para Fines de Bimestre
 				$valDM['NombreCasilla'.$i]="'Casilla $i'";
