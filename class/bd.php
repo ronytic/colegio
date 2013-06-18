@@ -120,7 +120,7 @@ class bd{
 			
 		//echo $query."<br>";
 		//echo "NO ESTA HABILITADO EL REGISTRO";
-		//return mysql_query($query);
+		return mysql_query($query);
 	}
 	public function deleteRecord ($where_str){
 		$where =$where_str ? "WHERE $where_str" : "";

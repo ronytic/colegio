@@ -462,8 +462,12 @@ $idioma['CasillerosYaAsignados']="Los Casilleros de las notas Cuantitativas ya d
 $idioma['SeguroQueDeseaGenerar']="¿Seguro que desea generar Notas Cualitativas para este Bimestre y Trimestre?";
 $idioma['AfectaTrimestreYBimestre']="La Generación afecta tanto a Trimestre y Bimestre";
 $idioma['NoTieneAsignadoCasillerosParaPeriodo']="No Tiene Asignado Casilleros en las Notas Cuantitativas Para Periodo";
-$idioma['NotasCualitativasYaGeneradasParaPeriodo']="Notas Cualitativas ya Generadas para este Periodo";
-$idioma['DeseaVolverAGenerar']="Desea Volver a generar, Se Perderan Todos los Datos Registrados para este";
+$idioma['NotasCualitativasYaGeneradasParaPeriodo']="Las Notas Cualitativas ya fueron Generadas para este Periodo";
+$idioma['DeseaVolverAGenerar']="¿DESEA VOLVER A GENERAR?, Se Perderan Todos los Datos Registrados para este";
+$idioma['AsigneCasillerosLuegoGenereNotasCualitativas']="Asigne Casilleros a los Docentes en el respectivo Periodo luego genere las Notas Cualitativas";
+$idioma['ComprendoYDeseoGenerar']="Comprendo el peligro y deseo generar de todas formas";
+$idioma['CasillerosNotasCualitativas']="Los casilleros de las Notas Cualitativas para este Periodo fueron";
+$idioma['GeneradosCorrectamente']="Generados Correctamente";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
