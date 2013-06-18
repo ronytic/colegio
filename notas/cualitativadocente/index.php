@@ -5,26 +5,26 @@ include_once("../../class/curso.php");
 include_once("../../class/docente.php");
 include_once("../../class/docentemateriacurso.php");
 include_once("../../class/materias.php");
-$titulo="NRegistroNotas";
+$titulo="NRegistroNotasCualitativas";
 $folder="../../";
 $docente=new docente;
 $curso=new curso;
-$docmateriacurso=new docentemateriacurso;
+$docMateriaCurso=new docentemateriacurso;
 $materias=new materias;
 $config=new config;
 $CodDocente=$_SESSION['CodUsuarioLog'];
 $_SESSION['CodDocente']=$CodDocente;
 $cnf=($config->mostrarConfig("TotalPeriodo"));
 $TotalPeriodo=$cnf['Valor'];
-$cnf=($config->mostrarConfig("TrimestreActual"));
-$trimestreActual=$cnf['Valor']
+$cnf=($config->mostrarConfig("PeriodoActual"));
+$PeriodoActual=$cnf['Valor']
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
-<script language="javascript" type="text/javascript" src="../../js/notas/docente.js"></script>
+<script language="javascript" type="text/javascript" src="../../js/notas/cualitativo.js"></script>
 <script language="javascript">
-var NotasGuardadoCorrectamente="<?php echo $idioma['NotasGuardadoCorrectamente']?>";
-var NombresGuardadoCorrectamente="<?php echo $idioma['NombresGuardadoCorrectamente']?>";
-var NotaExcedidaLimite="<?php echo $idioma['NotaExcedidaLimite']?>";
+$(document).ready(function(e) {
+
+});
 </script>
 <?php include_once($folder."cabecera.php");?>
 <div class="span12 box">
@@ -36,7 +36,7 @@ var NotaExcedidaLimite="<?php echo $idioma['NotaExcedidaLimite']?>";
             <div class="box-content">
                 <?php campo("tcurso","search","","span12",0,$idioma['BusquePor'])?>
                 <select class="span12" name="Curso">
-                <?php foreach($docmateriacurso->mostrarDocenteOrdenCurso($CodDocente) as $cur){
+                <?php foreach($docMateriaCurso->mostrarDocenteOrdenCurso($CodDocente) as $cur){
                         $c=$curso->mostrarCurso($cur['CodCurso']);
                         $c=$c=array_shift($c);
                         ?>
@@ -50,7 +50,7 @@ var NotaExcedidaLimite="<?php echo $idioma['NotaExcedidaLimite']?>";
             <div class="box-content">
                 <?php campo("tmateria","search","","span12",0,$idioma['BusquePor'])?>
                 <select name="Materia" class="span12">
-                <?php foreach($docmateriacurso->mostrarDocenteMateria($CodDocente) as $docMat){
+                <?php foreach($docMateriaCurso->mostrarDocenteMateria($CodDocente) as $docMat){
                         $m=$materias->mostrarMateria($docMat['CodMateria']);
                         $m=array_shift($m);
                         ?>
@@ -74,10 +74,7 @@ var NotaExcedidaLimite="<?php echo $idioma['NotaExcedidaLimite']?>";
         <div class="span4">
         	<div class="box-header"><h2><?php echo $idioma['Acciones']?></h2></div>
             <div class="box-content">
-            	<input type="button" class="btn btn-success" value="<?php echo $idioma['RegistroNotas']?>" id="registronotas"/><br /><br />
-                <input type="button" class="btn btn-info" value="<?php echo $idioma['RegistroImprimir']?>" id="registroimprimir"/><br /><br />
-                <input type="button" class="btn btn-inverse" value="<?php echo $idioma['CambiarNombreCasillas']?>" id="cambiarnombres"/><br /><br />
-                <input type="button" class="btn btn-warning" value="<?php echo $idioma['NotasCualitativas']?>" id="notascualitativa"/>
+            	<input type="button" class="btn btn-inverse" value="<?php echo $idioma['NotasCualitativas']?>" id="notascualitativa"/>
             </div>
         </div>
 	</div>
@@ -87,11 +84,10 @@ var NotaExcedidaLimite="<?php echo $idioma['NotaExcedidaLimite']?>";
 <div class="row-fluid">
 <div class="span12">
     <div class="box-header"><?php echo $idioma['Alumnos']?></div>
-    <div class="box-content" id="alumnos">
+    <div class="box-content" id="casilleros">
         
     </div>
 </div>
-
 <?php
 	$cnf=($config->mostrarConfig("CodigoSeguimientoNotasDocente"));
 	echo $cnf['Valor'];

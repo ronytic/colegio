@@ -1,3 +1,4 @@
 Options All -Indexes
-ErrorDocument 404  "USTED NO ESTA AUTORIZADO"
+ErrorDocument 404  'USTED NO ESTA AUTORIZADO PARA REVISAR ESTA SECCION'
+#ErrorDocument 404 /colegio/error_404.html
 php_value memory_limit 64M

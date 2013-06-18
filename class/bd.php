@@ -73,7 +73,11 @@ class bd{
 		$group =$group_str ? "GROUP BY $group_str":"";
 		$count = $count ? "LIMIT $start, $count" : "";
 		$camposs =implode (', ', $this->campos);
-		$nombretabla=mb_strtolower($this->tabla,"utf8");
+		if(get_class($this)==$this->tabla){
+			$nombretabla=mb_strtolower(get_class($this),"utf8");
+		}else{
+			$nombretabla=mb_strtolower($this->tabla,"utf8");
+		}
 		$query ="SELECT $camposs FROM {$nombretabla} $where $group $order $count";
 		//echo $query."<br>";
 		return $this->sql ($query);
@@ -120,8 +124,8 @@ class bd{
 	}
 	public function deleteRecord ($where_str){
 		$where =$where_str ? "WHERE $where_str" : "";
-		mysql_query ("DELETE FROM {$this->tabla} $where");
-		return $this->validateOperation ();
+		return mysql_query ("DELETE FROM {$this->tabla} $where");
+		//return $this->validateOperation ();
 	}
 	public function updateRecord ($where_str, $data)
 	{

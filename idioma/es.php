@@ -63,6 +63,9 @@ $idioma['NCambiarNombresCasilleros']="Cambiar Nombres de Casilleros";
 $idioma['NVerNotasDocentes']="Ver Notas de Docentes";
 $idioma['NConfiguracionUsuario']="Configuración de Usuario";
 $idioma['NAsignacionCasilleros']="Asignación de Casilleros de Notas";
+$idioma['NRegistroNotasCualitativas']="Registro de Notas Cualitativas";
+$idioma['NSistemaInternet']="Sistema Internet";
+$idioma['NAsignacionNotasCualitativas']="Asignación Notas Cualitativas";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -446,6 +449,21 @@ $idioma['NombresGuardadoCorrectamente']="Sus Nombres sean guardado Correctamente
 $idioma['NotaExcedidaLimite']="Nota Excedida del limite de";
 $idioma['VerNotas']="Ver Notas";
 $idioma['ModificarNotas']="Modificar Notas";
+$idioma['NotasCualitativas']="Notas Cualitativas";
+$idioma['NoSeEncontroMateria']="No se encontro la materia seleccionada";
+$idioma['PrimerRango']="Primer Rango";
+$idioma['SegundoRango']="Segundo Rango";
+$idioma['TercerRango']="Tercer Rango";
+$idioma['CuartoRango']="Cuarto Rango";
+$idioma['NotaDe']="Nota de";
+$idioma['CantidadLetras']="Cantidad de Letras";
+$idioma['Nota']="Nota";
+$idioma['CasillerosYaAsignados']="Los Casilleros de las notas Cuantitativas ya deberían estar <strong>asignados</strong> a todos los docentes para habilitar el registro de las notas Cualitativas tanto para Trimestre y Bimestre Respectivamente";
+$idioma['SeguroQueDeseaGenerar']="¿Seguro que desea generar Notas Cualitativas para este Bimestre y Trimestre?";
+$idioma['AfectaTrimestreYBimestre']="La Generación afecta tanto a Trimestre y Bimestre";
+$idioma['NoTieneAsignadoCasillerosParaPeriodo']="No Tiene Asignado Casilleros en las Notas Cuantitativas Para Periodo";
+$idioma['NotasCualitativasYaGeneradasParaPeriodo']="Notas Cualitativas ya Generadas para este Periodo";
+$idioma['DeseaVolverAGenerar']="Desea Volver a generar, Se Perderan Todos los Datos Registrados para este";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
@@ -524,6 +542,19 @@ $idioma['RegistrarNuevosPagos']="Registrar Nuevos Pagos";
 $idioma['RegistrarNuevaObservacion']="Registrar Nueva Observación";
 $idioma['NoHayPagoCuotasFecha']="No hay Pago de Cuotas en esta Fecha";
 /*Mensajes Globales Javascript*/
-$idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?"
+$idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?";
 /*Fin Mensajes*/
+
+/*Internet*/
+$idioma['Inicio']="Inicio";
+$idioma['Cuotas']="Cuotas";
+$idioma['Pendiente']="Pendiente";
+$idioma['Cancelado']="Cancelado";
+$idioma['MontoAdeudado']="Monto Adeudado";
+$idioma['TareasPendientes']="Tareas Pendientes";
+$idioma['TareasRevisadas']="Tareas Revisadas";
+$idioma['NoCuentaConAnotacionesALaFecha']="No Cuenta con Anotaciones a la Fecha";
+$idioma['NoTieneTareasPendientes']="No tiene tareas pendientes";
+$idioma['NoTieneTareasRevisadas']="No tiene tareas revisadas";
+$idioma['Notas']="Notas";
 ?>

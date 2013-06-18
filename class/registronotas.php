@@ -25,6 +25,9 @@ class registronotas extends bd{
 		$this->campos=array("AVG(NotaFinal) as Promedio, CodAlumno");
 		return $this->getRecords("CodCasilleros IN (".$CodCasilleros.") GROUP BY CodAlumno ORDER BY AVG(NotaFinal) ".$orden,0,0,$cantidad,0);	
 	}
+	function promedio($n1,$n2,$n3){
+		return round(($n1+$n2+$n3)/3,0);
+	}
 	function actualizarNota($values,$where){
 		$this->updateRow($values,$where);		
 	}

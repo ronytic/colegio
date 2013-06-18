@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function(e) {
-	MontoKinder
-	MontoGeneral
+	/*MontoKinder
+	MontoGeneral*/
    $('#FechaNac').datepicker({altField: "#FechaNac", maxDate:"0 D",changeMonth: true,changeYear: true,yearRange:"c-100:c+10",dateFormat: 'dd-mm-yy'});
    $('#FechaRetiro').datepicker({altField: "#FechaRetiro",changeMonth: true,changeYear: true,dateFormat: 'dd-mm-yy'})
   // if($("#Ci").val()!=""){$('#CedulaId').attr('checked','checked');}
@@ -27,7 +27,8 @@ $(document).ready(function(e) {
 		}
 	});*/
 	if($("#curso").val()!=1){$("#MontoPagar").val(MontoGeneral)}else{$("#MontoPagar").val(MontoKinder)}
-	$("#curso").change(function(e) {
+	$("#Curso").change(function(e) {
+		alert("asd");
         if($(this).val()!=1){
 			$("#MontoPagar").val(MontoGeneral);	
 		}else{

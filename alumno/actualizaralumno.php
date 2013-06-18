@@ -161,6 +161,6 @@ if(!empty($_POST)){
 	}
 	$al->actualizarDatosAlumno($valuesAl,$CodAlumno);
 	$doc->actualizarDocumento($valuesDoc,$CodAlumno);
-	header("Location:../alumno/datosalumno/?CodAlumno=541");
+	header("Location:../alumno/datosalumno/?CodAlumno=$CodAlumno");
 }
 ?>

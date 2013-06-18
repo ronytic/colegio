@@ -98,7 +98,7 @@ if(!empty($_POST)){
 			$logusuario->insertarRegistro($valuesLog,0);
 			//mysql_query("INSERT INTO logusuarios VALUES(NULL,$codUsuario,$Nivel,'$url','$fecha','$hora','$agente','$ip','$referencia','$lenguaje')");
 			$_SESSION['CodUsuarioLog']=$codUsuario;
-			$_SESSION['login']=1;
+			$_SESSION['LoginSistemaColegio']=1;
 			$_SESSION['Nivel']=$Nivel;
 			$_SESSION['Idioma']=$reg['Idioma'];
 			header("Location:".$direccion);
