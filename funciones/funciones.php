@@ -236,6 +236,12 @@ function generarPalabra($longitud=3){
 	}
 	return $cad;	
 }
+function eliminarEspaciosDobles($cadena,$caracteres=0){
+	$cadena = trim($cadena);//preg_replace('/\s+/', ' ', $texto);
+	$cadena = preg_replace('/\s(?=\s)/', '', $cadena);
+	$cadena = $caracteres?(preg_replace('/[\n\r\t]/', ' ', $cadena)):$cadena;
+	return $cadena;
+}
 function usuarioPadre($cipadre,$cimadre){
 	if($cipadre!="" && !ereg("---*",$cipadre)){
 		$usuarioP=$cipadre;

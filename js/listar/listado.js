@@ -2,7 +2,7 @@ var CodCurso;
 var CodAlumno;
 $(document).on("ready",inicio);
 function inicio(){
-	buscadorLista($("#icurso"),$("#selectcurso"),0);
+	buscadorLista($("#icurso"),$("#selectcurso"),0,"cuadro");
 //	buscadorLista($("#ialumno"),$("#selectalumno"));
 	
 	$("#selectcurso").change(function(e) {

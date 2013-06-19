@@ -1,7 +1,11 @@
-function buscadorLista(input, listas,  mover) { 
+function buscadorLista(input, listas,  mover,clase) { 
 	if(isNaN(mover)){
 		mover=1;	
 	}
+	if(typeof(clase)=="undefined"){
+		clase="";
+	}
+	
 	jQuery.expr[':'].Contains = function(a,i,m){
 		return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
   	};
@@ -12,8 +16,13 @@ function buscadorLista(input, listas,  mover) {
 	listas.find("option").each(function(){
 		var v=$(this).val()
 		var va=$(this).html();
+		var r=$(this).attr("rel");
 		if($(listas).val()==v){sel="r-seleccionado";}else{sel="";}
-		cont+='<li><a rel="'+v+'" class="'+sel+'">'+va+"</a></li>";
+		cont+='<li class="'+clase+'"><a rel="'+v+'" class="'+sel+' '+clase+'" data-rel="a'+r+'"';
+		if(clase=="cuadro"){cont+='title="'+va+'"'}
+		cont+='>';
+		if(clase=="cuadro"){cont+=''+sacarIniciales(va)+''}else{cont+=(va);}
+		cont+="</a></li>";
 	});
 	cont+='</ul></div>';
 	var list=$(cont);
@@ -48,4 +57,3 @@ function buscadorLista(input, listas,  mover) {
 		
 	})
 }
-	

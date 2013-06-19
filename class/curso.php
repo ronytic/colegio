@@ -7,8 +7,9 @@ class curso extends bd{
 		return $this->getRecords("CodCurso BETWEEN $ini and $fin");
 	}
 	function mostrar(){
-		$this->campos=array('*');
-		return $this->getRecords("Activo=1","Orden");	
+		$this->tabla="curso c,cursoarea ca";
+		$this->campos=array('c.*,ca.Nombre as caNombre,ca.Area as caArea');
+		return $this->getRecords("c.CodCursoArea=ca.CodCursoArea and c.Activo=1","c.Orden");	
 	}
 	function mostrarCurso($CodCurso){
 		$this->campos=array('*');

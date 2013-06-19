@@ -13,7 +13,7 @@ $(document).ready(function(e) {
 		$.post("registrarAgenda.php",{'CodCurso':CodCurso,'CodMateria':CodMateria,'CodObs':CodObs,'Fecha':Fecha,'Detalle':Detalle,'Resaltar':Resaltar},resultado);
 		$('html, body').animate({scrollTop:$("#respuesta").position().top-200},300);
     });
-	$("#terminar").click(function(e) {
+	$(".terminar").click(function(e) {
 		window.location='./?CodCurso='+CodCurso;
     });
 	$(".completar").click(function(e) {

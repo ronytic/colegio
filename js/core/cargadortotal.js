@@ -35,7 +35,7 @@ function inicio(){
 		$("table.inicio").stickyTableHeaders('destroy');
 		
 		/*Fin Gestionar Tabla*/
-
+		$('span[title]').tooltip();
     });
 	$(document).on('submit','form.formulario', function(e) {
 		e.preventDefault(); // prevent native submit
@@ -149,8 +149,18 @@ while (html.indexOf('º') != -1) html = html.replace('º', '&ordm;');
 	$(window).scroll(function(e) {
         //alert($(this).scrollTop());
     });*/
-	
+	$('ul.r-listado li a').tooltip();
+	$('span[title]').tooltip();
 }
 function cargandoG(destino){
 	$(destino).html('<img src="'+folder+'imagenes/cargador/cargador.gif"/>');
+}
+function sacarIniciales(texto){
+	iniciales="";
+	datos=texto.split(' ');
+	for(i=0;i<datos.length;i++){
+		d=(datos[i]).split('');
+		iniciales+=d[0];
+	}
+	return iniciales.toUpperCase();
 }

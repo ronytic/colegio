@@ -89,24 +89,44 @@ if(!empty($_POST)){
 	$CantFelicitacion=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones);
 	$CantFelicitacion=array_shift($CantFelicitacion);
 	$Total=$CantObser['Cantidad']+$CantFaltas['Cantidad']+$CantAtrasos['Cantidad']+$CantLicencias['Cantidad']+$CantNotificacion['Cantidad']+$CantNoContestan['Cantidad']+$CantFelicitacion['Cantidad'];
-		?>
-			<tr>
-            	<td class="der"><?php echo $i;?></td>
-            	<td><?php echo capitalizar($al['Paterno'])?></td>
-                <td><?php echo capitalizar($al['Materno'])?></td>
-                <td><?php echo capitalizar($al['Nombres'])?></td>
-				<td class="centrar pasivo"><?php echo $CantObser['Cantidad'];?></td>
-	            <td class="centrar pasivo"><?php echo $CantFaltas['Cantidad'];?></td>
-	            <td class="centrar pasivo"><?php echo $CantAtrasos['Cantidad'];?></td>
-	            <td class="centrar pasivo"><?php echo $CantLicencias['Cantidad'];?></td>
-	        	<td class="centrar pasivo"><?php echo $CantNotificacion['Cantidad'];?></td>
-	            <td class="centrar pasivo"><?php echo $CantNoContestan['Cantidad'];?></td>
-	            <td class="centrar pasivo"><?php echo $CantFelicitacion['Cantidad'];?></td>
-	            <td class="centrar pasivo"><?php echo $Total;?></td>
-	        </tr>
-		<?php
+	//Estadisticas Totales
+	$tObser+=$CantObser['Cantidad'];
+	$tFaltas+=$CantFaltas['Cantidad'];
+	$tAtrasos+=$CantAtrasos['Cantidad'];
+	$tLicencias+=$CantLicencias['Cantidad'];
+	$tNotificacion+=$CantNotificacion['Cantidad'];
+	$tNoContestan+=$CantNoContestan['Cantidad'];
+	$tFelicitacion+=$CantFelicitacion['Cantidad'];
+	$tTotal+=$Total;
+	?>
+		<tr>
+			<td class="der"><?php echo $i;?></td>
+			<td><?php echo capitalizar($al['Paterno'])?></td>
+			<td><?php echo capitalizar($al['Materno'])?></td>
+			<td><?php echo capitalizar($al['Nombres'])?></td>
+			<td class="centrar"><?php echo $CantObser['Cantidad'];?></td>
+			<td class="centrar"><?php echo $CantFaltas['Cantidad'];?></td>
+			<td class="centrar"><?php echo $CantAtrasos['Cantidad'];?></td>
+			<td class="centrar"><?php echo $CantLicencias['Cantidad'];?></td>
+			<td class="centrar"><?php echo $CantNotificacion['Cantidad'];?></td>
+			<td class="centrar"><?php echo $CantNoContestan['Cantidad'];?></td>
+			<td class="centrar"><?php echo $CantFelicitacion['Cantidad'];?></td>
+			<td class="centrar der"><?php echo $Total;?></td>
+		</tr>
+	<?php
 	}
 	?>
+        <tr>
+            <td class="resaltar der" colspan="4"><?php echo $idioma['Total']?>:</td>
+            <td class="centrar"><?php echo $tObser;?></td>
+            <td class="centrar"><?php echo $tFaltas;?></td>
+            <td class="centrar"><?php echo $tAtrasos;?></td>
+            <td class="centrar"><?php echo $tLicencias;?></td>
+            <td class="centrar"><?php echo $tNotificacion;?></td>
+            <td class="centrar"><?php echo $tNoContestan;?></td>
+            <td class="centrar"><?php echo $tFelicitacion;?></td>
+            <td class="centrar der"><?php echo $tTotal;?></td>
+        </tr>
     </table>
 	</div>
 	<?php

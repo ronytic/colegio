@@ -17,6 +17,28 @@
 	text-decoration:none !important;
 	color: #646464;
 }
+.r-listado li.cuadro{
+	display:inline-block;
+	margin:2px;
+}
+.r-listado li.cuadro a{
+	display:inline-block;
+	width:30px;
+	text-align:center;
+}
+.r-listado li.cuadro a[data-rel=a1]{
+	background-color:#D7F2D8;	
+}
+.r-listado li.cuadro a[data-rel=a2]{
+	background-color:#FFC !important;	
+}
+.r-listado li.cuadro a[data-rel=a3]{
+	background-color:#FFE0C1 !important;	
+}
+.r-listado li.cuadro a[data-rel=a4]{
+		
+	background-color:#CCEEFF !important;
+}
 .r-listado li a.r-seleccionado,.r-listado li a:hover{
 	background-color: #3875d7;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3875d7', endColorstr='#2a62bc', GradientType=0 );  

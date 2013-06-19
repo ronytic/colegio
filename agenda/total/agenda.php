@@ -57,7 +57,7 @@ if(!empty($_GET['CodAl'])){
        	<div class="" style="">
         	<div class="box-header"><?php echo $idioma['Acciones']?></div>
             <div class="box-content">
-            	<a class="btn btn-danger registrar"><?php echo $idioma['Registrar']?></a> <a class="btn" id="terminar"><?php echo $idioma['Terminar']?></a><br /><br />
+            	<a class="btn btn-danger registrar"><?php echo $idioma['Registrar']?></a> <a class="btn terminar"><?php echo $idioma['Terminar']?></a><br /><br />
                 <a class="btn reportegeneral"><?php echo $idioma['ReporteGeneral']?></a>
                 <a class="btn btn-info reporteimprimir"><?php echo $idioma['ReporteImprimir']?></a>
                 <div class="alert alert-info">
@@ -116,7 +116,7 @@ if(!empty($_GET['CodAl'])){
             </div>
         </div>
         <div class="box-content">
-            	<a class="btn btn-danger registrar" id=""><?php echo $idioma['Registrar']?></a> <a class="btn" id="terminar"><?php echo $idioma['Terminar']?></a>
+            	<a class="btn btn-danger registrar" id=""><?php echo $idioma['Registrar']?></a> <a class="btn terminar"><?php echo $idioma['Terminar']?></a>
             </div>
      </div>
      <div class="span6">
