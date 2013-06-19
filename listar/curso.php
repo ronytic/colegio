@@ -30,7 +30,7 @@ $curso=new curso;
             <?php
 			$i=0;
             foreach($curso->mostrar() as $cu){$i++;
-                ?><option value="<?php echo $cu['CodCurso'];?>" <?php echo $i==1?'selected="selected"':'';?>><?php echo $cu['Nombre'];?></option><?php
+                ?><option value="<?php echo $cu['CodCurso'];?>" <?php echo $i==1?'selected="selected"':'';?> rel="<?php echo $cu['caArea']?>"><?php echo eliminarEspaciosDobles($cu['Nombre']);?></option><?php
             }
             ?>
             </select>
