@@ -38,7 +38,7 @@ if(!empty($_POST)){
         </thead>
 		<tr>
 			<td class="centrar">
-            	<span class="resaltar"><?php echo $idioma["NotaDe"]?> 1-35</span>
+            	<span class="resaltar"><?php echo $idioma["NotaDe"]?> <?php echo $cur['Bimestre']?'1 - 50':'1 - 35'?></span>
                 <hr />
 				<textarea name="rango1" id="rango1" cols="20" rows="5" class="mayusculas" rel="<?php echo $cantidadmaxima?>" autofocus="autofocus" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['PrimerRango'];?></textarea>
 				<hr>
@@ -46,7 +46,7 @@ if(!empty($_POST)){
 				<span id="cantidadrango1"><?php echo $cantidadmaxima?></span>
 			</td>
 			<td class="centrar">
-            	<span class="resaltar"><?php echo $idioma["NotaDe"]?> 36-49</span>
+            	<span class="resaltar"><?php echo $idioma["NotaDe"]?> <?php echo $cur['Bimestre']?'51 - 67':'36 - 49'?></span>
                 <hr />
 				<textarea name="rango2" id="rango2" cols="20" rows="5" class="mayusculas" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['SegundoRango'];?></textarea>
 				<hr>
@@ -54,7 +54,7 @@ if(!empty($_POST)){
 				<span id="cantidadrango2"><?php echo $cantidadmaxima?></span>
 			</td>
 			<td class="centrar">
-            	<span class="resaltar"><?php echo $idioma["NotaDe"]?> 50-60</span>
+            	<span class="resaltar"><?php echo $idioma["NotaDe"]?> <?php echo $cur['Bimestre']?'68 - 84':'50 - 60'?></span>
                 <hr />
 				<textarea name="rango3" id="rango3" cols="20" rows="5" class="mayusculas" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['TercerRango'];?></textarea>
 				<hr>
@@ -62,7 +62,7 @@ if(!empty($_POST)){
 				<span id="cantidadrango3"><?php echo $cantidadmaxima?></span>
 			</td>
 			<td class="centrar">
-	            <span class="resaltar"><?php echo $idioma["NotaDe"]?> 61-70</span>
+	            <span class="resaltar"><?php echo $idioma["NotaDe"]?> <?php echo $cur['Bimestre']?'85 - 100':'61 - 70'?></span>
                 <hr />
 				<textarea name="rango4" id="rango4" cols="20" rows="5" class="mayusculas" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['CuartoRango'];?></textarea>
 				<hr>

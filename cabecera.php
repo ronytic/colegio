@@ -72,9 +72,11 @@ switch($Nivel){
                     
 					<ul class="dropdown-menu">
                     	<li class="disabled"><a><?php echo $Apodo;?></a></li>
-						<li><a href="<?php echo $folder;?>usuario/configuracion/"><?php echo $idioma['Configuracion']?></a></li>
+						<?php if($_SESSION['Nivel']==1 || $_SESSION['Nivel']==2 || $_SESSION['Nivel']==4 || $_SESSION['Nivel']==5):?>
+                        <li><a href="<?php echo $folder;?>usuario/configuracion/"><?php echo $idioma['Configuracion']?></a></li>
 						<li class="divider"></li>
                         <li><a href="<?php echo $folder;?>../csb2012/"><?php echo $idioma['Sistema']?> 2012</a></li>
+                        <?php endif;?>
                         <li class="divider"></li>
 						<li><a href="<?php echo $folder;?>login/logout.php"><?php echo $idioma['Salir']?></a></li>
 					</ul>
