@@ -19,7 +19,6 @@ if(!empty($_GET['CodAl'])){
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
-	
 	$ima=$folder."imagenes/alumnos/".$al['Foto'];
 	if(!file_exists($ima) || empty($al['Foto'])){
 	 $ima=$folder."imagenes/alumnos/0.jpg";	
@@ -36,8 +35,7 @@ if(!empty($_GET['CodAl'])){
 	
     </script>
     <?php include_once($folder."cabecera.php");?>
-
-     <div class="span9 box">
+    <div class="span9 box">
      	<div class="box-header"><?php echo $idioma['DatosPersonales']?></div>
      	<div class="box-content">
             	<table class="tabla">

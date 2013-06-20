@@ -58,7 +58,6 @@ function resultado(data){
 	}else{
 		alert(FalloRegistro+" "+Error+": "+data)	
 	}
-	
 }
 function mostrar(data){
 	$("#respuesta").html(data);
