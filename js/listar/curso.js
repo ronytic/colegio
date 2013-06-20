@@ -1,7 +1,7 @@
 var CodCurso;
 $(document).on("ready",inicio);
 function inicio(){
-	buscadorLista($("#tcurso"),$("#selectcurso"));
+	buscadorLista($("#tcurso"),$("#selectcurso"),0,"cuadro");
 	//$("#selectcurso").chosen();
 	CodCurso=$("#selectcurso").val();
 	$("#selectcurso").change(function(e) {
