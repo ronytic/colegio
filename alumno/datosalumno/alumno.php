@@ -104,7 +104,7 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
                 <td><?php campo("Celular","text",capitalizar($al["Celular"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
             <tr>
-                <td class="der"><?php echo $idioma['Foto']?></td>
+                <td class="der"><?php echo $idioma['Foto']?><br /><small><?php echo $idioma['ImagenRecomendada']?> <br /><?php echo $idioma['TipoArchivo']?> "jpg" <br /><?php echo $idioma['TamanoArchivo']?> 200x200</small></td>
                 <td><?php campo("Foto","File","","span12",0,"",0,array("accept"=>"image/*"))?><br /><img src="<?php echo $ima?>" class="img-polaroid" width="100"/></td>
             </tr>
         </table>

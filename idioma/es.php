@@ -549,6 +549,13 @@ $idioma['NoHayPagoCuotasFecha']="No hay Pago de Cuotas en esta Fecha";
 $idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?";
 /*Fin Mensajes*/
 
+
+
+//Curso
+$idioma['Añadir']="Añadir";
+$idioma['NombreAlterno']="Nombre Alterno";
+$idioma['OrdenBoletin']="Este es el orden respectivo para el bolein";
+
 /*Internet*/
 $idioma['Inicio']="Inicio";
 $idioma['Cuotas']="Cuotas";
