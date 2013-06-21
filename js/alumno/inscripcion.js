@@ -26,16 +26,21 @@ $(document).ready(function(e) {
 			$('#CedulaIdP').attr('checked','');	
 		}
 	});*/
-	if($("#curso").val()!=1){$("#MontoPagar").val(MontoGeneral)}else{$("#MontoPagar").val(MontoKinder)}
+	//alert(MontoKinder);
+	if($("#Curso").val()!=1){
+		$('#MontoPagar').val(MontoGeneral-($("#MontoBeca").val()));
+	}else{
+		$("#MontoPagar").val(MontoKinder-($("#MontoBeca").val()));
+	}
 	$("#Curso").change(function(e) {
-		alert("asd");
+		//alert("asd");
         if($(this).val()!=1){
 			$("#MontoPagar").val(MontoGeneral);	
 		}else{
 			$("#MontoPagar").val(MontoKinder);	
 		}
     });
-	$('#MontoPagar').val(MontoGeneral-($("#MontoBeca").val()));
+	//$('#MontoPagar').val(MontoGeneral-($("#MontoBeca").val()));
 	$("#MontoBeca").keyup(function(e) {
 		var valor=$(this).val();
 		if(valor==""){valor=0;}
