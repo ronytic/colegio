@@ -1,18 +1,18 @@
 <?php
 include_once("../login/check.php");
 $folder="../";
-$titulo="NAgendaActividades";
+$titulo="NMisActividades";
 $prioridadvalor=array("-1"=>$idioma['Bajo'],"0"=>$idioma['Normal'],"1"=>$idioma['Importante']);
 $estadovalor=array("0"=>$idioma['Pendiente'],"1"=>$idioma["Completado"]);
 $paraquien=array("0"=>$idioma["SoloParaMi"]);
 switch($_SESSION['Nivel']){
-	case 1:{$paraquien=array_merge($paraquien,array(1=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docentes'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
-	case 2:{$paraquien=array_merge($paraquien,array(2=>$idioma['Director'],3=>$idioma['Docentes'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
-	case 3:{$paraquien=array_merge($paraquien,array(3=>$idioma['Docentes']));}break;
-	case 4:{$paraquien=array_merge($paraquien,array(3=>$idioma['Docentes'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
-	case 5:{$paraquien=array_merge($paraquien,array(5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos']));}break;
+	case 1:{$paraquien=array_merge($paraquien,array(1=>$idioma['TodoAdministradores'],2=>$idioma['TodoDirectores'],3=>$idioma['TodoDocentes'],4=>$idioma['TodosSecretarias'],5=>$idioma['TodoRegentes'],6=>$idioma['TodoPadresFamilia'],7=>$idioma['TodoAlumnos']));}break;
+	case 2:{$paraquien=array_merge($paraquien,array(2=>$idioma['TodoDirectores'],3=>$idioma['TodoDocentes'],4=>$idioma['TodosSecretarias'],5=>$idioma['TodoRegentes'],6=>$idioma['TodoPadresFamilia'],7=>$idioma['TodoAlumnos']));}break;
+	case 3:{$paraquien=array_merge($paraquien,array(3=>$idioma['TodoDocentes']));}break;
+	case 4:{$paraquien=array_merge($paraquien,array(3=>$idioma['TodoDocentes'],4=>$idioma['TodosSecretarias'],5=>$idioma['TodoRegentes'],6=>$idioma['TodoPadresFamilia'],7=>$idioma['TodoAlumnos']));}break;
+	case 5:{$paraquien=array_merge($paraquien,array(5=>$idioma['TodoRegentes'],6=>$idioma['TodoPadresFamilia'],7=>$idioma['TodoAlumnos']));}break;
 }
-array("1"=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docente'],4=>$idioma['Secretaria'],5=>$idioma['Regente'],6=>$idioma['PadreFamilia'],7=>$idioma['Alumnos'])
+array("1"=>$idioma['TodoAdministradores'],2=>$idioma['TodoDirectores'],3=>$idioma['TodoDocentes'],4=>$idioma['TodosSecretarias'],5=>$idioma['TodoRegentes'],6=>$idioma['TodoPadresFamilia'],7=>$idioma['TodoAlumnos'])
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
 <script type="text/javascript" src="../js/core/plugins/jquery.chosen.min.js" language="javascript"></script>
@@ -63,7 +63,7 @@ array("1"=>$idioma['Administrador'],2=>$idioma['Director'],3=>$idioma['Docente']
             	<td><?php echo $idioma['Detalle']?></td><td><?php echo campo("Detalle","textarea","","span12",1,$idioma["IngreseSu"].$idioma['Detalle'],0,array("rows"=>3))?></td>
             </tr>
         </table>
-        <input type="submit" class="btn btn-success" value="<?php echo $idioma['GuardarActividad']?>" id="Guardar"> <a  class="btn" id="vaciar" href="./"><?php echo $idioma['Cancelar']?></a>
+        <input type="submit" class="btn btn-success" value="<?php echo $idioma['GuardarActividad']?>" id="Guardar"> <input type="reset" id="vaciarFormulario" onClick="" value="<?php echo $idioma['Cancelar']?>" class="btn">
         </form>
     </div>
 </div>

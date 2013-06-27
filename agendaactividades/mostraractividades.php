@@ -94,25 +94,25 @@ if(count($actividades)){
 function mostrarUsuarios($usu){
 	global $idioma;
 	if(in_array("1",$usu)){
-		?><span class="label label-info" title="<?php echo $idioma['Administrador']?>"><?php echo recortarTexto($idioma['Administrador'],1,"")?></span><?php	
+		?><span class="label label-info" title="<?php echo $idioma['TodoAdministradores']?>"><?php echo recortarTexto($idioma['Administradores'],1,"")?></span><?php	
 	}
 	if(in_array("2",$usu)){
-		?><span class="label label-info" title="<?php echo $idioma['Director']?>"><?php echo recortarTexto($idioma['Director'],1,"")?></span><?php	
+		?><span class="label label-info" title="<?php echo $idioma['TodoDirectores']?>"><?php echo recortarTexto($idioma['Directores'],1,"")?></span><?php	
 	}
 	if(in_array("3",$usu)){
-		?><span class="label label-info" title="<?php echo $idioma['Docente']?>"><?php echo recortarTexto($idioma['Docente'],1,"")?></span><?php	
+		?><span class="label label-info" title="<?php echo $idioma['TodoDocentes']?>"><?php echo recortarTexto($idioma['Docentes'],1,"")?></span><?php	
 	}
 	if(in_array("4",$usu)){
-		?><span class="label label-info" title="<?php echo $idioma['Secretaria']?>"><?php echo recortarTexto($idioma['Secretaria'],1,"")?></span><?php	
+		?><span class="label label-info" title="<?php echo $idioma['TodosSecretarias']?>"><?php echo recortarTexto($idioma['Secretaria'],1,"")?></span><?php	
 	}
 	if(in_array("5",$usu)){
-		?><span class="label label-info" title="<?php echo $idioma['Regente']?>"><?php echo recortarTexto($idioma['Regente'],1,"")?></span><?php	
+		?><span class="label label-info" title="<?php echo $idioma['TodoRegentes']?>"><?php echo recortarTexto($idioma['Regentes'],1,"")?></span><?php	
 	}
 	if(in_array("6",$usu)){
-		?><span class="label label-info" title="<?php echo $idioma['PadreFamilia']?>"><?php echo recortarTexto($idioma['PadreFamilia'],1,"")?></span><?php	
+		?><span class="label label-info" title="<?php echo $idioma['TodoPadresFamilia']?>"><?php echo recortarTexto($idioma['PadreFamilia'],1,"")?></span><?php	
 	}
 	if(in_array("7",$usu)){
-		?><span class="label label-info" title="<?php echo $idioma['Alumnos']?>"><?php echo recortarTexto($idioma['Alumnos'],1,"")?></span><?php	
+		?><span class="label label-info" title="<?php echo $idioma['TodoAlumnos']?>"><?php echo recortarTexto($idioma['Alumnos'],1,"")?></span><?php	
 	}
 }
 ?>

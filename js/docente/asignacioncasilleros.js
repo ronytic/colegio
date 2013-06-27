@@ -18,16 +18,17 @@ function respuestaInicial(data){
 	cambiarDps();
 	$("select[name=curso]").change(cambiarDps);
 	function cambiarDps(e) {
+		var notaaprob=0;
 		valorbimestre=parseInt($("select[name=curso]>option:selected").attr("data-bimestre"));
 		var valordps=parseInt($("select[name=curso]>option:selected").attr("data-dps"));
 		var notatope=parseInt($("select[name=curso]>option:selected").attr("data-tope"));
 		var notaaprobacion=parseInt($("select[name=curso]>option:selected").attr("data-aprobacion"));
 		var not=0;
-
+		
 		switch(valordps){
 			case 1:{not=notatope;notaaprob=notaaprobacion;$("select[name=dps]").val("1")}break;
 			case 0:{not=notatope;notaaprob=notaaprobacion;$("select[name=dps]").val("0")}break;
-		}
+		}//alert(notatope);
 		$("input[name=tope]").val(not)
 		$("input[name=aprobacion]").val(notaaprob);
 		if(valorbimestre==1){

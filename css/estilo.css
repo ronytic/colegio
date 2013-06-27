@@ -240,5 +240,16 @@ tr:hover td.celeste{
 }
 .resaltarfila td{
 	font-weight:bold;
+}
+.central{
+	vertical-align:central;
+	display:inline-block;	
 	
+}
+.central input{
+	margin-top:auto;
+	margin-right:4px;	
+}
+.ocultar{
+	display:none;	
 }

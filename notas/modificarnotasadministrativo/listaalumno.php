@@ -68,7 +68,7 @@ if(!empty($_POST)){
 		</tr>
 		<tr><th>Nº</th><th>Paterno</th><th>Materno</th><th>Nombres</th>
         	<?php for($i=1;$i<=$numcasilleros;$i++){?>
-     		<th style="width:10px"><span title="<?php echo $casillas['NombreCasilla'.$i];?>"  rel="<?php echo $casillas['LimiteCasilla'.$i];?>" id="t<?php echo $i;?>"><?php echo sacarIniciales($casillas['NombreCasilla'.$i])?></span></th>
+     		<th style="width:10px"><span title="<?php echo $casillas['NombreCasilla'.$i];?> <?php echo $idioma['Limite'].": ".$casillas['LimiteCasilla'.$i];?>"  rel="<?php echo $casillas['LimiteCasilla'.$i];?>" id="t<?php echo $i;?>"><?php echo sacarIniciales($casillas['NombreCasilla'.$i])?>-<?php echo $casillas['LimiteCasilla'.$i];?></span></th>
      <?php }?>
         	<th class="" style="width:10px"><?php echo $idioma['Resultado']?></th>
 			<?php if($Dps){?><th style="width:10px"><?php echo $idioma['Dps']?></th><?php }?>
@@ -95,15 +95,15 @@ if(!empty($_POST)){
             <?php
 			}
 			?>
-            <td style="text-align:center" class="amarillo"><input type="text" size="1" maxlength="2" readonly="readonly" class="nota" value="<?php echo $regNota['Resultado']?>" id="resultado<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Resultado']?>" id="resultado<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
             <?php
 				if($Dps){
 			?>
-            <td style="text-align:center" class="amarillo"><input type="text" size="1" maxlength="2" readonly="readonly" class="nota" value="<?php echo $regNota['Dps']?>" id="dps<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Dps']?>" id="dps<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
             <?php
 				}
 			?>
-            <td style="text-align:center" class="celeste"><input type="text" size="1" maxlength="2" readonly="readonly" class="nota <?php echo $regNota['NotaFinal']<$cur['NotaAprobacion']?"crojo reprobado":"";?>" value="<?php echo $regNota['NotaFinal']?>" id="notaf<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center" class="celeste"><input type="text" size="1" maxlength="2" readonly class="nota <?php echo $regNota['NotaFinal']<$cur['NotaAprobacion']?"crojo reprobado":"";?>" value="<?php echo $regNota['NotaFinal']?>" id="notaf<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
         </tr>
 	<?php
 	}

@@ -25,7 +25,7 @@ function respuesta2(data){
     });
 	$(".eliminar").click(function(e) {
         var Cod=$(this).attr("rel");
-		if(confirm("¿Desea eliminar esta materia?")){
+		if(confirm(DeseaEliminarMateria)){
 			$.post("eliminar.php",{'Cod':Cod},eliminar);
 		}else
 		e.preventDefault();

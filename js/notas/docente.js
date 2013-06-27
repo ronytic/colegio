@@ -64,6 +64,7 @@ function cargando(){
 function alumnosnotas(data){
 	$("html,body").animate({scrollTop:$("#alumnos").position().top-40},750);
 	$("#alumnos").html(data)
+	$(".nota").numeric();
 	//Para Mantener Seleccionado
 	$(".nota").mousedown(function(e){$(this).select();}).mouseup(function(e){e.preventDefault();});
 	

@@ -9,12 +9,12 @@ if(!empty($_POST)){
 	$cur=array_shift($curso->mostrarCurso($CodCurso));
 	$alumnosNuevos=$alumno->verInscritosNuevosCurso($CodCurso);
 	if(count($alumnosNuevos)>0){
-		echo $cur['Nombre'];
 		?>
-        
+        <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
         <table class="table table-bordered table-hover table-striped">
         <thead>
-      		<th>Nº</th><th><?php echo $idioma['Nombres']?></th><th><?php echo $idioma['Rude']?></th><th><?php echo $idioma['Colegio']?></th>
+        	<tr><th><?php echo $idioma['Curso']?>:</th><th><?php echo $cur['Nombre']?></th></tr>
+      		<tr><th>Nº</th><th><?php echo $idioma['Nombres']?></th><th><?php echo $idioma['Rude']?></th><th><?php echo $idioma['Colegio']?></th></tr>
         </thead>
         <?php
 		$i=0;

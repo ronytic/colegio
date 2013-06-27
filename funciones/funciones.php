@@ -169,7 +169,7 @@ function hora2Str($fecha,$t=1){
 		return $fecha;	
 	}
 }
-function sacarIniciales($texto){
+function sacarIniciales($texto,$Todo=0){
 	$iniciales="";
 	$datos=explode(" ",$texto);
 	for($i=0;$i<count($datos);$i++){

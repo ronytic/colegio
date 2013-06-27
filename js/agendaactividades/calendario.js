@@ -60,6 +60,16 @@ function mostrarActividades(){
 }
 function vaciar(){
 	//alert("asd");
-	window.location.href="#mostraractividades";
-	$("#vaciar").click();	
+	//$(".formulario").reset();
+	
+	$("#Detalle").val('');
+	$("#HoraInicio").val($("#HoraInicio").val())//.attr("min",data.HoraInicio);
+	$("#HoraFin").val($("#HoraFin").val());
+	$("#Prioridad").val(0);
+	$("#ParaQuien").val('0');
+	if(!DispositivoMovil){
+		$("#ParaQuien").trigger("liszt:updated")
+	}
+	//window.location.href="./#mostraractividades";
+	$("#vaciarFormulario").click();	
 }

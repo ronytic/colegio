@@ -36,6 +36,7 @@ function inicio(){
 		
 		/*Fin Gestionar Tabla*/
 		$('span[title]').tooltip();
+		$('div[title]').tooltip({'placement':'bottom'});
     });
 	$(document).on('submit','form.formulario', function(e) {
 		e.preventDefault(); // prevent native submit
@@ -107,18 +108,21 @@ function inicio(){
 	/*Exportar Excel*/
 	$(document).on('click','#exportarexcel',function(e){
 		e.preventDefault();
-		var tabla=$(this).next("table").clone();
+		var tabla=$(this).next().clone();
+		if(!(tabla.find("thead:eq(0)")).length){
+			tabla=$(this).next().next().clone();
+		}
 		tabla.find("thead:eq(0)").remove();
 		//alert(tabla.find("thead").html().remove());
 		var html='<table border="1">'+tabla.html()+'</table>';
-		//alert(datos);
-while (html.indexOf('á') != -1) html = html.replace('á', '&aacute;');
-while (html.indexOf('é') != -1) html = html.replace('é', '&eacute;');
-while (html.indexOf('í') != -1) html = html.replace('í', '&iacute;');
-while (html.indexOf('ó') != -1) html = html.replace('ó', '&oacute;');
-while (html.indexOf('ú') != -1) html = html.replace('ú', '&uacute;');
-while (html.indexOf('ñ') != -1) html = html.replace('ñ', '&ntilde;');
-while (html.indexOf('º') != -1) html = html.replace('º', '&ordm;');
+		//return false;
+		while (html.indexOf('á') != -1) html = html.replace('á', '&aacute;');
+		while (html.indexOf('é') != -1) html = html.replace('é', '&eacute;');
+		while (html.indexOf('í') != -1) html = html.replace('í', '&iacute;');
+		while (html.indexOf('ó') != -1) html = html.replace('ó', '&oacute;');
+		while (html.indexOf('ú') != -1) html = html.replace('ú', '&uacute;');
+		while (html.indexOf('ñ') != -1) html = html.replace('ñ', '&ntilde;');
+		while (html.indexOf('º') != -1) html = html.replace('º', '&ordm;');
 		/*window.open('data:application/vnd.ms-excel;Content-Disposition:attachment;file=export_filename.xls;name=hebe.xls,' +encodeURIComponent(html));
     e.preventDefault();
 		//$.post(folder+"exportar/excel.php",{'dataexcel':datos},function(data){$("#respuestaexcel").html(data)});		*/

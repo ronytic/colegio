@@ -95,7 +95,7 @@ $(document).ready(function(e) {
         </div>
         <div id="respuestaformulario"></div>
         <div class="alert alert-info">
-        <label for="Busqueda" ><?php echo $idioma["BusquedaEspecificaSeleccionado"]?>:<?php campo("Busqueda","checkbox","1","")?></label> 
+        <label for="Busqueda" ><?php echo $idioma["BusquedaEspecificaPorAlumno"]?>:<?php campo("Busqueda","checkbox","1","")?></label> 
         </div>
 	</div>
 	<div class="box-header"><?php echo $idioma["AgendaAlumnos"]?></div>

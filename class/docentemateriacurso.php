@@ -21,7 +21,7 @@ class docentemateriacurso extends bd{
 	}
 	function mostrarDocenteOrdenCurso($CodDocente){
 		$this->campos=array('*');
-		return $this->getRecords("CodDocente=$CodDocente",0,"CodCurso");
+		return $this->getRecords("CodDocente=$CodDocente and Activo=1",0,"CodCurso");
 	}
 	function mostrarDocenteGrupo($CodDocente,$Grupo=""){
 		$this->campos=array('*');

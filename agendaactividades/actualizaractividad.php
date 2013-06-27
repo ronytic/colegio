@@ -18,7 +18,6 @@ $valores=array("FechaActividad"=>"'".fecha2Str($FechaActividad,0)."'",
 				"Estado"=>"'$Estado'",
 				"Usuarios"=>"'$UsuariosAgenda'",
 				"Detalle"=>"'$Detalle'",
-				"Usuarios"=>"'$Nivel'",
 	);
 if($agendaactividades->actualizarActividad($valores,$CodAgendaActividades)){
 ?>

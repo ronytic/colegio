@@ -6,7 +6,7 @@ if(isset($_POST)){
 	$listado=$_POST['listado'];
 	?>
     <a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
-    <hr />
+    <br />
     <table class="table table-bordered table-hover">
     	<thead>
         	<tr><th>N</th><th><?php echo $idioma['Paterno']?></th><th><?php echo $idioma['Materno']?></th><th><?php echo $idioma['Nombres']?></th>

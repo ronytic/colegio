@@ -50,7 +50,7 @@ switch($Nivel){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="<?php echo $url.$directory?>"> <img alt="<?php echo $Titulo?>" src="<?php echo $folder;?>imagenes/logos/<?php echo $LogoInicio;?>" width="50" height="50" style="width:50" class="logo"/> <span><?php echo $Titulo?></span></a>
+				<a class="brand" href="<?php echo $folder?>"> <img alt="<?php echo $Titulo?>" src="<?php echo $folder;?>imagenes/logos/<?php echo $LogoInicio;?>" width="50" height="50" style="width:50" class="logo"/> <span><?php echo $Titulo?></span></a>
 								
 				<!-- Inicio: Cabecera de Menu -->
 				<div class="btn-group pull-right" >
@@ -58,7 +58,7 @@ switch($Nivel){
 						<i class="icon-warning-sign"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Notificacion']?></span> <span class="label label-important hidden-phone">0</span> <span class="label label-success hidden-phone">0</span>
 					</a>
 					<a class="btn" id="noti" data-trigger="hover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="Popover on right" href="<?php echo $folder?>agendaactividades/">
-						<i class="icon-tasks"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Agenda']?></span> <span class="label label-warning hidden-phone"><?php echo $cantagendaactividades['Cantidad']?></span>
+						<i class="icon-tasks"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['MisActividades']?></span> <span class="label label-warning hidden-phone"><?php echo $cantagendaactividades['Cantidad']?></span>
 					</a>
 					<a class="btn" href="<?php echo $folder?>mensajes/">
 						<i class="icon-envelope"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Mensajes']?></span> <span class="label label-success hidden-phone">0</span>

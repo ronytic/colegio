@@ -19,6 +19,7 @@ $cnf=($config->mostrarConfig("TrimestreActual"));
 $trimestreActual=$cnf['Valor']
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
+<script language="javascript" type="text/javascript" src="../../js/core/plugins/jquery.alphanumeric.pack.js"></script>
 <script language="javascript" type="text/javascript" src="../../js/notas/docente.js"></script>
 <script language="javascript">
 var NotasGuardadoCorrectamente="<?php echo $idioma['NotasGuardadoCorrectamente']?>";
