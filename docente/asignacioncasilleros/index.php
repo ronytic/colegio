@@ -5,7 +5,6 @@ $jsFile="docente/asignacioncasilleros.js";
 $titulo="NAsignacionCasilleros";
 $subtitulo1="Configuracion";
 $subtitulo2="Reporte";
-$datoInicial=1;
 $archivoInicial="formulario.php";
 include_once("../../listar/docente.php");
 ?>

@@ -1,6 +1,7 @@
 function lanzadorC(CodDocente){
 	cargandoG("#contenido1");
 	$.post('formulario.php',{'CodDocente':CodDocente},respuestaInicial);
+	mostrar();
 }
 var valorbimestre;
 function respuestaInicial(data){
@@ -62,4 +63,10 @@ function respuestaInicial(data){
 }
 function respuesta2(data){
 	$('#contenido2').html(data);
+}
+function mostrar(){
+	$.post("mostrar.php",{'CodDocente':CodDocente},respuestamostrar)
+}
+function respuestamostrar(data){
+	$('#contenido2').html(data);	
 }
