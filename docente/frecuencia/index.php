@@ -13,6 +13,7 @@ $logusuario=new logusuario;
 <div class="box span12">
 	<div class="box-header"><h2><i class="icon-signal"></i><span class="break"></span><?php echo $idioma['FrecuenciaAcceso']?></h2></div>
     <div class="box-content">
+    	<a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
         <table class="table table-condensed table-striped table-hover table-bordered">
         <thead>
         <tr class="cabecera"><th>Nº</th><th><?php echo $idioma['Docente']?></th><th><?php echo $idioma['CantidadAcceso']?></th><th colspan="2"><?php echo $idioma['UltimoAcceso']?></th></tr>

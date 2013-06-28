@@ -20,6 +20,7 @@ $doc=array_shift($docente->mostrarDocente($CodDocente));
     	Nombre Docente:<strong><?php echo ucfirst($doc['Paterno'])?> <?php echo ucfirst($doc['Materno'])?> <?php echo ucfirst($doc['Nombres'])?></strong>
         <a href="./" class="btn btn-info btn-mini"><?php echo $idioma['Volver']?></a>
         <hr>
+        <a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
     	<table class="table table-bordered table-condensed table-hover table-striped">
         <thead>
         	<tr><th>Nº</td><th><?php echo $idioma['Dia']?></th><th><?php echo $idioma['FechaAcceso']?></th><th><?php echo $idioma['HoraAcceso']?></th></tr>

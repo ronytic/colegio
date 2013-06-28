@@ -10,10 +10,13 @@ if(isset($_POST)){
 	$curso=new curso;
 	$materias=new materias;
 	$docente=new docente;
-	$dmc=$docentemateriacurso->mostrarDocenteOrdenCurso($CodDocente)
+	$dmc=$docentemateriacurso->mostrarTodoDocente($CodDocente);
+	$doc=$docente->mostrarDocente($CodDocente);
+	$doc=array_shift($doc);
 	?>
     <table class="table table-bordered table-striped table-hover table-condensed">
     	<thead>
+        	<tr><th colspan="2"><?php echo $idioma['Docente']?>:</th><th colspan="3"><?php echo capitalizar($doc['Paterno'])?> <?php echo capitalizar($doc['Materno'])?> <?php echo capitalizar($doc['Nombres'])?></th></tr>
         	<tr><th>N</th><th><?php echo $idioma['Materias']?></th><th><?php echo $idioma['Curso']?></th><th><?php echo $idioma['Alumnos']?></th><th></th></tr>
         </thead>
     <?php

@@ -6,7 +6,7 @@ if(!empty($_POST)){
 	$cursomateria=new cursomateria;
 	$materias=new materias;
 	$CodCurso=$_POST['CodCurso'];
-	?><option value=""><?php echo $idioma['SeleccionarCurso']?></option><?php
+	?><option value=""><?php echo $idioma['SeleccionarMateria']?></option><?php
 	foreach($cursomateria->mostrarMaterias($CodCurso) as $curm){
 		$ma=array_shift($materias->mostrarMateria($curm['CodMateria']));
 		?>

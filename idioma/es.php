@@ -192,6 +192,8 @@ $idioma['Y']="y";
 $idioma['ImagenRecomendada']="Imágen Recomendada";
 $idioma['TipoArchivo']="Tipo de Archivo";
 $idioma['TamanoArchivo']="Tamaño Archivo";
+$idioma['PorFavor']="Por favor";
+$idioma['ReporteGenerado']="Reporte Generado";
 //Titulos de Página
 $idioma['HojaCasilleros']="Hoja de Casilleros";
 //Agenda de Actividades
@@ -403,10 +405,17 @@ $idioma['Saber']="Saber";
 $idioma['Hacer']="Hacer";
 $idioma['Decidir']="Decidir";
 $idioma['Listado']="Listado";
-$idioma['SeleccionarCurso']="Seleccionar Curso";
+$idioma['SeleccionarMateria']="Seleccionar Materia";
+$idioma['SeleccioneMateria']="Seleccione Materia";
 $idioma['Asignar']="Asignar";
-$idioma['EliminarAsignacion']="Eliminar Asignación, Recuerde que al Eliminar si ya tiene casilleros de notas asignados se perdera las notas ya registradas";
+$idioma['EliminarAsignacion']="¿Eliminar Asignación?, Recuerde que al Eliminar si ya tiene casilleros de notas asignados se perderá las notas ya registradas";
+$idioma['ModificarAsignacion']="¿Modificar Asignación?, Recuerde que puede Modificar el Docente, Curso, Materia, SexoAlumnos, Modifiquelo al lado Izquierdo";
 $idioma['GuardarModificacion']="Guardar Modificación";
+$idioma['AsignacionMaterias']="Asignación de Materias";
+$idioma['ModificarAsignacionMaterias']="Modificar Asignación de Materias";
+$idioma['SeguroAsignar']="¿Esta seguro de Asignar estos datos al Docente?";
+$idioma['SeguroAsignarModificar']="¿Esta seguro de Asignar estos datos Modificados al Docente?";
+$idioma['YaAsignadoLosDatosADocente']="!Alerta! Ya se encuentra Asignado los datos  al Docente";
 
 //Notas
 $idioma['Limite']="Limite";
@@ -564,14 +573,13 @@ $idioma['NoHayPagoCuotasFecha']="No hay Pago de Cuotas en esta Fecha";
 $idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?";
 /*Fin Mensajes*/
 
-
-
 //Curso
 $idioma['Añadir']="Añadir";
 $idioma['NombreAlterno']="Nombre Alterno";
 $idioma['OrdenBoletin']="Este es el orden respectivo que aparecera en el boletín";
 $idioma['NombreAdecuadoBoletin']="Seleccione el Nombre Adecuado que saldrá en el boletín";
 $idioma['DeseaEliminarMateria']="¿Desea eliminar esta materia?";
+
 /*Internet*/
 $idioma['Inicio']="Inicio";
 $idioma['Cuotas']="Cuotas";

@@ -13,11 +13,15 @@ class docentemateriacurso extends bd{
 	}
 	function mostrarCurso($CodCurso){
 		$this->campos=array('*');
-		return $this->getRecords("CodCurso=$CodCurso");
+		return $this->getRecords("CodCurso=$CodCurso and Activo=1");
 	}
 	function mostrarDocenteCurso($CodDocente,$CodCurso){
 		$this->campos=array('*');
-		return $this->getRecords("CodDocente=$CodDocente and CodCurso=$CodCurso",0,"CodMateria");
+		return $this->getRecords("CodDocente=$CodDocente and CodCurso=$CodCurso and Activo=1",0,"CodMateria");
+	}
+	function mostrarTodoDocente($CodDocente){
+		$this->campos=array('*');
+		return $this->getRecords("CodDocente=$CodDocente and Activo=1","CodCurso");
 	}
 	function mostrarDocenteOrdenCurso($CodDocente){
 		$this->campos=array('*');
@@ -25,30 +29,33 @@ class docentemateriacurso extends bd{
 	}
 	function mostrarDocenteGrupo($CodDocente,$Grupo=""){
 		$this->campos=array('*');
-		return $this->getRecords("CodDocente=$CodDocente",0,"$Grupo");
+		return $this->getRecords("CodDocente=$CodDocente and Activo=1",0,"$Grupo");
 	}
 	function mostrarDocenteMateria($CodDocente){
 		$this->campos=array("*");
-		return $this->getRecords(" CodDocente=$CodDocente",0,"CodMateria");
+		return $this->getRecords(" CodDocente=$CodDocente and Activo=1",0,"CodMateria");
 	}
 	function mostrarMateriaCurso($CodMateria,$CodCurso){
 		$this->campos=array('*');
-		return $this->getRecords("CodCurso=$CodCurso and CodMateria=$CodMateria");
+		return $this->getRecords("CodCurso=$CodCurso and CodMateria=$CodMateria and Activo=1");
 	}
 	function mostrarDocenteMateriaCurso($CodDocente,$CodMateria,$CodCurso){
 		$this->campos=array('*');
-		return $this->getRecords("CodDocente=$CodDocente and CodMateria=$CodMateria and CodCurso=$CodCurso");
+		return $this->getRecords("CodDocente=$CodDocente and CodMateria=$CodMateria and CodCurso=$CodCurso and Activo=1");
 	}
 	function mostrarDocenteMateriaCursoSexo($CodDocente,$CodMateria,$CodCurso,$Sexo){
 		$this->campos=array('*');
-		return $this->getRecords("CodDocente=$CodDocente and CodMateria=$CodMateria and CodCurso=$CodCurso and SexoAlumno=$Sexo");
+		return $this->getRecords("CodDocente=$CodDocente and CodMateria=$CodMateria and CodCurso=$CodCurso and SexoAlumno=$Sexo and Activo=1");
 	}
 	function mostrarMateriaCursoSexo($CodMateria,$CodCurso,$Sexo){
 		$this->campos=array('*');
-		return $this->getRecords("CodCurso=$CodCurso and CodMateria=$CodMateria and (SexoAlumno=$Sexo or SexoAlumno=2)");
+		return $this->getRecords("CodCurso=$CodCurso and CodMateria=$CodMateria and (SexoAlumno=$Sexo or SexoAlumno=2) and Activo=1");
 	}
 	function insertarDocenteRegistro($Values){
-		$this->insertRow($Values,1);
+		$this->insertarRegistro($Values,1);
+	}
+	function actualizarDocenteRegistro($Values,$Where){
+		$this->actualizarRegistro($Values,$Where);
 	}
 }
  ?>

@@ -107,7 +107,7 @@ include_once("fpdf/fpdf.php");
 			}
 		}
 		function Footer()
-		{	global $lema;
+		{	global $lema,$idioma;
 			//$this->Cell($this->ancho,0,"",1,1);
 			
 			// Posición: a 1,5 cm del final
@@ -117,7 +117,9 @@ include_once("fpdf/fpdf.php");
 			// Número de página
 			$this->Cell($this->ancho,0,"",1,1);
 			$anio=date("Y");
-			$this->Cell($this->ancho,4,utf8_decode($lema),0,1,"C");
+			$this->Cell(60,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"L");
+			$this->Cell($this->ancho-60-60,4,utf8_decode($lema),0,0,"C");
+			//$this->Cell(60,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"R");
 			
 			if(in_array("Pie",get_class_methods($this))){
 				$this->Pie();	
