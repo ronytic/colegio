@@ -1,11 +1,11 @@
 function lanzadorC(CodDocente){
 	cargandoG("#contenido1");
 	$.post('formulario.php',{'CodDocente':CodDocente},respuestaInicial);
-	mostrar();
 }
 var valorbimestre;
 function respuestaInicial(data){
 	$('#contenido1').html(data);
+	mostrar();
 	var valorcurso=parseInt($("select[name=curso]").val());
 	$('#formula').click(function(e) {
         var Casillas=$("select[name=casillas]").val();
@@ -63,9 +63,10 @@ function respuestaInicial(data){
 }
 function respuesta2(data){
 	$('#contenido2').html(data);
+	
 }
 function mostrar(){
-	$.post("mostrar.php",{'CodDocente':CodDocente},respuestamostrar)
+	$.post("mostrar.php",{'CodDocente':CodDocente,'Periodo':$("select[name=Periodo]").val()},respuestamostrar)
 }
 function respuestamostrar(data){
 	$('#contenido2').html(data);	

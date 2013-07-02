@@ -2,17 +2,26 @@
 include_once("../../login/check.php");
 if(isset($_POST)){
 	$CodDocente=$_POST['CodDocente'];
+	$Periodo=$_POST['Periodo'];
 	include_once("../../class/docentemateriacurso.php");
 	include_once("../../class/materias.php");
 	include_once("../../class/curso.php");
 	include_once("../../class/docente.php");
+	include_once("../../class/casilleros.php");
 	$docentemateriacurso=new docentemateriacurso;
 	$curso=new curso;
 	$materias=new materias;
 	$docente=new docente;
+	$casilleros=new casilleros;
 	$dmc=$docentemateriacurso->mostrarTodoDocente($CodDocente);
 	$doc=$docente->mostrarDocente($CodDocente);
 	$doc=array_shift($doc);
+	$codigos=array();
+	foreach($dmc as $docmateriacurso){
+		array_push($codigos,$docmateriacurso['CodDocenteMateriaCurso']);
+	}
+	echo implode(",",$codigos);
+	
 	?>
     <table class="table table-bordered table-striped table-hover table-condensed">
     	<thead>
@@ -46,3 +55,31 @@ if(isset($_POST)){
     <?php
 }
 ?>
+
+    
+    
+
+<div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" href="#collapseOne">
+        Collapsible Group Item #1
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+</div>
+<div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" href="#collapseTwo">
+        Collapsible Group Item #2
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+</div>
