@@ -416,6 +416,9 @@ $idioma['ModificarAsignacionMaterias']="Modificar Asignación de Materias";
 $idioma['SeguroAsignar']="¿Esta seguro de Asignar estos datos al Docente?";
 $idioma['SeguroAsignarModificar']="¿Esta seguro de Asignar estos datos Modificados al Docente?";
 $idioma['YaAsignadoLosDatosADocente']="!Alerta! Ya se encuentra Asignado los datos  al Docente";
+$idioma['Casillas']="Casillas";
+$idioma['NoTieneAsignadoCasilleros']="No tiene asignado Casilleros para este Periodo ";
+
 
 //Notas
 $idioma['Limite']="Limite";

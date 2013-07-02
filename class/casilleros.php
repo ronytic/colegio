@@ -50,6 +50,10 @@ class casilleros extends bd{
 		$this->campos=array('*');
 		return $this->getRecords("CodDocenteMateriaCurso=$CodDocenteMateriaCurso and Trimestre=$Trimestre");
 	}
+	function mostrarHabilitadoTrimestre($CodDocenteMateriaCurso,$Trimestre){
+		$this->campos=array('*');
+		return $this->getRecords("CodDocenteMateriaCurso IN($CodDocenteMateriaCurso) and Trimestre=$Trimestre");
+	}
 	function mostrarTodo($where=''){
 		$this->campos=array('*');
 		return $this->getRecords($where);

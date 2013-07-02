@@ -20,16 +20,31 @@ if(isset($_POST)){
 	foreach($dmc as $docmateriacurso){
 		array_push($codigos,$docmateriacurso['CodDocenteMateriaCurso']);
 	}
-	echo implode(",",$codigos);
+	$codigos=implode(",",$codigos);
 	
+	for($j=1;$j<=4;$j++){
 	?>
+    <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" href="#collapse<?php echo $j ?>">
+            <?php echo $idioma['Periodo']?> <?php echo $j ?>
+          </a>
+        </div>
+        <div id="collapse<?php echo $j ?>" class="accordion-body collapse <?php echo $j==$Periodo?'in':''; ?>">
+          <div class="accordion-inner">
+    <a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
     <table class="table table-bordered table-striped table-hover table-condensed">
     	<thead>
-        	<tr><th colspan="2"><?php echo $idioma['Docente']?>:</th><th colspan="3"><?php echo capitalizar($doc['Paterno'])?> <?php echo capitalizar($doc['Materno'])?> <?php echo capitalizar($doc['Nombres'])?></th></tr>
-        	<tr><th>N</th><th><?php echo $idioma['Materias']?></th><th><?php echo $idioma['Curso']?></th><th><?php echo $idioma['Alumnos']?></th><th></th></tr>
+        	<tr><th colspan="3"><?php echo $idioma['Docente']?>:</th><th colspan="4"><?php echo capitalizar($doc['Paterno'])?> <?php echo capitalizar($doc['Materno'])?> <?php echo capitalizar($doc['Nombres'])?></th></tr>
+            <tr><th colspan="3"><?php echo $idioma['Periodo']?>:</th><th colspan="4"><?php echo $j ?></th></tr>
+        	<tr><th>N</th><th><?php echo $idioma['Materias']?></th><th><?php echo $idioma['Curso']?></th><th><?php echo $idioma['Alumnos']?></th><th title="<?php echo $idioma['Casillas']?>"><?php echo recortarTexto($idioma['Casillas'],3,"")?></th><th><?php echo $idioma['Dps']?></th><th></th></tr>
         </thead>
     <?php
-	foreach($dmc as $docmateriacurso){$i++;
+	$casi=$casilleros->mostrarHabilitadoTrimestre($codigos,$j);
+	if(!count($casi)){?><tr><td colspan="7"><?php echo $idioma['NoTieneAsignadoCasilleros']; ?></td></tr><?php }
+	foreach($casi as $cas){$i++;
+		$docmateriacurso=$docentemateriacurso->mostrarRegistro($cas['CodDocenteMateriaCurso']);
+		$docmateriacurso=array_shift($docmateriacurso);
 		$cur=$curso->mostrarCurso($docmateriacurso['CodCurso']);
 		$cur=array_shift($cur);
 		$mat=$materias->mostrarMateria($docmateriacurso['CodMateria']);
@@ -43,43 +58,21 @@ if(isset($_POST)){
         <tr>
         	<td><?php echo $i?></td>
             <td><?php echo $mat['Nombre']?></td>
-            <td><?php echo $cur['Nombre']?></td>
+            <td><?php echo $cur['Abreviado']?></td>
             <td><?php echo $sexo?></td>
-            <td><a href="#" title="<?php echo $idioma['Modificar']?>" class="btn btn-mini modificar" rel="<?php echo $docmateriacurso['CodDocenteMateriaCurso']?>" data-materia="<?php echo $docmateriacurso['CodMateria']?>" data-curso="<?php echo $docmateriacurso['CodCurso']?>" data-alumnos="<?php echo $docmateriacurso['SexoAlumno']?>" data-docente="<?php echo $docmateriacurso['CodDocente']?>"><i class="icon-pencil"></i></a> 
-            <a href="#" class="btn btn-mini eliminar" title="<?php echo $idioma['Eliminar']?>" rel="<?php echo $docmateriacurso['CodDocenteMateriaCurso']?>"><i class="icon-remove"></i></td>
+            <td><?php echo $cas['Casilleros']?></td>
+            <td><?php echo $cas['Dps']?$idioma['Si']:$idioma['No'];?></td>
+            <td><!--<a href="#" title="<?php echo $idioma['Modificar']?>" class="btn btn-mini modificar" rel="<?php echo $docmateriacurso['CodDocenteMateriaCurso']?>" data-materia="<?php echo $docmateriacurso['CodMateria']?>" data-curso="<?php echo $docmateriacurso['CodCurso']?>" data-alumnos="<?php echo $docmateriacurso['SexoAlumno']?>" data-docente="<?php echo $docmateriacurso['CodDocente']?>"><i class="icon-pencil"></i></a> -->
+            </td>
         </tr>
-        <?php
+        <?php	
 	}
 	?>
     </table>
+        </div>
+        </div>
+    </div>
     <?php
+	}
 }
 ?>
-
-    
-    
-
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" href="#collapseOne">
-        Collapsible Group Item #1
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" href="#collapseTwo">
-        Collapsible Group Item #2
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-</div>
