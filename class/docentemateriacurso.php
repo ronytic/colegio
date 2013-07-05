@@ -2,10 +2,13 @@
 include_once("bd.php");
 class docentemateriacurso extends bd{
 	var $tabla="docentemateriacurso";
-	function mostrarTodo($where='')
-	{
+	function mostrarTodo($where=''){
 		$this->campos=array('*');
 		return $this->getRecords($where);
+	}
+	function mostrarCodDocenteMateriaCurso($CodDocenteMateriaCurso){
+		$this->campos=array('*');
+		return $this->getRecords("CodDocenteMateriaCurso=$CodDocenteMateriaCurso and Activo=1");
 	}
 	function mostrarCursoSexo($CodCurso,$SexoAlumno){
 		$this->campos=array('*');

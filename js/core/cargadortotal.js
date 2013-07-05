@@ -37,6 +37,12 @@ function inicio(){
 		/*Fin Gestionar Tabla*/
 		$('span[title]').tooltip();
 		$('div[title]').tooltip({'placement':'bottom'});
+		$('.tabbable a').click(function (e) {
+			e.preventDefault();
+			$(this).tab('show');
+			$(window).resize();
+		})	
+
     });
 	$(document).on('submit','form.formulario', function(e) {
 		e.preventDefault(); // prevent native submit
