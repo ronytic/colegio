@@ -12,8 +12,39 @@ if(!empty($_POST['CodDocente'])){
 	$materias=new materias;
 	$curso=new curso;
 	$docentemateriacurso=new docentemateriacurso;
-	$docmateriaCurso=array_shift($docentemateriacurso->mostrarDocenteGrupo($CodDocente,"SexoAlumno"));
+	$docmateriaCurso=$docentemateriacurso->mostrarTodoDocente($CodDocente);
+	//print_r($docmateriaCurso);
 	?>
+  
+        
+<!--    <select class="span12">-->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            	<th></th><th><span title="<?php echo $idioma['Curso']?>"><?php echo ($idioma['Curso'])?></span></th>
+                <th><span title="<?php echo $idioma['Materia']?>"><?php echo recortarTexto($idioma['Materia'],3,"")?></span></th><th><?php echo $idioma['Dps']?></th></tr>
+        </thead>
+    <?php
+	foreach($docmateriaCurso as $dmc){
+		$cur=$curso->mostrarCurso($dmc['CodCurso']);
+		$cur=array_shift($cur);
+		$ma=($materias->mostrarMateria($dmc['CodMateria']));
+		$ma=array_shift($ma);
+		?>
+        <tr>
+        <td>
+        <input type="radio" name="CodDocenteMateriaCurso" value="<?php echo $dmc['CodDocenteMateriaCurso']?>">
+        </td>
+        <td><?php echo $cur['Abreviado']?></td>
+        <td><?php echo $ma['Abreviado']?></td>
+        <td><?php echo $cur['Dps']?$idioma['Si']:$idioma['No']?></td>
+        </tr>
+        <?php
+	}
+	?>
+    <tr><td></td></tr>
+    </table>
+   <!-- </select>-->
     <table class="table table-bordered table-hover">
         <tr>
             <td><?php echo $idioma['PeriodoActual']?>:<br />
@@ -77,7 +108,7 @@ if(!empty($_POST['CodDocente'])){
         </tr>
         <tr>
         	<td><?php echo $idioma['FormulaCalificacion']?><br />
-            <textarea name="formula" class="nocap span12" rows="4" readonly="readonly"></textarea>
+            <textarea name="formula" class="nocap span12" rows="4" readonly></textarea>
             <a class="btn btn-mini" id="formula"><?php echo $idioma['PromedioPorDefecto']?></a>
             </td>
 		</tr>
@@ -96,7 +127,7 @@ if(!empty($_POST['CodDocente'])){
 		</tr>
         <tr>
         	<td><?php echo $idioma['NotaAprobacion']?>:<br />
-            	<input type="text" name="aprobacion" class="nocap span12" value="70" readonly="readonly" maxlength="3" size="3">
+            	<input type="text" name="aprobacion" class="nocap span12" value="70" readonly maxlength="3" size="3">
             </td>
 		</tr>
     </table>
