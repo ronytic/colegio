@@ -6,7 +6,7 @@ class alumno extends bd{
 	function mostrarDatosAlumnos($CodCurso,$Retirado=0){
 		$this->campos=array('CodAlumno,LOWER(Paterno) as Paterno,LOWER(Materno) as Materno,LOWER(Nombres) as Nombres, Sexo');
 		if($Retirado==2){
-			$Retiro="Retirado=0 and Retirado=1";
+			$Retiro="Retirado=0 OR Retirado=1";
 		}else{
 			$Retiro="Retirado=$Retirado";	
 		}
@@ -83,7 +83,7 @@ class alumno extends bd{
 	function mostrarAlumnosCurso($CodCurso,$Sexo=2,$Retirado=0){
 		$this->campos=array('CodAlumno,LOWER(Paterno) as Paterno,LOWER(Materno) as Materno,LOWER(Nombres) as Nombres,TelefonoCasa,Ci,FechaNac,Rude,CelularP,CelularM');
 		if($Retirado==2){
-			$Retiro="Retirado=0 and Retirado=1";
+			$Retiro="Retirado=0 OR Retirado=1";
 		}else{
 			$Retiro="Retirado=$Retirado";	
 		}
@@ -96,7 +96,7 @@ class alumno extends bd{
 	}
 	function mostrarDatosCursoTotalBecado($Retirado=0){
 		if($Retirado==2){
-			$Retiro="Retirado=0 and Retirado=1";
+			$Retiro="Retirado=0 OR Retirado=1";
 		}else{
 			$Retiro="Retirado=$Retirado";	
 		}

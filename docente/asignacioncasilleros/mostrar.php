@@ -8,22 +8,27 @@ if(isset($_POST)){
 	include_once("../../class/curso.php");
 	include_once("../../class/docente.php");
 	include_once("../../class/casilleros.php");
+	include_once("../../class/config.php");
 	$docentemateriacurso=new docentemateriacurso;
 	$curso=new curso;
 	$materias=new materias;
 	$docente=new docente;
 	$casilleros=new casilleros;
+	$config=new config;
 	$dmc=$docentemateriacurso->mostrarTodoDocente($CodDocente);
 	$doc=$docente->mostrarDocente($CodDocente);
 	$doc=array_shift($doc);
+	$cnf=$config->mostrarConfig("TotalPeriodo");
+	$TotalPeriodo=$cnf['Valor'];
 	$codigos=array();
 	foreach($dmc as $docmateriacurso){
 		array_push($codigos,$docmateriacurso['CodDocenteMateriaCurso']);
 	}
 	$codigos=implode(",",$codigos);
 	
-	for($j=1;$j<=4;$j++){
+	for($j=1;$j<=$TotalPeriodo;$j++){$i=0;
 	?>
+    <div id="respuesta"></div>
     <div class="accordion-group">
         <div class="accordion-heading">
           <a class="accordion-toggle" data-toggle="collapse" href="#collapse<?php echo $j ?>">

@@ -52,12 +52,12 @@ if(isset($cantidad)){
 			</div>
 		</div>
 		<?php else: ?>
-		<div class="span3 box">
+		<div class="span<?php echo isset($tamano1)?$tamano1:'3'?> box">
 			<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma[$subtitulo1];?></h2></div>
 			<div class="box-content" id="contenido1">
 			</div>
 		</div>
-		<div class="span6 box">
+		<div class="span<?php echo isset($tamano1)?(9-$tamano1):'3'?> box">
             <div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma[$subtitulo2];?></h2></div>
             <div class="box-content" id="contenido2">
             </div>

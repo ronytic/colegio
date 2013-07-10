@@ -177,6 +177,11 @@ function sacarIniciales($texto,$Todo=0){
 	}
 	return mb_strtoupper($iniciales,"utf8");		
 }
+function sacarToolTip($Texto,$Etiqueta="",$Tipo="I",$Cantidad=3){
+	$Tipo=(string)$Tipo;
+	$T=$Etiqueta!=""?$Etiqueta:$Texto;
+	?><span title="<?php echo $Texto?>"><?php echo $Tipo=="0"?$T:($Tipo=="I"?sacarIniciales($T):recortarTexto($T,$Cantidad,""));?></span><?php
+}
 function recortarTexto($texto, $limite=100,$terminador="..."){   
     $texto = trim($texto);
     $texto = strip_tags($texto);

@@ -5,9 +5,6 @@ class casilleros extends bd{
 	function estadoTabla(){
 		return $this->statusTable();
 	}
-	function insertarRegistro($Values){
-		$this->insertRow($Values,1);
-	}
 	function mostrar($CodCasilleros){
 		$this->campos=array("*");
 		return $this->getRecords("CodCasilleros=$CodCasilleros");	

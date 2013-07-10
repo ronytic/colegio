@@ -420,6 +420,9 @@ $idioma['Casillas']="Casillas";
 $idioma['NoTieneAsignadoCasilleros']="No tiene asignado Casilleros para este Periodo ";
 $idioma['NotaTope']="Nota Tope";
 $idioma['NombreCasillero']="Nombre de Casillero";
+$idioma['MaximaNota']="Máxima Nota";
+$idioma['ActualizarListado']="Actualizar Listado";
+$idioma['AsignacionDocenteErronea']="Si la Asignación Materias de Docente es Erronea Corríjala en Asignación de Materia";
 
 //Notas
 $idioma['Limite']="Limite";

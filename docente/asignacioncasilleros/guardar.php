@@ -16,23 +16,15 @@ if(!empty($_POST)){
 	$casilleros=new casilleros;
 	$docentemateriacurso=new docentemateriacurso;
 	$casillas=$casilleros->estadoTabla();
-	
-	
-	
-	//$docM=array_shift($docM);
+
 	$registroNotas=new registronotas;
 	$Periodo=$_POST['Periodo'];
-	$CodDocente=$_POST['CodDocente'];
-	$CodMateria=$_POST['CodMateria'];
-	$CodCurso=$_POST['CodCurso'];
-	$SexoAlumno=$_POST['SexoAlumno'];
+	$CodDocenteMateriaCurso=$_POST['CodDocenteMateriaCurso'];
 	$Casillas=$_POST['Casillas'];
 	$Formula=$_POST['Formula'];
-	$Dps=$_POST['Dps'];
-	$Tope=$_POST['Tope'];
-	//print_r($docM);
-	$docmateriacurso=array_shift($docentemateriacurso->mostrarDocenteMateriaCursoSexo($CodDocente,$CodMateria,$CodCurso,$SexoAlumno));
-	
+
+	$docmateriacurso=$docentemateriacurso->mostrarCodDocenteMateriaCurso($CodDocenteMateriaCurso);
+	$docmateriacurso=array_shift($docmateriacurso);
 	//echo "<br>$CodDocenteMateria<br>";
 	$casi=$casilleros->mostrarTrimestre($docmateriacurso['CodDocenteMateriaCurso'],$Periodo);
 	
@@ -44,13 +36,14 @@ if(!empty($_POST)){
 	
 	if(count($casi)){
 		?>
+        <div class="alert alert-error">
         <strong>
 		<?php echo $idioma['CasillerosRegistrado'];?>
 		<br />
 		<?php echo $idioma['ReviseLosDatos'];?>
         </strong>
+        </div>
         <?php
-		
 		exit();
 	}
 
@@ -60,7 +53,7 @@ if(!empty($_POST)){
 				'Casilleros'=>$Casillas,
 				'Trimestre'=>$Periodo,
 				'FormulaCalificaciones'=>"'$Formula'",
-				'Dps'=>$Dps
+				'Dps'=>$cur['Dps']
 				);
 				
 	for($i=1;$i<=15;$i++){
@@ -74,7 +67,7 @@ if(!empty($_POST)){
 				}
 			}else{//Sacnado para Fines de Bimestre
 				$valDM['NombreCasilla'.$i]="'Casilla $i'";
-				$valDM['LimiteCasilla'.$i]=$Tope;
+				$valDM['LimiteCasilla'.$i]=$cur['NotaTope'];
 			}
 			
 		}else{
@@ -85,7 +78,7 @@ if(!empty($_POST)){
 	$casilleros->insertarRegistro($valDM);
 	//print_r($valDM);
 	//print_r($valDM);
-	foreach($alumno->mostrarAlumnosCurso($CodCurso,$SexoAlumno) as $al){
+	foreach($alumno->mostrarAlumnosCurso($docmateriacurso['CodCurso'],$docmateriacurso['SexoAlumno'],2) as $al){
 		$valRN=array('CodRegistroNotas'=>'NULL',
 					'CodCasilleros'=>$CodCasilleros,
 					'CodAlumno'=>$al['CodAlumno'],
@@ -94,7 +87,7 @@ if(!empty($_POST)){
 		for($i=1;$i<=15;$i++){
 			$valRN['Nota'.$i]=0;	
 		}
-//		print_r($valRN);
+		//print_r($valRN);
 		$valRN['Resultado']=0;
 		$valRN['Dps']=0;
 		$valRN['NotaFinal']=0;
@@ -105,20 +98,22 @@ if(!empty($_POST)){
 	//Sacar Datos para mostrar
 	
 	?>
-    
+    <div class="alert alert-success">
 	<strong><?php echo $idioma["CasillerosRegistradosCorrectamente"];?></strong>
     <br />
     <strong><?php echo $idioma["ConLosSiguientesDatos"];?>:</strong>
-    <br />
+    </div>
     <table class="table table-striped table-bordered table-hover">
     	<tr><td><?php echo $idioma["Curso"];?>:</td><td><?php echo $cur['Nombre']?></td></tr>
         <tr><td><?php echo $idioma["Materia"];?>:</td><td><?php echo $ma['Nombre']?></td></tr>
         <tr><td><?php echo $idioma["Docente"];?>:</td><td><?php echo ucwords($doc['Paterno'])?> <?php echo ucwords($doc['Materno'])?> <?php echo ucwords($doc['Nombres'])?></td></tr>
         <tr><td><?php echo $idioma["Casilleros"];?></td><td><?php echo $Casillas?></td></tr>
         <tr><td><?php echo $cur['Bimestre']?$idioma['Bimestre']:$idioma["Trimestre"];?></td><td><?php echo $Periodo?></td></tr>
-        <tr><td><?php echo $idioma["NotaTopeCasilleros"];?>:</td><td><?php echo $Tope?></td></tr>
+        <tr><td><?php echo $idioma["NotaTopeCasilleros"];?>:</td><td><?php echo $cur['NotaTope']?></td></tr>
         <tr><td><?php echo $idioma["Dps"];?>:</td><td><?php echo $Dps?$idioma['Si']:$idioma['No'];?></td></tr>
     </table>
+    <input type="button" class="btn btn-info" value="<?php echo $idioma['ActualizarListado']?>" id="actualizarlistado">
+    <hr>
     <?php
 }
 ?>

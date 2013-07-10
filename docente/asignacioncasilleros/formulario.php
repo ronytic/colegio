@@ -13,16 +13,13 @@ if(!empty($_POST['CodDocente'])){
 	$curso=new curso;
 	$docentemateriacurso=new docentemateriacurso;
 	$docmateriaCurso=$docentemateriacurso->mostrarTodoDocente($CodDocente);
-	//print_r($docmateriaCurso);
 	?>
-  
-        
-<!--    <select class="span12">-->
-    <table class="table table-bordered">
+    <div class="alert alert-info"><?php echo $idioma['AsignacionDocenteErronea']?></div>
+    <table class="table table-bordered table-striped table-hover table-condensed">
         <thead>
             <tr>
             	<th></th><th><span title="<?php echo $idioma['Curso']?>"><?php echo ($idioma['Curso'])?></span></th>
-                <th><span title="<?php echo $idioma['Materia']?>"><?php echo recortarTexto($idioma['Materia'],3,"")?></span></th><th><?php echo $idioma['Dps']?></th></tr>
+                <th><?php sacarToolTip($idioma['Materia'],"","R")?></th><th><?php echo $idioma['Dps']?></th><th><?php echo sacarToolTip($idioma['Sexo'])?></th><th><?php sacarToolTip($idioma['MaximaNota'])?></th><th><?php sacarToolTip($idioma['NotaAprobacion'])?></th></tr>
         </thead>
     <?php
 	foreach($docmateriaCurso as $dmc){
@@ -30,21 +27,23 @@ if(!empty($_POST['CodDocente'])){
 		$cur=array_shift($cur);
 		$ma=($materias->mostrarMateria($dmc['CodMateria']));
 		$ma=array_shift($ma);
+		$SA=$dmc['SexoAlumno']==2?$idioma['AmbosSexos']:($dmc['SexoAlumno']==1?$idioma['Hombres']:$idioma['Mujeres']);
 		?>
         <tr>
         <td>
-        <input type="radio" name="CodDocenteMateriaCurso" value="<?php echo $dmc['CodDocenteMateriaCurso']?>">
+        <input type="radio" name="CodDocenteMateriaCurso" value="<?php echo $dmc['CodDocenteMateriaCurso']?>" id="c<?php echo $dmc['CodDocenteMateriaCurso']?>" data-bimestre="<?php echo $cur['Bimestre'];?>">
         </td>
-        <td><?php echo $cur['Abreviado']?></td>
-        <td><?php echo $ma['Abreviado']?></td>
-        <td><?php echo $cur['Dps']?$idioma['Si']:$idioma['No']?></td>
+        <td><label for="c<?php echo $dmc['CodDocenteMateriaCurso']?>"><?php echo $cur['Abreviado']?></label></td>
+        <td><label for="c<?php echo $dmc['CodDocenteMateriaCurso']?>"><?php sacarToolTip($ma['Nombre'],$ma['Abreviado'],0)?></label></td>
+        <td><label for="c<?php echo $dmc['CodDocenteMateriaCurso']?>"><?php echo $cur['Dps']?$idioma['Si']:$idioma['No']?></label></td>
+        <td><label for="c<?php echo $dmc['CodDocenteMateriaCurso']?>"><?php sacarToolTip($SA)?></label></td>
+        <td class="der"><label for="c<?php echo $dmc['CodDocenteMateriaCurso']?>"><?php echo $cur['NotaTope']?></label></td>
+        <td class="der"><label for="c<?php echo $dmc['CodDocenteMateriaCurso']?>"><?php echo $cur['NotaAprobacion']?></label></td>
         </tr>
         <?php
 	}
 	?>
-    <tr><td></td></tr>
     </table>
-   <!-- </select>-->
     <table class="table table-bordered table-hover">
         <tr>
             <td><?php echo $idioma['PeriodoActual']?>:<br />
@@ -64,40 +63,6 @@ if(!empty($_POST['CodDocente'])){
 			</td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['Curso']?>:<br />
-            <select name="curso" class="span12">
-            <?php foreach($docentemateriacurso->mostrarDocenteOrdenCurso($CodDocente) as $docmateriaCurso){
-                    $cur=$curso->mostrarCurso($docmateriaCurso['CodCurso']);
-					$cur=array_shift($cur);
-                    ?>
-                    <option value="<?php echo $cur['CodCurso']?>" data-dps="<?php echo $cur['Dps']?>" data-tope="<?php echo $cur['NotaTope'];?>" data-aprobacion="<?php echo $cur['NotaAprobacion'];?>" data-bimestre="<?php echo $cur['Bimestre'];?>"><?php echo $cur['Nombre']?></option>
-                    <?php
-                }
-            ?></select>
-            </td>
-		</tr>
-        <tr>
-        	<td><?php echo $idioma['Materia']?>:<br />
-            <select name="materia" class="span12">
-            <?php foreach($docentemateriacurso->mostrarDocenteGrupo($CodDocente,"CodMateria") as $docmateriaCurso){
-                    $ma=array_shift($materias->mostrarMateria($docmateriaCurso['CodMateria']));
-                    ?>
-                    <option value="<?php echo $ma['CodMateria']?>"><?php echo $ma['Nombre']?></option>
-                    <?php
-                }
-            ?></select>
-        	</td>
-		</tr>
-        <tr>
-        	<td><?php echo $idioma['Alumnos']?>:<br />
-            <select name="alumno" disabled="disabled" class="span12">
-            	<option value="2" <?php echo $docmateriaCurso['SexoAlumno']==2?'selected="selected"':'';?>><?php echo $idioma['AmbosSexos']?></option>
-                <option value="1" <?php echo $docmateriaCurso['SexoAlumno']==1?'selected="selected"':'';?>><?php echo $idioma['SoloVarones']?></option>
-                <option value="0" <?php echo $docmateriaCurso['SexoAlumno']==0?'selected="selected"':'';?>><?php echo $idioma['SoloMujeres']?></option>
-			</select>
-            </td>
-		</tr>
-        <tr>
         	<td><?php echo $idioma['NumeroCasillas']?>:<br />
             <select name="casillas" class="span12">
 				<?php for($i=3;$i<=15;$i++){?>
@@ -110,24 +75,6 @@ if(!empty($_POST['CodDocente'])){
         	<td><?php echo $idioma['FormulaCalificacion']?><br />
             <textarea name="formula" class="nocap span12" rows="4" readonly></textarea>
             <a class="btn btn-mini" id="formula"><?php echo $idioma['PromedioPorDefecto']?></a>
-            </td>
-		</tr>
-        <tr>
-        	<td><?php echo $idioma['Dps']?>:<br />
-            <select name="dps" class="span12">
-            	<option value="0"><?php echo $idioma['No']?></option>
-                <option value="1"><?php echo $idioma['Si']?></option>
-			</select>
-           	</td>
-		</tr>
-        <tr>
-        	<td><?php echo $idioma['NotaTopeCasilleros']?>:<br />
-            	<input type="text" name="tope" class="nocap span12" value="70" maxlength="3" size="3">
-            </td>
-		</tr>
-        <tr>
-        	<td><?php echo $idioma['NotaAprobacion']?>:<br />
-            	<input type="text" name="aprobacion" class="nocap span12" value="70" readonly maxlength="3" size="3">
             </td>
 		</tr>
     </table>
