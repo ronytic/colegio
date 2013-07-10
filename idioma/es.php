@@ -69,6 +69,7 @@ $idioma['NSistemaInternet']="Sistema Internet";
 $idioma['NAsignacionNotasCualitativas']="Asignación Notas Cualitativas";
 $idioma['NAsignacionMateriasBoletines']="Asignación de Materias";
 $idioma['NAsignacionMateriasDocente']="Asignación de Materias a Docente";
+$idioma['NMarcarAsistencia']="Marcar Asistencia";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -568,6 +569,9 @@ $idioma['GuardarConfiguracion']="Guardar Configuración";
 $idioma['SobreNombre']="SobreNombre";
 $idioma['RepetirContrasena']="Repetir Contraseña";
 $idioma['ContrasenaNoIgual']="Contraseña No son Iguales";
+
+//Asistencia
+$idioma['RegistrarAsistencia']="Registrar Asistencia";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
