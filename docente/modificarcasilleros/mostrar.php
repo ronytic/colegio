@@ -43,7 +43,7 @@ if(isset($_POST)){
     	<thead>
         	<tr><th colspan="3"><?php echo $idioma['Docente']?>:</th><th colspan="4"><?php echo capitalizar($doc['Paterno'])?> <?php echo capitalizar($doc['Materno'])?> <?php echo capitalizar($doc['Nombres'])?></th></tr>
             <tr><th colspan="3"><?php echo $idioma['Periodo']?>:</th><th colspan="4"><?php echo $j ?></th></tr>
-        	<tr><th>N</th><th><?php echo $idioma['Materias']?></th><th><?php echo $idioma['Curso']?></th><th><?php echo $idioma['Alumnos']?></th><th title="<?php echo $idioma['Casillas']?>"><?php echo recortarTexto($idioma['Casillas'],3,"")?></th><th><?php echo $idioma['Dps']?></th><th></th></tr>
+        	<tr><th>N</th><th><?php echo $idioma['Materias']?></th><th><?php echo $idioma['Curso']?></th><th><?php echo $idioma['Alumnos']?></th><th><span title="<?php echo $idioma['Casillas']?>"><?php echo recortarTexto($idioma['Casillas'],3,"")?></span></th><th><?php echo $idioma['Dps']?></th><th></th></tr>
         </thead>
     <?php
 	$casi=$casilleros->mostrarHabilitadoTrimestre($codigos,$j);

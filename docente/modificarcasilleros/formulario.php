@@ -27,11 +27,14 @@ if(!empty($_POST['Cod'])){
 	$doc=$docente->mostrarDocente($docmateriacurso['CodDocente']);
 	$doc=array_shift($doc);
 	?>
+    <div id="respuestaformulario"></div>
     <table class="table table-bordered table-hover">
     <thead>
-    	<tr><th><?php echo $idioma['Docente']?></th><th><?php echo $idioma['Curso']?></th><th><?php echo $idioma['Materia']?></th></tr>
-        <tr><th><?php echo capitalizar($doc['Paterno'])?> <?php echo capitalizar($doc['Materno'])?> <?php echo capitalizar($doc['Nombres'])?></th><th><?php echo $cur['Nombre']?></th><th><?php echo $mat['Nombre']?></th></tr>
+    	<tr><th><?php echo $idioma['Docente']?></th><th><?php echo $idioma['Curso']?></th><th><?php echo $idioma['Materia']?></th><th><?php echo $idioma['Periodo']?></th></tr>
+        <tr><th><?php echo capitalizar($doc['Paterno'])?> <?php echo capitalizar($doc['Materno'])?> <?php echo capitalizar($doc['Nombres'])?></th><th><?php echo $cur['Nombre']?></th><th><?php echo $mat['Nombre']?></th><th><?php echo $cas['Trimestre']?></th></tr>
     </thead>
+    </table>
+    <table class="table table-bordered oculto">
         <tr>
             <td><?php echo $idioma['PeriodoActual']?>:<br />
             	<select name="Periodo" class="span12">
@@ -72,26 +75,12 @@ if(!empty($_POST['Cod'])){
 			</select>
             </td>
 		</tr>
-        <tr>
-        	<td><?php echo $idioma['NumeroCasillas']?>:<br />
-            <select name="casillas" class="span12">
-				<?php for($i=3;$i<=15;$i++){?>
-                <option value="<?php echo $i;?>" <?php echo $i==$cas['Casilleros']?'selected':''?>><?php echo $i;?></option>
-                <?php }?>
-            </select>
-			</td>
-        </tr>
-        <tr>
-        	<td><?php echo $idioma['FormulaCalificacion']?><br />
-            <textarea name="formula" class="nocap span12" rows="4" readonly></textarea>
-            <a class="btn btn-mini" id="formula"><?php echo $idioma['PromedioPorDefecto']?></a>
-            </td>
-		</tr>
+        
         <tr>
         	<td><?php echo $idioma['Dps']?>:<br />
             <select name="dps" class="span12">
-            	<option value="0"><?php echo $idioma['No']?></option>
-                <option value="1"><?php echo $idioma['Si']?></option>
+            	<option value="0" <?php echo $cur['Dps']==0?'selected':''?>><?php echo $idioma['No']?></option>
+                <option value="1" <?php echo $cur['Dps']==1?'selected':''?>><?php echo $idioma['Si']?></option>
 			</select>
            	</td>
 		</tr>
@@ -106,7 +95,44 @@ if(!empty($_POST['Cod'])){
             </td>
 		</tr>
     </table>
-    <input type="submit" value="<?php echo $idioma['Guardar']?>" class="btn btn-success guardar">
+    <form class="formulario" method="post" action="modificar.php">
+    <?php if($cur['Bimestre']){?><input name="casillas" value="4" type="hidden"><?php }?>
+    <input type="hidden" name="CodCasilleros"  value="<?php echo $Cod?>">
+    <table class="table table-bordered">
+    	<tr>
+        	<td><?php echo $idioma['NumeroCasillas']?>:<br />
+            <select name="casillas" class="span12">
+				<?php for($i=3;$i<=15;$i++){?>
+                <option value="<?php echo $i;?>" <?php echo $i==$cas['Casilleros']?'selected':''?>><?php echo $i;?></option>
+                <?php }?>
+            </select>
+			</td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['FormulaCalificacion']?><br />
+            <textarea name="formula" class="nocap span12" rows="4" readonly><?php echo $cas['FormulaCalificaciones']?></textarea>
+            <a class="btn btn-mini" id="formula"><?php echo $idioma['PromedioPorDefecto']?></a>
+            </td>
+		</tr>
+    </table>
+    
+    <table class="table table-bordered table-hover table-striped">
+    <thead>
+	<tr><th>N</th><th><?php echo $idioma['NotaTope']?></th><th><?php echo $idioma['NombreCasillero']?></th></tr>
+    </thead>
+    
+    <?php for($i=1;$i<=15;$i++){?>
+        <tr class="filanota <?php echo $i>$cas['Casilleros']?'oculto':''?>" rel="<?php echo $i?>">
+        	<td><?php echo $i ?></td>
+    		<td><input type="text" class="span12" name="limite[]" value="<?php echo $cas['LimiteCasilla'.$i];?>"></td>
+            <td><input type="text" class="span12" name="nombre[]" value="<?php echo $cas['NombreCasilla'.$i];?>"></td>
+		</tr>
+        <?php
+	}?>
+    
+    </table>
+    <input type="submit" value="<?php echo $idioma['Modificar']?>" class="btn btn-success guardar">
+    </form>
     <?php
 }
 ?>

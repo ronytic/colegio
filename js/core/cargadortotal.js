@@ -37,6 +37,7 @@ function inicio(){
 		/*Fin Gestionar Tabla*/
 		$('span[title]').tooltip();
 		$('div[title]').tooltip({'placement':'bottom'});
+		//pestañas horizontales corregir
 		$('.tabbable a').click(function (e) {
 			e.preventDefault();
 			$(this).tab('show');

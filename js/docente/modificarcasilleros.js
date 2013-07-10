@@ -1,7 +1,6 @@
 function lanzadorC(CodDocente){
 	cargandoG("#contenido1");
-	cargandoG("#contenido2");
-	//$.post('formulario.php',{'CodDocente':CodDocente},respuestaInicial);
+	//cargandoG("#contenido2");
 	mostrar();
 }
 var valorbimestre;
@@ -10,6 +9,12 @@ function respuestaInicial(data){
 	$('#contenido2').html(data);
 	
 	var valorcurso=parseInt($("select[name=curso]").val());
+	valorbimestre=parseInt($("select[name=curso]>option:selected").attr("data-bimestre"));
+	if(valorbimestre==1){
+			$("select[name=casillas]").val(4).attr("disabled","disabled");
+		}else{
+			$("select[name=casillas]").val($("select[name=casillas]").val()).removeAttr("disabled");
+		}
 	$('#formula').click(function(e) {
         var Casillas=$("select[name=casillas]").val();
 		Texto='n1 n2 +';
@@ -19,9 +24,9 @@ function respuestaInicial(data){
 		if(!valorbimestre){Texto+=' '+Casillas+' /';}
 		$("textarea[name=formula]").val(Texto);
     });
-	cambiarDps();
-	$("select[name=curso]").change(cambiarDps);
-	function cambiarDps(e) {
+	//cambiarDps();
+	//$("select[name=curso]").change(cambiarDps);
+	/*function cambiarDps(e) {
 		var notaaprob=0;
 		valorbimestre=parseInt($("select[name=curso]>option:selected").attr("data-bimestre"));
 		var valordps=parseInt($("select[name=curso]>option:selected").attr("data-dps"));
@@ -40,16 +45,24 @@ function respuestaInicial(data){
 		}else{
 			$("select[name=casillas]").val($("select[name=casillas]").val()).removeAttr("disabled");
 		}
-		$('#formula').click();
+		//$('#formula').click();
 		var CodCurso=$("select[name=curso]").val();
-		$.post("materias.php",{'CodDocente':CodDocente,'CodCurso':CodCurso},function(data){$("select[name=materia]").html(data)});
-    }
-	$('#formula').click(); 
+		//$.post("materias.php",{'CodDocente':CodDocente,'CodCurso':CodCurso},function(data){$("select[name=materia]").html(data)});
+    }*/
+	//$('#formula').click(); 
 	$("select[name=casillas]").change(function(e) {
-       $('#formula').click(); 
+		$('#formula').click();
+		var Casillas=parseInt($("select[name=casillas]").val());
+		$('.filanota').each(function(index, element) {
+        	if($(element).attr("rel")>Casillas){
+				$(element).addClass('oculto');
+			}else{
+				$(element).removeClass('oculto');
+			}
+		});
     });
 	$(".guardar").click(function(e) {
-		var Periodo=$("select[name=Periodo]").val();
+		/*var Periodo=$("select[name=Periodo]").val();
 		var CodMateria=$("select[name=materia]").val();
 		var CodCurso=$("select[name=curso]").val();
 		var SexoAlumno=$("select[name=alumno]").val();
@@ -61,7 +74,7 @@ function respuestaInicial(data){
 			$.post('guardar.php',{'Periodo':Periodo,'CodDocente':CodDocente,'CodMateria':CodMateria,'CodCurso':CodCurso,'SexoAlumno':SexoAlumno,'Casillas':Casillas,'Formula':Formula,'Dps':Dps,'Tope':Tope},respuesta2);
 		}
 		//
-		
+		*/
     });
 }
 function respuesta2(data){
@@ -77,5 +90,6 @@ function respuestamostrar(data){
 		e.preventDefault();
 		var Cod=$(this).attr('rel');
 		$.post('formulario.php',{'Cod':Cod},respuestaInicial);
+		cargandoG("#contenido2");
 	});
 }

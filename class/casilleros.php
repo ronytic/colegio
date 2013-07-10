@@ -59,7 +59,7 @@ class casilleros extends bd{
 		return $this->getRecords($where);
 	}
 	function actualizarCasilleros($values,$Cod){
-		$this->updateRow($values,"CodCasilleros=$Cod");	
+		return $this->updateRow($values,"CodCasilleros=$Cod");	
 	}
 }
 ?>
