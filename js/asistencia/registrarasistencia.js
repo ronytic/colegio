@@ -1,5 +1,14 @@
-$(document).on("ready",function(){
+$(document).ready(function(){
 	hora();
+	$("form.formulario").submit(function(e) {
+		if($("#Codigo").val()==""){
+			e.preventDefault();
+			return false;
+		}
+    });
+	$("div.box-content").click(function(e) {
+        $("#Codigo").focus();
+    });
 });
 function hora(){
 	var hora=fecha.getHours();

@@ -245,6 +245,7 @@ tr:hover td.celeste{
 }
 .x2{
 	font-size:2em !important;
+	line-height:normal !important;
 }
 /*Inicio de la Tabla*/
 .tabla{
@@ -272,4 +273,17 @@ tr:hover td.celeste{
 }
 .ocultar{
 	display:none;	
+}
+#hora,#fecha{
+	font-size:5em;
+	line-height:normal !important;
+	text-align:center !important;
+}
+#fecha,.grande{
+	font-size:2em;
+	line-height:normal !important;
+	text-align:center !important;
+}
+.espacio{
+	padding:15px 5px 15px 5px !important;	
 }

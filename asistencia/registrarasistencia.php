@@ -7,8 +7,16 @@ $alumno=new alumno;
 $curso=new curso;
 $cursoarea=new cursoarea;
 $Codigo=$_POST['Codigo'];
-
+$folder="../";
 $al=$alumno->mostrarDatosCodBarra("CodBarra='$Codigo'");
+if(count($al)<=0){
+	?>
+    <div class="alert alert-error grande"><?php echo $idioma['CodigoNoAsignado']?></div>
+    <script language="javascript">$("#Codigo").val('').focus()</script>
+    <?php
+	exit();
+}
+
 $al=array_shift($al);
 $cur=$curso->mostrarCurso($al['CodCurso']);
 $cur=array_shift($cur);
@@ -39,3 +47,11 @@ echo "<br>";
 echo strtotime($HoraAtraso)." - ".$HoraAtraso;
 //print_r($cArea);
 ?>
+<?php $ima=$folder."imagenes/alumnos/".$al['Foto'];if(!file_exists($ima) || empty($al['Foto'])){$ima=$folder."imagenes/alumnos/0.jpg";}?>
+<table class="tabla">
+    <tr>
+        <td rowspan="4"><img src="<?php echo $ima?>" class="img-polaroid" width="100"/></td>
+        <td colspan="3" class="text-info x2 espacio"><?php echo capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres'])?></span></td></tr>
+    <tr><td class="text-info x2 espacio"><?php echo $cur['Nombre']?></span></td></tr>
+</table>
+<script language="javascript">$("#Codigo").val('').focus()</script>

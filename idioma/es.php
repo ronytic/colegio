@@ -572,6 +572,7 @@ $idioma['ContrasenaNoIgual']="Contraseña No son Iguales";
 
 //Asistencia
 $idioma['RegistrarAsistencia']="Registrar Asistencia";
+$idioma['CodigoNoAsignado']="Código NO ASIGNADO a un Alumno";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";

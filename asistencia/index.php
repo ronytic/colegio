@@ -34,6 +34,7 @@ var fecha=new Date(HoraTotal);
 <div class="span6 box">
 	<div class="box-header"><h2><?php echo $idioma['Hora']?></h2></div>
     <div class="box-content">
+    	<div id="fecha"><?php echo utf8_encode(strftime("%A, %d de %B del %Y"));?></div>
     	<div id="hora">00:00:00</div>
     </div>
 </div>
