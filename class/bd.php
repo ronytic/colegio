@@ -67,7 +67,11 @@ class bd{
 		return mysql_fetch_array($res);
 	}
 	 function getRecords ($where_str=false, $order_str=false,$group_str=false, $count=false, $start=0, $order_strDesc=false)
-	{	$where =$where_str ? "WHERE $where_str" : "";
+	{	
+		if(empty($this->campos) || !isset($this->campos)){
+			$this->campos=array('*');
+		}
+		$where =$where_str ? "WHERE $where_str" : "";
 		$order =$order_str ? "ORDER BY $order_str ASC" : "";
 		$order =$order_strDesc ? "ORDER BY $order_str DESC" : $order;
 		$group =$group_str ? "GROUP BY $group_str":"";

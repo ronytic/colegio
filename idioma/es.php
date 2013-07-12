@@ -573,6 +573,12 @@ $idioma['ContrasenaNoIgual']="Contraseña No son Iguales";
 //Asistencia
 $idioma['RegistrarAsistencia']="Registrar Asistencia";
 $idioma['CodigoNoAsignado']="Código NO ASIGNADO a un Alumno";
+$idioma['YaMarcoAsistencia']="El Alumno ya marco su Asistencia";
+$idioma['AtrasoAlumno']="Atraso Registrado Correctamente";
+$idioma['AsistenciaAlumno']="Asistencia Registrado Correctamente";
+$idioma['ErrorAsistencia']="Hubo un error al registrar la Asistencia";
+$idioma['UltimasAsistencias']="Últimas Asistencias";
+$idioma['NoExisteAsistentes']="No Existe Asistentes el día de Hoy";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";

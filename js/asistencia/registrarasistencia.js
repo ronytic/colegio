@@ -5,10 +5,15 @@ $(document).ready(function(){
 			e.preventDefault();
 			return false;
 		}
+		{complete:{
+		mostrar();	
+		}}
     });
+	target: '#respuestaformulario',
 	$("div.box-content").click(function(e) {
         $("#Codigo").focus();
     });
+	mostrar();
 });
 function hora(){
 	var hora=fecha.getHours();
@@ -21,4 +26,9 @@ function hora(){
 	$("#hora").html(fech);
 	fecha.setSeconds(fecha.getSeconds()+1);
 	setTimeout("hora()",1000);
+}
+function mostrar(){
+	$.post("mostrarasistencia.php",function(data){
+		$("#respuestamostrar").html(data);
+	});	
 }
