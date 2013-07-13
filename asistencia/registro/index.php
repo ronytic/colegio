@@ -1,15 +1,15 @@
 <?php
-include_once("../login/check.php");
-$folder="../";
+include_once("../../login/check.php");
+$folder="../../";
 $titulo="NMarcarAsistencia";
-include_once("../cabecerahtml.php");
+include_once($folder."cabecerahtml.php");
 ?>
-<script type="text/javascript" src="../js/asistencia/registrarasistencia.js" language="javascript"></script>
+<script type="text/javascript" src="../../js/asistencia/registrarasistencia.js" language="javascript"></script>
 <script type="text/javascript">
 var HoraTotal='<?php echo date("d M Y G:i:s"); ?>'
 var fecha=new Date(HoraTotal);
 </script>
-<?php include_once("../cabecera.php");?>
+<?php include_once($folder."cabecera.php");?>
 <div class="span6">
 	<div class="box">
         <div class="box-header"><h2><i class="icon-barcode"></i><span class="break"></span><?php echo $idioma['IngresarCodigoBarra']?></h2></div>
@@ -44,4 +44,4 @@ var fecha=new Date(HoraTotal);
         <div class="box-content" id="respuestamostrar" style="max-height:400px;overflow:auto;"></div>
 	</div>
 </div>
-<?php include_once("../pie.php");?>
+<?php include_once($folder."pie.php");?>

@@ -103,9 +103,14 @@ class alumno extends bd{
 		$this->campos=array('*');
 		return $this->getRecords("MontoBeca!=0 and $Retiro","CodCurso,Paterno,Materno,Nombres");
 	}
-	function mostrarDatosCodBarra($Where){
+	function mostrarDatosCodBarra($Where,$Retirado=0){
 		$this->campos=array('*');
-		return $this->getRecords($Where);
+		if($Retirado==2){
+			$Retiro="Retirado=0 OR Retirado=1";
+		}else{
+			$Retiro="Retirado=$Retirado";	
+		}
+		return $this->getRecords($Where." and $Retiro");
 	}
 	function actualizarDatosAlumno($values,$CodAlumno){
 		$this->updateRow($values,"CodAlumno=$CodAlumno");	

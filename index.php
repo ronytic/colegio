@@ -2,27 +2,10 @@
 <?php include_once("cabecerahtml.php");?>
 <script language="javascript" type="text/javascript" src="js/inicio.js"></script>
 <?php include_once("cabecera.php");?>
-    <div class="box-small span3">
-    <?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2||$_SESSION['Nivel']==4||$_SESSION['Nivel']==5):?>
-        <a data-rel="tooltip" title="65% de asistentes" class="box-small-link" href="#">
-            <div id="visits-count">465<br><br>Alumnos</div>
-        </a>
-        <div class="box-small-title">Asistencia</div>
-        <span id="visits-count-n"class="notification green">+ 65%</span>
-    </div>
-	<div class="box-small span3">
-        <a data-rel="tooltip" title="25% de Atrasos" class="box-small-link" href="#">
-            <div id="members-count">45<br><br>Alumnos</div>
-        </a>
-        <div class="box-small-title">Atrasos</div>
-        <span id="members-count-n" class="notification yellow">25%</span>
-    </div>
-    <div class="box-small span3">
-        <a data-rel="tooltip" title="10% de Faltas" class="box-small-link" href="#">
-            <div id="members-count">10<br><br>Alumnos</div>
-        </a>
-        <div class="box-small-title">Faltas</div>
-        <span id="members-count-n" class="notification red">10%</span>
+<?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2||$_SESSION['Nivel']==4||$_SESSION['Nivel']==5):?>
+    <div id="asistenciarapida"></div>
+    <div class="box-small span1">
+    <a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizarasistencia" class="box-small-link"><i class="icon-refresh"></i></a>
     </div>
     <?php endif;?>
 </div>

@@ -11,6 +11,7 @@ $(document).on("ready",function(){
 	mostrarActividades();
 	mostrarCuotas();
 	mostrarAgenda();
+	mostrarAsistencia();
 	$(document).on("click","#actualizarcuotas",function(e){
 		e.preventDefault();
 		mostrarCuotas();
@@ -20,10 +21,18 @@ $(document).on("ready",function(){
 	}).on("click","#actualizaragenda",function(e){
 		e.preventDefault();
 		mostrarAgenda();
+	}).on("click","#actualizarasistencia",function(e){
+		e.preventDefault();
+		mostrarAsistencia();
 	});
 	
 });
-
+function mostrarAsistencia(){
+	//var Fecha=$("#FechaActividad").val();
+	$.post("asistencia/inicio/mostrar.php",{},function(data){
+		$("#asistenciarapida").html(data)
+	});
+}
 function mostrarActividades(){
 	var Fecha=$("#FechaActividad").val();
 	$.post("agendaactividades/mostraractividades.php",{"Fecha":Fecha,'Botones':"0"},function(data){

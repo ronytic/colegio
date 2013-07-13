@@ -1,8 +1,8 @@
 <?php
-include_once("../login/check.php");
-include_once("../class/asistencia.php");
-include_once("../class/alumno.php");
-include_once("../class/curso.php");
+include_once("../../login/check.php");
+include_once("../../class/asistencia.php");
+include_once("../../class/alumno.php");
+include_once("../../class/curso.php");
 $FechaActual=date("Y-m-d");
 $asistencia=new asistencia;
 $alumno=new alumno;

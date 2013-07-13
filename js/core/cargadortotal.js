@@ -35,8 +35,9 @@ function inicio(){
 		$("table.inicio").stickyTableHeaders('destroy');
 		
 		/*Fin Gestionar Tabla*/
-		$('span[title]').tooltip();
+		$('span[title],a[title]').tooltip();
 		$('div[title]').tooltip({'placement':'bottom'});
+		$('a[data-rel="tooltip"]').tooltip();
 		//pestañas horizontales corregir
 		$('.tabbable a').click(function (e) {
 			e.preventDefault();

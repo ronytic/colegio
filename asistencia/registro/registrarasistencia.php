@@ -1,15 +1,15 @@
 <?php
-include_once("../login/check.php");
-include_once("../class/alumno.php");
-include_once("../class/curso.php");
-include_once("../class/asistencia.php");
-include_once("../class/cursoarea.php");
+include_once("../../login/check.php");
+include_once("../../class/alumno.php");
+include_once("../../class/curso.php");
+include_once("../../class/asistencia.php");
+include_once("../../class/cursoarea.php");
 $alumno=new alumno;
 $curso=new curso;
 $cursoarea=new cursoarea;
 $asistencia=new asistencia;
 $Codigo=$_POST['Codigo'];
-$folder="../";
+$folder="../../";
 $al=$alumno->mostrarDatosCodBarra("CodBarra='$Codigo'");
 if(count($al)<=0){
 	?>

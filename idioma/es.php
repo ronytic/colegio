@@ -581,6 +581,12 @@ $idioma['UltimasAsistencias']="Últimas Asistencias";
 $idioma['NoExisteAsistentes']="No Existe Asistentes el día de Hoy";
 $idioma['Atraso']="Atraso";
 $idioma['Asistencia']="Asistencia";
+$idioma['AsistenciaTiempo']="Asistencia a Tiempo";
+$idioma['DeAsistentes']=" de asistentes";
+$idioma['DeAtrasos']=" de atrasos";
+$idioma['DeFaltas']=" de faltas";
+$idioma['NoExistenFaltasHoy']="No existen faltas el día de hoy";
+$idioma['AlumnosFaltas']="Alumnos con faltas el día de Hoy";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";

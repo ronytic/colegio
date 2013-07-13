@@ -232,6 +232,9 @@ function quitarSimbolos($string){
     $string = str_replace(array("\\", "¨", "º", "-", "~","#", "@", "|", "!", "\"","·", "$", "%", "&", "/","(", ")", "?", "'", "¡","¿", "[", "^", "`", "]","+", "}", "{", "¨", "´",">", "< ", ";", ",", ":",".", " "),'',$string);
     return $string;
 }
+function porcentaje($cantidad,$total,$decimal=0){
+	return round((($cantidad*100)/$total),$decimal);
+}
 function generarPalabra($longitud=3){
 	$strC = "BCDFGHJKLMNPRSTVYZ";
 	$strV = "AEIOU";
