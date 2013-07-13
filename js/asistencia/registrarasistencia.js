@@ -6,12 +6,8 @@ $(document).ready(function(){
 			return false;
 		}
     });
-	target: '#respuestaformulario',
 	$("div.box-content").click(function(e) {
         $("#Codigo").focus();
-    });
-	$("#respuestamostrar").ajaxSuccess(function(event, XMLHttpRequest, ajaxOptions) {
-        
     });
 	mostrar();
 });

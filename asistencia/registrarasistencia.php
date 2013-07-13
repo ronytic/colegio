@@ -53,7 +53,7 @@ if(strtotime($HoraActual)<=strtotime($HoraAtraso)){//Correctamente
 	?>
 	<div class="alert alert-success grande"><?php echo $idioma['ErrorAsistencia']?></div>
 	<?php }
-	echo "Asistencia";
+	//echo "Asistencia";
 }else{//Atraso
 	$valores=array("CodAlumno"=>$al['CodAlumno'],
 					"Tipo"=>"'A'",
@@ -67,7 +67,7 @@ if(strtotime($HoraActual)<=strtotime($HoraAtraso)){//Correctamente
 	?>
 	<div class="alert alert-success grande"><?php echo $idioma['ErrorAsistencia']?></div>
 	<?php }
-	echo "atraso";
+	//echo "atraso";
 }
 /*echo "<br>";
 echo strtotime($HoraActual)." - ".$HoraActual;
@@ -85,4 +85,4 @@ echo strtotime($HoraAtraso)." - ".$HoraAtraso;
         <td colspan="3" class="text-info x2 espacio"><?php echo capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres'])?></span></td></tr>
     <tr><td class="text-info x2 espacio"><?php echo $cur['Nombre']?></span></td></tr>
 </table>
-<script language="javascript">$("#Codigo").val('').focus()</script>
+<script language="javascript">$("#Codigo").val('').focus();mostrar();</script>
