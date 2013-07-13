@@ -5,13 +5,13 @@ $(document).ready(function(){
 			e.preventDefault();
 			return false;
 		}
-		{complete:{
-		mostrar();	
-		}}
     });
 	target: '#respuestaformulario',
 	$("div.box-content").click(function(e) {
         $("#Codigo").focus();
+    });
+	$("#respuestamostrar").ajaxSuccess(function(event, XMLHttpRequest, ajaxOptions) {
+        
     });
 	mostrar();
 });

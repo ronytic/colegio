@@ -41,7 +41,7 @@ var fecha=new Date(HoraTotal);
 	</div>
     <div class="box">
         <div class="box-header"><h2><?php echo $idioma['UltimasAsistencias']?></h2></div>
-        <div class="box-content" id="respuestamostrar"></div>
+        <div class="box-content" id="respuestamostrar" style="max-height:400px;overflow:auto;"></div>
 	</div>
 </div>
 <?php include_once("../pie.php");?>

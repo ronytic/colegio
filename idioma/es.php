@@ -579,6 +579,8 @@ $idioma['AsistenciaAlumno']="Asistencia Registrado Correctamente";
 $idioma['ErrorAsistencia']="Hubo un error al registrar la Asistencia";
 $idioma['UltimasAsistencias']="Últimas Asistencias";
 $idioma['NoExisteAsistentes']="No Existe Asistentes el día de Hoy";
+$idioma['Atraso']="Atraso";
+$idioma['Asistencia']="Asistencia";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
