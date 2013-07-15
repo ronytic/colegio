@@ -12,7 +12,7 @@ class observaciones extends bd{
 	}
 	function CodObservaciones($Nivel){
 		$this->campos=array("CodObservacion");
-		return $this->getRecords("Nivel=$Nivel");
+		return $this->getRecords("NivelObservacion=$Nivel");
 	}
 	function mostrarObser($CodObser){
 			$this->campos=array("*");

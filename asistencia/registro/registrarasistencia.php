@@ -4,12 +4,18 @@ include_once("../../class/alumno.php");
 include_once("../../class/curso.php");
 include_once("../../class/asistencia.php");
 include_once("../../class/cursoarea.php");
+include_once("../../class/config.php");
+include_once("../../class/agenda.php");
 $alumno=new alumno;
 $curso=new curso;
 $cursoarea=new cursoarea;
 $asistencia=new asistencia;
+$config=new config;
+$agenda=new agenda;
 $Codigo=$_POST['Codigo'];
 $folder="../../";
+$cnf=$config->mostrarConfig("AtrasoAgenda");
+$AtrasoAgenda=$cnf['Valor'];
 $al=$alumno->mostrarDatosCodBarra("CodBarra='$Codigo'");
 if(count($al)<=0){
 	?>
@@ -62,7 +68,23 @@ if(strtotime($HoraActual)<=strtotime($HoraAtraso)){//Correctamente
 	if($asistencia->insertarRegistro($valores)){ 
 	?>
     <div class="alert alert-danger grande"><?php echo $idioma['AtrasoAlumno']?></div>
-    <?php
+    <?php if($AtrasoAgenda){
+			$agendaValues=array(
+				'CodCurso'=>$al['CodCurso'],
+				'CodAlumno'=>$al['CodAlumno'],
+				'CodMateria'=>20,//Secretaria
+				'CodObservacion'=>8,
+				'Fecha'=>"'$FechaActual'",
+				'FechaRegistro'=>"'$FechaActual'",
+				'HoraRegistro'=>"'$HoraActual'",
+				'Activo'=>1,
+				'Detalle'=>"''",
+				'CodUsuario'=>$_SESSION['CodUsuarioLog'],
+				'Nivel'=>$_SESSION['Nivel'],
+				'Resaltar'=>0,
+			);
+			$agenda->insertarRegistro($agendaValues);
+			}
 	}else{
 	?>
 	<div class="alert alert-success grande"><?php echo $idioma['ErrorAsistencia']?></div>
