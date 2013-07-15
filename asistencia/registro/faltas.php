@@ -22,7 +22,7 @@ include_once($folder."cabecera.php");
         ?>
         <table class="table table-hover table-striped table-bordered">
         	<thead>
-            	<tr><th colspan="2"><?php echo $idioma['Total']?> <?php echo $idioma['Alumnos']?>:<?php echo $Cantidad?></th></tr>
+            	<tr><th colspan="2"><?php echo $idioma['Total']?> <?php  echo $idioma['De']?> <?php echo $idioma['AlumnosFaltas']?>: <?php echo $Cantidad?></th></tr>
             	<tr><th>N</th><th><?php echo $idioma['Nombres']?></th><th><?php echo $idioma['Curso']?></th></tr>
             </thead>
         <?php foreach($asis as $a){$i++;
