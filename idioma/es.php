@@ -70,6 +70,8 @@ $idioma['NAsignacionNotasCualitativas']="Asignación Notas Cualitativas";
 $idioma['NAsignacionMateriasBoletines']="Asignación de Materias";
 $idioma['NAsignacionMateriasDocente']="Asignación de Materias a Docente";
 $idioma['NMarcarAsistencia']="Marcar Asistencia";
+$idioma['NCerrarMarcarAsistencia']="Cerrar el control de Asistencias";
+$idioma['NReporteAsistencias']="Reporte de Asistencias";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -585,9 +587,17 @@ $idioma['AsistenciaTiempo']="Asistencia a Tiempo";
 $idioma['DeAsistentes']=" de asistentes";
 $idioma['DeAtrasos']=" de atrasos";
 $idioma['DeFaltas']=" de faltas";
+$idioma['HoyNoTieneClases']="No tiene Programado un Horario de Clases el día de HOY";
 $idioma['NoExistenFaltasHoy']="No existen faltas el día de hoy";
 $idioma['AlumnosFaltas']="Alumnos con faltas el día de Hoy";
-
+$idioma['CerrarAsistencias']="¿Cerrar Asistencia de esta Fecha?";
+$idioma['TodosAlumnosFaltas']="Todos los ALUMNOS con FALTAS de esta LISTA serán registrados con falta y no se podrá realizar ningún cambio posteriomente en el Registro.";
+$idioma['TerminarControlAsistencia']="Terminar el control de Asistencia de esta Fecha";
+$idioma['SeguroRegistrarFaltas']="¿Esta Seguro te Cerrar la Asistencia de esta Fecha?";
+$idioma['Falta']="Falta";
+$idioma['TodosLosCursos']="Todos los Cursos";
+$idioma['TipoObservacion']="Tipo de Observación";
+$idioma['Todos']="Todos";
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";

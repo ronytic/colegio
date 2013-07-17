@@ -19,7 +19,7 @@ var fecha=new Date(HoraTotal);
                 <div class="controls">
                     <div class="input-prepend">
                         <span class="add-on"><i class="icon-barcode"></i></span>
-                        <input type="text" name="Codigo" id="Codigo" autofocus placeholder="<?php echo $idioma['CodigoBarra']?>" value=""  class="span12"/>
+                        <input type="text" name="Codigo" id="Codigo" autofocus placeholder="<?php echo $idioma['CodigoBarra']?>" value=""  class="span12" autocomplete="off"/>
                     </div>
                 </div>
                 <input type="submit" value="<?php echo $idioma['RegistrarAsistencia']?>" class="btn btn-success"/>

@@ -23,6 +23,7 @@ if(count($asis)){$i=count($asis)+1;
                 <td><?php switch($a['Tipo']){
 						case "C":{?><span class="badge badge-success"><?php echo $idioma['Asistencia']?></span><?php }break;
 						case "A":{?><span class="badge badge-warning"><?php echo $idioma['Atraso']?></span><?php }break;
+						case "F":{?><span class="badge badge-warning"><?php echo $idioma['Falta']?></span><?php }break;
 					}?></td>
 			</tr><?php
 		}?>

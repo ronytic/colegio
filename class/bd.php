@@ -114,9 +114,8 @@ class bd{
 		}
 		$campos=implode(",",$key);
 		$datos= implode(",",$val);
-		
 		////
-		$nombretabla=mb_strtolower($this->tabla,"utf8");
+		$nombretabla=mb_strtolower(get_class($this),"utf8");
 		if($sw==0)
 			$query ="INSERT INTO {$nombretabla} VALUES ($datos)";
 		else

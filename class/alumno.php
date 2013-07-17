@@ -79,6 +79,18 @@ class alumno extends bd{
 		}
 		return $this->getRecords($Where." and $Retiro","Paterno,Materno,Nombres");
 	}
+	function mostrarDatosAlumnosCursoWhere($Where,$Retirado=0){
+		$this->campos=array('*');
+		if($Retirado==2){
+			$Retiro="(Retirado=0 OR Retirado=1)";
+		}else{
+			$Retiro="Retirado=$Retirado";	
+		}
+		if($Where!=""){
+			$Retiro=" and $Retiro";
+		}
+		return $this->getRecords($Where." $Retiro","Paterno,Materno,Nombres,CodCurso");
+	}
 	
 	function mostrarAlumnosCurso($CodCurso,$Sexo=2,$Retirado=0){
 		$this->campos=array('CodAlumno,LOWER(Paterno) as Paterno,LOWER(Materno) as Materno,LOWER(Nombres) as Nombres,TelefonoCasa,Ci,FechaNac,Rude,CelularP,CelularM');

@@ -20,7 +20,7 @@ $al=$alumno->mostrarDatosCodBarra("CodBarra='$Codigo'");
 if(count($al)<=0){
 	?>
     <div class="alert alert-error grande"><?php echo $idioma['CodigoNoAsignado']?></div>
-    <script language="javascript">$("#Codigo").val('').focus()</script>
+    <script language="javascript">$("#Codigo").val('').focus();mostrar();</script>
     <?php
 	exit();
 }
@@ -31,7 +31,7 @@ $cArea=$cursoarea->mostrarArea($cur['CodCursoArea']);
 $cArea=array_shift($cArea);
 $FechaActual=date("Y-m-d");
 $HoraActual=date("H:i:s");
-$Dia=date("N",$FechaActual);
+$Dia=date("N",strtotime($FechaActual));
 $asis=$asistencia->mostrarCodAlumnoFecha($al['CodAlumno'],$FechaActual);
 if(count($asis)>0){
 	?><div class="alert alert-error grande"><?php echo $idioma['YaMarcoAsistencia']?></div><?php	
@@ -45,10 +45,18 @@ switch($Dia){
 	case 6:{$HoraInicio=$cArea['HoraInicioS'];$HoraAtraso=$cArea['HoraEsperaS'];}break;
 	case 7:{$HoraInicio=$cArea['HoraInicioD'];$HoraAtraso=$cArea['HoraEsperaD'];}break;
 }
+if($HoraInicio=='00:00:00' || $HoraAtraso=="00:00:00"){
+	?><div class="alert alert-error grande"><?php echo $idioma['HoyNoTieneClases']?></div>
+	<script language="javascript">$("#Codigo").val('').focus();mostrar();</script>
+	<?php	
+	exit();
+}
 
-if(strtotime($HoraActual)<=strtotime($HoraAtraso)){//Correctamente
+if(strtotime($HoraActual)<=strtotime($HoraAtraso)){//Correctamente Asistencia
 	$valores=array("CodAlumno"=>$al['CodAlumno'],
 					"Tipo"=>"'C'",
+					"Fecha"=>"'".$FechaActual."'",
+					"Hora"=>"'".$HoraActual."'",
 					"Dia"=>$Dia
 					);
 	if($asistencia->insertarRegistro($valores)){ 
@@ -63,6 +71,8 @@ if(strtotime($HoraActual)<=strtotime($HoraAtraso)){//Correctamente
 }else{//Atraso
 	$valores=array("CodAlumno"=>$al['CodAlumno'],
 					"Tipo"=>"'A'",
+					"Fecha"=>"'".$FechaActual."'",
+					"Hora"=>"'".$HoraActual."'",
 					"Dia"=>$Dia
 					);
 	if($asistencia->insertarRegistro($valores)){ 
@@ -73,7 +83,7 @@ if(strtotime($HoraActual)<=strtotime($HoraAtraso)){//Correctamente
 				'CodCurso'=>$al['CodCurso'],
 				'CodAlumno'=>$al['CodAlumno'],
 				'CodMateria'=>20,//Secretaria
-				'CodObservacion'=>8,
+				'CodObservacion'=>8,//Atraso
 				'Fecha'=>"'$FechaActual'",
 				'FechaRegistro'=>"'$FechaActual'",
 				'HoraRegistro'=>"'$HoraActual'",
