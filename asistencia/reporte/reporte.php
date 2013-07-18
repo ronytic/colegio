@@ -30,6 +30,12 @@ if($TipoObservacion!="Todos"){
 $where.=" and (Fecha BETWEEN  '$FechaInicio' AND  '$FechaFin')";
 //echo $where;
 $asis=$asistencia->mostrarAsistenciaWhere($where);
+if(!count($asis)){
+	?>
+    <div class="alert alert-info"><?php echo $idioma['NoHayResultados']?></div>
+    <?php	
+	exit();
+}
 ?>
 <a href="#" id="exportarexcel" class="btn btn-mini btn-success"><?php echo $idioma['ExportarExcel']?></a>
 <table class="table table-hover table-striped table-bordered">

@@ -8,7 +8,7 @@ include_once($folder."cabecerahtml.php");
 ?>
 <script language="javascript" type="text/javascript" src="../../js/asistencia/reporte.js"></script>
 <script language="javascript" type="text/javascript">
-var seleccionar="<?php echo $idioma['Seleccionar']?>";
+var seleccionar="<?php echo $idioma['Todos']?>";
 </script>
 <?php include_once($folder."cabecera.php");?>
 <div class="span3">

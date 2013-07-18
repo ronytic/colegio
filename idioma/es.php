@@ -598,6 +598,8 @@ $idioma['Falta']="Falta";
 $idioma['TodosLosCursos']="Todos los Cursos";
 $idioma['TipoObservacion']="Tipo de Observación";
 $idioma['Todos']="Todos";
+$idioma['NoHayResultados']="La búsqueda no produjo ningun resultado";
+
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";
