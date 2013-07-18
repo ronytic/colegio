@@ -1,0 +1,35 @@
+#files{
+	border:#F00 1px solid;
+	padding:25px 5px 25px 5px;
+	width:97%;
+	border: 2px dashed #bbb;
+	z-index:500;
+	background-color:transparent !important;
+	background-image:url(../../imagenes/iconos/arrastrar2.JPG);
+	background-repeat:no-repeat;
+	background-position:right top;
+}
+#drop_zone{
+	width:97%;
+	padding:25px 5px 25px 5px;
+	text-align: center;
+	font: 20pt bold 'Vollkorn';
+	color: #bbb;	
+	top:0px;
+	position:absolute;
+	z-index:-1;
+	background-color:#FFC;
+}
+.thumb{
+	height: 75px;
+	border: 1px solid #000;
+	margin:5px;
+}
+.enlinea{
+	display:inline-block;	
+	background-color:#efefef;
+	padding:5px;
+	text-align:center;
+	margin:2px;
+}
+

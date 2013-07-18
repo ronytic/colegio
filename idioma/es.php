@@ -72,6 +72,8 @@ $idioma['NAsignacionMateriasDocente']="Asignación de Materias a Docente";
 $idioma['NMarcarAsistencia']="Marcar Asistencia";
 $idioma['NCerrarMarcarAsistencia']="Cerrar el control de Asistencias";
 $idioma['NReporteAsistencias']="Reporte de Asistencias";
+$idioma['NMisClases']="Mis Clases";
+
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -599,6 +601,9 @@ $idioma['TodosLosCursos']="Todos los Cursos";
 $idioma['TipoObservacion']="Tipo de Observación";
 $idioma['Todos']="Todos";
 $idioma['NoHayResultados']="La búsqueda no produjo ningun resultado";
+
+//Clases
+$idioma['Archivos']="Archivos";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
