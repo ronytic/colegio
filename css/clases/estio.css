@@ -21,7 +21,7 @@
 	background-color:#FFC;
 }
 .thumb{
-	height: 75px;
+	height: 40px;
 	border: 1px solid #000;
 	margin:5px;
 }
@@ -32,4 +32,6 @@
 	text-align:center;
 	margin:2px;
 }
-
+.t{
+	font-size:0.9em;	
+}

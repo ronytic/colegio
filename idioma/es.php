@@ -603,7 +603,13 @@ $idioma['Todos']="Todos";
 $idioma['NoHayResultados']="La búsqueda no produjo ningun resultado";
 
 //Clases
+$idioma['MisArchivosClases']="Mis Archivos de Clases";
 $idioma['Archivos']="Archivos";
+$idioma['PesoArchivo']="Peso del Archivo";
+$idioma['FechaModificacion']="Fecha de Modificación";
+$idioma['Comentario']="Comentario";
+$idioma['Publicar']="Publicar";
+$idioma['']="";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
