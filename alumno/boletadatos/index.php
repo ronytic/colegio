@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Boleta de Datos del Alumno";
+$titulo="NBoletaDatosAlumno";
 $subtitulo1="BoletaDatos";
 $folder="../../";
 $icono="icon-print";

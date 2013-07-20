@@ -125,7 +125,7 @@ class alumno extends bd{
 		return $this->getRecords($Where." and $Retiro");
 	}
 	function actualizarDatosAlumno($values,$CodAlumno){
-		$this->updateRow($values,"CodAlumno=$CodAlumno");	
+		return $this->updateRow($values,"CodAlumno=$CodAlumno");	
 	}
 	/*function mostrarDatosAlumnos($CodCurso, $Retirado=0){
 		if($Retirado==2){

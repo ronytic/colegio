@@ -30,6 +30,9 @@ include_once($folder."cabecerahtml.php");
         ?>
         <table class="table table-hover table-striped table-bordered">
         	<thead>
+            	<tr>
+                	<th colspan="3"><?php echo $idioma['Fecha']?>: <?php echo fecha2Str($FechaActual)?></th>
+                </tr>
             	<tr><th>N</th><th><?php echo $idioma['Nombres']?></th><th><?php echo $idioma['Curso']?></th></tr>
             </thead>
         <?php $i=0; foreach($asis as $a){
@@ -60,7 +63,7 @@ include_once($folder."cabecerahtml.php");
 		
 			}?>
             <tfoot>
-            <tr><th colspan="2"><?php echo $idioma['Total']?> <?php  echo $idioma['De']?> <?php echo $idioma['AlumnosFaltas']?>: <?php echo $i?></th>
+            	<tr><th colspan="2"><?php echo $idioma['Total']?> <?php  echo $idioma['De']?> <?php echo $idioma['AlumnosFaltas']?>: <?php echo $i?></th>
                 	<th><?php echo $idioma['Fecha']?>: <?php echo fecha2Str($FechaActual)?></th>
                 </tr>
             </tfoot>

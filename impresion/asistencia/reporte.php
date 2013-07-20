@@ -47,27 +47,31 @@ if(!empty($_GET)){
 	
 	$pdf=new PDF("P","mm","letter");
 	$pdf->AddPage();
-	foreach($asis as $a){$i++;
-		$al=$alumno->mostrarTodoDatos($a['CodAlumno']);
-		$al=array_shift($al);
-		//print_r($al);
-		$cur=$curso->mostrarCurso($al['CodCurso']);
-		$cur=array_shift($cur);
-		switch($a['Tipo']){
-			case 'C':{$t=$idioma["Asistencia"];}break;
-			case 'F':{$t=$idioma["Falta"];}break;
-			case 'A':{$t=$idioma["Atraso"];}break;	
+	if(!count($asis)){
+		$pdf->CuadroCuerpo(190,$idioma['NoExisteAsistentesFecha'].": ".fecha2Str($FechaInicio).",".fecha2Str($FechaFin),0,"C");
+	}else{
+		foreach($asis as $a){$i++;
+			$al=$alumno->mostrarTodoDatos($a['CodAlumno']);
+			$al=array_shift($al);
+			//print_r($al);
+			$cur=$curso->mostrarCurso($al['CodCurso']);
+			$cur=array_shift($cur);
+			switch($a['Tipo']){
+				case 'C':{$t=$idioma["Asistencia"];}break;
+				case 'F':{$t=$idioma["Falta"];}break;
+				case 'A':{$t=$idioma["Atraso"];}break;	
+			}
+			
+			if($i%2==0){$relleno=1;}else{$relleno=0;}
+			
+			$pdf->CuadroCuerpo(10,$i,$relleno,"R");
+			$pdf->CuadroCuerpo(65,capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']),$relleno);
+			$pdf->CuadroCuerpo(30,$cur['Nombre'],$relleno);
+			$pdf->CuadroCuerpo(20,fecha2Str($a['Fecha']),$relleno,"C",0);
+			$pdf->CuadroCuerpo(15,hora2Str($a['Hora']),$relleno,"C",0);
+			$pdf->CuadroCuerpo(40,$t,$relleno);
+			$pdf->Ln();
 		}
-		
-		if($i%2==0){$relleno=1;}else{$relleno=0;}
-		
-		$pdf->CuadroCuerpo(10,$i,$relleno,"R");
-		$pdf->CuadroCuerpo(65,capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']),$relleno);
-		$pdf->CuadroCuerpo(30,$cur['Nombre'],$relleno);
-		$pdf->CuadroCuerpo(20,fecha2Str($a['Fecha']),$relleno,"C",0);
-		$pdf->CuadroCuerpo(15,hora2Str($a['Hora']),$relleno,"C",0);
-		$pdf->CuadroCuerpo(40,$t,$relleno);
-		$pdf->Ln();
 	}
 	$pdf->Output();
 }

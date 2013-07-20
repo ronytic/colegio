@@ -73,7 +73,9 @@ $idioma['NMarcarAsistencia']="Marcar Asistencia";
 $idioma['NCerrarMarcarAsistencia']="Cerrar el control de Asistencias";
 $idioma['NReporteAsistencias']="Reporte de Asistencias";
 $idioma['NMisClases']="Mis Clases";
-
+$idioma['NAsignarCodigoBarra']="Asignar Código de Barra";
+$idioma['NEstadisticasInscritos']="Estadísticas de Inscritos";
+$idioma['NBoletaDatosAlumno']="Boleta de Datos del Alumno";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -583,6 +585,7 @@ $idioma['AsistenciaAlumno']="Asistencia Registrado Correctamente";
 $idioma['ErrorAsistencia']="Hubo un error al registrar la Asistencia";
 $idioma['UltimasAsistencias']="Últimas Asistencias";
 $idioma['NoExisteAsistentes']="No Existe Asistentes el día de Hoy";
+$idioma['NoExisteAsistentesFecha']="No Existe Asistentes en esta Fecha";
 $idioma['Atraso']="Atraso";
 $idioma['Asistencia']="Asistencia";
 $idioma['AsistenciaTiempo']="Asistencia a Tiempo";
@@ -628,6 +631,9 @@ $idioma['NombreAlterno']="Nombre Alterno";
 $idioma['OrdenBoletin']="Este es el orden respectivo que aparecera en el boletín";
 $idioma['NombreAdecuadoBoletin']="Seleccione el Nombre Adecuado que saldrá en el boletín";
 $idioma['DeseaEliminarMateria']="¿Desea eliminar esta materia?";
+
+//Codigo
+$idioma['CodigoBarraActualizado']="Código de Barra Actualizado";
 
 /*Internet*/
 $idioma['Inicio']="Inicio";
