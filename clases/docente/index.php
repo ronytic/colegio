@@ -9,7 +9,7 @@ $docentemateriacurso=new docentemateriacurso;
 $curso=new curso;
 $materias=new materias;
 $CodDocente=$_SESSION['CodUsuarioLog'];
-$docmateriacurso=$docentemateriacurso->mostrarTodoDocente($CodDocente);
+$docmateriacurso=$docentemateriacurso->mostrarDocenteGrupo($CodDocente,"CodCurso");
 
 include_once("../../cabecerahtml.php");
 ?>
