@@ -2,19 +2,23 @@
 include_once("../../login/check.php");
 $folder="../../";
 $titulo="NMisClases";
-include_once("../../class/docentemateriacurso.php");
+include_once("../../class/cursomateria.php");
 include_once("../../class/curso.php");
 include_once("../../class/materias.php");
-$docentemateriacurso=new docentemateriacurso;
+include_once("../../class/alumno.php");
+$alumno=new alumno;
 $curso=new curso;
+$cursomateria=new cursomateria;
 $materias=new materias;
-$CodDocente=$_SESSION['CodUsuarioLog'];
-$docmateriacurso=$docentemateriacurso->mostrarDocenteGrupo($CodDocente,"CodCurso");
+$CodAlumno=$_SESSION['CodUsuarioLog'];
+$al=$alumno->mostrarTodoDatos($CodAlumno);
+$al=array_shift($al);
+
 
 include_once("../../cabecerahtml.php");
 ?>
 <link href="../../css/clases/estio.css" type="text/css" rel="stylesheet">
-<script language="javascript" type="application/javascript" src="../../js/clases/docente.js"></script>
+<script language="javascript" type="application/javascript" src="../../js/clases/alumno.js"></script>
 <script language="javascript">
 	var PesoArchivo="<?php echo $idioma['PesoArchivo']?>";
 	var FechaModificacion="<?php echo $idioma['FechaModificacion']?>";
@@ -26,29 +30,28 @@ include_once("../../cabecerahtml.php");
     	<form action="subir.php" enctype="multipart/form-data" method="post" id="formulario">
     	<div class="row-fluid">
         	<div class="span5">
-            	<div class="box-header"><?php echo $idioma['Curso']?></div>
+            	<div class="box-header"><?php echo $idioma['Materia']?></div>
                 <div class="box-content">
-            	<select class="span12" name="CodCurso">
-            	<?php foreach($docmateriacurso as $dmc){
-						
-						$cur=$curso->mostrarCurso($dmc['CodCurso']);
-						$cur=array_shift($cur);
+                
+                <select class="span12" name="CodMateria">
+                <?php foreach($cursomateria->mostrarMaterias($al['CodCurso']) as $cm){
+					$mat=$materias->mostrarMateria($cm['CodMateria']);
+					$mat=array_shift($mat);	
 				?>
-                	<option value="<?php echo $dmc['CodCurso']?>"><?php echo $cur['Nombre']?></option>
+                	<option value="<?php echo $cm['CodMateria']?>"><?php echo $mat['Nombre']?></option>
                 <?php }?>
                 </select>
                 </div>
             </div>
             <div class="span7">
-            	<div class="box-header"><?php echo $idioma['Materia']?></div>
+            	<div class="box-header"><?php echo $idioma['Curso']?></div>
             	<div class="box-content">
-                <select class="span12" name="CodMateria">
-                <?php foreach($docentemateriacurso->mostrarDocenteMateria($CodDocente) as $dmc){
-					$mat=$materias->mostrarMateria($dmc['CodMateria']);
-					$mat=array_shift($mat);	
+                <?php
+                $cur=$curso->mostrarCurso($al['CodCurso']);
+				$cur=array_shift($cur);
 				?>
-                	<option value="<?php echo $dmc['CodMateria']?>"><?php echo $mat['Nombre']?></option>
-                <?php }?>
+            	<select class="span12" name="CodCurso">
+                	<option value="<?php echo $cur['CodCurso']?>"><?php echo $cur['Nombre']?></option>
                 </select>
                 </div>
                 <div class="box">

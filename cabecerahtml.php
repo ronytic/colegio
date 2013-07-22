@@ -17,7 +17,7 @@ $rsubmenu=implode("/",$rurl);
 $Nivel=$_SESSION['Nivel'];
 $CodUsuario=$_SESSION['CodUsuarioLog'];
 if($Nivel==7||$Nivel==6){
-	header("Location:internet/alumno/");	
+	//header("Location:internet/alumno/");	
 }
 include_once("class/config.php");
 include_once("class/menu.php");

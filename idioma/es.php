@@ -226,8 +226,12 @@ $idioma['NoHayActividadesEl']="No Hay Actividades el ";
 $idioma['AgendaActividades']="Agenda de Actividades";
 $idioma['Hoy']="Hoy";
 $idioma['ParaQuien']="¿Para Quien?";
+$idioma['Administrador']="Administrador";
+$idioma['Director']="Director";
+$idioma['Regente']="Regente";
 $idioma['Administradores']="Administradores";
 $idioma['Directores']="Directores";
+$idioma['PadresFamilia']="Padres de Familia";
 $idioma['Secretaria']="Secretaria";
 $idioma['Regentes']="Regentes";
 $idioma['TodoAdministradores']="Todos los Administradores";
@@ -374,7 +378,7 @@ $idioma['DibujarBorde']="Dibujar Borde";
 $idioma['DibujarSombra']="Dibujar Sombra";
 $idioma['SoloCasillasBlanco']="Solo Casillas en Blanco";
 $idioma['DibujarSombreado']="Dibujar Sombreado";
-
+$idioma['Ver']="Ver";
 //Docente
 $idioma['FrecuenciaAcceso']="Frecuencia de Accesos";
 $idioma['CantidadAcceso']="Cantidad de Accesos";
@@ -553,7 +557,10 @@ $idioma['SubirDatosInternet']="Subir Datos a Internet";
 $idioma['TengaPaciencia']="tenga paciencia";
 $idioma['DatosSubidoCorrectamente']="SUS DATOS SE SUBIERON CORRECTAMENTE";
 $idioma['DatosSubidoIncorrectamente']="ERROR, INTENTELO NUEVAMENTE";
-
+$idioma['NRevisarAccesos']="Revisar Accesos";
+$idioma['TiempoActualizacion']="Tiempo de Actualización";
+$idioma['NivelUsuario']="Nivel de Usuario";
+$idioma['Milisegundos']="Milisegundos";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
@@ -604,6 +611,8 @@ $idioma['TodosLosCursos']="Todos los Cursos";
 $idioma['TipoObservacion']="Tipo de Observación";
 $idioma['Todos']="Todos";
 $idioma['NoHayResultados']="La búsqueda no produjo ningun resultado";
+$idioma['Usuario']="Usuario";
+$idioma['Referencia']="Referencia";
 
 //Clases
 $idioma['MisArchivosClases']="Mis Archivos de Clases";
@@ -612,7 +621,11 @@ $idioma['PesoArchivo']="Peso del Archivo";
 $idioma['FechaModificacion']="Fecha de Modificación";
 $idioma['Comentario']="Comentario";
 $idioma['Publicar']="Publicar";
-$idioma['']="";
+$idioma['SuelteArchivos']="Suelte Archivos";
+$idioma['FechaRegistro']="Fecha de Registro";
+$idioma['ArchivoNoExiste']="El archivo no existe";
+$idioma['NoExistenArchivosGuardados']="No existen archivos Guardados";
+//
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";

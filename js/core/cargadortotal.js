@@ -35,7 +35,8 @@ function inicio(){
 		$("table.inicio").stickyTableHeaders('destroy');
 		
 		/*Fin Gestionar Tabla*/
-		$('span[title],a[title]').tooltip();
+		$('span[title]').tooltip();
+		$('a[title]').tooltip({'placement':'bottom'});
 		$('div[title]').tooltip({'placement':'bottom'});
 		$('a[data-rel="tooltip"]').tooltip();
 		//pestañas horizontales corregir
@@ -175,4 +176,7 @@ function sacarIniciales(texto){
 		iniciales+=d[0];
 	}
 	return iniciales.toUpperCase();
+}
+jQuery.fn.reset = function () {
+  $(this).each (function() { this.reset(); });
 }

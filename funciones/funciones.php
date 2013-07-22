@@ -197,13 +197,16 @@ function recortarTexto($texto, $limite=100,$terminador="..."){
     }   
     return $resultado;
 }
-function subirArchivo($archivo,$directorio="imagenes/",$tipo=array()){
+function subirArchivo($archivo,$directorio="imagenes/",$tipo=array(),$adicionar=""){
 	global $folder;
 	$directorio=$folder.$directorio;
 	//Sacar nombre
 	$cortado=explode(".",$archivo['name']);
 	$tipoarchivo=array_pop($cortado);
 	$nombre=implode(".",$cortado);
+	if($adicionar!="" && !empty($adicionar)){
+		$adicionar="_".$adicionar;
+	}
 	//echo $nombre.".".$tipoarchivo;
 	//Fin de Sacar Nombre
 //	print_r($archivo);
@@ -211,13 +214,13 @@ function subirArchivo($archivo,$directorio="imagenes/",$tipo=array()){
 		return false;
 	}else{
 		if(empty($tipo)){
-			copy($archivo['tmp_name'],$directorio.quitarSimbolos($nombre).".".$tipoarchivo);	
+			copy($archivo['tmp_name'],$directorio.quitarSimbolos($nombre).$adicionar.".".$tipoarchivo);	
 		}else{
 			if(in_array($archivo['type'],$tipo)){
-				copy($archivo['tmp_name'],$directorio.quitarSimbolos($nombre).".".$tipoarchivo);
+				copy($archivo['tmp_name'],$directorio.quitarSimbolos($nombre).$adicionar.".".$tipoarchivo);
 			}
 		}
-		return quitarSimbolos($nombre).".".$tipoarchivo;
+		return quitarSimbolos($nombre).$adicionar.".".$tipoarchivo;
 	}
 }
 function quitarSimbolos($string){

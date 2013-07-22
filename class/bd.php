@@ -45,12 +45,14 @@ class bd{
 	{
 		//echo mysql_real_escape_string ($consulta);
 		$consQ =mysql_query (($consulta));
+		//print_r(mysql_fetch_array($consQ));
 		$resultado =array ();
 		if ($consQ)
 		{
 			while ($consF =mysql_fetch_assoc ($consQ))
 			array_push ($resultado, $consF);
 		}
+		//echo print_r($resultado);
 		return $resultado;
 	}
 	function queryE($data,$f){
