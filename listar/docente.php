@@ -2,7 +2,7 @@
 include_once($folder."login/check.php");
 include_once($folder."class/docente.php");
 $docente=new docente;
-if(isset($cantidad)){
+if(!isset($cantidad)){
 	$cantidad=2;	
 }
 	?>
@@ -38,6 +38,17 @@ if(isset($cantidad)){
 				</div>
 			</div>
 		</div>
+        <?php if($cantidad==1){
+		?>
+        <div class="span9">
+			<div class="box">
+				<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma[$subtitulo1];?></h2></div>
+				<div class="box-content" id="contenido1">
+				</div>
+			</div>
+		</div>
+        <?php	
+		}else{?>
 		<?php if ($direccion=="-"): ?>
 		<div class="span9">
 			<div class="box">
@@ -62,5 +73,7 @@ if(isset($cantidad)){
             <div class="box-content" id="contenido2">
             </div>
 		</div>
-		<?php endif ?>
+		<?php endif; 
+		
+	}?>
 	<?php include_once($folder."pie.php");?>

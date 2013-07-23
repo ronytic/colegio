@@ -11,8 +11,9 @@ class docentemateriacurso extends bd{
 		return $this->getRecords("CodDocenteMateriaCurso=$CodDocenteMateriaCurso and Activo=1");
 	}
 	function mostrarCursoSexo($CodCurso,$SexoAlumno){
-		$this->campos=array('*');
-		return $this->getRecords("CodCurso=$CodCurso and (SexoAlumno=$SexoAlumno or SexoAlumno=2) and Activo=1");
+		$this->tabla="docentemateriacurso dmc,docente d";
+		$this->campos=array('dmc.*');
+		return $this->getRecords("dmc.CodCurso=$CodCurso and (dmc.SexoAlumno=$SexoAlumno or dmc.SexoAlumno=2) and dmc.Activo=1 and dmc.CodDocente=d.CodDocente and d.Activo=1");
 	}
 	function mostrarCurso($CodCurso){
 		$this->campos=array('*');

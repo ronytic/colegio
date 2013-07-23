@@ -76,6 +76,9 @@ $idioma['NMisClases']="Mis Clases";
 $idioma['NAsignarCodigoBarra']="Asignar Código de Barra";
 $idioma['NEstadisticasInscritos']="Estadísticas de Inscritos";
 $idioma['NBoletaDatosAlumno']="Boleta de Datos del Alumno";
+$idioma['NEvaluaciondocente']="Evaluación docente";
+$idioma['NRegistroEvaluacionDocente']="Registro de Evaluación Docente";
+$idioma['NResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -434,6 +437,11 @@ $idioma['NombreCasillero']="Nombre de Casillero";
 $idioma['MaximaNota']="Máxima Nota";
 $idioma['ActualizarListado']="Actualizar Listado";
 $idioma['AsignacionDocenteErronea']="Si la Asignación Materias de Docente es Erronea Corríjala en Asignación de Materia";
+$idioma['GuardarEvaluacion']="Guardar Evaluación";
+$idioma['Anonimo']="Anónimo";
+$idioma['VolverInicio']="Volver al Inicio";
+$idioma['MuchasGraciasCompletarEvaluacion']="Muchas Gracias por Completar la Evaluación Docente";
+$idioma['Estadisticas']="Estadísticas";
 
 //Notas
 $idioma['Limite']="Limite";

@@ -288,9 +288,28 @@ tr:hover td.celeste{
 	padding:15px 5px 15px 5px !important;	
 }
 .mostrarHora,.pequeno{
-font-size: 11px;	
+	font-size: 11px;
 }
 .separador{
 	margin:0px;
 	padding:0px;	
+}
+.horizontal{
+	display:inline-block;	
+}
+div.horizontal{
+	
+	border:1px solid #e9e8e8;
+}
+div.horizontal label{
+	padding: 2px 10px 2px 10px;	
+}
+div.horizontal:hover{
+	background-color:#E2E2E2;	
+}
+.preguntas input[type=radio],.preguntas label{
+	
+	display: block;
+	text-align: center;
+	margin: 0 auto;
 }
