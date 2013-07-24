@@ -39,11 +39,11 @@ if(!empty($_POST)){
 	$cnf=$config->mostrarConfig("PeriodoNotaHabilitado");
 	$PeriodoNotaHabilitado=$cnf["Valor"];
 	if($RegistroNotaHabilitado==1){
-		if($CodPeriodo!=$PeriodoNotaHabilitado)
-		{$restringir='readonly="readonly" disabled="disabled"';}
-		else{$restringir='';}
+		if($CodPeriodo!=$PeriodoNotaHabilitado){
+			//$restringir='readonly="readonly" disabled="disabled"';
+		}else{$restringir='';}
 	}else{
-		$restringir='readonly="readonly" disabled="disabled"';	
+		//$restringir='readonly="readonly" disabled="disabled"';	
 	}
 	
 	for($i=1;$i<=15;$i++){
