@@ -106,6 +106,10 @@ include_once("fpdf/fpdf.php");
 				$this->CuadroCuerpo($txtAnchoN,ucwords($Nombre),$relleno);
 			}
 		}
+		function Linea(){
+			$this->Cell($this->ancho,0,"",1,1);
+			$this->Ln();	
+		}
 		function Footer()
 		{	global $lema,$idioma;
 			//$this->Cell($this->ancho,0,"",1,1);

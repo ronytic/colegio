@@ -442,6 +442,8 @@ $idioma['Anonimo']="Anónimo";
 $idioma['VolverInicio']="Volver al Inicio";
 $idioma['MuchasGraciasCompletarEvaluacion']="Muchas Gracias por Completar la Evaluación Docente";
 $idioma['Estadisticas']="Estadísticas";
+$idioma['Sugerencias']="Sugerencias";
+$idioma['Observaciones']="Observaciones";
 
 //Notas
 $idioma['Limite']="Limite";

@@ -71,9 +71,9 @@ $i=0;
 					</div>
 				</div>
 				<div class="span3">
-					<div class="resaltar">Observaciones</div>
+					<div class="resaltar"><?php echo $idioma['Observaciones']?></div>
 					<textarea name="eva[<?php echo $i?>][<?php echo $doc['CodDocente']?>][Observaciones]" rows="6" class="span12"></textarea>
-                    <div class="resaltar">Sugerencias</div>
+                    <div class="resaltar"><?php echo $idioma['Sugerencias']?></div>
 					<textarea name="eva[<?php echo $i?>][<?php echo $doc['CodDocente']?>][Sugerencias]" rows="6" class="span12"></textarea>
 				</div>
               
