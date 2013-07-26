@@ -80,6 +80,7 @@ $idioma['NEvaluaciondocente']="Evaluación docente";
 $idioma['NRegistroEvaluacionDocente']="Registro de Evaluación Docente";
 $idioma['NResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
 $idioma['NConfiguracionGeneral']="Configuración General";
+$idioma['NReporteNotasPromedioAnual']="Reporte de Notas de Promedio Anual";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -396,6 +397,7 @@ $idioma['ReporteTodosDocente']="Reporte Datos del Docente";
 $idioma['DatosDocente']="Datos del Docente";
 $idioma['ReporteTodosDatosDocente']="Reporte Todos los Docentes";
 $idioma['RegistroNuevoDocente']="Registro Nuevo Docente";
+$idioma['NotasPromedioAnual']="Notas de Promedio Anual";
 $idioma['AñoI']="Año Ing";
 $idioma['AñoE']="Año Eg";
 $idioma['AñoT']="Año Tit";

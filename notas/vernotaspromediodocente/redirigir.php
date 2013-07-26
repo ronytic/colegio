@@ -6,5 +6,5 @@ $cnf=($config->mostrarConfig("UrlInternet"));
 $urlInternet=$cnf['Valor'];
 $cnf=($config->mostrarConfig("DirectorioInternet"));
 $directorioInternet=$cnf['Valor'];
-header("Location:".$urlInternet.$directorioInternet."notas/docente/");
+header("Location:".$urlInternet.$directorioInternet."notas/vernotaspromediodocente/");
 ?>
