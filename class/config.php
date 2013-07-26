@@ -11,11 +11,8 @@ class config extends bd{
 		$this->campos=$campos;		
 		$this->updateRecord("CodConfig=1",$values);
 	}*/
-	function actualizarConfig($datos,$where=""){
-		foreach($datos as $k=>$v){
-			$val=array("Valor"=>"'$v'");
-			$this->updateRow($val,"Nombre='$k'");		
-		}
+	function actualizarConfig($datos,$Nombre=""){
+		$this->updateRow($datos,"Nombre='$Nombre'");		
 	}
 }
 ?>

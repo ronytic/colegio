@@ -2,7 +2,364 @@
 include_once("../../login/check.php");
 $folder="../../";
 $titulo="NConfiguracionGeneral";
+include_once("../funciones.php");
 include_once($folder."cabecerahtml.php");
 ?>
+<script language="javascript" type="text/javascript" src="../../js/configuracion/general.js"></script>
 <?php include_once($folder."cabecera.php");?>
+<?php if($_GET['m']==1){?>
+<div class="span12">
+<div class="alert alert-success">
+<?php echo $idioma['DatosGuardadosCorrectamente']?><a class="close" data-dismiss="alert" href="#">&times;</a>
+</div>
+</div>
+<div class="row-fluid">
+<?php }?>
+<form action="guardar.php" method="post">
+<div class="span6 box">
+	<div class="box-header"><h2><?php echo $idioma['Periodos']?> - <?php echo $idioma['Trimestre']?> - <?php echo $idioma['Bimestre']?></h2></div>
+	<div class="box-content">
+    	<table class="table table-hover table-bordered table-condensed">
+        	<tr>
+            	<td><?php echo $idioma['TotalPeriodo']?><div class="pequeno"><?php echo $idioma['TotalPeriodoE']?></div></td>
+                <td width="150"><input type="number" class="span6 der" name="TotalPeriodo" value="<?php echo (dato("TotalPeriodo"))?>" readonly min="1"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['PeriodoActual']?><div class="pequeno"><?php echo $idioma['PeriodoActualE']?></div></td>
+                <td><select class="span6" name="PeriodoActual">
+                	<?php for($i=1;$i<=dato("TotalPeriodo");$i++){
+					?><option value="<?php echo $i;?>" class="der" <?php echo dato("PeriodoActual")==$i?'selected':''?>><?php echo $i?></option><?php	
+					}?>
+                </select></td>
+            </tr>
+            <tr>
+            	<td colspan="2" class="resaltar"><?php echo $idioma['FechasTrimestre']?></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['InicioTrimestre1']?></td>
+                <td><input type="text" class="span8 fecha" name="InicioTrimestre1" value="<?php echo fecha2Str(dato("InicioTrimestre1"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FinTrimestre1']?></td>
+                <td><input type="text" class="span8 fecha" name="FinTrimestre1" value="<?php echo fecha2Str(dato("FinTrimestre1"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['InicioTrimestre2']?></td>
+                <td><input type="text" class="span8 fecha" name="InicioTrimestre2" value="<?php echo fecha2Str(dato("InicioTrimestre2"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FinTrimestre2']?></td>
+                <td><input type="text" class="span8 fecha" name="FinTrimestre2" value="<?php echo fecha2Str(dato("FinTrimestre2"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['InicioTrimestre3']?></td>
+                <td><input type="text" class="span8 fecha" name="InicioTrimestre3" value="<?php echo fecha2Str(dato("InicioTrimestre3"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FinTrimestre3']?></td>
+                <td><input type="text" class="span8 fecha" name="FinTrimestre3" value="<?php echo fecha2Str(dato("FinTrimestre3"))?>" ></td>
+            </tr>
+            <tr>
+            	<td colspan="2" class="resaltar"><?php echo $idioma['FechasBimestre']?></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['InicioBimestre1']?></td>
+                <td><input type="text" class="span8 fecha" name="InicioBimestre1" value="<?php echo fecha2Str(dato("InicioBimestre1"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FinBimestre1']?></td>
+                <td><input type="text" class="span8 fecha" name="FinBimestre1" value="<?php echo fecha2Str(dato("FinBimestre1"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['InicioBimestre2']?></td>
+                <td><input type="text" class="span8 fecha" name="InicioBimestre2" value="<?php echo fecha2Str(dato("InicioBimestre2"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FinBimestre2']?></td>
+                <td><input type="text" class="span8 fecha" name="FinBimestre2" value="<?php echo fecha2Str(dato("FinBimestre2"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['InicioBimestre3']?></td>
+                <td><input type="text" class="span8 fecha" name="InicioBimestre3" value="<?php echo fecha2Str(dato("InicioBimestre3"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FinBimestre3']?></td>
+                <td><input type="text" class="span8 fecha" name="FinBimestre3" value="<?php echo fecha2Str(dato("FinBimestre3"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['InicioBimestre4']?></td>
+                <td><input type="text" class="span8 fecha" name="InicioBimestre4" value="<?php echo fecha2Str(dato("InicioBimestre4"))?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FinBimestre4']?></td>
+                <td><input type="text" class="span8 fecha" name="FinBimestre4" value="<?php echo fecha2Str(dato("FinBimestre4"))?>" ></td>
+            </tr>
+            <tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+    </div>
+	<div class="box-header"><h2><?php echo $idioma['Cuotas']?></h2></div>
+    <div class="box-content">
+    	<table class="table table-hover table-bordered">
+        	<tr>
+            	<td><?php echo $idioma['Moneda']?></td>
+                <td><input type="text" class="span10" name="Moneda" value="<?php echo dato("Moneda")?>"></td>
+            </tr>
+        	<tr>
+            	<td><?php echo $idioma['MontoKinder']?></td>
+                <td><input type="number" class="span10 der" name="MontoKinder" value="<?php echo dato("MontoKinder")?>"><?php echo dato("Moneda")?></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['MontoGeneral']?></td>
+                <td><input type="number" class="span10 der" name="MontoGeneral" value="<?php echo dato("MontoGeneral")?>"><?php echo dato("Moneda")?></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota1']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota1" value="<?php echo fecha2Str(dato("FechaCuota1"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota2']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota2" value="<?php echo fecha2Str(dato("FechaCuota2"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota3']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota3" value="<?php echo fecha2Str(dato("FechaCuota3"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota4']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota4" value="<?php echo fecha2Str(dato("FechaCuota4"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota5']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota5" value="<?php echo fecha2Str(dato("FechaCuota5"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota6']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota6" value="<?php echo fecha2Str(dato("FechaCuota6"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota7']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota7" value="<?php echo fecha2Str(dato("FechaCuota7"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota8']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota8" value="<?php echo fecha2Str(dato("FechaCuota8"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota9']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota9" value="<?php echo fecha2Str(dato("FechaCuota9"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaCuota10']?></td>
+                <td><input type="text" class="span6 fecha" name="FechaCuota10" value="<?php echo fecha2Str(dato("FechaCuota10"))?>"></td>
+            </tr>
+            <tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="span6 box">
+	<div class="box-header"><h2><?php echo $idioma['Notas']?></h2></div>
+    <div class="box-content">
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td><?php echo $idioma['RegistroNotaHabilitado']?><div class="pequeno"><?php echo $idioma['RegistroNotaHabilitadoE']?></div></td>
+                <td><select class="span12" name="RegistroNotaHabilitado">
+                	<option value="0" <?php echo (dato("RegistroNotaHabilitado"))==0?'selected':''?>><?php echo $idioma['No']?></option>
+                    <option value="1" <?php echo (dato("RegistroNotaHabilitado"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
+                </select></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['PeriodoNotaHabilitado']?><div class="pequeno"><?php echo $idioma['PeriodoNotaHabilitadoE']?></div></td>
+                <td><select class="span12" name="PeriodoNotaHabilitado">
+                	<?php for($i=1;$i<=dato("TotalPeriodo");$i++){
+					?><option value="<?php echo $i;?>" class="der" <?php echo dato("PeriodoNotaHabilitado")==$i?'selected':''?>><?php echo $i?></option><?php	
+					}?>
+                </select></td>
+            </tr>
+            <tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+    </div>
+	<div class="box-header"><h2><?php echo $idioma['DatosInstitucion']?></h2></div>
+    <div class="box-content">
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td><?php echo $idioma['TituloSistemaA']?><div class="pequeno"><?php echo $idioma['TituloSistemaE']?></div></td>
+                <td><input type="text" class="span12" name="Titulo" value="<?php echo (dato("Titulo"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Sigla']?></td>
+                <td><input type="text" class="span12" name="Sigla" value="<?php echo (dato("Sigla"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Lema']?><div class="pequeno"><?php echo $idioma['LemaE']?></div></td>
+                <td><input type="text" class="span12" name="Lema" value="<?php echo (dato("Lema"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Gestion']?></td>
+                <td><input type="text" class="span12" name="Gestion" value="<?php echo (dato("Gestion"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Año']?></td>
+                <td><input type="text" class="span12" name="Anio" value="<?php echo (dato("Anio"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['NombreUnidadEducativa']?></td>
+                <td><input type="text" class="span12" name="NombreUnidad" value="<?php echo (dato("NombreUnidad"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['NucleoRed']?></td>
+                <td><input type="text" class="span12" name="NucleoRed" value="<?php echo (dato("NucleoRed"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Localidad']?></td>
+                <td><input type="text" class="span12" name="Localidad" value="<?php echo (dato("Localidad"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['DistritoEscolar']?></td>
+                <td><input type="text" class="span12" name="DistritoEscolar" value="<?php echo (dato("DistritoEscolar"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Departamento']?></td>
+                <td><input type="text" class="span12" name="Departamento" value="<?php echo (dato("Departamento"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['DiaLibreta']?></td>
+                <td><input type="text" class="span12" name="DiaLibreta" value="<?php echo (dato("DiaLibreta"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['MesLibreta']?></td>
+                <td><input type="text" class="span12" name="MesLibreta" value="<?php echo (dato("MesLibreta"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Sie']?></td>
+                <td><input type="text" class="span12" name="Sie" value="<?php echo (dato("Sie"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['DistritoEducativo']?></td>
+                <td><input type="text" class="span12" name="DistritoEducativo" value="<?php echo (dato("DistritoEducativo"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['TextoCodigoBarra']?></td>
+                <td><input type="text" class="span12" name="CodBarra" value="<?php echo (dato("CodBarra"))?>"></td>
+            </tr>
+        	<tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="box-header"><h2><?php echo $idioma['PosicionBoletin']?></h2></div>
+    <div class="box-content">
+    	<div class="centrar"><img src="../../imagenes/configuracion/posicionboletin.jpg" class="img-polaroid"></div>
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td><?php echo $idioma['BoletinPosicion1X']?>→<div class="pequeno"><?php echo $idioma['Area1X']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion1X" value="<?php echo (dato("BoletinPosicion1X"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion1Y']?>↓<div class="pequeno"><?php echo $idioma['Area1Y']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion1Y" value="<?php echo (dato("BoletinPosicion1Y"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion2X']?>→<div class="pequeno"><?php echo $idioma['Area2X']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion2X" value="<?php echo (dato("BoletinPosicion2X"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion2Y']?>↓<div class="pequeno"><?php echo $idioma['Area2Y']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion2Y" value="<?php echo (dato("BoletinPosicion2Y"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion3X']?>→<div class="pequeno"><?php echo $idioma['Area3X']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion3X" value="<?php echo (dato("BoletinPosicion3X"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion3Y']?>↓<div class="pequeno"><?php echo $idioma['Area3Y']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion3Y" value="<?php echo (dato("BoletinPosicion3Y"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion4X']?>→<div class="pequeno"><?php echo $idioma['Area4X']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion4X" value="<?php echo (dato("BoletinPosicion4X"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion4Y']?>↓<div class="pequeno"><?php echo $idioma['Area4Y']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion4Y" value="<?php echo (dato("BoletinPosicion4Y"))?>"></td>
+            </tr>
+        	<tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+	</div>
+	<div class="box-header"><h2><?php echo $idioma['Agenda']?></h2></div>
+    <div class="box-content">
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td><?php echo $idioma['AtrasoAgenda']?></td>
+                <td><select class="span12" name="AtrasoAgenda">
+                	<option value="0" <?php echo (dato("AtrasoAgenda"))==0?'selected':''?>><?php echo $idioma['No']?></option>
+                    <option value="1" <?php echo (dato("AtrasoAgenda"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
+                </select></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FaltaAgenda']?></td>
+                <td><select class="span12" name="FaltaAgenda">
+                	<option value="0" <?php echo (dato("FaltaAgenda"))==0?'selected':''?>><?php echo $idioma['No']?></option>
+                    <option value="1" <?php echo (dato("FaltaAgenda"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
+                </select></td>
+            </tr>
+        	<tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+	</div>
+    <?php if($_SESSION['Nivel']==1):?>
+    <div class="box-header"><h2><?php echo $idioma['Avanzado']?></h2></div>
+    <div class="box-content">
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td width="150"><?php echo $idioma['UrlInternet']?></td>
+                <td><input type="text" class="span12" name="UrlInternet" value="<?php echo (dato("UrlInternet"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['DirectorioInternet']?><div class="pequeno"><?php echo $idioma['DirectorioInternetE']?></div></td>
+                <td><input type="text" class="span12" name="DirectorioInternet" value="<?php echo (dato("DirectorioInternet"))?>"></td>
+            </tr>
+            <tr>
+            	<td colspan="2" class="resaltar"><?php echo $idioma['BaseDatos']?></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['IpInternet']?></td>
+                <td><input type="text" class="span12" name="IpInternet" value="<?php echo (dato("IpInternet"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['PuertoInternet']?></td>
+                <td><input type="text" class="span12" name="PuertoInternet" value="<?php echo (dato("PuertoInternet"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['UsuarioInternet']?></td>
+                <td><input type="text" class="span12" name="UsuarioInternet" value="<?php echo (dato("UsuarioInternet"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['ContrasenaInternet']?></td>
+                <td><input type="text" class="span12" name="ContrasenaInternet" value="<?php echo (dato("ContrasenaInternet"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BaseDatosInternet']?></td>
+                <td><input type="text" class="span12" name="BaseDatosInternet" value="<?php echo (dato("BaseDatosInternet"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['CodigoSeguimientoNotasDocente']?></td>
+                <td><textarea class="span12" name="CodigoSeguimientoNotasDocente" rows="10"><?php echo (dato("CodigoSeguimientoNotasDocente"))?></textarea></td>
+            </tr>
+        	<tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+	</div>
+    <?php endif;?>
+</div>
+</form>
 <?php include_once($folder."pie.php");?>

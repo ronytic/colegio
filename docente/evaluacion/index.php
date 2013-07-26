@@ -46,7 +46,7 @@ $i=0;
 			<div class="box-content">
 				<div class="row-fluid">
 				<div class="span2">
-					<img src="<?php echo $direcfoto ?>" class="img-polaroid">
+					<img src="<?php echo $direcfoto ?>" class="img-circle">
 				</div>
 				<div class="span7">
 					<div class="cuerpo preguntas">
