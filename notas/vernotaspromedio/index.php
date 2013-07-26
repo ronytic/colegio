@@ -1,9 +1,9 @@
 <?php
 include_once("../../login/check.php");
-$titulo="NNotasPromedioDocentes";
+$titulo="NReporteNotasPromedioAnual";
 $subtitulo1="Configuracion";
 $folder="../../";
-$jsFile="notas/vernotas.js";
+$jsFile="notas/vernotasadministrativo.js";
 $archivoInicial="formulario.php";
 $direccion="-";
 include_once("../../listar/docente.php");

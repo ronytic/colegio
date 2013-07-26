@@ -1,14 +1,16 @@
 <?php
-session_start();
 include_once("../../login/check.php");
 if(!empty($_POST)){
 	$CodCurso=$_POST['CodCurso'];
 	$CodMateria=$_POST['CodMateria'];
 	$CodDocente=$_SESSION['CodDocente'];
-	$Periodo=$_POST['Periodo'];
+	$CodPeriodo=$_POST['CodPeriodo'];
+	$url="../../impresion/notas/reportedocentepromedioanual.php?CodCurso=$CodCurso&CodMateria=$CodMateria&CodDocente=$CodDocente&CodPeriodo=$CodPeriodo&lock=".md5("lock");
 	?>
-    
-	<iframe src="../../impresion/notas/reportedocentepromedioanual.php?CodCurso=<?php echo $CodCurso;?>&CodMateria=<?php echo $CodMateria;?>&CodDocente=<?php echo $CodDocente;?>&Periodo=<?php echo $Trimestre;?>&lock=<?php echo md5("lock");?>" width="100%" height="800"></iframe>
+    <a class="btn btn-danger" href="<?php echo $url?>" target="_blank"><?php echo $idioma['AbrirOtraVentana']?></a>
+    <hr />
+    <?php echo $idioma['ReporteImpresion']?>, <?php echo $idioma['TamanoCarta']?>
+	<iframe src="<?php echo $url;?>" width="100%" height="800"></iframe>
     <?php
 }
 ?>
