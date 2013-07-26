@@ -577,6 +577,14 @@ $idioma['NRevisarAccesos']="Revisar Accesos";
 $idioma['TiempoActualizacion']="Tiempo de Actualización";
 $idioma['NivelUsuario']="Nivel de Usuario";
 $idioma['Milisegundos']="Milisegundos";
+$idioma['Cabecera']="Cabecera";
+$idioma['SeparadorColumna']="Separador de Columna";
+$idioma['SeparadorFila']="Separador de Fila";
+$idioma['SaltoLinea']="Salto de Linea";
+$idioma['Numeracion']="Numeración";
+$idioma['TodosPeriodos']="Todos los Periodos";
+$idioma['DescargarArchivo']="Descargar Archivo";
+
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
