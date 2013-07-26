@@ -81,6 +81,7 @@ $idioma['NRegistroEvaluacionDocente']="Registro de Evaluación Docente";
 $idioma['NResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
 $idioma['NConfiguracionGeneral']="Configuración General";
 $idioma['NReporteNotasPromedioAnual']="Reporte de Notas de Promedio Anual";
+$idioma['NReservasCuposAlumnos']="Reservas de Cupos de Alumnos";
 //Generales
 $idioma['Si']="Si";
 $idioma['No']="No";
@@ -300,6 +301,8 @@ $idioma['Numero']="Número";
 $idioma['ActualizarDatosAlumno']="Actualizar Datos de Alumno";
 $idioma['ReInscribirAlumno']="ReInscribir Alumno";
 $idioma['NoExisteAlumnos']="No Existe Alumnos";
+$idioma['MontoReserva']="Monto de reserva";
+$idioma['FechaReserva']="Fecha de reserva";
 //Rude
 $idioma['RegistrarRude']="Registrar Rude";
 $idioma['ModificarRude']="Modificar Rude";
