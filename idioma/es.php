@@ -747,8 +747,11 @@ $idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?";
 $idioma['Añadir']="Añadir";
 $idioma['NombreAlterno']="Nombre Alterno";
 $idioma['OrdenBoletin']="Este es el orden respectivo que aparecera en el boletín";
+$idioma['OrdenExportar']="Este es el orden respectivo que aparecera al Exportar";
 $idioma['NombreAdecuadoBoletin']="Seleccione el Nombre Adecuado que saldrá en el boletín";
 $idioma['DeseaEliminarMateria']="¿Desea eliminar esta materia?";
+$idioma['NAsignacionMateriasExportar']="Asignación Materias para Exportar";
+$idioma['MateriaCombinada']="Materia Combinada";
 
 //Codigo
 $idioma['CodigoBarraActualizado']="Código de Barra Actualizado";
