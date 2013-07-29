@@ -25,7 +25,6 @@ $(document).on("ready",function(){
 		e.preventDefault();
 		mostrarAsistencia();
 	});
-	
 });
 function mostrarAsistencia(){
 	//var Fecha=$("#FechaActividad").val();

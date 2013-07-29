@@ -61,7 +61,7 @@ class alumno extends bd{
 			$Retiro="Retirado=$Retirado";	
 		}
 		if(!$tipo){
-			$this->campos=array("a.CodAlumno, LOWER(a.Paterno) as Paterno, LOWER(a.Materno) as Materno, LOWER(a.Nombres) as Nombres, LOWER(c.Nombre) as Nombre");
+			$this->campos=array("a.CodAlumno, LOWER(a.Paterno) as Paterno, LOWER(a.Materno) as Materno, LOWER(a.Nombres) as Nombres, LOWER(c.Nombre) as Nombre,c.CodCurso");
 		}else{
 			$this->campos=array("a.CodAlumno, UPPER(a.Paterno) as Paterno, UPPER(a.Materno) as Materno, UPPER(a.Nombres) as Nombres, UPPER(c.Nombre) as Nombre");
 		}

@@ -34,6 +34,7 @@
         </div>
     </div>
     <?php endif;?>
+    <?php if($_SESSION['Nivel']==6 ||$_SESSION['Nivel']==7):?><a href="internet/alumno/" class="btn btn-large btn-danger"><?php echo $idioma['VersionResumida']?></a><?php endif;?>
 </div>
 <div class="row-fluid">
 	<div class="span8 box">

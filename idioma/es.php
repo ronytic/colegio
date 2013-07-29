@@ -14,6 +14,8 @@ $idioma['DatosErroneos']="El USUARIO o la CONTRASEÑA son incorrectos, verifique
 $idioma['IdiomaNoEncontrado']="Idioma no Encontrado";
 //Inicio
 $idioma['TituloSistema']="Sistema Académico Administrativo para Colegios";
+$idioma['DerechosReservados']="Todos los Derechos Reservados";
+$idioma['DesarrolladoPor']="Desarrollador por";
 $idioma['Configuracion']="Configuración";
 $idioma['Notificacion']="Notificaciones";
 $idioma['TareaPendiente']="Tareas Pendientes";
@@ -21,7 +23,9 @@ $idioma['Mensajes']="Mensajes";
 $idioma['Agenda']="Agenda";
 $idioma['MisActividades']="Mis Actividades";
 $idioma['Salir']="Salir";
-
+$idioma['VersionResumida']="Versión Resumida";
+$idioma['NoExitenNotificaciones']="No Exiten Notificaciones";
+$idioma['Pasivo']="Pasivo";
 $idioma['ReporteImpresion']="Este Reporte Generado es para Imprimir";
 $idioma['TamanoCarta']="Tamaño Carta";
 //Menu
@@ -82,7 +86,15 @@ $idioma['NResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
 $idioma['NConfiguracionGeneral']="Configuración General";
 $idioma['NReporteNotasPromedioAnual']="Reporte de Notas de Promedio Anual";
 $idioma['NReservasCuposAlumnos']="Reservas de Cupos de Alumnos";
+$idioma['ExportarMateriasCsv']="Exportar Datos de Materias a Csv";
+$idioma['ExportarGeneralCsv']="Exportar Datos Generales a Csv";
+$idioma['ExportarNotasCualitativasCsv']="Exportar Notas Cualitativas a Csv";
+$idioma['PromedioFinalCiencias']="Centralizador Promedio Final Ciencias todos los Trimestres";
+$idioma['NCentralizadorNotasCiencias']="Centralizador de Notas Anual de Ciencias";
+$idioma['NCentralizadorNotasTrimestral']="Centralizador de Notas Anual";
+$idioma['NFrecuenciaAccesosSistemaPPFF']="Frecuencia accesos al sistema de Padres de Familia";
 //Generales
+$idioma['Cerrar']="Cerrar";
 $idioma['Si']="Si";
 $idioma['No']="No";
 $idioma['De']="de";
@@ -525,6 +537,7 @@ $idioma['AsigneCasillerosLuegoGenereNotasCualitativas']="Asigne Casilleros a los
 $idioma['ComprendoYDeseoGenerar']="Comprendo el peligro y deseo generar de todas formas";
 $idioma['CasillerosNotasCualitativas']="Los casilleros de las Notas Cualitativas para este Periodo fueron";
 $idioma['GeneradosCorrectamente']="Generados Correctamente";
+$idioma['PromedioAnualAlumno']="Promedio Anual de Alumnos";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
@@ -584,7 +597,9 @@ $idioma['SaltoLinea']="Salto de Linea";
 $idioma['Numeracion']="Numeración";
 $idioma['TodosPeriodos']="Todos los Periodos";
 $idioma['DescargarArchivo']="Descargar Archivo";
-
+$idioma['SeparadorMateria']="Separador de Materia";
+$idioma['SeparadorEstadisticas']="Separador de Estadisticas";
+$idioma['Cantidad']="Cantidad";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
@@ -776,4 +791,9 @@ $idioma['NoCuentaConAnotacionesALaFecha']="No Cuenta con Anotaciones a la Fecha"
 $idioma['NoTieneTareasPendientes']="No tiene tareas pendientes";
 $idioma['NoTieneTareasRevisadas']="No tiene tareas revisadas";
 $idioma['Notas']="Notas";
+$idioma['FechaPresentacion']="Fecha de Presentación";
+$idioma['OrdenObservaciones']="Las observaciones están ordenadas del registro último al Primero";
+$idioma['PromedioAnual']="Promedio Anual";
+$idioma['Reforzamiento']="Reforzamiento";
+$idioma['PromedioFinal']="Promedio Final";
 ?>

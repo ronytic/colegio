@@ -18,7 +18,7 @@ include_once($folder."cabecerahtml.php");
             <td>
             	<select class="span12" name="Nivel">
                 <option value=""><?php echo $idioma['Todos']?></option>
-                <option value="1"><?php echo $idioma['Administradores']?></option>
+                <?php echo $_SESSION['Nivel']==1?><option value="1"><?php echo $idioma['Administradores']?></option><?php echo $_SESSION['Nivel']==1?>
                 <option value="2"><?php echo $idioma['Directores']?></option>
                 <option value="3"><?php echo $idioma['Docentes']?></option>
                 <option value="4"><?php echo $idioma['Secretaria']?></option>

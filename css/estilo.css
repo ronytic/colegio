@@ -313,3 +313,15 @@ div.horizontal:hover{
 	text-align: center;
 	margin: 0 auto;
 }
+.listanotificacion li{
+	padding:2px;
+	border-bottom:#E9E9E9 1px solid;
+}
+.listanotificacion li:hover{
+	background-color:#EAEAEA
+}
+.listanotificacion li span{
+}
+.listanotificacion li div{
+	display:inline-block;
+}

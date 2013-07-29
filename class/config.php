@@ -3,14 +3,16 @@ define("Config",1);
 include_once("bd.php");
 class config extends bd{
 	var $tabla="config";	
-	function mostrarConfig($Nombre){
+	function mostrarConfig($Nombre,$Valor=0){
 		$this->campos=array('*');
-		return array_shift($this->getRecords("Nombre='$Nombre'"));	
+		$v=$this->getRecords("Nombre='$Nombre'");
+		$v=array_shift($v);
+		if($Valor){
+			return $v['Valor'];
+		}else{
+			return $v;
+		}
 	}
-	/*function actualizarConfig($campos,$values){
-		$this->campos=$campos;		
-		$this->updateRecord("CodConfig=1",$values);
-	}*/
 	function actualizarConfig($datos,$Nombre=""){
 		$this->updateRow($datos,"Nombre='$Nombre'");		
 	}

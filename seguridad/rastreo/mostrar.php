@@ -8,6 +8,9 @@ if(!empty($_POST)){
 	
 	$Tiempo=$_POST['Tiempo'];
 	$Nivel=$_POST['Nivel'];
+	if($Nivel=="" && $_SESSION['Nivel']==2){
+		$Nivel="2,3,4,5,6,7";	
+	}
 	$Fecha=date("Y-m-d",strtotime($_POST['Fecha']));
 	include_once("../../class/lograstreo.php");
 	include_once("../../class/alumno.php");

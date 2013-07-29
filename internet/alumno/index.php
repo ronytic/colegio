@@ -53,19 +53,21 @@ $FechaCuota10=$cnf['Valor'];
 
 $v=$config->mostrarConfig("LogoIcono");
 $LogoIcono=$v['Valor'];
+$folder="../../";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $idioma['NSistemaInternet']?></title>
-<link href="../../css/bootstrap.css" type="text/css" rel="stylesheet" />
+<link href="<?php echo $folder?>css/bootstrap.css" type="text/css" rel="stylesheet" />
 <link href="../../css/internet.css" type="text/css" rel="stylesheet" />
-<link rel="shortcut icon" href="../../imagenes/logos/<?php echo $LogoIcono?>" />
+<link rel="shortcut icon" href="<?php echo $folder?>imagenes/logos/<?php echo $LogoIcono?>" />
 </head>
 <body>
 <div class="row-fluid" class="wrapper">
 	<div class="span12">
+    	<a name="datos"></a>
     	 <div class="cuerpo">
          	<img src="../../imagenes/alumnos/<?php echo $al['Sexo'].".png"?>" class="foto"/>
          	<div class="datos">
@@ -88,13 +90,12 @@ $LogoIcono=$v['Valor'];
 <div class="row-fluid" class="wrapper">
     <div class="span3">
     	<div class="cuerpo">
-        	<h2><?php echo $idioma["Cuotas"]?></h2>
+        	<h2><a name="cuotas"></a><?php echo $idioma["Cuotas"]?></h2>
             <table class="tabla">
             	<?php
 				$total=0;
 				$totalDeuda=0;
 				foreach($cuota->mostrarCuotas($al['CodAlumno']) as $cuo){
-					
 					?>
                     <tr>
                     	<td class="div"><?php echo $cuo['Numero'];?></td>
@@ -113,8 +114,8 @@ $LogoIcono=$v['Valor'];
     </div>
     <div class="span9">
     	<div class="cuerpo">
-        	<h2><?php echo $idioma['Agenda']?></h2>
-            Las observaciones están ordenadas del registro ultimo al Primero
+        	<h2><a name="agenda"></a><?php echo $idioma['Agenda']?></h2>
+            <?php echo $idioma['OrdenObservaciones']?>
             <table class="tabla">
           	  <tr class="cabecera"><td width="25">Nº</td><td width="90"><?php echo $idioma['Fecha']?></td><td width="120"><?php echo $idioma['Materia']?></td><td width="150"><?php echo $idioma['Observacion']?></td><td width="300"><?php echo $idioma['Detalle']?></td></tr>
             	<?php
@@ -142,9 +143,9 @@ $LogoIcono=$v['Valor'];
 <div class="row-fluid">
     <div class="span6">
         <div class="cuerpo">
-            <h2><?php echo $idioma['TareasPendientes']?></h2>
+            <h2><a name="tareaspendientes"></a><?php echo $idioma['TareasPendientes']?></h2>
             <table class="tabla">
-                <tr class="cabecera"><td width="15">Nº</td><td width="80"><?php echo $idioma['Materia']?></td><td width="160"><?php echo $idioma['Nombre']?></td><td width="130"><?php echo $idioma['Detalle']?></td><td width="80"><span title="Fecha de Presentación"><?php echo $idioma['Fecha']?></span></td></tr>
+                <tr class="cabecera"><td width="15">Nº</td><td width="80"><?php echo $idioma['Materia']?></td><td width="160"><?php echo $idioma['Nombre']?></td><td width="130"><?php echo $idioma['Detalle']?></td><td width="80"><span title="<?php echo $idioma['FechaPresentacion']?>"><?php echo $idioma['Fecha']?></span></td></tr>
                 <?php
             $i=0;
             $Fecha=date("Y-m-d");
@@ -167,9 +168,9 @@ $LogoIcono=$v['Valor'];
     </div>
     <div class="span6">
         <div class="cuerpo">
-            <h2>Tareas Revisadas</h2>
+            <h2><a name="tareasrevisadas"></a><?php echo $idioma['TareasRevisadas']?></h2>
             <table class="tabla">
-                <tr class="cabecera"><td width="15">Nº</td><td width="80">Materia</td><td width="160">Nombre</td><td width="130">Detalle</td><td width="80"><span title="Fecha de Presentación">Fecha</span></td></tr>
+                <tr class="cabecera"><td width="15">Nº</td><td width="80"><?php echo $idioma['Materia']?></td><td width="160"><?php echo $idioma['Nombre']?></td><td width="130"><?php echo $idioma['Detalle']?></td><td width="80"><span title="<?php echo $idioma['FechaPresentacion']?>"><?php echo $idioma['Fecha']?></span></td></tr>
             <?php
             $i=0;
             $Fecha=date("Y-m-d");
@@ -193,10 +194,17 @@ $LogoIcono=$v['Valor'];
 <div class="row-fluid">
 	<div class="span12">
     	<div class="cuerpo">
-        	<h2><?php echo $idioma['Notas']?></h2>
+        	<h2><a name="notas"></a><?php echo $idioma['Notas']?></h2>
             <table class="tabla">
-            	<tr class="cabecera"><td width="150"><?php echo $idioma['Materias']?></td><td colspan="3">1<sup>er</sup> Trimestre</td><td colspan="3">2<sup>do</sup> Trimestre</td><td colspan="3">3<sup>er</sup> Trimestre</td><td width="90">Promedio Anual</td><td>Reforzamiento</td><td>Prom. Final</td></tr>
-                <tr><td></td><td>PC</td><td>DPS</td><td>PT</td><td>PC</td><td>DPS</td><td>PT</td><td>PC</td><td>DPS</td><td>PT</td><td></td><td></td><td></td></tr>
+            	<tr class="cabecera"><td width="150"><?php echo $idioma['Materias']?></td>
+                <?php for($i=1;$i<=$cur['CantidadEtapas'];$i++){?>
+                	<td colspan="3"><?php echo $i?> <?php echo $cur['Bimestre']?$idioma['Bimestre']:$idioma['Trimestre'];?></td>
+                <?php }?>
+                <td width="90"><?php echo $idioma['PromedioAnual']?></td><td><?php echo $idioma['Reforzamiento']?></td><td><?php echo $idioma['PromedioFinal']?></td></tr>
+                <?php if($cur['Bimestre']){?>
+					<tr></tr>
+				<?php }else{?><tr><td></td><td>PC</td><td>DPS</td><td>PT</td><td>PC</td><td>DPS</td><td>PT</td><td>PC</td><td>DPS</td><td>PT</td><td></td><td></td><td></td></tr>
+                <?php }?>
                 <?php
 				if(strtotime($Fecha)>strtotime($FechaCuota1)){
 					
@@ -210,10 +218,26 @@ $LogoIcono=$v['Valor'];
 					$rn2=array_shift($registronotas->mostrarRegistroNotas($casillas['CodCasilleros'],$al['CodAlumno'],2));
 					$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($cm['CodMateria'],$al['CodCurso'],$al['Sexo'],3));
 					$rn3=array_shift($registronotas->mostrarRegistroNotas($casillas['CodCasilleros'],$al['CodAlumno'],3));
-					$promedio=$registronotas->promedio($rn1['NotaFinal'],$rn2['NotaFinal'],$rn3['NotaFinal']);
+					
+					$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($cm['CodMateria'],$al['CodCurso'],$al['Sexo'],4));
+					$rn3=array_shift($registronotas->mostrarRegistroNotas($casillas['CodCasilleros'],$al['CodAlumno'],4));
+					if($cur['Bimestre']){
+						$promedio=$registronotas->promedioBimestre($rn1['NotaFinal'],$rn2['NotaFinal'],$rn3['NotaFinal'],$rn4['NotaFinal']);	
+					}else{
+						$promedio=$registronotas->promedio($rn1['NotaFinal'],$rn2['NotaFinal'],$rn3['NotaFinal']);
+					}
 					?>
                     <tr>
                     	<td class="div"><?php echo $ma['Nombre'];?></td>
+                        <?php if($cur['Bimestre']){
+							?>
+                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn1['NotaFinal'];?></td>
+                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn2['NotaFinal'];?></td>
+                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn3['NotaFinal'];?></td>
+                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn4['NotaFinal'];?></td>
+                            <?php
+						}else{
+						?>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn1['Resultado'];?></td>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn1['Dps'];?></td>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn1['NotaFinal'];?></td>
@@ -223,6 +247,7 @@ $LogoIcono=$v['Valor'];
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo1':'';?>"><?php echo $rn3['Resultado'];?></td>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo1':'';?>"><?php echo $rn3['Dps'];?></td>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo1':'';?>"><?php echo $rn3['NotaFinal'];?></td>
+                        <?php }?>
                         <td class="div der"><?php echo $promedio?></td>
                         <td class="div der">0</td>
                         <td class="der">0</td></tr>
@@ -236,7 +261,8 @@ $LogoIcono=$v['Valor'];
 <div class="row-fluid">
     <div class="span12">
     	<div class="cuerpo pie">
-        	Sistema del Colegio Particular Santa Bárbara &copy; CopyRight <?php echo date("Y")?>
+        	<?php echo $idioma['TituloSistema']?> &copy; <?php echo $idioma['DerechosReservados']?> 2011 - <?php echo date("Y")?>
+            <p class="pull-right"><?php echo $idioma['DesarrolladoPor'];?>: <a href="http://fb.com/ronaldnina" title="http://fb.com/ronaldnina - 73230568" target="_blank" class="link">Ronald Nina Layme</a></p>
         </div>
     </div>
 </div>

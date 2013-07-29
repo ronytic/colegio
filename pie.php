@@ -5,12 +5,33 @@
 <hr>
 		
 		<footer>
-			<p class="pull-left">Sistema Académico Administrativo <?php echo $Sigla;?> &copy; Todos los derechos reservados 2011 - <?php echo date("Y");?></p>
-			<p class="pull-right">Desarrollado por: <a href="#" class="">Ronald Nina Layme</a> </p>
+			<p class="pull-left"><?php echo $idioma['TituloSistema']?> - <?php echo $Sigla;?> &copy; <?php echo $idioma['DerechosReservados']?> 2011 - <?php echo date("Y");?></p>
+			<p class="pull-right"><?php echo $idioma['DesarrolladoPor'];?>: <a href="http://fb.com/ronaldnina" class="" target="_blank" title="">Ronald Nina Layme</a> </p>
 		</footer>
 				
 	</div><!-- .fluid-container-->
-
+<div id="noticerrar"><div class="pull-right"><a href="#" title="<?php echo $idioma['Cerrar']?>" class="btn btn-mini" id="cerrarnoti"><i class="icon-remove"></i></a></div></div>
+<div id="cuerponotificacion" class="oculto">
+<?php
+$notitotal=count($noti1)+count($noti2)+count($noti3);
+if($notitotal){
+	?><ul class="unstyled listanotificacion"><?php
+	foreach($noti1 as $no1){
+		?><li><span class="label label-important"><i class="icon-bullhorn"></i></span> <?php echo $no1['Mensaje']?></li><?php
+	}
+	foreach($noti2 as $no2){
+		?><li><span class="label label-warning"><i class="icon-bell"></i></span> <?php echo $no2['Mensaje']?></li><?php
+	}
+	?><?php
+	foreach($noti3 as $no3){
+		?><li><span class="label label-success"><i class="icon-bell"></i></span> <?php echo $no3['Mensaje']?></li><?php
+	}
+	?></ul><?php
+}else{
+	echo $idioma['NoExitenNotificaciones'];
+}
+?>
+</div>
 	<!-- Inicio: JavaScript-->
 
 		

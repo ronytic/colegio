@@ -164,6 +164,12 @@ function inicio(){
     });*/
 	$('ul.r-listado li a').tooltip();
 	$('span[title]').tooltip();
+	/*Notificaciones*/
+	$('#noti').click(function(e){e.preventDefault();}).popover({title:$("#noti").attr('data-titulo')+$('#noticerrar').html(),html : true,placement:'bottom',content:$('#cuerponotificacion').html()})
+	$(document).on("click",'#cerrarnoti',function(e){
+		e.preventDefault();
+		$('#noti').popover('hide');
+	}); 
 }
 function cargandoG(destino){
 	$(destino).html('<img src="'+folder+'imagenes/cargador/cargador.gif"/>');

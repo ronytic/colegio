@@ -5,6 +5,13 @@ $agendaac=new agendaactividades;
 $cant=$agendaac->cantidadActividades();
 $cantagendaactividades=array_shift($cant);
 /*Fin de Cantidad de Actividades*/
+/*Notitifaciones*/
+include_once("class/notificaciones.php");
+$notificacionesi=new notificaciones;
+$noti1=$notificacionesi->listarmensajes($_SESSION['Nivel'],1);
+$noti2=$notificacionesi->listarmensajes($_SESSION['Nivel'],2);
+$noti3=$notificacionesi->listarmensajes($_SESSION['Nivel'],3);
+/*Fin de Notificaciones*/
 ?>
 <?php
 /*Codigo para ver qen que menu nos encontramos*/
@@ -27,14 +34,10 @@ $menu=new menu;
 $submenu=new submenu;
 $config=new config;
 $usuario=new usuario;
-$v=$config->mostrarConfig("Titulo");
-$Titulo=$v['Valor'];
-$v=$config->mostrarConfig("LogoInicio");
-$LogoInicio=$v['Valor'];
-$v=$config->mostrarConfig("LogoIcono");
-$LogoIcono=$v['Valor'];
-$v=$config->mostrarConfig("Sigla");
-$Sigla=$v['Valor'];
+$Titulo=$config->mostrarConfig("Titulo",1);
+$LogoInicio=$config->mostrarConfig("LogoInicio",1);
+$LogoIcono=$config->mostrarConfig("LogoIcono",1);
+$Sigla=$config->mostrarConfig("Sigla",1);
 ?>
 <!DOCTYPE html>
 <html lang="en">

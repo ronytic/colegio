@@ -28,6 +28,9 @@ class registronotas extends bd{
 	function promedio($n1,$n2,$n3){
 		return round(($n1+$n2+$n3)/3,0);
 	}
+	function promedioBimestre($n1,$n2,$n3,$n4){
+		return round(($n1+$n2+$n3+$n4)/4,0);
+	}
 	function actualizarNota($values,$where){
 		$this->updateRow($values,$where);		
 	}
