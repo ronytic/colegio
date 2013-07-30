@@ -9,7 +9,12 @@ $logusuario=new logusuario;
 $usuario=new usuario;
 $docente=new docente;
 $alumno=new alumno;
-$logu=$logusuario->mostrarUsuariosCantidad(4);
+if($_SESSION['Nivel']==1){
+	$Tipo="";
+}else{
+	$Tipo="1";
+}
+$logu=$logusuario->mostrarUsuariosCantidad(4,$Tipo);
 ?><ul class="dashboard-list">
 <?php
 foreach($logu as $lu){
@@ -88,7 +93,7 @@ foreach($logu as $lu){
 	}
 	?>
     <li>
-        <a href="#">
+        <a>
             <img class="dashboard-avatar" alt="" src="<?php echo $F?>">
         </a>
         <span class="label label-info"><strong><?php echo $tipousuario?>:</strong></span> <a"><?php echo capitalizar($Paterno)?> <?php echo capitalizar(acortarPalabra($Nombres))?></a><br>

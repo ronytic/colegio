@@ -9,9 +9,9 @@ class logusuario extends Bd{
 		$this->campos=array('*');
 		return $this->getRecords(" CodUsuario=$CodDocente and Nivel=3","FechaLog",0,0,0,1);
 	}
-	function mostrarUsuariosCantidad($Cantidad){
+	function mostrarUsuariosCantidad($Cantidad,$Tipo){
 		$this->campos=array('*');
-		return $this->getRecords("","FechaLog DESC,HoraLog",0,$Cantidad,0,1);
+		return $this->getRecords("Nivel!='$Tipo'","FechaLog DESC,HoraLog",0,$Cantidad,0,1);
 	}
 	
 }
