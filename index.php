@@ -51,42 +51,8 @@ $titulo="NPaginaPrincipal";
     </div>
     <?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2):?>
     <div class="span4 box">
-    	<div class="box-header">Accesos de Usuarios al Sistema</div>
-        <div class="box-content">
-        	<ul class="dashboard-list">
-            <li>
-                <a href="#">
-                    <img class="dashboard-avatar" alt="Lucas" src="img/avatar.jpg">
-                </a>
-                <strong>Nombre:</strong> <a href="#">Jaime</a><br>
-                <strong>Fecha:</strong> 17/05/2013<br>
-                <strong>Estado:</strong> <span class="label label-success">En Linea</span>                                  
-            </li>
-            <li>
-                <a href="#">
-                    <img class="dashboard-avatar" alt="Bill" src="img/avatar.jpg">
-                </a>
-                <strong>Nombre:</strong> <a href="#">Marco</a><br>
-                <strong>Fecha:</strong> 17/05/2013<br>
-                <strong>Estado:</strong> <span class="label label-warning">Sin Uso</span>                                 
-            </li>
-            <li>
-                <a href="#">
-                    <img class="dashboard-avatar" alt="Jane" src="img/avatar.jpg">
-                </a>
-                <strong>Nombre:</strong> <a href="#">Reynaldo</a><br>
-                <strong>Since:</strong> 17/05/2013<br>
-                <strong>Estado:</strong> <span class="label label-important">Fuera de Linea</span>                                  
-            </li>
-            <li>
-                <a href="#">
-                    <img class="dashboard-avatar" alt="Kate" src="img/avatar.jpg">
-                </a>
-                <strong>Nombre:</strong> <a href="#">Marco</a><br>
-                <strong>Fecha:</strong> 17/05/2013<br>
-                <strong>Estado:</strong> <span class="label label-info">En Linea</span>                                  
-            </li>
-			</ul>
+    	<div class="box-header"><?php echo $idioma['AccesosUsuarioSistema']?><div class="box-icon"><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizarusuarios"><i class="icon-refresh"></i></a></div></div>
+        <div class="box-content" id="listausuario">
         </div>
     </div>
     <?php endif;?>

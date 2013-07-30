@@ -12,6 +12,8 @@ $(document).on("ready",function(){
 	mostrarCuotas();
 	mostrarAgenda();
 	mostrarAsistencia();
+	mostrarUsuario();
+	
 	$(document).on("click","#actualizarcuotas",function(e){
 		e.preventDefault();
 		mostrarCuotas();
@@ -24,6 +26,9 @@ $(document).on("ready",function(){
 	}).on("click","#actualizarasistencia",function(e){
 		e.preventDefault();
 		mostrarAsistencia();
+	}).on("click","#actualizarusuarios",function(e){
+		e.preventDefault();
+		mostrarUsuario();
 	});
 });
 function mostrarAsistencia(){
@@ -50,5 +55,11 @@ function mostrarAgenda(){
 		$("#listadoagenda").html(data).stickyTableHeaders()
 		$(window).trigger('resize.stickyTableHeaders');
 		$("table").stickyTableHeaders()
+	});
+}
+function mostrarUsuario(){
+	//var Fecha=$("#FechaActividad").val();
+	$.post("usuario/inicio/lista.php",{},function(data){
+		$("#listausuario").html(data)
 	});
 }
