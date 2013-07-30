@@ -297,6 +297,9 @@ tr:hover td.celeste{
 .horizontal{
 	display:inline-block;	
 }
+div.borde{
+	padding:15px;	
+}
 div.horizontal{
 	
 	border:1px solid #e9e8e8;

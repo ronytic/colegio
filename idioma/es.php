@@ -96,6 +96,7 @@ $idioma['NCentralizadorNotasTrimestral']="Centralizador de Notas Anual";
 $idioma['NFrecuenciaAccesosSistemaPPFF']="Frecuencia accesos al sistema de Padres de Familia";
 $idioma['NReporteReprobadosObservaciones']="Reporte de Reprobados con Observaciones";
 $idioma['NPaginaPrincipal']="Página Principal";
+$idioma['NImpresionCodigos']="Impresión de Códigos de Barra";
 //Generales
 $idioma['Cerrar']="Cerrar";
 $idioma['Si']="Si";
@@ -781,7 +782,9 @@ $idioma['MateriaCombinada']="Materia Combinada";
 
 //Codigo
 $idioma['CodigoBarraActualizado']="Código de Barra Actualizado";
-
+$idioma['CodigosBarraCurso']="Códigos de Barra por Curso";
+$idioma['CodigosBarraAlumno']="Códigos de Barra por Alumno";
+$idioma['Imprimir']="Imprimir";
 /*Internet*/
 $idioma['Inicio']="Inicio";
 $idioma['Cuotas']="Cuotas";
