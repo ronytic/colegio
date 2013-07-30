@@ -93,6 +93,8 @@ $idioma['PromedioFinalCiencias']="Centralizador Promedio Final Ciencias todos lo
 $idioma['NCentralizadorNotasCiencias']="Centralizador de Notas Anual de Ciencias";
 $idioma['NCentralizadorNotasTrimestral']="Centralizador de Notas Anual";
 $idioma['NFrecuenciaAccesosSistemaPPFF']="Frecuencia accesos al sistema de Padres de Familia";
+$idioma['NReporteReprobadosObservaciones']="Reporte de Reprobados con Observaciones";
+$idioma['NPaginaPrincipal']="Página Principal";
 //Generales
 $idioma['Cerrar']="Cerrar";
 $idioma['Si']="Si";
@@ -756,7 +758,7 @@ $idioma['RegistroNotaHabilitadoE']="Habilita el Registro de las notas de los Doc
 $idioma['PeriodoNotaHabilitadoE']="Periodo específico para Habilitar el registro de notas";
 
 //Inicio
-$idioma['EstadisticasInstantaneaPagoCuotas']="Estadisticas Instantanea de Pago Cuotas";
+$idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";
 $idioma['FechaAgenda']="Fecha de Agenda";
 $idioma['RegistrarNuevosPagos']="Registrar Nuevos Pagos";

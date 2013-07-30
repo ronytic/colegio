@@ -7,7 +7,12 @@ class cursomateria extends bd{
 	}
 	function mostrarMaterias($CodCurso){
 		$this->campos=array("*");
-		return $this->getRecords("CodCurso=".$CodCurso." and Activo=1","CodCursoMateria");
+		return $this->getRecords("CodCurso=".$CodCurso." and Activo=1 ","CodCursoMateria");
+	}
+	function mostrarMateriasOrden($CodCurso){
+		$this->tabla="cursomateria cm,materias m";
+		$this->campos=array("*");
+		return $this->getRecords("cm.CodCurso=".$CodCurso." and cm.Activo=1 and cm.CodMateria=m.CodMateria","m.Nombre");
 	}
 	function cambiarNombre($Numero,$where){
 		$this->updateRow(array("Alterno"=>$Numero),$where);

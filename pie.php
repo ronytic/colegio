@@ -10,21 +10,21 @@
 		</footer>
 				
 	</div><!-- .fluid-container-->
-<div id="noticerrar"><div class="pull-right"><a href="#" title="<?php echo $idioma['Cerrar']?>" class="btn btn-mini" id="cerrarnoti"><i class="icon-remove"></i></a></div></div>
+<div id="noticerrar" class="oculto"><div class="pull-right"><a href="#" title="<?php echo $idioma['Cerrar']?>" class="btn btn-mini" id="cerrarnoti"><i class="icon-remove"></i></a></div></div>
 <div id="cuerponotificacion" class="oculto">
 <?php
 $notitotal=count($noti1)+count($noti2)+count($noti3);
 if($notitotal){
 	?><ul class="unstyled listanotificacion"><?php
 	foreach($noti1 as $no1){
-		?><li><span class="label label-important"><i class="icon-bullhorn"></i></span> <?php echo $no1['Mensaje']?></li><?php
+		?><li class="pequeno"><span class="label label-important"><i class="icon-bullhorn"></i></span> <?php echo $no1['Mensaje']?></li><?php
 	}
 	foreach($noti2 as $no2){
-		?><li><span class="label label-warning"><i class="icon-bell"></i></span> <?php echo $no2['Mensaje']?></li><?php
+		?><li class="pequeno"><span class="label label-warning"><i class="icon-bell"></i></span> <?php echo $no2['Mensaje']?></li><?php
 	}
 	?><?php
 	foreach($noti3 as $no3){
-		?><li><span class="label label-success"><i class="icon-bell"></i></span> <?php echo $no3['Mensaje']?></li><?php
+		?><li class="pequeno"><span class="label label-success"><i class="icon-bell"></i></span> <?php echo $no3['Mensaje']?></li><?php
 	}
 	?></ul><?php
 }else{
