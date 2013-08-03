@@ -57,14 +57,12 @@ switch($Nivel){
 					<a class="btn" href="#" id="noti" data-titulo="<?php echo $idioma['Notificacion']?>">
 						<i class="icon-bell"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Notificacion']?></span> <span class="label label-important hidden-phone"><?php echo count($noti1)?></span> <span class="label label-success hidden-phone"><?php echo count($noti3)?></span>
 					</a>
-					<a class="btn" href="<?php echo $folder?>agendaactividades/">
-						<i class="icon-tasks"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['MisActividades']?></span> <span class="label label-warning hidden-phone"><?php echo $cantagendaactividades['Cantidad']?></span>
+					
+                    <?php foreach($menu->mostrar($Nivel,"Superior") as $m){?>
+                    <a class="btn" href="<?php echo $folder?><?php echo $m['Url']?>">
+						<i class="<?php echo $m['Imagen']?>"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma[$m['Nombre']]?></span> <span class="label label-<?php echo $m['Nombre']=='MisActividades'?"warning":"success";?> hidden-phone"><?php if($m['Nombre']=="MisActividades"){echo $cantagendaactividades['Cantidad'];}else{ echo "0";}?></span>
 					</a>
-					<?php if($_SESSION['Nivel']==1):?>
-                    <a class="btn" href="<?php echo $folder?>mensajes/">
-						<i class="icon-envelope"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma['Mensajes']?></span> <span class="label label-success hidden-phone">0</span>
-					</a>
-                    <?php endif;?>
+                    <?php }?>
 					<!-- Inicio: Menu de usuario -->
 					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title=" <?php echo $Apodo;?>">
 						<i class="icon-user"></i><span class="hidden-phone hidden-tablet"> <?php echo acortarPalabra(capitalizar($NombresSis));?></span>
@@ -103,7 +101,7 @@ switch($Nivel){
                         <li><a href="<?php echo $folder;?>index.php"><i class="icon-home"></i><span> <?php echo $idioma['Inicio']?></span></a>
                         </li>
                         <?php
-                        	foreach($menu->mostrar($Nivel) as $m){
+                        	foreach($menu->mostrar($Nivel,"Lateral") as $m){
 								?>
                                 <li class="funo <?php if ($rmenu==$m['Url']){ echo'active';}?>">
                                 	<a href="#" ><i class="<?php echo $m['Imagen'];?> "></i><span class=""> <?php echo $m['Nombre'];?></span></a>

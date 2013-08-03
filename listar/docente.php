@@ -5,8 +5,7 @@ $docente=new docente;
 if(!isset($cantidad)){
 	$cantidad=2;	
 }
-	?>
-	<?php include_once($folder."cabecerahtml.php");?>
+include_once($folder."cabecerahtml.php");?>
 	<script language="javascript" type="text/javascript" src="<?php echo $folder;?>js/listar/docente.js"></script>
 	<script language="javascript" type="text/javascript" src="<?php echo $folder;?>js/<?php echo $jsFile;?>"></script>
     <script language="javascript" type="text/javascript">

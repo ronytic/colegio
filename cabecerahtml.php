@@ -1,4 +1,25 @@
 <?php include_once("login/check.php");
+include_once("funciones/url.php");
+/*Sacar Url*/
+$url_separada=(separar_url($directory,url_sub()));
+$url_modulo=array_shift($url_separada)."/";
+$url_separada=implode("/",$url_separada);
+/*Fin Sacar Url*/
+include_once("class/menu.php");
+include_once("class/submenu.php");
+$menu=new menu;
+$submenu=new submenu;
+$mv=$menu->verificar($url_modulo,$_SESSION['Nivel']);
+if(!count($mv)){
+	header("Location:".url_base().$directory."login/?u=".$_SERVER['PHP_SELF']);
+}else{
+	$mv=array_shift($mv);
+	if($mv['SubMenu']){
+		if(!count($submenu->verificar($url_separada,$_SESSION['Nivel']))){
+			header("Location:".url_base().$directory."login/?u=".$_SERVER['PHP_SELF']);
+		}
+	}
+}
 /*Agenda de Actividades*/
 include_once("class/agendaactividades.php");
 $agendaac=new agendaactividades;
@@ -27,11 +48,9 @@ if($Nivel==7||$Nivel==6){
 	//header("Location:internet/alumno/");	
 }
 include_once("class/config.php");
-include_once("class/menu.php");
-include_once("class/submenu.php");
+
 include_once("class/usuario.php");
-$menu=new menu;
-$submenu=new submenu;
+
 $config=new config;
 $usuario=new usuario;
 $Titulo=$config->mostrarConfig("Titulo",1);

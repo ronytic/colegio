@@ -2,8 +2,8 @@
 <?php
 include_once(RAIZ."class/curso.php");
 $curso=new curso;
-?>
-<?php include_once($folder."cabecerahtml.php");?>
+
+include_once($folder."cabecerahtml.php");?>
 <script language="javascript" src="<?php echo $folder?>js/listar/curso.js"></script>
 <script language="javascript" src="<?php echo $folder?>js/<?php echo $jsFile?>"></script>
 <script language="javascript" type="text/javascript">
