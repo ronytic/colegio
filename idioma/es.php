@@ -97,6 +97,7 @@ $idioma['NFrecuenciaAccesosSistemaPPFF']="Frecuencia accesos al sistema de Padre
 $idioma['NReporteReprobadosObservaciones']="Reporte de Reprobados con Observaciones";
 $idioma['NPaginaPrincipal']="Página Principal";
 $idioma['NImpresionCodigos']="Impresión de Códigos de Barra";
+$idioma['NModificarCurso']="Modificar Curso";
 //Generales
 $idioma['Cerrar']="Cerrar";
 $idioma['Si']="Si";
@@ -779,6 +780,10 @@ $idioma['NombreAdecuadoBoletin']="Seleccione el Nombre Adecuado que saldrá en e
 $idioma['DeseaEliminarMateria']="¿Desea eliminar esta materia?";
 $idioma['NAsignacionMateriasExportar']="Asignación Materias para Exportar";
 $idioma['MateriaCombinada']="Materia Combinada";
+$idioma['ListadoCursos']="Listado de Cursos";
+$idioma['NoExisteCursosRegistrados']="No existe cursos Registrados";
+$idioma['Abreviado']="Abreviado";
+$idioma['CantidadEtapas']="Cantidad de Etapas";
 
 //Codigo
 $idioma['CodigoBarraActualizado']="Código de Barra Actualizado";

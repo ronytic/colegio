@@ -173,7 +173,7 @@ if($notitotal){
     <script src="<?php echo $folder;?>js/core/plugins/jquery.stickytableheaders.min.js" language="javascript"></script>	
     
     <script src="<?php echo $folder;?>js/core/cargadortotal.js?<?php echo rand()?>" language="javascript"></script>
-    <script language="javascript" src="<?php echo $folder;?>js/core/cargadortotalfinal.js"></script>
+    <script src="<?php echo $folder;?>js/core/cargadortotalfinal.js" language="javascript"></script>
 		<!-- Fin: JavaScript-->
 
 <!--<iframe id="respuestaexcel"></iframe>-->

@@ -72,4 +72,4 @@ $Sigla=$config->mostrarConfig("Sigla",1);
 	<!-- Inicio: Icono -->
 	<link rel="shortcut icon" href="<?php echo $folder;?>imagenes/logos/<?php echo $LogoIcono?>" />
 	<!-- Fin: Icono -->
-	<script src="<?php echo $folder;?>js/core/framework/jquery.js"></script>
+	<script src="<?php echo $folder;?>js/core/framework/jquery.js" language="javascript" type="text/javascript"></script>
