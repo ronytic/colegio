@@ -18,9 +18,10 @@ $BaseDatosInternet=$cnf['Valor'];
 
 $local=mysql_connect($host,$user,$pass);
 mysql_select_db($database,$local);
-
+mysql_query("SET NAMES utf8",$local);
 $inter=mysql_connect($IpInternet.":".$PuertoInternet,$UsuarioInternet,$ContrasenaInternet);
 mysql_select_db($BaseDatosInternet,$inter);
+mysql_query("SET NAMES utf8",$inter);
 foreach($tables_export as $tabla){
 	$consulta = "SELECT * FROM $tabla;";
 	mysql_query("TRUNCATE TABLE $tabla",$inter);
