@@ -10,13 +10,15 @@ include_once("class/submenu.php");
 $menu=new menu;
 $submenu=new submenu;
 $mv=$menu->verificar($url_modulo,$_SESSION['Nivel']);
-if(!count($mv)){
-	header("Location:".url_base().$directory."login/?u=".$_SERVER['PHP_SELF']);
-}else{
-	$mv=array_shift($mv);
-	if($mv['SubMenu']){
-		if(!count($submenu->verificar($url_separada,$_SESSION['Nivel']))){
-			header("Location:".url_base().$directory."login/?u=".$_SERVER['PHP_SELF']);
+if($url_modulo!="/"){//Si no es el index revisar si tiene el permiso adecuado para ingresar al Sistema
+	if(!count($mv)){
+		header("Location:".url_base().$directory."login/?u=".$_SERVER['PHP_SELF']);
+	}else{
+		$mv=array_shift($mv);
+		if($mv['SubMenu']){
+			if(!count($submenu->verificar($url_separada,$_SESSION['Nivel']))){
+				header("Location:".url_base().$directory."login/?u=".$_SERVER['PHP_SELF']);
+			}
 		}
 	}
 }
