@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-include_once("../../basedatos.php");
+include_once("../../basededatos.php");
 include_once("../../class/config.php");
 set_time_limit(5*60);
 //ini_set('max_execution_time',3000);
