@@ -13,6 +13,10 @@ class logusuario extends Bd{
 		$this->campos=array('*');
 		return $this->getRecords("Nivel!='$Tipo'","FechaLog DESC,HoraLog",0,$Cantidad,0,1);
 	}
-	
+	function mostrarUsuariosNivel($Cantidad,$Nivel,$Fecha){
+		$Nivel=$Nivel?"Nivel='$Nivel' and";
+		$this->campos=array('*');
+		return $this->getRecords("$Nivel FechaLog='$Fecha'","FechaLog DESC,HoraLog",0,$Cantidad,0,1);
+	}
 }
 ?>

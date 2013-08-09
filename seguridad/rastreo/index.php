@@ -14,11 +14,11 @@ include_once($folder."cabecerahtml.php");
         	<thead>
             	<tr><th><?php echo $idioma['TiempoActualizacion']?></th><th><?php echo $idioma['NivelUsuario']?></th><th><?php echo $idioma['Fecha']?></th><th></th></tr>
             </thead>
-            <td><input type="number" name="Tiempo" class="span6	" value="5000"><?php echo $idioma['Milisegundos']?></td>
+            <td><input type="number" name="Tiempo" class="span6	" value="15000"><?php echo $idioma['Milisegundos']?></td>
             <td>
             	<select class="span12" name="Nivel">
                 <option value=""><?php echo $idioma['Todos']?></option>
-                <?php echo $_SESSION['Nivel']==1?><option value="1"><?php echo $idioma['Administradores']?></option><?php echo $_SESSION['Nivel']==1?>
+                <?php if($_SESSION['Nivel']==1){?><option value="1"><?php echo $idioma['Administradores']?></option><?php }?>
                 <option value="2"><?php echo $idioma['Directores']?></option>
                 <option value="3"><?php echo $idioma['Docentes']?></option>
                 <option value="4"><?php echo $idioma['Secretaria']?></option>
