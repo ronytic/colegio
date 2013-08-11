@@ -606,7 +606,7 @@ $idioma['DescargarArchivo']="Descargar Archivo";
 $idioma['SeparadorMateria']="Separador de Materia";
 $idioma['SeparadorEstadisticas']="Separador de Estadisticas";
 $idioma['Cantidad']="Cantidad";
-$idioma['NoExisteAccesos']="No Existen Accesos para la Búsqueda Realizada";
+$idioma['NoExisteAccesos']="No existen accesos al sistema para la búsqueda realizada";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
