@@ -544,6 +544,7 @@ $idioma['ComprendoYDeseoGenerar']="Comprendo el peligro y deseo generar de todas
 $idioma['CasillerosNotasCualitativas']="Los casilleros de las Notas Cualitativas para este Periodo fueron";
 $idioma['GeneradosCorrectamente']="Generados Correctamente";
 $idioma['PromedioAnualAlumno']="Promedio Anual de Alumnos";
+$idioma['NoExistenReprobadosParaEstaMateria']="No Existen Reprobados Para Esta Materia";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
