@@ -4,7 +4,7 @@ $folder="../../";
 $titulo="NVerTodosLosAccesos";
 include_once($folder."cabecerahtml.php");
 ?>
-<script language="javascript" type="text/javascript" src="../../js/seguridad/accesossistema.js"></script>
+<script language="javascript" type="text/javascript" src="../../js/seguridad/veraccesos.js"></script>
 <?php include_once($folder."cabecera.php");?>
     <div class="span12 box">
         <div class="box-header"><h2><?php echo $idioma['Configuracion']?></h2></div>

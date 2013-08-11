@@ -14,9 +14,17 @@ if($_SESSION['Nivel']==1){
 }else{
 	$Tipo="1";
 }
-$logu=$logusuario->mostrarUsuariosCantidad(0,$Tipo);
+extract($_POST);
+$Fecha=fecha2Str($Fecha,0);
+$logu=$logusuario->mostrarUsuariosNivel(0,$Nivel,$Fecha);
 ?><ul class="dashboard-list">
 <?php
+if(!count($logu)){
+?>
+<div class="alert alert-info"><?php echo $idioma['NoExisteAccesos']?></div>
+<?php
+exit();	
+}
 foreach($logu as $lu){
 	switch($lu['Nivel']){
 		case "1":{$Usuario=$idioma["Administrador"];
