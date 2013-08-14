@@ -51,7 +51,7 @@ $titulo="NPaginaPrincipal";
     </div>
     <?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2):?>
     <div class="span4 box">
-    	<div class="box-header"><?php echo $idioma['AccesosUsuarioSistema']?><div class="box-icon"><a href="seguridad/accesossistema/" title="<?php echo $idioma["VerTodosLosAccesos"]?>"><i class="icon-plus"></i></a><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizarusuarios"><i class="icon-refresh"></i></a></div></div>
+    	<div class="box-header"><?php echo $idioma['AccesosUsuarioSistema']?><div class="box-icon"><a href="seguridad/veraccesos/" title="<?php echo $idioma["VerTodosLosAccesos"]?>"><i class="icon-plus"></i></a><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizarusuarios"><i class="icon-refresh"></i></a></div></div>
         <div class="box-content" id="listausuario">
         </div>
     </div>
