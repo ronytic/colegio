@@ -19,7 +19,7 @@ function hora(){
 	if(minutos<10){minutos='0'+minutos;}
 	if(segundos<10){ segundos='0'+segundos;}
 	fech=hora+":"+minutos+":"+segundos;
-	$("#hora").html(fech);
+	$("#horaasistencia").html(fech);
 	fecha.setSeconds(fecha.getSeconds()+1);
 	setTimeout("hora()",1000);
 }

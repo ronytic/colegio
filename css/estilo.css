@@ -274,12 +274,12 @@ tr:hover td.celeste{
 .ocultar{
 	display:none;	
 }
-#hora,#fecha{
+#horaasistencia,#fechaasistencia{
 	font-size:5em;
 	line-height:normal !important;
 	text-align:center !important;
 }
-#fecha,.grande{
+#fechaasistencia,.grande{
 	font-size:2em;
 	line-height:normal !important;
 	text-align:center !important;
