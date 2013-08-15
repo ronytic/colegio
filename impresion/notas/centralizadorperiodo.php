@@ -44,7 +44,6 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$registronotas=new registronotas;
 	$cur=$curso->mostrarCurso($CodCurso);
 	$cur=array_shift($cur);
-	$cnf=array_shift($config->mostrarConfig("NotaReprobacion"));
 	$notareprobado=$cur['NotaAprobacion'];
 	$nombresMateriasBoletin=array();
 	foreach($cursomateria->mostrarMaterias($CodCurso) as $materiasbol){
