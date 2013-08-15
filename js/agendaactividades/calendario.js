@@ -71,5 +71,5 @@ function vaciar(){
 		$("#ParaQuien").trigger("liszt:updated")
 	}
 	//window.location.href="./#mostraractividades";
-	$("#vaciarFormulario").click();	
+	//$("#vaciarFormulario").click();	
 }
