@@ -238,6 +238,19 @@ function quitarSimbolos($string){
     $string = str_replace(array("\\", "¨", "º", "-", "~","#", "@", "|", "!", "\"","·", "$", "%", "&", "/","(", ")", "?", "'", "¡","¿", "[", "^", "`", "]","+", "}", "{", "¨", "´",">", "< ", ";", ",", ":",".", " "),'',$string);
     return $string;
 }
+function todoLista($datos,$k,$v,$separador=" "){
+	$data=array();
+	foreach($datos as $d){
+		$valor=array();
+		foreach(explode(",",$v) as $val){
+			array_push($valor,$d[$val]);
+		}
+		$valor=implode(" ".$separador." ",$valor);
+		$data[$d[$k]]=$valor;
+	}
+	return $data;
+}
+
 function porcentaje($cantidad,$total,$decimal=0){
 	return round((($cantidad*100)/$total),$decimal);
 }

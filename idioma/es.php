@@ -788,7 +788,15 @@ $idioma['ListadoCursos']="Listado de Cursos";
 $idioma['NoExisteCursosRegistrados']="No existe cursos Registrados";
 $idioma['Abreviado']="Abreviado";
 $idioma['CantidadEtapas']="Cantidad de Etapas";
-
+$idioma['MensajeEliminar']="¿Seguro que desea ELIMINAR ESTE CURSO?";
+$idioma['MensajeModificar']="¿Seguro que desea Modificar ESTE CURSO?";
+$idioma['NotaModificar']="Nota: Es un Riegoso Modificar un curso, por que afectaria al correcto funcionamiento del Sistema con los datos registrado Anteriormente";
+$idioma['NotaEliminar']="Nota: Es Muy Riegoso eliminar un curso cuando se comenzo la Gestión Educativa, se Recomienda realizarlo antes del inicio de La Gestión, antes de las Inscripciones";
+$idioma['AreaCurso']="Área de Curso";
+$idioma['DescripcionEtapa']="La Cantidad de Etapas involucra la cantidad de Trimestre o la Cantidad de Bimestres respectivamente.";
+$idioma['Orden']="Orden o Posición";
+$idioma['DescripcionOrden']="Indica el Orden que saldra todos los cursos en la lista total y el posición que usted indique";
+$idioma['NuevoCurso']="Nuevo Curso";
 //Codigo
 $idioma['CodigoBarraActualizado']="Código de Barra Actualizado";
 $idioma['CodigosBarraCurso']="Códigos de Barra por Curso";
