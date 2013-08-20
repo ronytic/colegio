@@ -178,10 +178,10 @@ if(isset($_POST)){
             	<td>
                 	<?php
                     switch($tipo){
-						case 1:{?><div class="cverde" title="<?php echo $mensaje?>"></div><?php }break;
-						case 2:{?><div class="cazul" title="<?php echo $mensaje?>"></div><?php }break;
-						case 3:{?><div class="cnaranja" title="<?php echo $mensaje?>"></div><?php }break;
-						case 4:{?><div class="cnegro" title="<?php echo $mensaje?>"></div><?php }break;	
+						case 1:{?><div class="cverde lateral" title="<?php echo $mensaje?>"></div><?php }break;
+						case 2:{?><div class="cazul lateral" title="<?php echo $mensaje?>"></div><?php }break;
+						case 3:{?><div class="cnaranja lateral" title="<?php echo $mensaje?>"></div><?php }break;
+						case 4:{?><div class="cnegro lateral" title="<?php echo $mensaje?>"></div><?php }break;	
 					}
 					?><?php if($a['Resaltar']){?><div class="crojo" title="<?php echo $idioma['Importante']?>"></div><?php }?></td>
                 <td class="<?php echo $resaltar?>"><?php echo capitalizar($al['Paterno'])?> <?php echo capitalizar(acortarPalabra($al['Nombres']))?></td>

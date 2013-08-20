@@ -20,7 +20,9 @@ function inicio(){
 	$('ul.r-listado li a').tooltip();
 	$('span[title]').tooltip();
 	$('a[title]').tooltip({'placement':'bottom'});
-	$('div[title]').tooltip({'placement':'bottom'});
+	
+	$('div[title]:not(.lateral)').tooltip({'placement':'bottom'});
+	$('div.lateral').tooltip({'placement':'right'});
 	$('a[data-rel="tooltip"]').tooltip();
 	//FIN de INICIO
 	$(document).ajaxStart(function() {
@@ -45,7 +47,8 @@ function inicio(){
 		/*Fin Gestionar Tabla*/
 		$('span[title]').tooltip();
 		$('a[title]').tooltip({'placement':'bottom'});
-		$('div[title]').tooltip({'placement':'bottom'});
+		$('div[title]:not(.lateral)').tooltip({'placement':'bottom'});
+		$('div.lateral').tooltip({'placement':'right'});
 		$('a[data-rel="tooltip"]').tooltip();
 		//pestañas horizontales corregir
 		$('.tabbable a').click(function (e) {
