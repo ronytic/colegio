@@ -9,32 +9,137 @@ if(isset($_POST)){
                                 <option value="1">Hombres</option>
                                 <option value="0">Mujeres</option>
                             </select></td></tr>-->
-        <tr><td><?php echo $idioma['Campo1']?></td><td><select name="campo1" class="input-medium span10">
+        <tr><td><?php echo $idioma['Columna1']?></td><td><select name="campo1" class="input-medium span10">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
         						<option value="FechaNac"><?php echo $idioma['FechaNac']?></option>
                                 <option value="Ci"><?php echo $idioma['Ci']?></option>
+                                <option value="Zona"><?php echo $idioma['Zona']?></option>
+                                <option value="Calle"><?php echo $idioma['Calle']?></option>
+                                <option value="Numero"><?php echo $idioma['Numero']?></option>
                                 <option value="TelefonoCasa"><?php echo $idioma['TelefonoCasa']?></option>
+                                <option value="Celular"><?php echo $idioma['Celular']?></option>
                                 <option value="Rude"><?php echo $idioma['Rude']?></option>
+                                <option value="Procedencia"><?php echo $idioma['Procedencia']?></option>
+                                <option value="Observaciones"><?php echo $idioma['Observaciones']?></option>
+                                <option value="ApellidosPadre"><?php echo $idioma['ApellidosPadre']?></option>
+                                <option value="NombrePadre"><?php echo $idioma['NombrePadre']?></option>
+                                <option value="CiPadre"><?php echo $idioma['CiPadre']?></option>
+                                <option value="OcupPadre"><?php echo $idioma['OcupacionPadre']?></option>
                                 <option value="CelularP"><?php echo $idioma['CelularP']?></option>
-								<option value="CelularM"><?php echo $idioma['CelularM']?></option>
+                                <option value="ApellidosMadre"><?php echo $idioma['ApellidosMadre']?></option>
+                                <option value="NombreMadre"><?php echo $idioma['NombreMadre']?></option>
+                                <option value="CiMadre"><?php echo $idioma['CiMadre']?></option>
+                                <option value="OcupMadre"><?php echo $idioma['OcupacionMadre']?></option>
+                                <option value="CelularM"><?php echo $idioma['CelularM']?></option>
+                                <option value="Email"><?php echo $idioma['Email']?></option>
+                                <option value="Nit"><?php echo $idioma['Nit']?></option>
+                                <option value="FacturaA"><?php echo $idioma['NombreFacturar']?></option>
+                                <option value="UsuarioAlumno"><?php echo $idioma['UsuarioAlumno']?></option>
+                                <option value="Password"><?php echo $idioma['Contrasena']?></option>
+                                <option value="UsuarioPadre"><?php echo $idioma['UsuarioPadre']?></option>
+                                <option value="PasswordP"><?php echo $idioma['ContrasenaPadre']?></option>
+                                <option value="CodBarra"><?php echo $idioma['CodigoBarra']?></option>
+                                <option value="FechaIns"><?php echo $idioma['FechaInscripcion']?></option>
+                                <option value="HoraIns"><?php echo $idioma['HoraInscripcion']?></option>
 								</select></td></tr>
-         <tr><td><?php echo $idioma['Campo2']?></td><td><select name="campo2" class="input-medium span10">
+         <tr><td><?php echo $idioma['Columna2']?></td><td><select name="campo2" class="input-medium span10">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
         						<option value="FechaNac"><?php echo $idioma['FechaNac']?></option>
                                 <option value="Ci"><?php echo $idioma['Ci']?></option>
+                                <option value="Zona"><?php echo $idioma['Zona']?></option>
+                                <option value="Calle"><?php echo $idioma['Calle']?></option>
+                                <option value="Numero"><?php echo $idioma['Numero']?></option>
                                 <option value="TelefonoCasa"><?php echo $idioma['TelefonoCasa']?></option>
+                                <option value="Celular"><?php echo $idioma['Celular']?></option>
                                 <option value="Rude"><?php echo $idioma['Rude']?></option>
+                                <option value="Procedencia"><?php echo $idioma['Procedencia']?></option>
+                                <option value="Observaciones"><?php echo $idioma['Observaciones']?></option>
+                                <option value="ApellidosPadre"><?php echo $idioma['ApellidosPadre']?></option>
+                                <option value="NombrePadre"><?php echo $idioma['NombrePadre']?></option>
+                                <option value="CiPadre"><?php echo $idioma['CiPadre']?></option>
+                                <option value="OcupPadre"><?php echo $idioma['OcupacionPadre']?></option>
                                 <option value="CelularP"><?php echo $idioma['CelularP']?></option>
-								<option value="CelularM"><?php echo $idioma['CelularM']?></option>
+                                <option value="ApellidosMadre"><?php echo $idioma['ApellidosMadre']?></option>
+                                <option value="NombreMadre"><?php echo $idioma['NombreMadre']?></option>
+                                <option value="CiMadre"><?php echo $idioma['CiMadre']?></option>
+                                <option value="OcupMadre"><?php echo $idioma['OcupacionMadre']?></option>
+                                <option value="CelularM"><?php echo $idioma['CelularM']?></option>
+                                <option value="Email"><?php echo $idioma['Email']?></option>
+                                <option value="Nit"><?php echo $idioma['Nit']?></option>
+                                <option value="FacturaA"><?php echo $idioma['NombreFacturar']?></option>
+                                <option value="UsuarioAlumno"><?php echo $idioma['UsuarioAlumno']?></option>
+                                <option value="Password"><?php echo $idioma['Contrasena']?></option>
+                                <option value="UsuarioPadre"><?php echo $idioma['UsuarioPadre']?></option>
+                                <option value="PasswordP"><?php echo $idioma['ContrasenaPadre']?></option>
+                                <option value="CodBarra"><?php echo $idioma['CodigoBarra']?></option>
+                                <option value="FechaIns"><?php echo $idioma['FechaInscripcion']?></option>
+                                <option value="HoraIns"><?php echo $idioma['HoraInscripcion']?></option>
 								</select></td></tr>
-		<tr><td><?php echo $idioma['Campo3']?></td><td><select name="campo3" class="input-medium span10">
+		<tr><td><?php echo $idioma['Columna3']?></td><td><select name="campo3" class="input-medium span10">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
         						<option value="FechaNac"><?php echo $idioma['FechaNac']?></option>
                                 <option value="Ci"><?php echo $idioma['Ci']?></option>
+                                <option value="Zona"><?php echo $idioma['Zona']?></option>
+                                <option value="Calle"><?php echo $idioma['Calle']?></option>
+                                <option value="Numero"><?php echo $idioma['Numero']?></option>
                                 <option value="TelefonoCasa"><?php echo $idioma['TelefonoCasa']?></option>
+                                <option value="Celular"><?php echo $idioma['Celular']?></option>
                                 <option value="Rude"><?php echo $idioma['Rude']?></option>
+                                <option value="Procedencia"><?php echo $idioma['Procedencia']?></option>
+                                <option value="Observaciones"><?php echo $idioma['Observaciones']?></option>
+                                <option value="ApellidosPadre"><?php echo $idioma['ApellidosPadre']?></option>
+                                <option value="NombrePadre"><?php echo $idioma['NombrePadre']?></option>
+                                <option value="CiPadre"><?php echo $idioma['CiPadre']?></option>
+                                <option value="OcupPadre"><?php echo $idioma['OcupacionPadre']?></option>
                                 <option value="CelularP"><?php echo $idioma['CelularP']?></option>
-								<option value="CelularM"><?php echo $idioma['CelularM']?></option>
+                                <option value="ApellidosMadre"><?php echo $idioma['ApellidosMadre']?></option>
+                                <option value="NombreMadre"><?php echo $idioma['NombreMadre']?></option>
+                                <option value="CiMadre"><?php echo $idioma['CiMadre']?></option>
+                                <option value="OcupMadre"><?php echo $idioma['OcupacionMadre']?></option>
+                                <option value="CelularM"><?php echo $idioma['CelularM']?></option>
+                                <option value="Email"><?php echo $idioma['Email']?></option>
+                                <option value="Nit"><?php echo $idioma['Nit']?></option>
+                                <option value="FacturaA"><?php echo $idioma['NombreFacturar']?></option>
+                                <option value="UsuarioAlumno"><?php echo $idioma['UsuarioAlumno']?></option>
+                                <option value="Password"><?php echo $idioma['Contrasena']?></option>
+                                <option value="UsuarioPadre"><?php echo $idioma['UsuarioPadre']?></option>
+                                <option value="PasswordP"><?php echo $idioma['ContrasenaPadre']?></option>
+                                <option value="CodBarra"><?php echo $idioma['CodigoBarra']?></option>
+                                <option value="FechaIns"><?php echo $idioma['FechaInscripcion']?></option>
+                                <option value="HoraIns"><?php echo $idioma['HoraInscripcion']?></option>
+								</select></td></tr>
+		  <tr><td><?php echo $idioma['Columna4']?></td><td><select name="campo4" class="input-medium span10">
+        						<option value=""><?php echo $idioma['Ninguno']?></option>
+        						<option value="FechaNac"><?php echo $idioma['FechaNac']?></option>
+                                <option value="Ci"><?php echo $idioma['Ci']?></option>
+                                <option value="Zona"><?php echo $idioma['Zona']?></option>
+                                <option value="Calle"><?php echo $idioma['Calle']?></option>
+                                <option value="Numero"><?php echo $idioma['Numero']?></option>
+                                <option value="TelefonoCasa"><?php echo $idioma['TelefonoCasa']?></option>
+                                <option value="Celular"><?php echo $idioma['Celular']?></option>
+                                <option value="Rude"><?php echo $idioma['Rude']?></option>
+                                <option value="Procedencia"><?php echo $idioma['Procedencia']?></option>
+                                <option value="Observaciones"><?php echo $idioma['Observaciones']?></option>
+                                <option value="ApellidosPadre"><?php echo $idioma['ApellidosPadre']?></option>
+                                <option value="NombrePadre"><?php echo $idioma['NombrePadre']?></option>
+                                <option value="CiPadre"><?php echo $idioma['CiPadre']?></option>
+                                <option value="OcupPadre"><?php echo $idioma['OcupacionPadre']?></option>
+                                <option value="CelularP"><?php echo $idioma['CelularP']?></option>
+                                <option value="ApellidosMadre"><?php echo $idioma['ApellidosMadre']?></option>
+                                <option value="NombreMadre"><?php echo $idioma['NombreMadre']?></option>
+                                <option value="CiMadre"><?php echo $idioma['CiMadre']?></option>
+                                <option value="OcupMadre"><?php echo $idioma['OcupacionMadre']?></option>
+                                <option value="CelularM"><?php echo $idioma['CelularM']?></option>
+                                <option value="Email"><?php echo $idioma['Email']?></option>
+                                <option value="Nit"><?php echo $idioma['Nit']?></option>
+                                <option value="FacturaA"><?php echo $idioma['NombreFacturar']?></option>
+                                <option value="UsuarioAlumno"><?php echo $idioma['UsuarioAlumno']?></option>
+                                <option value="Password"><?php echo $idioma['Contrasena']?></option>
+                                <option value="UsuarioPadre"><?php echo $idioma['UsuarioPadre']?></option>
+                                <option value="PasswordP"><?php echo $idioma['ContrasenaPadre']?></option>
+                                <option value="CodBarra"><?php echo $idioma['CodigoBarra']?></option>
+                                <option value="FechaIns"><?php echo $idioma['FechaInscripcion']?></option>
+                                <option value="HoraIns"><?php echo $idioma['HoraInscripcion']?></option>
 								</select></td></tr>
           <tr><td><?php echo $idioma['DibujarBorde']?></td><td><input type="checkbox" name="borde"/></td></tr>
           <tr><td><?php echo $idioma['DibujarSombreado']?></td><td><input type="checkbox" name="sombreado" checked="checked"/></td></tr>

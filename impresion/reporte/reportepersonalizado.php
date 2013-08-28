@@ -31,9 +31,10 @@ class PDF extends PPDF
 		$this->TituloCabecera(30,$idioma["Materno"]);
 		$this->TituloCabecera(45,$idioma["Nombres"]);
 		if(!$Blanco){
-			$this->TituloCabecera(47,$idioma[$Campo1],"10",$Borde);
-			$this->TituloCabecera(47,$idioma[$Campo2],"10",$Borde);
-			$this->TituloCabecera(46,$idioma[$Campo3],"10",$Borde);
+			$this->TituloCabecera(35,$idioma[$Campo1],"10",$Borde);
+			$this->TituloCabecera(35,$idioma[$Campo2],"10",$Borde);
+			$this->TituloCabecera(35,$idioma[$Campo3],"10",$Borde);
+			$this->TituloCabecera(35,$idioma[$Campo4],"10",$Borde);
 		}else{
 			switch($Cantidad)
 					{
@@ -42,7 +43,11 @@ class PDF extends PPDF
 								  $this->TituloCabecera(70,"","10",$Borde);}break;
 						case "3":{$this->TituloCabecera(47,"","10",$Borde);
 								  $this->TituloCabecera(47,"","10",$Borde);
-								  $this->TituloCabecera(46,"","10",$Borde);}break;	
+								  $this->TituloCabecera(46,"","10",$Borde);}break;
+						case "4":{$this->TituloCabecera(35,"","10",$Borde);
+								  $this->TituloCabecera(35,"","10",$Borde);
+								  $this->TituloCabecera(35,"","10",$Borde);
+								  $this->TituloCabecera(35,"","10",$Borde);}break;
 					}
 		}
 	}	
@@ -68,30 +73,39 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 		if(!$Blanco){
 			if($Campo1!=""){
 				if($Campo1=="FechaNac"){
-					$pdf->CuadroCuerpo(47,date("d-m-Y",strtotime($al[$Campo1])),$Somb,"R",$Borde);
+					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo1]),$Somb,"R",$Borde);
 				}else{
-					$pdf->CuadroCuerpo(47,mb_strtoupper($al[$Campo1]),$Somb,"",$Borde,9);
+					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo1]),$Somb,"",$Borde,9);
 				}
 			}else{
-				$pdf->CuadroCuerpo(47,"",$Somb,"",$Borde);
+				$pdf->CuadroCuerpo(35,"",$Somb,"",$Borde);
 			}
 			if($Campo2!=""){
 				if($Campo2=="FechaNac"){
-					$pdf->CuadroCuerpo(47,date("d-m-Y",strtotime($al[$Campo2])),$Somb,"R",$Borde);
+					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo2]),$Somb,"R",$Borde);
 				}else{
-					$pdf->CuadroCuerpo(47,mb_strtoupper($al[$Campo2]),$Somb,"",$Borde,9);
+					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo2]),$Somb,"",$Borde,9);
 				}
 			}else{
-				$pdf->CuadroCuerpo(47,"",$Somb,"",$Borde);
+				$pdf->CuadroCuerpo(35,"",$Somb,"",$Borde);
 			}
 			if($Campo3!=""){
 				if($Campo3=="FechaNac"){
-					$pdf->CuadroCuerpo(46,date("d-m-Y",strtotime($al[$Campo3])),$Somb,"R",$Borde);
+					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo3]),$Somb,"R",$Borde);
 				}else{
-					$pdf->CuadroCuerpo(46,mb_strtoupper($al[$Campo3]),$Somb,"",$Borde,9);
+					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo3]),$Somb,"",$Borde,9);
 				}
 			}else{
-				$pdf->CuadroCuerpo(46,"",$Somb,"",$Borde);
+				$pdf->CuadroCuerpo(35,"",$Somb,"",$Borde);
+			}
+			if($Campo4!=""){
+				if($Campo3=="FechaNac"){
+					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo3]),$Somb,"R",$Borde);
+				}else{
+					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo3]),$Somb,"",$Borde,9);
+				}
+			}else{
+				$pdf->CuadroCuerpo(35,"",$Somb,"",$Borde);
 			}
 		}else{
 			switch($Cantidad)
@@ -101,7 +115,11 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 						$pdf->CuadroCuerpo(70,"",$Somb,"",1);}break;
 				case "3":{$pdf->CuadroCuerpo(47,"",$Somb,"",1);
 						$pdf->CuadroCuerpo(47,"",$Somb,"",1);
-						$pdf->CuadroCuerpo(46,"",$Somb,"",1);}break;	
+						$pdf->CuadroCuerpo(46,"",$Somb,"",1);}break;
+				case "4":{$pdf->CuadroCuerpo(35,"",$Somb,"",1);
+						$pdf->CuadroCuerpo(35,"",$Somb,"",1);
+						$pdf->CuadroCuerpo(35,"",$Somb,"",1);
+						$pdf->CuadroCuerpo(35,"",$Somb,"",1);}break;		
 			}
 			
 		}
