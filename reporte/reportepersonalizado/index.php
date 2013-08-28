@@ -7,7 +7,7 @@ $subtitulo2="Reporte";
 $icono1="icon-cog";
 $icono2="icon-file";
 $folder="../../";
-$jsFile="reporte/reportepersonalizdo.js";
+$jsFile="reporte/reportepersonalizado.js";
 $archivoInicial="formulario.php";
 include_once("../../listar/curso.php");
 ?>

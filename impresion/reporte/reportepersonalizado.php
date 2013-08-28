@@ -14,7 +14,7 @@ $Borde=$_GET['Borde'];
 $Blanco=$_GET['Blanco'];
 $Cantidad=$_GET['Cantidad'];
 $Sombreado=$_GET['Sombreado'];
-$Sexo=2;
+$Sexo=$_GET['Sexo'];
 if($Borde=="checked"){$Borde=1;}else{$Borde=0;}
 if($Blanco=="checked"){$Blanco=true;}else{$Blanco=false;}
 if($Sombreado=="checked"){$Sombreado=true;}else{$Sombreado=false;}
@@ -72,7 +72,7 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 		$pdf->CuadroCuerpo(45,capitalizar($al['Nombres'],"utf8"),$Somb,"",$Borde);
 		if(!$Blanco){
 			if($Campo1!=""){
-				if($Campo1=="FechaNac"){
+				if($Campo1=="FechaNac" || $Campo1=="FechaIns"){
 					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo1]),$Somb,"R",$Borde);
 				}else{
 					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo1]),$Somb,"",$Borde,9);
@@ -81,7 +81,7 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 				$pdf->CuadroCuerpo(35,"",$Somb,"",$Borde);
 			}
 			if($Campo2!=""){
-				if($Campo2=="FechaNac"){
+				if($Campo2=="FechaNac" || $Campo2=="FechaIns"){
 					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo2]),$Somb,"R",$Borde);
 				}else{
 					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo2]),$Somb,"",$Borde,9);
@@ -90,7 +90,7 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 				$pdf->CuadroCuerpo(35,"",$Somb,"",$Borde);
 			}
 			if($Campo3!=""){
-				if($Campo3=="FechaNac"){
+				if($Campo3=="FechaNac" || $Campo3=="FechaIns"){
 					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo3]),$Somb,"R",$Borde);
 				}else{
 					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo3]),$Somb,"",$Borde,9);
@@ -99,7 +99,7 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 				$pdf->CuadroCuerpo(35,"",$Somb,"",$Borde);
 			}
 			if($Campo4!=""){
-				if($Campo3=="FechaNac"){
+				if($Campo4=="FechaNac" || $Campo4=="FechaIns"){
 					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo3]),$Somb,"R",$Borde);
 				}else{
 					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo3]),$Somb,"",$Borde,9);

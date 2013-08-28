@@ -280,6 +280,7 @@ $idioma['DatosPersonales']="Datos Personales";
 $idioma['DatosAlumnos']="Datos Alumnos";
 $idioma['DatosFactura']="Datos Factura";
 $idioma['DatosPadreFamilia']="Datos Padre de Familia";
+$idioma['DatosMadreFamilia']="Datos Madre de Familia";
 $idioma['ApellidosPadre']="Apellidos Padre";
 $idioma['NombrePadre']="Nombre Padre";
 $idioma['CiPadre']="C.I. Padre";
@@ -410,6 +411,9 @@ $idioma['DibujarSombra']="Dibujar Sombra";
 $idioma['SoloCasillasBlanco']="Solo Casillas en Blanco";
 $idioma['DibujarSombreado']="Dibujar Sombreado";
 $idioma['Ver']="Ver";
+$idioma['Seguridad']="Seguridad";
+$idioma['OtrosDatos']="Otros Datos";
+$idioma['DatosAlumno']="Datos Alumno";
 //Docente
 $idioma['FrecuenciaAcceso']="Frecuencia de Accesos";
 $idioma['CantidadAcceso']="Cantidad de Accesos";
