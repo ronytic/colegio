@@ -99,6 +99,7 @@ $idioma['NPaginaPrincipal']="Página Principal";
 $idioma['NImpresionCodigos']="Impresión de Códigos de Barra";
 $idioma['NModificarCurso']="Modificar Curso";
 $idioma['NVerTodosLosAccesos']="Ver Todos los Accesos";
+$idioma['NModificarNotasCualitativasDocentes']="Modificar Notas Cualitativas de Docentes";
 //Generales
 $idioma['Cerrar']="Cerrar";
 $idioma['Si']="Si";
@@ -554,6 +555,7 @@ $idioma['CasillerosNotasCualitativas']="Los casilleros de las Notas Cualitativas
 $idioma['GeneradosCorrectamente']="Generados Correctamente";
 $idioma['PromedioAnualAlumno']="Promedio Anual de Alumnos";
 $idioma['NoExistenReprobadosParaEstaMateria']="No existen reprobados para esta Materia";
+$idioma['PulseBotonParaGuardar']="Pulse el Botón para Guardar, si no pulsa  no se guardara ningún dato";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";

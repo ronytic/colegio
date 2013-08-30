@@ -19,6 +19,21 @@ if(!empty($_GET)){
 	$cur=array_shift($cur);
 	
 	if($cur['Bimestre']){
+		$texto="Bimestre";	
+	}else{
+		$texto="Trimestre";	
+	}
+	$LimiteInicio1=$config->mostrarConfig("LimiteInicio1".$texto,1);
+	$LimiteFin1=$config->mostrarConfig("LimiteFin1".$texto,1);
+	$LimiteInicio2=$config->mostrarConfig("LimiteInicio2".$texto,1);
+	$LimiteFin2=$config->mostrarConfig("LimiteFin2".$texto,1);
+	$LimiteInicio3=$config->mostrarConfig("LimiteInicio3".$texto,1);
+	$LimiteFin3=$config->mostrarConfig("LimiteFin3".$texto,1);
+	$LimiteInicio4=$config->mostrarConfig("LimiteInicio4".$texto,1);
+	$LimiteFin4=$config->mostrarConfig("LimiteFin4".$texto,1);
+	$LimiteLetras=$config->mostrarConfig("LimiteLetras".$texto,1);
+	
+	if($cur['Bimestre']){
 		$InicioBimestre1=$config->mostrarConfig("InicioBimestre1",1);
 		$FinBimestre1=$config->mostrarConfig("FinBimestre1",1);
 		$InicioBimestre2=$config->mostrarConfig("InicioBimestre2",1);
@@ -138,26 +153,26 @@ if(!empty($_GET)){
 			if($Trimestre=="todo"){
 				/**/
 				if($cur['Bimestre']){
-				$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre1,$FinBimestre1));
-				$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre1,$FinBimestre1));
-				$Atrasos1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioBimestre1,$FinBimestre1));
+					$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre1,$FinBimestre1));
+					$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre1,$FinBimestre1));
+					$Atrasos1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioBimestre1,$FinBimestre1));
 				
-				$faltasConLic2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre2,$FinBimestre2));
-				$faltasSinLic2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre2,$FinBimestre2));
-				$Atrasos2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioBimestre2,$FinBimestre2));
+					$faltasConLic2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre2,$FinBimestre2));
+					$faltasSinLic2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre2,$FinBimestre2));
+					$Atrasos2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioBimestre2,$FinBimestre2));
 				
-				$faltasConLic3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre3,$FinBimestre3));
-				$faltasSinLic3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre3,$FinBimestre3));
-				$Atrasos3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioBimestre3,$FinBimestre3));
+					$faltasConLic3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre3,$FinBimestre3));
+					$faltasSinLic3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre3,$FinBimestre3));
+					$Atrasos3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioBimestre3,$FinBimestre3));
 				
-				$faltasConLic4=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre4,$FinBimestre4));
-				$faltasSinLic4=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre4,$FinBimestre4));
-				$Atrasos4=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioBimestre4,$FinBimestre4));
+					$faltasConLic4=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre4,$FinBimestre4));
+					$faltasSinLic4=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre4,$FinBimestre4));
+					$Atrasos4=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioBimestre4,$FinBimestre4));
 				/**/
-				$r1=array_shift($registronotas->mostrarRegistroNotas($cas1['CodCasilleros'],$al['CodAlumno'],1));
-				$r2=array_shift($registronotas->mostrarRegistroNotas($cas2['CodCasilleros'],$al['CodAlumno'],2));
-				$r3=array_shift($registronotas->mostrarRegistroNotas($cas3['CodCasilleros'],$al['CodAlumno'],3));
-				$r4=array_shift($registronotas->mostrarRegistroNotas($cas4['CodCasilleros'],$al['CodAlumno'],4));
+					$r1=array_shift($registronotas->mostrarRegistroNotas($cas1['CodCasilleros'],$al['CodAlumno'],1));
+					$r2=array_shift($registronotas->mostrarRegistroNotas($cas2['CodCasilleros'],$al['CodAlumno'],2));
+					$r3=array_shift($registronotas->mostrarRegistroNotas($cas3['CodCasilleros'],$al['CodAlumno'],3));
+					$r4=array_shift($registronotas->mostrarRegistroNotas($cas4['CodCasilleros'],$al['CodAlumno'],4));
 				//$promedioAnual=number_format(($r1['NotaFinal']+$r2['NotaFinal']+$r3['NotaFinal'])/3,0);
 				/*$fila[]="N1";
 				$fila[]="N2";
@@ -287,60 +302,76 @@ if(!empty($_GET)){
 						$r4=array_shift($registronotas->mostrarRegistroNotas($cas4['CodCasilleros'],$al['CodAlumno'],4));
 						//$promedioAnual=number_format(($r1['NotaFinal']+$r2['NotaFinal']+$r3['NotaFinal'])/3,0);
 						
-						
 						$ncuali1=array_shift($notascualitativa->mostrarNota($cas1['CodDocenteMateriaCurso'],1));
 						$ncuali2=array_shift($notascualitativa->mostrarNota($cas2['CodDocenteMateriaCurso'],2));
 						$ncuali3=array_shift($notascualitativa->mostrarNota($cas3['CodDocenteMateriaCurso'],3));
 						
 						$fila[]=$r1['NotaFinal'];
-						if($r1['NotaFinal']>=1 && $r1['NotaFinal']<=35){
+						if($r1['NotaFinal']>=$LimiteInicio1 && $r1['NotaFinal']<=$LimiteFin1){
 							$fila[]=mb_strtoupper($ncuali1['PrimerRango'],"utf8");
 							
-						}elseif($r1['NotaFinal']>=36 && $r1['NotaFinal']<=49){
+						}elseif($r1['NotaFinal']>=$LimiteInicio2 && $r1['NotaFinal']<=$LimiteFin2){
 							$fila[]=mb_strtoupper($ncuali1['SegundoRango'],"utf8");
 							
-						}elseif($r1['NotaFinal']>=50 && $r1['NotaFinal']<=60){
+						}elseif($r1['NotaFinal']>=$LimiteInicio3 && $r1['NotaFinal']<=$LimiteFin3){
 							$fila[]=mb_strtoupper($ncuali1['TercerRango'],"utf8");
 							
-						}elseif($r1['NotaFinal']>=61 && $r1['NotaFinal']<=70){
+						}elseif($r1['NotaFinal']>=$LimiteInicio4 && $r1['NotaFinal']<=$LimiteFin4){
 							$fila[]=mb_strtoupper($ncuali1['CuartoRango'],"utf8");
 						}
 
 						$fila[]=$r2['NotaFinal'];
-						if($r2['NotaFinal']>=1 && $r2['NotaFinal']<=35){
+						if($r2['NotaFinal']>=$LimiteInicio1 && $r2['NotaFinal']<=$LimiteFin1){
 							$fila[]=mb_strtoupper($ncuali2['PrimerRango'],"utf8");
 							
-						}elseif($r2['NotaFinal']>=36 && $r2['NotaFinal']<=49){
+						}elseif($r2['NotaFinal']>=$LimiteInicio2 && $r2['NotaFinal']<=$LimiteFin2){
 							$fila[]=mb_strtoupper($ncuali2['SegundoRango'],"utf8");
 							
-						}elseif($r2['NotaFinal']>=50 && $r2['NotaFinal']<=60){
+						}elseif($r2['NotaFinal']>=$LimiteInicio3 && $r2['NotaFinal']<=$LimiteFin3){
 							$fila[]=mb_strtoupper($ncuali2['TercerRango'],"utf8");
 							
-						}elseif($r2['NotaFinal']>=61 && $r2['NotaFinal']<=70){
+						}elseif($r2['NotaFinal']>=$LimiteInicio4 && $r2['NotaFinal']<=$LimiteFin4){
 							$fila[]=mb_strtoupper($ncuali2['CuartoRango'],"utf8");
 						}
 						
 						$fila[]=$r3['NotaFinal'];
-						if($r3['NotaFinal']>=1 && $r3['NotaFinal']<=35){
+						if($r3['NotaFinal']>=$LimiteInicio1 && $r3['NotaFinal']<=$LimiteFin1){
 							$fila[]=mb_strtoupper($ncuali3['PrimerRango'],"utf8");
 							
-						}elseif($r3['NotaFinal']>=36 && $r3['NotaFinal']<=49){
+						}elseif($r3['NotaFinal']>=$LimiteInicio2 && $r3['NotaFinal']<=$LimiteFin2){
 							$fila[]=mb_strtoupper($ncuali3['SegundoRango'],"utf8");
 							
-						}elseif($r3['NotaFinal']>=50 && $r3['NotaFinal']<=60){
+						}elseif($r3['NotaFinal']>=$LimiteInicio3 && $r3['NotaFinal']<=$LimiteFin3){
 							$fila[]=mb_strtoupper($ncuali3['TercerRango'],"utf8");
 							
-						}elseif($r3['NotaFinal']>=61 && $r3['NotaFinal']<=70){
+						}elseif($r3['NotaFinal']>=$LimiteInicio4 && $r3['NotaFinal']<=$LimiteFin4){
 							$fila[]=mb_strtoupper($ncuali3['CuartoRango'],"utf8");
 						}
+						if($cur['Bimestre']){
+							$fila[]=$r4['NotaFinal'];
+							if($r4['NotaFinal']>=$LimiteInicio1 && $r4['NotaFinal']<=$LimiteFin1){
+								$fila[]=mb_strtoupper($ncuali4['PrimerRango'],"utf8");
+								
+							}elseif($r4['NotaFinal']>=$LimiteInicio2 && $r4['NotaFinal']<=$LimiteFin2){
+								$fila[]=mb_strtoupper($ncuali4['SegundoRango'],"utf8");
+								
+							}elseif($r4['NotaFinal']>=$LimiteInicio3 && $r4['NotaFinal']<=$LimiteFin3){
+								$fila[]=mb_strtoupper($ncuali4['TercerRango'],"utf8");
+								
+							}elseif($r4['NotaFinal']>=$LimiteInicio4 && $r4['NotaFinal']<=$LimiteFin4){
+								$fila[]=mb_strtoupper($ncuali4['CuartoRango'],"utf8");
+							}
 						
-						
-						$fila[]=$r4['Nota2'];
-						if($r4['Nota2']!=0){
-							$sw=1;	
+						}else{
+								if($r4['Nota'])
+								$fila[]=$r4['Nota2'];
+								if($r4['Nota2']!=0){
+									$sw=1;	
+								}
 						}
 					}
 				}		
+				/*
 				if($SeparadorEstadisticas!=""){
 					$fila[]=$SeparadorEstadisticas;	
 				}
@@ -361,6 +392,7 @@ if(!empty($_GET)){
 				$fila[]=$faltasConLic3['Cantidad'];
 				$fila[]=$faltasSinLic3['Cantidad'];
 				$fila[]=$Atrasos3['Cantidad'];
+				*/
 			}else{
 				$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
 				$fila[]=$r['NotaFinal'];
@@ -372,9 +404,23 @@ if(!empty($_GET)){
 				$fila[]=0;	
 			}
 			array_push($datos,$fila);
+			//print_r($fila);
+			//echo "<br>";
 		}
+	tabla($datos);
 	
-	
-	archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));
+	//var_dump($datos);
+	//archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));
+}
+function tabla($datos){
+	echo "<table border=1>";
+	foreach($datos as $d){
+		echo "<tr>";
+		foreach($d as $v){
+			echo "<td>$v</td>";
+		}
+		echo "</tr>";
+	}
+	echo "<table>";
 }
 ?>

@@ -23,11 +23,15 @@ include_once($folder."cabecerahtml.php");
 			?><option value="<?php echo $i?>"><?php echo $i;?></option><?php
 		}?>
         </select>
-        <p>
+        <div class="alert alert-error">
+
         <strong><?php echo $idioma['Nota']?>:</strong>
-        <small><?php echo $idioma['CasillerosYaAsignados']?></small><br />
-        <small><strong><?php echo $idioma['AfectaTrimestreYBimestre']?></strong></small><br />
-        </p>
+        
+        <?php echo $idioma['CasillerosYaAsignados']?><br />
+        <strong><?php echo $idioma['AfectaTrimestreYBimestre']?></strong><br />
+        
+		</div>
+        
         <input type="submit" class="btn btn-success" value="<?php echo $idioma['Generar']?>" id="generar">
     </div>
 </div>

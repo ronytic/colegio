@@ -184,6 +184,44 @@ include_once($folder."cabecerahtml.php");
             </tr>
         </table>
     </div>
+    <div class="box-header"><h2><?php echo $idioma['NotasCualitativas']?></h2></div>
+    <div class="box-content">
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td><?php echo $idioma['LimiteInicio1Bimestre']?></td>
+                <td><input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteInicio1Bimestre"))?>"> - <input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteFin1Bimestre"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['LimiteInicio1Bimestre']?></td>
+                <td><input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteInicio1Bimestre"))?>"> - <input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteFin1Bimestre"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['LimiteInicio1Bimestre']?></td>
+                <td><input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteInicio1Bimestre"))?>"> - <input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteFin1Bimestre"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Limite4Bimestre']?></td>
+                <td><input type="text" class="span5" name="LimiteInicio4Bimestre" value="<?php echo (dato("LimiteInicio4Bimestre"))?>"> - <input type="text" class="span5" name="LimiteFin4Bimestre" value="<?php echo (dato("LimiteFin4Bimestre"))?>"></td>
+            </tr>
+            <tr><td colspan="2"><hr class="separador"></td></tr>
+            <tr>
+            	<td><?php echo $idioma['Limite1Trimestre']?></td>
+                <td><input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteInicio1Trimestre"))?>"> - <input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteFin1Trimestre"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Limite2Trimestre']?></td>
+                <td><input type="text" class="span5" name="Limite2Trimestre" value="<?php echo (dato("LimiteInicio2Trimestre"))?>"> - <input type="text" class="span5" name="Limite2Trimestre" value="<?php echo (dato("LimiteFin2Trimestre"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Limite3Trimestre']?></td>
+                <td><input type="text" class="span5" name="Limite3Trimestre" value="<?php echo (dato("LimiteInicio3Trimestre"))?>"> - <input type="text" class="span5" name="Limite3Trimestre" value="<?php echo (dato("LimiteFin3Trimestre"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['Limite4Trimestre']?></td>
+                <td><input type="text" class="span5" name="Limite4Trimestre" value="<?php echo (dato("LimiteInicio4Trimestre"))?>"> - <input type="text" class="span5" name="Limite4Trimestre" value="<?php echo (dato("LimiteFin4Trimestre"))?>"></td>
+            </tr>
+        </table>
+    </div>
 	<div class="box-header"><h2><?php echo $idioma['DatosInstitucion']?></h2></div>
     <div class="box-content">
     	<table class="table table-bordered table-hover">
