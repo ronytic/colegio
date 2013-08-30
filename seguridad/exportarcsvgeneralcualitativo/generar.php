@@ -397,6 +397,7 @@ if(!empty($_GET)){
 				$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
 				$fila[]=$r['NotaFinal'];
 				$fila[]=$r['Dps'];
+				
 			}
 			if($sw==1){
 				$fila[]=6;	
