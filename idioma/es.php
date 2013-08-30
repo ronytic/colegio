@@ -773,6 +773,18 @@ $idioma['LemaE']="Aparece como pie te página en los reportes";
 $idioma['DirectorioInternetE']="Si el sistema se encuentra dentro de un subdirectorio en un dominio, si se encuentra en la raiz del sitio déjelo vacio ";
 $idioma['RegistroNotaHabilitadoE']="Habilita el Registro de las notas de los Docentes.";
 $idioma['PeriodoNotaHabilitadoE']="Periodo específico para Habilitar el registro de notas";
+$idioma['Letras']="Letras";
+$idioma['LimiteLetrasBimestre']="Límite de Letras para rango de Bimestre";
+$idioma['LimiteLetrasTrimestre']="Límite de Letras para rango de Trimestre";
+$idioma['Limite1Bimestre']="Limite de Bimestre Primero Rango";
+$idioma['Limite2Bimestre']="Limite de Bimestre Segundo Rango";
+$idioma['Limite3Bimestre']="Limite de Bimestre Tercer Rango";
+$idioma['Limite4Bimestre']="Limite de Bimestre Cuarto Rango";
+
+$idioma['Limite1Trimestre']="Limite de Trimestre Primero Rango";
+$idioma['Limite2Trimestre']="Limite de Trimestre Segundo Rango";
+$idioma['Limite3Trimestre']="Limite de Trimestre Tercer Rango";
+$idioma['Limite4Trimestre']="Limite de Trimestre Cuarto Rango";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";

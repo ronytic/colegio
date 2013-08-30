@@ -159,6 +159,69 @@ include_once($folder."cabecerahtml.php");
             </tr>
         </table>
     </div>
+    <div class="box-header"><h2><?php echo $idioma['PosicionBoletin']?></h2></div>
+    <div class="box-content">
+    	<div class="centrar"><img src="../../imagenes/configuracion/posicionboletin.jpg" class="img-polaroid"></div>
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td><?php echo $idioma['BoletinPosicion1X']?>→<div class="pequeno"><?php echo $idioma['Area1X']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion1X" value="<?php echo (dato("BoletinPosicion1X"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion1Y']?>↓<div class="pequeno"><?php echo $idioma['Area1Y']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion1Y" value="<?php echo (dato("BoletinPosicion1Y"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion2X']?>→<div class="pequeno"><?php echo $idioma['Area2X']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion2X" value="<?php echo (dato("BoletinPosicion2X"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion2Y']?>↓<div class="pequeno"><?php echo $idioma['Area2Y']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion2Y" value="<?php echo (dato("BoletinPosicion2Y"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion3X']?>→<div class="pequeno"><?php echo $idioma['Area3X']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion3X" value="<?php echo (dato("BoletinPosicion3X"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion3Y']?>↓<div class="pequeno"><?php echo $idioma['Area3Y']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion3Y" value="<?php echo (dato("BoletinPosicion3Y"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion4X']?>→<div class="pequeno"><?php echo $idioma['Area4X']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion4X" value="<?php echo (dato("BoletinPosicion4X"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['BoletinPosicion4Y']?>↓<div class="pequeno"><?php echo $idioma['Area4Y']?></div></td>
+                <td><input type="text" class="span12" name="BoletinPosicion4Y" value="<?php echo (dato("BoletinPosicion4Y"))?>"></td>
+            </tr>
+        	<tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+	</div>
+	<div class="box-header"><h2><?php echo $idioma['Agenda']?></h2></div>
+    <div class="box-content">
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td><?php echo $idioma['AtrasoAgenda']?></td>
+                <td><select class="span12" name="AtrasoAgenda">
+                	<option value="0" <?php echo (dato("AtrasoAgenda"))==0?'selected':''?>><?php echo $idioma['No']?></option>
+                    <option value="1" <?php echo (dato("AtrasoAgenda"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
+                </select></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FaltaAgenda']?></td>
+                <td><select class="span12" name="FaltaAgenda">
+                	<option value="0" <?php echo (dato("FaltaAgenda"))==0?'selected':''?>><?php echo $idioma['No']?></option>
+                    <option value="1" <?php echo (dato("FaltaAgenda"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
+                </select></td>
+            </tr>
+        	<tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+	</div>
 </div>
 <div class="span6 box">
 	<div class="box-header"><h2><?php echo $idioma['Notas']?></h2></div>
@@ -187,38 +250,50 @@ include_once($folder."cabecerahtml.php");
     <div class="box-header"><h2><?php echo $idioma['NotasCualitativas']?></h2></div>
     <div class="box-content">
     	<table class="table table-bordered table-hover">
+	        <tr><td colspan="2" class="resaltar"><?php echo $idioma['Bimestre']?></td></tr>
         	<tr>
-            	<td><?php echo $idioma['LimiteInicio1Bimestre']?></td>
-                <td><input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteInicio1Bimestre"))?>"> - <input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteFin1Bimestre"))?>"></td>
+            	<td><?php echo $idioma['Limite1Bimestre']?></td>
+                <td><input type="text" class="span5" name="LimiteInicio1Bimestre" value="<?php echo (dato("LimiteInicio1Bimestre"))?>"> - <input type="text" class="span5" name="LimiteFin1Bimestre" value="<?php echo (dato("LimiteFin1Bimestre"))?>"></td>
             </tr>
             <tr>
-            	<td><?php echo $idioma['LimiteInicio1Bimestre']?></td>
-                <td><input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteInicio1Bimestre"))?>"> - <input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteFin1Bimestre"))?>"></td>
+            	<td><?php echo $idioma['Limite2Bimestre']?></td>
+                <td><input type="text" class="span5" name="LimiteInicio2Bimestre" value="<?php echo (dato("LimiteInicio2Bimestre"))?>"> - <input type="text" class="span5" name="LimiteFin2Bimestre" value="<?php echo (dato("LimiteFin2Bimestre"))?>"></td>
             </tr>
             <tr>
-            	<td><?php echo $idioma['LimiteInicio1Bimestre']?></td>
-                <td><input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteInicio1Bimestre"))?>"> - <input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteFin1Bimestre"))?>"></td>
+            	<td><?php echo $idioma['Limite3Bimestre']?></td>
+                <td><input type="text" class="span5" name="LimiteInicio3Bimestre" value="<?php echo (dato("LimiteInicio3Bimestre"))?>"> - <input type="text" class="span5" name="LimiteFin3Bimestre" value="<?php echo (dato("LimiteFin3Bimestre"))?>"></td>
             </tr>
             <tr>
             	<td><?php echo $idioma['Limite4Bimestre']?></td>
                 <td><input type="text" class="span5" name="LimiteInicio4Bimestre" value="<?php echo (dato("LimiteInicio4Bimestre"))?>"> - <input type="text" class="span5" name="LimiteFin4Bimestre" value="<?php echo (dato("LimiteFin4Bimestre"))?>"></td>
             </tr>
-            <tr><td colspan="2"><hr class="separador"></td></tr>
+            <tr>
+            	<td><?php echo $idioma['LimiteLetrasBimestre']?></td>
+                <td><input type="text" class="span5" name="LimiteLetrasBimestre" value="<?php echo (dato("LimiteLetrasBimestre"))?>"> <?php echo $idioma['Letras']?></td>
+            </tr>
+            <tr><td colspan="2" class="resaltar"><?php echo $idioma['Trimestre']?></td></tr>
             <tr>
             	<td><?php echo $idioma['Limite1Trimestre']?></td>
-                <td><input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteInicio1Trimestre"))?>"> - <input type="text" class="span5" name="Limite1Bimestre" value="<?php echo (dato("LimiteFin1Trimestre"))?>"></td>
+                <td><input type="text" class="span5" name="LimiteInicio1Trimestre" value="<?php echo (dato("LimiteInicio1Trimestre"))?>"> - <input type="text" class="span5" name="LimiteFin1Trimestre" value="<?php echo (dato("LimiteFin1Trimestre"))?>"></td>
             </tr>
             <tr>
             	<td><?php echo $idioma['Limite2Trimestre']?></td>
-                <td><input type="text" class="span5" name="Limite2Trimestre" value="<?php echo (dato("LimiteInicio2Trimestre"))?>"> - <input type="text" class="span5" name="Limite2Trimestre" value="<?php echo (dato("LimiteFin2Trimestre"))?>"></td>
+                <td><input type="text" class="span5" name="LimiteInicio2Trimestre" value="<?php echo (dato("LimiteInicio2Trimestre"))?>"> - <input type="text" class="span5" name="LimiteFin2Trimestre" value="<?php echo (dato("LimiteFin2Trimestre"))?>"></td>
             </tr>
             <tr>
             	<td><?php echo $idioma['Limite3Trimestre']?></td>
-                <td><input type="text" class="span5" name="Limite3Trimestre" value="<?php echo (dato("LimiteInicio3Trimestre"))?>"> - <input type="text" class="span5" name="Limite3Trimestre" value="<?php echo (dato("LimiteFin3Trimestre"))?>"></td>
+                <td><input type="text" class="span5" name="LimiteInicio3Trimestre" value="<?php echo (dato("LimiteInicio3Trimestre"))?>"> - <input type="text" class="span5" name="LimiteFin3Trimestre" value="<?php echo (dato("LimiteFin3Trimestre"))?>"></td>
             </tr>
             <tr>
             	<td><?php echo $idioma['Limite4Trimestre']?></td>
-                <td><input type="text" class="span5" name="Limite4Trimestre" value="<?php echo (dato("LimiteInicio4Trimestre"))?>"> - <input type="text" class="span5" name="Limite4Trimestre" value="<?php echo (dato("LimiteFin4Trimestre"))?>"></td>
+                <td><input type="text" class="span5" name="LimiteInicio4Trimestre" value="<?php echo (dato("LimiteInicio4Trimestre"))?>"> - <input type="text" class="span5" name="LimiteFin4Trimestre" value="<?php echo (dato("LimiteFin4Trimestre"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['LimiteLetrasTrimestre']?></td>
+                <td><input type="text" class="span5" name="LimiteLetrasTrimestre" value="<?php echo (dato("LimiteLetrasTrimestre"))?>"> <?php echo $idioma['Letras']?></td>
+            </tr>
+            <tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
             </tr>
         </table>
     </div>
@@ -285,74 +360,16 @@ include_once($folder."cabecerahtml.php");
             	<td><?php echo $idioma['TextoCodigoBarra']?></td>
                 <td><input type="text" class="span12" name="CodBarra" value="<?php echo (dato("CodBarra"))?>"></td>
             </tr>
+            <tr>
+            	<td><?php echo $idioma['Telefono']?></td>
+                <td><input type="text" class="span12" name="CodBarra" value="<?php echo (dato("Telefono"))?>"></td>
+            </tr>
         	<tr>
             	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
             </tr>
         </table>
     </div>
-    <div class="box-header"><h2><?php echo $idioma['PosicionBoletin']?></h2></div>
-    <div class="box-content">
-    	<div class="centrar"><img src="../../imagenes/configuracion/posicionboletin.jpg" class="img-polaroid"></div>
-    	<table class="table table-bordered table-hover">
-        	<tr>
-            	<td><?php echo $idioma['BoletinPosicion1X']?>→<div class="pequeno"><?php echo $idioma['Area1X']?></div></td>
-                <td><input type="text" class="span12" name="BoletinPosicion1X" value="<?php echo (dato("BoletinPosicion1X"))?>"></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['BoletinPosicion1Y']?>↓<div class="pequeno"><?php echo $idioma['Area1Y']?></div></td>
-                <td><input type="text" class="span12" name="BoletinPosicion1Y" value="<?php echo (dato("BoletinPosicion1Y"))?>"></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['BoletinPosicion2X']?>→<div class="pequeno"><?php echo $idioma['Area2X']?></div></td>
-                <td><input type="text" class="span12" name="BoletinPosicion2X" value="<?php echo (dato("BoletinPosicion2X"))?>"></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['BoletinPosicion2Y']?>↓<div class="pequeno"><?php echo $idioma['Area2Y']?></div></td>
-                <td><input type="text" class="span12" name="BoletinPosicion2Y" value="<?php echo (dato("BoletinPosicion2Y"))?>"></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['BoletinPosicion3X']?>→<div class="pequeno"><?php echo $idioma['Area3X']?></div></td>
-                <td><input type="text" class="span12" name="BoletinPosicion3X" value="<?php echo (dato("BoletinPosicion3X"))?>"></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['BoletinPosicion3Y']?>↓<div class="pequeno"><?php echo $idioma['Area3Y']?></div></td>
-                <td><input type="text" class="span12" name="BoletinPosicion3Y" value="<?php echo (dato("BoletinPosicion3Y"))?>"></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['BoletinPosicion4X']?>→<div class="pequeno"><?php echo $idioma['Area4X']?></div></td>
-                <td><input type="text" class="span12" name="BoletinPosicion4X" value="<?php echo (dato("BoletinPosicion4X"))?>"></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['BoletinPosicion4Y']?>↓<div class="pequeno"><?php echo $idioma['Area4Y']?></div></td>
-                <td><input type="text" class="span12" name="BoletinPosicion4Y" value="<?php echo (dato("BoletinPosicion4Y"))?>"></td>
-            </tr>
-        	<tr>
-            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
-            </tr>
-        </table>
-	</div>
-	<div class="box-header"><h2><?php echo $idioma['Agenda']?></h2></div>
-    <div class="box-content">
-    	<table class="table table-bordered table-hover">
-        	<tr>
-            	<td><?php echo $idioma['AtrasoAgenda']?></td>
-                <td><select class="span12" name="AtrasoAgenda">
-                	<option value="0" <?php echo (dato("AtrasoAgenda"))==0?'selected':''?>><?php echo $idioma['No']?></option>
-                    <option value="1" <?php echo (dato("AtrasoAgenda"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
-                </select></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['FaltaAgenda']?></td>
-                <td><select class="span12" name="FaltaAgenda">
-                	<option value="0" <?php echo (dato("FaltaAgenda"))==0?'selected':''?>><?php echo $idioma['No']?></option>
-                    <option value="1" <?php echo (dato("FaltaAgenda"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
-                </select></td>
-            </tr>
-        	<tr>
-            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
-            </tr>
-        </table>
-	</div>
+    
     <?php if($_SESSION['Nivel']==1):?>
     <div class="box-header"><h2><?php echo $idioma['Avanzado']?></h2></div>
     <div class="box-content">
