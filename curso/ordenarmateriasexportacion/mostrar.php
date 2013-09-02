@@ -28,7 +28,7 @@ if(!empty($_POST)){
 			<td><?php echo $i;?></td>
         	<td>
             	<?php
-                if($matbol['CodMateria']==1000){
+                if($matbol['CodMateria']=="1000"){
 					echo $idioma["MateriaCombinada"];
 				}else{
 					?><?php echo $materia['Nombre'];?><?php

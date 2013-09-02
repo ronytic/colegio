@@ -11,11 +11,15 @@ class materias extends bd{
 		if($sw=='all')
 			return $this->getRecords();
 		else
-			return $this->getRecords("Valido=1","Nombre");
+			return $this->getRecords("Valido=1 and Activo=1","Nombre");
 	}
 	function mostrarMateria($CodMateria){
 			$this->campos=array("*");
-			return $this->getRecords(" CodMateria=$CodMateria");
+			return $this->getRecords(" CodMateria=$CodMateria and Activo=1");
+	}
+	function mostrarMateriaCiencias(){
+			$this->campos=array("*");
+			return $this->getRecords(" PromedioCiencias=1 and Activo=1");
 	}
 	
 }

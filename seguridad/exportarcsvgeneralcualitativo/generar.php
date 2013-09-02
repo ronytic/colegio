@@ -11,9 +11,11 @@ if(!empty($_GET)){
 	include_once("../../class/config.php");
 	include_once("../../class/agenda.php");
 	include_once("../../class/curso.php");
+	include_once("../../class/materias.php");
 	$config=new config;
 	$agenda=new agenda;
 	$curso=new curso;
+	$materias=new materias;
 	$notascualitativa=new notascualitativa;
 	$cur=$curso->mostrarCurso($CodCurso);
 	$cur=array_shift($cur);
@@ -81,12 +83,12 @@ if(!empty($_GET)){
 				$fila[]="NP4";
 				$fila[]="NotaCualitativa4";
 			}else{
-			$fila[]="NP1";
-			$fila[]="NotaCualitativa1";
-			$fila[]="NP2";
-			$fila[]="NotaCualitativa2";
-			$fila[]="NP3";
-			$fila[]="NotaCualitativa3";
+				$fila[]="NP1";
+				$fila[]="NotaCualitativa1";
+				$fila[]="NP2";
+				$fila[]="NotaCualitativa2";
+				$fila[]="NP3";
+				$fila[]="NotaCualitativa3";
 			}
 			//$fila[]="Ref";
 			}
@@ -111,29 +113,36 @@ if(!empty($_GET)){
 				$fila[]="Falta S/Lic-4";
 				$fila[]="Atrasos-4";
 			}else{
-			$fila[]="Dias Trab-1";
-			$fila[]="Falta C/Lic-1";
-			$fila[]="Falta S/Lic-1";
-			$fila[]="Atrasos-1";
-			$fila[]="Dias Trab-2";
-			$fila[]="Falta C/Lic-2";
-			$fila[]="Falta S/Lic-2";
-			$fila[]="Atrasos-2";
-			$fila[]="Dias Trab-3";
-			$fila[]="Falta C/Lic-3";
-			$fila[]="Falta S/Lic-3";
-			$fila[]="Atrasos-3";
+				$fila[]="Dias Trab-1";
+				$fila[]="Falta C/Lic-1";
+				$fila[]="Falta S/Lic-1";
+				$fila[]="Atrasos-1";
+				$fila[]="Dias Trab-2";
+				$fila[]="Falta C/Lic-2";
+				$fila[]="Falta S/Lic-2";
+				$fila[]="Atrasos-2";
+				$fila[]="Dias Trab-3";
+				$fila[]="Falta C/Lic-3";
+				$fila[]="Falta S/Lic-3";
+				$fila[]="Atrasos-3";
 			}
 		}
 	}else{
-		$cas=array_shift($casilleros->mostrarMateriaCursoTrimestre($Materias,$CodCurso,$Trimestre));
+		//print_r($_GET);
+		
 		if($Cabecera=="si"){
-			$fila[]="N".$Trimestre;
-			$fila[]="Dps".$Trimestre;
+			$i=1;
+			foreach($cursomateriaexportar->mostrarMaterias($CodCurso) as $CurMatExp){$i++;
+				
+			
+			$fila[]="N".$Trimestre."_".$i;
+			//$fila[]="Dps".$Trimestre;
+			$fila[]="Nota Cualitativa".$Trimestre."_".$i;
 			/*$fila[]="Dias Trabajados";
 			$fila[]="Falta C/Lic";
 			$fila[]="Falta S/Lic";
 			$fila[]="Atrasos";*/
+			}
 		}
 	}
 	$datos=array();
@@ -151,7 +160,7 @@ if(!empty($_GET)){
 			
 			$fila[]=ucwords($al['Paterno'])." ".ucwords($al['Materno'])." ".ucwords($al['Nombres']);
 			if($Trimestre=="todo"){
-				/**/
+				/*Inicio Toda*/
 				if($cur['Bimestre']){
 					$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioBimestre1,$FinBimestre1));
 					$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioBimestre1,$FinBimestre1));
@@ -173,90 +182,93 @@ if(!empty($_GET)){
 					$r2=array_shift($registronotas->mostrarRegistroNotas($cas2['CodCasilleros'],$al['CodAlumno'],2));
 					$r3=array_shift($registronotas->mostrarRegistroNotas($cas3['CodCasilleros'],$al['CodAlumno'],3));
 					$r4=array_shift($registronotas->mostrarRegistroNotas($cas4['CodCasilleros'],$al['CodAlumno'],4));
-				//$promedioAnual=number_format(($r1['NotaFinal']+$r2['NotaFinal']+$r3['NotaFinal'])/3,0);
-				/*$fila[]="N1";
-				$fila[]="N2";
-				$fila[]="N3";
-				$fila[]="N4";
-				$fila[]="Dias Trab-1";
-				$fila[]="Falta C/Lic-1";
-				$fila[]="Falta S/Lic-1";
-				$fila[]="Atrasos-1";
-				$fila[]="Dias Trab-2";
-				$fila[]="Falta C/Lic-2";
-				$fila[]="Falta S/Lic-2";
-				$fila[]="Atrasos-2";
-				$fila[]="Dias Trab-3";
-				$fila[]="Falta C/Lic-3";
-				$fila[]="Falta S/Lic-3";
-				$fila[]="Atrasos-3";
-				$fila[]="Dias Trab-4";
-				$fila[]="Falta C/Lic-4";
-				$fila[]="Falta S/Lic-4";
-				$fila[]="Atrasos-4";*/
+					//$promedioAnual=number_format(($r1['NotaFinal']+$r2['NotaFinal']+$r3['NotaFinal'])/3,0);
+					/*$fila[]="N1";
+					$fila[]="N2";
+					$fila[]="N3";
+					$fila[]="N4";
+					$fila[]="Dias Trab-1";
+					$fila[]="Falta C/Lic-1";
+					$fila[]="Falta S/Lic-1";
+					$fila[]="Atrasos-1";
+					$fila[]="Dias Trab-2";
+					$fila[]="Falta C/Lic-2";
+					$fila[]="Falta S/Lic-2";
+					$fila[]="Atrasos-2";
+					$fila[]="Dias Trab-3";
+					$fila[]="Falta C/Lic-3";
+					$fila[]="Falta S/Lic-3";
+					$fila[]="Atrasos-3";
+					$fila[]="Dias Trab-4";
+					$fila[]="Falta C/Lic-4";
+					$fila[]="Falta S/Lic-4";
+					$fila[]="Atrasos-4";*/
 				
-				$fila[]=$r1['Resultado'];
-				$fila[]=$r2['Resultado'];
-				$fila[]=$r3['Resultado'];
-				$fila[]=$r4['Resultado'];
-				$fila[]="68";
-				$fila[]=$faltasConLic1['Cantidad'];
-				$fila[]=$faltasSinLic1['Cantidad'];
-				$fila[]=$Atrasos1['Cantidad'];
-				$fila[]="64";
-				$fila[]=$faltasConLic2['Cantidad'];
-				$fila[]=$faltasSinLic2['Cantidad'];
-				$fila[]=$Atrasos2['Cantidad'];
-				$fila[]="68";
-				$fila[]=$faltasConLic3['Cantidad'];
-				$fila[]=$faltasSinLic3['Cantidad'];
-				$fila[]=$Atrasos3['Cantidad'];
-				$fila[]="68";
-				$fila[]=$faltasConLic4['Cantidad'];
-				$fila[]=$faltasSinLic4['Cantidad'];
-				$fila[]=$Atrasos4['Cantidad'];
+					$fila[]=$r1['Resultado'];
+					$fila[]=$r2['Resultado'];
+					$fila[]=$r3['Resultado'];
+					$fila[]=$r4['Resultado'];
+					$fila[]="68";
+					$fila[]=$faltasConLic1['Cantidad'];
+					$fila[]=$faltasSinLic1['Cantidad'];
+					$fila[]=$Atrasos1['Cantidad'];
+					$fila[]="64";
+					$fila[]=$faltasConLic2['Cantidad'];
+					$fila[]=$faltasSinLic2['Cantidad'];
+					$fila[]=$Atrasos2['Cantidad'];
+					$fila[]="68";
+					$fila[]=$faltasConLic3['Cantidad'];
+					$fila[]=$faltasSinLic3['Cantidad'];
+					$fila[]=$Atrasos3['Cantidad'];
+					$fila[]="68";
+					$fila[]=$faltasConLic4['Cantidad'];
+					$fila[]=$faltasSinLic4['Cantidad'];
+					$fila[]=$Atrasos4['Cantidad'];
+					//FIn BImestre
 				}else{
-				$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioTrimestre1,$FinTrimestre1));
-				$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioTrimestre1,$FinTrimestre1));
-				$Atrasos1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioTrimestre1,$FinTrimestre1));
+					//INicio Trimestre
+					$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioTrimestre1,$FinTrimestre1));
+					$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioTrimestre1,$FinTrimestre1));
+					$Atrasos1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioTrimestre1,$FinTrimestre1));
 				
-				$faltasConLic2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioTrimestre2,$FinTrimestre2));
-				$faltasSinLic2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioTrimestre2,$FinTrimestre2));
-				$Atrasos2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioTrimestre2,$FinTrimestre2));
+					$faltasConLic2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioTrimestre2,$FinTrimestre2));
+					$faltasSinLic2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioTrimestre2,$FinTrimestre2));
+					$Atrasos2=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioTrimestre2,$FinTrimestre2));
 				
-				$faltasConLic3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioTrimestre3,$FinTrimestre3));
-				$faltasSinLic3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioTrimestre3,$FinTrimestre3));
-				$Atrasos3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioTrimestre3,$FinTrimestre3));
+					$faltasConLic3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],$InicioTrimestre3,$FinTrimestre3));
+					$faltasSinLic3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],$InicioTrimestre3,$FinTrimestre3));
+					$Atrasos3=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],$InicioTrimestre3,$FinTrimestre3));
 				
-				/**/
-				$r1=array_shift($registronotas->mostrarRegistroNotas($cas1['CodCasilleros'],$al['CodAlumno'],1));
-				$r2=array_shift($registronotas->mostrarRegistroNotas($cas2['CodCasilleros'],$al['CodAlumno'],2));
-				$r3=array_shift($registronotas->mostrarRegistroNotas($cas3['CodCasilleros'],$al['CodAlumno'],3));
-				$r4=array_shift($registronotas->mostrarRegistroNotas($cas4['CodCasilleros'],$al['CodAlumno'],4));
-				//$promedioAnual=number_format(($r1['NotaFinal']+$r2['NotaFinal']+$r3['NotaFinal'])/3,0);
-				$fila[]=$r1['Resultado'];
-				$fila[]=$r1['Dps'];
-				$fila[]=$r2['Resultado'];
-				$fila[]=$r2['Dps'];
-				$fila[]=$r3['Resultado'];
-				$fila[]=$r3['Dps'];
-				$fila[]=$r4['Nota2'];
-				$fila[]="68";
-				$fila[]=$faltasConLic1['Cantidad'];
-				$fila[]=$faltasSinLic1['Cantidad'];
-				$fila[]=$Atrasos1['Cantidad'];
-				$fila[]="64";
-				$fila[]=$faltasConLic2['Cantidad'];
-				$fila[]=$faltasSinLic2['Cantidad'];
-				$fila[]=$Atrasos2['Cantidad'];
-				$fila[]="68";
-				$fila[]=$faltasConLic3['Cantidad'];
-				$fila[]=$faltasSinLic3['Cantidad'];
-				$fila[]=$Atrasos3['Cantidad'];
+					/**/
+					$r1=array_shift($registronotas->mostrarRegistroNotas($cas1['CodCasilleros'],$al['CodAlumno'],1));
+					$r2=array_shift($registronotas->mostrarRegistroNotas($cas2['CodCasilleros'],$al['CodAlumno'],2));
+					$r3=array_shift($registronotas->mostrarRegistroNotas($cas3['CodCasilleros'],$al['CodAlumno'],3));
+					$r4=array_shift($registronotas->mostrarRegistroNotas($cas4['CodCasilleros'],$al['CodAlumno'],4));
+					//$promedioAnual=number_format(($r1['NotaFinal']+$r2['NotaFinal']+$r3['NotaFinal'])/3,0);
+					$fila[]=$r1['Resultado'];
+					$fila[]=$r1['Dps'];
+					$fila[]=$r2['Resultado'];
+					$fila[]=$r2['Dps'];
+					$fila[]=$r3['Resultado'];
+					$fila[]=$r3['Dps'];
+					$fila[]=$r4['Nota2'];
+					$fila[]="68";
+					$fila[]=$faltasConLic1['Cantidad'];
+					$fila[]=$faltasSinLic1['Cantidad'];
+					$fila[]=$Atrasos1['Cantidad'];
+					$fila[]="64";
+					$fila[]=$faltasConLic2['Cantidad'];
+					$fila[]=$faltasSinLic2['Cantidad'];
+					$fila[]=$Atrasos2['Cantidad'];
+					$fila[]="68";
+					$fila[]=$faltasConLic3['Cantidad'];
+					$fila[]=$faltasSinLic3['Cantidad'];
+					$fila[]=$Atrasos3['Cantidad'];
 				}
 				
 				/**/
 				foreach($cursomateriaexportar->mostrarMaterias($CodCurso) as $CurMatExp){
+					//$cas=array_shift($casilleros->mostrarMateriaCursoTrimestre($Materias,$CodCurso,$Trimestre));
 					if($SeparadorMateria!=""){
 						$fila[]=$SeparadorMateria;	
 					}
@@ -394,24 +406,64 @@ if(!empty($_GET)){
 				$fila[]=$Atrasos3['Cantidad'];
 				*/
 			}else{
-				$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
-				$fila[]=$r['NotaFinal'];
-				$fila[]=$r['Dps'];
-				
+				foreach($cursomateriaexportar->mostrarMaterias($CodCurso) as $CurMatExp){
+					if($CurMatExp['CodMateria']==1000){
+						$canti=0;
+						$notatotal=0;
+						foreach($materias->mostrarMateriaCiencias() as $promedio){
+							
+							$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($promedio['CodMateria'],$CodCurso,$al['Sexo'],$Trimestre));
+							$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
+							//print_r($r);
+							$notatotal+=$r['NotaFinal'];
+							$canti++;
+						}
+						//echo $notatotal." / ".$canti."-";
+						$notaPromedioCiencia=round(($notatotal/$canti),0);
+						
+						$fila[]=$notaPromedioCiencia;
+					}else{
+					
+					//print_r($CurMatExp);
+					$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($CurMatExp['CodMateria'],$CodCurso,$al['Sexo'],$Trimestre));
+					/*print_r($cas);
+					echo "<br>";*/
+					$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
+					//print_r($r);
+					$fila[]=$r['NotaFinal'];
+					}
+					//$fila[]=$r['Dps'];
+					$ncuali=array_shift($notascualitativa->mostrarNota($cas['CodDocenteMateriaCurso'],$Trimestre));
+					//print_r($ncuali);
+					$notacomprobar=end($fila);
+				 		if($notacomprobar>=$LimiteInicio1 && $notacomprobar<=$LimiteFin1){
+							$fila[]=mayuscula($ncuali['PrimerRango']);
+							
+						}elseif($notacomprobar>=$LimiteInicio2 && $notacomprobar<=$LimiteFin2){
+							$fila[]=mayuscula($ncuali['SegundoRango']);
+							
+						}elseif($notacomprobar>=$LimiteInicio3 && $notacomprobar<=$LimiteFin3){
+							$fila[]=mayuscula($ncuali['TercerRango']);
+							
+						}elseif($notacomprobar>=$LimiteInicio4 && $notacomprobar<=$LimiteFin4){
+							$fila[]=mayuscula($ncuali['CuartoRango']);
+						}
+				}
 			}
+			/*
 			if($sw==1){
 				$fila[]=6;	
 			}else{
 				$fila[]=0;	
-			}
+			}*/
 			array_push($datos,$fila);
 			//print_r($fila);
 			//echo "<br>";
 		}
-	tabla($datos);
+	//tabla($datos);
 	
 	//var_dump($datos);
-	//archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));
+	archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));
 }
 function tabla($datos){
 	echo "<table border=1>";
