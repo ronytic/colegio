@@ -15,7 +15,7 @@ $idioma['IdiomaNoEncontrado']="Idioma no Encontrado";
 //Inicio
 $idioma['TituloSistema']="Sistema Académico Administrativo para Colegios";
 $idioma['DerechosReservados']="Todos los Derechos Reservados";
-$idioma['DesarrolladoPor']="Desarrollador por";
+$idioma['DesarrolladoPor']="Desarrollado por";
 $idioma['Configuracion']="Configuración";
 $idioma['Notificacion']="Notificaciones";
 $idioma['TareaPendiente']="Tareas Pendientes";
