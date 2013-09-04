@@ -58,7 +58,7 @@ if(!empty($_POST)){
 			<td class="centrar">
             	<span class="resaltar"><?php echo $idioma["NotaDe"]?> <?php echo $LimiteInicio1.' - '.$LimiteFin1?></span>
                 <hr />
-				<textarea name="rango1" id="rango1" cols="20" rows="5" class="mayusculas" rel="<?php echo $cantidadmaxima?>" autofocus maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['PrimerRango'];?></textarea>
+				<textarea name="rango1" id="rango1" cols="20" rows="5" class="mayusculas span12" rel="<?php echo $cantidadmaxima?>" autofocus maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['PrimerRango'];?></textarea>
 				<hr>
 				<span class="resaltar"><?php echo $idioma['CantidadLetras']?></span>
 				<span id="cantidadrango1"><?php echo $cantidadmaxima?></span>
@@ -66,7 +66,7 @@ if(!empty($_POST)){
 			<td class="centrar">
             	<span class="resaltar"><?php echo $idioma["NotaDe"]?> <?php echo $LimiteInicio2.' - '.$LimiteFin2?></span>
                 <hr />
-				<textarea name="rango2" id="rango2" cols="20" rows="5" class="mayusculas" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['SegundoRango'];?></textarea>
+				<textarea name="rango2" id="rango2" cols="20" rows="5" class="mayusculas span12" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['SegundoRango'];?></textarea>
 				<hr>
 				<span class="resaltar"><?php echo $idioma['CantidadLetras']?></span>
 				<span id="cantidadrango2"><?php echo $cantidadmaxima?></span>
@@ -74,7 +74,7 @@ if(!empty($_POST)){
 			<td class="centrar">
             	<span class="resaltar"><?php echo $idioma["NotaDe"]?> <?php echo $LimiteInicio3.' - '.$LimiteFin3?></span>
                 <hr />
-				<textarea name="rango3" id="rango3" cols="20" rows="5" class="mayusculas" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['TercerRango'];?></textarea>
+				<textarea name="rango3" id="rango3" cols="20" rows="5" class="mayusculas span12" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['TercerRango'];?></textarea>
 				<hr>
 				<span class="resaltar"><?php echo $idioma['CantidadLetras']?></span>
 				<span id="cantidadrango3"><?php echo $cantidadmaxima?></span>
@@ -82,7 +82,7 @@ if(!empty($_POST)){
 			<td class="centrar">
 	            <span class="resaltar"><?php echo $idioma["NotaDe"]?> <?php echo $LimiteInicio4.' - '.$LimiteFin4?></span>
                 <hr />
-				<textarea name="rango4" id="rango4" cols="20" rows="5" class="mayusculas" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['CuartoRango'];?></textarea>
+				<textarea name="rango4" id="rango4" cols="20" rows="5" class="mayusculas span12" rel="<?php echo $cantidadmaxima?>" maxlength=="<?php echo $cantidadmaxima?>"><?php echo $notascuali['CuartoRango'];?></textarea>
 				<hr>
 				<span class="resaltar"><?php echo $idioma['CantidadLetras']?></span>
 				<span id="cantidadrango4"><?php echo $cantidadmaxima?></span>
