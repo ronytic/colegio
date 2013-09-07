@@ -131,10 +131,12 @@ if(!empty($_GET)){
 		//print_r($_GET);
 		
 		if($Cabecera=="si"){
-			$i=1;
+			$i=0;
 			foreach($cursomateriaexportar->mostrarMaterias($CodCurso) as $CurMatExp){$i++;
 				
-			
+			if($SeparadorMateria!=""){
+				$fila[]=$SeparadorMateria;	
+			}
 			$fila[]="N".$Trimestre."_".$i;
 			//$fila[]="Dps".$Trimestre;
 			$fila[]="Nota Cualitativa".$Trimestre."_".$i;
