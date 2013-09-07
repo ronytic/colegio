@@ -101,6 +101,7 @@ $idioma['NImpresionCodigos']="Impresión de Códigos de Barra";
 $idioma['NModificarCurso']="Modificar Curso";
 $idioma['NVerTodosLosAccesos']="Ver Todos los Accesos";
 $idioma['NModificarNotasCualitativasDocentes']="Modificar Notas Cualitativas de Docentes";
+$idioma['NRegistroNotasCualitativasGlobal']="Registro de Notas Cualitativas Globales";
 //Generales
 $idioma['Cerrar']="Cerrar";
 $idioma['Si']="Si";
