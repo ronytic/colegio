@@ -72,6 +72,7 @@ $idioma['NAsignacionCasilleros']="Asignación de Casilleros de Notas";
 $idioma['NRegistroNotasCualitativas']="Registro de Notas Cualitativas";
 $idioma['NSistemaInternet']="Sistema Internet";
 $idioma['NAsignacionNotasCualitativas']="Asignación Notas Cualitativas";
+$idioma['NAsignacionNotasCualitativasBimestre']="Asignación Notas Cualitativas Bimestre";
 $idioma['NAsignacionMateriasBoletines']="Asignación de Materias";
 $idioma['NAsignacionMateriasDocente']="Asignación de Materias a Docente";
 $idioma['NMarcarAsistencia']="Marcar Asistencia";
@@ -556,6 +557,7 @@ $idioma['GeneradosCorrectamente']="Generados Correctamente";
 $idioma['PromedioAnualAlumno']="Promedio Anual de Alumnos";
 $idioma['NoExistenReprobadosParaEstaMateria']="No existen reprobados para esta Materia";
 $idioma['PulseBotonParaGuardar']="Pulse el Botón para Guardar, si no pulsa  no se guardara ningún dato";
+$idioma['CursosYaAsignados']="La Generación de los Casilleros de las Notas Cualitativas para Bimestre se basaran en los cursos tomando encuenta Cuatro Parametros de Notas";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
