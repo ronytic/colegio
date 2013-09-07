@@ -54,20 +54,7 @@ $(document).ready(function(e) {
                 </select>
             </div>
         </div>
-        <div class="span3">
-            <div class="box-header"><?php echo $idioma['Materia']?></div>    
-            <div class="box-content">
-                <?php campo("tmateria","search","","span12",0,$idioma['BusquePor'])?>
-                <select name="Materia" class="span12">
-                <?php foreach($docMateriaCurso->mostrarDocenteMateria($CodDocente) as $docMat){
-                        $m=$materias->mostrarMateria($docMat['CodMateria']);
-                        $m=array_shift($m);
-                        ?>
-                        <option value="<?php echo $m['CodMateria'];?>"><?php echo $m['Nombre'];?></option>
-                <?php }?>
-                </select>
-            </div>
-        </div>
+        
         <div class="span2">
             <div class="box-header"><?php echo $idioma['Periodo']?></div>    
             <div class="box-content">
