@@ -10,9 +10,9 @@ class notascualitativabimestre extends bd{
 	function eliminarNotaDefinitivo($where){
 		return $this->deleteRecord($where);
 	}
-	function mostrarNota($CodDocenteMateriaCurso,$Trimestre){
+	function mostrarNota($CodCurso,$Periodo){
 		$this->campos=array("*");	
-		return $this->getRecords("CodDocenteMateriaCurso=$CodDocenteMateriaCurso and Trimestre=$Trimestre");
+		return $this->getRecords("CodCurso=$CodCurso and Periodo=$Periodo");
 	}
 }
  ?>

@@ -269,6 +269,9 @@ function eliminarEspaciosDobles($cadena,$caracteres=0){
 	$cadena = $caracteres?(preg_replace('/[\n\r\t]/', ' ', $cadena)):$cadena;
 	return $cadena;
 }
+function promedio($NotaTotal,$Cantidad,$Cifras=0){
+	return @ round($NotaTotal/$Cantidad,$Cifras);	
+}
 function usuarioPadre($cipadre,$cimadre){
 	if($cipadre!="" && !ereg("---*",$cipadre)){
 		$usuarioP=$cipadre;

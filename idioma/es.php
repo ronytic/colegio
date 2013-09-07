@@ -91,6 +91,7 @@ $idioma['NReservasCuposAlumnos']="Reservas de Cupos de Alumnos";
 $idioma['ExportarMateriasCsv']="Exportar Datos de Materias a Csv";
 $idioma['ExportarGeneralCsv']="Exportar Datos Generales a Csv";
 $idioma['ExportarNotasCualitativasCsv']="Exportar Notas Cualitativas a Csv";
+$idioma['ExportarNotasCualitativasCsvBimestre']="Exportar Notas Cualitativas a Csv de Bimestre";
 $idioma['PromedioFinalCiencias']="Centralizador Promedio Final Ciencias todos los Trimestres";
 $idioma['NCentralizadorNotasCiencias']="Centralizador de Notas Anual de Ciencias";
 $idioma['NCentralizadorNotasTrimestral']="Centralizador de Notas Anual";
