@@ -407,6 +407,9 @@ if(!empty($_GET)){
 				*/
 			}else{
 				foreach($cursomateriaexportar->mostrarMaterias($CodCurso) as $CurMatExp){
+					if($SeparadorMateria!=""){
+						$fila[]=$SeparadorMateria;	
+					}
 					if($CurMatExp['CodMateria']==1000){
 						$canti=0;
 						$notatotal=0;
@@ -460,10 +463,10 @@ if(!empty($_GET)){
 			//print_r($fila);
 			//echo "<br>";
 		}
-	//tabla($datos);
+	tabla($datos);
 	
 	//var_dump($datos);
-	archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));
+	//archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));
 }
 function tabla($datos){
 	echo "<table border=1>";
