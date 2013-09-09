@@ -7,6 +7,6 @@ $subtitulo2="Reporte";
 $horizontal=2;
 $datoInicial=1;
 $archivoInicial="formulario.php";
-$jsFile="seguridad/exportarcsvgeneralcualitativo.js";
+$jsFile="seguridad/exportarcsvgeneralcualitativobimestre.js";
 include_once("../../listar/curso.php");
 ?>

@@ -20,6 +20,11 @@ if(!empty($_GET)){
 	$cur=$curso->mostrarCurso($CodCurso);
 	$cur=array_shift($cur);
 	
+	if(!is_array($Trimestre)){
+	//$Trimestre=(array)$Trimestre;
+	$Trimestre=explode(",",$Trimestre);
+	}
+	//print_r($Trimestre);
 	if($cur['Bimestre']){
 		$texto="Bimestre";	
 	}else{
