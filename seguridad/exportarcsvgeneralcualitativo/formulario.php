@@ -24,6 +24,12 @@ if(!empty($_POST)){
     <label for="separadormateria"><?php echo $idioma['SeparadorMateria']?></label>
     <input name="separadormateria" id="separadormateria" size="3" type="text" class="span12"/>
     
+    <label for="separadorestadisticas"><?php echo $idioma['Estadisticas']?></label>
+    <select id="estadisticas" name="estadisticas" class="span12">
+    	<option value="0" selected="selected"><?php echo $idioma['No']?></option>
+        <option value="1"><?php echo $idioma['Si']?></option>
+	</select>
+    
     <label for="separadorestadisticas"><?php echo $idioma['SeparadorEstadisticas']?></label>
     <input name="separadorestadisticas" id="separadorestadisticas" size="3" type="text" class="span12"/>
     
@@ -34,8 +40,14 @@ if(!empty($_POST)){
 			?><option value="<?php echo $i;?>"><?php echo $i;?></option><?php
 		}
 		?>
-        <option value="todo" selected><?php echo $idioma['TodosPeriodos']?></option>
+        <!--<option value="todo" selected><?php echo $idioma['TodosPeriodos']?></option>-->
     </select>
+    <label for="formato"><?php echo $idioma['Formato']?></label>
+    <select id="formato" name="formato" class="span12">
+    	<option value="Tabla" selected="selected"><?php echo $idioma['Tabla']?></option>
+        <option value="Csv"><?php echo $idioma['Csv']?></option>
+	</select>
+    
     <input type="submit" class="btn btn-success" value="Generar" id="generar">
     <?php
 }

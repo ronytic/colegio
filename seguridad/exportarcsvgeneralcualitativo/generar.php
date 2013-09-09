@@ -134,16 +134,25 @@ if(!empty($_GET)){
 			$i=0;
 			foreach($cursomateriaexportar->mostrarMaterias($CodCurso) as $CurMatExp){$i++;
 				
-			if($SeparadorMateria!=""){
-				$fila[]=$SeparadorMateria;	
+				if($SeparadorMateria!=""){
+					$fila[]=$SeparadorMateria;	
+				}
+				$fila[]="N".$Trimestre."_".$i;
+				//$fila[]="Dps".$Trimestre;
+				if($cur['Dps']){
+					$fila[]="Dps".$Trimestre."_".$i;	
+				}else{
+					$fila[]="Nota Cualitativa".$Trimestre."_".$i;
+				}
 			}
-			$fila[]="N".$Trimestre."_".$i;
-			//$fila[]="Dps".$Trimestre;
-			$fila[]="Nota Cualitativa".$Trimestre."_".$i;
-			/*$fila[]="Dias Trabajados";
-			$fila[]="Falta C/Lic";
-			$fila[]="Falta S/Lic";
-			$fila[]="Atrasos";*/
+			if($Estadisticas==1){
+				if($SeparadorEstadisticas!=""){
+					$fila[]=$SeparadorEstadisticas;	
+				}
+				$fila[]="Dias Trabajados";
+				$fila[]="Falta C/Lic";
+				$fila[]="Falta S/Lic";
+				$fila[]="Atrasos";
 			}
 		}
 	}
@@ -427,7 +436,7 @@ if(!empty($_GET)){
 						$notaPromedioCiencia=round(($notatotal/$canti),0);
 						
 						$fila[]=$notaPromedioCiencia;
-					}else{
+					}else{//Si no es Materia Combinada
 					
 					//print_r($CurMatExp);
 					$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($CurMatExp['CodMateria'],$CodCurso,$al['Sexo'],$Trimestre));
@@ -435,26 +444,47 @@ if(!empty($_GET)){
 					echo "<br>";*/
 					$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
 					//print_r($r);
-					$fila[]=$r['NotaFinal'];
-					}
-					//$fila[]=$r['Dps'];
-					$ncuali=array_shift($notascualitativa->mostrarNota($cas['CodDocenteMateriaCurso'],$Trimestre));
-					//print_r($ncuali);
-					$notacomprobar=end($fila);
-				 		if($notacomprobar>=$LimiteInicio1 && $notacomprobar<=$LimiteFin1){
-							$fila[]=mayuscula($ncuali['PrimerRango']);
-							
-						}elseif($notacomprobar>=$LimiteInicio2 && $notacomprobar<=$LimiteFin2){
-							$fila[]=mayuscula($ncuali['SegundoRango']);
-							
-						}elseif($notacomprobar>=$LimiteInicio3 && $notacomprobar<=$LimiteFin3){
-							$fila[]=mayuscula($ncuali['TercerRango']);
-							
-						}elseif($notacomprobar>=$LimiteInicio4 && $notacomprobar<=$LimiteFin4){
-							$fila[]=mayuscula($ncuali['CuartoRango']);
+						if($cur['Dps']){
+							$fila[]=$r['Resultado'];
+							$fila[]=$r['Dps'];
+						}else{
+							$fila[]=$r['NotaFinal'];
+							//$fila[]=$r['Dps'];
+							$ncuali=array_shift($notascualitativa->mostrarNota($cas['CodDocenteMateriaCurso'],$Trimestre));
+							//print_r($ncuali);
+							$notacomprobar=end($fila);
+							if($notacomprobar>=$LimiteInicio1 && $notacomprobar<=$LimiteFin1){
+								$fila[]=mayuscula($ncuali['PrimerRango']);
+								
+							}elseif($notacomprobar>=$LimiteInicio2 && $notacomprobar<=$LimiteFin2){
+								$fila[]=mayuscula($ncuali['SegundoRango']);
+								
+							}elseif($notacomprobar>=$LimiteInicio3 && $notacomprobar<=$LimiteFin3){
+								$fila[]=mayuscula($ncuali['TercerRango']);
+								
+							}elseif($notacomprobar>=$LimiteInicio4 && $notacomprobar<=$LimiteFin4){
+								$fila[]=mayuscula($ncuali['CuartoRango']);
+							}
 						}
+					}
+						
 				}
 			}
+				if($Estadisticas==1){
+				
+					$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],${"InicioTrimestre".$Trimestre},${"FinTrimestre".$Trimestre}));
+						$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],${"InicioTrimestre".$Trimestre},${"FinTrimestre".$Trimestre}));
+						$Atrasos1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],${"InicioTrimestre".$Trimestre},${"FinTrimestre".$Trimestre}));
+					if($SeparadorEstadisticas!=""){
+						$fila[]=$SeparadorEstadisticas;	
+					}
+					//$total1=68-$faltasConLic1['Cantidad']-$faltasSinLic1['Cantidad'];
+					$total1=67;
+					$fila[]=$total1;
+					$fila[]=$faltasConLic1['Cantidad'];
+					$fila[]=$faltasSinLic1['Cantidad'];
+					$fila[]=$Atrasos1['Cantidad'];
+				}
 			/*
 			if($sw==1){
 				$fila[]=6;	
@@ -465,10 +495,13 @@ if(!empty($_GET)){
 			//print_r($fila);
 			//echo "<br>";
 		}
-	//tabla($datos);
-	
-	//var_dump($datos);
-	archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));
+	if($Formato=="Tabla")
+	{
+		tabla($datos);
+	}else{
+		archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));	
+	}
+
 }
 function tabla($datos){
 	echo "<table border=1>";

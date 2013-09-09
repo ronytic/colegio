@@ -498,10 +498,12 @@ if(!empty($_GET)){
 			//print_r($fila);
 			//echo "<br>";
 		}
-	//tabla($datos);
-	
+	if($Formato=="Tabla"){
+		tabla($datos);
+	}else{
 	//var_dump($datos);
 	archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));
+	}
 }
 function tabla($datos){
 	echo "<table border=1>";

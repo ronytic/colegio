@@ -36,6 +36,11 @@ if(!empty($_POST)){
 		?>
         <?php /*<option value="todo" selected><?php echo $idioma['TodosPeriodos']?></option> <?php */?>
     </select>
+    <label for="formato"><?php echo $idioma['Formato']?></label>
+    <select id="formato" name="formato" class="span12">
+    	<option value="Tabla" selected="selected"><?php echo $idioma['Tabla']?></option>
+        <option value="Csv"><?php echo $idioma['Csv']?></option>
+	</select>
     <input type="submit" class="btn btn-success" value="Generar" id="generar">
     <?php
 }
