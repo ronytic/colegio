@@ -152,6 +152,9 @@ if(!empty($_GET)){
 			$fila[]="Falta S/Lic";
 			$fila[]="Atrasos";*/
 			}
+			if(!empty($SeparadorCualitativo)){
+					$fila[]=$SeparadorCualitativo;	
+			}
 			foreach($Trimestre as $Tri){
 			$fila[]="Nota Cualitativa".$Tri;
 			}
@@ -455,6 +458,9 @@ if(!empty($_GET)){
 						//$fila[]=$r['Dps'];
 				
 					
+				}
+				if(!empty($SeparadorCualitativo)){
+					$fila[]=$SeparadorCualitativo;	
 				}
 				foreach($Trimestre as $Tri){
 					//$fila[]=$Totales[$Tri];

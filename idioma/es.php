@@ -619,6 +619,7 @@ $idioma['Cabecera']="Cabecera";
 $idioma['SeparadorColumna']="Separador de Columna";
 $idioma['SeparadorFila']="Separador de Fila";
 $idioma['SaltoLinea']="Salto de Linea";
+$idioma['SeparadorCualitativo']="Separador Cualitativo";
 $idioma['Numeracion']="Numeración";
 $idioma['TodosPeriodos']="Todos los Periodos";
 $idioma['DescargarArchivo']="Descargar Archivo";

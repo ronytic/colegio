@@ -8,7 +8,7 @@ if(!empty($_POST)){
 		foreach($materiasAll as $ma){?>
         	<option value="<?php echo $ma['CodMateria']?>"><?php echo $ma['Nombre']?></option>
 	<?php }?>
-    	<option value="200"><?php echo $idioma['MateriaCombinada']?></option>
+    	<option value="1000"><?php echo $idioma['MateriaCombinada']?></option>
     </select>
 	<input type="submit" id="guardar" class="btn" value="<?php echo $idioma['Añadir']?> >>"/>
 	<?php 

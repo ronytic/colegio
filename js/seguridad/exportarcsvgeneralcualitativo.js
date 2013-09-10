@@ -16,7 +16,7 @@ function respuesta1(data){
 			if(formato=="Tabla"){
 				var contenido=data;
 			}else{
-				var contenido="<a class ='btn btn-success' href='generar.php?"+'Cabecera='+cabeceralista+'&CodCurso='+CodCurso+'&Separador='+separador+"&SeparadorFila="+separadorfila+"&Numeracion="+numeracion+"&Trimestre="+trimestre+'&SeparadorMateria='+encodeURIComponent(separadormateria)+'&SeparadorEstadisticas='+encodeURIComponent(separadorestadisticas)+"&Formato="+formato+"' class='botonSec'>Descargar Archivo</a><hr>"+data;
+				var contenido="<a class ='btn btn-success' href='generar.php?"+'Cabecera='+cabeceralista+'&CodCurso='+CodCurso+'&Separador='+separador+"&SeparadorFila="+separadorfila+"&Numeracion="+numeracion+"&Trimestre="+trimestre+'&SeparadorMateria='+encodeURIComponent(separadormateria)+'&Estadisticas='+estadisticas+'&SeparadorEstadisticas='+encodeURIComponent(separadorestadisticas)+"&Formato="+formato+"' class='botonSec'>Descargar Archivo</a><hr>"+data;
 			}
 			$("#respuesta").html(contenido)	 
 			

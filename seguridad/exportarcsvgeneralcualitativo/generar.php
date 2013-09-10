@@ -424,18 +424,22 @@ if(!empty($_GET)){
 					if($CurMatExp['CodMateria']==1000){
 						$canti=0;
 						$notatotal=0;
+						$notadps=0;
 						foreach($materias->mostrarMateriaCiencias() as $promedio){
 							
 							$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($promedio['CodMateria'],$CodCurso,$al['Sexo'],$Trimestre));
 							$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
 							//print_r($r);
-							$notatotal+=$r['NotaFinal'];
+							$notatotal+=$r['Resultado'];
+							$notadps+=$r['Dps'];
 							$canti++;
 						}
 						//echo $notatotal." / ".$canti."-";
+						$dpsPromedioCiencia=round(($notadps/$canti),0);
 						$notaPromedioCiencia=round(($notatotal/$canti),0);
 						
 						$fila[]=$notaPromedioCiencia;
+						$fila[]=$dpsPromedioCiencia;
 					}else{//Si no es Materia Combinada
 					
 					//print_r($CurMatExp);
