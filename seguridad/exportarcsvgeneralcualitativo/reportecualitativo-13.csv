@@ -1,34 +1,34 @@
-1,Añaguaya Lazzo Jonathan Andres,M,25,5,M,22,5,M,39,6,M,41,7,M,22,5,M,23,5,M,31,5,M,36,6,M,33,5,M,34,5,M,48,8,M,38,6,M,37,6,M,47,8,M,48,8
-2,Arias Miranda Harold Mauricio,M,28,5,M,22,5,M,44,7,M,33,5,M,36,6,M,33,5,M,29,5,M,39,6,M,35,5,M,37,6,M,48,8,M,41,7,M,40,7,M,40,7,M,51,9
-3,Arriague Gonzales Adriana Noemi,M,44,7,M,47,8,M,49,8,M,58,10,M,43,7,M,47,8,M,50,9,M,55,9,M,53,9,M,52,9,M,46,8,M,48,8,M,58,10,M,60,10,M,57,10
-4,Ayala Sanchez Sherezada Brenda,M,26,5,M,35,5,M,46,8,M,41,7,M,22,5,M,27,5,M,39,6,M,49,8,M,46,8,M,34,5,M,41,7,M,34,5,M,51,9,M,50,9,M,51,9
-5,Barreto Pocoata Yasminka Magali,M,38,6,M,42,7,M,48,8,M,46,8,M,40,7,M,39,6,M,38,6,M,54,9,M,51,9,M,52,9,M,50,9,M,39,6,M,43,7,M,58,10,M,51,9
-6,Cabrera Huanca Jhonatan,M,26,5,M,33,5,M,45,7,M,44,7,M,34,5,M,32,5,M,36,6,M,50,9,M,44,7,M,38,6,M,51,9,M,43,7,M,48,8,M,37,6,M,43,7
-7,Cala Surco Kevin,M,38,6,M,36,6,M,33,5,M,41,7,M,47,8,M,40,7,M,31,5,M,37,6,M,40,7,M,41,7,M,49,8,M,37,6,M,33,5,M,38,6,M,36,6
-8,Choque Chavez Amilcar,M,31,5,M,33,5,M,35,5,M,39,6,M,32,5,M,35,5,M,29,5,M,38,6,M,35,5,M,35,5,M,37,6,M,31,5,M,23,5,M,42,7,M,41,7
-9,Coronel Blanco Kesia Zorel,M,25,5,M,38,6,M,38,6,M,44,7,M,24,5,M,23,5,M,29,5,M,37,6,M,31,5,M,46,8,M,37,6,M,41,7,M,47,8,M,50,9,M,37,6
-10,Duran Maldonado Cristian,M,32,5,M,31,5,M,32,5,M,36,6,M,40,7,M,26,5,M,29,5,M,45,7,M,34,5,M,37,6,M,42,7,M,41,7,M,37,6,M,37,6,M,45,7
-11,Escobar Luna Mery Shakira,M,32,5,M,31,5,M,45,7,M,44,7,M,35,5,M,32,5,M,47,8,M,47,8,M,48,8,M,46,8,M,45,7,M,45,7,M,39,6,M,57,10,M,56,10
-12,Fuentes Gonzales Pablo Andres,M,42,7,M,37,6,M,37,6,M,48,8,M,41,7,M,33,5,M,36,6,M,47,8,M,49,8,M,47,8,M,44,7,M,54,9,M,55,9,M,48,8,M,49,8
-13,Gutierrez Prieto Alexander Favio,M,33,5,M,24,5,M,35,5,M,60,10,M,43,7,M,37,6,M,47,8,M,35,5,M,45,7,M,35,5,M,41,7,M,39,6,M,22,5,M,34,5,M,34,5
-14,Llusco Mamani Nilse Greis,M,33,5,M,35,5,M,60,10,M,46,8,M,34,5,M,31,5,M,44,7,M,55,9,M,49,8,M,41,7,M,52,9,M,43,7,M,51,9,M,59,10,M,39,6
-15,Lopez Valdez Giovanna Vanesa,M,29,5,M,38,6,M,41,7,M,35,5,M,23,5,M,32,5,M,40,7,M,45,7,M,46,8,M,39,6,M,37,6,M,35,5,M,42,7,M,51,9,M,37,6
-16,Macias Fernandez Eddy Alvaro,M,44,7,M,31,5,M,32,5,M,46,8,M,36,6,M,35,5,M,37,6,M,51,9,M,37,6,M,43,7,M,46,8,M,44,7,M,40,7,M,48,8,M,34,5
-17,Mamani Gutierrez Jimena Karen,M,32,5,M,31,5,M,46,8,M,41,7,M,42,7,M,33,5,M,39,6,M,46,8,M,46,8,M,47,8,M,47,8,M,43,7,M,43,7,M,46,8,M,46,8
-18,Mamani Illanes Alvaro Ramiro,M,31,5,M,31,5,M,28,5,M,44,7,M,41,7,M,36,6,M,35,5,M,48,8,M,39,6,M,38,6,M,49,8,M,41,7,M,35,5,M,42,7,M,41,7
-19,Mamani Marca Cinthya Carola,M,42,7,M,37,6,M,44,7,M,42,7,M,37,6,M,38,6,M,41,7,M,45,7,M,48,8,M,51,9,M,44,7,M,39,6,M,37,6,M,52,9,M,31,5
-20,Mamani Viscarra Franz,M,25,5,M,31,5,M,41,7,M,40,7,M,22,5,M,25,5,M,37,6,M,38,6,M,40,7,M,39,6,M,44,7,M,36,6,M,39,6,M,40,7,M,45,7
-21,Mejia Ayala Paola Rosselin,M,33,5,M,31,5,M,40,7,M,42,7,M,31,5,M,22,5,M,36,6,M,43,7,M,52,9,M,43,7,M,37,6,M,46,8,M,37,6,M,44,7,M,36,6
-22,Mejia Patiño Geraldine Marian,M,25,5,M,35,5,M,42,7,M,42,7,M,34,5,M,22,5,M,35,5,M,31,5,M,33,5,M,42,7,M,38,6,M,31,5,M,47,8,M,43,7,M,43,7
-23,Mendizabal Zeballos Briseida Dafne,M,28,5,M,28,5,M,36,6,M,36,6,M,27,5,M,25,5,M,31,5,M,31,5,M,40,7,M,39,6,M,41,7,M,32,5,M,31,5,M,42,7,M,38,6
-24,Morales Mariño Astrid Danielly,M,39,6,M,42,7,M,38,6,M,49,8,M,42,7,M,40,7,M,43,7,M,49,8,M,48,8,M,53,9,M,37,6,M,45,7,M,55,9,M,53,9,M,53,9
-25,Morales Yujra Diego,M,39,6,M,35,5,M,40,7,M,43,7,M,31,5,M,32,5,M,34,5,M,39,6,M,37,6,M,42,7,M,56,10,M,45,7,M,43,7,M,42,7,M,33,5
-26,Pati Laguna Edson  Pavel,M,45,7,M,50,9,M,58,10,M,51,9,M,50,9,M,53,9,M,48,8,M,56,10,M,51,9,M,55,9,M,48,8,M,58,10,M,58,10,M,57,10,M,60,10
-27,Poma Cruz Ismael Carlos,M,32,5,M,26,5,M,35,5,M,41,7,M,39,6,M,29,5,M,33,5,M,40,7,M,35,5,M,48,8,M,42,7,M,42,7,M,54,9,M,35,5,M,38,6
-28,Quelali Quispe Lilian Milenca,M,31,5,M,46,8,M,46,8,M,56,10,M,39,6,M,41,7,M,40,7,M,55,9,M,48,8,M,47,8,M,41,7,M,45,7,M,46,8,M,58,10,M,58,10
-29,Robles Mita Jhoselyne Gabriela,M,31,5,M,44,7,M,41,7,M,56,10,M,25,5,M,34,5,M,42,7,M,45,7,M,42,7,M,43,7,M,44,7,M,41,7,M,46,8,M,56,10,M,32,5
-30,Rocabado Martinez Ana Belen,M,45,7,M,41,7,M,36,6,M,45,7,M,45,7,M,51,9,M,43,7,M,48,8,M,53,9,M,46,8,M,46,8,M,36,6,M,46,8,M,51,9,M,33,5
-31,Ruiz Charca Cristhian Joel,M,31,5,M,36,6,M,35,5,M,32,5,M,40,7,M,29,5,M,35,5,M,36,6,M,35,5,M,40,7,M,49,8,M,36,6,M,50,9,M,48,8,M,33,5
-32,Santander Cruz Linett Roslyn,M,29,5,M,39,6,M,46,8,M,42,7,M,40,7,M,33,5,M,37,6,M,50,9,M,43,7,M,50,9,M,47,8,M,42,7,M,43,7,M,48,8,M,41,7
-33,Ticona Cruz Omar Daniel,M,35,5,M,35,5,M,33,5,M,49,8,M,31,5,M,33,5,M,40,7,M,55,9,M,48,8,M,54,9,M,48,8,M,37,6,M,51,9,M,38,6,M,52,9
-34,Yapuchura Vasquez Nathalie Yasmine,M,34,5,M,31,5,M,46,8,M,35,5,M,31,5,M,32,5,M,38,6,M,49,8,M,44,7,M,46,8,M,44,7,M,37,6,M,45,7,M,48,8,M,43,7
+1;Añaguaya Lazzo Jonathan Andres;*MAT*;25;5;*MAT*;22;5;*MAT*;39;6;*MAT*;41;7;*MAT*;22;5;*MAT*;23;5;*MAT*;31;5;*MAT*;36;6;*MAT*;33;5;*MAT*;34;5;*MAT*;48;8;*MAT*;38;6;*MAT*;37;6;*MAT*;47;8;*MAT*;48;8;*EST*;67;0;0;1
+2;Arias Miranda Harold Mauricio;*MAT*;28;5;*MAT*;22;5;*MAT*;44;7;*MAT*;33;5;*MAT*;36;6;*MAT*;33;5;*MAT*;29;5;*MAT*;39;6;*MAT*;35;5;*MAT*;37;6;*MAT*;48;8;*MAT*;41;7;*MAT*;40;7;*MAT*;40;7;*MAT*;51;9;*EST*;67;1;1;0
+3;Arriague Gonzales Adriana Noemi;*MAT*;44;7;*MAT*;47;8;*MAT*;49;8;*MAT*;58;10;*MAT*;43;7;*MAT*;47;8;*MAT*;50;9;*MAT*;55;9;*MAT*;53;9;*MAT*;52;9;*MAT*;46;8;*MAT*;48;8;*MAT*;58;10;*MAT*;60;10;*MAT*;57;10;*EST*;67;1;0;0
+4;Ayala Sanchez Sherezada Brenda;*MAT*;26;5;*MAT*;35;5;*MAT*;46;8;*MAT*;41;7;*MAT*;22;5;*MAT*;27;5;*MAT*;39;6;*MAT*;49;8;*MAT*;46;8;*MAT*;34;5;*MAT*;41;7;*MAT*;34;5;*MAT*;51;9;*MAT*;50;9;*MAT*;51;9;*EST*;67;0;0;0
+5;Barreto Pocoata Yasminka Magali;*MAT*;38;6;*MAT*;42;7;*MAT*;48;8;*MAT*;46;8;*MAT*;40;7;*MAT*;39;6;*MAT*;38;6;*MAT*;54;9;*MAT*;51;9;*MAT*;52;9;*MAT*;50;9;*MAT*;39;6;*MAT*;43;7;*MAT*;58;10;*MAT*;51;9;*EST*;67;0;0;0
+6;Cabrera Huanca Jhonatan;*MAT*;26;5;*MAT*;33;5;*MAT*;45;7;*MAT*;44;7;*MAT*;34;5;*MAT*;32;5;*MAT*;36;6;*MAT*;50;9;*MAT*;44;7;*MAT*;38;6;*MAT*;51;9;*MAT*;43;7;*MAT*;48;8;*MAT*;37;6;*MAT*;43;7;*EST*;67;1;0;0
+7;Cala Surco Kevin;*MAT*;38;6;*MAT*;36;6;*MAT*;33;5;*MAT*;41;7;*MAT*;47;8;*MAT*;40;7;*MAT*;31;5;*MAT*;37;6;*MAT*;40;7;*MAT*;41;7;*MAT*;49;8;*MAT*;37;6;*MAT*;33;5;*MAT*;38;6;*MAT*;36;6;*EST*;67;0;0;0
+8;Choque Chavez Amilcar;*MAT*;31;5;*MAT*;33;5;*MAT*;35;5;*MAT*;39;6;*MAT*;32;5;*MAT*;35;5;*MAT*;29;5;*MAT*;38;6;*MAT*;35;5;*MAT*;35;5;*MAT*;37;6;*MAT*;31;5;*MAT*;23;5;*MAT*;42;7;*MAT*;41;7;*EST*;67;0;0;0
+9;Coronel Blanco Kesia Zorel;*MAT*;25;5;*MAT*;38;6;*MAT*;38;6;*MAT*;44;7;*MAT*;24;5;*MAT*;23;5;*MAT*;29;5;*MAT*;37;6;*MAT*;31;5;*MAT*;46;8;*MAT*;37;6;*MAT*;41;7;*MAT*;47;8;*MAT*;50;9;*MAT*;37;6;*EST*;67;0;0;0
+10;Duran Maldonado Cristian;*MAT*;32;5;*MAT*;31;5;*MAT*;32;5;*MAT*;36;6;*MAT*;40;7;*MAT*;26;5;*MAT*;29;5;*MAT*;45;7;*MAT*;34;5;*MAT*;37;6;*MAT*;42;7;*MAT*;41;7;*MAT*;37;6;*MAT*;37;6;*MAT*;45;7;*EST*;67;0;0;0
+11;Escobar Luna Mery Shakira;*MAT*;32;5;*MAT*;31;5;*MAT*;45;7;*MAT*;44;7;*MAT*;35;5;*MAT*;32;5;*MAT*;47;8;*MAT*;47;8;*MAT*;48;8;*MAT*;46;8;*MAT*;45;7;*MAT*;45;7;*MAT*;39;6;*MAT*;57;10;*MAT*;56;10;*EST*;67;0;0;0
+12;Fuentes Gonzales Pablo Andres;*MAT*;42;7;*MAT*;37;6;*MAT*;37;6;*MAT*;48;8;*MAT*;41;7;*MAT*;33;5;*MAT*;36;6;*MAT*;47;8;*MAT*;49;8;*MAT*;47;8;*MAT*;44;7;*MAT*;54;9;*MAT*;55;9;*MAT*;48;8;*MAT*;49;8;*EST*;67;0;0;1
+13;Gutierrez Prieto Alexander Favio;*MAT*;33;5;*MAT*;24;5;*MAT*;35;5;*MAT*;60;10;*MAT*;43;7;*MAT*;37;6;*MAT*;47;8;*MAT*;35;5;*MAT*;45;7;*MAT*;35;5;*MAT*;41;7;*MAT*;39;6;*MAT*;22;5;*MAT*;34;5;*MAT*;34;5;*EST*;67;0;0;0
+14;Llusco Mamani Nilse Greis;*MAT*;33;5;*MAT*;35;5;*MAT*;60;10;*MAT*;46;8;*MAT*;34;5;*MAT*;31;5;*MAT*;44;7;*MAT*;55;9;*MAT*;49;8;*MAT*;41;7;*MAT*;52;9;*MAT*;43;7;*MAT*;51;9;*MAT*;59;10;*MAT*;39;6;*EST*;67;0;0;0
+15;Lopez Valdez Giovanna Vanesa;*MAT*;29;5;*MAT*;38;6;*MAT*;41;7;*MAT*;35;5;*MAT*;23;5;*MAT*;32;5;*MAT*;40;7;*MAT*;45;7;*MAT*;46;8;*MAT*;39;6;*MAT*;37;6;*MAT*;35;5;*MAT*;42;7;*MAT*;51;9;*MAT*;37;6;*EST*;67;1;0;0
+16;Macias Fernandez Eddy Alvaro;*MAT*;44;7;*MAT*;31;5;*MAT*;32;5;*MAT*;46;8;*MAT*;36;6;*MAT*;35;5;*MAT*;37;6;*MAT*;51;9;*MAT*;37;6;*MAT*;43;7;*MAT*;46;8;*MAT*;44;7;*MAT*;40;7;*MAT*;48;8;*MAT*;34;5;*EST*;67;0;0;0
+17;Mamani Gutierrez Jimena Karen;*MAT*;32;5;*MAT*;31;5;*MAT*;46;8;*MAT*;41;7;*MAT*;42;7;*MAT*;33;5;*MAT*;39;6;*MAT*;46;8;*MAT*;46;8;*MAT*;47;8;*MAT*;47;8;*MAT*;43;7;*MAT*;43;7;*MAT*;46;8;*MAT*;46;8;*EST*;67;0;0;0
+18;Mamani Illanes Alvaro Ramiro;*MAT*;31;5;*MAT*;31;5;*MAT*;28;5;*MAT*;44;7;*MAT*;41;7;*MAT*;36;6;*MAT*;35;5;*MAT*;48;8;*MAT*;39;6;*MAT*;38;6;*MAT*;49;8;*MAT*;41;7;*MAT*;35;5;*MAT*;42;7;*MAT*;41;7;*EST*;67;0;0;0
+19;Mamani Marca Cinthya Carola;*MAT*;42;7;*MAT*;37;6;*MAT*;44;7;*MAT*;42;7;*MAT*;37;6;*MAT*;38;6;*MAT*;41;7;*MAT*;45;7;*MAT*;48;8;*MAT*;51;9;*MAT*;44;7;*MAT*;39;6;*MAT*;37;6;*MAT*;52;9;*MAT*;31;5;*EST*;67;1;0;0
+20;Mamani Viscarra Franz;*MAT*;25;5;*MAT*;31;5;*MAT*;41;7;*MAT*;40;7;*MAT*;22;5;*MAT*;25;5;*MAT*;37;6;*MAT*;38;6;*MAT*;40;7;*MAT*;39;6;*MAT*;44;7;*MAT*;36;6;*MAT*;39;6;*MAT*;40;7;*MAT*;45;7;*EST*;67;0;0;0
+21;Mejia Ayala Paola Rosselin;*MAT*;33;5;*MAT*;31;5;*MAT*;40;7;*MAT*;42;7;*MAT*;31;5;*MAT*;22;5;*MAT*;36;6;*MAT*;43;7;*MAT*;52;9;*MAT*;43;7;*MAT*;37;6;*MAT*;46;8;*MAT*;37;6;*MAT*;44;7;*MAT*;36;6;*EST*;67;0;0;1
+22;Mejia Patiño Geraldine Marian;*MAT*;25;5;*MAT*;35;5;*MAT*;42;7;*MAT*;42;7;*MAT*;34;5;*MAT*;22;5;*MAT*;35;5;*MAT*;31;5;*MAT*;33;5;*MAT*;42;7;*MAT*;38;6;*MAT*;31;5;*MAT*;47;8;*MAT*;43;7;*MAT*;43;7;*EST*;67;0;1;0
+23;Mendizabal Zeballos Briseida Dafne;*MAT*;28;5;*MAT*;28;5;*MAT*;36;6;*MAT*;36;6;*MAT*;27;5;*MAT*;25;5;*MAT*;31;5;*MAT*;31;5;*MAT*;40;7;*MAT*;39;6;*MAT*;41;7;*MAT*;32;5;*MAT*;31;5;*MAT*;42;7;*MAT*;38;6;*EST*;67;1;0;2
+24;Morales Mariño Astrid Danielly;*MAT*;39;6;*MAT*;42;7;*MAT*;38;6;*MAT*;49;8;*MAT*;42;7;*MAT*;40;7;*MAT*;43;7;*MAT*;49;8;*MAT*;48;8;*MAT*;53;9;*MAT*;37;6;*MAT*;45;7;*MAT*;55;9;*MAT*;53;9;*MAT*;53;9;*EST*;67;0;0;0
+25;Morales Yujra Diego;*MAT*;39;6;*MAT*;35;5;*MAT*;40;7;*MAT*;43;7;*MAT*;31;5;*MAT*;32;5;*MAT*;34;5;*MAT*;39;6;*MAT*;37;6;*MAT*;42;7;*MAT*;56;10;*MAT*;45;7;*MAT*;43;7;*MAT*;42;7;*MAT*;33;5;*EST*;67;0;0;1
+26;Pati Laguna Edson  Pavel;*MAT*;45;7;*MAT*;50;9;*MAT*;58;10;*MAT*;51;9;*MAT*;50;9;*MAT*;53;9;*MAT*;48;8;*MAT*;56;10;*MAT*;51;9;*MAT*;55;9;*MAT*;48;8;*MAT*;58;10;*MAT*;58;10;*MAT*;57;10;*MAT*;60;10;*EST*;67;1;0;0
+27;Poma Cruz Ismael Carlos;*MAT*;32;5;*MAT*;26;5;*MAT*;35;5;*MAT*;41;7;*MAT*;39;6;*MAT*;29;5;*MAT*;33;5;*MAT*;40;7;*MAT*;35;5;*MAT*;48;8;*MAT*;42;7;*MAT*;42;7;*MAT*;54;9;*MAT*;35;5;*MAT*;38;6;*EST*;67;0;0;1
+28;Quelali Quispe Lilian Milenca;*MAT*;31;5;*MAT*;46;8;*MAT*;46;8;*MAT*;56;10;*MAT*;39;6;*MAT*;41;7;*MAT*;40;7;*MAT*;55;9;*MAT*;48;8;*MAT*;47;8;*MAT*;41;7;*MAT*;45;7;*MAT*;46;8;*MAT*;58;10;*MAT*;58;10;*EST*;67;1;0;0
+29;Robles Mita Jhoselyne Gabriela;*MAT*;31;5;*MAT*;44;7;*MAT*;41;7;*MAT*;56;10;*MAT*;25;5;*MAT*;34;5;*MAT*;42;7;*MAT*;45;7;*MAT*;42;7;*MAT*;43;7;*MAT*;44;7;*MAT*;41;7;*MAT*;46;8;*MAT*;56;10;*MAT*;32;5;*EST*;67;0;0;1
+30;Rocabado Martinez Ana Belen;*MAT*;45;7;*MAT*;41;7;*MAT*;36;6;*MAT*;45;7;*MAT*;45;7;*MAT*;51;9;*MAT*;43;7;*MAT*;48;8;*MAT*;53;9;*MAT*;46;8;*MAT*;46;8;*MAT*;36;6;*MAT*;46;8;*MAT*;51;9;*MAT*;33;5;*EST*;67;0;0;1
+31;Ruiz Charca Cristhian Joel;*MAT*;31;5;*MAT*;36;6;*MAT*;35;5;*MAT*;32;5;*MAT*;40;7;*MAT*;29;5;*MAT*;35;5;*MAT*;36;6;*MAT*;35;5;*MAT*;40;7;*MAT*;49;8;*MAT*;36;6;*MAT*;50;9;*MAT*;48;8;*MAT*;33;5;*EST*;67;0;0;0
+32;Santander Cruz Linett Roslyn;*MAT*;29;5;*MAT*;39;6;*MAT*;46;8;*MAT*;42;7;*MAT*;40;7;*MAT*;33;5;*MAT*;37;6;*MAT*;50;9;*MAT*;43;7;*MAT*;50;9;*MAT*;47;8;*MAT*;42;7;*MAT*;43;7;*MAT*;48;8;*MAT*;41;7;*EST*;67;0;0;0
+33;Ticona Cruz Omar Daniel;*MAT*;35;5;*MAT*;35;5;*MAT*;33;5;*MAT*;49;8;*MAT*;31;5;*MAT*;33;5;*MAT*;40;7;*MAT*;55;9;*MAT*;48;8;*MAT*;54;9;*MAT*;48;8;*MAT*;37;6;*MAT*;51;9;*MAT*;38;6;*MAT*;52;9;*EST*;67;0;0;1
+34;Yapuchura Vasquez Nathalie Yasmine;*MAT*;34;5;*MAT*;31;5;*MAT*;46;8;*MAT*;35;5;*MAT*;31;5;*MAT*;32;5;*MAT*;38;6;*MAT*;49;8;*MAT*;44;7;*MAT*;46;8;*MAT*;44;7;*MAT*;37;6;*MAT*;45;7;*MAT*;48;8;*MAT*;43;7;*EST*;67;1;0;1

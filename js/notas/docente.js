@@ -70,7 +70,7 @@ function alumnosnotas(data){
 	
 	$(".nota").change(enviarNota);
 	
-	$(".final").blur(enviarNota).keyup(enviarNota);
+	$(".final").blur(enviarNota)//.keyup(enviarNota);
 	
 	$("#guardarNotas").click(function(e) {
 		mostrarAlumnosNotas();
