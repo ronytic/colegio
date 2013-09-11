@@ -65,7 +65,7 @@ $folder="../../";
 <link rel="shortcut icon" href="<?php echo $folder?>imagenes/logos/<?php echo $LogoIcono?>" />
 </head>
 <body>
-<div class="row-fluid" class="wrapper">
+<div class="row-fluid wrapper">
 	<div class="span12">
     	<a name="datos"></a>
     	 <div class="cuerpo">
@@ -87,7 +87,7 @@ $folder="../../";
         </div>
     </div>
 </div>
-<div class="row-fluid" class="wrapper">
+<div class="row-fluid wrapper">
     <div class="span3">
     	<div class="cuerpo">
         	<h2><a name="cuotas"></a><?php echo $idioma["Cuotas"]?></h2>
@@ -232,21 +232,21 @@ $folder="../../";
                         <?php if($cur['Bimestre']){
 							?>
                             <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn1['NotaFinal'];?></td>
-                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn2['NotaFinal'];?></td>
-                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn3['NotaFinal'];?></td>
-                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn4['NotaFinal'];?></td>
+                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn2['NotaFinal']?'rojo':'';?>"><?php echo $rn2['NotaFinal'];?></td>
+                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo':'';?>"><?php echo $rn3['NotaFinal'];?></td>
+                            <td colspan="3" class="div der <?php echo $cur['NotaAprobacion']>$rn4['NotaFinal']?'rojo':'';?>"><?php echo $rn4['NotaFinal'];?></td>
                             <?php
 						}else{
 						?>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn1['Resultado'];?></td>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn1['Dps'];?></td>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn1['NotaFinal']?'rojo':'';?>"><?php echo $rn1['NotaFinal'];?></td>
-                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn2['NotaFinal']?'rojo1':'';?>"><?php echo $rn2['Resultado'];?></td>
-                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn2['NotaFinal']?'rojo1':'';?>"><?php echo $rn2['Dps'];?></td>
-                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn2['NotaFinal']?'rojo1':'';?>"><?php echo $rn2['NotaFinal'];?></td>
-                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo1':'';?>"><?php echo $rn3['Resultado'];?></td>
-                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo1':'';?>"><?php echo $rn3['Dps'];?></td>
-                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo1':'';?>"><?php echo $rn3['NotaFinal'];?></td>
+                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn2['NotaFinal']?'rojo':'';?>"><?php echo $rn2['Resultado'];?></td>
+                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn2['NotaFinal']?'rojo':'';?>"><?php echo $rn2['Dps'];?></td>
+                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn2['NotaFinal']?'rojo':'';?>"><?php echo $rn2['NotaFinal'];?></td>
+                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo':'';?>"><?php echo $rn3['Resultado'];?></td>
+                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo':'';?>"><?php echo $rn3['Dps'];?></td>
+                        <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']?'rojo':'';?>"><?php echo $rn3['NotaFinal'];?></td>
                         <?php }?>
                         <td class="div der"><?php echo $promedio?></td>
                         <td class="div der">0</td>
