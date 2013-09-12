@@ -30,26 +30,20 @@ $al=$alumno->mostrarTodoDatos($CodAlumno);
 $al=array_shift($al);
 $cur=$curso->mostrarCurso($al['CodCurso']);
 $cur=array_shift($cur);
-$cnf=($config->mostrarConfig("FechaCuota1"));
-$FechaCuota1=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota2"));
-$FechaCuota2=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota3"));
-$FechaCuota3=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota4"));
-$FechaCuota4=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota5"));
-$FechaCuota5=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota6"));
-$FechaCuota6=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota7"));
-$FechaCuota7=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota8"));
-$FechaCuota8=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota9"));
-$FechaCuota9=$cnf['Valor'];
-$cnf=($config->mostrarConfig("FechaCuota10"));
-$FechaCuota10=$cnf['Valor'];
+$Moneda=($config->mostrarConfig("Moneda",1));
+$FechaCuota1=($config->mostrarConfig("FechaCuota1",1));
+$FechaCuota2=($config->mostrarConfig("FechaCuota2",1));
+$FechaCuota3=($config->mostrarConfig("FechaCuota3",1));
+$FechaCuota4=($config->mostrarConfig("FechaCuota4",1));
+$FechaCuota5=($config->mostrarConfig("FechaCuota5",1));
+$FechaCuota6=($config->mostrarConfig("FechaCuota6",1));
+$FechaCuota7=($config->mostrarConfig("FechaCuota7",1));
+$FechaCuota8=($config->mostrarConfig("FechaCuota8",1));
+$FechaCuota9=($config->mostrarConfig("FechaCuota9",1));
+$FechaCuota10=($config->mostrarConfig("FechaCuota10",1));
+$mes=date("m");
+
+//echo 
 
 $v=$config->mostrarConfig("LogoIcono");
 $LogoIcono=$v['Valor'];
@@ -95,11 +89,15 @@ $folder="../../";
             	<?php
 				$total=0;
 				$totalDeuda=0;
+				$cantidadCuotas=0;
 				foreach($cuota->mostrarCuotas($al['CodAlumno']) as $cuo){
+					if($cuo['Cancelado']){
+					$cantidadCuotas++;	
+					}
 					?>
                     <tr>
                     	<td class="div"><?php echo $cuo['Numero'];?></td>
-                        <td  class="div"><?php echo $cuo['MontoPagar'];?> Bs.</td>
+                        <td  class="div"><?php echo $cuo['MontoPagar'];?> <?php echo $Moneda?></td>
                         <td><?php echo $cuo['Cancelado']?$idioma['Cancelado']:$idioma['Pendiente'];?></td>
                         <td><i class="icon-ok"></i></td>
                     </tr>
@@ -195,6 +193,9 @@ $folder="../../";
 	<div class="span12">
     	<div class="cuerpo">
         	<h2><a name="notas"></a><?php echo $idioma['Notas']?></h2>
+            
+					
+            
             <table class="tabla">
             	<tr class="cabecera"><td width="150"><?php echo $idioma['Materias']?></td>
                 <?php for($i=1;$i<=$cur['CantidadEtapas'];$i++){?>
@@ -227,6 +228,7 @@ $folder="../../";
 						$promedio=$registronotas->promedio($rn1['NotaFinal'],$rn2['NotaFinal'],$rn3['NotaFinal']);
 					}
 					?>
+                    <?php if($cantidadCuotas>=($mes-1)){?>
                     <tr>
                     	<td class="div"><?php echo $ma['Nombre'];?></td>
                         <?php if($cur['Bimestre']){
@@ -250,7 +252,11 @@ $folder="../../";
                         <?php }?>
                         <td class="div der"><?php echo $promedio?></td>
                         <td class="div der">0</td>
-                        <td class="der">0</td></tr>
+                        <td class="der">0</td>
+                    </tr>
+                    <?php }else{?>
+            			<tr><td colspan="13"><?php echo $idioma['DebeCancelarMensualidades']?></td></tr>
+					<?php break;}?>
                     <?php
 				}
 				?>

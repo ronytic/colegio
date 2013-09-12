@@ -120,6 +120,7 @@ $idioma['TarjetaCuotas']="Tarjeta de Cuotas";
 $idioma['BoletaDatos']="Boleta de Datos";
 $idioma['PagarCuotas']="Pagar Cuotas";
 
+$idioma['DebeCancelarMensualidades']="Debe de Cancelar Mensualidades para ver este sector del Sistema, Muchas Gracias";
 $idioma['Modificar']="Modificar";
 $idioma['Configuracion']="Configuración";
 $idioma['Guardar']="Guardar";
