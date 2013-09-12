@@ -10,7 +10,7 @@ include_once("class/submenu.php");
 $menu=new menu;
 $submenu=new submenu;
 $mv=$menu->verificar($url_modulo,$_SESSION['Nivel']);
-if($url_modulo!="/"){//Si no es el index revisar si tiene el permiso adecuado para ingresar al Sistema
+if($url_modulo!="/" && !isset($NoRevisar)){//Si no es el index revisar si tiene el permiso adecuado para ingresar al Sistema
 	if(!count($mv)){
 		header("Location:".url_base().$directory."login/?u=".$_SERVER['PHP_SELF']);
 	}else{

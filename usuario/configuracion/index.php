@@ -13,6 +13,7 @@ $ima=$folder."imagenes/usuario/".$usuconf['Foto'];
 if(!file_exists($ima) || empty($usuconf['Foto'])){
 	 $ima=$folder."imagenes/usuario/0.jpg";	
 }
+$NoRevisar=1;
 include_once($folder."cabecerahtml.php");
 ?>
 <script language="javascript" type="text/javascript" src="../../js/core/plugins/jquery.alphanumeric.pack.js"></script>
