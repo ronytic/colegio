@@ -22,6 +22,7 @@ $directorioInternet=$cnf['Valor'];
 <div class="span3">
     <div class="box-header"><?php echo $idioma["Configuracion"]?></div>
     <div class="box-content">
+    	<div class="alert alert-error"><?php echo $idioma['Nota']?>: <?php echo $idioma['NotaDescargarNotas']?></div>
         <a href="#" class="btn" id="subir"><?php echo $idioma['DescargarNotasInternet']?></a>
     </div>
 </div>
