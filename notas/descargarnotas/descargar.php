@@ -22,12 +22,25 @@ mysql_query("SET NAMES utf8",$local);
 $inter=mysql_connect($IpInternet.":".$PuertoInternet,$UsuarioInternet,$ContrasenaInternet);
 mysql_select_db($BaseDatosInternet,$inter);
 mysql_query("SET NAMES utf8",$inter);
-foreach($tables_export as $tabla){
+
+$tablas=array("casilleros","docentemateriacurso","registronotas");
+//$tablas=array("registronotas");
+$tablas=array("docentemateriacurso","casilleros");
+foreach($tablas as $tabla){
+	 
+	mysql_query("TRUNCATE TABLE $tabla",$local);
 	$consulta = "SELECT * FROM $tabla;";
-	mysql_query("TRUNCATE TABLE $tabla",$inter);
-    $respuesta = mysql_query($consulta,$local)
+	//echo $consulta;
+	unset($respuesta);
+	$respuesta="";
+	//echo "<h1>$consulta</h1>";
+	$respuesta = mysql_query($consulta,$inter)
     or die("No se pudo ejecutar la consulta: ".mysql_error());
+	//echo "<h1>$consulta".mysql_num_rows($respuesta)."</h1>";
 	$i=0;
+	/*while($reg=mysql_fetch_array($respuesta)){
+		print_r($reg);	
+	}*/
     while ($fila = mysql_fetch_array($respuesta, MYSQL_ASSOC)) {$i++;
             $columnas = array_keys($fila);
             foreach ($columnas as $columna) {
@@ -47,13 +60,14 @@ foreach($tables_export as $tabla){
             unset($values);
 			if($i==400){$i=0;
 				$insert_into_query.=";";
-				mysql_query($insert_into_query,$inter);
+				mysql_query($insert_into_query,$local);
 				//echo $insert_into_query."<br><br><br>";
 				$insert_into_query="";
 			}
     }
 	$insert_into_query.=";";
-	mysql_query($insert_into_query,$inter);
+	//echo $insert_into_query."<br>SEPARO!!!!<hr><br>";
+	mysql_query($insert_into_query,$local);
 	$insert_into_query="";
 }
 ?>

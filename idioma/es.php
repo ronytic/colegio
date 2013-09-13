@@ -564,6 +564,7 @@ $idioma['PromedioAnualAlumno']="Promedio Anual de Alumnos";
 $idioma['NoExistenReprobadosParaEstaMateria']="No existen reprobados para esta Materia";
 $idioma['PulseBotonParaGuardar']="Pulse el Botón para Guardar, si no pulsa  no se guardara ningún dato";
 $idioma['CursosYaAsignados']="La Generación de los Casilleros de las Notas Cualitativas para Bimestre se basaran en los cursos tomando encuenta Cuatro Parametros de Notas";
+$idioma['DescargarNotasInternet']="Descargar Notas de Internet";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
@@ -611,6 +612,7 @@ $idioma['Cargando']="Cargando";
 $idioma['SubirDatosInternet']="Subir Datos a Internet";
 $idioma['TengaPaciencia']="tenga paciencia";
 $idioma['DatosSubidoCorrectamente']="SUS DATOS SE SUBIERON CORRECTAMENTE";
+$idioma['DatosDescargadoCorrectamente']="SUS DATOS SE DESCARGARON CORRECTAMENTE";
 $idioma['DatosSubidoIncorrectamente']="ERROR, INTENTELO NUEVAMENTE";
 $idioma['NRevisarAccesos']="Revisar Accesos";
 $idioma['TiempoActualizacion']="Tiempo de Actualización";
@@ -628,6 +630,8 @@ $idioma['SeparadorMateria']="Separador de Materia";
 $idioma['SeparadorEstadisticas']="Separador de Estadisticas";
 $idioma['Cantidad']="Cantidad";
 $idioma['NoExisteAccesos']="No existen accesos al sistema para la búsqueda realizada";
+$idioma['ActualizarBaseDatosInternet']="Actualizar Base de Datos de INTERNET";
+$idioma['Mensaje']="Mensaje";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
