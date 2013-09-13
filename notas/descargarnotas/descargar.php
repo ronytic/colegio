@@ -25,7 +25,7 @@ mysql_query("SET NAMES utf8",$inter);
 
 $tablas=array("casilleros","docentemateriacurso","registronotas");
 //$tablas=array("registronotas");
-$tablas=array("docentemateriacurso","casilleros");
+//$tablas=array("docentemateriacurso","casilleros");
 foreach($tablas as $tabla){
 	 
 	mysql_query("TRUNCATE TABLE $tabla",$local);
