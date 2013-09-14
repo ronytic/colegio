@@ -103,7 +103,7 @@ $LogoIcono=$cnf['Valor'];
                 if (count($anuncioslogin->mostrarAnuncios())>0){
                     foreach($anuncioslogin->mostrarAnuncios() as $anuncios){
                     ?>
-                    <li><?php echo $anuncios['Mensaje']?></li>
+                    <li class="<?php echo $anuncios['Resaltar']?'resaltar':''?>"><?php echo $anuncios['Mensaje']?></li>
                     <?php
                 }
                 }else{

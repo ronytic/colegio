@@ -12,12 +12,18 @@ body{
 }
 .mensajes li,.mensajes ul{
 	color:white;
-	list-style:inside;
+	
 	text-shadow:none;
-	margin:10px 0px 10px 0px;
+	margin:10px 0px 10px 10px;
 	font-size:1.2em;
 	line-height:1.5em;
+	
 }
+.mensajes li.resaltar{
+	font-weight:bold;
+	letter-spacing:2pt;
+}
+
 .login{
 	margin-top:60px;
 	/*border:#bababa 1px solid;*/

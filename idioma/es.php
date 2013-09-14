@@ -636,6 +636,8 @@ $idioma['Cantidad']="Cantidad";
 $idioma['NoExisteAccesos']="No existen accesos al sistema para la búsqueda realizada";
 $idioma['ActualizarBaseDatosInternet']="Actualizar Base de Datos de INTERNET";
 $idioma['Mensaje']="Mensaje";
+$idioma['Resaltar']="Resaltar";
+$idioma['NuevoMensaje']="Nuevo Mensaje";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
@@ -802,6 +804,9 @@ $idioma['Limite1Trimestre']="Limite de Trimestre Primero Rango";
 $idioma['Limite2Trimestre']="Limite de Trimestre Segundo Rango";
 $idioma['Limite3Trimestre']="Limite de Trimestre Tercer Rango";
 $idioma['Limite4Trimestre']="Limite de Trimestre Cuarto Rango";
+$idioma['NModificarComunicadosLogin']="Modificar Comunicados de Acceso al Sistema";
+$idioma['ListadoMensajes']="Listado de Mensajes";
+$idioma['NoExisteMensajesRegistrados']="No Existen Mensajes Registrados";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";
