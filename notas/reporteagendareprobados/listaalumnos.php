@@ -23,6 +23,8 @@ if(!empty($_POST)){
 	$cur=$curso->mostrarCurso($CodCurso);
 	$cur=array_shift($cur);
 	$notareprobacion=$cur['NotaAprobacion'];
+	$mat=$materias->mostrarMateria($CodMateria);
+	$mat=array_shift($mat);
 	$ini=($cur['Bimestre'])?'Bimestre':'Trimestre';
 	$fin=($cur['Bimestre'])?'Bimestre':'Trimestre';
 	$PeriodoInicio=($config->mostrarConfig('Inicio'.$ini.$Periodo,1));
@@ -34,16 +36,18 @@ if(!empty($_POST)){
 	?>
     <table class="table table-bordered table-striped table-condensed">
     	<thead>
-	    <tr><th>N</th><th><?php echo $idioma['Paterno']?></th><th><?php echo $idioma['Materno']?></th><th><?php echo $idioma['Nombres']?></th><th>Prom</th><th>Dps</th><th>N. F.</th><th>Anotaciones</th>
+        <tr><th colspan="2"><?php echo $idioma['Materia']?>:</th><th colspan="6"><?php echo $mat['Nombre']?></th></tr>
+	    <tr><th colspan="2"><?php echo $idioma['Periodo']?>:</th><th colspan="2"><?php echo $Periodo?></th><th><?php echo $idioma['Curso']?>:</th><th colspan="3"><?php echo $cur['Nombre']?></th></tr>
+	    <tr><th>N</th><th><?php echo $idioma['Paterno']?></th><th><?php echo $idioma['Materno']?></th><th><?php echo $idioma['Nombres']?></th><th><?php echo $idioma['Promedio']?></th><th><?php echo $idioma['Dps']?></th><th><?php echo sacarToolTip($idioma['NotaFinal'])?></th><th><?php echo $idioma['Anotaciones']?></th>
     </tr>
     </thead>
 
                 <?php
 				$i=0;
-				foreach($RN as $registroN){$i++;
+				foreach($RN as $registroN){
 					$al=$alumno->mostrarDatosPersonales($registroN['CodAlumno']);
 					$al=array_shift($al);
-					if($al['CodAlumno']!=""){
+					if($al['CodAlumno']!=""){$i++;
 						$ag=$agenda->mostrarCodMateriaCodAlumnoRango($CodMateria,$al['CodAlumno'],$PeriodoInicio,$PeriodoFin);
 					?>
 					<tr>
@@ -63,15 +67,19 @@ if(!empty($_POST)){
                                 <thead>
                                     <tr><th><?php echo $idioma['Observacion']?></th><th><?php echo $idioma['Detalle']?></th><th><?php echo $idioma['Fecha']?></th></tr>
                                 </thead>
-								<?php foreach($ag as $a){
-                                $o=$observaciones->mostrarObser($a['CodObservacion']);
-                                $o=array_shift($o);
-                                ?>
-                                <tr>
-                                    <td><?php echo $o['Nombre']?></td>
-                                    <td width="180"><?php echo $a['Detalle'];?></td>
-                                    <td width="70" class="pequeno"><?php echo fecha2Str($a['Fecha']);?></td>
-                                </tr>
+                                <?php if(count($ag)){?>
+									<?php foreach($ag as $a){
+                                    $o=$observaciones->mostrarObser($a['CodObservacion']);
+                                    $o=array_shift($o);
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $o['Nombre']?></td>
+                                        <td width="180"><?php echo $a['Detalle'];?></td>
+                                        <td width="70" class="pequeno"><?php echo fecha2Str($a['Fecha']);?></td>
+                                    </tr>
+                                    <?php }?>
+                                <?php }else{?>
+                                	<tr class="alert-danger"><td colspan="3"><?php echo $idioma['NoExisteRegistroAgenda']?></td></tr>
                                 <?php }?>
                             </table>
                         </td>

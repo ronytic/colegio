@@ -566,6 +566,8 @@ $idioma['PulseBotonParaGuardar']="Pulse el Botón para Guardar, si no pulsa  no 
 $idioma['CursosYaAsignados']="La Generación de los Casilleros de las Notas Cualitativas para Bimestre se basaran en los cursos tomando encuenta Cuatro Parametros de Notas";
 $idioma['DescargarNotasInternet']="Descargar Notas de Internet";
 $idioma['NotaDescargarNotas']="Tome en cuenta que al momento de descargar REEMPLAZARA todas notas Registradas o Modificadas con las notas registradas en internet en todos los periodos Registrados ";
+$idioma['NoExisteRegistroAgenda']="No Existe Registro en la Agenda";
+$idioma['Anotaciones']="Anotaciones";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";

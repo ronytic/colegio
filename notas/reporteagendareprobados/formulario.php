@@ -15,5 +15,5 @@ $PeriodoActual=($config->mostrarConfig("PeriodoActual",1));
 <?php echo $idioma['Materias']?>
 <select name="CodMateria" class="span12">
 </select>
-<input type="submit" value="<?php echo $idioma['VerAgenda']?>" class="btn btn-success" id="ver">    
+<input type="submit" value="<?php echo $idioma['VerReporte']?>" class="btn btn-success" id="ver">    
 
