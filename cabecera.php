@@ -63,8 +63,9 @@ switch($Nivel){
 						<i class="<?php echo $m['Imagen']?>"></i><span class="hidden-phone hidden-tablet"> <?php echo $idioma[$m['Nombre']]?></span> <span class="label label-<?php echo $m['Nombre']=='MisActividades'?"warning":"success";?> hidden-phone"><?php if($m['Nombre']=="MisActividades"){echo $cantagendaactividades['Cantidad'];}else{ echo "0";}?></span>
 					</a>
                     <?php }?>
+                    
 					<!-- Inicio: Menu de usuario -->
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title=" <?php echo $Apodo;?>">
+					<a class="btn" data-toggle="dropdown" href="#" title=" <?php echo $Apodo;?>">
 						<i class="icon-user"></i><span class="hidden-phone hidden-tablet"> <?php echo acortarPalabra(capitalizar($NombresSis));?></span>
 						<span class="caret"></span>
 					</a>
@@ -77,9 +78,9 @@ switch($Nivel){
                         <li><a href="<?php echo $folder;?>../csb2012/"><?php echo $idioma['Sistema']?> 2012</a></li>
                         <?php endif;?>
                         <li class="divider"></li>
-						<li><a href="<?php echo $folder;?>login/logout.php"><?php echo $idioma['Salir']?></a></li>
+						<li><a href="<?php echo $folder;?>login/logout.php"><?php echo $idioma['SalirSistema']?></a></li>
 					</ul>
-                    
+                    <a class="btn" href="<?php echo $folder;?>login/logout.php" title="<?php echo $idioma['SalirSistema'];?>"><i class="icon-off"></i></a>
 					<!-- Fin: Menu Deslisable -->
 				</div>
 				<!-- Fin: Cabecera de Menu -->

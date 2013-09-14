@@ -276,6 +276,7 @@ $idioma['TodoAlumnos']="Todos los Alumnos";
 $idioma['SoloParaMi']="Solo Para Mi";
 $idioma['ActividadesDel']="Actividades del";
 $idioma['ActividadesDelDia']="Actividades del Día";
+$idioma['SalirSistema']="Salir del Sistema";
 //Alumno
 $idioma['SeparacionDatos']="La separación de varios datos se lo realiza con el \"/\" (shif+7)(Símbolo Dividido)";
 $idioma['NombresAdicionales']="Nombres Adicionales";
