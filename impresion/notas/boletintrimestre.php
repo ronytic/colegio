@@ -37,6 +37,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$cnf=$config->mostrarConfig("Anio");
 	$anio=$cnf['Valor'];
 	//Sacar el Codigo del del trimestre desde ahi
+	
 	//Boletin
 	$cnf=($config->mostrarConfig("BoletinPosicion1X"));
 	$boletin1x=$cnf['Valor'];
@@ -66,6 +67,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$pdf->SetXY($boletin2x+145,$boletin2y+53);
 	$pdf->Cell(50,5,utf8_decode($idioma["Fecha"].": ".strftime("%d de %B de %Y")),$bordeC);
 	$i=0;
+	$pdf->SetFillColor(210,210,210);
 	foreach($cursomateria->mostrarMaterias($CodCurso) as $matbol){
 		$mat=$materias->mostrarMateria($matbol['CodMateria']);
 		$mat=array_shift($mat);
@@ -86,13 +88,18 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		$sumanotas+=$regNotas['NotaFinal'];
 		///Primer Trimestre
 		if($PeriodoActual>=1){
+			if($cur['NotaAprobacion']>$regNotas['NotaFinal']){
+				$bordeN=1;
+			}else{
+				$bordeN=0;
+			}
 			$pdf->SetXY($boletin4x+63,$boletin4y+80+$i);
 			$pdf->Cell(6,4,$regNotas['Resultado'],$bordeC,0,"R");//Nota
 			$pdf->SetXY($boletin4x+75,$boletin4y+80+$i);
 			if($casillas['Dps']==1)
 			$pdf->Cell(6,4,$regNotas['Dps'],$bordeC,0,"R");//DPS
 			$pdf->SetXY($boletin4x+86,$boletin4y+80+$i);
-			$pdf->Cell(6,4,$regNotas['NotaFinal'],$bordeC,0,"R");//Puntaje Trimestral
+			$pdf->Cell(6,4,$regNotas['NotaFinal'],$bordeN,0,"R",$bordeN);//Puntaje Trimestral
 			$cont++;
 		}
 			
@@ -102,6 +109,11 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		$sumanotas+=$regNotas['NotaFinal'];
 		//Segundo Trimestre
 		if($PeriodoActual>=2){
+			if($cur['NotaAprobacion']>$regNotas['NotaFinal']){
+				$bordeN=1;
+			}else{
+				$bordeN=0;
+			}
 			$pdf->SetXY($boletin4x+95,$boletin4y+80+$i);
 			$pdf->Cell(6,4,$regNotas['Resultado'],$bordeC,0,"R");//Nota
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
@@ -110,7 +122,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 			$pdf->Cell(6,4,$regNotas['Dps'],$bordeC,0,"R");//DPS
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
 			$pdf->SetXY($boletin4x+116,$boletin4y+80+$i);
-			$pdf->Cell(6,4,$regNotas['NotaFinal'],$bordeC,0,"R");//Puntaje Trimestral
+			$pdf->Cell(6,4,$regNotas['NotaFinal'],$bordeN,0,"R",$bordeN);//Puntaje Trimestral
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
 			$cont++;
 		}
@@ -121,6 +133,11 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		$sumanotas+=$regNotas['NotaFinal'];
 		///Tercer Trimestre
 		if($PeriodoActual>=3){
+			if($cur['NotaAprobacion']>$regNotas['NotaFinal']){
+				$bordeN=1;
+			}else{
+				$bordeN=0;
+			}
 			$pdf->SetXY($boletin4x+127,$boletin4y+80+$i);
 			$pdf->Cell(6,4,$regNotas['Resultado'],$bordeC,0,"R");//Nota
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
@@ -129,7 +146,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 			$pdf->Cell(6,4,$regNotas['Dps'],$bordeC,0,"R");//DPS
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
 			$pdf->SetXY($boletin4x+148,$boletin4y+80+$i);
-			$pdf->Cell(6,4,$regNotas['NotaFinal'],$bordeC,0,"R");//Puntaje Trimestral
+			$pdf->Cell(6,4,$regNotas['NotaFinal'],$bordeN,0,"R",$bordeN);//Puntaje Trimestral
 			//$pdf->Cell(6,4,"00",$bordeC,0,"R");
 			$cont++;
 		}

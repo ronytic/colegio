@@ -14,7 +14,10 @@ class cuota extends bd{
 		$this->campos=array('*');
 		return $this->getRecords("CodAlumno=$CodAlumno","Numero");
 	}
-	
+	function mostrarNumeroCuota($CodAlumno,$NumeroCuota,$Cancelado=1){
+		$this->campos=array('*');
+		return $this->getRecords("CodAlumno=$CodAlumno and Numero=$NumeroCuota and Cancelado=$Cancelado","Numero");
+	}
 	
 	function mostrarCuotasArqueo(){
 			

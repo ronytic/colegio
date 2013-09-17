@@ -103,6 +103,7 @@ $idioma['NModificarCurso']="Modificar Curso";
 $idioma['NVerTodosLosAccesos']="Ver Todos los Accesos";
 $idioma['NModificarNotasCualitativasDocentes']="Modificar Notas Cualitativas de Docentes";
 $idioma['NRegistroNotasCualitativasGlobal']="Registro de Notas Cualitativas Globales";
+$idioma['NListadoAlumnoParaBoletin']="Listado de Alumnos para generación de Boletín";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -569,6 +570,10 @@ $idioma['DescargarNotasInternet']="Descargar Notas de Internet";
 $idioma['NotaDescargarNotas']="Tome en cuenta que al momento de descargar REEMPLAZARA todas notas Registradas o Modificadas con las notas registradas en internet en todos los periodos Registrados ";
 $idioma['NoExisteRegistroAgenda']="No Existe Registro en la Agenda";
 $idioma['Anotaciones']="Anotaciones";
+$idioma['CuotaCancelada']="Cuota Cancelada";
+$idioma['VerBoletin']="Ver Boletín";
+$idioma['VerListado']="Ver Listado";
+$idioma['Accion']="Accion";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
