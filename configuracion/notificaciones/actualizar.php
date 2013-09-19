@@ -2,12 +2,14 @@
 include_once("../../login/check.php");
 if(!empty($_POST)){
 	extract($_POST);
-	include_once("../../class/anuncioslogin.php");
-	$anuncioslogin=new anuncioslogin;
+	include_once("../../class/notificaciones.php");
+	$notificaciones=new notificaciones;
+	$Usuarios=implode(",",$Usuarios);
 	$valores=array("Mensaje"=>"'$Mensaje'",
-				"Resaltar"=>"'$Resaltar'",
+				"Tipo"=>"'$Tipo'",
+				"Usuarios"=>"'$Usuarios'",
 	);
-	if($anuncioslogin->insertarRegistro($valores)){
+	if($notificaciones->actualizarRegistro($valores,"CodNotificaciones=$CodNotificaciones")){
 		?><div class="alert alert-success"><?php echo $idioma['DatosGuardadosCorrectamente']?></div>
         <?php	
 	}else{

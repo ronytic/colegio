@@ -3,23 +3,23 @@ $(document).on("ready",function(){
 	$(document).on("click",".eliminar",function(e){
 		e.preventDefault();
 		if(confirm(MensajeEliminar)){
-			var CodAnunciosLogin=$(this).attr("rel");
-			$.post("eliminar.php",{'CodAnunciosLogin':CodAnunciosLogin},function(data){mostrar();});
+			var CodNotificaciones=$(this).attr("rel");
+			$.post("eliminar.php",{'CodNotificaciones':CodNotificaciones},function(data){mostrar();});
 		}
 	});
 	$(document).on("click",".modificar",function(e){
 		e.preventDefault();
 		if(confirm(MensajeModificar)){
 			cargandoG("#configuracion");
-			var CodAnunciosLogin=$(this).attr("rel");
-			$.post("modificar.php",{'CodAnunciosLogin':CodAnunciosLogin},function(data){$(".configuracion").html(data)});
+			var CodNotificaciones=$(this).attr("rel");
+			$.post("modificar.php",{'CodNotificaciones':CodNotificaciones},function(data){$(".configuracion").html(data);$("#Usuario").chosen({'width':'100%'})});
 		}
 	});
 	$(document).on("click","#nuevo",function(e){
 		e.preventDefault();
 		cargandoG("#configuracion");
-		var CodAnunciosLogin=$(this).attr("rel");
-		$.post("nuevo.php",{'CodAnunciosLogin':CodAnunciosLogin},function(data){$(".configuracion").html(data)});
+		var CodNotificaciones=$(this).attr("rel");
+		$.post("nuevo.php",{'CodNotificaciones':CodNotificaciones},function(data){$(".configuracion").html(data);$("#Usuario").chosen({'width':'100%'})});
 	});
 });
 function mostrar(){

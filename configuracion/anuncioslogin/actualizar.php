@@ -2,19 +2,12 @@
 include_once("../../login/check.php");
 if(!empty($_POST)){
 	extract($_POST);
-	include_once("../../class/curso.php");
-	$curso=new curso;
-	$valores=array("Nombre"=>"'$Nombre'",
-				"Abreviado"=>"'$Abreviado'",
-				"CodCursoArea"=>"'$CodCursoArea'",
-				"Dps"=>"'$Dps'",
-				"Orden"=>"'$Orden'",
-				"Bimestre"=>"'$Bimestre'",
-				"NotaTope"=>"'$NotaTope'",
-				"NotaAprobacion"=>"'$NotaAprobacion'",
-				"CantidadEtapas"=>"'$CantidadEtapas'"
+	include_once("../../class/anuncioslogin.php");
+	$anuncioslogin=new anuncioslogin;
+	$valores=array("Mensaje"=>"'$Mensaje'",
+				"Resaltar"=>"'$Resaltar'",
 	);
-	if($curso->actualizarRegistro($valores,"CodCurso=$CodCurso")){
+	if($anuncioslogin->actualizarRegistro($valores,"CodAnunciosLogin=$CodAnunciosLogin")){
 		?><div class="alert alert-success"><?php echo $idioma['DatosGuardadosCorrectamente']?></div>
         <?php	
 	}else{

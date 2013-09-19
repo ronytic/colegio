@@ -7,10 +7,10 @@ include_once($folder."cabecerahtml.php");
 ?>
 <script language="javascript" type="text/javascript" src="../../js/curso/modificar.js"></script>
 <script language="javascript">
-var MensajeEliminar="<?php echo htmlspecialchars($idioma['MensajeEliminar'])?>";
-var NotaEliminar="<?php echo htmlspecialchars($idioma['NotaEliminar'])?>";
-var MensajeModificar="<?php echo htmlspecialchars($idioma['MensajeModificar'])?>";
-var NotaModificar="<?php echo htmlspecialchars($idioma['NotaModificar'])?>";
+var MensajeEliminar="<?php echo htmlspecialchars($idioma['MensajeEliminarCurso'])?>";
+var NotaEliminar="<?php echo htmlspecialchars($idioma['NotaEliminarCurso'])?>";
+var MensajeModificar="<?php echo htmlspecialchars($idioma['MensajeModificarCurso'])?>";
+var NotaModificar="<?php echo htmlspecialchars($idioma['NotaModificarCurso'])?>";
 </script>
 <?php include_once($folder."cabecera.php");?>
 <div class="span8 box">
