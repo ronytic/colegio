@@ -105,6 +105,7 @@ $idioma['NVerTodosLosAccesos']="Ver Todos los Accesos";
 $idioma['NModificarNotasCualitativasDocentes']="Modificar Notas Cualitativas de Docentes";
 $idioma['NRegistroNotasCualitativasGlobal']="Registro de Notas Cualitativas Globales";
 $idioma['NListadoAlumnoParaBoletin']="Listado de Alumnos para generación de Boletín";
+$idioma['NObservacionesFrecuentes']="Observaciones Frecuentes";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -610,6 +611,9 @@ $idioma['SoloMateria']="Solo la Materia";
 $idioma['VerAgenda']="Ver Agenda";
 $idioma['ObservacionesAgenda']="Observaciones de Agenda";
 $idioma['DiaHoy']="Día de Hoy";
+$idioma['ValorObservacion']="Valor de Observación";
+$idioma['ListadoObservacionesFrecuentes']="Listado de Observaciones Frecuentes";
+$idioma['NuevaObservacionFrecuente']="Nueva Observación Frecuente";
 //Seguridad
 $idioma['Estructura']="Estructura";
 $idioma['TablasActualizar']="Tablas a Actualizar";

@@ -6,5 +6,13 @@ class observacionesfrecuentes extends bd{
 		$this->campos=array("*");
 		return $this->mostrarTodoRegistro("");
 	}
+	function mostrarObservaciones(){
+		$this->campos=array('*');
+		return $this->getRecords("Activo=1");
+	}
+	function mostrarObservacion($CodObservacionesFrecuentes){
+		$this->campos=array('*');
+		return $this->getRecords("CodObservacionesFrecuentes=$CodObservacionesFrecuentes and Activo=1");
+	}
 }
 ?>
