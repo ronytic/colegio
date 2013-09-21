@@ -858,12 +858,37 @@ $idioma['NotaEliminarCurso']="Nota: Es Muy Riegoso eliminar un curso cuando se c
 $idioma['MensajeEliminar']="¿Seguro que desea ELIMINAR este MENSAJE?";
 $idioma['MensajeModificar']="¿Seguro que desea Modificar este MENSAJE?";
 
+$idioma['MensajeEliminarCursoArea']="¿Seguro que desea ELIMINAR esta Área de Curso?, Tenga Encuenta que esto deberia realizarlo al inicio de la Gestión Educativa";
+$idioma['MensajeModificarCursoArea']="¿Seguro que desea Modificar esta Área de Curso?, Tenga Encuenta que esto deberia realizarlo al inicio de la Gestión Educativa?";
+
 $idioma['AreaCurso']="Área de Curso";
 $idioma['DescripcionEtapa']="La Cantidad de Etapas involucra la cantidad de Trimestre o la Cantidad de Bimestres respectivamente.";
 $idioma['Orden']="Orden o Posición";
 $idioma['DescripcionOrden']="Indica el Orden que saldra todos los cursos en la lista total y el posición que usted indique";
 $idioma['NuevoCurso']="Nuevo Curso";
 $idioma['ListadoAreaCursos']="Listado de Areas de Cursos";
+$idioma['EducacionInicial']="Educación Inicial";
+$idioma['Primaria']="Primaria";
+$idioma['Secundaria']="Secundaria";
+$idioma['EducacionSuperior']="Educación Superior";
+$idioma['Area']="Area";
+$idioma['NuevaAreaCurso']="Nueva Area de Curso";
+$idioma['Posicion']="Posición";
+$idioma['HorarioAsistencia']="Horario de Asistencia";
+$idioma['HoraEntradaLunes']="Hora Entrada Lunes";
+$idioma['HoraLimiteEsperaLunes']="Hora Limite Espera Lunes";
+$idioma['HoraEntradaMartes']="Hora Entrada Lunes";
+$idioma['HoraLimiteEsperaMartes']="Hora Limite Espera Lunes";
+$idioma['HoraEntradaMiercoles']="Hora Entrada Lunes";
+$idioma['HoraLimiteEsperaMiercoles']="Hora Limite Espera Lunes";
+$idioma['HoraEntradaJueves']="Hora Entrada Lunes";
+$idioma['HoraLimiteEsperaJueves']="Hora Limite Espera Lunes";
+$idioma['HoraEntradaViernes']="Hora Entrada Lunes";
+$idioma['HoraLimiteEsperaViernes']="Hora Limite Espera Lunes";
+$idioma['HoraEntradaSabado']="Hora Entrada Lunes";
+$idioma['HoraLimiteEsperaSabado']="Hora Limite Espera Lunes";
+$idioma['HoraEntradaDomingo']="Hora Entrada Lunes";
+$idioma['HoraLimiteEsperaDomingo']="Hora Limite Espera Lunes";
 //Codigo
 $idioma['CodigoBarraActualizado']="Código de Barra Actualizado";
 $idioma['CodigosBarraCurso']="Códigos de Barra por Curso";

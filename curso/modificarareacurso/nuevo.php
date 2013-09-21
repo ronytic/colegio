@@ -13,7 +13,7 @@ if(isset($_POST)){
 		$datos[$i]=$i;	
 	}
 	?>
-    <h2><?php echo $idioma['NuevoCurso']?></h2>
+    <h2><?php echo $idioma['NuevaAreaCurso']?></h2>
     <form action="guardar.php" method="post" class="formulario">
     <input type="hidden" name="CodCurso" value="<?php echo $CodCurso?>">
     <table class="table table-bordered table-striped">

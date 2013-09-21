@@ -5,12 +5,10 @@ $titulo="NModificarAreaCurso";
 
 include_once($folder."cabecerahtml.php");
 ?>
-<script language="javascript" type="text/javascript" src="../../js/curso/modificar.js"></script>
+<script language="javascript" type="text/javascript" src="../../js/curso/modificarcursoarea.js"></script>
 <script language="javascript">
-var MensajeEliminar="<?php echo htmlspecialchars($idioma['MensajeEliminarCurso'])?>";
-var NotaEliminar="<?php echo htmlspecialchars($idioma['NotaEliminarCurso'])?>";
-var MensajeModificar="<?php echo htmlspecialchars($idioma['MensajeModificarCurso'])?>";
-var NotaModificar="<?php echo htmlspecialchars($idioma['NotaModificarCurso'])?>";
+var MensajeEliminar="<?php echo htmlspecialchars($idioma['MensajeEliminarCursoArea'])?>";
+var MensajeModificar="<?php echo htmlspecialchars($idioma['MensajeModificarCursoArea'])?>";
 </script>
 <?php include_once($folder."cabecera.php");?>
 <div class="span8 box">
@@ -22,7 +20,7 @@ var NotaModificar="<?php echo htmlspecialchars($idioma['NotaModificarCurso'])?>"
 <div class="span4 box">
 	<div class="box-header"><h2><?php echo $idioma['Configuracion']?></h2></div>
     <div class="box-content">
-    	<a href="#" class="btn btn-info" id="nuevo"><?php echo $idioma['NuevoCurso']?></a><hr>
+    	<a href="#" class="btn btn-info" id="nuevo"><?php echo $idioma['NuevaAreaCurso']?></a><hr>
     	<div id="respuestaformulario" class="configuracion">
         
         </div>

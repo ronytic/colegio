@@ -1,18 +1,19 @@
 <?php
 include_once("../../login/check.php");
-if(!empty($_POST['CodCurso'])){
+if(!empty($_POST['CodCursoArea'])){
 	include_once("../../class/curso.php");
 	include_once("../../class/cursoarea.php");
 	$curso=new curso;
 	$cursoarea=new cursoarea;
-	$CodCurso=$_POST['CodCurso'];
-	$cur=$curso->mostrarCurso($CodCurso);
+	$CodCursoArea=$_POST['CodCursoArea'];
+	$cur=$cursoarea->mostrarArea($CodCursoArea);
 	$cur=array_shift($cur);
-	$curarea=todoLista($cursoarea->mostrarTodoRegistro(),"CodCursoArea","Nombre");
-	for($i=1;$i<=4;$i++){
+	//$curarea=todoLista($cursoarea->mostrarTodoRegistro(),"CodCursoArea","Nombre");
+	/*for($i=1;$i<=4;$i++){
 		$datos[$i]=$i;	
-	}
-	//$curarea=array_shift($curarea);
+	}*/
+
+	$curarea=array("1"=>$idioma['EducacionInicial'],"2"=>$idioma['Primaria'],"3"=>$idioma['Secundaria'],"4"=>$Area=$idioma['EducacionSuperior']);
 	?>
     <h2><?php echo $idioma['Modificar']?></h2>
     <form action="actualizar.php" method="post" class="formulario">
@@ -27,23 +28,72 @@ if(!empty($_POST['CodCurso'])){
         	<input type="text" value="<?php echo $cur['Abreviado']?>" name="Abreviado" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['AreaCurso']?><br>
-            <?php campo("CodCursoArea","select",$curarea,"span12",1,"",0,"",$cur['CodCursoArea'])?>
+        	<td><?php echo $idioma['Area']?><br>
+            <?php campo("Area","select",$curarea,"span12",1,"",0,"",$cur['Area'])?>
         	</td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['Dps']?><br>
-            <?php campo("Dps","select",array("1"=>$idioma["Si"],"0"=>$idioma["No"]),"span12",1,"",0,"",$cur['Dps'])?>
-        	</td>
+        	<td><?php echo $idioma['Orden']?><br>
+            <?php campo("Posicion","text",$cur['Posicion'],"span12",1,"",0,"",$cur['Dps'])?>
+        	<small><?php echo $idioma['DescripcionOrden']?></small>
+            </td>
+        </tr>
+        <tr><td class="resaltar"><hr class="separador"><br><?php echo $idioma['HorarioAsistencia']?></td></tr>
+        <tr>
+        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['Bimestre']?><br>
-            <?php campo("Bimestre","select",array("1"=>$idioma["Si"],"0"=>$idioma["No"]),"span12",1,"",0,"",$cur['Bimestre'])?>
-        	</td>
+        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['NotaTope']?><br>
-        	<input type="text" value="<?php echo $cur['NotaTope']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
         </tr>
         <tr>
         	<td><?php echo $idioma['NotaAprobacion']?><br>
