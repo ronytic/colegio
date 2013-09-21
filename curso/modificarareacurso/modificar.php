@@ -95,6 +95,7 @@ if(!empty($_POST['CodCursoArea'])){
         	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
         	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
         </tr>
+        
         <tr>
         	<td><?php echo $idioma['NotaAprobacion']?><br>
         	<input type="text" value="<?php echo $cur['NotaAprobacion']?>" name="NotaAprobacion" class="span12"></td>
