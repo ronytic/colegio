@@ -45,7 +45,7 @@ if(!empty($_GET['CodAl'])){
                     <tr>
                     	<td><?php echo $idioma['Curso']?>:</td><td class="text-info"><?php echo $cur['Nombre']?></span></td>
                     <td><?php echo $idioma['Telefono']?>:</td><td class="text-info"><?php echo $al['TelefonoCasa']?> <?php echo $al['Celular']?></span></td></tr>
-                    <tr><td><?php echo $idioma['CelularM']?>:</td><td class="text-info"><?php echo $al['CelularM']?></td><td><?php echo $idioma['CelularP']?>:</td><td class="text-info"><?php echo $al['CelularP']?></td></tr>
+                    <tr><td><?php echo $idioma['CelularMadre']?>:</td><td class="text-info"><?php echo $al['CelularM']?></td><td><?php echo $idioma['CelularPadre']?>:</td><td class="text-info"><?php echo $al['CelularP']?></td></tr>
                 </table>
         </div>
      </div>
