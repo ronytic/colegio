@@ -23,7 +23,7 @@ var NotaModificar="<?php echo htmlspecialchars($idioma['NotaModificar'])?>";
 <div class="span4 box">
 	<div class="box-header"><h2><?php echo $idioma['Configuracion']?></h2></div>
     <div class="box-content">
-    	<a href="#" class="btn btn-info" id="nuevo"><?php echo $idioma['NuevoMensaje']?></a><hr>
+    	<a href="#" class="btn btn-info" id="nuevo"><?php echo $idioma['NuevaNotificacion']?></a><hr>
     	<div id="respuestaformulario" class="configuracion">
         
         </div>

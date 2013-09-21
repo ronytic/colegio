@@ -824,6 +824,7 @@ $idioma['Tipo']="Tipo";
 $idioma['NivelUsuario']="Nivel de Usuario";
 $idioma['TipoMensaje']="Tipo de Mensaje";
 $idioma['ListadoNotificaciones']="Listado de Notificaciones";
+$idioma['NuevaNotificacion']="Nueva Notificación";
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";

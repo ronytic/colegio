@@ -3,7 +3,7 @@ include_once("../../login/check.php");
 if(isset($_POST)){
 	$paraquien=array(1=>$idioma['TodoAdministradores'],2=>$idioma['TodoDirectores'],3=>$idioma['TodoDocentes'],4=>$idioma['TodosSecretarias'],5=>$idioma['TodoRegentes'],6=>$idioma['TodoPadresFamilia'],7=>$idioma['TodoAlumnos']);
 	?>
-    <h2><?php echo $idioma['NuevoMensaje']?></h2>
+    <h2><?php echo $idioma['NuevaNotificacion']?></h2>
     <form action="guardar.php" method="post" class="formulario">
     <input type="hidden" name="CodAnunciosLogin" value="<?php echo $CodAnunciosLogin?>">
     <table class="table table-bordered table-striped">
