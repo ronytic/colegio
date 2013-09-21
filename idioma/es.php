@@ -106,6 +106,7 @@ $idioma['NModificarNotasCualitativasDocentes']="Modificar Notas Cualitativas de 
 $idioma['NRegistroNotasCualitativasGlobal']="Registro de Notas Cualitativas Globales";
 $idioma['NListadoAlumnoParaBoletin']="Listado de Alumnos para generación de Boletín";
 $idioma['NObservacionesFrecuentes']="Observaciones Frecuentes";
+$idioma['NModificarAreaCurso']="Modificar Area del Curso";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -862,6 +863,7 @@ $idioma['DescripcionEtapa']="La Cantidad de Etapas involucra la cantidad de Trim
 $idioma['Orden']="Orden o Posición";
 $idioma['DescripcionOrden']="Indica el Orden que saldra todos los cursos en la lista total y el posición que usted indique";
 $idioma['NuevoCurso']="Nuevo Curso";
+$idioma['ListadoAreaCursos']="Listado de Areas de Cursos";
 //Codigo
 $idioma['CodigoBarraActualizado']="Código de Barra Actualizado";
 $idioma['CodigosBarraCurso']="Códigos de Barra por Curso";
