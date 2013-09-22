@@ -10,14 +10,14 @@ $(document).on("ready",function(){
 	$(document).on("click",".modificar",function(e){
 		e.preventDefault();
 		if(confirm(MensajeModificar)){
-			cargandoG("#configuracion");
+			cargandoG(".configuracion");
 			var CodCursoArea=$(this).attr("rel");
 			$.post("modificar.php",{'CodCursoArea':CodCursoArea},function(data){$(".configuracion").html(data)});
 		}
 	});
 	$(document).on("click","#nuevo",function(e){
 		e.preventDefault();
-		cargandoG("#configuracion");
+		cargandoG(".configuracion");
 		var CodCursoArea=$(this).attr("rel");
 		$.post("nuevo.php",{'CodCursoArea':CodCursoArea},function(data){$(".configuracion").html(data)});
 	});

@@ -8,7 +8,7 @@ class cursoarea extends bd{
 	}
 	function mostrarAreas(){
 		$this->campos=array('*');
-		return $this->getRecords("Activo=1","CodCursoArea");
+		return $this->getRecords("Activo=1","Posicion");
 	}
 }
 ?>

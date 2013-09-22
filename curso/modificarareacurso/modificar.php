@@ -17,7 +17,7 @@ if(!empty($_POST['CodCursoArea'])){
 	?>
     <h2><?php echo $idioma['Modificar']?></h2>
     <form action="actualizar.php" method="post" class="formulario">
-    <input type="hidden" name="CodCurso" value="<?php echo $CodCurso?>">
+    <input type="hidden" name="CodCursoArea" value="<?php echo $CodCursoArea?>">
     <table class="table table-bordered table-striped">
     	<tr>
         	<td><?php echo $idioma['Nombre']?><br>
@@ -34,83 +34,66 @@ if(!empty($_POST['CodCursoArea'])){
         </tr>
         <tr>
         	<td><?php echo $idioma['Orden']?><br>
-            <?php campo("Posicion","text",$cur['Posicion'],"span12",1,"",0,"",$cur['Dps'])?>
+            <?php campo("Posicion","text",$cur['Posicion'],"span12",1,"",0,"")?>
         	<small><?php echo $idioma['DescripcionOrden']?></small>
             </td>
         </tr>
         <tr><td class="resaltar"><hr class="separador"><br><?php echo $idioma['HorarioAsistencia']?></td></tr>
         <tr>
         	<td><?php echo $idioma['HoraEntradaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="HoraInicioL" class="span12"></td>
         </tr>
         <tr>
         	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="HoraEsperaL" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraEntradaMartes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioM']?>" name="HoraInicioM" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraLimiteEsperaMartes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaM']?>" name="HoraEsperaM" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraEntradaMiercoles']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioMi']?>" name="HoraInicioMi" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraLimiteEsperaMiercoles']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaMi']?>" name="HoraEsperaMi" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraEntradaJueves']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioJ']?>" name="HoraInicioJ" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraLimiteEsperaJueves']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaJ']?>" name="HoraEsperaJ" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraEntradaViernes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioV']?>" name="HoraInicioV" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraLimiteEsperaViernes']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaV']?>" name="HoraEsperaV" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraEntradaSabado']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioS']?>" name="HoraInicioS" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraLimiteEsperaSabado']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaS']?>" name="HoraEsperaS" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraEntradaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraInicioL']?>" name="NotaTope" class="span12"></td>
+        	<td><?php echo $idioma['HoraEntradaDomingo']?><br>
+        	<input type="time" value="<?php echo $cur['HoraInicioD']?>" name="HoraInicioD" class="span12"></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['HoraLimiteEsperaLunes']?><br>
-        	<input type="time" value="<?php echo $cur['HoraEsperaL']?>" name="NotaTope" class="span12"></td>
-        </tr>
-        
-        <tr>
-        	<td><?php echo $idioma['NotaAprobacion']?><br>
-        	<input type="text" value="<?php echo $cur['NotaAprobacion']?>" name="NotaAprobacion" class="span12"></td>
-        </tr>
-        <tr>
-        	<td><?php echo $idioma['CantidadEtapas']?><br>
-            <?php campo("CantidadEtapas","select",$datos,"span12",1,"",0,"",$cur['CantidadEtapas'])?><br>
-            <small><?php echo $idioma['DescripcionEtapa']?></small>
-        	</td>
-        </tr>
-        <tr>
-        	<td><?php echo $idioma['Orden']?><br>
-        	<input type="text" value="<?php echo $cur['Orden']?>" name="Orden" class="span12"><br>
-            <small><?php echo $idioma['DescripcionOrden']?></small>
-            </td>
+        	<td><?php echo $idioma['HoraLimiteEsperaDomingo']?><br>
+        	<input type="time" value="<?php echo $cur['HoraEsperaD']?>" name="HoraEsperaD" class="span12"></td>
         </tr>
         <tr>
         	<td><input type="submit" class="btn btn-success" value="<?php echo $idioma['Actualizar']?>"></td>
