@@ -9,7 +9,7 @@ class materias extends bd{
 	function mostrarMaterias($sw='all'){
 		$this->campos=array("*");
 		if($sw=='all')
-			return $this->getRecords();
+			return $this->getRecords("Activo=1","Nombre");
 		else
 			return $this->getRecords("Valido=1 and Activo=1","Nombre");
 	}

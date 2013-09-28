@@ -16,7 +16,9 @@ if(!empty($_POST)){
     <?php echo $idioma['OrdenBoletin']?><br />
     <?php echo $idioma['NombreAdecuadoBoletin']?>
     <table class="table table-bordered table-striped table-hover ">
-    <tr class="cabecera"><td>Nº</td><td><?php echo $idioma['Materias']?></td><td><?php echo $idioma['NombreAlterno']?> 1</td><td><?php echo $idioma['NombreAlterno']?> 2</td><td width="50"><?php echo $idioma['Acciones']?></td></tr>
+    <thead>
+    <tr><th>N</th><th><?php echo $idioma['Materias']?></th><th><?php echo $idioma['NombreAlterno']?> 1</th><th><?php echo $idioma['NombreAlterno']?> 2</th><th width="50"><?php echo $idioma['Acciones']?></th></tr>
+    </thead>
 	<?php
 	$i=0;
 	foreach($cursomateria->mostrarMaterias($CodCurso) as $matbol){
