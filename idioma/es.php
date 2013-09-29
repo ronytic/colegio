@@ -108,6 +108,7 @@ $idioma['NListadoAlumnoParaBoletin']="Listado de Alumnos para generación de Bol
 $idioma['NObservacionesFrecuentes']="Observaciones Frecuentes";
 $idioma['NModificarAreaCurso']="Modificar Area del Curso";
 $idioma['NModificarMaterias']="Modificar Materias";
+$idioma['NModificarObservaciones']="Modificar Observaciones";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -616,6 +617,16 @@ $idioma['DiaHoy']="Día de Hoy";
 $idioma['ValorObservacion']="Valor de Observación";
 $idioma['ListadoObservacionesFrecuentes']="Listado de Observaciones Frecuentes";
 $idioma['NuevaObservacionFrecuente']="Nueva Observación Frecuente";
+$idioma['ListadoObservaciones']="Listado de Observaciones";
+$idioma['NuevaObservacion']="Nueva Observación";
+$idioma['NoExisteObservacionesRegistrados']="No Existe Observaciones Registrados";
+$idioma['MostrarDocente']="Mostrar a Docente";
+$idioma['ModificarObservacion']="Modificar Observación";
+$idioma['NuevaObservacion']="Nueva Observación";
+$idioma['MensajeEliminarObservacion']="¿Esta seguro de ELIMINAR esta Observación?";
+$idioma['MensajeModificarObservacion']="¿Esta seguro de MODIFICAR esta Observación?";
+$idioma['NotaMostrarDocente']="Asigne el valor de 'SI' cuando queire que esta observación muestre en el registro de la agenda del DOCENTE y en la agenda General, asigne el valor de 'NO' cuando solo quiera que muestre en la agenda Total";
+$idioma['NotaTipoObservacion']="Asigne una de las opciones ya que posteriormete se utilizará para la generacón de reportes estadisticos en el Boletín de Notas y en en reporte de la Agenda de General";
 //Seguridad
 $idioma['Estructura']="Estructura";
 $idioma['TablasActualizar']="Tablas a Actualizar";
