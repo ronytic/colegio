@@ -2,14 +2,17 @@
 include_once("../../login/check.php");
 if(!empty($_POST)){
 	extract($_POST);
-	include_once("../../class/notificaciones.php");
-	$notificaciones=new notificaciones;
-	$Usuarios=implode(",",$Usuarios);
-	$valores=array("Mensaje"=>"'$Mensaje'",
-				"Tipo"=>"'$Tipo'",
-				"Usuarios"=>"'$Usuarios'",
+	include_once("../../class/materias.php");
+	$materias=new materias;
+	$valores=array("Nombre"=>"'$Nombre'",
+				"Abreviado"=>"'$Abreviado'",
+				"NombreAlterno1"=>"'$NombreAlterno1'",
+				"NombreAlterno2"=>"'$NombreAlterno2'",
+				"PromedioCiencias"=>"'$PromedioCiencias'",
+				"Valido"=>"'$Valido'",
+				"Posicion"=>"'$Posicion'",
 	);
-	if($notificaciones->actualizarRegistro($valores,"CodNotificaciones=$CodNotificaciones")){
+	if($materias->actualizarRegistro($valores,"CodMateria=$CodMateria")){
 		?><div class="alert alert-success"><?php echo $idioma['DatosGuardadosCorrectamente']?></div>
         <?php	
 	}else{

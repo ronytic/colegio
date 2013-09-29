@@ -1,40 +1,52 @@
 <?php
 include_once("../../login/check.php");
-if(!empty($_POST['CodNotificaciones'])){
-	$CodNotificaciones=$_POST['CodNotificaciones'];
-	include_once("../../class/notificaciones.php");
-	$notificaciones=new notificaciones;
+if(!empty($_POST['CodMateria'])){
+	$CodMateria=$_POST['CodMateria'];
+	include_once("../../class/materias.php");
+	$materias=new materias;
 
-	$men=$notificaciones->mostrarNotificacion($CodNotificaciones);
-	$men=array_shift($men);
+	$mat=$materias->mostrarMateria($CodMateria);
+	$mat=array_shift($mat);
 	
-	$paraquien=array(1=>$idioma['TodoAdministradores'],2=>$idioma['TodoDirectores'],3=>$idioma['TodoDocentes'],4=>$idioma['TodosSecretarias'],5=>$idioma['TodoRegentes'],6=>$idioma['TodoPadresFamilia'],7=>$idioma['TodoAlumnos']);
+	$sino=array(1=>$idioma['Si'],0=>$idioma['No']);
 	//$curarea=array_shift($curarea);
 	?>
-    <h2><?php echo $idioma['Modificar']?></h2>
+    <h2><?php echo $idioma['ModificarMateria']?></h2>
     <form action="actualizar.php" method="post" class="formulario">
-    <input type="hidden" name="CodNotificaciones" value="<?php echo $CodNotificaciones?>">
+    <input type="hidden" name="CodMateria" value="<?php echo $CodMateria?>">
     <table class="table table-bordered table-striped">
     	<tr>
-        	<td><?php echo $idioma['Mensaje']?><br>
-        	<textarea value="" name="Mensaje" class="span12" placeholder="" rows="5"><?php echo $men['Mensaje']?></textarea></td>
+        	<td><?php echo $idioma['Nombre']?><br>
+        	<input type="text" value="<?php echo $mat['Nombre']?>" name="Nombre" class="span12" placeholder=""></td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['TipoMensaje']?><br>
-            <?php campo("Tipo","select",array("1"=>$idioma["Error"],"2"=>$idioma["Advertencia"],"3"=>$idioma["Comunicado"]),"span12",1,"",0,"",$men['Resaltar'])?>
+        	<td><?php echo $idioma['Abreviado']?><br>
+        	<input type="text" value="<?php echo $mat['Abreviado']?>" name="Abreviado" class="span12" placeholder=""></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['NombreAlterno']?> 1<br>
+        	<input type="text" value="<?php echo $mat['NombreAlterno1']?>" name="NombreAlterno1" class="span12" placeholder=""></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['NombreAlterno']?> 2<br>
+        	<input type="text" value="<?php echo $mat['NombreAlterno2']?>" name="NombreAlterno2" class="span12" placeholder=""></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['PromedioCiencias']?><br>
+            <?php campo("PromedioCiencias","select",$sino,"span12",1,"",0,"",$mat['PromedioCiencias'])?>
+            <small><?php echo $idioma['NotaPromedioCiencias']?></small>
         	</td>
         </tr>
         <tr>
-        	<td><?php echo $idioma['ParaQuien']?><br>
-            <select name="Usuarios[]" id="Usuario" multiple="multiple" required>
-                    
-                    <?php foreach($paraquien as $pqk=>$pqv){?>
-                    	<option value="<?php echo $pqk?>"<?php echo $pqk==0?'selected':''?>><?php echo $pqv?></option>
-                	<?php }?>
-                	</select>
+        	<td><?php echo $idioma['Valido']?><br>
+            <?php campo("Valido","select",$sino,"span12",1,"",0,"",$mat['Valido'])?>
+            <small><?php echo $idioma['NotaValido']?></small>
         	</td>
         </tr>
-        
+        <tr>
+        	<td><?php echo $idioma['Orden']?><br>
+        	<input type="text" value="<?php echo $mat['Posicion']?>" name="Posicion" class="span12" placeholder=""></td>
+        </tr>
         <tr>
         	<td><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
         </tr>

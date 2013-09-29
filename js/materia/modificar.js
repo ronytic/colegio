@@ -3,23 +3,23 @@ $(document).on("ready",function(){
 	$(document).on("click",".eliminar",function(e){
 		e.preventDefault();
 		if(confirm(MensajeEliminar)){
-			var CodNotificaciones=$(this).attr("rel");
-			$.post("eliminar.php",{'CodNotificaciones':CodNotificaciones},function(data){mostrar();});
+			var CodMateria=$(this).attr("rel");
+			$.post("eliminar.php",{'CodMateria':CodMateria},function(data){mostrar();});
 		}
 	});
 	$(document).on("click",".modificar",function(e){
 		e.preventDefault();
 		if(confirm(MensajeModificar)){
 			cargandoG("#configuracion");
-			var CodNotificaciones=$(this).attr("rel");
-			$.post("modificar.php",{'CodNotificaciones':CodNotificaciones},function(data){$(".configuracion").html(data);$("#Usuario").chosen({'width':'100%'})});
+			var CodMateria=$(this).attr("rel");
+			$.post("modificar.php",{'CodMateria':CodMateria},function(data){$(".configuracion").html(data);$("#Usuario")});
 		}
 	});
 	$(document).on("click","#nuevo",function(e){
 		e.preventDefault();
 		cargandoG("#configuracion");
-		var CodNotificaciones=$(this).attr("rel");
-		$.post("nuevo.php",{'CodNotificaciones':CodNotificaciones},function(data){$(".configuracion").html(data);$("#Usuario").chosen({'width':'100%'})});
+		var CodMateria=$(this).attr("rel");
+		$.post("nuevo.php",{'CodMateria':CodMateria},function(data){$(".configuracion").html(data);$("#Usuario")});
 	});
 });
 function mostrar(){

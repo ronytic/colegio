@@ -1,9 +1,9 @@
 <?php
 include_once("../../login/check.php");
-if(!empty($_POST['CodNotificaciones'])){
-	include_once("../../class/notificaciones.php");
-	$notificaciones=new notificaciones;
-	$CodNotificaciones=$_POST['CodNotificaciones'];
-	$notificaciones->eliminarRegistro("CodNotificaciones=$CodNotificaciones");
+if(!empty($_POST['CodMateria'])){
+	include_once("../../class/materias.php");
+	$materias=new materias;
+	$CodMateria=$_POST['CodMateria'];
+	$materias->eliminarRegistro("CodMateria=$CodMateria");
 }
 ?>

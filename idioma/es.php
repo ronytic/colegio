@@ -107,6 +107,7 @@ $idioma['NRegistroNotasCualitativasGlobal']="Registro de Notas Cualitativas Glob
 $idioma['NListadoAlumnoParaBoletin']="Listado de Alumnos para generación de Boletín";
 $idioma['NObservacionesFrecuentes']="Observaciones Frecuentes";
 $idioma['NModificarAreaCurso']="Modificar Area del Curso";
+$idioma['NModificarMaterias']="Modificar Materias";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -894,6 +895,16 @@ $idioma['CodigoBarraActualizado']="Código de Barra Actualizado";
 $idioma['CodigosBarraCurso']="Códigos de Barra por Curso";
 $idioma['CodigosBarraAlumno']="Códigos de Barra por Alumno";
 $idioma['Imprimir']="Imprimir";
+//Materias
+$idioma['Valido']="Valido";
+$idioma['PromedioCiencias']="Promedio Ciencias";
+$idioma['ListadoMaterias']="Listado de Materias";
+$idioma['NuevaMateria']="Nueva Materia";
+$idioma['MensajeEliminarMateria']="¿Seguro que desea ELIMINAR esta Materia?";
+$idioma['MensajeModificarMateria']="¿Seguro que desea Modificar esta Materia?";
+$idioma['ModificarMateria']="Modificar Materia";
+$idioma['NotaValido']="Una Materia se le asigna con el valor 'SI' cuando la Materia se usará para los reporte y para el sistema en total, se le asigna el valor de 'NO' cuando se utilizara el valor de Materia como un referetne solo para la Agenda de Observaciones, Por ejemplo Nombre de Docentes en particular como valor de materia";
+$idioma['NotaPromedioCiencias']="Se le asgina el valor de si cuando la Materia se tomará como parte para calcular la nota de la materia combinada";
 /*Internet*/
 $idioma['Inicio']="Inicio";
 $idioma['Cuotas']="Cuotas";
