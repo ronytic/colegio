@@ -29,6 +29,6 @@ $mat=$materias->mostrarMaterias('all');
 		}
 		?></table><?php
 	}else{
-	?><div class="alert alert-error"><?php echo $idioma['NoExisteMensajesRegistrados']?></div><?php	
+	?><div class="alert alert-error"><?php echo $idioma['NoExisteMateriasRegistrados']?></div><?php	
 	}
 	?>

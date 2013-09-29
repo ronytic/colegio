@@ -916,6 +916,7 @@ $idioma['MensajeModificarMateria']="¿Seguro que desea Modificar esta Materia?";
 $idioma['ModificarMateria']="Modificar Materia";
 $idioma['NotaValido']="Una Materia se le asigna con el valor 'SI' cuando la Materia se usará para los reporte y para el sistema en total, se le asigna el valor de 'NO' cuando se utilizara el valor de Materia como un referetne solo para la Agenda de Observaciones, Por ejemplo Nombre de Docentes en particular como valor de materia";
 $idioma['NotaPromedioCiencias']="Se le asgina el valor de si cuando la Materia se tomará como parte para calcular la nota de la materia combinada";
+$idioma['NoExisteMateriasRegistrados']="No Existen Materias Registradas";
 /*Internet*/
 $idioma['Inicio']="Inicio";
 $idioma['Cuotas']="Cuotas";
