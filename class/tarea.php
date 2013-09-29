@@ -9,6 +9,10 @@ class tarea extends bd{
 		$this->campos=array("*");	
 		return $this->getRecords("CodDocente=$CodDocente and CodCurso=$CodCurso and CodMateria=$CodMateria and Visible=1","  FechaPresentacion",0,0,0,1);
 	}
+	function mostrarTareasCursoMateria($CodCurso,$CodMateria){
+		$this->campos=array("*");	
+		return $this->getRecords("CodCurso=$CodCurso and CodMateria=$CodMateria and Visible=1","  FechaPresentacion",0,0,0,1);
+	}
 	function mostrarTareaCursoPendiente($CodCurso,$Fecha){
 		$this->campos=array("*");	
 		return $this->getRecords(" CodCurso=$CodCurso  and FechaPresentacion>CURDATE() and Visible=1","  FechaPresentacion",0,0,0,1);

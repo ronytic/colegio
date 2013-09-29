@@ -109,6 +109,8 @@ $idioma['NObservacionesFrecuentes']="Observaciones Frecuentes";
 $idioma['NModificarAreaCurso']="Modificar Area del Curso";
 $idioma['NModificarMaterias']="Modificar Materias";
 $idioma['NModificarObservaciones']="Modificar Observaciones";
+$idioma['NModificarUsuarios']="Modificar Usuarios";
+$idioma['NVerTareas']="Ver Tareas";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -675,7 +677,8 @@ $idioma['CompleteNombreTarea']="Complete el nombre de la tarea";
 $idioma['CompleteDescripcionTarea']="Complete la descripción de la tarea";
 $idioma['Descripcion']="Descripción";
 $idioma['NoHayTareasRegistradas']="No hay tareas registradas";
-
+$idioma['VerTareas']="Ver Tareas";
+$idioma['NoExisteTareasRegistradas']="No Existe Tareas Registradas";
 //Datos del Usuario
 $idioma['DatosUsuario']="Datos del Usuario";
 $idioma['GuardarConfiguracion']="Guardar Configuración";
@@ -838,6 +841,15 @@ $idioma['NivelUsuario']="Nivel de Usuario";
 $idioma['TipoMensaje']="Tipo de Mensaje";
 $idioma['ListadoNotificaciones']="Listado de Notificaciones";
 $idioma['NuevaNotificacion']="Nueva Notificación";
+$idioma['ListadoUsuarios']="Listado de Usuarios";
+$idioma['NuevoUsuario']="Nuevo Usuario";
+$idioma['NoExisteUsuariosRegistrados']="No Existen Usuarios Registrados";
+$idioma['ModificarUsuario']="Modificar Usuario";
+$idioma['NotaContrasena']="La Contraseña sera Modificada si introduce una nueva, si lo deja vacio mantendra la contraseña asginada anteriormente";
+$idioma['Apodo']="Apodo";
+$idioma['Habilitado']="Habilitado";
+$idioma['MensajeEliminarUsuario']="¿Seguro que desea ELIMINAR este usuario?";
+$idioma['MensajeModificarUsuario']="¿Seguro que desea MODIFICAR este usuario?";
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";
