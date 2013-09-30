@@ -217,6 +217,13 @@ include_once($folder."cabecerahtml.php");
                     <option value="1" <?php echo (dato("FaltaAgenda"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
                 </select></td>
             </tr>
+            <tr>
+            	<td><?php echo $idioma['TipoEstadisticaAsistenciaInicio']?></td>
+                <td><select class="span12" name="TipoEstadisticaAsistenciaInicio">
+                	<option value="Agenda" <?php echo (dato("TipoEstadisticaAsistenciaInicio"))=="Agenda"?'selected':''?>><?php echo $idioma['Agenda']?></option>
+                    <option value="Asistencia" <?php echo (dato("TipoEstadisticaAsistenciaInicio"))=="Asistencia"?'selected':''?>><?php echo $idioma['Asistencia']?></option>
+                </select></td>
+            </tr>
         	<tr>
             	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
             </tr>

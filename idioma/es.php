@@ -864,6 +864,7 @@ $idioma['EjemploTipoUnidadLogin']="Unidad Educativa Privada";
 $idioma['ActualizacionNavegador']="Url del Actualizador del Navegador";
 $idioma['CodigoSeguimientoSistema']="Código de Seguimiento del Sistema General";
 $idioma['CodigoAdicionalSistemaLogin']="Código Adicional Pantalla de Acceso al Sistema";
+$idioma['TipoEstadisticaAsistenciaInicio']="Tipo Estadística Asistencia de la Pantalla de Inicio";
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";
