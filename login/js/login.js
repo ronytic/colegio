@@ -11,4 +11,9 @@ $(document).ready(function(){
 		}
 		//event.preventDefault();	
 	});
+	$(".ayuda").click(function(e){e.preventDefault();}).popover({title:AyudaTitulo+$('#noticerrar').html(),html : true,placement:'bottom',content:$('#AyudaCuerpo').html()})
+	$(document).on("click",'#cerrarnoti',function(e){
+		e.preventDefault();
+		$(".ayuda").popover('hide');
+	});
 });

@@ -12,6 +12,13 @@ $idioma['NoComunicados']="NO HAY COMUNICADOS";
 $idioma['NoDatos']="Por favor introdusca TODOS los DATOS.";
 $idioma['DatosErroneos']="El USUARIO o la CONTRASEÑA son incorrectos, verifique e intente nuevamente.";
 $idioma['IdiomaNoEncontrado']="Idioma no Encontrado";
+$idioma['AccesoSistema']="Acceso al Sistema";
+$idioma['ActualizarNavegador']="Actualizar Navegador";
+$idioma['AyudaTitulo']="Ayuda para Ingresar al Sistema";
+$idioma['PrimerProblemaAcceso']="Verifique el usuario y la contraseña esten bien escritos.";
+$idioma['SegundoProblemaAcceso']="Consulte al Personal Administrativo de la Unidad Educativa.";
+$idioma['TercerProblemaAcceso']="Comuniquese con la Unidad Educativa al siguiente número de teléfono";
+$idioma['RecomendacionUsoSistema']="Para su Correcto funcionamiento del Sistema se recomienda Google Chrome, Firefox u otros navegadores actualizados y que el navegador se encuentre maximizado.";
 //Inicio
 $idioma['TituloSistema']="Sistema Académico Administrativo para Colegios";
 $idioma['DerechosReservados']="Todos los Derechos Reservados";

@@ -92,9 +92,15 @@ div.login a.plomo{
 div.login a:hover{
 	color:#448abe;
 }
-.login hr.plomo{
+.login hr.plomo,hr.plomo{
 	border: 1px #999999 dotted;	
 }
 .login a.idioma:hover{
 	text-decoration:underline;
+}
+.oculto{
+	display:none;	
+}
+.recomendacion{
+	color:#999;	
 }
