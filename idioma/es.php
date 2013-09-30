@@ -857,6 +857,13 @@ $idioma['Apodo']="Apodo";
 $idioma['Habilitado']="Habilitado";
 $idioma['MensajeEliminarUsuario']="¿Seguro que desea ELIMINAR este usuario?";
 $idioma['MensajeModificarUsuario']="¿Seguro que desea MODIFICAR este usuario?";
+$idioma['NombreUnidadLogin']="Nombre de La Unidad Educativa";
+$idioma['PantallaInicio']="Pantalla de Inicio";
+$idioma['TipoUnidadLogin']="Tipo de Unidad Educativa";
+$idioma['EjemploTipoUnidadLogin']="Unidad Educativa Privada";
+$idioma['ActualizacionNavegador']="Url del Actualizador del Navegador";
+$idioma['CodigoSeguimientoSistema']="Código de Seguimiento del Sistema General";
+$idioma['CodigoAdicionalSistemaLogin']="Código Adicional Pantalla de Acceso al Sistema";
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";

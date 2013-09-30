@@ -17,7 +17,7 @@ include_once($folder."cabecerahtml.php");
 <?php }?>
 <form action="guardar.php" method="post">
 <div class="span6 box">
-	<div class="box-header"><h2><?php echo $idioma['Periodos']?> - <?php echo $idioma['Trimestre']?> - <?php echo $idioma['Bimestre']?></h2></div>
+	<div class="box-header"><h2><?php echo $idioma['Periodos']?> - <?php echo $idioma['Trimestre']?> - <?php echo $idioma['Bimestre']?><a name="periodos"></a></h2></div>
 	<div class="box-content">
     	<table class="table table-hover table-bordered table-condensed">
         	<tr>
@@ -99,7 +99,7 @@ include_once($folder."cabecerahtml.php");
             </tr>
         </table>
     </div>
-	<div class="box-header"><h2><?php echo $idioma['Cuotas']?></h2></div>
+	<div class="box-header"><h2><?php echo $idioma['Cuotas']?><a name="cuotas"></a></h2></div>
     <div class="box-content">
     	<table class="table table-hover table-bordered">
         	<tr>
@@ -159,7 +159,7 @@ include_once($folder."cabecerahtml.php");
             </tr>
         </table>
     </div>
-    <div class="box-header"><h2><?php echo $idioma['PosicionBoletin']?></h2></div>
+    <div class="box-header"><h2><?php echo $idioma['PosicionBoletin']?><a name="posicionboletin"></a></h2></div>
     <div class="box-content">
     	<div class="centrar"><img src="../../imagenes/configuracion/posicionboletin.jpg" class="img-polaroid"></div>
     	<table class="table table-bordered table-hover">
@@ -200,7 +200,7 @@ include_once($folder."cabecerahtml.php");
             </tr>
         </table>
 	</div>
-	<div class="box-header"><h2><?php echo $idioma['Agenda']?></h2></div>
+	<div class="box-header"><h2><?php echo $idioma['Agenda']?><a name="agenda"></a></h2></div>
     <div class="box-content">
     	<table class="table table-bordered table-hover">
         	<tr>
@@ -224,7 +224,7 @@ include_once($folder."cabecerahtml.php");
 	</div>
 </div>
 <div class="span6 box">
-	<div class="box-header"><h2><?php echo $idioma['Notas']?></h2></div>
+	<div class="box-header"><h2><?php echo $idioma['Notas']?><a name="notas"></a></h2></div>
     <div class="box-content">
     	<table class="table table-bordered table-hover">
         	<tr>
@@ -247,7 +247,7 @@ include_once($folder."cabecerahtml.php");
             </tr>
         </table>
     </div>
-    <div class="box-header"><h2><?php echo $idioma['NotasCualitativas']?></h2></div>
+    <div class="box-header"><h2><?php echo $idioma['NotasCualitativas']?><a name="notascualitativas"></a></h2></div>
     <div class="box-content">
     	<table class="table table-bordered table-hover">
 	        <tr><td colspan="2" class="resaltar"><?php echo $idioma['Bimestre']?></td></tr>
@@ -297,11 +297,11 @@ include_once($folder."cabecerahtml.php");
             </tr>
         </table>
     </div>
-	<div class="box-header"><h2><?php echo $idioma['DatosInstitucion']?></h2></div>
+	<div class="box-header"><h2><?php echo $idioma['DatosInstitucion']?><a name="datosinstitucion"></a></h2></div>
     <div class="box-content">
     	<table class="table table-bordered table-hover">
         	<tr>
-            	<td><?php echo $idioma['TituloSistemaA']?><div class="pequeno"><?php echo $idioma['TituloSistemaE']?></div></td>
+            	<td width="50%"><?php echo $idioma['TituloSistemaA']?><div class="pequeno"><?php echo $idioma['TituloSistemaE']?></div></td>
                 <td><input type="text" class="span12" name="Titulo" value="<?php echo (dato("Titulo"))?>"></td>
             </tr>
             <tr>
@@ -364,6 +364,14 @@ include_once($folder."cabecerahtml.php");
             	<td><?php echo $idioma['Telefono']?></td>
                 <td><input type="text" class="span12" name="CodBarra" value="<?php echo (dato("Telefono"))?>"></td>
             </tr>
+            <tr>
+            	<td><?php echo $idioma['TipoUnidadLogin']?><br>Ej: <small><?php echo $idioma['EjemploTipoUnidadLogin']?></small></td>
+                <td><input type="text" class="span12" name="TipoUnidadLogin" value="<?php echo (dato("TipoUnidadLogin"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['NombreUnidadLogin']?><br><small><?php echo $idioma['PantallaInicio']?></small></td>
+                <td><input type="text" class="span12" name="NombreUnidadLogin" value="<?php echo (dato("NombreUnidadLogin"))?>"></td>
+            </tr>
         	<tr>
             	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
             </tr>
@@ -371,7 +379,7 @@ include_once($folder."cabecerahtml.php");
     </div>
     
     <?php if($_SESSION['Nivel']==1):?>
-    <div class="box-header"><h2><?php echo $idioma['Avanzado']?></h2></div>
+    <div class="box-header"><h2><?php echo $idioma['Avanzado']?><a name="avanzado"></a></h2></div>
     <div class="box-content">
     	<table class="table table-bordered table-hover">
         	<tr>
@@ -408,6 +416,18 @@ include_once($folder."cabecerahtml.php");
             <tr>
             	<td><?php echo $idioma['CodigoSeguimientoNotasDocente']?></td>
                 <td><textarea class="span12" name="CodigoSeguimientoNotasDocente" rows="10"><?php echo (dato("CodigoSeguimientoNotasDocente"))?></textarea></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['ActualizacionNavegador']?></td>
+                <td><input type="text" class="span12" name="ActualizacionNavegador" value="<?php echo (dato("ActualizacionNavegador"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['CodigoSeguimientoSistema']?></td>
+                <td><textarea class="span12" name="CodigoSeguimientoSistema" rows="10"><?php echo (dato("CodigoSeguimientoSistema"))?></textarea></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['CodigoAdicionalSistemaLogin']?></td>
+                <td><textarea class="span12" name="CodigoAdicionalSistemaLogin" rows="10"><?php echo (dato("CodigoAdicionalSistemaLogin"))?></textarea></td>
             </tr>
         	<tr>
             	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
