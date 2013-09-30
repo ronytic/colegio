@@ -6,8 +6,10 @@ $titulo="NPaginaPrincipal";
 <?php include_once("cabecera.php");?>
 <?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2||$_SESSION['Nivel']==4||$_SESSION['Nivel']==5):?>
     <div id="asistenciarapida"></div>
-    <div class="box-small span1">
-    <a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizarasistencia" class="box-small-link"><i class="icon-refresh"></i></a>
+    
+    <div class="box-small span2">
+    <?php echo $idioma['Fecha'];?><input type="text" class="span8" id="FechaAsistencia" value="<?php echo date("d-m-Y")?>">
+    <a href="#" title="<?php echo $idioma['Actualizar']?> <?php echo $idioma['Asistencia']?>" id="actualizarasistencia" class="box-small-link"><i class="icon-refresh"></i></a>
     </div>
     <?php endif;?>
 </div>

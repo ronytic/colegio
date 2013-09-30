@@ -8,6 +8,9 @@ $(document).on("ready",function(){
 	$("#FechaAgenda").datepicker({altField: "#FechaCuotas",dateFormat: 'dd-mm-yy',numberOfMonths: 1,showButtonPanel: true, maxDate:"0 D"}).change(function(){
 		mostrarAgenda();		
 	});
+	$("#FechaAsistencia").datepicker({altField: "#FechaAsistencia",dateFormat: 'dd-mm-yy',numberOfMonths: 1,showButtonPanel: true, maxDate:"0 D"}).change(function(){
+		mostrarAsistencia();		
+	});
 	mostrarActividades();
 	mostrarCuotas();
 	mostrarAgenda();
@@ -32,8 +35,8 @@ $(document).on("ready",function(){
 	});
 });
 function mostrarAsistencia(){
-	//var Fecha=$("#FechaActividad").val();
-	$.post("asistencia/inicio/mostrar.php",{},function(data){
+	var Fecha=$("#FechaAsistencia").val();
+	$.post("asistencia/inicio/mostrar.php",{"Fecha":Fecha},function(data){
 		$("#asistenciarapida").html(data)
 	});
 }
