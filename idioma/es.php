@@ -16,7 +16,7 @@ $idioma['AccesoSistema']="Acceso al Sistema";
 $idioma['ActualizarNavegador']="Actualizar Navegador";
 $idioma['AyudaTitulo']="Ayuda para Ingresar al Sistema";
 $idioma['PrimerProblemaAcceso']="Verifique el usuario y la contraseña esten bien escritos.";
-$idioma['SegundoProblemaAcceso']="Consulte al Personal Administrativo de la Unidad Educativa.";
+$idioma['SegundoProblemaAcceso']="Consulte el usuario y la contraseña si son correctos al Personal Administrativo de la Unidad Educativa.";
 $idioma['TercerProblemaAcceso']="Comuniquese con la Unidad Educativa al siguiente número de teléfono";
 $idioma['RecomendacionUsoSistema']="Para su Correcto funcionamiento del Sistema se recomienda Google Chrome, Firefox u otros navegadores actualizados y que el navegador se encuentre maximizado.";
 //Inicio
