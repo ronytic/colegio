@@ -23,7 +23,7 @@ $inter=mysql_connect($IpInternet.":".$PuertoInternet,$UsuarioInternet,$Contrasen
 mysql_select_db($BaseDatosInternet,$inter);
 mysql_query("SET NAMES utf8",$inter);
 
-$tablas=array("casilleros","docentemateriacurso","registronotas");
+$tablas=array("casilleros","docentemateriacurso","registronotas","tarea");
 //$tablas=array("registronotas");
 //$tablas=array("docentemateriacurso","casilleros");
 foreach($tablas as $tabla){
