@@ -60,6 +60,9 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	$pdf->Ln();$pdf->Ln();
 	$pdf->CuadroCuerpoPersonalizado(176,$idioma["DatosFormacionProfesional"],1,"",0,"B");
 	$pdf->ln();$pdf->Ln();
+	$pdf->CuadroCuerpoPersonalizado(80,$idioma["RDA"].": ",0,"L",$borde,"B");
+	$pdf->CuadroCuerpo(100,$doc['RDA'],0,"",$borde);
+	$pdf->ln();
 	$pdf->CuadroCuerpoPersonalizado(40,$idioma["Departamento"].": ",0,"L",$borde,"B");
 	$pdf->CuadroCuerpo(100,$doc['DPDepartamento'],0,"",$borde);
 	$pdf->ln();

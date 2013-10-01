@@ -93,6 +93,10 @@ if(!file_exists($ima)  || empty($doc['Foto'])){
 <div class="box-content">
 	<table class="table table-bordered table-hover">
     	<tr>
+            <td><?php echo $idioma['RDA']?></td>
+            <td><?php campo("RDA","text",$doc['RDA'],"span12",0,$idioma['IngreseSu'].$idioma['RDA']); ?></td>
+        </tr>
+    	<tr>
             <td><?php echo $idioma['Departamento']?></td>
             <td><?php campo("DPDepartamento","text",$doc['DPDepartamento'],"span12",0,$idioma['IngreseSu'].$idioma['Departamento']); ?></td>
         </tr>

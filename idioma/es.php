@@ -502,6 +502,7 @@ $idioma['MuchasGraciasCompletarEvaluacion']="Muchas Gracias por Completar la Eva
 $idioma['Estadisticas']="Estadísticas";
 $idioma['Sugerencias']="Sugerencias";
 $idioma['Observaciones']="Observaciones";
+$idioma['RDA']="Registro de Docente Actualizado(RDA)";
 
 //Notas
 $idioma['Limite']="Limite";

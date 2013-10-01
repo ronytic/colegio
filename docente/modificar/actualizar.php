@@ -20,6 +20,7 @@ if(isset($_POST)){
 				"Celular"=>"'$Celular'",
 				"EstadoCivil"=>"'$EstadoCivil'",
 				"Email"=>"'$Email'",
+				"RDA"=>"'$RDA'",
 				"DPDepartamento"=>"'$DPDepartamento'",
 				"DPUniversidad"=>"'$DPUniversidad'",
 				"DPAnoIngreso"=>"'$DPAnoIngreso'",
