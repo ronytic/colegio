@@ -61,6 +61,32 @@ class agenda extends bd{
 		
 		return $this->getRecords("CodObservacion IN($CodObservaciones) and Activo=1 $CodAl $Materia $fech");
 	}
+	function CantidadObservacionesTotal($CodCurso="",$CodAlumno="",$CodObservaciones="",$CodMateria="",$Fecha=""){
+		$this->campos=array("count(*) as Cantidad");
+		
+		if($CodMateria==""){
+			$Materia="";
+		}else{
+			$Materia="and CodMateria=$CodMateria";
+		}
+		if($CodCurso==""){
+			$Curso="";
+		}else{
+			$Curso="and CodCurso=$CodCurso";
+		}
+		if($CodAlumno==""){
+			$CodAl="";
+		}else{
+			$CodAl="and CodAlumno=$CodAlumno";
+		}
+		if($Fecha==""){
+			$fech="";
+		}else{
+			$fech="and Fecha='$Fecha'";
+		}
+		
+		return $this->getRecords("CodObservacion IN($CodObservaciones) and Activo=1 $Curso $CodAl $Materia $fech");
+	}
 	function actualizarAgendaE($values,$where){
 		$this->updateRow($values,$where);	
 	}

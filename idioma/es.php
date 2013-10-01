@@ -118,6 +118,7 @@ $idioma['NModificarMaterias']="Modificar Materias";
 $idioma['NModificarObservaciones']="Modificar Observaciones";
 $idioma['NModificarUsuarios']="Modificar Usuarios";
 $idioma['NVerTareas']="Ver Tareas";
+$idioma['NReporteEstadisticoAgenda']="Reporte Estadístico de Agenda";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -636,6 +637,13 @@ $idioma['MensajeEliminarObservacion']="¿Esta seguro de ELIMINAR esta Observaci�
 $idioma['MensajeModificarObservacion']="¿Esta seguro de MODIFICAR esta Observación?";
 $idioma['NotaMostrarDocente']="Asigne el valor de 'SI' cuando queire que esta observación muestre en el registro de la agenda del DOCENTE y en la agenda General, asigne el valor de 'NO' cuando solo quiera que muestre en la agenda Total";
 $idioma['NotaTipoObservacion']="Asigne una de las opciones ya que posteriormete se utilizará para la generacón de reportes estadisticos en el Boletín de Notas y en en reporte de la Agenda de General";
+$idioma['MostrarReporte']="Mostrar Reporte";
+$idioma['FechaFinal']="Fecha Final";
+$idioma['CantidadObservaciones']="Cantidad de Observaciones";
+$idioma['ReporteEstadisticoAgenda']="Reporte Estadístico de la Agenda";
+$idioma['Registros']="Registros";
+$idioma['TodaUnidadEducativa']="Toda Unidad Educativa";
+$idioma['Todas']="Todas";
 //Seguridad
 $idioma['Estructura']="Estructura";
 $idioma['TablasActualizar']="Tablas a Actualizar";
