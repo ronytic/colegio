@@ -15,7 +15,7 @@ class logusuario extends Bd{
 	}
 	function mostrarUsuariosNivel($Cantidad,$Nivel,$Fecha){
 		global $_SESSION;
-		$Nivel=$Nivel?"Nivel='$Nivel' and":($_SESSION['Nivel']==1?'':'Nivel!=1');
+		$Nivel=$Nivel?"Nivel='$Nivel' and":($_SESSION['Nivel']==1?'':'Nivel!=1 and ');
 		$this->campos=array('*');
 		return $this->getRecords("$Nivel FechaLog='$Fecha'","FechaLog DESC,HoraLog",0,$Cantidad,0,1);
 	}
