@@ -71,14 +71,16 @@ if(isset($_POST)){
 	?>
     <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
     <table class="table table-condensed table-bordered inicio">
-    	<thead>
-        <tr><th width="75" colspan="1"><?php echo $idioma['Fecha']?></th><th colspan="3"><?php echo fecha2Str($Fecha)?></th></tr>
-    	<tr>
-    		<th><?php echo $idioma['Observaciones']?></th>
-            <th colspan="2"><?php echo $idioma['Felicitaciones']?></th>
-            <th><?php echo $idioma['Total']?></th>
+        <tr>
+        	<td width="75" colspan="1" class="resaltar"><?php echo $idioma['Fecha']?></td>
+            <td colspan="3" class="resaltar"><?php echo fecha2Str($Fecha)?></td>
         </tr>
-        </thead>
+    	<tr>
+    		<td class="resaltar"><?php echo $idioma['Observaciones']?></td>
+            <td colspan="2" class="resaltar"><?php echo $idioma['Felicitaciones']?></td>
+            <td class="resaltar"><?php echo $idioma['Total']?></td>
+        </tr>
+
     	<tr>
         	<td class="centrar"><?php echo $CantObser['Cantidad'];?></td>
             
@@ -108,10 +110,10 @@ if(isset($_POST)){
 	?>
     <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
     <table class="table table-hover table-bordered table-striped table-condensed inicio">
-    <thead>
-    	<tr><th  colspan="3"><?php echo $idioma['Fecha']?></th><th colspan="4"><?php echo fecha2Str($Fecha)?></th></tr>
+
+    	<tr class="resaltar"><th colspan="3"><?php echo $idioma['Fecha']?></th><th colspan="4"><?php echo fecha2Str($Fecha)?></th></tr>
     	<tr class="cabecera"><th width="10" style="min-width:10px;"></th><th><?php echo $idioma['Nombre']?></th><th><?php echo recortarTexto($idioma['Curso'],3,"")?></th><th><?php echo recortarTexto($idioma['Materia'],3,"")?></th><th width="100"><?php echo recortarTexto($idioma['Observacion'],3,"")?></th><th><?php echo $idioma['Detalle']?></th><th></th></tr>
-        </thead>
+
         <?php
 		foreach($ag as $a){
 			$al=$alumno->mostrarTodoDatos($a['CodAlumno']);

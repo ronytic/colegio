@@ -17,6 +17,7 @@ function inicio(){
 	/*Fin Gestionar Tabla*/
 	//Al INICIO
 	$("table").stickyTableHeaders();
+	$("table.inicio").stickyTableHeaders('destroy');
 	$('ul.r-listado li a').tooltip();
 	$('span[title]').tooltip();
 	$('a[title]').tooltip({'placement':'bottom'});
@@ -40,7 +41,7 @@ function inicio(){
 		/*Gestionar Tabla*/
 		$(window).trigger('resize.stickyTableHeaders');
 		//alert($("table:not(.inicio)").length);
-		//$("table:not(.inicio)").css({"background-color":"red","box-shadow":"3px 3px 3px green"});
+		//$("table.inicio").css({"background-color":"red","box-shadow":"3px 3px 3px green"});
 		$("table").stickyTableHeaders();
 		$("table.inicio").stickyTableHeaders('destroy');
 		
