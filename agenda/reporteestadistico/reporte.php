@@ -18,11 +18,13 @@ if(!empty($_POST)){
 	$Materia=$_POST['Materia'];
 	$Alumnos=$_POST['Alumnos'];
 	$Observacion=$_POST['Observacion'];
-	
+	//print_r($Observacion);
 	$FechaInicio=fecha2Str($FechaInicio,0);
 	$FechaFinal=fecha2Str($FechaFinal,0);
+	$Cod=array_shift($_POST['Observacion']);
 	
-	if($Observacion==""){
+	if($Cod==""){
+		//echo "Asd";
 		$Observacion=array();
 		foreach($observaciones->mostrarObservaciones("Nombre") as $obs){
 			//$obs=array_shift($obs);

@@ -54,12 +54,13 @@ $(document).ready(function(e) {
         <option value=""><?php echo $idioma['Seleccionar']?></option>
         </select>
         <?php echo $idioma["Observacion"]?>
-        <select name="Observacion" class="span12" id="Observacion">
-        <option value=""><?php echo $idioma['Seleccionar']?></option>
+        <select name="Observacion" class="span12" id="Observacion" multiple size="9">
+        <option value="" selected><?php echo $idioma['Seleccionar']?></option>
         <?php foreach($observaciones->mostrarObservaciones("Nombre") as $obs){?>
 			<option value="<?php echo $obs['CodObservacion'];?>"><?php echo $obs['Nombre'];?></option>
         <?php }?>
         </select>
+        <small><?php echo $idioma['SeleccionarMultipleObservaciones']?></small><br>
         <input type="submit" value="<?php echo $idioma["MostrarReporte"]?>" class="btn btn-success" id="registrar"/>
 	</div>
 </div>
