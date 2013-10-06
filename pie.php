@@ -6,7 +6,7 @@
 		
 		<footer>
 			<p class="pull-left"><?php echo $idioma['TituloSistema']?> - <?php echo $Sigla;?> &copy; <?php echo $idioma['DerechosReservados']?> 2011 - <?php echo date("Y");?></p>
-			<p class="pull-right"><?php echo $idioma['DesarrolladoPor'];?>: <a href="http://fb.com/ronaldnina" class="" target="_blank" title="">Ronald Nina Layme</a> </p>
+			<p class="pull-right"><?php echo $idioma['DesarrolladoPor'];?>: <a href="http://fb.com/ronaldnina" class="enlacepie" target="_blank" title="">Ronald Nina Layme</a> </p>
 		</footer>
 				
 	</div><!-- .fluid-container-->
