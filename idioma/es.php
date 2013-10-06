@@ -973,6 +973,7 @@ $idioma['Reforzamiento']="Reforzamiento";
 $idioma['PromedioFinal']="Promedio Final";
 //Menu Principal
 $idioma['Tareas']="Tareas";
+$idioma['MisClases']="Mis Clases";
 $idioma['CodigosBarra']="Códigos de Barra";
 $idioma['Usuarios']="Usuarios";
 //SubMenu
@@ -1033,7 +1034,7 @@ $idioma['NotasCualitativas']="Notas Cualitativas";
 $idioma['ModificarCurso']="Modificar Curso";
 $idioma['SubirDatosInternet']="Subir Datos a Internet";
 $idioma['ReservarGestion']="Reservar Próxima Gestión";
-$idioma['ReporteParaImpresion']="Reporte Para Impresión";
+$idioma['ReporteParaImpresion']="Reporte para Impresión";
 $idioma['NotasPromedioFinal']="Notas Promedio Final";
 $idioma['PromedioFinalCiencias']="Promedio Final de Ciencias";
 $idioma['VerNotasPromedioAnual']="VerNotasPromedio Anual";
@@ -1046,7 +1047,7 @@ $idioma['RegistroAsistencia']="Registro de Asistencia";
 $idioma['VerFaltas']="VerFaltas";
 $idioma['ReporteAsistencia']="Reporte de Asistencia";
 $idioma['AsignarMateria']="Asignar Materia";
-$idioma['EnviarArchivoTarea']="Enviar Archivo de Tarea";
+$idioma['EnviarArchivoTarea']="Enviar Archivos de Tarea";
 $idioma['RastrearAccesosGeneral']="Rastrear Accesos General";
 $idioma['EnviarArchivoTareas']="Enviar Archivos de Tareas";
 $idioma['VerCuotas']="Ver Cuotas";
