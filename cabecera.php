@@ -113,8 +113,12 @@ switch($Nivel){
 										<ul class="oculto submenu">
 									<?php
 									foreach($subm as $sm){
+										$UrlInternet="";
+										if($sm['Internet']=="1" && $Internet==0){
+											$UrlInternet="redirigir.php";	
+										}
 										?>
-                                        <li class="<?php echo $rsubmenu==$sm['Url']?'selecciona':'';?>"> <a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?>"><i class="icon-chevron-right"></i><span><?php echo $idioma[$sm['Nombre']];?></span></a></li>
+                                        <li class="<?php echo $rsubmenu==$sm['Url']?'selecciona':'';?>"> <a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?><?php echo $UrlInternet?>"><i class="icon-chevron-right"></i><span><?php echo $idioma[$sm['Nombre']];?></span></a></li>
                                         <?php		
 									}
 									?>

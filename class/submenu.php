@@ -3,7 +3,7 @@ include_once("bd.php");
 class submenu extends bd{
 	var $tabla="submenu";
 	function mostrar($Nivel,$Menu){
-		$this->campos=array('Nombre','Url','Imagen');
+		$this->campos=array('Nombre','Url','Imagen',"Internet");
 		switch($Nivel){
 			case "1":{return $this->getRecords(" Admin=1 and CodMenu=$Menu and Activo=1","Orden");}break;
 			case "2":{return $this->getRecords(" Director=1 and CodMenu=$Menu and Activo=1","Orden");}break;
