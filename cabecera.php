@@ -45,11 +45,6 @@ switch($Nivel){
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
 				<a class="brand" href="<?php echo $folder?>"> <img alt="<?php echo $Titulo?>" src="<?php echo $folder;?>imagenes/logos/<?php echo $LogoInicio;?>" width="50" height="50" style="width:50" class="logo"/> <span><?php echo $Titulo?></span></a>
 								
 				<!-- Inicio: Cabecera de Menu -->
@@ -82,7 +77,13 @@ switch($Nivel){
 					</ul>
                     <a class="btn" href="<?php echo $folder;?>login/logout.php" title="<?php echo $idioma['SalirSistema'];?>"><i class="icon-off"></i></a>
 					<!-- Fin: Menu Deslisable -->
+                    
 				</div>
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse" title="<?php echo $idioma['MostrarMenu']?>"><span class="visible-phone"><small><?php echo $idioma['MostrarMenu']?></small></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
 				<!-- Fin: Cabecera de Menu -->
 				
 			</div>

@@ -15,6 +15,10 @@
 }
 /*Fin de Cargador*/
 /* Inicio de Correcciones del Framework*/
+.navbar .btn-navbar{
+	color: #646464 !important;
+	text-align:center !important;
+}
 .form-horizontal .control-group{
 	margin-bottom:5px;	
 }

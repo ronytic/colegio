@@ -164,6 +164,12 @@ if($notitotal){
 		//window.moveTo(0,0);
 		window.resizeTo(screen.width,screen.height);
 		}*/
+		$(document).on("ready",function(){
+			if($(document).width()>750){
+				//alert($(document).width());
+				$('.btn-navbar').click();
+			}
+		});
 	</script>
 	<script src="<?php echo $folder;?>js/core/framework/bootstrap.js" language="javascript"></script>
     <script src="<?php echo $folder;?>js/core/plugins/jquery.listado.js" language="javascript"></script>
