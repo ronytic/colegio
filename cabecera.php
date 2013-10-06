@@ -105,7 +105,7 @@ switch($Nivel){
                         	foreach($menu->mostrar($Nivel,"Lateral") as $m){
 								?>
                                 <li class="funo <?php if ($rmenu==$m['Url']){ echo'active';}?>">
-                                	<a href="#" ><i class="<?php echo $m['Imagen'];?> "></i><span class=""> <?php echo $m['Nombre'];?></span></a>
+                                	<a href="#" ><i class="<?php echo $m['Imagen'];?> "></i><span class=""> <?php echo $idioma[$m['Nombre']];?></span></a>
             					<?php 
 								$subm=$submenu->mostrar($Nivel,$m['CodMenu']);
 								if(count($subm)){
@@ -114,7 +114,7 @@ switch($Nivel){
 									<?php
 									foreach($subm as $sm){
 										?>
-                                        <li class="<?php echo $rsubmenu==$sm['Url']?'selecciona':'';?>"> <a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?>"><i class="icon-chevron-right"></i><span><?php echo $sm['Nombre'];?></span></a></li>
+                                        <li class="<?php echo $rsubmenu==$sm['Url']?'selecciona':'';?>"> <a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?>"><i class="icon-chevron-right"></i><span><?php echo $idioma[$sm['Nombre']];?></span></a></li>
                                         <?php		
 									}
 									?>
