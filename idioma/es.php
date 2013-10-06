@@ -20,6 +20,7 @@ $idioma['SegundoProblemaAcceso']="Consulte el usuario y la contraseña si son co
 $idioma['TercerProblemaAcceso']="Comuniquese con la Unidad Educativa al siguiente número de teléfono";
 $idioma['RecomendacionUsoSistema']="Para su Correcto funcionamiento del Sistema se recomienda Google Chrome, Firefox u otros navegadores actualizados y que el navegador se encuentre maximizado.";
 //Inicio
+$idioma['MostrarMenu']="Mostrar y Ocultar Menú";
 $idioma['TituloSistema']="Sistema Académico Administrativo para Colegios";
 $idioma['DerechosReservados']="Todos los Derechos Reservados";
 $idioma['DesarrolladoPor']="Desarrollado por";
