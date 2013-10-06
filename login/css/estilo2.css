@@ -28,7 +28,7 @@ body{
 	margin-top:60px;
 	/*border:#bababa 1px solid;*/
 }
-.login h2,.login h4,.login img{
+.login h2,.login h4,.login img.logo{
 	float:left;	
 }
 .login h2,.login h4{

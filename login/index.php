@@ -50,7 +50,7 @@ $folder="../";
 	<div class="row-fluid">
     	<div class="offset1 span4">
             <div class="login">
-                <img src="../imagenes/logos/<?php echo $LogoInicio?>"  width="50" height="50"/>
+                <img src="../imagenes/logos/<?php echo $LogoInicio?>"  width="50" height="50" class="logo"/>
                 <h4><?php echo $TipoUnidadLogin;?></h4>
                 <h2><?php echo $NombreUnidadLogin;?></h2>
                 <hr />
@@ -94,7 +94,7 @@ $folder="../";
                     <span><?php echo $idioma['Idioma']?>:</span>
                     <a href="i.php?i=es" class="idioma <?php echo $_COOKIE['Idioma']=='es'?' plomo':'';?>">Castellano</a>|<a href="i.php?i=ay" class="idioma <?php echo $_COOKIE['Idioma']=='ay'?' plomo':'';?>">Aymara</a>|<a href="i.php?i=qu" class="idioma <?php echo $_COOKIE['Idioma']=='qu'?' plomo':'';?>">Quechua</a>|<a href="i.php?i=gu" class="idioma <?php echo $_COOKIE['Idioma']=='gu'?' plomo':'';?>">Guarani</a>|<a href="i.php?i=en" class="idioma <?php echo $_COOKIE['Idioma']=='en'?' plomo':'';?>">Ingles</a>
                    	
-                    <span class="recomendacion"><?php echo $idioma['RecomendacionUsoSistema']?></span>
+                   <br /> <span class="recomendacion"><?php echo $idioma['RecomendacionUsoSistema']?> <img src="../imagenes/inicio/maximizar.jpg" class="img-polaroid"/></span>
 
                     <?php if($ActualizacionNavegador!=""){?>
                     <br />
