@@ -12,9 +12,9 @@ include_once($folder."cabecerahtml.php");
     	<form action="mostrar.php" method="post" class="enviar">
     	<table class="table table-bordered">
         	<thead>
-            	<tr><th><?php echo $idioma['TiempoActualizacion']?></th><th><?php echo $idioma['NivelUsuario']?></th><th><?php echo $idioma['Fecha']?></th><th></th></tr>
+            	<tr><!--<th><?php echo $idioma['TiempoActualizacion']?></th>--><th><?php echo $idioma['NivelUsuario']?></th><th><?php echo $idioma['Fecha']?></th><th></th></tr>
             </thead>
-            <td><input type="number" name="Tiempo" class="span6	" value="15000"><?php echo $idioma['Milisegundos']?></td>
+            <!--<td><input type="number" name="Tiempo" class="span6	" value="60"><?php echo $idioma['Segundos']?></td>-->
             <td>
             	<select class="span12" name="Nivel">
                 <option value=""><?php echo $idioma['Todos']?></option>
