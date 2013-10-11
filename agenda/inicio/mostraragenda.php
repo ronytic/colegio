@@ -187,8 +187,8 @@ if(isset($_POST)){
 					}
 					?><?php if($a['Resaltar']){?><div class="crojo" title="<?php echo $idioma['Importante']?>"></div><?php }?></td>
                 <td class="<?php echo $resaltar?>"><?php echo capitalizar($al['Paterno'])?> <?php echo capitalizar(acortarPalabra($al['Nombres']))?></td>
-                <td class="<?php echo $resaltar?>"><?php echo $cur['Abreviado']?></td>
-            	<td class="<?php echo $resaltar?>"><?php echo $m['Abreviado']?></td>
+                <td class="<?php echo $resaltar?>"><small><?php echo $cur['Abreviado']?></small></td>
+            	<td class="<?php echo $resaltar?> pequeno"><?php echo $m['Abreviado']?></td>
                 <td class="<?php echo $resaltar?>"><?php echo $o['Nombre']?></td>
                 <td class="<?php echo $resaltar?>"><?php echo $a['Detalle'];?></td>
 				<td class="centrar">
