@@ -33,6 +33,25 @@ include_once($folder."cabecerahtml.php");
                 </select></td>
             </tr>
             <tr>
+            	<td><?php echo $idioma['PeriodoActualBimestre']?><div class="pequeno"><?php echo $idioma['PeriodoActualBimestreE']?></div></td>
+                <td><select class="span6" name="PeriodoActualBimestre">
+                	<?php for($i=1;$i<=dato("TotalPeriodo");$i++){
+					?><option value="<?php echo $i;?>" class="der" <?php echo dato("PeriodoActualBimestre")==$i?'selected':''?>><?php echo $i?></option><?php	
+					}?>
+                </select></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['PeriodoActualTrimestre']?><div class="pequeno"><?php echo $idioma['PeriodoActualTrimestreE']?></div></td>
+                <td><select class="span6" name="PeriodoActualTrimestre">
+                	<?php for($i=1;$i<=dato("TotalPeriodo");$i++){
+					?><option value="<?php echo $i;?>" class="der" <?php echo dato("PeriodoActualTrimestre")==$i?'selected':''?>><?php echo $i?></option><?php	
+					}?>
+                </select></td>
+            </tr>
+            <tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+            <tr>
             	<td colspan="2" class="resaltar"><?php echo $idioma['FechasTrimestre']?></td>
             </tr>
             <tr>
