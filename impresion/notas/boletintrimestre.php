@@ -32,7 +32,12 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$pdf->SetFont("Arial","",11);
 	$al=array_shift($alumno->mostrarTodoDatos($CodAlumno));
 	$cur=array_shift($curso->mostrarCurso($CodCurso));
-	$cnf=$config->mostrarConfig("PeriodoActual");
+	if($cur['Bimestre']){
+		$PeriodoActualConfig="PeriodoActualBimestre";
+	}else{
+		$PeriodoActualConfig="PeriodoActualTrimestre";	
+	}
+	$cnf=($config->mostrarConfig($PeriodoActualConfig));
 	$PeriodoActual=$cnf['Valor'];
 	$cnf=$config->mostrarConfig("Anio");
 	$anio=$cnf['Valor'];
