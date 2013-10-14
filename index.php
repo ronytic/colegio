@@ -23,7 +23,7 @@ $titulo="NPaginaPrincipal";
         	<?php echo $idioma['FechaCuotas']?>
             <?php campo("FechaCuotas","text",date("d-m-Y"),"input-medium")?>
             <a href="cuotas/pagar/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RegistrarNuevosPagos']?></a>
-            <hr>
+            <hr class="separador">
             <div id="listadocuotas" style="max-height:400px;overflow-y:auto"></div>
         </div>
     </div>
@@ -48,7 +48,7 @@ $titulo="NPaginaPrincipal";
         	<?php echo $idioma['FechaActividad']?>
             <?php campo("FechaActividad","text",date("d-m-Y"),"input-medium")?>
             <a href="agendaactividades/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RegistrarNuevaActividad']?></a>
-            <hr>
+            <hr class="separador">
             <div id="listadoactividades"></div>
         </div>
     </div>
