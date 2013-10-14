@@ -58,7 +58,7 @@ if(count($cuotas)){
 	<?php
 }else{
 ?>
-<h2><?php echo $idioma['NoHayPagoCuotasFecha']?></h2>
+<span class="resaltar"><?php echo $idioma['NoHayPagoCuotasFecha']?></span>
 <?php	
 }
 }
