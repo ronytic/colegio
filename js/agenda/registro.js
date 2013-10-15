@@ -38,7 +38,11 @@ $(document).ready(function(e) {
 		mostrarAgenda();
     });
 	$('select[name=Materia]').change(function(){
-		mostrarAgenda();
+		Busqueda=$("#Busqueda").attr("checked")?true:false;
+		if(Busqueda){
+			cargandoG("#respuesta");
+			mostrarAgenda();
+		}
 	});
 	/*Fin Busqueda Especifica*/
 	mostrarAgenda();
