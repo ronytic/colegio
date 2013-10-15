@@ -646,6 +646,7 @@ $idioma['Registros']="Registros";
 $idioma['TodaUnidadEducativa']="Toda Unidad Educativa";
 $idioma['Todas']="Todas";
 $idioma['SeleccionarMultipleObservaciones']="Si desea seleccionar multiples Observaciones, Selecciona cada observación presionando a la ves la tecla control";
+$idioma['NoExisteRegistro']="No existen registros";
 //Seguridad
 $idioma['Estructura']="Estructura";
 $idioma['TablasActualizar']="Tablas a Actualizar";

@@ -115,6 +115,12 @@ if(isset($_POST)){
     	<tr class="cabecera"><th width="10" style="min-width:10px;"></th><th><?php echo $idioma['Nombre']?></th><th><?php echo recortarTexto($idioma['Curso'],3,"")?></th><th><?php echo recortarTexto($idioma['Materia'],3,"")?></th><th width="100"><?php echo recortarTexto($idioma['Observacion'],3,"")?></th><th><?php echo $idioma['Detalle']?></th><th></th></tr>
 
         <?php
+		if(!count($ag)){
+			?>
+            <tr><td colspan="5"><?php echo $idioma['NoExisteRegistro'];?></td></tr>
+            <?php
+		}else{
+			
 		foreach($ag as $a){
 			$al=$alumno->mostrarTodoDatos($a['CodAlumno']);
 			$al=array_shift($al);
@@ -197,6 +203,7 @@ if(isset($_POST)){
 			</tr>
             <?php
 		}
+		}//Fin If
 		?>
     </table>
     <?php	
