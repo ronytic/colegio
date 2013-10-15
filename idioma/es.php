@@ -618,6 +618,7 @@ $idioma['AgendaAlumnos']="Agenda de Alumnos";
 $idioma['ParaEliminarAnotacionConsulteRegente']="Para eliminar una anotación, consulte al Regente";
 $idioma['BusquePor']="Busque por...";
 $idioma['BusquedaEspecificaSeleccionado']="Búsqueda Especifica por lo seleccionado";
+$idioma['BusquedaEspecificaPorMateria']="Búsqueda Especifica por la materia seleccionada";
 $idioma['BusquedaEspecificaPorAlumno']="Búsqueda Especifica por el Alumno seleccionado";
 $idioma['Error']="Error";
 $idioma['FalloRegistro']="Fallo de Registro";

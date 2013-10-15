@@ -59,7 +59,7 @@ if(!empty($_GET['CodAl'])){
                 <a class="btn reportegeneral"><?php echo $idioma['ReporteGeneral']?></a>
                 <a class="btn btn-info reporteimprimir"><?php echo $idioma['ReporteImprimir']?></a>
                 <div class="alert alert-info">
-                <label for="Busqueda" ><?php echo $idioma["BusquedaEspecificaSeleccionado"]?>:<?php campo("Busqueda","checkbox","1","")?></label> 
+                <label for="Busqueda"  class="pequeno"><?php echo $idioma["BusquedaEspecificaPorMateria"]?>:<?php campo("Busqueda","checkbox","1","")?></label> 
                 </div>
             </div>
         </div>
