@@ -20,12 +20,12 @@ if(count($cuotas)){
     <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
 	<table class="table table-bordered table-striped table-hover inicio">
     <thead>
-    	<tr><th colspan="5" class="der"><?php echo $idioma['Total']?> <?php echo $idioma['Dia']?></th><th colspan="2" class="der"><?php echo $MontoTotal?></th></tr>
+    	<tr><th colspan="5" class="der"><?php echo $idioma['Total']?> <?php echo $idioma['Dia']?>: </th><th colspan="2" class="der"><?php echo $MontoTotal?></th></tr>
     	<tr><th>N</th>
 		<th><?php echo $idioma["NombreCompleto"]?></th>
         <th><?php echo $idioma["Curso"]?></th>
-        <th><?php echo $idioma["FechaPago"]?></th>
-        <th><?php echo sacarIniciales($idioma["Numero"])?>/<?php echo sacarIniciales($idioma["Cuota"])?></th>
+        <th><small><?php echo $idioma["FechaPago"]?></small></th>
+        <th><small><span title="<?php echo $idioma["Numero"]." ".$idioma["De"]." ".$idioma["Cuota"]?>"><?php echo sacarIniciales($idioma["Numero"])?>/<?php echo sacarIniciales($idioma["Cuota"])?></span></small></th>
         <th><?php echo $idioma["Factura"]?></th>
         <th><?php echo $idioma["Monto"]?></th>
         </tr>
@@ -45,8 +45,8 @@ if(count($cuotas)){
         <tr>
         	<td><?php echo $i;?></td>
             <td><?php echo capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']);?></td>
-            <td><?php echo $cur['Abreviado'];?></td>
-            <td><?php echo fecha2Str($cuo['Fecha']);?></td>
+            <td><small><?php echo $cur['Abreviado'];?></small></td>
+            <td><small><?php echo fecha2Str($cuo['Fecha']);?></small></td>
             <td><?php echo $cuo['Numero'];?></td>
             <td><?php echo $cuo['Factura'];?></td>
             <td><?php echo number_format(round($cuo['MontoPagar'],2),2);?></td>
