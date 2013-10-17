@@ -17,7 +17,7 @@ if($_SESSION['Nivel']==1){
 extract($_POST);
 $Fecha=fecha2Str($Fecha,0);
 $logu=$logusuario->mostrarUsuariosNivel(0,$Nivel,$Fecha);
-?><ul class="dashboard-list">
+?>
 <?php
 if(!count($logu)){
 ?>
@@ -25,6 +25,9 @@ if(!count($logu)){
 <?php
 exit();	
 }
+?>
+<table class="table">
+<?php
 foreach($logu as $lu){
 	switch($lu['Nivel']){
 		case "1":{$Usuario=$idioma["Administrador"];
@@ -100,14 +103,31 @@ foreach($logu as $lu){
 		//echo $F;
 	}
 	?>
-    <li>
+    	
+        <tr>
+        <td style="vertical-align:top">
         <a>
             <img class="dashboard-avatar" alt="" src="<?php echo $F?>">
         </a>
+        </td>
+        <td>
         <span class="label label-info"><strong><?php echo $tipousuario?>:</strong></span> <a"><?php echo capitalizar($Paterno)?> <?php echo capitalizar($Materno)?> <?php echo capitalizar(($Nombres))?></a><br>
-        <strong><?php echo $idioma['Fecha']?>:</strong> <?php echo fecha2Str($lu['FechaLog'])?><br>
+        <strong><?php echo $idioma['Fecha']?>:</strong> <?php echo fecha2Str($lu['FechaLog'])?>
+        <br>
         <strong><?php echo $idioma['Hora']?>:</strong> <?php echo $lu['HoraLog']?>
-    </li>
+        <br>
+        <strong><?php echo $idioma['Ip']?>:</strong> <?php echo ($lu['Ip'])?>
+        <br>
+        <strong><?php echo $idioma['Referencia']?>:</strong> <small><?php echo ($lu['Referencia'])?></small>
+        <strong><?php echo $idioma['Lenguaje']?>:</strong> <small><?php echo ($lu['Lenguaje'])?></small>
+        <br>
+        <strong><?php echo $idioma['Agente']?>:</strong> <small><?php echo $lu['Agente']?></small>
+        <br>
+        </td>
+        </tr>
+       
+
     <?php
 }
-?></ul>
+?>
+ </table>

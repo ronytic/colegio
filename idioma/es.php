@@ -683,6 +683,9 @@ $idioma['ActualizarBaseDatosInternet']="Actualizar Base de Datos de INTERNET";
 $idioma['Mensaje']="Mensaje";
 $idioma['Resaltar']="Resaltar";
 $idioma['NuevoMensaje']="Nuevo Mensaje";
+$idioma['Ip']="Ip";
+$idioma['Agente']="Agente";
+$idioma['Lenguaje']="Lenguaje";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
@@ -1083,4 +1086,5 @@ $idioma['ConfiguracionNotas']="Configuración de Notas";
 $idioma['ConfiguracionNotasCualitativas']="Configuración de Notas Cualitativas";
 $idioma['ConfiguracionDatosInstitucion']="Configuración Datos de Institución";
 $idioma['ReporteEstadisticosAgenda']="Reporte Estadísticos de Agenda";
+$idioma['ModificarCasilleros']="Modificar Casilleros";
 ?>
