@@ -684,7 +684,7 @@ $idioma['Mensaje']="Mensaje";
 $idioma['Resaltar']="Resaltar";
 $idioma['NuevoMensaje']="Nuevo Mensaje";
 $idioma['Ip']="Ip";
-$idioma['Agente']="Agente";
+$idioma['Agente']="Agente Navegador";
 $idioma['Lenguaje']="Lenguaje";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
