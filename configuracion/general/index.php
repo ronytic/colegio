@@ -248,6 +248,26 @@ include_once($folder."cabecerahtml.php");
             </tr>
         </table>
 	</div>
+    <div class="box-header"><h2><?php echo $idioma['Sms']?><a name="sms"></a></h2></div>
+    <div class="box-content">
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td><?php echo $idioma['EstadoSms']?></td>
+                <td><select class="span12" name="EstadoSms">
+                	<option value="NoEnviar" <?php echo (dato("EstadoSms"))=="NoEnviar"?'selected':''?>><?php echo $idioma['NoEnviar']?></option>
+                    <option value="PorCadaObservacion" <?php echo (dato("EstadoSms"))=="PorCadaObservacion"?'selected':''?>><?php echo $idioma['PorCadaObservacion']?></option>
+                    <option value="GeneralCadaDia" <?php echo (dato("EstadoSms"))=="GeneralCadaDia"?'selected':''?>><?php echo $idioma['GeneralCadaDia']?></option>
+                </select></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['PuertoUsb']?></td>
+                <td><input type="text" class="span12" name="PuertoUsb" value="<?php echo (dato("PuertoUsb"))?>"></td>
+            </tr>
+        	<tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+	</div>
 </div>
 <div class="span6 box">
 	<div class="box-header"><h2><?php echo $idioma['Notas']?><a name="notas"></a></h2></div>

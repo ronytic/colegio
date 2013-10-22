@@ -120,6 +120,7 @@ $idioma['NModificarObservaciones']="Modificar Observaciones";
 $idioma['NModificarUsuarios']="Modificar Usuarios";
 $idioma['NVerTareas']="Ver Tareas";
 $idioma['NReporteEstadisticoAgenda']="Reporte Estadístico de Agenda";
+$idioma['NEnviarMensaje']="Enviar Mensaje";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -885,6 +886,13 @@ $idioma['PeriodoActualBimestre']="Periodo Actual de Bimestre";
 $idioma['PeriodoActualTrimestre']="Periodo Actual de Trimestre";
 $idioma['PeriodoActualTrimestreE']="El periodo actual seleccionado solo afectará en la generación de los Boletines de Notas";
 $idioma['PeriodoActualBimestreE']="El periodo actual seleccionado solo afectará en la generación de los Boletines de Notas";
+$idioma['Sms']="Mensajes de texto a Celular de Padre de Familia";
+$idioma['PuertoUsb']="Número de Puerto USB";
+$idioma['EstadoSms']="Estado de Envío de SMS";
+$idioma['NoEnviar']="No Enviar";
+$idioma['PorCadaObservacion']="Por cada Observación";
+$idioma['GeneralCadaDia']="General Diario";
+
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";
 $idioma['FechaCuotas']="Fecha de Cuotas";
@@ -982,11 +990,16 @@ $idioma['OrdenObservaciones']="Las observaciones están ordenadas del registro �
 $idioma['PromedioAnual']="Promedio Anual";
 $idioma['Reforzamiento']="Reforzamiento";
 $idioma['PromedioFinal']="Promedio Final";
+//SMS
+$idioma['NumeroCelular']="Número de Celular";
+$idioma['EnviarMensaje']="Enviar Mensaje";
 //Menu Principal
 $idioma['Tareas']="Tareas";
 $idioma['MisClases']="Mis Clases";
 $idioma['CodigosBarra']="Códigos de Barra";
 $idioma['Usuarios']="Usuarios";
+$idioma['MensajeTexto']="Mensaje de Texto";
+$idioma['Msms']="Mensaje SMS";
 //SubMenu
 $idioma['Inscripcion']="Inscripción";
 $idioma['Reinscripcion']="Reinscripción";
@@ -1087,4 +1100,5 @@ $idioma['ConfiguracionNotasCualitativas']="Configuración de Notas Cualitativas"
 $idioma['ConfiguracionDatosInstitucion']="Configuración Datos de Institución";
 $idioma['ReporteEstadisticosAgenda']="Reporte Estadísticos de Agenda";
 $idioma['ModificarCasilleros']="Modificar Casilleros";
+$idioma['EnviarMensajePrivado']="Enviar Mensaje Privado";
 ?>
