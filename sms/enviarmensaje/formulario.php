@@ -6,6 +6,15 @@ if(!empty($_POST)){
 	$alumno=new alumno;
 	$al=$alumno->mostrarTodoDatos($CodAlumno);
 	$al=array_shift($al);
+	$msg="CSB Estadistica Agenda 22-10
+Mat:Actividad
+Fis:TrabajoPractico
+Comp:Falta
+Quim:Carpeta
+Bio:Fichero
+Len:Practica
+Mus:Evaluacion
+Sec:Atraso";
 	?>
     <form action="enviar.php" method="post">
     	<table class="table table-bordered">
@@ -16,7 +25,7 @@ if(!empty($_POST)){
             </tr>
             <tr>
             	<td>
-                <?php echo $idioma['Mensaje']?>:<br><textarea name="Mensaje"></textarea>
+                <?php echo $idioma['Mensaje']?>:<br><textarea name="Mensaje" rows="9"><?php echo $msg?></textarea>
                 </td>
             </tr>
             <tr>

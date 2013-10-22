@@ -1,7 +1,7 @@
 <?php
 $host="localhost";
 $user="root";
-$pass="";
+$pass="admina";
 $database="csb2013";
 
 /*$user="redcampu_csb";
@@ -15,5 +15,5 @@ setlocale(LC_ALL, 'sp');
 setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
 
 /*Configuración de las Tablas a Exportar*/
-$tables_export=array("agenda","cuota","anuncioslogin","agendaactividades","config","mensajes");
+$tables_export=array("agenda","cuota","anuncioslogin","agendaactividades","config","notificaciones");
 ?>
