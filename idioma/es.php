@@ -1003,6 +1003,8 @@ $idioma['RecomendacionNumeroCelular']="El número de celular solo debe de tener 
 $idioma['ActivarEnvioSms']="Activar Envío de SMS";
 $idioma['ComunicadoSMS']="Comunicado para SMS";
 $idioma['CitacionSMS']="Citación para SMS";
+$idioma['MensajeEnviadoCorrectamente']=" Mensaje enviado Correctamente";
+$idioma['MensajeEnviadoError']=" Error al  enviar el mensaje, Revise la configuración si se encuentra conectado el dispositivo USB";
 //Menu Principal
 $idioma['Tareas']="Tareas";
 $idioma['MisClases']="Mis Clases";

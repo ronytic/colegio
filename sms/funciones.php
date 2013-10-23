@@ -1,20 +1,19 @@
 <?php
 //include_once("../login/check.php");
 //enviar sms por MODEM
-function enviarSms($cel, $text){
-	global $puerto;
+function enviarSms($puerto,$cel, $text){
     $text1 = substr($text,0,10);
 	$port = $puerto;
 	//$port = "COM5";
     //webLog("PARAM: $cel: $text1...");
-	webLog("PORT: $port");
+	//webLog("PORT: $port");
 	$modem = null;
 	try{
 	  $config = "mode $port: baud=9600 data=8 stop=1 parity=n xon=on"; 
-	  webLog($config);
+	  //webLog($config);
       exec($config);
 	  //==============================
-	  webLog("OPEN $port");
+	  //webLog("OPEN $port");
 	  $modem = dio_open("$port:", O_RDWR);
 	  $c = 0;
 	  $res = 'NOK';
@@ -26,17 +25,20 @@ function enviarSms($cel, $text){
 		  $res = callAT("at", $modem);
 		  $res = callAT("at+cmgf=1", $modem);
 		  $res = callAT("at+cmgs=\"$cel\"", $modem);
-		  $res = callAT("$text", $modem, true, 0x1A);
+		  $res = callAT("$text", $modem, false, 0x1A);
+		  return true;
 	  } else {
-	    webLog("NO SINCRONIZADO....","MODEM");
+		  return false;
+	    //webLog("NO SINCRONIZADO....","MODEM");
 	  }
 	  //==============================
-	  webLog("CLOSE $port");
+	  //webLog("CLOSE $port");
 	  dio_close($modem);
 	}catch( Exception  $error ){
-	  webLog($error, "ERROR");
+		return false;
+	  //webLog($error, "ERROR");
 	}
-	webLog("FIN del proceso..");
+	//webLog("FIN del proceso..");
 }
 function comprobarConexion($Puerto){
 	$port = $Puerto;
@@ -82,7 +84,6 @@ function comprobarConexion($Puerto){
 }
 //listar sms del MODEM
 function listarSms(){
-	global $puerto;
 	$port = $puerto;
     //$port = "COM5";
     webLog("PORT: $port");
