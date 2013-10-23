@@ -1,12 +1,12 @@
 <?php
-include_once("../login/check.php");
+//include_once("../login/check.php");
 //enviar sms por MODEM
 function enviarSms($cel, $text){
 	global $puerto;
     $text1 = substr($text,0,10);
 	$port = $puerto;
 	//$port = "COM5";
-    webLog("PARAM: $cel: $text1...");
+    //webLog("PARAM: $cel: $text1...");
 	webLog("PORT: $port");
 	$modem = null;
 	try{
@@ -37,6 +37,48 @@ function enviarSms($cel, $text){
 	  webLog($error, "ERROR");
 	}
 	webLog("FIN del proceso..");
+}
+function comprobarConexion($Puerto){
+	$port = $Puerto;
+    //$port = "COM5";
+    //webLog("PORT: $port");
+	try{
+	  $config = "mode $port: baud=9600 data=8 stop=1 parity=n xon=on"; 
+	  //webLog($config);
+      exec($config);
+	  //==============================
+	  //webLog("OPEN $port");
+	  $modem = dio_open("$port:", O_RDWR);
+	  $c = 0;
+	  $res = 'NOK';
+	  while($c < 20 && $res != 'OK'){
+	    $c++;
+		$res = callAT("AT", $modem, false);
+	  }
+	  if($res == 'OK'){
+		  $res = callAT("AT", $modem);
+		  $res = callAT("AT+CMGF=1", $modem);
+		  $res = callAT("AT+CMGL=\"ALL\"", $modem);
+		  $res =  explode("+CMGL", $res);
+		  return true;
+		  /*foreach( $res as $k => $v){
+		    $v = str_replace( chr(0x0A), ',',$v);
+		    $res [ $k ] = mb_split('(,)(?=(?:[^"]|"[^"]*")*$)', $v);
+		  }*/
+	  } else {
+		  return false;
+	    //webLog("NO SINCRONIZADO....","MODEM");
+	  }
+	  //==============================
+	  //webLog("CLOSE $port");
+	  dio_close($modem);
+	  return $res;
+	}catch( Exception  $error ){
+		return false;
+	  //webLog($error, "ERROR");
+	}
+	//webLog("FIN del proceso..");
+	return array();
 }
 //listar sms del MODEM
 function listarSms(){
@@ -85,7 +127,7 @@ function listarSms(){
 	return array();
 }
 //ejecutar commando AT + Respuesta
-function callAT($cmd, $modem, $log = true, $end = 0x0D ){
+function callAT($cmd, $modem, $log = false, $end = 0x0D ){
       $cmd = trim($cmd);
 	  $cmd = $cmd.chr($end);
 	  if($log){webLog($cmd,"&gt;",true);}

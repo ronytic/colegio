@@ -993,6 +993,11 @@ $idioma['PromedioFinal']="Promedio Final";
 //SMS
 $idioma['NumeroCelular']="Número de Celular";
 $idioma['EnviarMensaje']="Enviar Mensaje";
+$idioma['NadaPuerto']="Introdusca el valor de '0' si no se encuentra conectado el Dispositivo USB";
+
+$idioma['ErrorConectarUsb']="Error al tratar de acceder al Dispositivo USB, Compruebe el número de puerto o que no se encuentre utilizado por otro programa";
+$idioma['CorrectoConectarUsb']="Dispositivo USB conectado correctamente";
+$idioma['UsbDeshabilitado']="Dispositivo Deshabilitado";
 //Menu Principal
 $idioma['Tareas']="Tareas";
 $idioma['MisClases']="Mis Clases";

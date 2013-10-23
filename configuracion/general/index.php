@@ -256,11 +256,19 @@ include_once($folder."cabecerahtml.php");
                 <td><select class="span12" name="EstadoSms">
                 	<option value="NoEnviar" <?php echo (dato("EstadoSms"))=="NoEnviar"?'selected':''?>><?php echo $idioma['NoEnviar']?></option>
                     <option value="PorCadaObservacion" <?php echo (dato("EstadoSms"))=="PorCadaObservacion"?'selected':''?>><?php echo $idioma['PorCadaObservacion']?></option>
-                    <option value="GeneralCadaDia" <?php echo (dato("EstadoSms"))=="GeneralCadaDia"?'selected':''?>><?php echo $idioma['GeneralCadaDia']?></option>
+                    <!--<option value="GeneralCadaDia" <?php echo (dato("EstadoSms"))=="GeneralCadaDia"?'selected':''?>><?php echo $idioma['GeneralCadaDia']?></option>-->
                 </select></td>
             </tr>
             <tr>
-            	<td><?php echo $idioma['PuertoUsb']?></td>
+            	<td><?php echo $idioma['PuertoUsb']?><br><small><?php echo $idioma['NadaPuerto']?></small>
+					<script language="javascript">
+                    $(document).on("ready",function(){
+						cargandoG(".msgusb");
+						$.post("usb.php",{'PuertoUsb':<?php echo dato("PuertoUsb")?>},function(data){$(".msgusb").html(data)});
+					});
+                    </script> 
+                    <div class="msgusb"></div>              	
+                </td>
                 <td><input type="text" class="span12" name="PuertoUsb" value="<?php echo (dato("PuertoUsb"))?>"></td>
             </tr>
         	<tr>
