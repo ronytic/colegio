@@ -1,6 +1,10 @@
 <?php
 include_once("../../login/check.php");
 if(!empty($_POST)){
+	include_once("../../class/config.php");
+	$config=new config;
+	$ComunicadoSMS=$config->mostrarConfig("ComunicadoSMS",1);
+	$CitacionSMS=$config->mostrarConfig("CitacionSMS",1);
 	$CodAlumno=$_POST['CodAlumno'];
 	include_once("../../class/alumno.php");
 	$alumno=new alumno;
@@ -15,17 +19,22 @@ Bio:Fichero
 Len:Practica
 Mus:Evaluacion
 Sec:Atraso";
+$msg="";
 	?>
-    <form action="enviar.php" method="post">
+    <div id="respuestaformulario"></div>
+    <form action="enviar.php" method="post" class="formulario">
     	<table class="table table-bordered">
         	<tr>
             	<td>
-            	<?php echo $idioma['NumeroCelular']?>:<br><input type="text" name="NumeroCelular" value="<?php echo $al['Celular']?>">
+            	<?php echo $idioma['NumeroCelularEnviar']?>:<br><input type="text" name="NumeroCelular" value="<?php echo $al['CelularSMS']?>">
             	</td>
             </tr>
             <tr>
             	<td>
                 <?php echo $idioma['Mensaje']?>:<br><textarea name="Mensaje" rows="9"><?php echo $msg?></textarea>
+                <br>
+                <a href="#" class="btn btn-mini completar" rel="<?php echo $ComunicadoSMS?>"><?php echo $idioma['ComunicadoSMS']?></a>
+                <a href="#" class="btn btn-mini completar" rel="<?php echo $CitacionSMS?>"><?php echo $idioma['CitacionSMS']?></a>
                 </td>
             </tr>
             <tr>

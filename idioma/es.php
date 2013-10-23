@@ -121,6 +121,7 @@ $idioma['NModificarUsuarios']="Modificar Usuarios";
 $idioma['NVerTareas']="Ver Tareas";
 $idioma['NReporteEstadisticoAgenda']="Reporte Estadístico de Agenda";
 $idioma['NEnviarMensaje']="Enviar Mensaje";
+$idioma['NConfigurarNumeroCelular']="Configurar Número de Celular";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -419,7 +420,7 @@ $idioma['Total']="Total";
 $idioma['NominaAlumnos']="Nomina de Alumnos";
 $idioma['FechaNac']="FechaNac";
 $idioma['Ci']="CI";
-$idioma['TelefonoCasa']="Teléfono Casa";
+$idioma['TelefonoCasa']="Teléfono de Casa";
 $idioma['CelularP']="CelularP";
 $idioma['CelularM']="CelularM";
 $idioma['CelularPadre']="Celular Padre";
@@ -992,12 +993,16 @@ $idioma['Reforzamiento']="Reforzamiento";
 $idioma['PromedioFinal']="Promedio Final";
 //SMS
 $idioma['NumeroCelular']="Número de Celular";
+$idioma['NumeroCelularEnviar']="Número de Celular a Enviar el SMS";
 $idioma['EnviarMensaje']="Enviar Mensaje";
 $idioma['NadaPuerto']="Introdusca el valor de '0' si no se encuentra conectado el Dispositivo USB";
-
 $idioma['ErrorConectarUsb']="Error al tratar de acceder al Dispositivo USB, Compruebe el número de puerto o que no se encuentre utilizado por otro programa";
 $idioma['CorrectoConectarUsb']="Dispositivo USB conectado correctamente";
 $idioma['UsbDeshabilitado']="Dispositivo Deshabilitado";
+$idioma['RecomendacionNumeroCelular']="El número de celular solo debe de tener como máximo 8 dígitos";
+$idioma['ActivarEnvioSms']="Activar Envío de SMS";
+$idioma['ComunicadoSMS']="Comunicado para SMS";
+$idioma['CitacionSMS']="Citación para SMS";
 //Menu Principal
 $idioma['Tareas']="Tareas";
 $idioma['MisClases']="Mis Clases";
@@ -1105,5 +1110,6 @@ $idioma['ConfiguracionNotasCualitativas']="Configuración de Notas Cualitativas"
 $idioma['ConfiguracionDatosInstitucion']="Configuración Datos de Institución";
 $idioma['ReporteEstadisticosAgenda']="Reporte Estadísticos de Agenda";
 $idioma['ModificarCasilleros']="Modificar Casilleros";
-$idioma['EnviarMensajePrivado']="Enviar Mensaje Privado";
+$idioma['EnviarMensajePrivado']="Enviar Mensaje Personalizado";
+$idioma['ConfigurarNumeroCelulares']="Configurar Números de Celular";
 ?>
