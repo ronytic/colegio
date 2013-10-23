@@ -252,7 +252,7 @@ include_once($folder."cabecerahtml.php");
     <div class="box-content">
     	<table class="table table-bordered table-hover">
         	<tr>
-            	<td><?php echo $idioma['EstadoSms']?></td>
+            	<td width="60%"><?php echo $idioma['EstadoSms']?></td>
                 <td><select class="span12" name="EstadoSms">
                 	<option value="NoEnviar" <?php echo (dato("EstadoSms"))=="NoEnviar"?'selected':''?>><?php echo $idioma['NoEnviar']?></option>
                     <option value="PorCadaObservacion" <?php echo (dato("EstadoSms"))=="PorCadaObservacion"?'selected':''?>><?php echo $idioma['PorCadaObservacion']?></option>
@@ -270,6 +270,14 @@ include_once($folder."cabecerahtml.php");
                     <div class="msgusb"></div>              	
                 </td>
                 <td><input type="text" class="span12" name="PuertoUsb" value="<?php echo (dato("PuertoUsb"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['ComunicadoSMS']?></td>
+                <td><textarea class="span12" name="ComunicadoSMS" rows="6"><?php echo (dato("ComunicadoSMS"))?></textarea></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['CitacionSMS']?></td>
+                <td><textarea class="span12" name="CitacionSMS" rows="6"><?php echo (dato("CitacionSMS"))?></textarea></td>
             </tr>
         	<tr>
             	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
