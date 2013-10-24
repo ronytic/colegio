@@ -188,7 +188,7 @@ if(isset($_POST)){
                 <td class="<?php echo $resaltar?>"><?php echo $a['Detalle'];?></td>
                 <td class="<?php echo $resaltar?>"><?php echo date("d-m-Y",strtotime($a['Fecha']));?></td>
                 <td class="centrar">
-                	
+                	<a href="#" class="btn btn-mini enviarmsg <?php echo $a['EnviadoSMS']?'disabled btn-danger':''?>" rel="<?php echo $a['CodAgenda'];?>" title="<?php echo $idioma['EnviarSMS']?>"><i class="icon-envelope"></i></a>
                     <input type="checkbox" class="resaltar checkbox" rel="<?php echo $a['CodAgenda'];?>" title="<?php echo $idioma['Revisado']?>" <?php if($a['Resaltar2'])echo 'checked="checked"';?>/><br />
                     <a href="#" class="btn btn-mini eliminar" title="<?php echo $idioma['Eliminar']?>"  rel="<?php echo $a['CodAgenda'];?>">x</a>
                 </td>

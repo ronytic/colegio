@@ -6,6 +6,7 @@ if(!empty($_GET['CodAl'])){
 	include_once("../../class/curso.php");
 	include_once("../../class/observaciones.php");
 	include_once("../../class/observacionesfrecuentes.php");
+	include_once("../../class/config.php");
 	$titulo="AgendaDigital";
 	$folder="../../";
 	$CodAlumno=$_GET['CodAl'];
@@ -15,6 +16,12 @@ if(!empty($_GET['CodAl'])){
 	$observacionesfrecuentes=new observacionesfrecuentes;
 	$alumno=new alumno;
 	$curso=new curso;
+	$config=new config;
+	if($Internet==1){
+		$EstadoSms="NoEnviar";	
+	}else{
+		$EstadoSms=$config->mostrarConfig("EstadoSms",1);
+	}
 	$al=$alumno->mostrarTodoDatos($CodAlumno);
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
@@ -31,6 +38,8 @@ if(!empty($_GET['CodAl'])){
     CodCurso=<?php echo $al['CodCurso']?>;   
 	Error="<?php echo $idioma['Error']?>"; 
 	FalloRegistro="<?php echo $idioma['FalloRegistro']?>"; 
+	EstadoSms="<?php echo $EstadoSms?>";
+	MensajeEnvioSMS="<?php echo $idioma['MensajeEnvioSMS']?>";
     });
 	
     </script>

@@ -25,10 +25,14 @@ if(!empty($_POST)){
 		);
 		//print_r($agendaValues);
 		$res=$agenda->insertarRegistro($agendaValues);
+		$CodigoInsertado=$agenda->ultimo();
 	//print_r( $agendaValues);
 		if($res)
-			echo "OK";
+			$valores=array("Mensaje"=>"OK","Cod"=>$CodigoInsertado);
+
 		else
-			echo "NO";
+			$valores=array("Mensaje"=>"NO","Cod"=>$CodigoInsertado);
+			
+			echo json_encode($valores);
 }
 ?>

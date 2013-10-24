@@ -995,6 +995,7 @@ $idioma['PromedioFinal']="Promedio Final";
 $idioma['NumeroCelular']="Número de Celular";
 $idioma['NumeroCelularEnviar']="Número de Celular a Enviar el SMS";
 $idioma['EnviarMensaje']="Enviar Mensaje";
+$idioma['EnviarSMS']="Enviar SMS";
 $idioma['NadaPuerto']="Introdusca el valor de '0' si no se encuentra conectado el Dispositivo USB";
 $idioma['ErrorConectarUsb']="Error al tratar de acceder al Dispositivo USB, Compruebe el número de puerto o que no se encuentre utilizado por otro programa";
 $idioma['CorrectoConectarUsb']="Dispositivo USB conectado correctamente";
@@ -1006,6 +1007,7 @@ $idioma['CitacionSMS']="Citación para SMS";
 $idioma['MensajeEnviadoCorrectamente']=" Mensaje enviado Correctamente";
 $idioma['MensajeEnviadoError']=" Error al  enviar el mensaje, Revise la configuración si se encuentra conectado el dispositivo USB";
 $idioma['MensajeEnvioSMS']="¿Desea enviar esta Observación por SMS al Padre de Familia?";
+
 //Menu Principal
 $idioma['Tareas']="Tareas";
 $idioma['MisClases']="Mis Clases";

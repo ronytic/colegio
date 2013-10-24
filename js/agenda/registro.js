@@ -10,7 +10,7 @@ $(document).ready(function(e) {
 		var CodObs=$("select[name=Observaciones]").val();
 		var CodMateria=$("select[name=Materia]").val();
 		Resaltar=Resaltar?1:0;
-		$.post("registrarAgenda.php",{'CodCurso':CodCurso,'CodMateria':CodMateria,'CodObs':CodObs,'Fecha':Fecha,'Detalle':Detalle,'Resaltar':Resaltar},resultado);
+		$.post("registrarAgenda.php",{'CodCurso':CodCurso,'CodMateria':CodMateria,'CodObs':CodObs,'Fecha':Fecha,'Detalle':Detalle,'Resaltar':Resaltar},resultado,"json");
 		$('html, body').animate({scrollTop:$("#respuesta").position().top-200},300);
     });
 	$(".terminar").click(function(e) {
@@ -46,6 +46,14 @@ $(document).ready(function(e) {
 	});
 	/*Fin Busqueda Especifica*/
 	mostrarAgenda();
+	$(document).on("click",".enviarmsg",function(e){
+		e.preventDefault();
+		if(!($(this).hasClass("disabled"))){
+			alert("Si");
+			var Valor=$(this).attr("rel");
+			$.post("enviarsms.php",{"Codigo":Valor},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
+		}
+	});
 });
 function mostrarAgenda(){
 	Busqueda=$("#Busqueda").attr("checked")?true:false;
@@ -57,10 +65,15 @@ function mostrarAgenda(){
 	}
 }
 function resultado(data){
-	if(data=='OK'){
+	if(data.Mensaje=='OK'){
 		mostrarAgenda();
+		if(EstadoSms=="PorCadaObservacion"){
+			if(confirm(MensajeEnvioSMS)){
+				$.post("enviarsms.php",{"Codigo":data.Cod},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
+			}	
+		}
 	}else{
-		alert(FalloRegistro+" "+Error+": "+data)	
+		alert(FalloRegistro+" "+Error+": "+data.Mensaje)	
 	}
 }
 function mostrar(data){

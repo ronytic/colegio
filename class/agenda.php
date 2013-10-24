@@ -39,7 +39,7 @@ class agenda extends bd{
 	}
 	function mostrarRegistros($CodAlumno){
 		$this->campos=array("*");
-		return $this->getRecords("CodAlumno=$CodAlumno and Activo=1","Fecha DESC,HoraRegistro",0,0,0,1);
+		return $this->getRecords("CodAlumno=$CodAlumno and Activo=1","Fecha DESC,CodAgenda",0,0,0,1);
 	}
 	function CantidadObservaciones($CodAlumno="",$CodObservaciones,$CodMateria="",$Fecha=""){
 		$this->campos=array("count(*) as Cantidad");
@@ -60,6 +60,10 @@ class agenda extends bd{
 		}
 		
 		return $this->getRecords("CodObservacion IN($CodObservaciones) and Activo=1 $CodAl $Materia $fech");
+	}
+	function MostrarAgenda($CodAgenda){
+		$this->campos=array("*");
+		return $this->getRecords("CodAgenda=$CodAgenda and Activo=1");
 	}
 	function CantidadObservacionesTotal($CodCurso="",$CodAlumno="",$CodObservaciones="",$CodMateria="",$Fecha=""){
 		$this->campos=array("count(*) as Cantidad");
