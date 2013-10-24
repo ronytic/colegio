@@ -1005,6 +1005,7 @@ $idioma['ComunicadoSMS']="Comunicado para SMS";
 $idioma['CitacionSMS']="Citación para SMS";
 $idioma['MensajeEnviadoCorrectamente']=" Mensaje enviado Correctamente";
 $idioma['MensajeEnviadoError']=" Error al  enviar el mensaje, Revise la configuración si se encuentra conectado el dispositivo USB";
+$idioma['MensajeEnvioSMS']="¿Desea enviar esta Observación por SMS al Padre de Familia?";
 //Menu Principal
 $idioma['Tareas']="Tareas";
 $idioma['MisClases']="Mis Clases";

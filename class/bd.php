@@ -33,6 +33,9 @@ class bd{
 	function __destruct(){
 		@mysql_close($this->l);
 	}
+	function ultimo(){
+		return mysql_insert_id($this->l);	
+	}
 	function getTables(){
 		global $database;
 		return $this->sql("SHOW TABLES FROM ".$database);	
