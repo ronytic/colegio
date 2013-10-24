@@ -92,14 +92,14 @@ function recarga(){
     	    e.preventDefault();
 			var Cod=$(this).attr("rel");
 			if(confirm(mensajeg['EliminarRegistro']))
-				$.post("eliminaRegistro.php",{'CodAgenda':Cod},resultado);
+				$.post("eliminaRegistro.php",{'CodAgenda':Cod},resultado,"json");
 	    });    
 		$(".resaltar").change(function(e) {
 			var CodAgenda=$(this).attr("rel");
 			if($(this).attr('checked')){
-            	$.post("revisado.php",{'CodAgenda':CodAgenda,'Valor':1},resultado);
+            	$.post("revisado.php",{'CodAgenda':CodAgenda,'Valor':1},resultado,"json");
 			}else{
-				$.post("revisado.php",{'CodAgenda':CodAgenda,'Valor':0},resultado);
+				$.post("revisado.php",{'CodAgenda':CodAgenda,'Valor':0},resultado,"json");
 			}
         });
     //});
