@@ -8,6 +8,7 @@ if(!empty($_POST)){
 	$al=array_shift($al);
 	?>
     <div id="respuestaformulario"></div>
+    <?php echo $idioma['Alumno']?>:<strong><?php echo capitalizar($al['Paterno'])?> <?php echo capitalizar($al['Materno'])?> <?php echo capitalizar($al['Nombres'])?></strong>
     <form action="guardar.php" method="post" class="formulario">
     	<input type="hidden" value="<?php echo $CodAlumno?>" name="CodAlumno">
     	<table class="table table-bordered">

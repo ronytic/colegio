@@ -22,6 +22,7 @@ Sec:Atraso";
 $msg="";
 	?>
     <div id="respuestaformulario"></div>
+    <?php echo $idioma['Alumno']?>:<strong><?php echo capitalizar($al['Paterno'])?> <?php echo capitalizar($al['Materno'])?> <?php echo capitalizar($al['Nombres'])?></strong>
     <form action="enviar.php" method="post" class="formulario">
     	<table class="table table-bordered">
         	<tr>
