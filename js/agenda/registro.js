@@ -49,9 +49,13 @@ $(document).ready(function(e) {
 	$(document).on("click",".enviarmsg",function(e){
 		e.preventDefault();
 		if(!($(this).hasClass("disabled"))){
-			alert("Si");
-			var Valor=$(this).attr("rel");
-			$.post("enviarsms.php",{"Codigo":Valor},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
+			//alert("Si");
+			if(EstadoSms=="PorCadaObservacion"){
+				if(confirm(MensajeEnvioSMS)){
+					var Valor=$(this).attr("rel");
+					$.post("enviarsms.php",{"Codigo":Valor},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
+				}
+			}
 		}
 	});
 });
@@ -67,10 +71,12 @@ function mostrarAgenda(){
 function resultado(data){
 	if(data.Mensaje=='OK'){
 		mostrarAgenda();
-		if(EstadoSms=="PorCadaObservacion"){
-			if(confirm(MensajeEnvioSMS)){
-				$.post("enviarsms.php",{"Codigo":data.Cod},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
-			}	
+		if(EnvioSMS=="1"){
+			if(EstadoSms=="PorCadaObservacion"){
+				if(confirm(MensajeEnvioSMS)){
+					$.post("enviarsms.php",{"Codigo":data.Cod},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
+				}	
+			}
 		}
 	}else{
 		alert(FalloRegistro+" "+Error+": "+data.Mensaje)	

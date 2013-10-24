@@ -40,6 +40,7 @@ if(!empty($_GET['CodAl'])){
 	FalloRegistro="<?php echo $idioma['FalloRegistro']?>"; 
 	EstadoSms="<?php echo $EstadoSms?>";
 	MensajeEnvioSMS="<?php echo $idioma['MensajeEnvioSMS']?>";
+	EnvioSMS="<?php echo $al['ActivarSMS']?>";
     });
 	
     </script>
