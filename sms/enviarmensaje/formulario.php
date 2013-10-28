@@ -27,12 +27,12 @@ $msg="";
     	<table class="table table-bordered">
         	<tr>
             	<td>
-            	<?php echo $idioma['NumeroCelularEnviar']?>:<br><input type="text" name="NumeroCelular" value="<?php echo $al['CelularSMS']?>">
+            	<?php echo $idioma['NumeroCelularEnviar']?>:<br><input type="text" name="NumeroCelular" value="<?php echo trim($al['CelularSMS'])?>" required>
             	</td>
             </tr>
             <tr>
             	<td>
-                <?php echo $idioma['Mensaje']?>:<br><textarea name="Mensaje" rows="9"><?php echo $msg?></textarea>
+                <?php echo $idioma['Mensaje']?>:<br><textarea name="Mensaje" rows="9" required><?php echo $msg?></textarea>
                 <br>
                 <a href="#" class="btn btn-mini completar" rel="<?php echo $ComunicadoSMS?>"><?php echo $idioma['ComunicadoSMS']?></a>
                 <a href="#" class="btn btn-mini completar" rel="<?php echo $CitacionSMS?>"><?php echo $idioma['CitacionSMS']?></a>
