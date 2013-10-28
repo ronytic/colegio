@@ -442,6 +442,14 @@ $idioma['Ver']="Ver";
 $idioma['Seguridad']="Seguridad";
 $idioma['OtrosDatos']="Otros Datos";
 $idioma['DatosAlumno']="Datos Alumno";
+$idioma['Password']="Contraseña Alumno";
+$idioma['PasswordP']="Contraseña Padre";
+$idioma['CodBarra']="Código de Barra";
+$idioma['HoraIns']="Hora Inscripción";
+$idioma['FechaIns']="Fecha Inscripción";
+$idioma['OcupPadre']="Ocupación Padre";
+$idioma['OcupMadre']="Ocupación Madre";
+$idioma['FacturaA']="Facturar A";
 //Docente
 $idioma['FrecuenciaAcceso']="Frecuencia de Accesos";
 $idioma['CantidadAcceso']="Cantidad de Accesos";

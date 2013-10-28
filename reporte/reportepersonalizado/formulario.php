@@ -9,7 +9,7 @@ if(isset($_POST)){
                                 <option value="1"><?php echo $idioma['Hombres']?></option>
                                 <option value="0"><?php echo $idioma['Mujeres']?></option>
                             </select></td></tr>
-        <tr><td><?php echo $idioma['Columna1']?></td><td><select name="campo1" class="input-medium span10">
+        <tr><td><?php echo $idioma['Columna1']?></td><td><select name="campo1" class="input-medium span12">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
                                 <optgroup label="<?php echo $idioma['DatosAlumno']?>">
                                     <option value="FechaNac"><?php echo $idioma['FechaNacimiento']?></option>
@@ -46,7 +46,7 @@ if(isset($_POST)){
                                 </optgroup>
                                 <optgroup label="<?php echo $idioma['Seguridad']?>">
                                     <option value="UsuarioAlumno"><?php echo $idioma['UsuarioAlumno']?></option>
-                                    <option value="Password"><?php echo $idioma['Contrasena']?></option>
+                                    <option value="Password"><?php echo $idioma['ContrasenaAlumno']?></option>
                                     <option value="UsuarioPadre"><?php echo $idioma['UsuarioPadre']?></option>
                                     <option value="PasswordP"><?php echo $idioma['ContrasenaPadre']?></option>
                                     <option value="CodBarra"><?php echo $idioma['CodigoBarra']?></option>
@@ -54,7 +54,7 @@ if(isset($_POST)){
                                 <option value="FechaIns"><?php echo $idioma['FechaInscripcion']?></option>
                                 <option value="HoraIns"><?php echo $idioma['HoraInscripcion']?></option>
 								</select></td></tr>
-         <tr><td><?php echo $idioma['Columna2']?></td><td><select name="campo2" class="input-medium span10">
+         <tr><td><?php echo $idioma['Columna2']?></td><td><select name="campo2" class="input-medium span12">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
                                 <optgroup label="<?php echo $idioma['DatosAlumno']?>">
                                     <option value="FechaNac"><?php echo $idioma['FechaNacimiento']?></option>
@@ -91,7 +91,7 @@ if(isset($_POST)){
                                 </optgroup>
                                 <optgroup label="<?php echo $idioma['Seguridad']?>">
                                     <option value="UsuarioAlumno"><?php echo $idioma['UsuarioAlumno']?></option>
-                                    <option value="Password"><?php echo $idioma['Contrasena']?></option>
+                                    <option value="Password"><?php echo $idioma['ContrasenaAlumno']?></option>
                                     <option value="UsuarioPadre"><?php echo $idioma['UsuarioPadre']?></option>
                                     <option value="PasswordP"><?php echo $idioma['ContrasenaPadre']?></option>
                                     <option value="CodBarra"><?php echo $idioma['CodigoBarra']?></option>
@@ -99,7 +99,7 @@ if(isset($_POST)){
                                 <option value="FechaIns"><?php echo $idioma['FechaInscripcion']?></option>
                                 <option value="HoraIns"><?php echo $idioma['HoraInscripcion']?></option>
 								</select></td></tr>
-		<tr><td><?php echo $idioma['Columna3']?></td><td><select name="campo3" class="input-medium span10">
+		<tr><td><?php echo $idioma['Columna3']?></td><td><select name="campo3" class="input-medium span12">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
                                 <optgroup label="<?php echo $idioma['DatosAlumno']?>">
                                     <option value="FechaNac"><?php echo $idioma['FechaNacimiento']?></option>
@@ -136,7 +136,7 @@ if(isset($_POST)){
                                 </optgroup>
                                 <optgroup label="<?php echo $idioma['Seguridad']?>">
                                     <option value="UsuarioAlumno"><?php echo $idioma['UsuarioAlumno']?></option>
-                                    <option value="Password"><?php echo $idioma['Contrasena']?></option>
+                                    <option value="Password"><?php echo $idioma['ContrasenaAlumno']?></option>
                                     <option value="UsuarioPadre"><?php echo $idioma['UsuarioPadre']?></option>
                                     <option value="PasswordP"><?php echo $idioma['ContrasenaPadre']?></option>
                                     <option value="CodBarra"><?php echo $idioma['CodigoBarra']?></option>
@@ -144,7 +144,7 @@ if(isset($_POST)){
                                 <option value="FechaIns"><?php echo $idioma['FechaInscripcion']?></option>
                                 <option value="HoraIns"><?php echo $idioma['HoraInscripcion']?></option>
 								</select></td></tr>
-		  <tr><td><?php echo $idioma['Columna4']?></td><td><select name="campo4" class="input-medium span10">
+		  <tr><td><?php echo $idioma['Columna4']?></td><td><select name="campo4" class="input-medium span12">
         						<option value=""><?php echo $idioma['Ninguno']?></option>
                                 <optgroup label="<?php echo $idioma['DatosAlumno']?>">
                                     <option value="FechaNac"><?php echo $idioma['FechaNacimiento']?></option>
@@ -181,7 +181,7 @@ if(isset($_POST)){
                                 </optgroup>
                                 <optgroup label="<?php echo $idioma['Seguridad']?>">
                                     <option value="UsuarioAlumno"><?php echo $idioma['UsuarioAlumno']?></option>
-                                    <option value="Password"><?php echo $idioma['Contrasena']?></option>
+                                    <option value="Password"><?php echo $idioma['ContrasenaAlumno']?></option>
                                     <option value="UsuarioPadre"><?php echo $idioma['UsuarioPadre']?></option>
                                     <option value="PasswordP"><?php echo $idioma['ContrasenaPadre']?></option>
                                     <option value="CodBarra"><?php echo $idioma['CodigoBarra']?></option>

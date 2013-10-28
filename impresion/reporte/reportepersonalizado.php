@@ -10,6 +10,7 @@ $CodCurso=$_GET['CodCurso'];
 $Campo1=$_GET['Campo1'];
 $Campo2=$_GET['Campo2'];
 $Campo3=$_GET['Campo3'];
+$Campo4=$_GET['Campo4'];
 $Borde=$_GET['Borde'];
 $Blanco=$_GET['Blanco'];
 $Cantidad=$_GET['Cantidad'];
@@ -22,7 +23,7 @@ $curso=array_shift($cur->mostrarCurso($CodCurso));
 class PDF extends PPDF
 {
 	function Cabecera(){
-		global $curso,$Campo1,$Campo2,$Campo3,$Cantidad,$Borde,$Blanco,$idioma;
+		global $curso,$Campo1,$Campo2,$Campo3,$Campo4,$Cantidad,$Borde,$Blanco,$idioma;
 		$this->CuadroCabecera(15,$idioma['Curso'].":",30,$curso['Nombre']);
 		$this->Pagina();
 		$this->ln();
@@ -73,7 +74,7 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 		if(!$Blanco){
 			if($Campo1!=""){
 				if($Campo1=="FechaNac" || $Campo1=="FechaIns"){
-					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo1]),$Somb,"R",$Borde);
+					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo1]),$Somb,"",$Borde);
 				}else{
 					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo1]),$Somb,"",$Borde,9);
 				}
@@ -82,7 +83,7 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 			}
 			if($Campo2!=""){
 				if($Campo2=="FechaNac" || $Campo2=="FechaIns"){
-					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo2]),$Somb,"R",$Borde);
+					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo2]),$Somb,"",$Borde);
 				}else{
 					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo2]),$Somb,"",$Borde,9);
 				}
@@ -91,7 +92,7 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 			}
 			if($Campo3!=""){
 				if($Campo3=="FechaNac" || $Campo3=="FechaIns"){
-					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo3]),$Somb,"R",$Borde);
+					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo3]),$Somb,"",$Borde);
 				}else{
 					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo3]),$Somb,"",$Borde,9);
 				}
@@ -100,9 +101,9 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 			}
 			if($Campo4!=""){
 				if($Campo4=="FechaNac" || $Campo4=="FechaIns"){
-					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo3]),$Somb,"R",$Borde);
+					$pdf->CuadroCuerpo(35,fecha2Str($al[$Campo4]),$Somb,"",$Borde);
 				}else{
-					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo3]),$Somb,"",$Borde,9);
+					$pdf->CuadroCuerpo(35,capitalizar($al[$Campo4]),$Somb,"",$Borde,9);
 				}
 			}else{
 				$pdf->CuadroCuerpo(35,"",$Somb,"",$Borde);
