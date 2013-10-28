@@ -50,7 +50,7 @@ function comprobarConexion($Puerto){
       exec($config);
 	  //==============================
 	  //webLog("OPEN $port");
-	  $modem = dio_open("$port:", O_RDWR);
+	  @$modem = dio_open("$port:", O_RDWR);
 	  $c = 0;
 	  $res = 'NOK';
 	  while($c < 20 && $res != 'OK'){
@@ -73,7 +73,7 @@ function comprobarConexion($Puerto){
 	  }
 	  //==============================
 	  //webLog("CLOSE $port");
-	  dio_close($modem);
+	  @dio_close($modem);
 	  return $res;
 	}catch( Exception  $error ){
 		return false;
