@@ -15,7 +15,7 @@ if(!empty($_POST)){
 				'HoraElimina'=>"'$Hora'"
 	);
 	$res=$agenda->actualizarAgendaE($values,"CodAgenda=$CodAgenda");
-	$valores=array("Mensaje"=>"OK");
+	$valores=array("Mensaje"=>"OK","EnviadoSMS"=>$al['1']);
 	echo json_encode($valores);
 }
 ?>

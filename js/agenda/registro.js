@@ -73,9 +73,11 @@ function resultado(data){
 		mostrarAgenda();
 		if(EnvioSMS=="1"){
 			if(EstadoSms=="PorCadaObservacion"){
-				if(confirm(MensajeEnvioSMS)){
-					$.post("enviarsms.php",{"Codigo":data.Cod},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
-				}	
+				if(data.EnviadoSMS=="0"){
+					if(confirm(MensajeEnvioSMS)){
+						$.post("enviarsms.php",{"Codigo":data.Cod},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
+					}	
+				}
 			}
 		}
 	}else{

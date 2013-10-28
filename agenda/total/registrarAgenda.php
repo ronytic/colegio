@@ -28,7 +28,7 @@ if(!empty($_POST)){
 		$CodigoInsertado=$agenda->ultimo();
 	//print_r( $agendaValues);
 		if($res)
-			$valores=array("Mensaje"=>"OK","Cod"=>$CodigoInsertado);
+			$valores=array("Mensaje"=>"OK","Cod"=>$CodigoInsertado,"EnviadoSMS"=>0);
 
 		else
 			$valores=array("Mensaje"=>"NO","Cod"=>$CodigoInsertado);

@@ -4,10 +4,12 @@ if(!empty($_POST)){
 	include_once("../../class/agenda.php");
 	$agenda=new agenda;
 	$CodAgenda=$_POST['CodAgenda'];
+	$a=$agenda->MostrarAgenda($CodAgenda);
+	$a=array_shift($a);
 	$Valor=$_POST['Valor'];
 	$values=array("resaltar2"=>$Valor);
 	$agenda->actualizarAgendaE($values,"CodAgenda=$CodAgenda");
-	$valores=array("Mensaje"=>"OK");
+	$valores=array("Mensaje"=>"OK","EnviadoSMS"=>$a['EnviadoSMS']);
 	echo json_encode($valores);
 }
 ?>
