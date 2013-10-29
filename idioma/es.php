@@ -122,6 +122,7 @@ $idioma['NVerTareas']="Ver Tareas";
 $idioma['NReporteEstadisticoAgenda']="Reporte Estadístico de Agenda";
 $idioma['NEnviarMensaje']="Enviar Mensaje";
 $idioma['NConfigurarNumeroCelular']="Configurar Número de Celular";
+$idioma['NVerTodosLosEnvios']="Ver Envios de SMS";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -1125,4 +1126,5 @@ $idioma['ReporteEstadisticosAgenda']="Reporte Estadísticos de Agenda";
 $idioma['ModificarCasilleros']="Modificar Casilleros";
 $idioma['EnviarMensajePrivado']="Enviar Mensaje Personalizado";
 $idioma['ConfigurarNumeroCelulares']="Configurar Números de Celular";
+$idioma['VerEnviosSms']="Ver Envío de SMS";
 ?>
