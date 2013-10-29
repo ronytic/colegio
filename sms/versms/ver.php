@@ -107,7 +107,7 @@ foreach($smsu as $lu){$i++;
         <tr>
         
         <td>
-        <span class="label label-info"><span class="label label-warning"><?php echo $i?></span> <strong><?php echo $tipousuario?>:</strong></span> <a"><?php echo capitalizar($Paterno)?> <?php echo capitalizar($Materno)?> <?php echo capitalizar(($Nombres))?></a><br>
+        <span class="label label-warning"><?php echo $i?></span> <span class="label label-info"> <strong><?php echo $tipousuario?>:</strong></span> <a"><?php echo capitalizar($Paterno)?> <?php echo capitalizar($Materno)?> <?php echo capitalizar(($Nombres))?></a><br>
         <strong><?php echo $idioma['Fecha']?>:</strong> <?php echo fecha2Str($lu['FechaRegistro'])?>
         <br>
         <strong><?php echo $idioma['Hora']?>:</strong> <?php echo $lu['HoraRegistro']?>
