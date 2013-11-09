@@ -69,41 +69,14 @@ if(isset($_POST)){
 	
 	$ag=$agenda->mostrarRegistroFecha($Fecha);
 	?>
-    <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
     <table class="table table-condensed table-bordered inicio">
         <tr>
-        	<td width="75" colspan="1" class="resaltar"><?php echo $idioma['Fecha']?></td>
-            <td colspan="3" class="resaltar"><?php echo fecha2Str($Fecha)?></td>
+        	<td width="75" colspan="1" class=""><?php echo $idioma['TotalObservaciones']?>: <span class="resaltar"><?php echo $Total;?></span> <a href="#" class="imprimir btn btn-info btn-mini"><?php echo $idioma['Imprimir']?></a></td>
         </tr>
     	<tr>
-    		<td class="resaltar"><?php echo $idioma['Observaciones']?></td>
-            <td colspan="2" class="resaltar"><?php echo $idioma['Felicitaciones']?></td>
-            <td class="resaltar"><?php echo $idioma['Total']?></td>
-        </tr>
-
-    	<tr>
-        	<td class="centrar"><?php echo $CantObser['Cantidad'];?></td>
+        	<td class="centrar" id="grafica" width="100%" height="270"><?php echo $CantObser['Cantidad'];?></td>
             
-            <td class="centrar" colspan="2"><?php echo $CantFelicitacion['Cantidad'];?></td>
-            <td class="centrar resaltar alineadovertical x2" rowspan="5"><?php echo $Total;?></td>
-        </tr>
-        <tr>
-        	<td class="resaltar"><?php echo $idioma['Faltas']?></td>
-            <td class="resaltar"><?php echo $idioma['Atrasos']?></td>
-            <td class="resaltar"><?php echo $idioma['Licencias']?></td>
-        </tr>
-        <tr>
-        	<td class="centrar"><?php echo $CantFaltas['Cantidad'];?></td>
-            <td class="centrar"><?php echo $CantAtrasos['Cantidad'];?></td>
-            <td class="centrar"><?php echo $CantLicencias['Cantidad'];?></td>
-        </tr>
-        <tr>
-            <td class="resaltar" colspan="1"><?php echo $idioma['NoRespondeTelf']?></td>
-            <td class="resaltar" colspan="2"><?php echo $idioma['NotificacionPadres']?></td>
-    	</tr>
-        <tr>
-            <td class="centrar" colspan="1"><?php echo $CantNoContestan['Cantidad'];?></td>
-            <td class="centrar" colspan="2"><?php echo $CantNotificacion['Cantidad'];?></td>
+            
         </tr>
     </table>
     <?php
@@ -210,3 +183,52 @@ if(isset($_POST)){
 }
 
 ?>
+<script language="javascript" type="application/javascript" src="js/core/plugins/exporting.js"></script>
+<script language="javascript" type="text/javascript">
+var chart;
+chart = new Highcharts.Chart({
+	chart: {
+		renderTo: 'grafica',
+		type: 'bar'
+	},
+	title: {
+		text: '<?php echo $idioma['Estadisticas']?> <?php echo $idioma['Agenda']?>'
+	},
+	subtitle: {
+		text: '<?php echo $idioma['Fecha']?>: <?php echo fecha2Str($Fecha)?>'
+	},
+	xAxis: {
+		categories: ['<?php echo $idioma['Observaciones']?>', '<?php echo $idioma['Faltas']?>', '<?php echo $idioma['Atrasos']?>', '<?php echo $idioma['Licencias']?>','<?php echo $idioma['NoRespondeTelf']?>','<?php echo $idioma['NotificacionPadres']?>', '<?php echo $idioma['Felicitaciones']?>'],
+	},
+	yAxis: {
+		min: 0,
+		title: {
+			text: '<?php echo $idioma['CantidadObservaciones']?>'
+		},
+		labels: {
+                    overflow: 'justify'
+                }
+	},
+	plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+	legend:false,
+	series: [{
+		name: '<?php echo $idioma['Observaciones']?>',
+		data: [<?php echo $CantObser['Cantidad'];?>,<?php echo $CantFaltas['Cantidad'];?>,<?php echo $CantAtrasos['Cantidad'];?>,<?php echo $CantLicencias['Cantidad'];?>,<?php echo $CantNoContestan['Cantidad'];?>,<?php echo $CantNotificacion['Cantidad'];?>,<?php echo $CantFelicitacion['Cantidad'];?>],
+	}],
+	exporting: {
+		enabled: false
+	}
+});
+$(document).ready(function() {
+	$(".imprimir").click(function(e) {
+		e.preventDefault();
+		chart.print();
+	});
+});
+</script>

@@ -36,6 +36,7 @@ $idioma['NoExitenNotificaciones']="No Exiten Notificaciones";
 $idioma['Pasivo']="Pasivo";
 $idioma['ReporteImpresion']="Este Reporte Generado es para Imprimir";
 $idioma['TamanoCarta']="Tamaño Carta";
+$idioma['TotalObservaciones']="Total de Observaciones";
 $idioma['AccesosUsuarioSistema']="Accesos de Usuarios al Sistema";
 //Menu
 $idioma['Menu']="Menú";

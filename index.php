@@ -2,6 +2,7 @@
 $titulo="NPaginaPrincipal";
 ?>
 <?php include_once("cabecerahtml.php");?>
+<script language="javascript" type="text/javascript" src="js/core/plugins/highcharts.js"></script>
 <script language="javascript" type="text/javascript" src="js/inicio.js"></script>
 <?php include_once("cabecera.php");?>
 <?php if($_SESSION['Nivel']==1 ||$_SESSION['Nivel']==2||$_SESSION['Nivel']==4||$_SESSION['Nivel']==5):?>
