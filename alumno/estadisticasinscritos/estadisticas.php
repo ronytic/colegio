@@ -67,6 +67,7 @@ if(!empty($_POST)){
 			<th><?php echo $CantidadTotalV;?> <?php echo $idioma['Alumnos']?></th>
             <th><?php echo $CantidadTotalM?> <?php echo $idioma['Alumnas']?></th>
             <th><?php echo $CantidadNuevo;?></th>
+            <th></th>
         </tr>
         </tfoot>
     </table>
