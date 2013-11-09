@@ -356,6 +356,9 @@ $idioma['ReInscribirAlumno']="ReInscribir Alumno";
 $idioma['NoExisteAlumnos']="No Existe Alumnos";
 $idioma['MontoReserva']="Monto de reserva";
 $idioma['FechaReserva']="Fecha de reserva";
+$idioma['EstadisticasInscritos']="Estadísticas de Inscritos";
+$idioma['CantidadInscritos']="Cantidad de Inscritos";
+$idioma['Inscritos']="Inscritos";
 //Rude
 $idioma['RegistrarRude']="Registrar Rude";
 $idioma['ModificarRude']="Modificar Rude";

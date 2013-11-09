@@ -32,7 +32,7 @@ if($notitotal){
 }
 ?>
 </div>
-	<!-- Inicio: JavaScript-->
+<?php /* 	<!-- Inicio: JavaScript-->
 
 		
 		<!--<script src="js/jquery-ui-1.8.21.custom.min.js"></script>-->
@@ -142,46 +142,45 @@ if($notitotal){
 	});	*/	
 
 	</script>
+	*/?>
+<script language="javascript">
+	var folder="<?php echo $folder?>";
+	var mensajeg=Array();
+	mensajeg['EliminarRegistro']="<?php echo $idioma['EliminarRegistro']?>";
+	var DispositivoMovil=0;
 	
-    <script language="javascript">
-		var folder="<?php echo $folder?>";
-		var mensajeg=Array();
-		mensajeg['EliminarRegistro']="<?php echo $idioma['EliminarRegistro']?>";
-		var DispositivoMovil=0;
-		
-		/*$(document).on("ready",function(){
-			//alert(screen.width+"W - "+$(document).width()+" V");	
-			//maximizar()
-			var offset = (navigator.userAgent.indexOf("Mac") != -1 ||
-			navigator.userAgent.indexOf("Gecko") != -1 ||
-			navigator.appName.indexOf("Netscape") != -1) ? 0 : 4;
-			window.moveTo(-offset, -offset);
-			window.resizeTo(screen.availWidth + (2 * offset),
-			screen.availHeight + (2 * offset));
-		});
-		
-		function maximizar(){
-		//window.moveTo(0,0);
-		window.resizeTo(screen.width,screen.height);
-		}*/
-		$(document).on("ready",function(){
-			if($(document).width()>750){
-				//alert($(document).width());
-				$('.btn-navbar').click();
-			}
-		});
-	</script>
-	<script src="<?php echo $folder;?>js/core/framework/bootstrap.js" language="javascript"></script>
-    <script src="<?php echo $folder;?>js/core/plugins/jquery.listado.js" language="javascript"></script>
-    <script src="<?php echo $folder;?>js/core/ui/jquery.ui.core.js" language="javascript"></script>
-    <script src="<?php echo $folder;?>js/core/ui/jquery.ui.datepicker.js" language="javascript"></script>		
-    <script src="<?php echo $folder;?>js/core/plugins/jquery.form.js" language="javascript"></script>
-    <script src="<?php echo $folder;?>js/core/plugins/jquery.stickytableheaders.min.js" language="javascript"></script>	
-    
-    <script src="<?php echo $folder;?>js/core/cargadortotal.js?<?php echo rand()?>" language="javascript"></script>
-    <script src="<?php echo $folder;?>js/core/cargadortotalfinal.js" language="javascript"></script>
-		<!-- Fin: JavaScript-->
+	<?php /*/*$(document).on("ready",function(){
+		//alert(screen.width+"W - "+$(document).width()+" V");	
+		//maximizar()
+		var offset = (navigator.userAgent.indexOf("Mac") != -1 ||
+		navigator.userAgent.indexOf("Gecko") != -1 ||
+		navigator.appName.indexOf("Netscape") != -1) ? 0 : 4;
+		window.moveTo(-offset, -offset);
+		window.resizeTo(screen.availWidth + (2 * offset),
+		screen.availHeight + (2 * offset));
+	});
+	
+	function maximizar(){
+	//window.moveTo(0,0);
+	window.resizeTo(screen.width,screen.height);
+	}*/ ?>
+	$(document).on("ready",function(){
+		if($(document).width()>750){
+			//alert($(document).width());
+			$('.btn-navbar').click();
+		}
+	});
+</script>
+<script src="<?php echo $folder;?>js/core/framework/bootstrap.js" language="javascript"></script>
+<script src="<?php echo $folder;?>js/core/plugins/jquery.listado.js" language="javascript"></script>
+<script src="<?php echo $folder;?>js/core/ui/jquery.ui.core.js" language="javascript"></script>
+<script src="<?php echo $folder;?>js/core/ui/jquery.ui.datepicker.js" language="javascript"></script>		
+<script src="<?php echo $folder;?>js/core/plugins/jquery.form.js" language="javascript"></script>
+<script src="<?php echo $folder;?>js/core/plugins/jquery.stickytableheaders.min.js" language="javascript"></script>	
 
-<!--<iframe id="respuestaexcel"></iframe>-->
+<script src="<?php echo $folder;?>js/core/cargadortotal.js?<?php echo rand()?>" language="javascript"></script>
+<script src="<?php echo $folder;?>js/core/cargadortotalfinal.js" language="javascript"></script>
+<?php /*<!-- Fin: JavaScript-->
+<!--<iframe id="respuestaexcel"></iframe>-->*/?>
 </body>
 </html>

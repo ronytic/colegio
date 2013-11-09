@@ -16,6 +16,7 @@ function respuesta(data){
 		$.post("alumnosnuevos.php",{"CodCurso":CodCurso},function(data){
 			$("#alumnosnuevos").html(data);
 			$(".alumnosnuevos").slideDown();
+			$('html, body').animate({scrollTop:$(".alumnosnuevos").position().top},300);
 		})
     },function(e) {
         $(this).find("i").removeClass("icon-chevron-up").addClass("icon-chevron-down");
