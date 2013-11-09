@@ -61,21 +61,6 @@ function respuestaInicial(data){
 			}
 		});
     });
-	$(".guardar").click(function(e) {
-		/*var Periodo=$("select[name=Periodo]").val();
-		var CodMateria=$("select[name=materia]").val();
-		var CodCurso=$("select[name=curso]").val();
-		var SexoAlumno=$("select[name=alumno]").val();
-		var Casillas=$("select[name=casillas]").val();
-		var Formula=$("textarea[name=formula]").val();
-		var Tope=$("input[name=tope]").val();
-		var Dps=$("select[name=dps]").val();
-		if(confirm(GuardarConfiguracionCasilleros+"\n"+NoSePodraModificar)){
-			$.post('guardar.php',{'Periodo':Periodo,'CodDocente':CodDocente,'CodMateria':CodMateria,'CodCurso':CodCurso,'SexoAlumno':SexoAlumno,'Casillas':Casillas,'Formula':Formula,'Dps':Dps,'Tope':Tope},respuesta2);
-		}
-		//
-		*/
-    });
 }
 function respuesta2(data){
 	$('#contenido2').html(data);

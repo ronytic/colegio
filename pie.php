@@ -139,7 +139,7 @@ if($notitotal){
 		setInterval(f_sales, 5000);
 		setInterval(live_notifications_center, 5000);
 		
-	});	*/	
+	});		
 
 	</script>
 	*/?>

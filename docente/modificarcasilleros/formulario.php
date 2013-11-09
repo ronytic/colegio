@@ -118,12 +118,13 @@ if(!empty($_POST['Cod'])){
     
     <table class="table table-bordered table-hover table-striped">
     <thead>
-	<tr><th>N</th><th><?php echo $idioma['NotaTope']?></th><th><?php echo $idioma['NombreCasillero']?></th></tr>
+	<tr><th>N</th><th><?php echo $idioma['NotaMinima']?></th><th><?php echo $idioma['NotaTope']?></th><th><?php echo $idioma['NombreCasillero']?></th></tr>
     </thead>
     
     <?php for($i=1;$i<=15;$i++){?>
         <tr class="filanota <?php echo $i>$cas['Casilleros']?'oculto':''?>" rel="<?php echo $i?>">
         	<td><?php echo $i ?></td>
+            <td><input type="text" class="span12" name="limitemin[]" value="<?php echo $cas['LimiteMinCasilla'.$i];?>"></td>
     		<td><input type="text" class="span12" name="limite[]" value="<?php echo $cas['LimiteCasilla'.$i];?>"></td>
             <td><input type="text" class="span12" name="nombre[]" value="<?php echo $cas['NombreCasilla'.$i];?>"></td>
 		</tr>

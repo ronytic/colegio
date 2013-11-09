@@ -9,8 +9,11 @@ if(isset($_POST)){
 	$valoresN['FormulaCalificaciones']="'".$_POST['formula']."'";
 	foreach($_POST['nombre'] as $n){$i++;
 		$l=array_shift($_POST['limite']);
+		$lm=array_shift($_POST['limitemin']);
+		
 		$valoresN["NombreCasilla".$i]="'".$n."'";
 		$valoresN["LimiteCasilla".$i]=$l;
+		$valoresN["LimiteMinCasilla".$i]=$lm;
 	}
 	if($casilleros->actualizarCasilleros($valoresN,$CodCasilleros)){
 	?>

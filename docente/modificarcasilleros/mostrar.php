@@ -48,6 +48,7 @@ if(isset($_POST)){
     <?php
 	$casi=$casilleros->mostrarHabilitadoTrimestre($codigos,$j);
 	if(!count($casi)){?><tr><td colspan="7"><?php echo $idioma['NoTieneAsignadoCasilleros']; ?></td></tr><?php }
+	$i=0;
 	foreach($casi as $cas){$i++;
 		$docmateriacurso=$docentemateriacurso->mostrarRegistro($cas['CodDocenteMateriaCurso']);
 		$docmateriacurso=array_shift($docmateriacurso);
