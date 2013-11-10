@@ -60,19 +60,21 @@ if(!empty($_POST)){
 		if($i<=$Casillas){
 			if($cur['Bimestre']){//Sacando para Cursos por Bimestre
 				switch($i){
-					case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;}break;
-					case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;}break;
-					case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;}break;
-					case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;}break;
+					case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=10;}break;
+					case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=15;}break;
+					case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=15;}break;
+					case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=10;}break;
 				}
 			}else{//Sacnado para Fines de Bimestre
 				$valDM['NombreCasilla'.$i]="'Casilla $i'";
 				$valDM['LimiteCasilla'.$i]=$cur['NotaTope'];
+				$valDM['LimiteMinCasilla'.$i]=0;
 			}
 			
 		}else{
 			$valDM['NombreCasilla'.$i]="'Casilla $i'";
 			$valDM['LimiteCasilla'.$i]=0;
+			$valDM['LimiteMinCasilla'.$i]=0;
 		}
 	}
 	$casilleros->insertarRegistro($valDM);
