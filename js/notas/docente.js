@@ -70,7 +70,7 @@ function alumnosnotas(data){
 	
 	$(".nota").change(enviarNota);
 	
-	$(".final").blur(enviarNota)//.keyup(enviarNota);
+	$(".final").change(enviarNota)//.keyup(enviarNota);
 	
 	$("#guardarNotas").click(function(e) {
 		mostrarAlumnosNotas();
@@ -136,11 +136,17 @@ function enviarNota(e){
 	var Col=$(this).attr('data-col');
 	var CodCasilleros=$(this).attr('data-cod');
 	var Tope=parseInt($('#t'+Col).attr("rel"));
-	if(Nota<=Tope && Nota>=0){
-		$.post('guardarnota.php',{'CodAlumno':CodAlumno,'NumeroNota':Col,'CodCasilleros':CodCasilleros,'Nota':Nota,'Rand':Math.random()},evaluarNota,"json");
-	}else{
-		alert(NotaExcedidaLimite+": "+Tope)	;
+	var Minimo=parseInt($('#t'+Col).attr("rel-min"));
+	if(Nota<Minimo){
+		alert(NotaExcedidaMinimo+": "+Minimo)	;
 		$(this).focus().select();
+	}else{
+		if(Nota<=Tope){
+			$.post('guardarnota.php',{'CodAlumno':CodAlumno,'NumeroNota':Col,'CodCasilleros':CodCasilleros,'Nota':Nota,'Rand':Math.random()},evaluarNota,"json");
+		}else{
+			alert(NotaExcedidaLimite+": "+Tope)	;
+			$(this).focus().select();
+		}
 	}
 }
 function evaluarNota(data){

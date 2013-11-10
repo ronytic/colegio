@@ -25,6 +25,7 @@ $trimestreActual=$cnf['Valor']
 var NotasGuardadoCorrectamente="<?php echo $idioma['NotasGuardadoCorrectamente']?>";
 var NombresGuardadoCorrectamente="<?php echo $idioma['NombresGuardadoCorrectamente']?>";
 var NotaExcedidaLimite="<?php echo $idioma['NotaExcedidaLimite']?>";
+var NotaExcedidaMinimo="<?php echo $idioma['NotaExcedidaMinimo']?>";
 </script>
 <?php include_once($folder."cabecera.php");?>
 <div class="span12 box">
