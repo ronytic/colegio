@@ -53,6 +53,7 @@ $(document).on("ready",function(){
 	});
 });
 function mostrarActividades(){
+	cargandoG("#listadoactividades");
 	var Fecha=$("#FechaActividad").val();
 	$.post("mostraractividades.php",{"Fecha":Fecha},function(data){
 		$("#listadoactividades").html(data)
