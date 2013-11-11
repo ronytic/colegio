@@ -35,24 +35,28 @@ $(document).on("ready",function(){
 	});
 });
 function mostrarAsistencia(){
+	cargandoG("#asistenciarapida");
 	var Fecha=$("#FechaAsistencia").val();
 	$.post("asistencia/inicio/mostrar.php",{"Fecha":Fecha},function(data){
 		$("#asistenciarapida").html(data)
 	});
 }
 function mostrarActividades(){
+	cargandoG("#listadoactividades");
 	var Fecha=$("#FechaActividad").val();
 	$.post("agendaactividades/mostraractividades.php",{"Fecha":Fecha,'Botones':"0"},function(data){
 		$("#listadoactividades").html(data)
 	});
 }
 function mostrarCuotas(){
+	cargandoG("#listadocuotas");
 	var Fecha=$("#FechaCuotas").val();
 	$.post("cuotas/inicio/mostrarcuotas.php",{"Fecha":Fecha,'Botones':"0"},function(data){
 		$("#listadocuotas").html(data)
 	});
 }
 function mostrarAgenda(){
+	cargandoG("#listadoagenda");
 	var Fecha=$("#FechaAgenda").val();
 	$.post("agenda/inicio/mostraragenda.php",{"Fecha":Fecha,'Botones':"0"},function(data){
 		$("#listadoagenda").html(data).stickyTableHeaders()
@@ -61,7 +65,7 @@ function mostrarAgenda(){
 	});
 }
 function mostrarUsuario(){
-	//var Fecha=$("#FechaActividad").val();
+	cargandoG("#listausuario");
 	$.post("usuario/inicio/lista.php",{},function(data){
 		$("#listausuario").html(data)
 	});
