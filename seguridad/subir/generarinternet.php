@@ -82,7 +82,7 @@ foreach ($tablas as $tabla) {
             }
 			if($i==400){$i=0;}
 			if($i==1){
-            	$insert_into_query .= ";INSERT INTO `$tabla` VALUES (".implode(", ", $values).")";
+            	$insert_into_query .= "INSERT INTO `$tabla` VALUES (".implode(", ", $values).")";
 			}else{
 				$insert_into_query .= ",(".implode(", ", $values).")";
 			}
