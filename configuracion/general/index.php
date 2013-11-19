@@ -305,6 +305,14 @@ include_once($folder."cabecerahtml.php");
                 </select></td>
             </tr>
             <tr>
+            	<td><?php echo $idioma['PeriodoNotaHabilitadoBimestre']?><div class="pequeno"><?php echo $idioma['PeriodoNotaHabilitadoE']?></div></td>
+                <td><select class="span12" name="PeriodoNotaHabilitadoBimestre">
+                	<?php for($i=1;$i<=dato("TotalPeriodo");$i++){
+					?><option value="<?php echo $i;?>" class="der" <?php echo dato("PeriodoNotaHabilitadoBimestre")==$i?'selected':''?>><?php echo $i?></option><?php	
+					}?>
+                </select></td>
+            </tr>
+            <tr>
             	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
             </tr>
         </table>

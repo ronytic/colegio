@@ -34,14 +34,25 @@ if(!empty($_POST)){
 	$Dps=$casillas['Dps'];
 	$FormulaCalificaciones=$dcasillas['FormulaCalificaciones'];
 	
-	$cnf=$config->mostrarConfig("RegistroNotaHabilitado");
-	$RegistroNotaHabilitado=$cnf["Valor"];
-	$cnf=$config->mostrarConfig("PeriodoNotaHabilitado");
-	$PeriodoNotaHabilitado=$cnf["Valor"];
+	$RegistroNotaHabilitado=$config->mostrarConfig("RegistroNotaHabilitado",1);
+	$PeriodoNotaHabilitado=$config->mostrarConfig("PeriodoNotaHabilitado",1);
+	$PeriodoNotaHabilitadoBimestre=$config->mostrarConfig("PeriodoNotaHabilitadoBimestre",1);
+	
 	if($RegistroNotaHabilitado==1){
-		if($CodPeriodo!=$PeriodoNotaHabilitado)
-		{$restringir='readonly="readonly" disabled="disabled"';}
-		else{$restringir='';}
+		if($cur['Bimestre']){
+			if($CodPeriodo!=$PeriodoNotaHabilitadoBimestre){
+				$restringir='readonly="readonly" disabled="disabled"';
+			}else{
+				$restringir='';
+			}	
+		}else{
+			if($CodPeriodo!=$PeriodoNotaHabilitado){
+				$restringir='readonly="readonly" disabled="disabled"';
+			}else{
+				$restringir='';
+			}
+		}
+		
 	}else{
 		$restringir='readonly="readonly" disabled="disabled"';	
 	}

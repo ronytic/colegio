@@ -62,7 +62,7 @@ function cargando(){
 	$("#alumnos").html('<img src="'+folder+'imagenes/cargador/cargador.gif"/>');	
 }
 function alumnosnotas(data){
-	$("html,body").animate({scrollTop:$("#alumnos").position().top-40},750);
+	//$("html,body").animate({scrollTop:$("#alumnos").position().top-40},750);
 	$("#alumnos").html(data)
 	$(".nota").numeric();
 	//Para Mantener Seleccionado
