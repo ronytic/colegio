@@ -7,7 +7,7 @@ if(!empty($_POST)){
 	?>
     <a href="<?php echo $url;?>" class="btn btn-danger" target="_blank"><?php echo $idioma['AbrirOtraVentana']?></a>
     <hr />
-    <iframe width="750" height="600" src="../../impresion/notas/centralizadorpromediofinal.php?CodCurso=<?php echo $CodCurso;?>&Trimestre=<?php echo $Trimestre;?>&mf=<?php echo md5("lock")?>"></iframe>
+    <iframe width="100%" height="600" src="../../impresion/notas/centralizadorpromediofinal.php?CodCurso=<?php echo $CodCurso;?>&Trimestre=<?php echo $Trimestre;?>&mf=<?php echo md5("lock")?>"></iframe>
     <?php
 }
 ?>

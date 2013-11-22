@@ -609,6 +609,7 @@ $idioma['VerBoletin']="Ver Boletín";
 $idioma['VerListado']="Ver Listado";
 $idioma['Accion']="Acción";
 $idioma['LimiteMinimo']="Mínimo";
+$idioma['CentralizadorPromedioFinal']="Centralizador Promedio Final";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";

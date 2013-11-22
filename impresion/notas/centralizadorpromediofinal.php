@@ -10,7 +10,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	include_once("../../class/casilleros.php");
 	include_once("../../class/registronotas.php");
 	include_once("../pdf.php");
-	$titulo="CENTRALIZADOR PROMEDIO FINAL - TODOS LOS TRIMESTRES";
+	$titulo=$idioma['CentralizadorPromedioFinal'];
 	class PDF extends PPDF{
 		var $ancho=255;
 		function Cabecera(){
@@ -44,6 +44,12 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$registronotas=new registronotas;
 	$cur=$curso->mostrarCurso($CodCurso);
 	$cur=array_shift($cur);
+	if($cur['Bimestre']){
+		$titulo.=" - ".$idioma['Bimestre'];
+	}else{
+		$titulo.=" - ".$idioma['Trimestre'];
+	}
+	
 	$notareprobado=$cur['NotaAprobacion'];
 	
 	$nombresMateriasBoletin=array();
