@@ -97,7 +97,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 			
 			if($cur['Bimestre']){
 				$casillas4=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($materiasbol['CodMateria'],$CodCurso,$al['Sexo'],4));
-				$regNotas4=array_shift($registronotas->mostrarRegistroNotas($casillas3['CodCasilleros'],$al['CodAlumno'],4));
+				$regNotas4=array_shift($registronotas->mostrarRegistroNotas($casillas4['CodCasilleros'],$al['CodAlumno'],4));
 				$regNotasFinal=($regNotas1['NotaFinal']+$regNotas2['NotaFinal']+$regNotas3['NotaFinal']+$regNotas4['NotaFinal'])/4;
 				$regNotasFinal=round($regNotasFinal);
 			}else{
