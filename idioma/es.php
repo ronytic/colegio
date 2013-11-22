@@ -610,6 +610,7 @@ $idioma['VerListado']="Ver Listado";
 $idioma['Accion']="Acción";
 $idioma['LimiteMinimo']="Mínimo";
 $idioma['CentralizadorPromedioFinal']="Centralizador Promedio Final";
+$idioma['NoDescargarNota']="No debe Descargar Notas de Internet en Internet";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
