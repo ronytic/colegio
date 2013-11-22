@@ -79,11 +79,11 @@ if(!empty($_POST)){
 		</tr>
 		<tr><th>Nº</th><th>Paterno</th><th>Materno</th><th>Nombres</th>
         	<?php for($i=1;$i<=$numcasilleros;$i++){?>
-     		<th style="width:10px"><span title="<?php echo $casillas['NombreCasilla'.$i];?>, <?php echo $idioma['LimiteMinimo'].": ".$casillas['LimiteMinCasilla'.$i];?> <?php echo $idioma['Limite'].": ".$casillas['LimiteCasilla'.$i];?>" rel="<?php echo $casillas['LimiteCasilla'.$i];?>" rel-min="<?php echo $casillas['LimiteMinCasilla'.$i];?>" id="t<?php echo $i;?>"><?php echo sacarIniciales($casillas['NombreCasilla'.$i])?>-<?php echo $casillas['LimiteCasilla'.$i];?></span></th>
+     		<th style="width:40px"><span title="<?php echo $casillas['NombreCasilla'.$i];?>, <?php echo $idioma['LimiteMinimo'].": ".$casillas['LimiteMinCasilla'.$i];?> <?php echo $idioma['Limite'].": ".$casillas['LimiteCasilla'.$i];?>" rel="<?php echo $casillas['LimiteCasilla'.$i];?>" rel-min="<?php echo $casillas['LimiteMinCasilla'.$i];?>" id="t<?php echo $i;?>"><?php echo sacarIniciales($casillas['NombreCasilla'.$i])?>-<?php echo $casillas['LimiteCasilla'.$i];?></span></th>
      <?php }?>
-        	<th class="" style="width:10px"><?php echo $idioma['Resultado']?></th>
-			<?php if($Dps){?><th style="width:10px"><?php echo $idioma['Dps']?></th><?php }?>
-            <th style="width:10px"><?php echo $idioma['Final']?></th>
+        	<th class="" style="width:70px"><?php echo $idioma['Resultado']?></th>
+			<?php if($Dps){?><th style="width:40px"><?php echo $idioma['Dps']?></th><?php }?>
+            <th style="width:40px"><?php echo $idioma['Final']?></th>
 	    </tr> 
 		</thead>
 	<?php

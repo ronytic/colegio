@@ -43,6 +43,7 @@ function inicio(){
 		//alert($("table:not(.inicio)").length);
 		//$("table.inicio").css({"background-color":"red","box-shadow":"3px 3px 3px green"});
 		$("table").stickyTableHeaders();
+		$(window).trigger('resize.stickyTableHeaders');
 		$("table.inicio").stickyTableHeaders('destroy');
 		
 		/*Fin Gestionar Tabla*/

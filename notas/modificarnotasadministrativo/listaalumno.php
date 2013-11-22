@@ -68,11 +68,11 @@ if(!empty($_POST)){
 		</tr>
 		<tr><th>Nº</th><th>Paterno</th><th>Materno</th><th>Nombres</th>
         	<?php for($i=1;$i<=$numcasilleros;$i++){?>
-     		<th style="width:10px"><span title="<?php echo $casillas['NombreCasilla'.$i];?>, <?php echo $idioma['LimiteMinimo'].": ".$casillas['LimiteMinCasilla'.$i];?> <?php echo $idioma['Limite'].": ".$casillas['LimiteCasilla'.$i];?>" rel="<?php echo $casillas['LimiteCasilla'.$i];?>" rel-min="<?php echo $casillas['LimiteMinCasilla'.$i];?>" id="t<?php echo $i;?>"><?php echo sacarIniciales($casillas['NombreCasilla'.$i])?>-<?php echo $casillas['LimiteCasilla'.$i];?></span></th>
+     		<th style="width:40px"><span title="<?php echo $casillas['NombreCasilla'.$i];?>, <?php echo $idioma['LimiteMinimo'].": ".$casillas['LimiteMinCasilla'.$i];?> <?php echo $idioma['Limite'].": ".$casillas['LimiteCasilla'.$i];?>" rel="<?php echo $casillas['LimiteCasilla'.$i];?>" rel-min="<?php echo $casillas['LimiteMinCasilla'.$i];?>" id="t<?php echo $i;?>"><?php echo sacarIniciales($casillas['NombreCasilla'.$i])?>-<?php echo $casillas['LimiteCasilla'.$i];?></span></th>
      <?php }?>
-        	<th class="" style="width:10px"><?php echo $idioma['Resultado']?></th>
-			<?php if($Dps){?><th style="width:10px"><?php echo $idioma['Dps']?></th><?php }?>
-            <th style="width:10px"><?php echo $idioma['Final']?></th>
+        	<th class="" style="width:70px"><?php echo $idioma['Resultado']?></th>
+			<?php if($Dps){?><th style="width:40px"><?php echo $idioma['Dps']?></th><?php }?>
+            <th style="width:40px"><?php echo $idioma['Final']?></th>
 	    </tr> 
 		</thead>
 	<?php
@@ -90,20 +90,20 @@ if(!empty($_POST)){
             <td><?php echo capitalizar($al['Materno']);?></td>
             <td><?php echo capitalizar($al['Nombres']);?></td>
             <?php for($i=1;$i<=$numcasilleros;$i++){$numero++;?>
-            <td style="text-align:center">
+            <td style="text-align:center;width:40px;">
             <input type="text" size="3" maxlength="<?php echo strlen($cur['NotaTope'])?>" class="input-mini nota <?php echo($i==$numcasilleros)?'final':'';?>" value="<?php echo $regNota['Nota'.$i]?>" id="al[<?php echo $na;?>][n<?php echo $i;?>]" rel="<?php echo $al['CodAlumno']?>" data-col="<?php echo $i;?>" data-row="<?php echo $al['CodAlumno'];?>" data-cod="<?php echo $CodCasilleros;?>" <?php echo $restringir?> style="max-width:30px !important" tabindex="<?php echo $numero?>"/></td>
             <?php
 			}
 			?>
-            <td style="text-align:center" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Resultado']?>" id="resultado<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center;width:70px;" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Resultado']?>" id="resultado<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
             <?php
 				if($Dps){
 			?>
-            <td style="text-align:center" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Dps']?>" id="dps<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center;width:40px;" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Dps']?>" id="dps<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
             <?php
 				}
 			?>
-            <td style="text-align:center" class="celeste"><input type="text" size="1" maxlength="2" readonly class="nota <?php echo $regNota['NotaFinal']<$cur['NotaAprobacion']?"crojo reprobado":"";?>" value="<?php echo $regNota['NotaFinal']?>" id="notaf<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center;width:40px;" class="celeste"><input type="text" size="1" maxlength="2" readonly class="nota <?php echo $regNota['NotaFinal']<$cur['NotaAprobacion']?"crojo reprobado":"";?>" value="<?php echo $regNota['NotaFinal']?>" id="notaf<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
         </tr>
 	<?php
 	}
