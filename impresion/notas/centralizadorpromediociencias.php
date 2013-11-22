@@ -48,13 +48,11 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$notareprobado=$cur['NotaAprobacion'];
 	$nombresMateriasBoletin=array();
 	$valoresMateriasBoletin=array();
-	foreach($cursomateria->mostrarMaterias($CodCurso) as $materiasbol){
+	foreach($cursomateria->mostrarMateriasOrden($CodCurso) as $materiasbol){
 		//echo $materiasbol['CodMateria'];
-		if($materiasbol['CodMateria']==19 ||$materiasbol['CodMateria']==17 || $materiasbol['CodMateria']==18){
-		$nombremateria=$materias->mostrarMateria($materiasbol['CodMateria']);
-		$nombremateria=array_shift($nombremateria);
-		array_push($nombresMateriasBoletin,$nombremateria['Abreviado']);
-		array_push($valoresMateriasBoletin,array("CodMateria"=>$nombremateria['CodMateria']));
+		if($materiasbol['PromedioCiencias']==1){
+		array_push($nombresMateriasBoletin,$materiasbol['Abreviado']);
+		array_push($valoresMateriasBoletin,array("CodMateria"=>$materiasbol['CodMateria']));
 		}
 		//print_r( $nombresMateriasBoletin);
 	}
@@ -83,7 +81,9 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		$mate[1]['CodMateria']=19;
 		$mate[2]['CodMateria']=17;
 		$mate[3]['CodMateria']=18;
+		//print_r($valoresMateriasBoletin);
 		foreach($valoresMateriasBoletin as $materiasbol){
+			
 			$casillas1=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($materiasbol['CodMateria'],$CodCurso,$al['Sexo'],1));
 			$regNotas1=array_shift($registronotas->mostrarRegistroNotas($casillas1['CodCasilleros'],$al['CodAlumno'],1));
 			$casillas2=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($materiasbol['CodMateria'],$CodCurso,$al['Sexo'],2));
@@ -97,7 +97,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 			$regNotas4=array_shift($registronotas->mostrarRegistroNotas($casillas4['CodCasilleros'],$al['CodAlumno'],4));
 			/*Fin nota reforzamiento*/
 						
-			if($regNotas4['Nota2']!="0"){
+			if($regNotas4['Nota2']!="" || $regNotas4['Nota2']!=0){
 					$promedioanual=round(($regNotasFinal+$regNotas4['Nota2'])/2);
 			}else{
 				$promedioanual=$regNotasFinal;
