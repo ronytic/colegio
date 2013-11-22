@@ -1,5 +1,5 @@
 $(document).ready(function(e) {
-	buscadorLista($("input[name=tPeriodo]"),$("select[name=Periodo]"));
+	//buscadorLista($("input[name=tPeriodo]"),$("select[name=Periodo]"));
 	buscadorLista($("input[name=tOrden]"),$("select[name=Orden]"));
 	$("#revisar").click(function(e) {
         var Cantidad=$("input[name=Cantidad]").val();

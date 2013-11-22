@@ -18,12 +18,13 @@ class registronotas extends bd{
 		return $this->getRecords("CodCasilleros=$CodCasilleros and NotaFinal<$puntajeFinal and Trimestre=$Trimestre");
 	}
 	function mostrarPromedioCurso($CodCasilleros,$orden="DESC",$cantidad=false){
-		if($orden!="DESC"){
+		/*if($orden!="DESC"){
 			$orden="ASC";	
-		}
+		}*/
 		//if($cantidad)
-		$this->campos=array("AVG(NotaFinal) as Promedio, CodAlumno");
-		return $this->getRecords("CodCasilleros IN (".$CodCasilleros.") GROUP BY CodAlumno ORDER BY AVG(NotaFinal) ".$orden,0,0,$cantidad,0);	
+		$this->tabla="registronotas rn,alumno a";
+		$this->campos=array("AVG(rn.NotaFinal) as Promedio, rn.CodAlumno");
+		return $this->getRecords("rn.CodCasilleros IN (".$CodCasilleros.") and a.Retirado=0 and a.codAlumno=rn.CodAlumno GROUP BY rn.CodAlumno ORDER BY AVG(rn.NotaFinal) ".$orden,0,0,$cantidad,0);	
 	}
 	function promedio($n1,$n2,$n3){
 		return round(($n1+$n2+$n3)/3,0);

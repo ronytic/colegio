@@ -17,14 +17,14 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 	include_once("../pdf.php");
 	class PDF extends PPDF{
 		function Cabecera(){
-			global $CodTrimestre;
+			global $CodTrimestre,$idioma;
 			$this->Pagina();
 			$this->ln();
 			$this->TituloCabecera(8,"Nº");
-			$this->TituloCabecera(24,"Paterno");
-			$this->TituloCabecera(24,"Materno");
-			$this->TituloCabecera(35,"Nombres");
-			$this->TituloCabecera(30,"PROMEDIO");
+			$this->TituloCabecera(24,$idioma["Paterno"]);
+			$this->TituloCabecera(24,$idioma["Materno"]);
+			$this->TituloCabecera(35,$idioma["Nombres"]);
+			$this->TituloCabecera(30,$idioma["Promedio"]);
 		}
 	}
 	$alumnos=new alumno;
@@ -35,8 +35,8 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 	$materia=new materias;
 	$conf=new config;
 
-	$cnf=($conf->mostrarConfig("TotalPeriodo"));
-	$TotalPeriodo=$cnf['Valor'];
+	//$cnf=($conf->mostrarConfig("TotalPeriodo"));
+	
 	
 	$pdf=new PDF("P","mm","letter");//612,792
 	$pdf->AddPage();
@@ -46,11 +46,13 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 	$Orden=$Orden=="1"?$Orden="DESC":$Orden="ASC";
 
 	foreach($cur->mostrar() as $curso){//cambiar para los diferentes Cursos
+	$TotalPeriodo=$curso['CantidadEtapas'];
 	$na=0;
 		$pdf->CuadroCuerpoPersonalizado(30,$curso['Nombre'],0,"L",0,"UB");
 		$pdf->Ln(5);
 		$codigosmateria=array();
 		foreach($docenteMateriaCurso->mostrarCurso($curso['CodCurso']) as $docMateriaCurso){
+			
 			for($i=1;$i<=$TotalPeriodo;$i++){
 				foreach($casilleros->mostrarTrimestre($docMateriaCurso['CodDocenteMateriaCurso'],$i) as $casillas){
 					array_push($codigosmateria,$casillas['CodCasilleros']);

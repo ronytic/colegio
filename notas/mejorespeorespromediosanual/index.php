@@ -12,14 +12,14 @@ include_once("../../cabecera.php");
     <div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span>Configuración</h2></div>    
     <div class="box-content">
 		<?php echo $idioma['TipoReporte']?>:
-        <input type="search" class="span12" placeholder="<?php echo $idioma['BuscarOrdenPor']?>" name="tOrden"/>
+        <!--<input type="search" class="span12" placeholder="<?php echo $idioma['BuscarOrdenPor']?>" name="tOrden"/>-->
         <select name="Orden" class="span12">
             <option value="1"><?php echo $idioma['CuadroHonor']?></option>
             <option value="0"><?php echo $idioma['PromediosBajos']?></option>
         </select>
         <?php echo $idioma['CantidadAlumnoCurso']?>:
         <input type="text" value="3" name="Cantidad" size="2" class="span12"/>
-        <input type="submit" value="Revisar" class="btn btn-success" id="revisar"/>
+        <input type="submit" value="<?php echo $idioma['Reporte']?>" class="btn btn-success" id="revisar"/>
     </div>
 </div>
 <div class="span9 box">
