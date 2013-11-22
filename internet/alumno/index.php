@@ -219,9 +219,8 @@ $folder="../../";
 					$rn2=array_shift($registronotas->mostrarRegistroNotas($casillas['CodCasilleros'],$al['CodAlumno'],2));
 					$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($cm['CodMateria'],$al['CodCurso'],$al['Sexo'],3));
 					$rn3=array_shift($registronotas->mostrarRegistroNotas($casillas['CodCasilleros'],$al['CodAlumno'],3));
-					
 					$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($cm['CodMateria'],$al['CodCurso'],$al['Sexo'],4));
-					$rn3=array_shift($registronotas->mostrarRegistroNotas($casillas['CodCasilleros'],$al['CodAlumno'],4));
+					$rn4=array_shift($registronotas->mostrarRegistroNotas($casillas['CodCasilleros'],$al['CodAlumno'],4));
 					if($cur['Bimestre']){
 						$promedio=$registronotas->promedioBimestre($rn1['NotaFinal'],$rn2['NotaFinal'],$rn3['NotaFinal'],$rn4['NotaFinal']);	
 					}else{
