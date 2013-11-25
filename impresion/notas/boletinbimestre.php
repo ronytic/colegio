@@ -195,10 +195,10 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 			$pdf->Cell(6,4,$promediofinal,$bordeC,0,"R");//Promedio Anual
 			
 			$pdf->SetXY(180,80+$i);
-			$pdf->Cell(6,4,$regNotas['Nota2'],$bordeC,0,"R");//Reforzamiento
+			//$pdf->Cell(6,4,$regNotas['Nota2'],$bordeC,0,"R");//Reforzamiento
 			
 			$pdf->SetXY(198,80+$i);
-			$pdf->Cell(6,4,$promedioanual,$bordeC,0,"R");//Promedio Final
+			//$pdf->Cell(6,4,$promedioanual,$bordeC,0,"R");//Promedio Final
 		}
 		$i+=4;//Salto para abajo
 	}
