@@ -227,6 +227,10 @@ $folder="../../";
 						$promedio=$registronotas->promedio($rn1['NotaFinal'],$rn2['NotaFinal'],$rn3['NotaFinal']);
 					}
 					?>
+                    <?php //echo $cantidadCuotas;
+					$mes=($mes=="12")?$mes-1:$mes;
+					//echo $mes;
+					?>
                     <?php if($cantidadCuotas>=($mes-1)){?>
                     <tr>
                     	<td class="div"><?php echo $ma['Nombre'];?></td>
