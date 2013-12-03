@@ -432,24 +432,26 @@ if(!empty($_GET)){
 						$fila[]=$SeparadorMateria;	
 					}
 					if($CurMatExp['CodMateria']==1000){
-						$canti=0;
-						$notatotal=0;
-						$notadps=0;
-						foreach($materias->mostrarMateriaCiencias() as $promedio){
+						foreach($Trimestre as $Tri){
+							$canti=0;
+							$notatotal=0;
+							$notadps=0;
+							foreach($materias->mostrarMateriaCiencias() as $promedio){
+								
+								$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($promedio['CodMateria'],$CodCurso,$al['Sexo'],$Tri));
+								$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Tri));
+								//print_r($r);
+								$notatotal+=$r['Resultado'];
+								$notadps+=$r['Dps'];
+								$canti++;
+							}
+							//echo $notatotal." / ".$canti."-";
+							$dpsPromedioCiencia=round(($notadps/$canti),0);
+							$notaPromedioCiencia=round(($notatotal/$canti),0);
 							
-							$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($promedio['CodMateria'],$CodCurso,$al['Sexo'],$Trimestre));
-							$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
-							//print_r($r);
-							$notatotal+=$r['Resultado'];
-							$notadps+=$r['Dps'];
-							$canti++;
+							$fila[]=$notaPromedioCiencia;
+							$fila[]=$dpsPromedioCiencia;
 						}
-						//echo $notatotal." / ".$canti."-";
-						$dpsPromedioCiencia=round(($notadps/$canti),0);
-						$notaPromedioCiencia=round(($notatotal/$canti),0);
-						
-						$fila[]=$notaPromedioCiencia;
-						$fila[]=$dpsPromedioCiencia;
 					}else{//Si no es Materia Combinada
 						foreach($Trimestre as $Tri){
 					//print_r($CurMatExp);
