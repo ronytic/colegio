@@ -449,6 +449,25 @@ if(!empty($_GET)){
 							$dpsPromedioCiencia=round(($notadps/$canti),0);
 							$notaPromedioCiencia=round(($notatotal/$canti),0);
 							
+							
+							if($notaPromedioCiencia<=22){
+								if($cas['Dps']==1){
+									$notaPromedioCiencia=22;// Sacamos nota Minima para cada Uno	
+								}else{
+									$notaPromedioCiencia=27;// Sacamos nota Minima para cada Uno	sui no tiene dps
+								}
+							}
+							if($cas['Dps']==1){///Condicion para la nota de 35
+								if($notaResultado==30){
+									$notaPromedioCiencia=31;	
+								}	
+							}else{
+								if($notaPromedioCiencia==35){
+									$notaPromedioCiencia=36;	
+								}
+								
+							}
+							
 							$fila[]=$notaPromedioCiencia;
 							$fila[]=$dpsPromedioCiencia;
 						}
