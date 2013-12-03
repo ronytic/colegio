@@ -34,7 +34,7 @@ if(!empty($_POST)){
     <input name="separadorestadisticas" id="separadorestadisticas" size="3" type="text" class="span12"/>
     
     <label for="trimestre"><?php echo $idioma['Periodo']?>:</label>
-    <select name="Trimestre" id="trimestre" class="span12">
+    <select name="Trimestre" id="trimestre" class="span12" multiple>
     	<?php
 		for($i=1;$i<=$TotalPeriodo;$i++){
 			?><option value="<?php echo $i;?>"><?php echo $i;?></option><?php

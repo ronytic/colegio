@@ -20,6 +20,11 @@ if(!empty($_GET)){
 	$cur=$curso->mostrarCurso($CodCurso);
 	$cur=array_shift($cur);
 	
+	if(!is_array($Trimestre)){
+	//$Trimestre=(array)$Trimestre;
+	$Trimestre=explode(",",$Trimestre);
+	}
+	
 	if($cur['Bimestre']){
 		$texto="Bimestre";	
 	}else{
@@ -137,22 +142,26 @@ if(!empty($_GET)){
 				if($SeparadorMateria!=""){
 					$fila[]=$SeparadorMateria;	
 				}
-				$fila[]="N".$Trimestre."_".$i;
-				//$fila[]="Dps".$Trimestre;
-				if($cur['Dps']){
-					$fila[]="Dps".$Trimestre."_".$i;	
-				}else{
-					$fila[]="Nota Cualitativa".$Trimestre."_".$i;
+				foreach($Trimestre as $Tri){
+					$fila[]="N".$Tri."_".$i;
+					//$fila[]="Dps".$Trimestre;
+					if($cur['Dps']){
+						$fila[]="Dps".$Tri."_".$i;	
+					}else{
+						$fila[]="Nota Cualitativa".$Tri."_".$i;
+					}
 				}
 			}
 			if($Estadisticas==1){
 				if($SeparadorEstadisticas!=""){
 					$fila[]=$SeparadorEstadisticas;	
 				}
-				$fila[]="Dias Trabajados";
-				$fila[]="Falta C/Lic";
-				$fila[]="Falta S/Lic";
-				$fila[]="Atrasos";
+				foreach($Trimestre as $Tri){
+					$fila[]="Dias Trabajados_".$Tri;
+					$fila[]="Falta C/Lic_".$Tri;
+					$fila[]="Falta S/Lic_".$Tri;
+					$fila[]="Atrasos_".$Tri;
+				}
 			}
 		}
 	}
@@ -417,6 +426,7 @@ if(!empty($_GET)){
 				$fila[]=$Atrasos3['Cantidad'];
 				*/
 			}else{
+				
 				foreach($cursomateriaexportar->mostrarMaterias($CodCurso) as $CurMatExp){
 					if($SeparadorMateria!=""){
 						$fila[]=$SeparadorMateria;	
@@ -441,33 +451,34 @@ if(!empty($_GET)){
 						$fila[]=$notaPromedioCiencia;
 						$fila[]=$dpsPromedioCiencia;
 					}else{//Si no es Materia Combinada
-					
+						foreach($Trimestre as $Tri){
 					//print_r($CurMatExp);
-					$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($CurMatExp['CodMateria'],$CodCurso,$al['Sexo'],$Trimestre));
-					/*print_r($cas);
-					echo "<br>";*/
-					$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Trimestre));
-					//print_r($r);
-						if($cur['Dps']){
-							$fila[]=$r['Resultado'];
-							$fila[]=$r['Dps'];
-						}else{
-							$fila[]=$r['NotaFinal'];
-							//$fila[]=$r['Dps'];
-							$ncuali=array_shift($notascualitativa->mostrarNota($cas['CodDocenteMateriaCurso'],$Trimestre));
-							//print_r($ncuali);
-							$notacomprobar=end($fila);
-							if($notacomprobar>=$LimiteInicio1 && $notacomprobar<=$LimiteFin1){
-								$fila[]=mayuscula($ncuali['PrimerRango']);
-								
-							}elseif($notacomprobar>=$LimiteInicio2 && $notacomprobar<=$LimiteFin2){
-								$fila[]=mayuscula($ncuali['SegundoRango']);
-								
-							}elseif($notacomprobar>=$LimiteInicio3 && $notacomprobar<=$LimiteFin3){
-								$fila[]=mayuscula($ncuali['TercerRango']);
-								
-							}elseif($notacomprobar>=$LimiteInicio4 && $notacomprobar<=$LimiteFin4){
-								$fila[]=mayuscula($ncuali['CuartoRango']);
+						$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($CurMatExp['CodMateria'],$CodCurso,$al['Sexo'],$Tri));
+						/*print_r($cas);
+						echo "<br>";*/
+						$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],$Tri));
+						//print_r($r);
+							if($cur['Dps']){
+								$fila[]=$r['Resultado'];
+								$fila[]=$r['Dps'];
+							}else{
+								$fila[]=$r['NotaFinal'];
+								//$fila[]=$r['Dps'];
+								$ncuali=array_shift($notascualitativa->mostrarNota($cas['CodDocenteMateriaCurso'],$Tri));
+								//print_r($ncuali);
+								$notacomprobar=end($fila);
+								if($notacomprobar>=$LimiteInicio1 && $notacomprobar<=$LimiteFin1){
+									$fila[]=mayuscula($ncuali['PrimerRango']);
+									
+								}elseif($notacomprobar>=$LimiteInicio2 && $notacomprobar<=$LimiteFin2){
+									$fila[]=mayuscula($ncuali['SegundoRango']);
+									
+								}elseif($notacomprobar>=$LimiteInicio3 && $notacomprobar<=$LimiteFin3){
+									$fila[]=mayuscula($ncuali['TercerRango']);
+									
+								}elseif($notacomprobar>=$LimiteInicio4 && $notacomprobar<=$LimiteFin4){
+									$fila[]=mayuscula($ncuali['CuartoRango']);
+								}
 							}
 						}
 					}
@@ -475,19 +486,21 @@ if(!empty($_GET)){
 				}
 			}
 				if($Estadisticas==1){
-				
-					$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],${"InicioTrimestre".$Trimestre},${"FinTrimestre".$Trimestre}));
-						$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],${"InicioTrimestre".$Trimestre},${"FinTrimestre".$Trimestre}));
-						$Atrasos1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],${"InicioTrimestre".$Trimestre},${"FinTrimestre".$Trimestre}));
-					if($SeparadorEstadisticas!=""){
-						$fila[]=$SeparadorEstadisticas;	
+					foreach($Trimestre as $Tri){
+						$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],${"InicioTrimestre".$Tri},${"FinTrimestre".$Tri}));
+							$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],${"InicioTrimestre".$Tri},${"FinTrimestre".$Tri}));
+							$Atrasos1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],${"InicioTrimestre".$Tri},${"FinTrimestre".$Tri}));
+						if($SeparadorEstadisticas!=""){
+							$fila[]=$SeparadorEstadisticas;	
+						}
+						$CantidadDiasTrabajado1=$config->mostrarConfig("CantidadDiasTrabajado".$Tri,1);
+						//$total1=68-$faltasConLic1['Cantidad']-$faltasSinLic1['Cantidad'];
+						$total1=$CantidadDiasTrabajado1;
+						$fila[]=$total1;
+						$fila[]=$faltasConLic1['Cantidad'];
+						$fila[]=$faltasSinLic1['Cantidad'];
+						$fila[]=$Atrasos1['Cantidad'];
 					}
-					//$total1=68-$faltasConLic1['Cantidad']-$faltasSinLic1['Cantidad'];
-					$total1=67;
-					$fila[]=$total1;
-					$fila[]=$faltasConLic1['Cantidad'];
-					$fila[]=$faltasSinLic1['Cantidad'];
-					$fila[]=$Atrasos1['Cantidad'];
 				}
 			/*
 			if($sw==1){
@@ -512,6 +525,7 @@ function tabla($datos){
 	foreach($datos as $d){
 		echo "<tr>";
 		foreach($d as $v){
+			//echo "<td><input type='text' value='$v' class='input-mini'></td>";
 			echo "<td>$v</td>";
 		}
 		echo "</tr>";
