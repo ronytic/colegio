@@ -46,6 +46,7 @@ if(!empty($_POST)){
     <select id="formato" name="formato" class="span12">
     	<option value="Tabla" selected="selected"><?php echo $idioma['Tabla']?></option>
         <option value="Csv"><?php echo $idioma['Csv']?></option>
+        <option value="Campos"><?php echo $idioma['Campos']?></option>
 	</select>
     
     <input type="submit" class="btn btn-success" value="Generar" id="generar">

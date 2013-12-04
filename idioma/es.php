@@ -128,6 +128,7 @@ $idioma['NVerTodosLosEnvios']="Ver Envios de SMS";
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
 $idioma['Csv']="Csv";
+$idioma['Campos']="Campos";
 $idioma['Cerrar']="Cerrar";
 $idioma['Si']="Si";
 $idioma['No']="No";

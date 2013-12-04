@@ -151,6 +151,9 @@ if(!empty($_GET)){
 						$fila[]="Nota Cualitativa".$Tri."_".$i;
 					}
 				}
+				if(count($Trimestre)==3){
+					$fila[]="Refor";
+					}
 			}
 			if($Estadisticas==1){
 				if($SeparadorEstadisticas!=""){
@@ -503,6 +506,9 @@ if(!empty($_GET)){
 							}
 						}
 					}
+					if(count($Trimestre)==3){
+					$fila[]=0;
+					}
 						
 				}
 			}
@@ -533,11 +539,10 @@ if(!empty($_GET)){
 			//print_r($fila);
 			//echo "<br>";
 		}
-	if($Formato=="Tabla")
-	{
-		tabla($datos);
-	}else{
-		archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));	
+	switch($Formato){
+		case "Tabla":{tabla($datos);}break;
+		case "Csv":{archivocsv("reportecualitativo-$CodCurso.csv",$datos,$Separador,stripslashes( $SeparadorFila));	}break;
+		case "Campos":{tablacampos($datos);	}break;
 	}
 
 }
@@ -548,6 +553,29 @@ function tabla($datos){
 		foreach($d as $v){
 			//echo "<td><input type='text' value='$v' class='input-mini'></td>";
 			echo "<td>$v</td>";
+		}
+		echo "</tr>";
+	}
+	echo "<table>";
+}
+function tablacampos($datos){
+	echo "<table border=1>";
+	$j=0;
+	foreach($datos as $d){$j++;
+		echo "<tr>";
+		$i=0;
+		foreach($d as $v){$i++;
+			if($i<=2){
+				echo "<td>$v</td>";	
+			}else{
+				if($i==1 && $j==2){
+					$foco="foco";	
+				}else{
+					$foco="";	
+				}
+				echo "<td><input type='text' value='$v' class='input-mini $foco'></td>";
+			}
+			
 		}
 		echo "</tr>";
 	}
