@@ -152,7 +152,7 @@ if(!empty($_GET)){
 					}
 				}
 				if(count($Trimestre)==3){
-					$fila[]="Refor";
+				//	$fila[]="Refor";
 					}
 			}
 			if($Estadisticas==1){
@@ -507,19 +507,20 @@ if(!empty($_GET)){
 						}
 					}
 					if(count($Trimestre)==3){
-					$fila[]=0;
+					//$fila[]=0;
 					}
 						
 				}
 			}
 				if($Estadisticas==1){
+					if($SeparadorEstadisticas!=""){
+						$fila[]=$SeparadorEstadisticas;	
+					}
 					foreach($Trimestre as $Tri){
 						$faltasConLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,14,$al['CodAlumno'],${"InicioTrimestre".$Tri},${"FinTrimestre".$Tri}));
 							$faltasSinLic1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,12,$al['CodAlumno'],${"InicioTrimestre".$Tri},${"FinTrimestre".$Tri}));
 							$Atrasos1=array_shift($agenda->mostrarCodCursoCodObservacionCodAlumnoRango($CodCurso,11,$al['CodAlumno'],${"InicioTrimestre".$Tri},${"FinTrimestre".$Tri}));
-						if($SeparadorEstadisticas!=""){
-							$fila[]=$SeparadorEstadisticas;	
-						}
+						
 						$CantidadDiasTrabajado1=$config->mostrarConfig("CantidadDiasTrabajado".$Tri,1);
 						//$total1=68-$faltasConLic1['Cantidad']-$faltasSinLic1['Cantidad'];
 						$total1=$CantidadDiasTrabajado1;
