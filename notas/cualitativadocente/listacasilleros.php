@@ -23,8 +23,6 @@ if(!empty($_POST)){
 	
 	
 	
-	$cnf=array_shift($config->mostrarConfig("RegistroNotaHabilitado"));
-	$registronotashabilitado=$cnf["Valor"];
 	if($cur['Bimestre']){
 		$texto="Bimestre";	
 	}else{
