@@ -13,17 +13,17 @@ if(!empty($_GET)){
 	$conf=new config;
 	$agenda=new agenda;
 	
-	$cnf=array_shift($conf->mostrarConfig("InicioTrimestre1"));
+	$cnf=($conf->mostrarConfig("InicioTrimestre1"));
 	$InicioTrimestre1=$cnf['Valor'];
-	$cnf=array_shift($conf->mostrarConfig("FinTrimestre1"));
+	$cnf=($conf->mostrarConfig("FinTrimestre1"));
 	$FinTrimestre1=$cnf['Valor'];
-	$cnf=array_shift($conf->mostrarConfig("InicioTrimestre2"));
+	$cnf=($conf->mostrarConfig("InicioTrimestre2"));
 	$InicioTrimestre2=$cnf['Valor'];
-	$cnf=array_shift($conf->mostrarConfig("FinTrimestre2"));
+	$cnf=($conf->mostrarConfig("FinTrimestre2"));
 	$FinTrimestre2=$cnf['Valor'];
-	$cnf=array_shift($conf->mostrarConfig("InicioTrimestre3"));
+	$cnf=($conf->mostrarConfig("InicioTrimestre3"));
 	$InicioTrimestre3=$cnf['Valor'];
-	$cnf=array_shift($conf->mostrarConfig("FinTrimestre3"));
+	$cnf=($conf->mostrarConfig("FinTrimestre3"));
 	$FinTrimestre3=$cnf['Valor'];
 	
 	$alumno=new alumno;
