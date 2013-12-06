@@ -612,7 +612,8 @@ $idioma['Accion']="Acción";
 $idioma['LimiteMinimo']="Mínimo";
 $idioma['CentralizadorPromedioFinal']="Centralizador Promedio Final";
 $idioma['NoDescargarNota']="No debe Descargar Notas de Internet en Internet";
-$idioma['GenerarReforzamiento']="Para Habilitar las Notas de Reforzamiento debe tener en cuenta debe de tener asignado las notas del tercer Trimestre en su totalidad, ya que se utilizará para generar las Notas Anuales.";
+$idioma['GenerarReforzamiento']="Para Habilitar las Notas de Reforzamiento debe tener en cuenta debe de tener asignado las notas del tercer Trimestre en su totalidad, ya que se utilizará para generar las Notas Anuales. LAS NOTAS YA GENERADAS ANTERIORMENTE DE REFORZAMIENTO SE REEMPLAZARAN,TENGA CUIDADO";
+$idioma['RegistradoCorrectamente']="Registrado Correctamente";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";

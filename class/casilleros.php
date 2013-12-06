@@ -55,6 +55,9 @@ class casilleros extends bd{
 		$this->campos=array('*');
 		return $this->getRecords($where);
 	}
+	function eliminarCasillerosDefinitivo($where){
+		return $this->deleteRecord($where);
+	}
 	function actualizarCasilleros($values,$Cod){
 		return $this->updateRow($values,"CodCasilleros=$Cod");	
 	}
