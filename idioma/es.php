@@ -612,6 +612,7 @@ $idioma['Accion']="Acción";
 $idioma['LimiteMinimo']="Mínimo";
 $idioma['CentralizadorPromedioFinal']="Centralizador Promedio Final";
 $idioma['NoDescargarNota']="No debe Descargar Notas de Internet en Internet";
+$idioma['GenerarReforzamiento']="Para Habilitar las Notas de Reforzamiento debe tener en cuenta debe de tener asignado las notas del tercer Trimestre en su totalidad, ya que se utilizará para generar las Notas Anuales.";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
@@ -1138,4 +1139,5 @@ $idioma['ModificarCasilleros']="Modificar Casilleros";
 $idioma['EnviarMensajePrivado']="Enviar Mensaje Personalizado";
 $idioma['ConfigurarNumeroCelulares']="Configurar Números de Celular";
 $idioma['VerEnviosSms']="Ver Envío de SMS";
+$idioma['HabilitarReforzamiento']="Habilitar Notas de Reforzamiento";
 ?>
