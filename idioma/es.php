@@ -709,6 +709,7 @@ $idioma['NuevoMensaje']="Nuevo Mensaje";
 $idioma['Ip']="Ip";
 $idioma['Agente']="Agente Navegador";
 $idioma['Lenguaje']="Lenguaje";
+$idioma['SeparadorReforzamiento']="Separador de Reforzamiento";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
