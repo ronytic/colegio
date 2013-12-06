@@ -710,6 +710,7 @@ $idioma['Ip']="Ip";
 $idioma['Agente']="Agente Navegador";
 $idioma['Lenguaje']="Lenguaje";
 $idioma['SeparadorReforzamiento']="Separador de Reforzamiento";
+$idioma['SeparadorConReforzamiento']="Separador con Reforzamiento";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";

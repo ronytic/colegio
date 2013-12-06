@@ -510,7 +510,11 @@ if(!empty($_GET)){
 					if($Reforzamiento){
 						$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($CurMatExp['CodMateria'],$CodCurso,$al['Sexo'],4));
 						$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],4));
-						$fila[]=$SeparadorReforzamiento;
+						if($r['Nota2']=="0"){
+							$fila[]=$SeparadorReforzamiento;
+						}else{
+							$fila[]=$SeparadorConReforzamiento;	
+						}
 						$fila[]=$r['Nota2'];
 					}
 						

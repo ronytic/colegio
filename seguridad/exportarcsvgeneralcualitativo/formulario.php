@@ -40,7 +40,10 @@ if(!empty($_POST)){
 	</select>
         
     <label for="separadorreforzamiento"><?php echo $idioma['SeparadorReforzamiento']?></label>
-    <input name="separadorreforzamiento" id="separadorreforzamiento" size="3" type="text" class="span12"/>   
+    <input name="separadorreforzamiento" id="separadorreforzamiento" size="3" type="text" class="span12"/>
+    
+    <label for="separadorconreforzamiento"><?php echo $idioma['SeparadorConReforzamiento']?></label>
+    <input name="separadorconreforzamiento" id="separadorconreforzamiento" size="3" type="text" class="span12"/>   
     
     <label for="trimestre"><?php echo $idioma['Periodo']?>:</label>
     <select name="Trimestre" id="trimestre" class="span12" multiple>
