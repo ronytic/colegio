@@ -32,6 +32,15 @@ if(!empty($_POST)){
     
     <label for="separadorestadisticas"><?php echo $idioma['SeparadorEstadisticas']?></label>
     <input name="separadorestadisticas" id="separadorestadisticas" size="3" type="text" class="span12"/>
+
+	<label for="reforzamiento"><?php echo $idioma['Reforzamiento']?></label>
+    <select id="reforzamiento" name="reforzamiento" class="span12">
+    	<option value="0" selected="selected"><?php echo $idioma['No']?></option>
+        <option value="1"><?php echo $idioma['Si']?></option>
+	</select>
+        
+    <label for="separadorreforzamiento"><?php echo $idioma['SeparadorReforzamiento']?></label>
+    <input name="separadorreforzamiento" id="separadorreforzamiento" size="3" type="text" class="span12"/>   
     
     <label for="trimestre"><?php echo $idioma['Periodo']?>:</label>
     <select name="Trimestre" id="trimestre" class="span12" multiple>

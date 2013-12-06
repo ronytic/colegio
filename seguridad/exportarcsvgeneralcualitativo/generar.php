@@ -151,9 +151,10 @@ if(!empty($_GET)){
 						$fila[]="Nota Cualitativa".$Tri."_".$i;
 					}
 				}
-				if(count($Trimestre)==3){
-				//	$fila[]="Refor";
-					}
+				if($Reforzamiento==1){
+					$fila[]=$SeparadorReforzamiento;
+					$fila[]="Refor";
+				}
 			}
 			if($Estadisticas==1){
 				if($SeparadorEstadisticas!=""){
@@ -506,8 +507,11 @@ if(!empty($_GET)){
 							}
 						}
 					}
-					if(count($Trimestre)==3){
-					//$fila[]=0;
+					if($Reforzamiento){
+						$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($CurMatExp['CodMateria'],$CodCurso,$al['Sexo'],4));
+						$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],4));
+						$fila[]=$SeparadorReforzamiento;
+						$fila[]=$r['Nota2'];
 					}
 						
 				}
