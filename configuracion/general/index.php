@@ -116,6 +116,24 @@ include_once($folder."cabecerahtml.php");
             <tr>
             	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
             </tr>
+            <tr>
+            	<td class="resaltar" colspan="2"><?php echo $idioma['DiasTrabajados']?></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['CantidadDiasTrabajado1']?></td>
+                <td><input type="text" class="span8" name="CantidadDiasTrabajado1" value="<?php echo dato("CantidadDiasTrabajado1")?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['CantidadDiasTrabajado2']?></td>
+                <td><input type="text" class="span8" name="CantidadDiasTrabajado2" value="<?php echo dato("CantidadDiasTrabajado2")?>" ></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['CantidadDiasTrabajado3']?></td>
+                <td><input type="text" class="span8" name="CantidadDiasTrabajado3" value="<?php echo dato("CantidadDiasTrabajado3")?>" ></td>
+            </tr>
+            <tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
         </table>
     </div>
 	<div class="box-header"><h2><?php echo $idioma['Cuotas']?><a name="cuotas"></a></h2></div>

@@ -917,6 +917,10 @@ $idioma['EstadoSms']="Estado de Envío de SMS";
 $idioma['NoEnviar']="No Enviar";
 $idioma['PorCadaObservacion']="Por cada Observación";
 $idioma['GeneralCadaDia']="General Diario";
+$idioma['DiasTrabajados']="Días Trabajados";
+$idioma['CantidadDiasTrabajado1']="Cantidad de días Trabajado 1 Trimestre";
+$idioma['CantidadDiasTrabajado2']="Cantidad de días Trabajado 2 Trimestre";
+$idioma['CantidadDiasTrabajado3']="Cantidad de días Trabajado 3 Trimestre";
 
 //Inicio
 $idioma['EstadisticasInstantaneaPagoCuotas']="Estadística Instantánea de Pago Cuotas";
