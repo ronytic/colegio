@@ -11,7 +11,7 @@ if(!empty($_POST)){
 	if($Nivel=="" && $_SESSION['Nivel']==2){
 		$Nivel="2,3,4,5,6,7";	
 	}
-	$Fecha=date("Y-m-d",strtotime($_POST['Fecha']));
+	
 	include_once("../../class/lograstreo.php");
 	include_once("../../class/alumno.php");
 	include_once("../../class/docente.php");
@@ -20,6 +20,7 @@ if(!empty($_POST)){
 	$usuariolog=new usuario;
 	$alumnolog=new alumno;
 	$docentelog=new docente;
+	$Fecha=date("Y-m-d",strtotime($_POST['Fecha']));
 	$logr=$lograstreo->mostrarNivelFecha($Nivel,$Fecha);
 	//print_r($lograstreo->mostrarNivelFecha("",""));
 	$cantidad=count($logr);
