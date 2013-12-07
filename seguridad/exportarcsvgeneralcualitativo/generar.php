@@ -147,6 +147,9 @@ if(!empty($_GET)){
 					//$fila[]="Dps".$Trimestre;
 					if($cur['Dps']){
 						$fila[]="Dps".$Tri."_".$i;	
+						if($SeparadorDps!=""){
+								$fila[]=$SeparadorDps;
+							}
 					}else{
 						$fila[]="Nota Cualitativa".$Tri."_".$i;
 					}
@@ -474,6 +477,9 @@ if(!empty($_GET)){
 							
 							$fila[]=$notaPromedioCiencia;
 							$fila[]=$dpsPromedioCiencia;
+							if($SeparadorDps!=""){
+								$fila[]=$SeparadorDps;
+							}
 						}
 					}else{//Si no es Materia Combinada
 						foreach($Trimestre as $Tri){
@@ -486,6 +492,9 @@ if(!empty($_GET)){
 							if($cur['Dps']){
 								$fila[]=$r['Resultado'];
 								$fila[]=$r['Dps'];
+								if($SeparadorDps!=""){
+									$fila[]=$SeparadorDps;
+								}
 							}else{
 								$fila[]=$r['NotaFinal'];
 								//$fila[]=$r['Dps'];
@@ -508,8 +517,12 @@ if(!empty($_GET)){
 						}
 					}
 					if($Reforzamiento){
+						if($CurMatExp['CodMateria']==1000){//Corregir esto para reforzamiento Anual Bimestral
+							$r['Nota2']="0";
+						}else{
 						$cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($CurMatExp['CodMateria'],$CodCurso,$al['Sexo'],4));
 						$r=array_shift($registronotas->mostrarRegistroNotas($cas['CodCasilleros'],$al['CodAlumno'],4));
+						}
 						if($r['Nota2']=="0"){
 							$fila[]=$SeparadorReforzamiento;
 						}else{

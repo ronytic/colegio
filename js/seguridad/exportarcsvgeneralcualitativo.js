@@ -11,17 +11,17 @@ function respuesta1(data){
 		var reforzamiento=$("#reforzamiento").val();
 		var separadorreforzamiento=$("#separadorreforzamiento").val();
 		var separadorconreforzamiento=$("#separadorconreforzamiento").val();
-		
+		var separadordps=$("#separadordps").val();
 		var trimestre=$("#trimestre").val();
 		var formato=$("#formato").val();
 		//alert(trimestre);
-		 $.get("generar.php",{'Cabecera':cabeceralista,'CodCurso':CodCurso,'Separador':separador,"SeparadorFila":separadorfila,"Numeracion":numeracion,"Trimestre":trimestre,'SeparadorMateria':separadormateria,'Estadisticas':estadisticas,'SeparadorEstadisticas':separadorestadisticas,'Reforzamiento':reforzamiento,'SeparadorReforzamiento':separadorreforzamiento,'SeparadorConReforzamiento':separadorconreforzamiento,"Formato":formato},function(data){
+		 $.get("generar.php",{'Cabecera':cabeceralista,'CodCurso':CodCurso,'Separador':separador,"SeparadorFila":separadorfila,"Numeracion":numeracion,"Trimestre":trimestre,'SeparadorMateria':separadormateria,'SeparadorDps':separadordps,'Estadisticas':estadisticas,'SeparadorEstadisticas':separadorestadisticas,'Reforzamiento':reforzamiento,'SeparadorReforzamiento':separadorreforzamiento,'SeparadorConReforzamiento':separadorconreforzamiento,"Formato":formato},function(data){
 			 //var contenido="<a class ='btn btn-success' href='generar.php?"+'Cabecera='+cabeceralista+'&CodCurso='+CodCurso+'&Separador='+separador+"&SeparadorFila="+separadorfila+"&Numeracion="+numeracion+"&Trimestre="+trimestre+'&SeparadorMateria='+encodeURIComponent(separadormateria)+'&Estadisticas='+estadisticas+'&SeparadorEstadisticas='+encodeURIComponent(separadorestadisticas)+"&Formato="+formato+"' class='botonSec'>Descargar Archivo</a><hr>"+data;
 			switch(formato){
 				case "Tabla":{
 				var contenido=data;}break;
 			 	case "Csv":{
-					var contenido="<a class ='btn btn-success' href='generar.php?"+'Cabecera='+cabeceralista+'&CodCurso='+CodCurso+'&Separador='+separador+"&SeparadorFila="+separadorfila+"&Numeracion="+numeracion+"&Trimestre="+trimestre+'&SeparadorMateria='+encodeURIComponent(separadormateria)+'&Estadisticas='+estadisticas+'&SeparadorEstadisticas='+encodeURIComponent(separadorestadisticas)+'&Reforzamiento='+reforzamiento+'&SeparadorReforzamiento='+encodeURIComponent(separadorreforzamiento)+'&SeparadorConReforzamiento='+encodeURIComponent(separadorconreforzamiento)+"&Formato="+formato+"' class='botonSec'>Descargar Archivo</a><hr>"+data;
+					var contenido="<a class ='btn btn-success' href='generar.php?"+'Cabecera='+cabeceralista+'&CodCurso='+CodCurso+'&Separador='+separador+"&SeparadorFila="+separadorfila+"&Numeracion="+numeracion+"&Trimestre="+trimestre+'&SeparadorMateria='+encodeURIComponent(separadormateria)+'&SeparadorDps='+encodeURIComponent(separadordps)+'&Estadisticas='+estadisticas+'&SeparadorEstadisticas='+encodeURIComponent(separadorestadisticas)+'&Reforzamiento='+reforzamiento+'&SeparadorReforzamiento='+encodeURIComponent(separadorreforzamiento)+'&SeparadorConReforzamiento='+encodeURIComponent(separadorconreforzamiento)+"&Formato="+formato+"' class='botonSec'>Descargar Archivo</a><hr>"+data;
 				}break;
 			}
 			$("#respuesta").html(contenido)	 

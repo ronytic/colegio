@@ -711,6 +711,7 @@ $idioma['Agente']="Agente Navegador";
 $idioma['Lenguaje']="Lenguaje";
 $idioma['SeparadorReforzamiento']="Separador de Reforzamiento";
 $idioma['SeparadorConReforzamiento']="Separador con Reforzamiento";
+$idioma['SeparadorDps']="Separador en Dps";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";

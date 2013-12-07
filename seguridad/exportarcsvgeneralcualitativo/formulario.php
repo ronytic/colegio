@@ -24,6 +24,9 @@ if(!empty($_POST)){
     <label for="separadormateria"><?php echo $idioma['SeparadorMateria']?></label>
     <input name="separadormateria" id="separadormateria" size="3" type="text" class="span12"/>
     
+    <label for="separadordps"><?php echo $idioma['SeparadorDps']?></label>
+    <input name="separadordps" id="separadordps" size="3" type="text" class="span12"/>
+    
     <label for="separadorestadisticas"><?php echo $idioma['Estadisticas']?></label>
     <select id="estadisticas" name="estadisticas" class="span12">
     	<option value="0" selected="selected"><?php echo $idioma['No']?></option>
