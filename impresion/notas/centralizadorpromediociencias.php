@@ -78,9 +78,6 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		$cantidadnotas=0;
 		$pdf->CuadroCuerpo(10,$i,$relleno,"R");
 		$pdf->CuadroNombreSeparado(25,$al['Paterno'],25,$al['Materno'],35,$al['Nombres'],1,$relleno);
-		$mate[1]['CodMateria']=19;
-		$mate[2]['CodMateria']=17;
-		$mate[3]['CodMateria']=18;
 		//print_r($valoresMateriasBoletin);
 		foreach($valoresMateriasBoletin as $materiasbol){
 			
@@ -92,16 +89,17 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 			$regNotas3=array_shift($registronotas->mostrarRegistroNotas($casillas3['CodCasilleros'],$al['CodAlumno'],3));
 			
 			$regNotasFinal=round(($regNotas1['NotaFinal']+$regNotas2['NotaFinal']+$regNotas3['NotaFinal'])/3);
+			
 			/*Nota reforzamiento*/
 			$casillas4=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($materiasbol['CodMateria'],$CodCurso,$al['Sexo'],4));
 			$regNotas4=array_shift($registronotas->mostrarRegistroNotas($casillas4['CodCasilleros'],$al['CodAlumno'],4));
 			/*Fin nota reforzamiento*/
 						
-			if($regNotas4['Nota2']!="" || $regNotas4['Nota2']!=0){
-					$promedioanual=round(($regNotasFinal+$regNotas4['Nota2'])/2);
-			}else{
+			/*if($regNotas4['Nota2']!="" || $regNotas4['Nota2']!=0){
+				$promedioanual=round(($regNotasFinal+$regNotas4['Nota2'])/2);
+			}else{*/
 				$promedioanual=$regNotasFinal;
-			}
+			//}
 			
 			if($promedioanual<$notareprobado){
 				$reprobado++;
