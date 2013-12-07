@@ -29,7 +29,14 @@ if(!empty($_POST)){
 		?><table class="table table-hover table-bordered table-striped table-condensed">
         <thead>
         <tr><th colspan="6"><?php echo $idioma['Fecha']?>: <?php echo $_POST['Fecha']?></th></tr>
-        <tr><th>N</th><th><?php echo $idioma['Usuario']?></th><th></th><th><?php echo $idioma['Datos']?></th><th>IP</th><th><?php echo $idioma['Hora']?></th></tr></thead>
+        <tr>
+        	<th>N</th>
+        	<th><?php echo $idioma['Usuario']?></th>
+            <th></th>
+            <th width="300" style="max-width:300px"><?php echo $idioma['Datos']?></th>
+            <th>IP</th>
+            <th><?php echo $idioma['Hora']?></th>
+        </tr></thead>
         <?php foreach($logr as $lg){
 			switch($lg['Nivel']){
 			case "1":{$Usuario=$idioma["Administrador"];
