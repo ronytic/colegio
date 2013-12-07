@@ -159,8 +159,10 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		
 		
 		$casillas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($mat['CodMateria'],$CodCurso,$al['Sexo'],4));
+		
 		$regNotas=array_shift($registronotas->notasBoletin($CodAlumno,$casillas['CodCasilleros']));
-		$sumanotas+=$regNotas['NotaFinal'];
+		
+		//$sumanotas+=$regNotas['NotaFinal'];
 		$promediofinal=round($sumanotas/3);
 		
 		if($regNotas['Nota2']!=0){
@@ -170,14 +172,31 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		}
 		
 		if($cont==3){
+			
+			if($cur['NotaAprobacion']>$promediofinal){
+				$bordeN=1;
+			}else{
+				$bordeN=0;
+			}
 		$pdf->SetXY(162,80+$i);
-		$pdf->Cell(6,4,$promediofinal,$bordeC,0,"R");//Promedio Anual
+		$pdf->Cell(6,4,$promediofinal,$bordeN,0,"R",$bordeN);//Promedio Anual
 		
+			//if($cur['NotaAprobacion']>$regNotas['Nota2']){
+				//$bordeN=1;
+			//}else{
+				$bordeN=0;
+			//}
+			
 		$pdf->SetXY(180,80+$i);
-		$pdf->Cell(6,4,$regNotas['Nota2'],$bordeC,0,"R");//Reforzamiento
+		$pdf->Cell(6,4,$regNotas['Nota2'],$bordeN,0,"R",$bordeN);//Reforzamiento
 		
+			if($cur['NotaAprobacion']>$promedioanual){
+				$bordeN=1;
+			}else{
+				$bordeN=0;
+			}
 		$pdf->SetXY(198,80+$i);
-		$pdf->Cell(6,4,$promedioanual,$bordeC,0,"R");//Promedio Final
+		$pdf->Cell(6,4,$promedioanual,$bordeN,0,"R",$bordeN);//Promedio Final
 		}
 		$i+=4;//Salto para abajo
 	}
