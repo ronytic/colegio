@@ -201,7 +201,11 @@ $folder="../../";
                 <?php for($i=1;$i<=$cur['CantidadEtapas'];$i++){?>
                 	<td colspan="3"><?php echo $i?> <?php echo $cur['Bimestre']?$idioma['Bimestre']:$idioma['Trimestre'];?></td>
                 <?php }?>
-                <td width="90"><?php echo $idioma['PromedioAnual']?></td><td><?php echo $idioma['Reforzamiento']?></td><td><?php echo $idioma['PromedioFinal']?></td></tr>
+                <td width="90"><?php echo $idioma['PromedioAnual']?></td>
+                <?php if($cur['Bimestre']==0){?>
+                <td><?php echo $idioma['Reforzamiento']?></td><td><?php echo $idioma['PromedioFinal']?></td>
+                <?php }?>
+                </tr>
                 <?php if($cur['Bimestre']){?>
 					<tr></tr>
 				<?php }else{?><tr><td></td><td>PC</td><td>DPS</td><td>PT</td><td>PC</td><td>DPS</td><td>PT</td><td>PC</td><td>DPS</td><td>PT</td><td></td><td></td><td></td></tr>
@@ -253,9 +257,17 @@ $folder="../../";
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']&&$rn3['NotaFinal']!=0?'rojo':'';?>"><?php echo $rn3['Dps'];?></td>
                         <td class="div der <?php echo $cur['NotaAprobacion']>$rn3['NotaFinal']&&$rn3['NotaFinal']!=0?'rojo':'';?>"><?php echo $rn3['NotaFinal'];?></td>
                         <?php }?>
-                        <td class="div der"><?php echo $promedio?></td>
-                        <td class="div der">0</td>
-                        <td class="der">0</td>
+                        <td class="div der <?php echo $cur['NotaAprobacion']>$promedio&&$promedio!=0?'rojo':'';?>"><?php echo $promedio?></td>
+                        <?php if($cur['Bimestre']==0){
+								if($rn4['Nota2']!="0"){
+									$promedioanual=round(($promedio+$rn4['Nota2'])/2);
+								}else{
+									$promedioanual=$promedio;
+								}
+							?>
+                        <td class="div der"><?php echo $rn4['Nota2']?></td>
+                        <td class="der <?php echo $cur['NotaAprobacion']>$promedioanual&&$promedioanual!=0?'rojo':'';?>"><?php echo $promedioanual?></td>
+						<?php } ?>
                     </tr>
                     <?php }else{?>
             			<tr><td colspan="13"><?php echo $idioma['DebeCancelarMensualidades']?></td></tr>
