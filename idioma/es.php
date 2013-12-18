@@ -1150,9 +1150,15 @@ $idioma['VerEnviosSms']="Ver Envío de SMS";
 $idioma['HabilitarReforzamiento']="Habilitar Notas de Reforzamiento";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
-$idioma['N']="Nº";
+$idioma['NFactura']="Número de Factura";
 $idioma['NReferencia']="Número de Referencia";
 $idioma['Codigo']="Código";
 $idioma['Senores']="Señores";
 $idioma['Buscar']="Buscar";
+$idioma['ImporteCobrado']="Importe Cobrado";
+$idioma['MontoCuota']="Monto Cuota";
+$idioma['Interes']="Interes";
+$idioma['TotalDescuento']="Total Descuento";
+$idioma['TotalInteres']="Total Interes";
+$idioma['TotalBs']="Total en Bs";
 ?>
