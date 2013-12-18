@@ -1148,4 +1148,11 @@ $idioma['EnviarMensajePrivado']="Enviar Mensaje Personalizado";
 $idioma['ConfigurarNumeroCelulares']="Configurar Números de Celular";
 $idioma['VerEnviosSms']="Ver Envío de SMS";
 $idioma['HabilitarReforzamiento']="Habilitar Notas de Reforzamiento";
+//Factura
+$idioma['RegistrarFactura']="Registrar Factura";
+$idioma['N']="Nº";
+$idioma['NReferencia']="Número de Referencia";
+$idioma['Codigo']="Código";
+$idioma['Senores']="Señores";
+$idioma['Buscar']="Buscar";
 ?>
