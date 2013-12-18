@@ -7,6 +7,7 @@ $(document).on("ready",function(){
 	//mostrar();
 });
 function mostrar(){
+	cargandoG("#respuesta");
 	var Tiempo=parseInt($("input[name=Tiempo]").val())*1000;
 	var Nivel=$("select[name=Nivel]").val();
 	var Fecha=$("input[name=Fecha]").val();
