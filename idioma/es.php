@@ -1148,6 +1148,7 @@ $idioma['EnviarMensajePrivado']="Enviar Mensaje Personalizado";
 $idioma['ConfigurarNumeroCelulares']="Configurar Números de Celular";
 $idioma['VerEnviosSms']="Ver Envío de SMS";
 $idioma['HabilitarReforzamiento']="Habilitar Notas de Reforzamiento";
+$idioma['ListadoFacturas']="Listado de Facturas";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
@@ -1178,4 +1179,7 @@ $idioma['Cambio']="Cambio";
 $idioma['FechaLimiteEmision']="Fecha Límite de Emisión";
 $idioma['Cajero']="Cajero";
 $idioma['Sello']="Sello";
+$idioma['FechaFactura']="Fecha Factura";
+$idioma['NTransaccion']="N Transacción";
+$idioma['Bolivianos']="Bolivianos";
 ?>

@@ -461,7 +461,12 @@ function num2letras($num, $fem = false, $dec = true) {
    } 
    $tex = $neg . substr($tex, 1) . $fin; 
    //Zi hack --> return ucfirst($tex);
-   $end_num=ucfirst($tex).'  '.$float[1].'/100';
+   if($float[1]<10){
+ 	$decimal=$float[1]."0";
+	}else{
+		$decimal=$float[1];
+	}
+   $end_num=ucfirst($tex).'  '.$decimal.'/100';
    return $end_num; 
 } 
 ?>
