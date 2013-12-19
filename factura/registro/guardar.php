@@ -3,8 +3,8 @@ include_once("../../login/check.php");
 if(!empty($_POST)){
 	/*echo "<pre>";
 	print_r($_POST);
-	echo "</pre>";
-	extract($_POST);*/
+	echo "</pre>";*/
+	extract($_POST);
 	include_once("../../class/config.php");
 	include_once("../../class/factura.php");
 	include_once("../../class/cuota.php");
@@ -68,9 +68,21 @@ if(!empty($_POST)){
 			print_r($ValoresFacturaDetalle);
 			echo "</pre>";*/
 			$facturadetalle->insertarRegistro($ValoresFacturaDetalle);
+			
+			/*Modificacion Cuota*/
+			/*$CodCuota=$fd['CodCuota'];	
+			$Valor=1;
+			$Factura=trim($NFactura);
+			$Observaciones="Facturado";
+			$Fecha=fecha2Str($FechaFactura,0);
+			$Hora= date("H:i:s");
+			$Fecha=$Fecha." ".$Hora;
+			$cuota->actualizar($CodCuota,$Valor,$Factura,$Observaciones,$Fecha);
+			/*Fin de Modificacion Pago Cuota*/
 		}
 	}
 	$factura->insertarRegistro($ValoresFactura);
 	//echo $TxtCodigoDeControl;
+	header("Location:ver.php?f=".$CodFactura);
 }
 ?>

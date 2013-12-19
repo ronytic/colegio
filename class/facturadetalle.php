@@ -1,11 +1,11 @@
 <?php
 include_once("bd.php");
 class facturadetalle extends bd{
-	var $tabla="facturadetalle.php";	
+	var $tabla="facturadetalle";	
 	function mostrarFacturaDetalles($Condicion){
 		$this->campos=array('*');
-		$Condicicion=$Condicicion!=""?"$Condicicion and ":"";
-		return $this->getRecords("$Condicicion Activo=1");
+		$Condicion=$Condicion!=""?"$Condicion and ":"";
+		return $this->getRecords("$Condicion Activo=1");
 	}
 	function mostrarFacturaDetalle($CodFacturaDetalle){
 		$this->campos=array('*');

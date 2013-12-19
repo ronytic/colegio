@@ -1168,4 +1168,14 @@ $idioma['MontoDevuelto']="Monto Devuelto";
 $idioma['Aumentar']="Aumentar";
 $idioma['EstaSeguroRegistrarFactura']="¿Esta Seguro de Registrar esta Factura? No se Podrá Modificar Posteriormente";
 $idioma['NFacturaDuplicado']="Número de Factura Dúplicado";
+$idioma['VerFactura']="Ver Factura";
+$idioma['NAutorizacion']="N Autorización";
+$idioma['ANombre']="A Nombre de";
+$idioma['DetalleFacturacion']="Detalle Facturación";
+$idioma['Son']="Son";
+$idioma['CodigoControl']="Código de Control";
+$idioma['Cambio']="Cambio";
+$idioma['FechaLimiteEmision']="Fecha Límite de Emisión";
+$idioma['Cajero']="Cajero";
+$idioma['Sello']="Sello";
 ?>
