@@ -1161,4 +1161,10 @@ $idioma['Interes']="Interes";
 $idioma['TotalDescuento']="Total Descuento";
 $idioma['TotalInteres']="Total Interes";
 $idioma['TotalBs']="Total en Bs";
+$idioma['SeleccionarAlumno']="Seleccionar Alumno";
+$idioma['MensajeEliminarRegistro']="¿Esta seguro de Eliminar este Registro?";
+$idioma['Cancelado']="Cancelado";
+$idioma['MontoDevuelto']="Monto Devuelto";
+$idioma['Aumentar']="Aumentar";
+$idioma['EstaSeguroRegistrarFactura']="¿Esta Seguro de Registrar esta Factura? No se Podra Modificar Posteriormente";
 ?>
