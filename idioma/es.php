@@ -1171,7 +1171,7 @@ $idioma['EstaSeguroRegistrarFactura']="¿Esta Seguro de Registrar esta Factura? 
 $idioma['NFacturaDuplicado']="Número de Factura Dúplicado";
 $idioma['VerFactura']="Ver Factura";
 $idioma['NAutorizacion']="N Autorización";
-$idioma['ANombre']="A Nombre de";
+$idioma['ANombre']="Señor(es)";
 $idioma['DetalleFacturacion']="Detalle Facturación";
 $idioma['Son']="Son";
 $idioma['CodigoControl']="Código de Control";
@@ -1182,4 +1182,5 @@ $idioma['Sello']="Sello";
 $idioma['FechaFactura']="Fecha Factura";
 $idioma['NTransaccion']="N Transacción";
 $idioma['Bolivianos']="Bolivianos";
+$idioma['NitCi']="NIT/CI";
 ?>

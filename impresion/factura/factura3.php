@@ -61,11 +61,10 @@ celda(40,$f['NFactura'],"");
 $pdf->SetXY(15,$y+22);
 celda(30,$idioma['ANombre'].": ","B");
 celda(60,mayuscula($f['Factura']),"");
-celda(10,$idioma['Nit'].": ","B");
+celda(15,$idioma['NitCi'].": ","B");
 celda(30,($f['Nit']),"");
 celda(15,$idioma['Fecha'].": ","B");
 celda(40,strftime("%d de %B de %Y",strtotime($f['FechaFactura'])),"");
-
 
 $pdf->SetXY(15,$y+30);
 //celda(130,$idioma['DetalleFacturacion'],"B",11,"C");
@@ -87,6 +86,7 @@ celda(10,$idioma['Son'].": ","B");
 celda(115,mayuscula(num2letras($f['TotalBs']))." ".$idioma['Bolivianos'],"","8");
 celda(15,$idioma['TotalBs'].": ","B","8");
 celda(20,number_format($f['TotalBs'],2),"",10,"R");
+$pdf->SetXY(177,$y+71);
 celda(12,$idioma['Cajero'].": ","B","8");
 celda(20,$Usuario,"",8,"");
 $pdf->Ln();
@@ -106,11 +106,11 @@ $pdf->SetXY(140,$y+77);
 celda(15,$idioma['Cambio'].": ","B","8");
 celda(20,number_format($f['MontoDevuelto'],2),"",10,"R");
 
-$pdf->SetXY(175,$y+74);
+$pdf->SetXY(177,$y+74);
 celda(22,$idioma['NTransaccion'].": ","B","8");
 celda(10,(($f['NReferencia'])),"","8");
 
-$pdf->SetXY(175,$y+77);
+$pdf->SetXY(177,$y+77);
 celda(10,$idioma['Hora'].": ","B","8");
 celda(15,(($f['HoraRegistro'])),"","8");
 
@@ -144,11 +144,10 @@ celda(40,$f['NFactura'],"");
 $pdf->SetXY(15,$y+22);
 celda(30,$idioma['ANombre'].": ","B");
 celda(60,mayuscula($f['Factura']),"");
-celda(10,$idioma['Nit'].": ","B");
+celda(15,$idioma['NitCi'].": ","B");
 celda(30,($f['Nit']),"");
 celda(15,$idioma['Fecha'].": ","B");
 celda(40,strftime("%d de %B de %Y",strtotime($f['FechaFactura'])),"");
-
 
 $pdf->SetXY(15,$y+30);
 //celda(130,$idioma['DetalleFacturacion'],"B",11,"C");
@@ -170,6 +169,7 @@ celda(10,$idioma['Son'].": ","B");
 celda(115,mayuscula(num2letras($f['TotalBs']))." ".$idioma['Bolivianos'],"","8");
 celda(15,$idioma['TotalBs'].": ","B","8");
 celda(20,number_format($f['TotalBs'],2),"",10,"R");
+$pdf->SetXY(177,$y+71);
 celda(12,$idioma['Cajero'].": ","B","8");
 celda(20,$Usuario,"",8,"");
 $pdf->Ln();
@@ -189,11 +189,11 @@ $pdf->SetXY(140,$y+77);
 celda(15,$idioma['Cambio'].": ","B","8");
 celda(20,number_format($f['MontoDevuelto'],2),"",10,"R");
 
-$pdf->SetXY(175,$y+74);
+$pdf->SetXY(177,$y+74);
 celda(22,$idioma['NTransaccion'].": ","B","8");
 celda(10,(($f['NReferencia'])),"","8");
 
-$pdf->SetXY(175,$y+77);
+$pdf->SetXY(177,$y+77);
 celda(10,$idioma['Hora'].": ","B","8");
 celda(15,(($f['HoraRegistro'])),"","8");
 
@@ -227,11 +227,10 @@ celda(40,$f['NFactura'],"");
 $pdf->SetXY(15,$y+22);
 celda(30,$idioma['ANombre'].": ","B");
 celda(60,mayuscula($f['Factura']),"");
-celda(10,$idioma['Nit'].": ","B");
+celda(15,$idioma['NitCi'].": ","B");
 celda(30,($f['Nit']),"");
 celda(15,$idioma['Fecha'].": ","B");
 celda(40,strftime("%d de %B de %Y",strtotime($f['FechaFactura'])),"");
-
 
 $pdf->SetXY(15,$y+30);
 //celda(130,$idioma['DetalleFacturacion'],"B",11,"C");
@@ -253,6 +252,7 @@ celda(10,$idioma['Son'].": ","B");
 celda(115,mayuscula(num2letras($f['TotalBs']))." ".$idioma['Bolivianos'],"","8");
 celda(15,$idioma['TotalBs'].": ","B","8");
 celda(20,number_format($f['TotalBs'],2),"",10,"R");
+$pdf->SetXY(177,$y+71);
 celda(12,$idioma['Cajero'].": ","B","8");
 celda(20,$Usuario,"",8,"");
 $pdf->Ln();
@@ -272,11 +272,11 @@ $pdf->SetXY(140,$y+77);
 celda(15,$idioma['Cambio'].": ","B","8");
 celda(20,number_format($f['MontoDevuelto'],2),"",10,"R");
 
-$pdf->SetXY(175,$y+74);
+$pdf->SetXY(177,$y+74);
 celda(22,$idioma['NTransaccion'].": ","B","8");
 celda(10,(($f['NReferencia'])),"","8");
 
-$pdf->SetXY(175,$y+77);
+$pdf->SetXY(177,$y+77);
 celda(10,$idioma['Hora'].": ","B","8");
 celda(15,(($f['HoraRegistro'])),"","8");
 
