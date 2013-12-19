@@ -31,6 +31,19 @@ $(document).ready(function(e) {
 		var TotalT=Importe+Interes-Descuento;
 		$(".Total[rel="+Reg+"]").val(TotalT).change();
 	});
+	
+	$(document).on("change",".NFactura",function(e){
+		$.post("verificarnumerofactura.php",{'NFactura':$("input[name=NFactura]").val()},function(data){
+			if(data.Estado=="Si"){
+				$("#Guardar").removeAttr("disabled");
+			}else{
+				alert(NFacturaDuplicado);	
+				$("input[name=NFactura]").focus();
+				$("#Guardar").attr("disabled","disabled");
+			}
+		},"json");
+			
+	});$("input[name=NFactura]").change();
 	$(document).on("change",".der",function(e){
 		var v=parseFloat($(this).val());
 		$(this).val(v.toFixed(2));

@@ -1166,5 +1166,6 @@ $idioma['MensajeEliminarRegistro']="¿Esta seguro de Eliminar este Registro?";
 $idioma['Cancelado']="Cancelado";
 $idioma['MontoDevuelto']="Monto Devuelto";
 $idioma['Aumentar']="Aumentar";
-$idioma['EstaSeguroRegistrarFactura']="¿Esta Seguro de Registrar esta Factura? No se Podra Modificar Posteriormente";
+$idioma['EstaSeguroRegistrarFactura']="¿Esta Seguro de Registrar esta Factura? No se Podrá Modificar Posteriormente";
+$idioma['NFacturaDuplicado']="Número de Factura Dúplicado";
 ?>

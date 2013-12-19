@@ -6,7 +6,7 @@ if(!empty($_POST['CodAlumno'])){
 	$CodAlumno=$_POST['CodAlumno'];
 	$al=$alumno->mostrarTodoDatos($CodAlumno);
 	$al=array_shift($al);
-	$nombres=capitalizar($al['Paterno'])." ".capitalizar($al['Materno'])." ".capitalizar($al['Nombres'])." ";
+	$nombres=capitalizar($al['Paterno'])." ".capitalizar($al['Materno'])." ".capitalizar($al['Nombres']);
 	$valores=array("Alumno"=>$nombres,"Nit"=>$al['Nit'],"FacturaA"=>$al['FacturaA']);
 	
 	echo json_encode($valores);
