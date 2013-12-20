@@ -39,10 +39,15 @@ class cuota extends bd{
 		$this->updateRecord("CodCuota=$CodCuota",array($Valor,$Factura,$Observaciones,"$Fecha"))	;
 	}
 	function guardar($Values){
-			$this->insertRow($Values,1);
+		$this->insertRow($Values,1);
 	}
 	function actualizarCuota($values,$where){
 		$this->updateRow($values,$where);	
+	}
+	function porPagar(){
+		$this->campos=array('a.Paterno,a.Materno,a.Nombres,cu.Nombre as Curso ,c.Numero  as Cuota,c.MontoPagar');
+		$this->tabla="cuota c,alumno a,curso cu";
+		return $this->getRecords("c.Cancelado=0  and c.CodAlumno=a.CodAlumno and a.Retirado=0 and cu.CodCurso=a.CodCurso","a.CodCurso,a.Paterno,a.Materno,a.Nombres,c.Numero");
 	}
 }
 ?>

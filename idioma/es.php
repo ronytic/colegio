@@ -124,6 +124,7 @@ $idioma['NReporteEstadisticoAgenda']="Reporte Estadístico de Agenda";
 $idioma['NEnviarMensaje']="Enviar Mensaje";
 $idioma['NConfigurarNumeroCelular']="Configurar Número de Celular";
 $idioma['NVerTodosLosEnvios']="Ver Envios de SMS";
+$idioma['NListadoAlumnosPorPagar']="Listado de Alumnos con Cuotas por Pagar";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -1149,6 +1150,7 @@ $idioma['ConfigurarNumeroCelulares']="Configurar Números de Celular";
 $idioma['VerEnviosSms']="Ver Envío de SMS";
 $idioma['HabilitarReforzamiento']="Habilitar Notas de Reforzamiento";
 $idioma['ListadoFacturas']="Listado de Facturas";
+$idioma['ListadoAlumnosPorPagar']="Listado de Alumnos con Cuotas por Pagar";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
