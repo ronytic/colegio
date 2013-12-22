@@ -10,7 +10,7 @@ include_once($folder."cabecerahtml.php");
 <div class="span12 box">
     <div class="box-content">
     	<a href="<?php echo $url?>" target="_blank" class="btn btn-danger"><?php echo $idioma['AbrirOtraVentana']?></a><hr>
-	    <iframe src="<?php echo $url?>" width="100%" height="700"></iframe>
+	    <iframe src="<?php echo $url?>" width="100%" height="550"></iframe>
     </div>
 </div>
 <?php include_once($folder."pie.php");?>
