@@ -5,7 +5,7 @@ class factura extends bd{
 	function mostrarFacturas($Condicion){
 		$this->campos=array('*');
 		$Condicion=$Condicion!=""?"$Condicion and ":"";
-		return $this->getRecords("$Condicion Activo=1");
+		return $this->getRecords("$Condicion Activo=1","NFactura,FechaFactura,Nit,Factura");
 	}
 	function mostrarNumeroFactura($Condicion){
 		$this->campos=array('max(NFactura) as NFactura');

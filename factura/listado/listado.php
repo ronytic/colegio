@@ -1,5 +1,26 @@
 <?php
 include_once("../../login/check.php");
+extract($_POST);
+$condi=array();
+if($FechaFacturaInicio!="" && $FechaFacturaFin!=""){
+	$FechaFacturaInicio=fecha2Str($FechaFacturaInicio,0);
+	$FechaFacturaFin=fecha2Str($FechaFacturaFin,0);
+	array_push($condi,"FechaFactura BETWEEN '$FechaFacturaInicio' and '$FechaFacturaFin'");
+}
+if($NFactura!=""){
+	array_push($condi,"NFactura='$NFactura'");
+}
+if($Nit!=""){
+	array_push($condi,"Nit='$Nit'");
+}
+
+if($Factura!=""){
+	array_push($condi,"Factura LIKE '%$Factura%'");
+}
+if($Estado!=""){
+	array_push($condi,"Estado LIKE '%$Estado%'");
+}
+$where=implode(" and ",$condi);
 include_once("../../class/factura.php");
 $factura=new factura;
 ?>
@@ -18,7 +39,7 @@ $factura=new factura;
         <th></th>
     </tr>
 </thead>
-<?php foreach($factura->mostrarFacturas("") as $f){$i++;?>
+<?php foreach($factura->mostrarFacturas($where) as $f){$i++;?>
 <tr>
     <td><?php echo $i?></td>
     <td><?php echo fecha2Str($f['FechaFactura'])?></td>

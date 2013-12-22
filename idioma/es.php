@@ -1185,4 +1185,5 @@ $idioma['FechaFactura']="Fecha Factura";
 $idioma['NTransaccion']="N Transacción";
 $idioma['Bolivianos']="Bolivianos";
 $idioma['NitCi']="NIT/CI";
+$idioma['Anulado']="Anulado";
 ?>
