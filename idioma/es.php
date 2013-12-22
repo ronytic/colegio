@@ -378,6 +378,8 @@ $idioma['Documentos']="Documentos";
 //Pdf
 $idioma['Pagina']="Página";
 $idioma['FechaActual']="Fecha Actual";
+$idioma['FechaReporte']="Fecha Reporte";
+$idioma['Del']="del";
 $idioma['Primera']="Primera";
 $idioma['Segunda']="Segunda";
 $idioma['Tercera']="Tercera";
@@ -1186,4 +1188,7 @@ $idioma['NTransaccion']="N Transacción";
 $idioma['Bolivianos']="Bolivianos";
 $idioma['NitCi']="NIT/CI";
 $idioma['Anulado']="Anulado";
+$idioma['NoExisteFacturas']="No Existen Facturas Registradas";
+$idioma['SeguroCambiarEstado']="¿Estas seguro de cambiar Estado de esta Factura";
+$idioma['Totales']="Totales";
 ?>

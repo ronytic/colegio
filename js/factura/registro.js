@@ -11,7 +11,8 @@ $(document).ready(function(e) {
 		if(TipoBusqueda=="Registro"){
 			Registro=$(this).attr("rel-id");
 		}
-        $('.modal').modal('show')
+        $('.modal').modal('show');
+		
     }).on("change","select.MostrarCuota",function(){
 		Reg=$(this).attr("rel");
 		NumCuota=$("select.MostrarCuota[rel="+Reg+"]").val();
@@ -23,6 +24,11 @@ $(document).ready(function(e) {
 			$("input[name='a["+Reg+"][CodCuota]']").val(data.CodCuota);
 		},"json");
 	});
+	$('.modal').on('hidden', function () {
+  		$("html,body").css("overflow","auto")
+	}).on('shown', function () {
+  		$("html,body").css("overflow","hidden")
+	})
 	$(document).on("change",".ImporteCobrado,.Interes,.Descuento",function(e){
 		Reg=$(this).attr("rel");
 		Importe=parseFloat($(".ImporteCobrado[rel="+Reg+"]").val());

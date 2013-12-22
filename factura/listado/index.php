@@ -7,6 +7,9 @@ $factura=new factura;
 include_once($folder."cabecerahtml.php");
 ?>
 <script language="javascript" type="text/javascript" src="../../js/factura/listado.js"></script>
+<script language="javascript">
+var SeguroCambiarEstado="<?php echo $idioma['SeguroCambiarEstado']?>";
+</script>
 <?php include_once($folder."cabecera.php");?>
 <div class="span12 box">
 	<div class="box-header"><h2><?php echo $idioma['Configuracion']?></h2></div>
