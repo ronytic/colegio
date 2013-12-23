@@ -466,6 +466,28 @@ include_once($folder."cabecerahtml.php");
         </table>
     </div>
     
+    <div class="box-header"><h2><?php echo $idioma['Facturacion']?><a name="facturacion"></a></h2></div>
+    <div class="box-content">
+    	<table class="table table-bordered table-hover">
+        	<tr>
+            	<td width="50%"><?php echo $idioma['NumeroAutorizacion']?>
+                <div class="pequeno"><?php echo $idioma['NumeroAutorizacionT']?></div></td>
+                <td><input type="text" class="span12" name="NumeroAutorizacion" value="<?php echo (dato("NumeroAutorizacion"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['FechaLimiteEmision']?></td>
+                <td><input type="text" class="span12" name="Sigla" value="<?php echo (dato("FechaLimiteEmision"))?>"></td>
+            </tr>
+            <tr>
+            	<td><?php echo $idioma['LlaveDosificacion']?><div class="pequeno"><?php echo $idioma['LlaveDosificacionT']?></div></td>
+                <td><input type="text" class="span12" name="Lema" value="<?php echo (dato("LlaveDosificacion"))?>"></td>
+            </tr>
+            
+        	<tr>
+            	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
+            </tr>
+        </table>
+    </div>
     <?php if($_SESSION['Nivel']==1):?>
     <div class="box-header"><h2><?php echo $idioma['Avanzado']?><a name="avanzado"></a></h2></div>
     <div class="box-content">

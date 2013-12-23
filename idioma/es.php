@@ -1191,4 +1191,8 @@ $idioma['Anulado']="Anulado";
 $idioma['NoExisteFacturas']="No Existen Facturas Registradas";
 $idioma['SeguroCambiarEstado']="¿Estas seguro de cambiar Estado de esta Factura";
 $idioma['Totales']="Totales";
+$idioma['Facturacion']="Facturación";
+$idioma['LlaveDosificacion']="Llave de Dosificación";
+$idioma['LlaveDosificacionT']="Llave Dosificación, otorgado por el Servicio de Impuestos Nacionales";
+$idioma['NumeroAutorizacion']="Número de Autorización";
 ?>
