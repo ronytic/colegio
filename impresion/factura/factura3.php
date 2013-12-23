@@ -49,7 +49,7 @@ $pdf->SetXY(145,$y+28);
 $pdf->Cell(60,40,"",1);
 $pdf->SetXY(15,$y+69);
 $pdf->Cell(190,15,"",1);*/
-
+$Credito=1;
 $pdf->SetXY(153,$y);
 celda(30,$idioma['NAutorizacion'].": ","B");
 celda(40,$NumeroAutorizacion,"");
@@ -64,7 +64,7 @@ celda(60,mayuscula($f['Factura']),"");
 celda(15,$idioma['NitCi'].": ","B");
 celda(30,($f['Nit']),"");
 celda(15,$idioma['Fecha'].": ","B");
-celda(40,strftime("%d de %B de %Y",strtotime($f['FechaFactura'])),"");
+celda(40,strftime("%d de %B del %Y",strtotime($f['FechaFactura'])),"");
 
 $pdf->SetXY(15,$y+30);
 //celda(130,$idioma['DetalleFacturacion'],"B",11,"C");
@@ -97,7 +97,10 @@ celda(20,number_format($f['Cancelado'],2),"",10,"R");
 $pdf->SetXY(15,$y+77);
 celda(35,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(20,fecha2Str($FechaLimiteEmision),"",8,"R");
-
+if($Credito){
+	$pdf->SetXY(175,$y+79);
+	celda(35,$idioma['DesarrolladoPor'].": "."Ronald Nina Layme - 73230568","","4");
+}
 
 $pdf->SetXY(15,$y+74);
 celda(30,$idioma['CodigoControl'].": ","B","8");
@@ -147,7 +150,7 @@ celda(60,mayuscula($f['Factura']),"");
 celda(15,$idioma['NitCi'].": ","B");
 celda(30,($f['Nit']),"");
 celda(15,$idioma['Fecha'].": ","B");
-celda(40,strftime("%d de %B de %Y",strtotime($f['FechaFactura'])),"");
+celda(40,strftime("%d de %B del %Y",strtotime($f['FechaFactura'])),"");
 
 $pdf->SetXY(15,$y+30);
 //celda(130,$idioma['DetalleFacturacion'],"B",11,"C");
@@ -180,7 +183,10 @@ celda(20,number_format($f['Cancelado'],2),"",10,"R");
 $pdf->SetXY(15,$y+77);
 celda(35,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(20,fecha2Str($FechaLimiteEmision),"",8,"R");
-
+if($Credito){
+$pdf->SetXY(175,$y+79);
+	celda(35,$idioma['DesarrolladoPor'].": "."Ronald Nina Layme - 73230568","","4");
+}
 
 $pdf->SetXY(15,$y+74);
 celda(30,$idioma['CodigoControl'].": ","B","8");
@@ -230,7 +236,7 @@ celda(60,mayuscula($f['Factura']),"");
 celda(15,$idioma['NitCi'].": ","B");
 celda(30,($f['Nit']),"");
 celda(15,$idioma['Fecha'].": ","B");
-celda(40,strftime("%d de %B de %Y",strtotime($f['FechaFactura'])),"");
+celda(40,strftime("%d de %B del %Y",strtotime($f['FechaFactura'])),"");
 
 $pdf->SetXY(15,$y+30);
 //celda(130,$idioma['DetalleFacturacion'],"B",11,"C");
@@ -263,7 +269,10 @@ celda(20,number_format($f['Cancelado'],2),"",10,"R");
 $pdf->SetXY(15,$y+77);
 celda(35,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(20,fecha2Str($FechaLimiteEmision),"",8,"R");
-
+if($Credito){
+$pdf->SetXY(175,$y+79);
+	celda(35,$idioma['DesarrolladoPor'].": "."Ronald Nina Layme - 73230568","","4");
+}
 
 $pdf->SetXY(15,$y+74);
 celda(30,$idioma['CodigoControl'].": ","B","8");
