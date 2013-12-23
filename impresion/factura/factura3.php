@@ -15,13 +15,13 @@ $curso=new curso;
 $cuota=new cuota;
 $Logo=$cnf=$config->mostrarConfig("Logo",1);
 $Titulo=$config->mostrarConfig("Titulo",1);
-$NumeroAutorizacion=$config->mostrarConfig("NumeroAutorizacion",1);
+
 $LlaveDosificacion=$config->mostrarConfig("LlaveDosificacion",1);
-$FechaLimiteEmision=$config->mostrarConfig("FechaLimiteEmision",1);
 $CodFactura=$_GET['f'];
 $f=$factura->mostrarFactura($CodFactura);
 $f=array_shift($f);
-
+$NumeroAutorizacion=$f['NumeroAutorizacion'];
+$FechaLimiteEmision=$f['FechaLimiteEmision'];
 switch($f['Nivel']){
 	case "1":{$Usuario=$idioma["Administrador"];}break;	
 	case "2":{$Usuario=$idioma["Direccion"];}break;	
@@ -55,7 +55,7 @@ celda(30,$idioma['NAutorizacion'].": ","B");
 celda(40,$NumeroAutorizacion,"");
 $pdf->Ln();
 $pdf->SetXY(153,$y+5);
-celda(30,$idioma['Factura'].": ","B");
+celda(35,$idioma['NFactura'].": ","B");
 celda(40,$f['NFactura'],"");
 
 $pdf->SetXY(15,$y+22);
@@ -141,7 +141,7 @@ celda(30,$idioma['NAutorizacion'].": ","B");
 celda(40,$NumeroAutorizacion,"");
 $pdf->Ln();
 $pdf->SetXY(153,$y+5);
-celda(30,$idioma['Factura'].": ","B");
+celda(35,$idioma['NFactura'].": ","B");
 celda(40,$f['NFactura'],"");
 
 $pdf->SetXY(15,$y+22);
@@ -227,7 +227,7 @@ celda(30,$idioma['NAutorizacion'].": ","B");
 celda(40,$NumeroAutorizacion,"");
 $pdf->Ln();
 $pdf->SetXY(153,$y+5);
-celda(30,$idioma['Factura'].": ","B");
+celda(35,$idioma['NFactura'].": ","B");
 celda(40,$f['NFactura'],"");
 
 $pdf->SetXY(15,$y+22);

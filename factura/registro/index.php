@@ -2,8 +2,11 @@
 include_once("../../login/check.php");
 $titulo="RegistrarFactura";
 $folder="../../";
+include_once("../../class/config.php");
 include_once("../../class/factura.php");
 $factura=new factura;
+$config=new config;
+$FechaLimiteEmision=$config->mostrarConfig("FechaLimiteEmision",1);
 $estado=$factura->statusTable();
 $NReferencia=$estado['Auto_increment'];
 $f=$factura->mostrarNumeroFactura("");
@@ -60,7 +63,10 @@ var NFacturaDuplicado="<?php echo $idioma['NFacturaDuplicado']?>";
             	<td class="resaltar der" colspan="6"><?php echo $idioma['TotalDescuento']?>: </td><td><input type="text" name="TotalDescuento" readonly class="input-small der TotalDescuento" value="0.00"></td><td></td>
             </tr>
             <tr>
-            	<td colspan="4" class="resaltar" rowspan="4"><br><?php echo $idioma['Observacion']?>:<br><textarea name="Observacion" class="span12" rows="5"></textarea></td><td class="resaltar der" colspan="3"><?php echo $idioma['TotalInteres']?>: </td><td><input type="text" name="TotalInteres" readonly class="input-small der TotalInteres" value="0.00"></td><td></td>
+            	<td colspan="4" class="resaltar" rowspan="4"><br><?php echo $idioma['Observacion']?>:<br><textarea name="Observacion" class="span12" rows="5"></textarea>
+                <?php echo $idioma['FechaLimiteEmision']?>: <?php echo fecha2Str($FechaLimiteEmision)?>
+                <?php if($FechaLimiteEmision<=date("Y-m-d")){?><div class="alert alert-error"><?php echo $idioma['FechaLimiteEmisionVencida']?></div><?php }?>
+                </td><td class="resaltar der" colspan="3"><?php echo $idioma['TotalInteres']?>: </td><td><input type="text" name="TotalInteres" readonly class="input-small der TotalInteres" value="0.00"></td><td></td>
             </tr>
             <tr class="success">
             	<td class="resaltar der" colspan="3"><?php echo $idioma['TotalBs']?>: </td><td><input type="text" name="TotalBs" readonly class="input-small der TotalBs" value="0.00"></td><td></td>

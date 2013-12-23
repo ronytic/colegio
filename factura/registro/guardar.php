@@ -17,6 +17,7 @@ if(!empty($_POST)){
 	$CodFactura=$estado['Auto_increment'];
 	$NumeroAutorizacion=$config->mostrarConfig("NumeroAutorizacion",1);
 	$LlaveDosificacion=$config->mostrarConfig("LlaveDosificacion",1);
+	$FechaLimiteEmision=$config->mostrarConfig("FechaLimiteEmision",1);
 	$f=$factura->mostrarFacturas("NFactura='".trim($NFactura)."'");
 	if(count($f)){
 		header("Location: ./?f=1&NFactura=".trim($NFactura));	
@@ -47,6 +48,7 @@ if(!empty($_POST)){
 		"NumeroAutorizacion"=>"'$NumeroAutorizacion'",
 		"LlaveDosificacion"=>"'$LlaveDosificacion'",
 		"CodigoControl"=>"'$TxtCodigoDeControl'",
+		"FechaLimiteEmision"=>"'$FechaLimiteEmision'"
 	);
 	/*echo "<pre>";
 	print_r($ValoresFactura);
