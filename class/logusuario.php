@@ -19,5 +19,9 @@ class logusuario extends Bd{
 		$this->campos=array('*');
 		return $this->getRecords("$Nivel FechaLog='$Fecha'","FechaLog DESC,HoraLog",0,$Cantidad,0,1);
 	}
+	function mostrarCantidadUsuarioFecha($Fecha,$Nivel){
+		$this->campos=array('count(*) as Cantidad');
+		return $this->getRecords("Nivel=$Nivel and FechaLog='$Fecha'","",0,0,0,0);
+	}
 }
 ?>

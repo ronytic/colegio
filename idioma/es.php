@@ -125,6 +125,7 @@ $idioma['NEnviarMensaje']="Enviar Mensaje";
 $idioma['NConfigurarNumeroCelular']="Configurar Número de Celular";
 $idioma['NVerTodosLosEnvios']="Ver Envios de SMS";
 $idioma['NListadoAlumnosPorPagar']="Listado de Alumnos con Cuotas por Pagar";
+$idioma['NEstadisticasAccesos']="Estadísticas de Accesos";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -1108,7 +1109,7 @@ $idioma['ReservarGestion']="Reservar Próxima Gestión";
 $idioma['ReporteParaImpresion']="Reporte para Impresión";
 $idioma['NotasPromedioFinal']="Notas Promedio Final";
 $idioma['PromedioFinalCiencias']="Promedio Final de Ciencias";
-$idioma['VerNotasPromedioAnual']="VerNotasPromedio Anual";
+$idioma['VerNotasPromedioAnual']="Ver Notas de Promedio Anual";
 $idioma['NotasPromedioAnual']="Notas Promedio Anual";
 $idioma['AsignarMateriasExportar']="Asignar Materias para Exportar";
 $idioma['ExportarCsvMaterias']="Exportar a Csv - Materias";
@@ -1153,6 +1154,7 @@ $idioma['VerEnviosSms']="Ver Envío de SMS";
 $idioma['HabilitarReforzamiento']="Habilitar Notas de Reforzamiento";
 $idioma['ListadoFacturas']="Listado de Facturas";
 $idioma['ListadoAlumnosPorPagar']="Listado de Alumnos con Cuotas por Pagar";
+$idioma['EstadisticasAccesos']="Estadísticas de Accesos";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";

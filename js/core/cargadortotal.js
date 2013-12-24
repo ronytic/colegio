@@ -82,7 +82,7 @@ function inicio(){
 			$("#respuestaformulario").html(xhr.responseText);
 			}
     	})
-		$('html, body').animate({scrollTop:$("#respuestaformulario").position().top-200},300);
+		//$('html, body').animate({scrollTop:$("#respuestaformulario").position().top-200},300);
 		 
 	});
 	
