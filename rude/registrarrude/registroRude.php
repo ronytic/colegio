@@ -39,7 +39,7 @@ if(!empty($_POST)){
                 <tr><td>Cedula de Identidad</td><td>::</td><td><input name="numeroDoc" type="text" id="numeroDoc" value="<?php echo mb_strtoupper($alu['Ci'],"utf8");?>" /></td></tr>
                 <tr><td>Fecha de Nacimiento</td><td>::</td><td><input name="fechaNac" type="text" id="fechaNac" value="<?php echo mb_strtoupper($alu['FechaNac'],"utf8");?>" /></td></tr>
                 <tr><td>SEXO</td><td>::</td><td><select name="sexo"><option value="0" <?php echo !$alu['Sexo']?'selected="selected"':'';?>>Femenino</option><option value="1"<?php echo $alu['Sexo']?'selected="selected"':'';?>>Masculino</option></select></td></tr>
-                <tr><td>Certificado de Nacimiento</td><td></td><td></td></tr>
+                <tr><td class="resaltar">Certificado de Nacimiento</td><td></td><td></td></tr>
     	    	<tr><td>Pais</td><td>::</td><td><input type="text" name="paisNacA" value="BOLIVIA" /></td></tr>
                 <tr><td>Departamento</td><td>::</td><td><input type="text" name="departamentoNacA" value="LA PAZ" /></td></tr>
                 <tr><td>Provincia</td><td>::</td><td><input type="text" name="provinciaNacA" value="MURILLO" /></td></tr>
@@ -96,7 +96,7 @@ if(!empty($_POST)){
                     ¿Internet en casa?<select name="internet" id="internet"><option value="1">SI</option><option value="0">NO</option></select>
                     </td></tr>
                 <tr><td>¿El estudiante se traslada en?</td><td>::</td><td><select name="traslado"><option value="APIE" selected="selected">A PIE</option><option value="MINIBUS">MINIBUS</option></select></td></tr>
-                <tr><td>Tiempo que tarda el Estudiante</td><td>::</td><td><input type="text" name="tiempo" value="Menos de media Hora" readonly="readonly"/></td></tr>
+                <tr><td>Tiempo que tarda el Estudiante</td><td>::</td><td><input type="text" name="tiempo" value="Menos de media Hora" readonly/></td></tr>
         	</table>
         </div>
         <div class="box-header"><?php echo $idioma['DatosDelPadreTutor'];?></div>

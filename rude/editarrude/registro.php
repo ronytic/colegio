@@ -31,7 +31,7 @@ if(!empty($_POST)){
                 <tr><td>Cedula de Identidad</td><td>::</td><td><input name="numeroDoc" type="text" id="numeroDoc" value="<?php echo mb_strtoupper($al['Ci'],"utf8");?>" /></td></tr>
                 <tr><td>Fecha de Nacimiento</td><td>::</td><td><input name="fechaNac" type="text" id="fechaNac" value="<?php echo mb_strtoupper($al['FechaNac'],"utf8");?>" /></td></tr>
                 <tr><td>SEXO</td><td>::</td><td><select name="sexo"><option value="0" <?php echo !$al['Sexo']?'selected="selected"':'';?>>Femenino</option><option value="1"<?php echo $al['Sexo']?'selected="selected"':'';?>>Masculino</option></select></td></tr>
-                <tr><td>Certificado de Nacimiento</td><td></td><td></td></tr>
+                <tr><td class="resaltar">Certificado de Nacimiento</td><td></td><td></td></tr>
     	    	<tr><td>Pais</td><td>::</td><td><input type="text" name="paisNacA" value="<?php echo mb_strtoupper($alu['PaisN'],"utf8");?>" /></td></tr>
                 <tr><td>Departamento</td><td>::</td><td><input type="text" name="departamentoNacA" value="<?php echo mb_strtoupper($al['LugarNac'],"utf8");?>" /></td></tr>
                 <tr><td>Provincia</td><td>::</td><td><input type="text" name="provinciaNacA" value="<?php echo mb_strtoupper($alu['ProvinciaN'],"utf8");?>" /></td></tr>
@@ -91,7 +91,7 @@ if(!empty($_POST)){
                     ¿Internet en casa?<select name="internet" id="internet" class="span12"><option value="1" <?php echo $alu['InternetCasa']?'selected="selected"':'';?>>SI</option><option value="0" <?php echo !$alu['InternetCasa']?'selected="selected"':'';?>>NO</option></select>
                     </td></tr>
                 <tr><td>¿El estudiante se traslada en?</td><td>::</td><td><select name="traslado" class="span12"><option value="APIE" <?php echo $alu['Transporte']=="APIE"?'selected="selected"':'';?>>A PIE</option><option value="MINIBUS" <?php echo $alu['Transporte']=="MINIBUS"?'selected="selected"':'';?>>MINIBUS</option></select></td></tr>
-                <tr><td>Tiempo que tarda el Estudiante</td><td>::</td><td><input type="text" name="tiempo" value="Menos de media Hora" readonly="readonly"/></td></tr>
+                <tr><td>Tiempo que tarda el Estudiante</td><td>::</td><td><input type="text" name="tiempo" value="Menos de media Hora" readonly/></td></tr>
         	</table>
         </div>
         <div class="box-header"><?php echo $idioma['DatosDelPadreTutor']?></div>
