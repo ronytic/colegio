@@ -32,7 +32,7 @@ if(!empty($_POST)){
 	$Sexo=$casillas['SexoAlumno'];
 	$numcasilleros=$casillas['Casilleros'];
 	$Dps=$casillas['Dps'];
-	$FormulaCalificaciones=$dcasillas['FormulaCalificaciones'];
+	$FormulaCalificaciones=$casillas['FormulaCalificaciones'];
 	
 	$cnf=$config->mostrarConfig("RegistroNotaHabilitado");
 	$RegistroNotaHabilitado=$cnf["Valor"];
@@ -66,7 +66,7 @@ if(!empty($_POST)){
             <?php echo $idioma['NotaAprobacion']?>: <?php echo $cur['NotaAprobacion']?> 
             </th>
 		</tr>
-		<tr><th>Nº</th><th>Paterno</th><th>Materno</th><th>Nombres</th>
+		<tr><th>N</th><th><?php echo $idioma['Paterno']?></th><th><?php echo $idioma['Materno']?></th><th><?php echo $idioma['Nombres']?></th>
         	<?php for($i=1;$i<=$numcasilleros;$i++){?>
      		<th style="width:40px"><span title="<?php echo $casillas['NombreCasilla'.$i];?>, <?php echo $idioma['LimiteMinimo'].": ".$casillas['LimiteMinCasilla'.$i];?> <?php echo $idioma['Limite'].": ".$casillas['LimiteCasilla'.$i];?>" rel="<?php echo $casillas['LimiteCasilla'.$i];?>" rel-min="<?php echo $casillas['LimiteMinCasilla'.$i];?>" id="t<?php echo $i;?>"><?php echo sacarIniciales($casillas['NombreCasilla'.$i])?>-<?php echo $casillas['LimiteCasilla'.$i];?></span></th>
      <?php }?>
