@@ -49,6 +49,7 @@ function inicio(){
 		/*Fin Gestionar Tabla*/
 		$('span[title]').tooltip();
 		$('a[title]').tooltip({'placement':'bottom'});
+		$('input[title]').tooltip({'placement':'bottom'});
 		$('div[title]:not(.lateral)').tooltip({'placement':'bottom'});
 		$('div.lateral').tooltip({'placement':'right'});
 		$('a[data-rel="tooltip"]').tooltip();
