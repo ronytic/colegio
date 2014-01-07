@@ -32,11 +32,15 @@ if(!empty($_POST)){
 	$Sexo=$casillas['SexoAlumno'];
 	$numcasilleros=$casillas['Casilleros'];
 	$Dps=$casillas['Dps'];
-	$FormulaCalificaciones=$dcasillas['FormulaCalificaciones'];
+	$FormulaCalificaciones=$casillas['FormulaCalificaciones'];
 	
 	$RegistroNotaHabilitado=$config->mostrarConfig("RegistroNotaHabilitado",1);
 	$PeriodoNotaHabilitado=$config->mostrarConfig("PeriodoNotaHabilitado",1);
 	$PeriodoNotaHabilitadoBimestre=$config->mostrarConfig("PeriodoNotaHabilitadoBimestre",1);
+	
+	//Enviar en la sesion
+	$_SESSION['CodCasilleros']=$CodCasilleros;
+	$_SESSION['CodPeriodo']=$CodPeriodo;
 	
 	if($RegistroNotaHabilitado==1){
 		if($cur['Bimestre']){
@@ -64,8 +68,31 @@ if(!empty($_POST)){
     <span class="resaltar"><?php echo $idioma['NoExisteCasillerosRegistradosParaEste']?> <?php echo $idioma['Docente']?>, <?php echo $idioma['Curso']?>, <?php echo $idioma['Materia']?> <?php echo $idioma['Y']?> <?php echo $cur['Bimestre']?$idioma['Bimestre']:$idioma['Trimestre']?></span>
     <?php exit();}
 	?>
+    <div class="span6">
+    	<div class="box-header"><?php echo $idioma['DescargarNotas']?></div>
+        <div class="box-content">
+        	<div class="pequeno"><?php echo $idioma['DescargarNotasTexto']?></div>
+        	<a href="../notasexcel/exportar.php?d=docente&f=2007" target="_blank" class="btn btn-success btn-small" title="<?php echo $idioma['DescargarNotasTexto']?>"><?php echo $idioma['DescargarNotasFormatoExcel']?></a>
+        </div>
+    </div>
+    <div class="span6">
+    	<div class="box-header"><?php echo $idioma['SubirNotas']?></div>
+        <div class="box-content">
+        	<?php if($restringir==""){?>
+        	<div class="pequeno"><?php echo $idioma['ArchivoNotasLlenadoTexto']?></div>
+        	<form style="display:inline-block" class="" action="../notasexcel/subirnotas.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="direccion" value="docente">
+            <input type="file" name="archivoexcel" id="archivoexcel" title="<?php echo $idioma['ArchivoNotasLlenadoTexto']?>" class="btn btn-small">
+            <input type="submit" class="btn btn-success" value="<?php echo $idioma['SubirArchivo']?>">
+            </form>
+            <?php }else{
+			echo $idioma['RegistroNotasDesHabilitado'];	
+			}?>
+        </div>
+    </div>
+    
+    
     <input type="hidden" name="NotaAprobacion" value="<?php echo $cur['NotaAprobacion']?>"/>
-    <a id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
 	<table class="table table-bordered table-striped table-hover table-condensed">
     	<thead>
         <tr>
@@ -77,7 +104,7 @@ if(!empty($_POST)){
             <?php echo $idioma['NotaAprobacion']?>: <?php echo $cur['NotaAprobacion']?> 
             </th>
 		</tr>
-		<tr><th>Nº</th><th>Paterno</th><th>Materno</th><th>Nombres</th>
+		<tr><th>N</th><th><?php echo $idioma['Paterno']?></th><th><?php echo $idioma['Materno']?></th><th><?php echo $idioma['Nombres']?></th>
         	<?php for($i=1;$i<=$numcasilleros;$i++){?>
      		<th style="width:40px"><span title="<?php echo $casillas['NombreCasilla'.$i];?>, <?php echo $idioma['LimiteMinimo'].": ".$casillas['LimiteMinCasilla'.$i];?> <?php echo $idioma['Limite'].": ".$casillas['LimiteCasilla'.$i];?>" rel="<?php echo $casillas['LimiteCasilla'.$i];?>" rel-min="<?php echo $casillas['LimiteMinCasilla'.$i];?>" id="t<?php echo $i;?>"><?php echo sacarIniciales($casillas['NombreCasilla'.$i])?>-<?php echo $casillas['LimiteCasilla'.$i];?></span></th>
      <?php }?>

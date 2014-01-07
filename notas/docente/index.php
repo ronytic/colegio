@@ -5,6 +5,7 @@ include_once("../../class/curso.php");
 include_once("../../class/docente.php");
 include_once("../../class/docentemateriacurso.php");
 include_once("../../class/materias.php");
+include_once("../../class/casilleros.php");
 $titulo="NRegistroNotas";
 $folder="../../";
 $docente=new docente;
@@ -12,12 +13,19 @@ $curso=new curso;
 $docmateriacurso=new docentemateriacurso;
 $materias=new materias;
 $config=new config;
+$casilleros=new casilleros;
 $CodDocente=$_SESSION['CodUsuarioLog'];
 $_SESSION['CodDocente']=$CodDocente;
-$cnf=($config->mostrarConfig("TotalPeriodo"));
-$TotalPeriodo=$cnf['Valor'];
-$cnf=($config->mostrarConfig("TrimestreActual"));
-$trimestreActual=$cnf['Valor']
+$c=$_GET['c'];
+if($c!=""){
+	$cas=$casilleros->mostrar($c);
+	$cas=array_shift($cas);
+	$dmc=$docmateriacurso->mostrarCodDocenteMateriaCurso($cas['CodDocenteMateriaCurso']);
+	$dmc=array_shift($dmc);
+}
+
+$TotalPeriodo=$config->mostrarConfig("TotalPeriodo",1);
+$trimestreActual=$config->mostrarConfig("TrimestreActual",1);
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
 <script language="javascript" type="text/javascript" src="../../js/core/plugins/jquery.alphanumeric.pack.js"></script>
@@ -42,7 +50,7 @@ var NotaExcedidaMinimo="<?php echo $idioma['NotaExcedidaMinimo']?>";
                         $c=$curso->mostrarCurso($cur['CodCurso']);
                         $c=$c=array_shift($c);
                         ?>
-                        <option  value="<?php echo $c['CodCurso'];?>"><?php echo $c['Nombre'];?></option>
+                        <option  value="<?php echo $c['CodCurso'];?>" <?php echo $c['CodCurso']==$dmc['CodCurso']?'selected="selected"':''?>><?php echo $c['Nombre'];?></option>
                 <?php }?>
                 </select>
             </div>
@@ -56,7 +64,7 @@ var NotaExcedidaMinimo="<?php echo $idioma['NotaExcedidaMinimo']?>";
                         $m=$materias->mostrarMateria($docMat['CodMateria']);
                         $m=array_shift($m);
                         ?>
-                        <option value="<?php echo $m['CodMateria'];?>"><?php echo $m['Nombre'];?></option>
+                        <option value="<?php echo $m['CodMateria'];?>" <?php echo $c['CodMateria']==$dmc['CodMateria']?'selected="selected"':''?>><?php echo $m['Nombre'];?></option>
                 <?php }?>
                 </select>
             </div>
@@ -68,7 +76,7 @@ var NotaExcedidaMinimo="<?php echo $idioma['NotaExcedidaMinimo']?>";
                 <select name="Periodo" class="span12">
                 <?php
                 for($i=1;$i<=$TotalPeriodo;$i++){?>
-                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                    <option value="<?php echo $i;?>" <?php echo $i==$cas['Trimestre']?'selected="selected"':''?>><?php echo $i;?></option>
                 <?php }?>
                 </select>
             </div>
