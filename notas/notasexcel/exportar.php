@@ -11,6 +11,7 @@ include_once("../../class/registronotas.php");
 include_once("../../class/curso.php");
 include_once("../../class/docente.php");
 include_once("../../class/materias.php");
+include_once("../../class/registronotasexcel.php");
 $alumnos=new alumno;
 $docentemateriacurso=new docentemateriacurso;
 $casilleros=new casilleros;
@@ -19,6 +20,7 @@ $config=new config;
 $curso=new curso;
 $materias=new materias;
 $docente=new docente;
+$registronotasexcel=new registronotasexcel;
 
 
 $casillas=$casilleros->mostrar($CodCasilleros);
@@ -111,11 +113,23 @@ $NombreCurso=$cur['Nombre'];
 $NombreMateria=$mat['Nombre'];
 
 $tipoarchivo=$f;
+$direccion=$_GET['d'];
 $nombrearchivo="SAAC_".quitarSimbolos($materiaabreviado)."_".quitarSimbolos($cursoabreviado)."_".quitarSimbolos($periodoabreaviado)."_".$tipoarchivo;
+$valores=array("NombreArchivo"=>"'$nombrearchivo'",
+				"Codigo"=>"'".md5($codigocasilleros)."'",
+				"CodDocenteMateriaCurso"=>"'$codigodocentemateriacurso'",
+				"CodCasilleros"=>"'$codigocasilleros'",
+				"CodDocente"=>"'$codigodocente'",
+				"CodMateria"=>"'$codigomateria'",
+				"CodCurso"=>"'$codigocurso'",
+				"Direccion"=>"'$direccion'",
+				"Ubicacion"=>"'Descarga'",
+);
+$registronotasexcel->insertarRegistro($valores);
 /** Mostrar Errores */
-error_reporting(E_ALL);
+/*error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
+ini_set('display_startup_errors', TRUE);*/
 date_default_timezone_set('America/La_Paz');
 
 /** Incluir PHPExcel */
