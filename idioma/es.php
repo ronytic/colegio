@@ -1198,4 +1198,28 @@ $idioma['LlaveDosificacion']="Llave de Dosificación";
 $idioma['LlaveDosificacionT']="Llave Dosificación, otorgado por el Servicio de Impuestos Nacionales";
 $idioma['NumeroAutorizacion']="Número de Autorización";
 $idioma['FechaLimiteEmisionVencida']="La Fecha Límite de Emisión de Factura se encuentra Vencida";
+
+//Excel
+$idioma['TotalAlumnos']="Total de Alumnos";
+$idioma['Aprobados']="Aprobados";
+$idioma['Reprobados']="Reprobados";
+$idioma['FirmaSelloDocente']="Firma y Sello del Docente";
+$idioma['RegistroNotas']="Registro de Notas";
+$idioma['ErrorNotaTitulo']="Error de Introducción de Nota";
+$idioma['NotaEstarEntre']="La debe estar entre";
+$idioma['DescargarNotasFormatoExcel']="Descargar Registro de Notas Formato Excel 2007 o Superiores";
+$idioma['DescargarNotasTexto']="Descargue este ARCHIVO para Poder Registrar las Notas SIN CONEXIÓN A INTERNET.";
+$idioma['ArchivoNotasLlenado']="Subir Archivo Excel, registrado con las notas";
+$idioma['ArchivoNotasLlenadoTexto']="Seleccione el ARCHIVO excel, una vez concluido el registro de Notas";
+$idioma['DescargarNotas']="Descargar Archivo de Notas";
+$idioma['SubirNotas']="Subir Archivo de Notas";
+$idioma['SubirArchivo']="Subir Archivo";
+$idioma['RegistroNotasDesHabilitado']="Registro de Notas Deshabilitado";
+$idioma['ConfirmacionSubida']="Confirmación Subida de Archivo";
+$idioma['NombreArchivo']="Nombre del Archivo";
+$idioma['SeguroRegistrarNotas']="¿Esta Seguro de Registrar este Archivo de  Notas?";
+$idioma['SiEstoySeguro']="Sí, estoy Seguro(a)";
+$idioma['NoEstoySeguro']="No, Quiero Subir otro Archivo";
+$idioma['VolverSeleccionarArchivo']="Volver y Seleccionar otro Archivo";
+$idioma['RegistroNotasDesHabilitadoArchivo']="Puede ser debido a que seleccionó un archivo incorrecto o pertenece a otro periodo o el Administrador del Sistema Deshabilito el Registro de Notas, Verifique y vuelva Intentarlo";
 ?>
