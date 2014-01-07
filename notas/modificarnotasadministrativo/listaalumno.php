@@ -34,10 +34,13 @@ if(!empty($_POST)){
 	$Dps=$casillas['Dps'];
 	$FormulaCalificaciones=$casillas['FormulaCalificaciones'];
 	
-	$cnf=$config->mostrarConfig("RegistroNotaHabilitado");
-	$RegistroNotaHabilitado=$cnf["Valor"];
-	$cnf=$config->mostrarConfig("PeriodoNotaHabilitado");
-	$PeriodoNotaHabilitado=$cnf["Valor"];
+	$RegistroNotaHabilitado=$config->mostrarConfig("RegistroNotaHabilitado",1);
+	$PeriodoNotaHabilitado=$config->mostrarConfig("PeriodoNotaHabilitado",1);
+
+	//Enviar en la sesion
+	$_SESSION['CodCasilleros']=$CodCasilleros;
+	$_SESSION['CodPeriodo']=$CodPeriodo;
+	
 	if($RegistroNotaHabilitado==1){
 		if($CodPeriodo!=$PeriodoNotaHabilitado){
 			//$restringir='readonly="readonly" disabled="disabled"';
@@ -53,6 +56,28 @@ if(!empty($_POST)){
     <span class="resaltar"><?php echo $idioma['NoExisteCasillerosRegistradosParaEste']?> <?php echo $idioma['Docente']?>, <?php echo $idioma['Curso']?>, <?php echo $idioma['Materia']?> <?php echo $idioma['Y']?> <?php echo $cur['Bimestre']?$idioma['Bimestre']:$idioma['Trimestre']?></span>
     <?php exit();}
 	?>
+    <div class="span6">
+    	<div class="box-header"><?php echo $idioma['DescargarNotas']?></div>
+        <div class="box-content">
+        	<div class="pequeno"><?php echo $idioma['DescargarNotasTexto']?></div>
+        	<a href="../notasexcel/exportar.php?d=modificarnotasadministrativo&f=2007" target="_blank" class="btn btn-success btn-small" title="<?php echo $idioma['DescargarNotasTexto']?>"><?php echo $idioma['DescargarNotasFormatoExcel']?></a>
+        </div>
+    </div>
+    <div class="span6">
+    	<div class="box-header"><?php echo $idioma['SubirNotas']?></div>
+        <div class="box-content">
+        	<?php if($restringir==""){?>
+        	<div class="pequeno"><?php echo $idioma['ArchivoNotasLlenadoTexto']?></div>
+        	<form style="display:inline-block" class="" action="../notasexcel/subirnotas.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="direccion" value="modificarnotasadministrativo">
+            <input type="file" name="archivoexcel" id="archivoexcel" title="<?php echo $idioma['ArchivoNotasLlenadoTexto']?>" class="btn btn-small">
+            <input type="submit" class="btn btn-success" value="<?php echo $idioma['SubirArchivo']?>">
+            </form>
+            <?php }else{
+			echo $idioma['RegistroNotasDesHabilitado'];	
+			}?>
+        </div>
+    </div>
     <input type="hidden" name="NotaAprobacion" value="<?php echo $cur['NotaAprobacion']?>"/>
     <a id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
 	<table class="table table-bordered table-striped table-hover table-condensed">
