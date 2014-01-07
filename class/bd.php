@@ -209,16 +209,16 @@ class bd{
 			$CodUsuario=$_SESSION['CodUsuarioLog'];
 			$Nivel=$_SESSION['Nivel'];
 			
-			if($Values['Nivel']==""){
+			if(!isset($Values['Nivel'])&& empty($Values['Nivel'])){
 				$Values['Nivel']="$Nivel";
 			}
-			if($Values['FechaRegistro']==""){
+			if(!isset($Values['FechaRegistro'])&& empty($Values['FechaRegistro'])){
 				$Values['FechaRegistro']="'$fecha'";
 			}
-			if($Values['HoraRegistro']==""){
+			if(!isset($Values['HoraRegistro'])&& empty($Values['HoraRegistro'])){
 				$Values['HoraRegistro']="'$hora'";
 			}
-			if($Values['CodUsuario']==""){
+			if(!isset($Values['CodUsuario'])&& empty($Values['CodUsuario'])){
 				$Values['CodUsuario']="$CodUsuario";
 			}
 			$Values['Activo']=1;
