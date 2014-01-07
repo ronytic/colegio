@@ -79,7 +79,6 @@ if(!empty($_POST)){
         </div>
     </div>
     <input type="hidden" name="NotaAprobacion" value="<?php echo $cur['NotaAprobacion']?>"/>
-    <a id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
 	<table class="table table-bordered table-striped table-hover table-condensed">
     	<thead>
         <tr>
