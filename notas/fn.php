@@ -1,5 +1,5 @@
 <?php
-include_once("../../login/check.php");
+include_once(dirname(__FILE__).DIRECTORY_SEPARATOR."../login/check.php");
 class funciones{
 	function polaco($formula,$valoresNotas){
 		$patron=" ".$formula;
@@ -84,17 +84,25 @@ class funciones{
 		return $resul;
 	}
 	function dpsnota($nota){
-		if($nota<=35){
+		include_once(dirname(__FILE__).DIRECTORY_SEPARATOR."../class/config.php");
+		$config=new config;
+		$RangoNotaDps1=$config->mostrarConfig("RangoNotaDps1",1);
+		$RangoNotaDps2=$config->mostrarConfig("RangoNotaDps2",1);
+		$RangoNotaDps3=$config->mostrarConfig("RangoNotaDps3",1);
+		$RangoNotaDps4=$config->mostrarConfig("RangoNotaDps4",1);
+		$RangoNotaDps5=$config->mostrarConfig("RangoNotaDps5",1);
+		$RangoNotaDps6=$config->mostrarConfig("RangoNotaDps6",1);
+		if($nota<=$RangoNotaDps1){
 			$dps=5;
-		}elseif($nota<=39){
+		}elseif($nota<=$RangoNotaDps2){
 			$dps=6;
-		}elseif($nota<=45){
+		}elseif($nota<=$RangoNotaDps3){
 			$dps=7;
-		}elseif($nota<=49){
+		}elseif($nota<=$RangoNotaDps4){
 			$dps=8;
-		}elseif($nota<=55){
+		}elseif($nota<=$RangoNotaDps5){
 			$dps=9;
-		}elseif($nota<=60){
+		}elseif($nota<=$RangoNotaDps6){
 			$dps=10;
 		}
 		return $dps;
