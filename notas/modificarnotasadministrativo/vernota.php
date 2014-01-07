@@ -16,6 +16,8 @@ $config=new config;
 $casilleros=new casilleros;
 $CodDocente=$_SESSION['CodDocente'];
 $c=$_GET['c'];
+$doc=$docente->mostrarDocente($CodDocente);
+$doc=array_shift($doc);
 if($c!=""){
 	$cas=$casilleros->mostrar($c);
 	$cas=array_shift($cas);
@@ -38,7 +40,7 @@ var NotaExcedidaMinimo="<?php echo $idioma['NotaExcedidaMinimo']?>";
 </script>
 <?php include_once($folder."cabecera.php");?>
 <div class="span12 box">
-<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma['Configuracion']?></h2></div>
+<div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span><?php echo $idioma['Configuracion']?> - <?php echo capitalizar($doc['Paterno']." ".$doc['Materno']." ".$doc['Nombres'])?></h2></div>
 <div class="box-content">
     <div class="row-fluid">
         <div class="span3">
