@@ -107,5 +107,9 @@ print_r($notas);
 echo "</pre>";*/
 
 $registronotasexcel->actualizarRegistro(array("Correcto"=>"1"),"CodRegistroNotasExcel=".$CodigoRegistro);
-header("Location:../".$rne['Direccion']."/?c=".$codigocasilleros);
+if($rne['Direccion']=="modificarnotasadministrativo"){
+	header("Location:../".$rne['Direccion']."/vernota.php?c=".$codigocasilleros);
+}else{
+	header("Location:../".$rne['Direccion']."/?c=".$codigocasilleros);	
+}
 ?>

@@ -139,6 +139,9 @@ if($archivoexcel!=""){
 		$restringir=1;	
 	}
 	
+	if($direccion=="modificarnotasadministrativo"){
+		$restringir=0;	
+	}
 	include_once($folder."cabecerahtml.php");
 		
 	include_once($folder."cabecera.php");

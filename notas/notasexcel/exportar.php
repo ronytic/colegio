@@ -3,6 +3,7 @@ include_once("../../login/check.php");
 $CodPeriodo=$_SESSION['CodPeriodo'];
 $CodCasilleros=$_SESSION['CodCasilleros'];
 $f=$_GET['f'];
+$direccion=$_GET['d'];
 include_once("../../class/config.php");
 include_once("../../class/alumno.php");
 include_once("../../class/casilleros.php");
@@ -78,6 +79,9 @@ if($RegistroNotaHabilitado==1){
 }else{
 	$restringir=1;	
 }
+if($direccion=="modificarnotasadministrativo"){
+	$restringir=0;	
+}
 $a=$alumnos->mostrarAlumnosCurso($CodCurso,$Sexo);
 
 /*
@@ -113,7 +117,7 @@ $NombreCurso=$cur['Nombre'];
 $NombreMateria=$mat['Nombre'];
 
 $tipoarchivo=$f;
-$direccion=$_GET['d'];
+
 $nombrearchivo="SAAC_".quitarSimbolos($materiaabreviado)."_".quitarSimbolos($cursoabreviado)."_".quitarSimbolos($periodoabreaviado)."_".$tipoarchivo;
 $valores=array("NombreArchivo"=>"'$nombrearchivo'",
 				"Codigo"=>"'".md5($codigocasilleros)."'",
