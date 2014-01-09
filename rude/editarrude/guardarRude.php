@@ -3,14 +3,13 @@ include_once("../../login/check.php");
 if(!empty($_POST)){
 	include_once("../../class/rude.php");
 	include_once("../../class/alumno.php");
-	include_once("../../class/documento.php");
 	include_once("../funciones.php");
-	$alumno=new alumno;
+	include_once("../../class/documento.php");
 	$rude=new rude;
+	$alumno=new alumno;
 	$doc=new documento;
-	$CodAlumno=$_POST['CodAlumno'];
 	$fechaReg=date("Y-m-d H:i:s");
-	$values=array(
+	$values=array("CodRude"=>"NULL",
 		"CodAlumno"=>$_POST['CodAlumno'],
 		"PaisN"=>"'".mb_strtolower($_POST['paisNacA'],"UTF-8")."'",
 		"ProvinciaN"=>"'".mb_strtolower($_POST['provinciaNacA'],"UTF-8")."'",
@@ -47,14 +46,15 @@ if(!empty($_POST)){
 		"ParentescoP"=>"'{$_POST['parentescoP']}'",
 		"InstruccionM"=>"'{$_POST['instruccionM']}'",
 		"IdiomaM"=>"'{$_POST['idiomaM']}'",
-		"Lugar"=>"'EL ALTO'"
+		"Lugar"=>"'EL ALTO'",
+		"FechaReg"=>"'$fechaReg'"
 	);
 	$usuarioPadre=usuarioPadre($_POST['CedulaPadre'],$_POST['CedulaMadre']);
 	$valuesAlumno=array("Paterno"=>"'".mb_strtolower($_POST['paterno'],"UTF-8")."'",
 						"Materno"=>"'".mb_strtolower($_POST['materno'],"UTF-8")."'",
 						"Nombres"=>"'".mb_strtolower($_POST['nombres'],"UTF-8")."'",
 						"LugarNac"=>"'".mb_strtolower($_POST['departamentoNacA'],"UTF-8")."'",
-						"FechaNac"=>"'".fecha2Str($_POST['fechaNac'],0)."'",
+						"FechaNac"=>"'{$_POST['fechaNac']}'",
 						"Ci"=>"'{$_POST['numeroDoc']}'",
 						"Sexo"=>$_POST['sexo'],
 						"Zona"=>"'".mb_strtolower($_POST['zonaA'],"UTF-8")."'",
@@ -78,9 +78,10 @@ if(!empty($_POST)){
 						"CelularM"=>"'".mb_strtolower($_POST['telefonoM'],"UTF-8")."'",
 						"UsuarioPadre"=>"'$usuarioPadre'"
 						);
-	$rude->actualizarDatosAlumno($values,$CodAlumno);
-	$alumno->actualizarDatosAlumno($valuesAlumno,$CodAlumno);
-	
+	//print_r($valuesAlumno);
+	$alumno->actualizarAlumno($valuesAlumno,$_POST['CodAlumno']);
+	$rude->insertarAlumno($values);
+
 	/*DOCUMENTOS*/
 	$CertificadoNac=$_POST['CertificadoNac'];if($CertificadoNac=="on")$CertificadoNac=1;else $CertificadoNac=0;
 	$LibretaEsc=$_POST['LibretaEsc'];if($LibretaEsc=="on")$LibretaEsc=1;else $LibretaEsc=0;
@@ -97,8 +98,8 @@ if(!empty($_POST)){
 					'CedulaIdM'=>$CedulaIdM,
 					'Observaciones'=>"LOWER('$ObservacionesDoc')"
 					);
-	$doc->actualizarDocumento($valuesDoc,$CodAlumno);
+	$doc->actualizarDocumento($valuesDoc,$_POST['CodAlumno']);
 	/*FIN DOCUMENTOS*/
-	header("Location:../../impresion/rude/verrude.php?CodAlumno={$_POST['CodAlumno']}");
+	header("Location:../../rude/verrude/?CodAlumno={$_POST['CodAlumno']}");
 }
 ?>
