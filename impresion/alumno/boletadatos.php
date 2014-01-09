@@ -3,8 +3,7 @@ include_once("../../login/check.php");
 if(!empty($_GET)){
 	$CodAlumno=$_GET['CodAlumno'];
 	
-	//mysql_query("UPDATE `csb2012`.`alumno` SET `CiPadre` = (SELECT CedulaPadre FROM Rude WHERE CodAlumno=$CodAlumno),Zona = (SELECT ZonaE FROM Rude WHERE CodAlumno=$CodAlumno),Calle = (SELECT AvenidaE FROM Rude WHERE CodAlumno=$CodAlumno),Numero = (SELECT NumeroE FROM Rude WHERE CodAlumno=$CodAlumno) WHERE `alumno`.`CodAlumno` = $CodAlumno LIMIT 1;");
-	//
+	include_once("../pdf.php");
 	include_once("../../class/alumno.php");
 	include_once("../../class/curso.php");
 	include_once("../../class/config.php");
@@ -15,68 +14,93 @@ if(!empty($_GET)){
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
-	$c=$config->mostrarConfig("Logo");
-	$Logo=$c['Valor'];
-	$cnf=$config->mostrarConfig("Titulo");
-	$Titulo=$cnf['Valor'];
-	$cnf=$config->mostrarConfig("UrlInternet");
-	$UrlInternet=$cnf['Valor'];
+	
+	$Logo=$config->mostrarConfig("Logo",1);
+	$Titulo=$config->mostrarConfig("Titulo",1);
+	$UrlInternet=$config->mostrarConfig("UrlInternet",1);
 	$UrlInternet=str_replace(array("http://","https://"),"",$UrlInternet);
-	$cnf=$config->mostrarConfig("Lema");
-	$Lema=$cnf['Valor'];
-include_once("../fpdf/fpdf.php");
-function escribir($w=210,$h=10,$t="",$s=12,$tipo="",$align="",$u=1){
-	global $pdf;	
-	$pdf->SetFont("Arial",$tipo,$s);
-	if($u)
-		$pdf->Cell($w,$h,ucfirst(utf8_decode($t)),0,0,$align);
-	else
-		$pdf->Cell($w,$h,utf8_decode($t),0,0,$align);
-}
-class PDF extends FPDF{
-	function Footer(){
-		global $Lema;
-		$this->SetY(-10);
-		$this->SetFont('Arial',"I",9);
-		$this->Cell(196,4,utf8_decode($Lema),0,0,"C");	
-	}	
-}
-$pdf=new PDF("L","mm",array(216, 140));
+	$Lema=$config->mostrarConfig("Lema",1);
+	$titulo=$idioma["DatosAlumno"];
+	function escribir($w=210,$h=10,$t="",$s=12,$tipo="",$align="",$u=1){
+		global $pdf;	
+		$pdf->SetFont("Arial",$tipo,$s);
+		if($u)
+			$pdf->Cell($w,$h,ucfirst(utf8_decode($t)),0,0,$align);
+		else
+			$pdf->Cell($w,$h,utf8_decode($t),0,0,$align);
+	}
+	class PDF extends PPDF{
+	
+	}
+$pdf=new PDF("P","mm",array(216, 140));
 $pdf->AddPage();
 $pdf->SetAutoPageBreak(true,0);
-if(file_exists("../../imagenes/logos/".$Logo)|| empty($Logo)){
-	$pdf->Image("../../imagenes/logos/".$Logo,185,15,15,15);
-}
-$pdf->Cell(196,120,"",1);
-$pdf->SetXY(10,10);
-$h=10;
-escribir(190,10,$Titulo,12,"UB","C");
-$pdf->Ln();
-escribir(190,10,$idioma["DatosAlumno"],12,"UB","L");
-$pdf->Ln();
-escribir(50,$h,$idioma['NombreAlumno'].":",12,"B","");escribir(30,$h,capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']),12,"","");
+
+//$pdf->Cell(196,80,"",1);
+
+$pdf->CuadroCuerpoPersonalizado(100,$idioma["DatosPersonales"],1,"",0,"B");
+$pdf->CuadroCuerpoPersonalizado(80,$idioma["NumerosContacto"],1,"",0,"B");
 $pdf->ln();
-escribir(50,$h,$idioma['Ci'].":",12,"B","");escribir(30,$h,$al['Ci']." ",12,"","");
-$pdf->ln();
-escribir(50,$h,$idioma["FechaNacimiento"].":",12,"B","");escribir(30,$h,date("d-m-Y",strtotime($al['FechaNac'])),12,"","");
-$pdf->ln();
-escribir(50,$h,$idioma['Curso'].":",12,"B","");escribir(30,$h,$cur['Nombre'],12,"","");
-$pdf->ln();
-escribir(50,$h,$idioma['Direccion'].":",12,"B","");escribir(30,$h,$al['Zona'].", ".$al['Calle']." Nº ".$al['Numero'],12,"","");
-$pdf->ln();
-$pdf->cell(196,0,"",1);
-$pdf->ln();
-escribir(100,10,$idioma["DatosAccesoParaSistema"],12,"UB","L");escribir(40,$h,$idioma['PaginaColegio'].": ".$UrlInternet,10,"","",0);
-$pdf->ln();
-escribir(80,$h,$idioma["UsuarioPadreFamilia"].":",12,"B","");escribir(30,$h,$al['UsuarioPadre'],12,"","");
-$pdf->ln();
-escribir(80,$h,$idioma["ContrasenaPadreFamilia"].":",12,"B","");escribir(30,$h,$al['PasswordP'],12,"","");
+$pdf->CuadroCuerpoPersonalizado(40,$idioma["Paterno"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['Paterno']));
+
+$pdf->CuadroCuerpoPersonalizado(50,$idioma["TelefonoCasa"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['TelefonoCasa']),0,"",$borde);
 
 $pdf->ln();
-escribir(80,$h,$idioma["UsuarioAlumno"].":",12,"B","");escribir(30,$h,$al['UsuarioAlumno'],12,"","",0);
+$pdf->CuadroCuerpoPersonalizado(40,$idioma["Materno"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['Materno']));
+
+$pdf->CuadroCuerpoPersonalizado(50,$idioma["CelularPadre"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['CelularP']),0,"",$borde);
+
 $pdf->ln();
-escribir(80,$h,$idioma["ContrasenaAlumno"].":",12,"B","");escribir(30,$h,$al['Password'],12,"","");
-//$pdf->Image("../../code/barcode.php?code=123",100,100);
+$pdf->CuadroCuerpoPersonalizado(40,$idioma["Nombre"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['Nombres']));
+
+$pdf->CuadroCuerpoPersonalizado(50,$idioma["CelularMadre"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['CelularM']),0,"",$borde);
+
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(40,$idioma["Sexo"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,$al['Sexo']?$idioma['Masculino']:$idioma['Femenino'],0,"",$borde);
+
+$pdf->CuadroCuerpoPersonalizado(50,$idioma["ActivarSMS"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['ActivarSMS']?$idioma['Activado']:$idioma['Desactivado']),0,"",$borde);
+
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(40,$idioma["FechaNacimiento"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar(fecha2Str($al['FechaNac'])),0,"",$borde);
+
+$pdf->CuadroCuerpoPersonalizado(50,$idioma["CelularSMS"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['CelularSMS']),0,"",$borde);
+
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(40,$idioma["CedulaIdentidad"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['Ci']),0,"",$borde);
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(40,$idioma["Curso"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,$cur['Nombre']);
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(40,$idioma["Direccion"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($al['Zona'].", ".$al['Calle']." Nº ".$al['Numero']),0);
+$pdf->ln();
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(100,$idioma["DatosAccessoInternet"],1,"",0,"B");
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(60,$idioma["UsuarioPadreFamilia"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(40,capitalizar($al['UsuarioPadre']),0,"",$borde);
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(60,$idioma["ContrasenaPadreFamilia"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(40,capitalizar($al['PasswordP']),0,"",$borde);
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(60,$idioma["UsuarioAlumno"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(40,minuscula($al['UsuarioAlumno']),0,"",$borde);
+$pdf->ln();
+$pdf->CuadroCuerpoPersonalizado(60,$idioma["ContrasenaAlumno"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(40,capitalizar($al['Password']),0,"",$borde);
+$pdf->ln();
+
 $pdf->Output("Datos del Alumno.pdf","I");
 }
 ?>
