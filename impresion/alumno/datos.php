@@ -176,7 +176,7 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	$pdf->CuadroCuerpoPersonalizado(50,$idioma["CiMadre"].": ",0,"L",$borde,"B");
 	$pdf->CuadroCuerpo(100,capitalizar($doc['CedulaIdM']?$idioma['Si']:$idioma['No']),0,"",$borde);
 	$pdf->ln();
-	$pdf->CuadroCuerpoPersonalizado(50,$idioma["ObservacionesDocumentos"].": ",0,"L",$borde,"B");
+	$pdf->CuadroCuerpoPersonalizado(60,$idioma["ObservacionesDocumentos"].": ",0,"L",$borde,"B");
 	$pdf->CuadroCuerpoMulti(100,capitalizar($doc['Observaciones']),0,"",$borde);
 	$pdf->ln();
 	
