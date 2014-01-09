@@ -398,6 +398,15 @@ include_once($folder."cabecerahtml.php");
                 </select>
                 </td>
             </tr>
+            <tr>
+            	<td width="50%"><?php echo $idioma['TurnoUnidad']?></div></td>
+                <td><select name="TurnoUnidad">
+                	<option value="Manana" <?php echo dato('TurnoUnidad')=="Manana"?'selected="selected"':''?>><?php echo $idioma['Manana']?></option>
+                    <option value="Tarde" <?php echo dato('TurnoUnidad')=="Tarde"?'selected="selected"':''?>><?php echo $idioma['Tarde']?></option>
+                    <option value="Noche" <?php echo dato('TurnoUnidad')=="Noche"?'selected="selected"':''?>><?php echo $idioma['Noche']?></option>
+                </select>
+                </td>
+            </tr>
         	<tr>
             	<td width="50%"><?php echo $idioma['TituloSistemaA']?><div class="pequeno"><?php echo $idioma['TituloSistemaE']?></div></td>
                 <td><input type="text" class="span12" name="Titulo" value="<?php echo (dato("Titulo"))?>"></td>
