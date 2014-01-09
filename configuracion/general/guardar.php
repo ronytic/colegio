@@ -4,6 +4,8 @@ if(!empty($_POST)){
 	include_once("../../class/config.php");
 	$config=new config;
 	foreach($_POST as $pk=>$pv){
+		//echo $pk."=>".$pv;
+		//echo "<br>";
 		//echo $pk." - ".fecha2Str($pv,1)."<br>";
 		if(ereg('Fecha|InicioTrimestre|FinTrimestre|InicioBimestre|FinBimestre',$pk)){
 			$valor=array("Valor"=>"'".fecha2Str($pv,0)."'");

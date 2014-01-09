@@ -469,7 +469,7 @@ include_once($folder."cabecerahtml.php");
             </tr>
             <tr>
             	<td><?php echo $idioma['Telefono']?></td>
-                <td><input type="text" class="span12" name="CodBarra" value="<?php echo (dato("Telefono"))?>"></td>
+                <td><input type="text" class="span12" name="Telefono" value="<?php echo (dato("Telefono"))?>"></td>
             </tr>
             <tr>
             	<td><?php echo $idioma['TipoUnidadLogin']?><br>Ej: <small><?php echo $idioma['EjemploTipoUnidadLogin']?></small></td>
@@ -495,11 +495,11 @@ include_once($folder."cabecerahtml.php");
             </tr>
             <tr>
             	<td><?php echo $idioma['FechaLimiteEmision']?></td>
-                <td><input type="text" class="span12" name="Sigla" value="<?php echo (dato("FechaLimiteEmision"))?>"></td>
+                <td><input type="text" class="span12 fecha" name="FechaLimiteEmision" value="<?php echo (fecha2Str(dato("FechaLimiteEmision")))?>"></td>
             </tr>
             <tr>
             	<td><?php echo $idioma['LlaveDosificacion']?><div class="pequeno"><?php echo $idioma['LlaveDosificacionT']?></div></td>
-                <td><input type="text" class="span12" name="Lema" value="<?php echo (dato("LlaveDosificacion"))?>"></td>
+                <td><input type="text" class="span12" name="LlaveDosificacion" value="<?php echo (dato("LlaveDosificacion"))?>"></td>
             </tr>
             
         	<tr>
