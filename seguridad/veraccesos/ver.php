@@ -29,6 +29,7 @@ exit();
 <table class="table">
 <?php
 foreach($logu as $lu){
+	
 	switch($lu['Nivel']){
 		case "1":{$Usuario=$idioma["Administrador"];
 					$ul=$usuario->mostrarDatos($lu['CodUsuario']);
@@ -95,7 +96,7 @@ foreach($logu as $lu){
 		}break;
 	}
 	//print_r($ul);
-	$F="../../".$Foto;
+	$F="".$Foto;
 	
 	if(!is_file($F)){
 		

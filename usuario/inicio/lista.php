@@ -85,8 +85,9 @@ foreach($logu as $lu){
 	}
 	//print_r($ul);
 	$F="../../".$Foto;
-	
-	if(!is_file($F)){
+	$existe= is_file($F);
+	$F="".$Foto;
+	if(!$existe){
 		
 		$F=$folder."imagenes/usuario/0.jpg";
 		//echo $F;
