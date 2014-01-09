@@ -22,7 +22,7 @@ include_once("fpdf/fpdf.php");
 			$this->SetLeftMargin(18);
 			$this->SetAutoPageBreak(true,15);
 			global $title,$gestion,$titulo,$logo,$idioma;
-			$fecha=strftime("%A, %d ".$idioma['De']." %B ".$idioma['Del']." %Y");
+			$fecha=capitalizar(strftime("%A, %d ")).$idioma['De'].capitalizar(strftime(" %B ")).$idioma['Del'].strftime(" %Y");
 			
 			$this->Image("../../imagenes/logos/".$logo,10,10,20,20);
 			$this->Fuente("",$tam);
