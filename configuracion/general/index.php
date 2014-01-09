@@ -389,6 +389,16 @@ include_once($folder."cabecerahtml.php");
     <div class="box-content">
     	<table class="table table-bordered table-hover">
         	<tr>
+            	<td width="50%"><?php echo $idioma['TipoUnidadEducativa']?></div></td>
+                <td><select name="TipoUnidadEducativa">
+                	<option value="Privada" <?php echo dato('TipoUnidadEducativa')=="Privada"?'selected="selected"':''?>><?php echo $idioma['Privada']?></option>
+                    <option value="Convenio" <?php echo dato('TipoUnidadEducativa')=="Convenio"?'selected="selected"':''?>><?php echo $idioma['Convenio']?></option>
+                    <option value="Comunitaria" <?php echo dato('TipoUnidadEducativa')=="Comunitaria"?'selected="selected"':''?>><?php echo $idioma['Comunitaria']?></option>
+                    <option value="Publica" <?php echo dato('TipoUnidadEducativa')=="Publica"?'selected="selected"':''?>><?php echo $idioma['Publica']?></option>
+                </select>
+                </td>
+            </tr>
+        	<tr>
             	<td width="50%"><?php echo $idioma['TituloSistemaA']?><div class="pequeno"><?php echo $idioma['TituloSistemaE']?></div></td>
                 <td><input type="text" class="span12" name="Titulo" value="<?php echo (dato("Titulo"))?>"></td>
             </tr>
