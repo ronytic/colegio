@@ -49,7 +49,7 @@ $pdf->SetXY(145,$y+28);
 $pdf->Cell(60,40,"",1);
 $pdf->SetXY(15,$y+69);
 $pdf->Cell(190,15,"",1);*/
-$Credito=1;
+$Credito=0;
 $pdf->SetXY(153,$y);
 celda(30,$idioma['NAutorizacion'].": ","B");
 celda(40,$NumeroAutorizacion,"");
