@@ -49,9 +49,13 @@ $(document).ready(function(e) {
 			}
 		},"json");
 			
-	});$("input[name=NFactura]").change();
+	});
+	//$("input[name=NFactura]").change();
 	$(document).on("change",".der",function(e){
 		var v=parseFloat($(this).val());
+		if(isNaN(v)){
+			v=0;
+		}
 		$(this).val(v.toFixed(2));
 		sumaInteres=0;
 		$(".Interes").each(function(index, element) {
@@ -74,23 +78,35 @@ $(document).ready(function(e) {
 		TotalT=parseFloat($(".TotalBs").val());
 		Cancelado=parseFloat($(".Cancelado").val());
 		MontoDevuelto=Cancelado-TotalT;
+		if(MontoDevuelto>=0 && Cancelado>0 && TotalT >0){
+			$("#Guardar").removeAttr("disabled");
+		}else{
+			$("#Guardar").attr("disabled","disabled");	
+		}
 		$(".MontoDevuelto").val(MontoDevuelto.toFixed(2));
 	});
 	$("#cerrar").click(function(e) {
 		e.preventDefault();
         $('.modal').modal('hide');
     });
+	
+	
 	$("#seleccionar").click(function(e) {
 		e.preventDefault();
 		switch(TipoBusqueda){
 			case "BusquedaNit":{
+				
 				$.post("sacarnit.php",{'CodAlumno':CodAlumno},function(data){
 					$("input[name=CodAlumno]").val(CodAlumno);
 					$("input[name=FacturaAlumno]").val(data.Alumno);
 					$("input[name=Nit]").val(data.Nit);
 					$("input[name=Factura]").val(data.FacturaA);
-	
+
 					$('.modal').modal('hide');
+					//alert(CodAlumno);
+					Registro=1
+					TipoBusqueda="Registro";
+					$("#seleccionar").click();
 				},"json");
 			}break;
 			case "Registro":{
@@ -135,4 +151,8 @@ $(document).ready(function(e) {
 			e.preventDefault();
 		}
 	});
+	if(CodAlumno!=""){//alert(CodAlumno);
+		TipoBusqueda="BusquedaNit";
+		$("#seleccionar").click();
+	}
 });

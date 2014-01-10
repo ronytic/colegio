@@ -21,6 +21,7 @@ include_once($folder."cabecerahtml.php");
 var MensajeEliminarRegistro="<?php echo $idioma['MensajeEliminarRegistro']?>";
 var EstaSeguroRegistrarFactura="<?php echo $idioma['EstaSeguroRegistrarFactura']?>";
 var NFacturaDuplicado="<?php echo $idioma['NFacturaDuplicado']?>";
+var CodAlumno="<?php echo $_GET['CodAlumno']?>";
 </script>
 <style type="text/css">
 	th{vertical-align:top !important;}
