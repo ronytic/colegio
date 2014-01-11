@@ -58,7 +58,7 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Curso']?></td>
-                <td><?php campo("Curso","select",$cursovalor,"span12",1,"",1,"",$al['CodCurso'])?></td>
+                <td><?php campo("Curso","select",$cursovalor,"span12",1,"",1,"",$al['CodCurso']+1)?></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Paterno']?></td>
@@ -75,7 +75,7 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             <tr>
                 <td class="der"><?php echo $idioma['Sexo']?></td>
                 <td><?php campo("Sexo","select",$sexovalor,"span8",1,"",0,"",$al['Sexo'])?></td></tr>
-            <tr>
+            <tr class="ocultar">
                 <td class="der"><?php echo $idioma['LugarNacimiento']?></td>
                 <td><?php campo("LugarNac","text",capitalizar($al["LugarNac"]),"span12",1,"La Paz",0,array("maxlength"=>30))?></td>
             </tr>
@@ -83,30 +83,30 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
                 <td class="der"><?php echo $idioma['FechaNacimiento']?></td>
                 <td><?php campo("FechaNac","text",fecha2Str($al["FechaNac"]),"span6",1,"",0,array("maxlength"=>10))?> (Ej:23-07-1990)</td>
             </tr>
-            <tr>
+            <tr class="ocultar">
                 <td class="der"><?php echo $idioma['CedulaIdentidad']?></td>
                 <td><?php campo("Ci","text",$al['Ci'],"span6",0,"",0,array("maxlength"=>12))?></td>
             </tr>
-            <tr>
+            <tr class="ocultar">
                 <td class="der"><?php echo $idioma['Zona']?></td>
                 <td><?php campo("Zona","text",capitalizar($al["Zona"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
-            <tr>
+            <tr class="ocultar">
                 <td class="der"><?php echo $idioma['Calle']?></td>
                 <td><?php campo("Calle","text",capitalizar($al["Calle"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
-            <tr>
+            <tr class="ocultar">
                 <td class="der"><?php echo $idioma['Numero']?></td>
                 <td><?php campo("Numero","text",capitalizar($al["Numero"]),"span12",0,"",0,array("maxlength"=>30))?></td></tr>
-            <tr>
+            <tr class="ocultar">
                 <td class="der"><?php echo $idioma['TelefonoCasa']?></td>
                 <td><?php campo("TelefonoCasa","text",capitalizar($al["TelefonoCasa"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
-            <tr>
+            <tr class="ocultar">
                 <td class="der"><?php echo $idioma['Celular']?></td>
                 <td><?php campo("Celular","text",capitalizar($al["Celular"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
-            <tr>
+            <tr class="ocultar">
                 <td class="der"><?php echo $idioma['Foto']?><br /><small><?php echo $idioma['ImagenRecomendada']?> <br /><?php echo $idioma['TipoArchivo']?> "jpg" <br /><?php echo $idioma['TamanoArchivo']?> 200x200</small></td>
                 <td><?php campo("Foto","File","","span12",0,"",0,array("accept"=>"image/*"))?><br /><img src="<?php echo $ima?>" class="img-polaroid" width="100"/></td>
             </tr>
@@ -159,10 +159,10 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
 	</div>
 </div>
  <div class="box span6">
- 	<div class="box-header">
+ 	<div class="box-header ocultar">
     	<?php echo $idioma['DatosPadreFamilia']?>
     </div>
-    <div class="box-content">
+    <div class="box-content ocultar">
         <table class="tabla table-hover">
             <tr>
                 <td class="der"><?php echo $idioma['ApellidosPadre']?></td>
