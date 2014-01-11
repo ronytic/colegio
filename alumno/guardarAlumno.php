@@ -183,6 +183,9 @@ if(!empty($_POST)){
 	$doc->guardarDocumento($valuesDoc);
 	
 	if(isset($CodAl)){$tmpalumno->actualizarVisor($CodAl);}
-	header("Location:../alumno/boletadatos/?CodAlumno=".$CodAlumno);
+	include_once("../class/tmpcola.php");
+	$tmpcola=new tmpcola;
+	$tmpcola->insertarRegistro(array("CodAlumno"=>$CodAlumno,"Estado"=>"'Espera'"));
+	header("Location:../factura/registro/?CodAlumno=".$CodAlumno);
 }
 ?>
