@@ -9,7 +9,7 @@ include_once($folder."cabecerahtml.php");
     <div class="span12 box">
         <div class="box-header"><h2><?php echo $idioma['Configuracion']?></h2></div>
         <div class="box-content">
-        	<form action="ver.php" method="post" class="formulario">
+        	<form action="ver.php" method="post">
         	<table class="table table-bordered">
             	<tr>
                     <td><?php echo $idioma['Fecha']?>:
@@ -22,7 +22,7 @@ include_once($folder."cabecerahtml.php");
                             <option value="Proceso"><?php echo $idioma['Proceso']?></option>
                         </select>
                     </td>
-            		<td><input type="submit" class="btn" value="<?php echo $idioma['Ver']?>" id="ver"></td>
+            		<td><input type="button" class="btn" value="<?php echo $idioma['Ver']?>" id="ver"></td>
                 </tr>
             </table>
             </form>
