@@ -33,7 +33,8 @@ if(!empty($_GET)){
 		$x=107;
 		$Curso=$alumno['Nombre'];
 	}
-	$pdf=new PDF("L","mm",array(101, 158));
+	//$pdf=new PDF("L","mm",array(101, 158));
+	$pdf=new PDF("L","mm",array(217,330));
 	$pdf->SetAutoPageBreak(true,0);  
 	$pdf->SetCreator("Ronald Nina");
 	$pdf->SetTitle("Tarjeta de Cuotas",1);
