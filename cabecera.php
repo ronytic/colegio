@@ -45,7 +45,7 @@ switch($Nivel){
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
-				<a class="brand" href="<?php echo $folder?>"> <img alt="<?php echo $Titulo?>" src="<?php echo $folder;?>imagenes/logos/<?php echo $LogoInicio;?>" width="50" height="50" style="width:50" class="logo"/> <span><?php echo $Titulo?></span></a>
+				<a class="brand" href="<?php echo $folder?>"> <img alt="<?php echo $Titulo?>" src="<?php echo $folder;?>imagenes/logos/<?php echo $LogoInicio;?>" width="50" height="50" style="width:50" class="logo"/> <span><?php echo $Titulo?> <span class="pequeno"><?php echo $Gestion?></span></span></a>
 								
 				<!-- Inicio: Cabecera de Menu -->
 				<div class="btn-group pull-right" >
@@ -71,6 +71,7 @@ switch($Nivel){
                         <li><a href="<?php echo $folder;?>usuario/configuracion/"><?php echo $idioma['Configuracion']?></a></li>
 						<li class="divider"></li>
                         <li><a href="<?php echo $folder;?>../csb2012/"><?php echo $idioma['Sistema']?> 2012</a></li>
+                        <li><a href="<?php echo $folder;?>../colegio2013/"><?php echo $idioma['Sistema']?> 2013</a></li>
                         <?php endif;?>
                         <li class="divider"></li>
 						<li><a href="<?php echo $folder;?>login/logout.php"><?php echo $idioma['SalirSistema']?></a></li>
