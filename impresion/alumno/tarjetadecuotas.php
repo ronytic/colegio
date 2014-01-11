@@ -42,12 +42,12 @@ if(!empty($_GET)){
 	$pdf->AddPage();
 	$pdf->SetFont('Times','B',13);
 	$pdf->SetXY(113,44);
-	$pdf->Cell(0,0,utf8_decode(ucwords($alumno['Paterno']." ".$alumno['Materno'])));
+	$pdf->Cell(0,0,utf8_decode(ucwords($alumno['Paterno']." ".$alumno['Materno'])),1);
 	$pdf->SetXY($x,50.5);
-	$pdf->Cell(0,0,utf8_decode(ucwords($nombre)));
+	$pdf->Cell(0,0,utf8_decode(ucwords($nombre)),1);
 	
 	$pdf->SetXY(103,58);
-	$pdf->Cell(0,0,utf8_decode(ucwords($Curso)));
+	$pdf->Cell(0,0,utf8_decode(ucwords($Curso)),1);
 	if(@$curs[2]!=""){
 		$curso2=$curs[1]."/";
 	}else{
@@ -59,11 +59,11 @@ if(!empty($_GET)){
 		@	$curso2.=$curs[2];
 	}
 	$pdf->SetXY(103,64);
-	$pdf->Cell(0,0,utf8_decode(ucwords($curso2)));
+	$pdf->Cell(0,0,utf8_decode(ucwords($curso2)),1);
 	
 	$pdf->SetXY(119,84.3);
 	$pdf->SetFont('Times','B',15);
-	$pdf->Cell(0,0,date("y"));
+	$pdf->Cell(0,0,date("y"),1);
 	
 	$pdf->Output();
 }
