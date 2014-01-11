@@ -27,12 +27,12 @@ include_once($folder."cabecerahtml.php");?>
 	<div class="box">
         <div class="box-header"><h2><?php echo $idioma['Curso']?></h2></div>
         <div class="box-content">
-        	<input type="search" placeholder="<?php echo $idioma['BuscarCursoPor']?>" id="icurso" class="span12"/>
+        	<!--<input type="search" placeholder="<?php echo $idioma['BuscarCursoPor']?>" id="icurso" class="span12"/>-->
             <select class="span12" id="selectcurso" data-placeholder="Seleccione un Curso">
             <?php
 			$i=0;
             foreach($curso->mostrar() as $cu){$i++;
-                ?><option value="<?php echo $cu['CodCurso'];?>" <?php echo $i==1 || $CodCurso==$cu['CodCurso']?'selected="selected"':'';?>><?php echo $cu['Nombre'];?></option><?php
+                ?><option value="<?php echo $cu['CodCurso'];?>" <?php echo $i==1 || $CodCurso==$cu['CodCurso']?'selected="selected"':'';?> rel="<?php echo $cu['caArea']?>"><?php echo eliminarEspaciosDobles($cu['Nombre']);?></option><?php
             }
             ?>
             </select>
@@ -41,6 +41,7 @@ include_once($folder."cabecerahtml.php");?>
     <div class="box">
         <div class="box-header"><h2><i class="icon-user"></i><span class="break"></span><?php echo $idioma['Alumnos']?></h2></div>
         <div class="box-content">
+        	<div id="cargandoralumnos"></div>
         	<input type="search" placeholder="<?php echo $idioma['BuscarAlumnoPor']?>" id="ialumno" class="span12"/>
             <select class="span12" id="selectalumno" data-placeholder="Seleccione un Alumno">
             	

@@ -28,6 +28,9 @@ if(!empty($_POST)){
 	$Numero=$_POST['Numero'];
 	$TelefonoCasa=$_POST['TelefonoCasa'];
 	$Celular=$_POST['Celular'];
+	$CelularSMS='';
+	$ActivarSMS=1;
+	
 	//
 	$Procedencia=$_POST['Procedencia'];
 	$Repitente=$_POST['Repitente'];
@@ -106,6 +109,8 @@ if(!empty($_POST)){
 				'Numero'=>"'$Numero'",
 				'TelefonoCasa'=>"'$TelefonoCasa'",
 				'Celular'=>"'$Celular'",
+				'CelularSMS'=>"'$CelularSMS'",
+				'ActivarSMS'=>"'$ActivarSMS'",
 				'Procedencia'=>"LOWER('$Procedencia')",
 				'Repitente'=>$Repitente,
 				'Traspaso'=>$Traspaso,
@@ -161,6 +166,6 @@ if(!empty($_POST)){
 	}
 	$al->actualizarDatosAlumno($valuesAl,$CodAlumno);
 	$doc->actualizarDocumento($valuesDoc,$CodAlumno);
-	header("Location:../alumno/datosalumno/?CodAlumno=$CodAlumno");
+	header("Location:../factura/registro/?CodAlumno=".$CodAlumno);
 }
 ?>

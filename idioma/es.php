@@ -439,6 +439,10 @@ $idioma['Documentos']="Documentos";
 $idioma['NoExistenRegistro']="No existen registros en espera";
 $idioma['Espera']="Espera";
 $idioma['Proceso']="Proceso";
+$idioma['RevisarRude']="Revisar Rude";
+$idioma['RevisarCelular']="Revisar Celular ";
+$idioma['RevisarCelularEnvioMensajes']="Revisar Celular para Envío de Mensajes";
+$idioma['ImprimirDatos']="Imprimir Datos";
 //Pdf
 $idioma['Pagina']="Página";
 $idioma['FechaActual']="Fecha Actual";

@@ -43,6 +43,8 @@ if(!empty($_POST)){
 	$Numero=$_POST['Numero'];
 	$TelefonoCasa=$_POST['TelefonoCasa'];
 	$Celular=$_POST['Celular'];
+	$CelularSMS=$_POST['CelularSMS'];
+	$ActivarSMS=$_POST['ActivarSMS'];
 	//
 	$Procedencia=$_POST['Procedencia'];
 	$Repitente=$_POST['Repitente'];
@@ -126,6 +128,8 @@ if(!empty($_POST)){
 				'Numero'=>"LOWER('$Numero')",
 				'TelefonoCasa'=>"'$TelefonoCasa'",
 				'Celular'=>"'$Celular'",
+				'CelularSMS'=>"'$CelularSMS'",
+				'ActivarSMS'=>"'$ActivarSMS'",
 				'Procedencia'=>"LOWER('$Procedencia')",
 				'Repitente'=>$Repitente,
 				'Traspaso'=>$Traspaso,
@@ -239,6 +243,9 @@ if(!empty($_POST)){
 	
 	
 	$tmpalumno->actualizarVisor($CodAlu);
-	header("Location:../alumno/boletadatos/?CodAlumno=".$CodAlumno);
+	include_once("../class/tmpcola.php");
+	$tmpcola=new tmpcola;
+	$tmpcola->insertarRegistro(array("CodAlumno"=>$CodAlumno,"Estado"=>"'Espera'"));
+	header("Location:../factura/registro/?CodAlumno=".$CodAlumno);
 }
 ?>

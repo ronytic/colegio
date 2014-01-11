@@ -35,7 +35,11 @@ if(count($tmp)){
             <td><?php echo capitalizar($cur['Nombre'])?></td>
             <td><?php echo capitalizar($t['HoraRegistro'])?></td>
             <td><span class="badge <?php echo $badge?>"><?php echo capitalizar($t['Estado'])?></span></td>
-            <td><a href="redirigir.php?CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank"><?php echo $idioma['Revisar']?></a></td>
+            <td>
+            	<a href="redirigir.php?Ruta=../editarrude&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank"><?php echo $idioma['RevisarRude']?></a>
+                <a href="redirigir.php?Ruta=../../sms/revisardatos&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['RevisarCelularEnvioMensajes']?>"><?php echo $idioma['RevisarCelular']?></a>
+                <a href="redirigir.php?Ruta=../../alumno/boletadatos&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['RevisarCelularEnvioMensajes']?>"><?php echo $idioma['ImprimirDatos']?></a>
+                </td>
         </tr>
         <?php
 	}
