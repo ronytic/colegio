@@ -443,6 +443,8 @@ $idioma['RevisarRude']="Revisar Rude";
 $idioma['RevisarCelular']="Revisar Celular ";
 $idioma['RevisarCelularEnvioMensajes']="Revisar Celular para Envío de Mensajes";
 $idioma['ImprimirDatos']="Imprimir Datos";
+$idioma['EnviarMensajeBienvenida']="Enviar Mensaje";
+$idioma['ReInscribir']="ReInscribir";
 //Pdf
 $idioma['Pagina']="Página";
 $idioma['FechaActual']="Fecha Actual";
