@@ -106,6 +106,14 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
                 <td class="der"><?php echo $idioma['Celular']?></td>
                 <td><?php campo("Celular","text",capitalizar($al["Celular"]),"span12",0,"",0,array("maxlength"=>30))?></td>
             </tr>
+            <tr class="">
+                <td class="der"><?php echo $idioma['CelularSMS']?></td>
+                <td><?php campo("CelularSMS","text",capitalizar($al["CelularSMS"]),"span12",0,"",0,array("maxlength"=>30))?></td>
+            </tr>
+            <tr class="">
+                <td class="der"><?php echo $idioma['ActivarEnvioSms']?></td>
+                <td><?php campo("ActivarSMS","select",array("0"=>$idioma['No'],"1"=>$idioma['Si']),"span12",0,"",0,array("maxlength"=>30),1)?></td>
+            </tr>
             <tr class="ocultar">
                 <td class="der"><?php echo $idioma['Foto']?><br /><small><?php echo $idioma['ImagenRecomendada']?> <br /><?php echo $idioma['TipoArchivo']?> "jpg" <br /><?php echo $idioma['TamanoArchivo']?> 200x200</small></td>
                 <td><?php campo("Foto","File","","span12",0,"",0,array("accept"=>"image/*"))?><br /><img src="<?php echo $ima?>" class="img-polaroid" width="100"/></td>
