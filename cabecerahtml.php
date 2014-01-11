@@ -59,6 +59,7 @@ $Titulo=$config->mostrarConfig("Titulo",1);
 $LogoInicio=$config->mostrarConfig("LogoInicio",1);
 $LogoIcono=$config->mostrarConfig("LogoIcono",1);
 $Sigla=$config->mostrarConfig("Sigla",1);
+$Gestion=$config->mostrarConfig("Gestion",1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
