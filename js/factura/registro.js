@@ -100,7 +100,7 @@ $(document).ready(function(e) {
 					$("input[name=CodAlumno]").val(CodAlumno);
 					$("input[name=FacturaAlumno]").val(data.Alumno);
 					$("input[name=Nit]").val(data.Nit);
-					$("input[name=Factura]").val(data.FacturaA);
+					$("input[name=NombreFactura]").val(data.FacturaA);
 
 					$('.modal').modal('hide');
 					//alert(CodAlumno);

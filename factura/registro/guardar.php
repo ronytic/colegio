@@ -36,7 +36,7 @@ if(!empty($_POST)){
 		"FacturaAlumno"=>"'".trim($FacturaAlumno)."'",
 		"CodAlumno"=>"'$CodAlumno'",
 		"Nit"=>"'".trim($Nit)."'",
-		"Factura"=>"'".trim($Factura)."'",
+		"Factura"=>"'".trim($NombreFactura)."'",
 		"TotalDescuento"=>"'$TotalDescuento'",
 		"TotalInteres"=>"'$TotalInteres'",
 		"TotalBs"=>"'$TotalBs'",
@@ -72,7 +72,7 @@ if(!empty($_POST)){
 			$facturadetalle->insertarRegistro($ValoresFacturaDetalle);
 			
 			/*Modificacion Cuota*/
-			/*$CodCuota=$fd['CodCuota'];	
+			$CodCuota=$fd['CodCuota'];	
 			$Valor=1;
 			$Factura=trim($NFactura);
 			$Observaciones="Facturado";

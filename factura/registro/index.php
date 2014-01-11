@@ -50,7 +50,7 @@ var CodAlumno="<?php echo $_GET['CodAlumno']?>";
                     <input type="text" id="" readonly name="FacturaAlumno">
                     <br><a class="btn btn-info btn-mini buscar" rel="BusquedaNit"><i class="icon-search icon-white"></i> <?php echo $idioma['Buscar']?></a></th>
                 	<th><?php echo $idioma['Nit']?>: <br><input type="text" class="" name="Nit" required></th>
-                    <th><?php echo $idioma['Senores']?>: <br><input type="text" class="" name="Factura" required></th>
+                    <th><?php echo $idioma['Senores']?>: <br><input type="text" class="" name="NombreFactura" required readonly="readonly"></th>
                     
                 </tr>
             </thead>

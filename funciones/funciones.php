@@ -469,4 +469,20 @@ function num2letras($num, $fem = false, $dec = true) {
    $end_num=ucfirst($tex).'  '.$decimal.'/100';
    return $end_num; 
 } 
+function cambiopalabra($numero){
+	switch($numero){
+		case "1":{$texto="Primera";}break;
+		case "2":{$texto="Segunda";}break;
+		case "3":{$texto="Tercera";}break;
+		case "4":{$texto="Cuarta";}break;
+		case "5":{$texto="Quinta";}break;
+		case "6":{$texto="Sexta";}break;
+		case "7":{$texto="Septima";}break;
+		case "8":{$texto="Octava";}break;
+		case "9":{$texto="Novena";}break;
+		case "10":{$texto="Decima";}break;
+
+	}	
+	return $texto;
+}
 ?>
