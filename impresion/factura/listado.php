@@ -70,7 +70,7 @@ if(count($fac)){
 	$pdf->CuadroCuerpo(20,number_format($can,2),1,"R",1);
 	$pdf->CuadroCuerpo(20,number_format($cambio,2),1,"R",1);
 }else{
-	echo "asd";	
+	$pdf->CuadroCuerpo(120,$idioma['NoExistenFacturasRegistradas'],0,"R",0);
 }
 $pdf->Output();
 

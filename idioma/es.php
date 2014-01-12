@@ -1276,6 +1276,7 @@ $idioma['LlaveDosificacion']="Llave de Dosificación";
 $idioma['LlaveDosificacionT']="Llave Dosificación, otorgado por el Servicio de Impuestos Nacionales";
 $idioma['NumeroAutorizacion']="Número de Autorización";
 $idioma['FechaLimiteEmisionVencida']="La Fecha Límite de Emisión de Factura se encuentra Vencida";
+$idioma['NoExistenFacturasRegistradas']="No Existen Facturas Registradas";
 
 //Excel
 $idioma['TotalAlumnos']="Total de Alumnos";
