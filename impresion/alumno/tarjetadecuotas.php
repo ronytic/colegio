@@ -4,6 +4,8 @@ class pdf extends FPDF{
 	
 }
 if(!empty($_GET)){
+	$aumento=60;
+	
 	include_once("../../class/alumno.php");
 	$al=new alumno;
 	$CodAlumno=$_GET['CodAlumno'];
@@ -41,12 +43,13 @@ if(!empty($_GET)){
 	$pdf->SetSubject("Sujeto");
 	$pdf->AddPage();
 	$pdf->SetFont('Times','B',13);
-	$pdf->SetXY(113,44);
+	
+	$pdf->SetXY(113,44+$aumento);
 	$pdf->Cell(0,0,utf8_decode(ucwords($alumno['Paterno']." ".$alumno['Materno'])),1);
-	$pdf->SetXY($x,50.5);
+	$pdf->SetXY($x,50.5+$aumento);
 	$pdf->Cell(0,0,utf8_decode(ucwords($nombre)),1);
 	
-	$pdf->SetXY(103,58);
+	$pdf->SetXY(103,58+$aumento);
 	$pdf->Cell(0,0,utf8_decode(ucwords($Curso)),1);
 	if(@$curs[2]!=""){
 		$curso2=$curs[1]."/";
@@ -58,10 +61,10 @@ if(!empty($_GET)){
 	}else{
 		@	$curso2.=$curs[2];
 	}
-	$pdf->SetXY(103,64);
+	$pdf->SetXY(103,64+$aumento);
 	$pdf->Cell(0,0,utf8_decode(ucwords($curso2)),1);
 	
-	$pdf->SetXY(119,84.3);
+	$pdf->SetXY(119,84.3+$aumento);
 	$pdf->SetFont('Times','B',15);
 	$pdf->Cell(0,0,date("y"),1);
 	
