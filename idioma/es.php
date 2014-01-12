@@ -444,6 +444,8 @@ $idioma['RevisarCelular']="Revisar Celular ";
 $idioma['RevisarCelularEnvioMensajes']="Revisar Celular para Envío de Mensajes";
 $idioma['ImprimirDatos']="Imprimir Datos";
 $idioma['EnviarMensajeBienvenida']="Enviar Mensaje";
+$idioma['NumeroServicioMensajeria']="Número de Servicio de Mensajería";
+$idioma['DireccionPaginaWeb']="Dirección de la Página Web";
 $idioma['ReInscribir']="ReInscribir";
 //Pdf
 $idioma['Pagina']="Página";

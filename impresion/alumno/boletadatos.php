@@ -18,7 +18,10 @@ if(!empty($_GET)){
 	$Logo=$config->mostrarConfig("Logo",1);
 	$Titulo=$config->mostrarConfig("Titulo",1);
 	$UrlInternet=$config->mostrarConfig("UrlInternet",1);
-	$UrlInternet=str_replace(array("http://","https://"),"",$UrlInternet);
+	$NumeroServicioMensajeria=$config->mostrarConfig("NumeroServicioMensajeria",1);
+	
+	$UrlInternet=str_replace(array("http://","https://","/"),"",$UrlInternet);
+	
 	$Lema=$config->mostrarConfig("Lema",1);
 	$titulo=$idioma["DatosAlumno"];
 	function escribir($w=210,$h=10,$t="",$s=12,$tipo="",$align="",$u=1){
@@ -78,24 +81,37 @@ $pdf->CuadroCuerpo(60,capitalizar($al['CelularSMS']),0,"",$borde);
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["CedulaIdentidad"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(60,capitalizar($al['Ci']),0,"",$borde);
+
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["Curso"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(60,$cur['Nombre']);
+
+$pdf->CuadroCuerpoPersonalizado(50,$idioma["NumeroServicioMensajeria"].": ",0,"L",$borde,"B");
+
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["Direccion"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(60,capitalizar($al['Zona'].", ".$al['Calle']." Nº ".$al['Numero']),0);
+
+$pdf->CuadroCuerpo(60,capitalizar($NumeroServicioMensajeria),0,"",$borde,14);
 $pdf->ln();
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(100,$idioma["DatosAccessoInternet"],1,"",0,"B");
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(60,$idioma["UsuarioPadreFamilia"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(40,capitalizar($al['UsuarioPadre']),0,"",$borde);
+
+$pdf->CuadroCuerpoPersonalizado(50,$idioma["DireccionPaginaWeb"].": ",0,"L",$borde,"B");
+
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(60,$idioma["ContrasenaPadreFamilia"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(40,capitalizar($al['PasswordP']),0,"",$borde);
+
+$pdf->CuadroCuerpo(60,($UrlInternet),0,"",$borde,14);
+
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(60,$idioma["UsuarioAlumno"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(40,minuscula($al['UsuarioAlumno']),0,"",$borde);
+
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(60,$idioma["ContrasenaAlumno"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(40,capitalizar($al['Password']),0,"",$borde);
