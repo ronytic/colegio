@@ -4,7 +4,8 @@ class pdf extends FPDF{
 	
 }
 if(!empty($_GET)){
-	$aumento=60;
+	$borde=0;
+	$aumento=58;
 	
 	include_once("../../class/alumno.php");
 	$al=new alumno;
@@ -20,10 +21,10 @@ if(!empty($_GET)){
 		$n=explode(" ",$alumno['Nombres']);	
 		$nombre=$n[0];
 		$tam=(int)(strlen($NombresExtra)/2);
-		$x=107-$tam;
+		$x=107-13-$tam;
 		$nombre=$nombre."/".$NombresExtra;
 	}else{
-		$x=107;
+		$x=107-13;
 		$nombre=$alumno['Nombres'];
 	}
 	
@@ -32,7 +33,7 @@ if(!empty($_GET)){
 		//$x=107-$tam;
 		$Curso=$alumno['Nombre']."/".$curs[0];
 	}else{
-		$x=107;
+		$x=107-13;
 		$Curso=$alumno['Nombre'];
 	}
 	//$pdf=new PDF("L","mm",array(101, 158));
@@ -44,13 +45,13 @@ if(!empty($_GET)){
 	$pdf->AddPage();
 	$pdf->SetFont('Times','B',13);
 	
-	$pdf->SetXY(113,44+$aumento);
-	$pdf->Cell(0,0,utf8_decode(ucwords($alumno['Paterno']." ".$alumno['Materno'])),1);
+	$pdf->SetXY(105,43+$aumento);
+	$pdf->Cell(0,0,utf8_decode(ucwords($alumno['Paterno']." ".$alumno['Materno'])),$borde);
 	$pdf->SetXY($x,50.5+$aumento);
-	$pdf->Cell(0,0,utf8_decode(ucwords($nombre)),1);
+	$pdf->Cell(0,0,utf8_decode(ucwords($nombre)),$borde);
 	
-	$pdf->SetXY(103,58+$aumento);
-	$pdf->Cell(0,0,utf8_decode(ucwords($Curso)),1);
+	$pdf->SetXY(97,58+$aumento);
+	$pdf->Cell(0,0,utf8_decode(ucwords($Curso)),$borde);
 	if(@$curs[2]!=""){
 		$curso2=$curs[1]."/";
 	}else{
@@ -61,12 +62,12 @@ if(!empty($_GET)){
 	}else{
 		@	$curso2.=$curs[2];
 	}
-	$pdf->SetXY(103,64+$aumento);
-	$pdf->Cell(0,0,utf8_decode(ucwords($curso2)),1);
+	$pdf->SetXY(103-10,64+$aumento);
+	$pdf->Cell(0,0,utf8_decode(ucwords($curso2)),$borde);
 	
-	$pdf->SetXY(119,84.3+$aumento);
+	$pdf->SetXY(119,82.1+$aumento);
 	$pdf->SetFont('Times','B',15);
-	$pdf->Cell(0,0,date("y"),1);
+	$pdf->Cell(0,0,date("y"),$borde);
 	
 	$pdf->Output();
 }
