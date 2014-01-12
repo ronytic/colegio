@@ -121,6 +121,7 @@ $(document).ready(function(e) {
 						for(i=data.Cuota;i<=10;i++){
 							$("select[name='a["+Registro+"][Cuota]']").append('<option value="'+i+'">'+i+'</option>')
 						}
+						$("select[name='a["+Registro+"][Cuota]']").append('<option value="Todo">Contado 1 - 10</option>')
 					}
 					$("select[name='a["+Registro+"][Cuota]']").change();
 					$('.modal').modal('hide');

@@ -481,7 +481,7 @@ function cambiopalabra($numero){
 		case "8":{$texto="Octava";}break;
 		case "9":{$texto="Novena";}break;
 		case "10":{$texto="Decima";}break;
-
+		case "Todo":{$texto="Primera a Decima";}break;
 	}	
 	return $texto;
 }

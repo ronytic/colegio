@@ -79,10 +79,14 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
-	$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
-	$cuo=array_shift($cuo);
+	if($fd['CodCuota']=="Todo"){
+		$cuo['Numero']="Todo";	
+	}else{
+		$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
+		$cuo=array_shift($cuo);
+	}
 	$pdf->SetXY($x+25,$i);	
-	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota']),"","9");
+	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'')),"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
 $pdf->SetXY($x+20,$y+71);
@@ -165,10 +169,14 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
-	$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
-	$cuo=array_shift($cuo);
+	if($fd['CodCuota']=="Todo"){
+		$cuo['Numero']="Todo";	
+	}else{
+		$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
+		$cuo=array_shift($cuo);
+	}
 	$pdf->SetXY($x+25,$i);	
-	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota']),"","9");
+	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'')),"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
 $pdf->SetXY($x+20,$y+71);
@@ -252,10 +260,14 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
-	$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
-	$cuo=array_shift($cuo);
+	if($fd['CodCuota']=="Todo"){
+		$cuo['Numero']="Todo";	
+	}else{
+		$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
+		$cuo=array_shift($cuo);
+	}
 	$pdf->SetXY($x+25,$i);	
-	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota']),"","9");
+	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'')),"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
 $pdf->SetXY($x+20,$y+71);

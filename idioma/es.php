@@ -1277,6 +1277,7 @@ $idioma['LlaveDosificacionT']="Llave Dosificación, otorgado por el Servicio de 
 $idioma['NumeroAutorizacion']="Número de Autorización";
 $idioma['FechaLimiteEmisionVencida']="La Fecha Límite de Emisión de Factura se encuentra Vencida";
 $idioma['NoExistenFacturasRegistradas']="No Existen Facturas Registradas";
+$idioma['AlContado']="Al Contado";
 
 //Excel
 $idioma['TotalAlumnos']="Total de Alumnos";

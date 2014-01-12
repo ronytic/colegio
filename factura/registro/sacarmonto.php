@@ -15,9 +15,22 @@ if(!empty($_POST['CodAlumno'])){
 		$cuo['MontoPagar']=0;
 		$cuo['Numero']=0;
 	}else{
+		if($NumeroCuota=="Todo"){
+			$cuo=$cuota->mostrarCuotasNoCanceladas($CodAlumno);
+			$Monto=0;
+			foreach($cuo as $c){
+				$Monto+=$c['MontoPagar'];
+			}
+			$cuo['CodCuota']="Todo";
+			$cuo['MontoPagar']="$Monto";
+			
+			//$cuo=array_shift($cuo);		
+			
+		}else{
 		$cuo=$cuota->mostrarCuota($CodAlumno,$NumeroCuota);
 		//print_r($cuota);
 		$cuo=array_shift($cuo);
+		}
 	}
 	$valores=array("CodCuota"=>$cuo['CodCuota'],
 					"MontoPagar"=>$cuo['MontoPagar'],

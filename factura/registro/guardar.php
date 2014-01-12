@@ -70,6 +70,20 @@ if(!empty($_POST)){
 			print_r($ValoresFacturaDetalle);
 			echo "</pre>";*/
 			$facturadetalle->insertarRegistro($ValoresFacturaDetalle);
+			if($fd['CodCuota']=="Todo"){
+				for($numcuo=1;$numcuo<=10;$numcuo++){
+					$cuo=$cuota->mostrarCuota($fd['CodAlumno'],$numcuo);
+					$cuo=array_shift($cuo);
+					$CodCuota=$cuo['CodCuota'];	
+					$Valor=1;
+					$Factura=trim($NFactura);
+					$Observaciones="Facturado";
+					$Fecha=fecha2Str($FechaFactura,0);
+					$Hora= date("H:i:s");
+					$Fecha=$Fecha." ".$Hora;
+					$cuota->actualizar($CodCuota,$Valor,$Factura,$Observaciones,$Fecha);
+				}
+			}else{
 			
 			/*Modificacion Cuota*/
 			$CodCuota=$fd['CodCuota'];	
@@ -80,6 +94,7 @@ if(!empty($_POST)){
 			$Hora= date("H:i:s");
 			$Fecha=$Fecha." ".$Hora;
 			$cuota->actualizar($CodCuota,$Valor,$Factura,$Observaciones,$Fecha);
+			}
 			/*Fin de Modificacion Pago Cuota*/
 		}
 	}
