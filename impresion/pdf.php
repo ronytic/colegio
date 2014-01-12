@@ -22,7 +22,7 @@ include_once("fpdf/fpdf.php");
 			$this->SetLeftMargin(18);
 			$this->SetAutoPageBreak(true,15);
 			global $title,$gestion,$titulo,$logo,$idioma;
-			$fecha=capitalizar(strftime("%A, %d ")).$idioma['De'].capitalizar(strftime(" %B ")).$idioma['Del'].strftime(" %Y");
+			$fecha=capitalizar(strftime("%A, %d ")).$idioma['De'].capitalizar(strftime(" %B ")).$idioma['De'].strftime(" %Y");
 			
 			$this->Image("../../imagenes/logos/".$logo,10,10,20,20);
 			$this->Fuente("",$tam);
@@ -35,7 +35,7 @@ include_once("fpdf/fpdf.php");
 			$this->Fuente("B",18);
 			$this->Cell($this->ancho,4,utf8_decode($titulo.$this->orientation),0,5,"C");
 			$this->ln(5);
-			$this->CuadroCabecera(30,$idioma['FechaReporte'].": ",20,$fecha);
+			$this->CuadroCabecera(30,$idioma['FechaReporte'].": ",20,utf8_encode($fecha));
 			$this->ln(5);
 			if(in_array("Cabecera",get_class_methods($this))){
 				$this->Cabecera();	
