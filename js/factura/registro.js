@@ -27,7 +27,7 @@ $(document).ready(function(e) {
 	$('.modal').on('hidden', function () {
   		$("html,body").css("overflow","auto")
 	}).on('shown', function () {
-  		$("html,body").css("overflow","hidden")
+  		//$("html,body").css("overflow","hidden")
 	})
 	$(document).on("change",".ImporteCobrado,.Interes,.Descuento",function(e){
 		Reg=$(this).attr("rel");

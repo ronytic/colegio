@@ -37,7 +37,7 @@ var CodAlumno="<?php echo $_GET['CodAlumno']?>";
     <div class="alert alert-error"><?php echo $idioma['NFacturaDuplicado']?></div>
     <?php }?>
     <form action="guardar.php" method="post" id="formulario">
-    	<table class="table table-bordered">
+    	<table class="table table-bordered inicio">
         	<thead>
         		<tr>
                 	<th><?php echo $idioma['Fecha']?>:<br><input type="text" class="fecha" name="FechaFactura" value="<?php echo fecha2Str()?>" required></th>
@@ -50,13 +50,13 @@ var CodAlumno="<?php echo $_GET['CodAlumno']?>";
                     <input type="text" id="" readonly name="FacturaAlumno">
                     <br><a class="btn btn-info btn-mini buscar" rel="BusquedaNit"><i class="icon-search icon-white"></i> <?php echo $idioma['Buscar']?></a></th>
                 	<th><?php echo $idioma['Nit']?>: <br><input type="text" class="" name="Nit" required></th>
-                    <th><?php echo $idioma['Senores']?>: <br><input type="text" class="" name="NombreFactura" required readonly="readonly"></th>
+                    <th><?php echo $idioma['Senores']?>: <br><input type="text" class="" name="NombreFactura" required value=""></th>
                     
                 </tr>
             </thead>
 
         </table>
-    	<table class="table table-bordered table-hover table-condensed">
+    	<table class="table table-bordered table-hover table-condensed inicio">
         	<thead>
             	<tr><th>N</th><th><?php echo $idioma['Alumno']?></th><th><?php echo $idioma['Cuota']?></th><th><?php echo $idioma['MontoCuota']?></th><th><?php echo $idioma['ImporteCobrado']?></th><th><?php echo $idioma['Interes']?></th><th><?php echo $idioma['Descuento']?></th><th><?php echo $idioma['Total']?></th><th></th></tr>
             </thead>
