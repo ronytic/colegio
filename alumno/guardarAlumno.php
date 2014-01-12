@@ -1,5 +1,8 @@
 <?php
 include_once("../login/check.php");
+/*error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);*/
 include_once("../class/alumno.php");
 include_once("../class/tmp_alumno.php");
 include_once("../class/cuota.php");
@@ -76,8 +79,11 @@ if(!empty($_POST)){
 
 	$Password=rand(1000,9999);
 	$PasswordP=rand(1000,9999);
-	
-	$UsuarioPadre=usuarioPadre($CiPadre,$CiMadre);
+	if($CiPadre!="" && $CiMadre!=""){
+		$UsuarioPadre=usuarioPadre($CiPadre,$CiMadre);
+	}else{
+		$UsuarioPadre="";
+	}
 	
 	if($CodCurso==1){
 		$cnf=$conf->mostrarConfig("MontoKinder");	
