@@ -47,7 +47,7 @@ $(document).ready(function(e) {
 		valor=parseFloat(valor);
 		var PorcentajeBeca=0;
 		valor=valor.toFixed(2);
-		if($("#curso").val()==1){
+		if($("#Curso").val()==1){
 			PorcentajeBeca=(valor/MontoKinder)*100;
 			$('#MontoPagar').val(MontoKinder-(valor));
 		}else{
@@ -62,7 +62,7 @@ $(document).ready(function(e) {
 	$("#PorcentajeBeca").keyup(function(e) {
 		var valor=$(this).val();
 		var MontoBeca=0;
-		if($("#curso").val()==1){
+		if($("#Curso").val()==1){
 			MontoBeca=(valor*MontoKinder)/100;
 			$('#MontoPagar').val(MontoKinder-(MontoBeca.toFixed(2)));
 		}else{
