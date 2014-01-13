@@ -160,7 +160,7 @@ class bd{
 		//echo "UPDATE {$nombretabla} SET $datos $where";
 		return mysql_query ("UPDATE $nombretabla SET $datos $where");
 	}
-	function vaciar(){
+	public function vaciar(){
 		mysql_query("TRUNCATE TABLE {$this->tabla}");
 	}
 	private function getTableFields ($asArray=false){
