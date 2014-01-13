@@ -6,6 +6,9 @@ class tmp_alumno extends bd{
 	function estadoTabla(){
 		return $this->statusTable();
 	}
+	function iniciar(){
+		return $this->actualizarRegistro(array("Valido"=>"1"),"Retirado=0");
+	}
 	function mostrarDatosAlumnos($CodCurso){
 		$this->campos=array('CodAlumno,LOWER(Paterno) as Paterno,LOWER(Materno) as Materno,LOWER(Nombres) as Nombres');
 		return $this->getRecords(" CodCurso=$CodCurso and Activo=1","Paterno,Materno,Nombres");
