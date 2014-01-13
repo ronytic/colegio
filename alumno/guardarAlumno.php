@@ -31,8 +31,8 @@ if(!empty($_POST)){
 	$Numero=$_POST['Numero'];
 	$TelefonoCasa=$_POST['TelefonoCasa'];
 	$Celular=$_POST['Celular'];
-	$CelularSMS='';
-	$ActivarSMS=1;
+	$CelularSMS=$_POST['CelularSMS'];
+	$ActivarSMS=$_POST['ActivarSMS'];
 	//
 	$Procedencia=$_POST['Procedencia'];
 	$Repitente=$_POST['Repitente'];
