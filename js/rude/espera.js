@@ -14,5 +14,5 @@ var Estado=$("select[name=Estado]").val();
 	$.post("ver.php",{"Fecha":Fecha,"Estado":Estado},function(data){
 		$("#respuestaformulario").html(data)
 	});
-setTimeout("actualizar()",20000);
+//setTimeout("actualizar()",20000);
 }

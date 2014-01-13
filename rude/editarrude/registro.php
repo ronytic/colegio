@@ -6,6 +6,7 @@ include_once("../../class/documento.php");
 include_once("../../class/curso.php");
 if(!empty($_POST)){
 	$CodAlumno=$_POST['CodAlumno'];
+	
 	$rude=new rude;
 	$alumno=new alumno;
 	$cur=new curso;
@@ -29,7 +30,7 @@ if(!empty($_POST)){
 	?>
     <div class="alert alert-info centrar"><strong><?php echo mayuscula($titulo)?></strong></div>	
     <form action="<?php echo $archivo;?>" method="post" onsubmit="javascript:return false;if(confirm('¿Esta seguro de Guardar los Datos?'))" target="_blank">
-		<input type="hidden" name="CodAlumno" value="<?php echo $CodAlumno;?>" />
+		<input type="text" name="CodAlumno" value="<?php echo $CodAlumno;?>" />
         <strong><?php echo $idioma['TodoEnMayusculas'];?></strong>
     	<div class="box-header"><?php echo $idioma['DatosDelEstudiante'];?></div>
         <div class="box-content">
@@ -42,10 +43,10 @@ if(!empty($_POST)){
                 <tr><td><?php echo $idioma['FechaNacimiento']?></td><td>::</td><td><input name="fechaNac" type="text" id="fechaNac" value="<?php echo fecha2Str($al['FechaNac']);?>" /></td></tr>
                 <tr><td><?php echo $idioma['Sexo']?></td><td>::</td><td><select name="sexo"><option value="0" <?php echo !$al['Sexo']?'selected="selected"':'';?>><?php echo $idioma['Femenino']?></option><option value="1"<?php echo $al['Sexo']?'selected="selected"':'';?>><?php echo $idioma['Masculino']?></option></select></td></tr>
                 <tr><td class="resaltar"><?php echo $idioma['CertificadoNacimiento']?></td><td></td><td></td></tr>
-    	    	<tr><td><?php echo $idioma['Pais']?></td><td>::</td><td><input type="text" name="paisNacA" value="<?php echo mayuscula($alu['PaisN']);?>" /></td></tr>
-                <tr><td><?php echo $idioma['Departamento']?></td><td>::</td><td><input type="text" name="departamentoNacA" value="<?php echo mayuscula($al['LugarNac']);?>" /></td></tr>
-                <tr><td><?php echo $idioma['Provincia']?></td><td>::</td><td><input type="text" name="provinciaNacA" value="<?php echo mayuscula($alu['ProvinciaN']);?>" /></td></tr>
-                <tr><td><?php echo $idioma['Localidad']?></td><td>::</td><td><input type="text" name="localidadNacA" value="<?php echo mayuscula($alu['LocalidadN']);?>" /></td></tr>
+    	    	<tr><td><?php echo $idioma['Pais']?></td><td>::</td><td><input type="text" name="paisNacA" value="<?php echo $alu['PaisN']!=""?mayuscula($alu['PaisN']):mayuscula("BOLIVIA");?>" /></td></tr>
+                <tr><td><?php echo $idioma['Departamento']?></td><td>::</td><td><input type="text" name="departamentoNacA" value="<?php echo $al['LugarNac']!=""?mayuscula($al['LugarNac']):mayuscula("LA PAZ");?>" /></td></tr>
+                <tr><td><?php echo $idioma['Provincia']?></td><td>::</td><td><input type="text" name="provinciaNacA" value="<?php echo $alu['ProvinciaN']!=""?mayuscula($alu['ProvinciaN']):mayuscula("MURILLO");?>" /></td></tr>
+                <tr><td><?php echo $idioma['Localidad']?></td><td>::</td><td><input type="text" name="localidadNacA" value="<?php echo $alu['LocalidadN']!=""?mayuscula($alu['LocalidadN']):mayuscula("NUESTRA SEÑORA DE LA PAZ");?>" /></td></tr>
                 <tr><td><?php echo $idioma['OficialiaN']?></td><td>::</td><td><input type="text" name="oficialiaA" value="<?php echo mayuscula($alu['CertOfi']);?>"/></td></tr>
                 <tr><td><?php echo $idioma['LibroN']?></td><td>::</td><td><input type="text" name="libroA" value="<?php echo mayuscula($alu['CertLibro']);?>"/></td></tr>
                 <tr><td><?php echo $idioma['PartidaN']?></td><td>::</td><td><input type="text" name="partidaA" value="<?php echo mayuscula($alu['CertPartida']);?>"/></td></tr>
@@ -64,9 +65,9 @@ if(!empty($_POST)){
         <div class="box-header"><?php echo $idioma['DireccionActualEstudiante'];?></div>
         <div class="box-content">
 	    	<table class="table table-hover table-striped">
-    	    	<tr><td class="span3"><?php echo $idioma['Provincia'];?></td><td>::</td><td><input type="text" name="provinciaA" value="<?php echo mayuscula($alu['ProvinciaE']);?>" /></td></tr>
-                <tr><td><?php echo $idioma['Seccion'];?></td><td>::</td><td><input type="text" name="seccionA" value="<?php echo mayuscula($alu['MunicipioE']);?>"/></td></tr>
-                <tr><td><?php echo $idioma['Localidad'];?></td><td>::</td><td><input type="text" name="localidadA" value="<?php echo mayuscula($alu['ComunidadE']);?>"/></td></tr>
+    	    	<tr><td class="span3"><?php echo $idioma['Provincia'];?></td><td>::</td><td><input type="text" name="provinciaA" value="<?php echo $alu['ProvinciaE']!=""?mayuscula($alu['ProvinciaE']):mayuscula("MURILLO");?>" /></td></tr>
+                <tr><td><?php echo $idioma['Seccion'];?></td><td>::</td><td><input type="text" name="seccionA" value="<?php echo $alu['MunicipioE']!=""?mayuscula($alu['MunicipioE']):mayuscula("CUARTA SECCIÓN");?>"/></td></tr>
+                <tr><td><?php echo $idioma['Localidad'];?></td><td>::</td><td><input type="text" name="localidadA" value="<?php echo $alu['ComunidadE']!=""?mayuscula($alu['ComunidadE']):mayuscula("EL ALTO");?>"/></td></tr>
                 <tr><td><?php echo $idioma['Zona'];?></td><td>::</td><td><input type="text" name="zonaA" value="<?php echo mayuscula($al['Zona']);?>"/></td></tr>
                 <tr><td><?php echo $idioma['Calle'];?></td><td>::</td><td><input type="text" name="calleA" value="<?php echo mayuscula($al['Calle']);?>"/></td></tr>
                 <tr><td><?php echo $idioma['Numero'];?></td><td>::</td><td><input type="text" name="numeroViviendaA" value="<?php echo mayuscula($al['Numero']);?>"/></td></tr>
@@ -83,8 +84,14 @@ if(!empty($_POST)){
                 	<table>
                 	<tr><td>Castellano:</td> <td><select name="lenguaCastellano" class="span12"><option value="1" <?php $alu['CastellanoI']=="1"? 'selected="selected"':'';?>><?php echo $idioma['Si'];?></option><option value="0" <?php $alu['CastellanoI']=="0"? 'selected="selected"':'';?>><?php echo $idioma['No'];?></option></select></td></tr>
                     
-                	<tr><td>Ingles: </td><td><select name="lenguaIngles" class="span12"><option value="1" <?php $alu['InglesI']=="1"? 'selected="selected"':'';?>><?php echo $idioma['Si'];?></option><option value="0" <?php $alu['InglesI']=="0"? 'selected="selected"':'';?>><?php echo $idioma['No'];?></option></select></td></tr>
-                    <tr><td>Aymara: </td><td><select name="lenguaAymara" class="span12"><option value="1" <?php $alu['AymaraI']=="1"? 'selected="selected"':'';?>><?php echo $idioma['Si'];?></option><option value="0" <?php $alu['AymaraI']=="0"? 'selected="selected"':'';?>><?php echo $idioma['No'];?></option></select></td></tr>
+                	<tr><td>Ingles: </td><td><select name="lenguaIngles" class="span12">
+                    <option value="0" <?php $alu['InglesI']=="0"? 'selected="selected"':'';?>><?php echo $idioma['No'];?></option>
+                    <option value="1" <?php $alu['InglesI']=="1"? 'selected="selected"':'';?>><?php echo $idioma['Si'];?></option>
+                    </select></td></tr>
+                    <tr><td>Aymara: </td><td><select name="lenguaAymara" class="span12">
+                    <option value="0" <?php $alu['AymaraI']=="0"? 'selected="selected"':'';?>><?php echo $idioma['No'];?></option>
+                    <option value="1" <?php $alu['AymaraI']=="1"? 'selected="selected"':'';?>><?php echo $idioma['Si'];?></option>
+                    </select></td></tr>
                     </table>
                     </td></tr>
                 <tr><td><?php echo $idioma['SeIdentifica'];?></td><td>::</td><td><select name="identificaA" class="span12">
@@ -104,8 +111,9 @@ if(!empty($_POST)){
                 <option value="ninguna" <?php $alu['VecesCentro']=="ninguna"? 'selected="selected"':'';?>><?php echo $idioma['Ninguna']?></option>
                 </select></td></tr>
                 <tr><td><?php echo $idioma['DiscapacidadDeficienciaMental']?></td><td>::</td><td><select name="deficiencia" class="span12">
-                <option value="1" <?php $alu['Discapacidad']=="1"? 'selected="selected"':'';?>><?php echo $idioma['Si']?></option>
                 <option value="0" <?php $alu['Discapacidad']=="0"? 'selected="selected"':'';?>><?php echo $idioma['No']?></option>
+                <option value="1" <?php $alu['Discapacidad']=="1"? 'selected="selected"':'';?>><?php echo $idioma['Si']?></option>
+                
                 </select></td></tr>
                 <tr><td colspan="3"><strong><?php echo $idioma['AccesoServiciosBasicos']?></strong></td></tr>
                 <tr><td><?php echo $idioma['AguaPotableDomicilio']?></td><td>::</td><td><select name="aguaPotable" class="span12">

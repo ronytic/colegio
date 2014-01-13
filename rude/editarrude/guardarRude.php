@@ -1,6 +1,9 @@
 <?php
 include_once("../../login/check.php");
 if(!empty($_POST)){
+	/*echo "<pre>";
+	print_r($_POST);
+	echo "</pre>";*/
 	include_once("../../class/rude.php");
 	include_once("../../class/alumno.php");
 	include_once("../funciones.php");
@@ -79,7 +82,7 @@ if(!empty($_POST)){
 						"UsuarioPadre"=>"'$usuarioPadre'"
 						);
 	//print_r($valuesAlumno);
-	$alumno->actualizarAlumno($valuesAlumno,$_POST['CodAlumno']);
+	$alumno->actualizarDatosAlumno($valuesAlumno,$_POST['CodAlumno']);
 	$rude->insertarAlumno($values);
 
 	/*DOCUMENTOS*/
