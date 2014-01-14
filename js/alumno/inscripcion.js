@@ -2,8 +2,8 @@
 $(document).ready(function(e) {
 	/*MontoKinder
 	MontoGeneral*/
-   $('#FechaNac').datepicker({altField: "#FechaNac", maxDate:"0 D",changeMonth: true,changeYear: true,yearRange:"c-100:c+10",dateFormat: 'dd-mm-yy'});
-   $('#FechaRetiro').datepicker({altField: "#FechaRetiro",changeMonth: true,changeYear: true,dateFormat: 'dd-mm-yy'})
+   $('#FechaNac').datepicker({ maxDate:"0 D",changeMonth: true,changeYear: true,yearRange:"c-100:c+10",dateFormat: 'dd-mm-yy'});
+   $('#FechaRetiro').datepicker({changeMonth: true,changeYear: true,dateFormat: 'dd-mm-yy'})
   // if($("#Ci").val()!=""){$('#CedulaId').attr('checked','checked');}
    /*$('#Ci').keyup(function(e) {
     	if($(this).val()!=""){
