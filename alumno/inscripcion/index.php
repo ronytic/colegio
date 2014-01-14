@@ -205,7 +205,7 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
 	</div>
     <div class="box-header"><h2><?php echo $idioma['DatosFactura']?></h2></div>
     <div class="box-content">
-        <table class="tabla">
+        <table class="tabla table-hover">
             <tr>
             	<td class="der"><?php echo $idioma['Nit']?></td>
                 <td><?php campo("Nit","text","","span12",1,"",0,array("maxlength"=>30))?></td>
@@ -218,30 +218,30 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
 	</div>
     <div class="box-header"><h2><?php echo $idioma['Documentos']?></h2></div>
 	<div class="box-content">
-		<table class="tabla">
+		<table class="tabla table-hover">
 			<tr>
-            	<td class="der"><?php echo $idioma['CertificadoNacimiento']?></td>
-                <td><?php campo("CertificadoNac","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            	<td class="der"><label for="CertificadoNac"><?php echo $idioma['CertificadoNacimiento']?></label></td>
+                <td><?php campo("CertificadoNac","checkbox","1","span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
             <tr>
-            	<td class="der"><?php echo $idioma['LibretaEscolar']?></td>
-                <td><?php campo("LibretaEsc","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            	<td class="der"><label for="LibretaEsc"><?php echo $idioma['LibretaEscolar']?></label></td>
+                <td><?php campo("LibretaEsc","checkbox","1","span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
             <tr>
-             	<td class="der"><?php echo $idioma['LibretaVacunas']?></td>
-                <td><?php campo("LibretaVac","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+             	<td class="der"><label for="LibretaVac"><?php echo $idioma['LibretaVacunas']?></label></td>
+                <td><?php campo("LibretaVac","checkbox","1","span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
             <tr>
-             	<td class="der"><?php echo $idioma['CiAlumno']?></td>
-                <td><?php campo("CedulaId","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+             	<td class="der"><label for="CedulaId"><?php echo $idioma['CiAlumno']?></label></td>
+                <td><?php campo("CedulaId","checkbox","1","span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
 			<tr>
-            	<td class="der"><?php echo $idioma['CiPadre']?></td>
-                <td><?php campo("CedulaIdP","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            	<td class="der"><label for="CedulaIdP"><?php echo $idioma['CiPadre']?></label></td>
+                <td><?php campo("CedulaIdP","checkbox","1","span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
             <tr>
-            	<td class="der"><?php echo $idioma['CiMadre']?></td>
-                <td><?php campo("CedulaIdM","select",$sinovalor,"span12",0,"",0,array("maxlength"=>50),0)?></td>
+            	<td class="der"><label for="CedulaIdM"><?php echo $idioma['CiMadre']?></label></td>
+                <td><?php campo("CedulaIdM","checkbox","1","span12",0,"",0,array("maxlength"=>50),0)?></td>
             </tr>
             <tr>
             	<td class="der"><?php echo $idioma['ObservacionesDocumentos']?></td>
