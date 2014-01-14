@@ -74,12 +74,12 @@ if(!empty($_POST)){
 	$Nit=$_POST['Nit'];
 	$FacturaA=$_POST['FacturaA'];
 	//
-	$CertificadoNac=$_POST['CertificadoNac'];
-	$LibretaEsc=$_POST['LibretaEsc'];
-	$LibretaVac=$_POST['LibretaVac'];
-	$CedulaId=$_POST['CedulaId'];
-	$CedulaIdP=$_POST['CedulaIdP'];
-	$CedulaIdM=$_POST['CedulaIdM'];
+	$CertificadoNac=$_POST['CertificadoNac']!=""?$_POST['CertificadoNac']:"0";
+	$LibretaEsc=$_POST['LibretaEsc']!=""?$_POST['LibretaEsc']:"0";
+	$LibretaVac=$_POST['LibretaVac']!=""?$_POST['LibretaVac']:"0";
+	$CedulaId=$_POST['CedulaId']!=""?$_POST['CedulaId']:"0";
+	$CedulaIdP=$_POST['CedulaIdP']!=""?$_POST['CedulaIdP']:"0";
+	$CedulaIdM=$_POST['CedulaIdM']!=""?$_POST['CedulaIdM']:"0";
 	$ObservacionesDoc=$_POST['ObservacionesDoc'];
 	$autoIncrement=$alumno->estadoTabla();
 	$CodAlumno=$autoIncrement['Auto_increment'];
@@ -93,7 +93,11 @@ if(!empty($_POST)){
 	
 	$Password=rand(1000,9999);
 	$PasswordP=rand(1000,9999);
-	$UsuarioPadre=usuarioPadre($CiPadre,$CiMadre);
+	if($CiPadre!="" && $CiMadre!=""){
+		$UsuarioPadre=usuarioPadre($CiPadre,$CiMadre);
+	}else{
+		$UsuarioPadre="";
+	}
 	
 	if($CodCurso==1){
 		$cnf=$conf->mostrarConfig("MontoKinder");	
