@@ -1,4 +1,5 @@
 <?php
+include_once("../../login/check.php");
 include_once("../fpdf/fpdf.php");
 class pdf extends FPDF{
 	
@@ -8,21 +9,38 @@ if(!empty($_GET)){
 	$aumento=58;
 	
 	include_once("../../class/alumno.php");
+	include_once("../../class/curso.php");
 	$al=new alumno;
+	$curso=new curso;
 	$CodAlumno=$_GET['CodAlumno'];
+	
 	if(!empty($_GET['NombresAdicional']) && $_GET['NombresAdicional']!=""){
 		$NombresExtra=$_GET['NombresAdicional'];
 		$CursoExtra=$_GET['CursosAdicional'];
 	}
+	
+	$divido=explode("/",$CodAlumno);
+	if(count($divido)>=1){
+		$CodAlumno=$divido[0];
+		for($i=1;$i<count($divido);$i++){
+			$alumno=$al->mostrarDatosPersonales($divido[$i]);
+			$alumno=array_shift($alumno);	
+			$NombresExtra.="/".capitalizar(acortarPalabra($alumno['Nombres']));
+			$cur=$curso->mostrarCurso($alumno['CodCurso']);
+			$cur=array_shift($cur);
+			$CursoExtra.=$cur['Abreviado']."/";
+		}	
+	}
+	
+	
 	$alumno=$al->mostrarDatosPersonales($CodAlumno);
 	$alumno=$alumno[0];
 
 	if(!empty($NombresExtra)){
-		$n=explode(" ",$alumno['Nombres']);	
-		$nombre=$n[0];
+		$nombre=acortarPalabra($alumno['Nombres']);	
 		$tam=(int)(strlen($NombresExtra)/2);
 		$x=107-13-$tam;
-		$nombre=$nombre."/".$NombresExtra;
+		$nombre=$nombre.$NombresExtra;
 	}else{
 		$x=107-13;
 		$nombre=$alumno['Nombres'];
@@ -31,10 +49,22 @@ if(!empty($_GET)){
 	if(@$CursoExtra!=""){
 		$curs=explode("/",$CursoExtra);
 		//$x=107-$tam;
-		$Curso=$alumno['Nombre']."/".$curs[0];
+		$Curso1=$alumno['Nombre']."/".$curs[0];
 	}else{
 		$x=107-13;
-		$Curso=$alumno['Nombre'];
+		
+		$Curso1=$alumno['Nombre'];
+	}
+	
+	if(@$curs[2]!=""){
+		$curso2=$curs[1]."/";
+	}else{
+		@$curso2=$curs[1];
+	}
+	if(@$curs[3]!=""){
+		$curso2.=$curs[2]."/";
+	}else{
+		@	$curso2.=$curs[2];
 	}
 	//$pdf=new PDF("L","mm",array(101, 158));
 	$pdf=new PDF("L","mm",array(217,330));
@@ -49,22 +79,10 @@ if(!empty($_GET)){
 	$pdf->Cell(0,0,utf8_decode(ucwords($alumno['Paterno']." ".$alumno['Materno'])),$borde);
 	$pdf->SetXY($x,50.5+$aumento);
 	$pdf->Cell(0,0,utf8_decode(ucwords($nombre)),$borde);
-	
 	$pdf->SetXY(97,58+$aumento);
-	$pdf->Cell(0,0,utf8_decode(ucwords($Curso)),$borde);
-	if(@$curs[2]!=""){
-		$curso2=$curs[1]."/";
-	}else{
-		@$curso2=$curs[1];
-	}
-	if(@$curs[3]!=""){
-		$curso2.=$curs[2]."/";
-	}else{
-		@	$curso2.=$curs[2];
-	}
+	$pdf->Cell(0,0,utf8_decode(ucwords($Curso1)),$borde);
 	$pdf->SetXY(103-10,64+$aumento);
 	$pdf->Cell(0,0,utf8_decode(ucwords($curso2)),$borde);
-	
 	$pdf->SetXY(119,82.1+$aumento);
 	$pdf->SetFont('Times','B',15);
 	$pdf->Cell(0,0,date("y"),$borde);
