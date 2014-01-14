@@ -10,6 +10,7 @@ $alumno=new alumno;
 $curso=new curso;
 $Estado=$Estado!=""?"Estado LIKE '$Estado'":"Estado LIKE '%'";
 $tmp=$tmpcola->mostrarEspera("FechaRegistro='".fecha2Str($Fecha,0)."' and $Estado");
+
 if(count($tmp)){
 	$i=0;
 	?>
@@ -23,6 +24,14 @@ if(count($tmp)){
 	foreach($tmp as $t){$i++;
 		$al=$alumno->mostrarTodoDatos($t['CodAlumno']);
 		$al=array_shift($al);
+		$hermano=$alumno->buscarHermanoApellidos($al['Paterno'],$al['Materno'],fecha2Str($Fecha,0));
+		$contarhermano=count($hermano);
+		$codigohermano=array();
+		foreach($hermano as $her){
+			array_push($codigohermano,$her['CodAlumno']);
+		}
+		//echo $codhermanos
+		$codhermanos=implode("/",$codigohermano);
 		$cur=$curso->mostrarCurso($al['CodCurso']);
 		$cur=array_shift($cur);
 		$badge=$t['Estado']=="Espera"?"badge-success":"badge-warning";
@@ -40,6 +49,11 @@ if(count($tmp)){
                 <a href="cambiar.php?Ruta=../../alumno/inscribirhermano/inscribir.php&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small " ><?php echo $idioma['InscribirHermano']?></a>
             	<a href="cambiar.php?Ruta=../../factura/registro&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small " target="_blank" ><?php echo $idioma['RegistrarFactura']?></a>
                 <a href="cambiar.php?Ruta=../../alumno/tarjetacuotas&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small " target="_blank"><?php echo $idioma['ImprimirTarjetaCuotas']?></a>
+                
+                <?php if($contarhermano>1){?>
+            		<a href="../../impresion/alumno/tarjetadecuotas.php?CodAlumno=<?php echo $codhermanos?>" class="btn btn-small btn-info" target="_blank"><?php echo $idioma['ImprimirTarjetaCuotasCombinada']?></a>
+            	<?php }?>
+                
             	<hr/>
                 <?php }?>
             	<a href="redirigir.php?Ruta=../editarrude&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank"><?php echo $idioma['RevisarRude']?></a> 

@@ -68,7 +68,18 @@ class alumno extends bd{
 		return $this->getRecords(" a.CodAlumno=$CodAlumno and a.CodCurso=c.CodCurso  and $Retiro");
 	}
 	
-	
+	function buscarHermanoApellidos($Paterno="",$Materno="",$Fecha="",$Retirado=0){
+		$this->campos=array('CodAlumno');
+		if($Fecha!=""){
+			$Fecha=" and FechaIns='$Fecha'";	
+		}
+		if($Retirado==2){
+			$Retiro="(Retirado=0 OR Retirado=1)";
+		}else{
+			$Retiro="Retirado=$Retirado";	
+		}
+		return $this->getRecords("Paterno='$Paterno' and Materno='$Materno' $Fecha"." and $Retiro","Paterno,Materno,Nombres");
+	}
 	/*Fin Estadisticas*/
 	function mostrarDatosAlumnosWhere($Where,$Retirado=0){
 		$this->campos=array('*');
