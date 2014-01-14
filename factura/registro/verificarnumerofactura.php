@@ -4,7 +4,7 @@ if(!empty($_POST['NFactura'])){
 	$NFactura=$_POST['NFactura'];
 	include_once("../../class/factura.php");
 	$factura=new factura;
-	$f=$factura->mostrarFacturas("NFactura='".trim($NFactura)."'");
+	$f=$factura->mostrarFacturas("NFactura='".trim($NFactura)."' and Estado='Valido'");
 	if(count($f)){
 		$valores=array("Estado"=>No,"Cantidad"=>count($f));
 	}else{

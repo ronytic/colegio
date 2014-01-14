@@ -9,7 +9,7 @@ $config=new config;
 $FechaLimiteEmision=$config->mostrarConfig("FechaLimiteEmision",1);
 $estado=$factura->statusTable();
 $NReferencia=$estado['Auto_increment'];
-$f=$factura->mostrarNumeroFactura("");
+$f=$factura->mostrarNumeroFactura("Estado='Valido'");
 $f=array_shift($f);
 $NFactura=$f['NFactura']+1;
 $CodAlumno=$_GET['CodAlumno'];
