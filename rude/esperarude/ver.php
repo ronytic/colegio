@@ -58,7 +58,7 @@ if(count($tmp)){
                 
             	<hr/>
                 <?php }?>
-            	<a href="redirigir.php?Ruta=../editarrude&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank"><?php echo $idioma['Rude']?></a> 
+            	<a href="redirigir.php?Ruta=../editarrude&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank"><?php echo mayuscula($idioma['Rude'])?></a> 
                 <a href="redirigir.php?Ruta=../../sms/revisardatos&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['RevisarCelularEnvioMensajes']?>"><?php echo $idioma['RevisarCelular']?></a> 
                 <a href="redirigir.php?Ruta=../../sms/enviarmensaje&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['EnviarMensajeBienvenida']?>"><?php echo $idioma['EnviarMensajeBienvenida']?></a> 
                 <a href="redirigir.php?Ruta=../../alumno/boletadatos&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['RevisarCelularEnvioMensajes']?>"><?php echo $idioma['ImprimirDatos']?></a>
