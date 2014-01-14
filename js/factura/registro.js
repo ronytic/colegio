@@ -15,13 +15,16 @@ $(document).ready(function(e) {
 		
     }).on("change","select.MostrarCuota",function(){
 		Reg=$(this).attr("rel");
+
 		NumCuota=$("select.MostrarCuota[rel="+Reg+"]").val();
 		CodigoAlumno=$("input.CodigoAlumno[rel="+Reg+"]").val();
-		$.post("sacarmonto.php",{'CodAlumno':CodAlumno,"NumeroCuota":NumCuota},function(data){
-			$("input[name='a["+Reg+"][MontoCuota]']").val(data.MontoPagar).change();
-			$("input[name='a["+Reg+"][ImporteCobrado]']").val(data.MontoPagar).change();
-			$("input[name='a["+Reg+"][Total]']").val(data.MontoPagar).change();
-			$("input[name='a["+Reg+"][CodCuota]']").val(data.CodCuota);
+		$.post("sacarmonto.php",{'CodAlumno':CodAlumno,"NumeroCuota":NumCuota,"Registro":Reg},function(data){
+			Regis=data.Registro;
+			//alert(Regis);
+			$("input[name='a["+Regis+"][MontoCuota]']").val(data.MontoPagar).change();
+			$("input[name='a["+Regis+"][ImporteCobrado]']").val(data.MontoPagar).change();
+			$("input[name='a["+Regis+"][Total]']").val(data.MontoPagar).change();
+			$("input[name='a["+Regis+"][CodCuota]']").val(data.CodCuota);
 		},"json");
 	});
 	$('.modal').on('hidden', function () {
@@ -104,27 +107,31 @@ $(document).ready(function(e) {
 
 					$('.modal').modal('hide');
 					//alert(CodAlumno);
-					Registro=1
+					Registro=1;
+					//alert(Registro);
 					TipoBusqueda="Registro";
 					$("#seleccionar").click();
 				},"json");
 			}break;
 			case "Registro":{
-				$.post("sacarregistro.php",{'CodAlumno':CodAlumno},function(data){
-					$("input[name='a["+Registro+"][Nombre]']").val(data.Alumno);
-					$("input[name='a["+Registro+"][CodAlumno]']").val(CodAlumno);
+				//alert(Registro);
+				$.post("sacarregistro.php",{'CodAlumno':CodAlumno,"Registro":Registro},function(data){
+					Regi=data.Registro;
+					//alert(Regi);
+					$("input[name='a["+Regi+"][Nombre]']").val(data.Alumno);
+					$("input[name='a["+Regi+"][CodAlumno]']").val(data.CodAlumno);
 					
-					$("select[name='a["+Registro+"][Cuota]']").html('');
+					$("select[name='a["+Regi+"][Cuota]']").html('');
 					if(data.Cuota=="SinDeuda"){
-						$("select[name='a["+Registro+"][Cuota]']").append('<option value="null">'+data.Cuota+'</option>')
+						$("select[name='a["+Regi+"][Cuota]']").append('<option value="null">'+data.Cuota+'</option>')
 					}else{
 						for(i=data.Cuota;i<=10;i++){
-							$("select[name='a["+Registro+"][Cuota]']").append('<option value="'+i+'">'+i+'</option>')
+							$("select[name='a["+Regi+"][Cuota]']").append('<option value="'+i+'">'+i+'</option>')
 						}
-						$("select[name='a["+Registro+"][Cuota]']").append('<option value="2a10">2 - 10</option>')
-						$("select[name='a["+Registro+"][Cuota]']").append('<option value="Todo">Contado 1 - 10</option>')
+						$("select[name='a["+Regi+"][Cuota]']").append('<option value="2a10">2 - 10</option>')
+						$("select[name='a["+Regi+"][Cuota]']").append('<option value="Todo">Contado 1 - 10</option>')
 					}
-					$("select[name='a["+Registro+"][Cuota]']").change();
+					$("select[name='a["+Regi+"][Cuota]']").change();
 					$('.modal').modal('hide');
 				},"json");
 			}break;
@@ -156,5 +163,19 @@ $(document).ready(function(e) {
 	if(CodAlumno!=""){//alert(CodAlumno);
 		TipoBusqueda="BusquedaNit";
 		$("#seleccionar").click();
+	}
+	if(ContarAlumnos>0){
+		for(numi=1;numi<=ContarAlumnos;numi++){
+			$(".aumentar").click();
+			
+		}
+		for(numi=2;numi<=ContarAlumnos+1;numi++){
+			//alert(numi-2);
+			//alert(CodigosAlumnos[numi-2]);
+			CodAlumno=CodigosAlumnos[numi-2];
+			Registro=numi;
+			TipoBusqueda="Registro";
+			$("#seleccionar").click();
+		}
 	}
 });

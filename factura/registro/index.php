@@ -12,6 +12,19 @@ $NReferencia=$estado['Auto_increment'];
 $f=$factura->mostrarNumeroFactura("");
 $f=array_shift($f);
 $NFactura=$f['NFactura']+1;
+$CodAlumno=$_GET['CodAlumno'];
+$dividido=explode("/",$CodAlumno);
+$contardividido=count($dividido);
+$codigosalumnos=array();
+if($contardividido>1){
+	$CodAlumno=$dividido[0];
+	
+	for($i=1;$i<$contardividido;$i++){
+		if($dividido[$i]!=""){
+			array_push($codigosalumnos,'"'.$dividido[$i].'"');
+		}
+	}
+}
 
 include_once($folder."cabecerahtml.php");
 ?>
@@ -21,7 +34,9 @@ include_once($folder."cabecerahtml.php");
 var MensajeEliminarRegistro="<?php echo $idioma['MensajeEliminarRegistro']?>";
 var EstaSeguroRegistrarFactura="<?php echo $idioma['EstaSeguroRegistrarFactura']?>";
 var NFacturaDuplicado="<?php echo $idioma['NFacturaDuplicado']?>";
-var CodAlumno="<?php echo $_GET['CodAlumno']?>";
+var CodAlumno="<?php echo $CodAlumno?>";
+var CodigosAlumnos=new Array(<?php echo implode(",",$codigosalumnos)?>);
+var ContarAlumnos=<?php echo $contardividido-1?>;
 </script>
 <style type="text/css">
 	th{vertical-align:top !important;}

@@ -8,6 +8,7 @@ if(!empty($_POST['CodAlumno'])){
 	$curso=new curso;
 	$cuota=new cuota;
 	$CodAlumno=$_POST['CodAlumno'];
+	$Registro=$_POST['Registro'];
 	$al=$alumno->mostrarTodoDatos($CodAlumno);
 	$al=array_shift($al);
 	$cuo=$cuota->mostrarCuotasNoCanceladas($CodAlumno);
@@ -19,6 +20,8 @@ if(!empty($_POST['CodAlumno'])){
 	$valores=array("Alumno"=>$nombres,
 					"Cuota"=>$cuo['Numero'],
 					//"MontoCuota"=>$al['FacturaA']
+					"Registro"=>$Registro,
+					"CodAlumno"=>$CodAlumno
 					);
 	
 	echo json_encode($valores);
