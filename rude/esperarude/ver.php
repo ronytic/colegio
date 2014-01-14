@@ -42,9 +42,9 @@ if(count($tmp)){
                 <a href="cambiar.php?Ruta=../../alumno/tarjetacuotas&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small " target="_blank"><?php echo $idioma['ImprimirTarjetaCuotas']?></a>
             	<hr/>
                 <?php }?>
-            	<a href="redirigir.php?Ruta=../editarrude&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank"><?php echo $idioma['RevisarRude']?></a>
-                <a href="redirigir.php?Ruta=../../sms/revisardatos&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['RevisarCelularEnvioMensajes']?>"><?php echo $idioma['RevisarCelular']?></a>
-                <a href="redirigir.php?Ruta=../../sms/enviarmensaje&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['EnviarMensajeBienvenida']?>"><?php echo $idioma['EnviarMensajeBienvenida']?></a>
+            	<a href="redirigir.php?Ruta=../editarrude&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank"><?php echo $idioma['RevisarRude']?></a> 
+                <a href="redirigir.php?Ruta=../../sms/revisardatos&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['RevisarCelularEnvioMensajes']?>"><?php echo $idioma['RevisarCelular']?></a> 
+                <a href="redirigir.php?Ruta=../../sms/enviarmensaje&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['EnviarMensajeBienvenida']?>"><?php echo $idioma['EnviarMensajeBienvenida']?></a> 
                 <a href="redirigir.php?Ruta=../../alumno/boletadatos&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small" target="_blank" title="<?php echo $idioma['RevisarCelularEnvioMensajes']?>"><?php echo $idioma['ImprimirDatos']?></a>
                 </td>
         </tr>
