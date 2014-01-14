@@ -448,6 +448,7 @@ $idioma['NumeroServicioMensajeria']="Número de Servicio de Mensajería";
 $idioma['DireccionPaginaWeb']="Dirección de la Página Web";
 $idioma['ReInscribir']="ReInscribir";
 $idioma['ImprimirTarjetaCuotasCombinada']="Imprimir Tarjeta de Cuotas Combinada";
+$idioma['RegistrarFacturaCombinada']="Registrar Factura Combinada";
 //Pdf
 $idioma['Pagina']="Página";
 $idioma['FechaActual']="Fecha Actual";
