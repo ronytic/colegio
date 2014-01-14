@@ -70,30 +70,46 @@ if(!empty($_POST)){
 			print_r($ValoresFacturaDetalle);
 			echo "</pre>";*/
 			$facturadetalle->insertarRegistro($ValoresFacturaDetalle);
-			if($fd['CodCuota']=="Todo"){
-				for($numcuo=1;$numcuo<=10;$numcuo++){
-					$cuo=$cuota->mostrarCuota($fd['CodAlumno'],$numcuo);
-					$cuo=array_shift($cuo);
-					$CodCuota=$cuo['CodCuota'];	
-					$Valor=1;
-					$Factura=trim($NFactura);
-					$Observaciones="Facturado";
-					$Fecha=fecha2Str($FechaFactura,0);
-					$Hora= date("H:i:s");
-					$Fecha=$Fecha." ".$Hora;
-					$cuota->actualizar($CodCuota,$Valor,$Factura,$Observaciones,$Fecha);
-				}
-			}else{
-			
-			/*Modificacion Cuota*/
-			$CodCuota=$fd['CodCuota'];	
-			$Valor=1;
-			$Factura=trim($NFactura);
-			$Observaciones="Facturado";
-			$Fecha=fecha2Str($FechaFactura,0);
-			$Hora= date("H:i:s");
-			$Fecha=$Fecha." ".$Hora;
-			$cuota->actualizar($CodCuota,$Valor,$Factura,$Observaciones,$Fecha);
+			switch($fd['CodCuota']){
+				case"Todo":{
+							for($numcuo=1;$numcuo<=10;$numcuo++){
+								$cuo=$cuota->mostrarCuota($fd['CodAlumno'],$numcuo);
+								$cuo=array_shift($cuo);
+								$CodCuota=$cuo['CodCuota'];	
+								$Valor=1;
+								$Factura=trim($NFactura);
+								$Observaciones="Facturado";
+								$Fecha=fecha2Str($FechaFactura,0);
+								$Hora= date("H:i:s");
+								$Fecha=$Fecha." ".$Hora;
+								$cuota->actualizar($CodCuota,$Valor,$Factura,$Observaciones,$Fecha);
+							}
+					}break;
+				case"2a10":{
+							for($numcuo=2;$numcuo<=10;$numcuo++){
+								$cuo=$cuota->mostrarCuota($fd['CodAlumno'],$numcuo);
+								$cuo=array_shift($cuo);
+								$CodCuota=$cuo['CodCuota'];	
+								$Valor=1;
+								$Factura=trim($NFactura);
+								$Observaciones="Facturado";
+								$Fecha=fecha2Str($FechaFactura,0);
+								$Hora= date("H:i:s");
+								$Fecha=$Fecha." ".$Hora;
+								$cuota->actualizar($CodCuota,$Valor,$Factura,$Observaciones,$Fecha);
+							}
+					}break;
+				default:{
+							/*Modificacion Cuota*/
+							$CodCuota=$fd['CodCuota'];	
+							$Valor=1;
+							$Factura=trim($NFactura);
+							$Observaciones="Facturado";
+							$Fecha=fecha2Str($FechaFactura,0);
+							$Hora= date("H:i:s");
+							$Fecha=$Fecha." ".$Hora;
+							$cuota->actualizar($CodCuota,$Valor,$Factura,$Observaciones,$Fecha);
+					}break;
 			}
 			/*Fin de Modificacion Pago Cuota*/
 		}

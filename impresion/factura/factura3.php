@@ -51,8 +51,8 @@ $pdf->Cell(60,40,"",1);
 $pdf->SetXY($x+15,$y+69);
 $pdf->Cell(190,15,"",1);*/
 
-$Credito=0;
-$TextoCredito= $idioma['DesarrolladoPor'].": "."Ronald Nina Layme";
+$Credito=1;
+$TextoCredito= $idioma['DesarrolladoPor']." Ronald Nina";
 
 $pdf->SetXY($x+155,$y);
 celda(27,$idioma['NAutorizacion'].": ","B",9);
@@ -79,14 +79,25 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
-	if($fd['CodCuota']=="Todo"){
-		$cuo['Numero']="Todo";	
-	}else{
-		$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
-		$cuo=array_shift($cuo);
+	switch($fd['CodCuota']){
+		case "Todo":{
+			$cuo['Numero']="Todo";	
+		}break;
+		case "2a10":{
+			$cuo['Numero']="2a10";	
+		}break;
+		default:{
+			$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
+			$cuo=array_shift($cuo);
+		}break;
 	}
 	$pdf->SetXY($x+25,$i);	
-	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'')),"","9");
+	$NombreAlumno=$al['Paterno']." ".$al['Materno']." ".$al['Nombres'];
+	$NombreCurso=$cur['Abreviado'];
+	$NombreCuota=cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'');
+	
+	$TextoDetalle=capitalizar($NombreAlumno." - ".$NombreCurso)." - ".$NombreCuota;
+	celda(115,$TextoDetalle,"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
 $pdf->SetXY($x+20,$y+71);
@@ -106,8 +117,8 @@ $pdf->SetXY($x+20,$y+77);
 celda(37,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(15,fecha2Str($FechaLimiteEmision),"",8,"R");
 if($Credito){
-	$pdf->SetXY($x+175,$y+79);
-	celda(35,$TextoCredito,"","4");
+	$pdf->SetXY($x+100,$y+77);
+	celda(35,$TextoCredito,"","6");
 }
 
 $pdf->SetXY($x+20,$y+74);
@@ -169,14 +180,25 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
-	if($fd['CodCuota']=="Todo"){
-		$cuo['Numero']="Todo";	
-	}else{
-		$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
-		$cuo=array_shift($cuo);
+	switch($fd['CodCuota']){
+		case "Todo":{
+			$cuo['Numero']="Todo";	
+		}break;
+		case "2a10":{
+			$cuo['Numero']="2a10";	
+		}break;
+		default:{
+			$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
+			$cuo=array_shift($cuo);
+		}break;
 	}
 	$pdf->SetXY($x+25,$i);	
-	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'')),"","9");
+	$NombreAlumno=$al['Paterno']." ".$al['Materno']." ".$al['Nombres'];
+	$NombreCurso=$cur['Abreviado'];
+	$NombreCuota=cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'');
+	
+	$TextoDetalle=capitalizar($NombreAlumno." - ".$NombreCurso)." - ".$NombreCuota;
+	celda(115,$TextoDetalle,"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
 $pdf->SetXY($x+20,$y+71);
@@ -196,8 +218,8 @@ $pdf->SetXY($x+20,$y+77);
 celda(37,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(15,fecha2Str($FechaLimiteEmision),"",8,"R");
 if($Credito){
-	$pdf->SetXY($x+175,$y+79);
-	celda(35,$TextoCredito,"","4");
+	$pdf->SetXY($x+100,$y+77);
+	celda(35,$TextoCredito,"","6");
 }
 
 $pdf->SetXY($x+20,$y+74);
@@ -260,14 +282,25 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	$al=array_shift($al);
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
-	if($fd['CodCuota']=="Todo"){
-		$cuo['Numero']="Todo";	
-	}else{
-		$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
-		$cuo=array_shift($cuo);
+	switch($fd['CodCuota']){
+		case "Todo":{
+			$cuo['Numero']="Todo";	
+		}break;
+		case "2a10":{
+			$cuo['Numero']="2a10";	
+		}break;
+		default:{
+			$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
+			$cuo=array_shift($cuo);
+		}break;
 	}
 	$pdf->SetXY($x+25,$i);	
-	celda(115,Capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']." - ".$cur['Abreviado']." - ".cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'')),"","9");
+	$NombreAlumno=$al['Paterno']." ".$al['Materno']." ".$al['Nombres'];
+	$NombreCurso=$cur['Abreviado'];
+	$NombreCuota=cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'');
+	
+	$TextoDetalle=capitalizar($NombreAlumno." - ".$NombreCurso)." - ".$NombreCuota;
+	celda(115,$TextoDetalle,"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
 $pdf->SetXY($x+20,$y+71);
@@ -287,8 +320,8 @@ $pdf->SetXY($x+20,$y+77);
 celda(37,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(15,fecha2Str($FechaLimiteEmision),"",8,"R");
 if($Credito){
-	$pdf->SetXY($x+175,$y+79);
-	celda(35,$TextoCredito,"","4");
+	$pdf->SetXY($x+100,$y+77);
+	celda(35,$TextoCredito,"","6");
 }
 
 $pdf->SetXY($x+20,$y+74);

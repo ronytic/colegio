@@ -26,6 +26,10 @@ class cuota extends bd{
 		$this->campos=array('*');
 		return $this->getRecords("CodAlumno=$CodAlumno and Cancelado=0","Numero");
 	}
+	function mostrarCuotasNoCanceladasMenorMayor($CodAlumno,$Menor,$Mayor){
+		$this->campos=array('*');
+		return $this->getRecords("CodAlumno=$CodAlumno and Numero>=$Menor and Numero<=$Mayor","Numero");
+	}
 	function mostrarNumeroCuota($CodAlumno,$NumeroCuota,$Cancelado=1){
 		$this->campos=array('*');
 		return $this->getRecords("CodAlumno=$CodAlumno and Numero=$NumeroCuota and Cancelado=$Cancelado","Numero");
