@@ -52,8 +52,9 @@ if(count($tmp)){
                 
                 <?php if($contarhermano>1){?>
                 <br />
+                	<a href="../../factura/registro/index2.php?CodAlumno=<?php echo $codhermanos?>" class="btn btn-small btn-info" target="_blank"><?php echo $idioma['RegistrarFacturaCombinada']?></a>
             		<a href="../../impresion/alumno/tarjetadecuotas.php?CodAlumno=<?php echo $codhermanos?>" class="btn btn-small btn-info" target="_blank"><?php echo $idioma['ImprimirTarjetaCuotasCombinada']?></a>
-                    <a href="../../factura/registro/?CodAlumno=<?php echo $codhermanos?>" class="btn btn-small btn-info" target="_blank"><?php echo $idioma['RegistrarFacturaCombinada']?></a>
+                    
             	<?php }?>
                 
             	<hr/>
