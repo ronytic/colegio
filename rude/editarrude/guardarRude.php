@@ -57,7 +57,7 @@ if(!empty($_POST)){
 						"Materno"=>"'".mb_strtolower($_POST['materno'],"UTF-8")."'",
 						"Nombres"=>"'".mb_strtolower($_POST['nombres'],"UTF-8")."'",
 						"LugarNac"=>"'".mb_strtolower($_POST['departamentoNacA'],"UTF-8")."'",
-						"FechaNac"=>"'{$_POST['fechaNac']}'",
+						"FechaNac"=>"'".fecha2Str($_POST['fechaNac'],0)."'",
 						"Ci"=>"'{$_POST['numeroDoc']}'",
 						"Sexo"=>$_POST['sexo'],
 						"Zona"=>"'".mb_strtolower($_POST['zonaA'],"UTF-8")."'",
@@ -103,6 +103,6 @@ if(!empty($_POST)){
 					);
 	$doc->actualizarDocumento($valuesDoc,$_POST['CodAlumno']);
 	/*FIN DOCUMENTOS*/
-	header("Location:../../rude/verrude/?CodAlumno={$_POST['CodAlumno']}");
+	header("Location:../../impresion/rude/verrude.php?CodAlumno={$_POST['CodAlumno']}");
 }
 ?>
