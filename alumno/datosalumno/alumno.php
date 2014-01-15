@@ -130,7 +130,7 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['MontoBeca']?></td>
-                <td><?php campo("MontoBeca","text",$al['MontoBeca'],"span5",0,"",0,array("maxlength"=>7))?>Bs - <?php campo("PorcentajeBeca","text","0","span5",0,"",0,array("maxlength"=>6))?>%</td>
+                <td><?php campo("MontoBeca","text",$al['MontoBeca'],"span5",0,"",0,array("maxlength"=>7,"readonly"=>"readonly"))?>Bs - <?php campo("PorcentajeBeca","text","0","span5",0,"",0,array("maxlength"=>6))?>%</td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['MontoPagar']?></td>
