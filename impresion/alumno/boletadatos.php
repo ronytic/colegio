@@ -15,6 +15,8 @@ if(!empty($_GET)){
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
 	
+	$TextoCredito= "Sistema ".$idioma['DesarrolladoPor']." Ronald Nina";
+	
 	$Logo=$config->mostrarConfig("Logo",1);
 	$Titulo=$config->mostrarConfig("Titulo",1);
 	$UrlInternet=$config->mostrarConfig("UrlInternet",1);
@@ -42,7 +44,7 @@ $pdf->SetAutoPageBreak(true,0);
 //$pdf->Cell(196,80,"",1);
 
 $pdf->CuadroCuerpoPersonalizado(100,$idioma["DatosPersonales"],1,"",0,"B");
-$pdf->CuadroCuerpoPersonalizado(80,$idioma["NumerosContacto"],1,"",0,"B");
+$pdf->CuadroCuerpoPersonalizado(76,$idioma["NumerosContacto"],1,"",0,"B");
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["Paterno"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(60,capitalizar($al['Paterno']));
@@ -82,17 +84,19 @@ $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["CedulaIdentidad"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(60,capitalizar($al['Ci']),0,"",$borde);
 
+$pdf->CuadroCuerpoPersonalizado(50,$idioma["NumeroServicioMensajeria"].": ",0,"L",$borde,"B");
+
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["Curso"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(60,$cur['Nombre']);
 
-$pdf->CuadroCuerpoPersonalizado(50,$idioma["NumeroServicioMensajeria"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpo(60,capitalizar($NumeroServicioMensajeria),0,"",$borde,14);
 
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["Direccion"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(60,capitalizar($al['Zona'].", ".$al['Calle']." Nº ".$al['Numero']),0);
 
-$pdf->CuadroCuerpo(60,capitalizar($NumeroServicioMensajeria),0,"",$borde,14);
+
 $pdf->ln();
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(100,$idioma["DatosAccessoInternet"],1,"",0,"B");
@@ -115,6 +119,9 @@ $pdf->CuadroCuerpo(40,minuscula($al['UsuarioAlumno']),0,"",$borde);
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(60,$idioma["ContrasenaAlumno"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(40,capitalizar($al['Password']),0,"",$borde);
+$pdf->ln(7);
+
+$pdf->CuadroCuerpo(40,capitalizar($TextoCredito),0,"",$borde,7);
 $pdf->ln();
 
 $pdf->Output("Datos del Alumno.pdf","I");
