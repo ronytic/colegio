@@ -46,10 +46,10 @@ function mostrarAgenda($actividades,$Fecha){
 	global $idioma,$Botones,$Nivel,$CodUsuario;
 if(count($actividades)){	
 ?>	
-<tr><td colspan="7" class="resaltar"><small><span class=" "><?php echo count($actividades)?></span> - <?php echo $idioma["ActividadesDel"]?> <?php echo capitalizar(utf8_encode(strftime("%A, %d de %B de %Y",strtotime($Fecha))))?></small></td></tr>
+<tr><td colspan="7" class="resaltar"><small><span class=" "><?php echo count($actividades)?></span> - <?php echo $idioma["ActividadesDel"]?> <?php echo (utf8_encode(strftime("%A, %d de %B de %Y",strtotime($Fecha))))?></small></td></tr>
 <?php }else{
 ?>
-<tr><td colspan="7" class="resaltar"><small><?php echo $idioma["NoHayActividadesEl"]?> <?php echo capitalizar(utf8_encode(strftime("%A, %d de %B de %Y",strtotime($Fecha))))?></small></td></tr>
+<tr><td colspan="7" class="resaltar"><small><?php echo $idioma["NoHayActividadesEl"]?> <?php echo (utf8_encode(strftime("%A, %d de %B de %Y",strtotime($Fecha))))?></small></td></tr>
 <?php
 }?>
 <?php // Dia de Hoy?>

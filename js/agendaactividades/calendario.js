@@ -1,5 +1,11 @@
 $(document).on("ready",function(){
-	$(".calendario").datepicker({altField: "#FechaActividad",dateFormat: 'dd-mm-yy',numberOfMonths: 2,showButtonPanel: true});	
+	$(".calendario").datepicker({altField: "#FechaActividad",dateFormat: 'dd-mm-yy',numberOfMonths: 2,showButtonPanel: true,
+	onSelect:function(){
+		//alert("asd");
+		mostrarActividades();	
+	}
+	
+	});	
 	if(!DispositivoMovil){
 		$("#ParaQuien").data("placeholder","Seleccione...").chosen({width: "100%",});
 	}
@@ -8,7 +14,7 @@ $(document).on("ready",function(){
 		var valor=$(this).val();
 		$("#HoraFin").val(valor).attr("min",valor);
 	});
-	$(".calendario").on("click","table.ui-datepicker-calendar",function() {
+	$("#FechaActividad").change(function(e) {
         mostrarActividades();
     });
 	mostrarActividades();
