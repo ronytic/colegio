@@ -1237,6 +1237,7 @@ $idioma['ListadoFacturas']="Listado de Facturas";
 $idioma['ListadoAlumnosPorPagar']="Listado de Alumnos con Cuotas por Pagar";
 $idioma['EstadisticasAccesos']="Estadísticas de Accesos";
 $idioma['EnEsperaRude']="Registros de Rude en Espera";
+$idioma['TelefonoColegio']="Teléfono de la Unidad Educativa";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
