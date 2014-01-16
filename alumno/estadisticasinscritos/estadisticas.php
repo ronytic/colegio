@@ -30,10 +30,10 @@ if(!empty($_POST)){
 		$titulos=array();
 		$cantidad=array();
 		foreach($al->contarInscritoFechas() as $CantidadFechas){
-			array_push($titulos,"'".utf8_encode(strftime("%A, %d de %B del %Y",strtotime($CantidadFechas['FechaIns'])))."'");
+			array_push($titulos,"'".utf8_encode(strftime("%A, %d de %B de %Y",strtotime($CantidadFechas['FechaIns'])))."'");
 			array_push($cantidad,$CantidadFechas['CantidadFecha']);
 			?>
-        <tr class="contenido"><td><?php echo utf8_encode(strftime("%A, %d de %B del %Y",strtotime($CantidadFechas['FechaIns'])));?></td><td><?php echo $CantidadFechas['CantidadFecha'];?> <?php echo $idioma['Alumnos']?></td></tr>
+        <tr class="contenido"><td><?php echo utf8_encode(strftime("%A, %d de %B de %Y",strtotime($CantidadFechas['FechaIns'])));?></td><td><?php echo $CantidadFechas['CantidadFecha'];?> <?php echo $idioma['Alumnos']?></td></tr>
         <?php
         }
 		$titulos=implode(",",$titulos);
