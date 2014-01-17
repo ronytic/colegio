@@ -48,7 +48,8 @@ if(!empty($_POST)){
 		"NumeroAutorizacion"=>"'$NumeroAutorizacion'",
 		"LlaveDosificacion"=>"'$LlaveDosificacion'",
 		"CodigoControl"=>"'$TxtCodigoDeControl'",
-		"FechaLimiteEmision"=>"'$FechaLimiteEmision'"
+		"FechaLimiteEmision"=>"'$FechaLimiteEmision'",
+		"Tipo"=>"'General'"
 	);
 	/*echo "<pre>";
 	print_r($ValoresFactura);
@@ -65,6 +66,7 @@ if(!empty($_POST)){
 				"Interes"=>"'".$fd['Interes']."'",
 				"Descuento"=>"'".$fd['Descuento']."'",
 				"Total"=>"'".$fd['Total']."'",
+				"Tipo"=>"'General'"
 			);
 			/*echo "<pre>";	
 			print_r($ValoresFacturaDetalle);
