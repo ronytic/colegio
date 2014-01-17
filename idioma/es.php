@@ -127,6 +127,7 @@ $idioma['NVerTodosLosEnvios']="Ver Envios de SMS";
 $idioma['NListadoAlumnosPorPagar']="Listado de Alumnos con Cuotas por Pagar";
 $idioma['NEstadisticasAccesos']="Estadísticas de Accesos";
 $idioma['NRegistrosEnEspera']="Registros de RUDE en Espera";
+$idioma['NRegistrarFacturaPersonalizada']="Registrar Factura Personalizada";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -1238,6 +1239,7 @@ $idioma['ListadoAlumnosPorPagar']="Listado de Alumnos con Cuotas por Pagar";
 $idioma['EstadisticasAccesos']="Estadísticas de Accesos";
 $idioma['EnEsperaRude']="Registros de Rude en Espera";
 $idioma['TelefonoColegio']="Teléfono de la Unidad Educativa";
+$idioma['RegistroPersonalizado']="Registro Personalizado";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
@@ -1283,6 +1285,7 @@ $idioma['NumeroAutorizacion']="Número de Autorización";
 $idioma['FechaLimiteEmisionVencida']="La Fecha Límite de Emisión de Factura se encuentra Vencida";
 $idioma['NoExistenFacturasRegistradas']="No Existen Facturas Registradas";
 $idioma['AlContado']="Al Contado";
+$idioma['RegistrarFacturaPersonalizada']="Registrar Factura Personalizada";
 
 //Excel
 $idioma['TotalAlumnos']="Total de Alumnos";
