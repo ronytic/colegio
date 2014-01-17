@@ -33,6 +33,7 @@ $pdf->SetAutoPageBreak(true,0);
 $pdf->SetFont("arial","",10);
 $pdf->AddPage();
 //$pdf->Image("../../imagenes/factura/factura.jpg",0,0,217,330);
+//$pdf->Image("../../imagenes/factura/factura2014.jpg",0,-4,217,330);
 /*Primera Parte*/
 $x=-4+$_GET['x'];
 $y=15+$_GET['y'];
@@ -75,28 +76,33 @@ $pdf->SetXY($x+15,$y+30);
 //celda(60,$idioma['Sello'],"B",11,"C");
 $i=$y+35;
 foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $fd){$i+=4;
-	$al=$alumno->mostrarDatosPersonales($fd['CodAlumno']);
-	$al=array_shift($al);
-	$cur=$curso->mostrarCurso($al['CodCurso']);
-	$cur=array_shift($cur);
-	switch($fd['CodCuota']){
-		case "Todo":{
-			$cuo['Numero']="Todo";	
-		}break;
-		case "2a10":{
-			$cuo['Numero']="2a10";	
-		}break;
-		default:{
-			$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
-			$cuo=array_shift($cuo);
-		}break;
-	}
 	$pdf->SetXY($x+25,$i);	
-	$NombreAlumno=$al['Paterno']." ".$al['Materno']." ".$al['Nombres'];
-	$NombreCurso=$cur['Abreviado'];
-	$NombreCuota=cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'');
-	
-	$TextoDetalle=capitalizar($NombreAlumno." - ".$NombreCurso)." - ".$NombreCuota;
+	if($f['Tipo']=="Personalizado"){
+		$TextoDetalle=$fd['Nombre'];
+	}else{
+		$al=$alumno->mostrarDatosPersonales($fd['CodAlumno']);
+		$al=array_shift($al);
+		$cur=$curso->mostrarCurso($al['CodCurso']);
+		$cur=array_shift($cur);
+		switch($fd['CodCuota']){
+			case "Todo":{
+				$cuo['Numero']="Todo";	
+			}break;
+			case "2a10":{
+				$cuo['Numero']="2a10";	
+			}break;
+			default:{
+				$cuo=$cuota->mostrarTodoCuota($fd['CodCuota']);
+				$cuo=array_shift($cuo);
+			}break;
+		}
+		
+		$NombreAlumno=$al['Paterno']." ".$al['Materno']." ".$al['Nombres'];
+		$NombreCurso=$cur['Abreviado'];
+		$NombreCuota=cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'');
+		
+		$TextoDetalle=capitalizar($NombreAlumno." - ".$NombreCurso)." - ".$NombreCuota;
+	}
 	celda(115,$TextoDetalle,"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
@@ -340,7 +346,7 @@ celda(10,$idioma['Hora'].": ","B","8");
 celda(15,(($f['HoraRegistro'])),"","8");
 
 
-$pdf->Output();
+$pdf->Output("Factura","I");
 }
 function celda($ancho,$texto,$estilo="",$tam=10,$ali=""){
 	global $pdf;
