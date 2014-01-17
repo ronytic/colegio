@@ -18,7 +18,7 @@ if(!empty($_POST)){
 	$NumeroAutorizacion=$config->mostrarConfig("NumeroAutorizacion",1);
 	$LlaveDosificacion=$config->mostrarConfig("LlaveDosificacion",1);
 	$FechaLimiteEmision=$config->mostrarConfig("FechaLimiteEmision",1);
-	$f=$factura->mostrarFacturas("NFactura='".trim($NFactura)."'");
+	$f=$factura->mostrarFacturas("NFactura='".trim($NFactura)."' and Estado='Activo'");
 	if(count($f)){
 		header("Location: ./?f=1&NFactura=".trim($NFactura));	
 	}
