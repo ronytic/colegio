@@ -39,8 +39,9 @@ $(document).ready(function(e) {
 		}else{
 			MontoBeca=(valor*MontoKinder)/100;
 		}
-		
-		$("#MontoBeca").val(MontoBeca.toFixed(2));
+		if($("#MontoBeca").val()=="0.00"){
+			$("#MontoBeca").val(MontoBeca.toFixed(2));
+		}
 		if($("#Curso").val()!=1){
 			$('#MontoPagar').val(MontoGeneral-($("#MontoBeca").val()));
 		}else{
