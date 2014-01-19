@@ -1,7 +1,7 @@
 <?php
 include_once("../../login/check.php");
-include_once("../fpdf/fpdf.php");
-class pdf extends FPDF{
+include_once("../pdfs.php");
+class pdf extends PPDF{
 	
 }
 if(!empty($_GET)){
