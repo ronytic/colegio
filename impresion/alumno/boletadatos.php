@@ -87,7 +87,7 @@ $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["CedulaIdentidad"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(60,capitalizar($al['Ci']),0,"",$borde);
 
-$pdf->CuadroCuerpoPersonalizado(50,$idioma["NumeroServicioMensajeria"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpoPersonalizado(75,$idioma["NumeroServicioMensajeria"].": ",1,"L",$borde,"B");
 
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(40,$idioma["Curso"].": ",0,"L",$borde,"B");
@@ -104,7 +104,7 @@ $pdf->ln();
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(100,$idioma["DatosAccessoInternet"],1,"",0,"B");
 
-$pdf->CuadroCuerpoPersonalizado(50,$idioma["TelefonoColegio"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpoPersonalizado(75,$idioma["TelefonoColegio"].": ",1,"L",$borde,"B");
 
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(60,$idioma["UsuarioPadreFamilia"].": ",0,"L",$borde,"B");
@@ -122,7 +122,7 @@ $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(60,$idioma["UsuarioAlumno"].": ",0,"L",$borde,"B");
 $pdf->CuadroCuerpo(40,minuscula($al['UsuarioAlumno']),0,"",$borde);
 
-$pdf->CuadroCuerpoPersonalizado(50,$idioma["DireccionPaginaWeb"].": ",0,"L",$borde,"B");
+$pdf->CuadroCuerpoPersonalizado(75,$idioma["DireccionPaginaWeb"].": ",1,"L",$borde,"B");
 
 $pdf->ln();
 $pdf->CuadroCuerpoPersonalizado(60,$idioma["ContrasenaAlumno"].": ",0,"L",$borde,"B");
