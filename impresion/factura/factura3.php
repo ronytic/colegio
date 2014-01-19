@@ -26,9 +26,9 @@ switch($f['Nivel']){
 	case "1":{$Usuario=$idioma["Administrador"];}break;	
 	case "2":{$Usuario=$idioma["Direccion"];}break;	
 }
-include_once("../fpdf/fpdf.php");
+include_once("../pdfs.php");
 
-$pdf=new FPDF("P","mm",array(217,330));
+$pdf=new PPDF("P","mm",array(217,330));
 $pdf->SetAutoPageBreak(true,0);
 $pdf->SetFont("arial","",10);
 $pdf->AddPage();
