@@ -52,7 +52,7 @@ if(!file_exists($ima)  || empty($doc['Foto'])){
         </tr>
         <tr>
             <td><?php echo $idioma['FechaNacimiento']?></td>
-            <td><?php campo("FechaNac","date",$doc['FechaNac'],"span12",1); ?></td>
+            <td><?php campo("FechaNac","text",fecha2Str($doc['FechaNac']),"span12 fecha",1); ?></td>
         </tr>
         <tr>
             <td><?php echo $idioma['Departamento']?></td>

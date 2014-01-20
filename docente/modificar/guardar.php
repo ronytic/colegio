@@ -14,7 +14,7 @@ if(isset($_POST)){
 				"Nombres"=>"'$Nombres'",
 				"Sexo"=>"'$Sexo'",
 				"Ci"=>"'$Ci'",
-				"FechaNac"=>"'$FechaNac'",
+				"FechaNac"=>"'".fecha2Str($FechaNac,0)."'",
 				"Departamento"=>"'$Departamento'",
 				"Provincia"=>"'$Provincia'",
 				"Direccion"=>"'$Direccion'",
