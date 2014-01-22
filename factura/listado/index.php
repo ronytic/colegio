@@ -52,7 +52,11 @@ var SeguroCambiarEstado="<?php echo $idioma['SeguroCambiarEstado']?>";
                 </td>
             </tr>
             <tr>
-            	<td colspan="6"><input type="submit" value="<?php echo $idioma['VerReporte']?>" class="btn btn-success"></td>
+            	<td colspan="6"><input type="submit" value="<?php echo $idioma['VerReporte']?>" class="btn btn-success">
+                	<?php if(($_SESSION['CodUsuarioLog']==2 && $_SESSION['Nivel']==2) || $_SESSION['Nivel']==1){?>
+                    <a href="../../moduloadicional/revisarcodigo.php" class="btn" target="_blank">Verificar Codigos de Control</a>
+                    <?php }?>
+                </td>
             </tr>
         </table>
     	
