@@ -1286,6 +1286,7 @@ $idioma['FechaLimiteEmisionVencida']="La Fecha Límite de Emisión de Factura se
 $idioma['NoExistenFacturasRegistradas']="No Existen Facturas Registradas";
 $idioma['AlContado']="Al Contado";
 $idioma['RegistrarFacturaPersonalizada']="Registrar Factura Personalizada";
+$idioma['Personalizado']="Personalizado";
 
 //Excel
 $idioma['TotalAlumnos']="Total de Alumnos";
