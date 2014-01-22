@@ -33,7 +33,7 @@ $pdf->SetAutoPageBreak(true,0);
 $pdf->SetFont("arial","",10);
 $pdf->AddPage();
 //$pdf->Image("../../imagenes/factura/factura.jpg",0,0,217,330);
-$pdf->Image("../../imagenes/factura/factura2014.jpg",0,-4,217,330);
+//$pdf->Image("../../imagenes/factura/factura2014.jpg",0,-4,217,330);
 /*Primera Parte*/
 $x=-4+$_GET['x'];
 $y=15+$_GET['y'];
