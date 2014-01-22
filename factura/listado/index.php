@@ -23,6 +23,7 @@ var SeguroCambiarEstado="<?php echo $idioma['SeguroCambiarEstado']?>";
                     <th><?php echo $idioma['Nit']?></th>
                     <th><?php echo $idioma['Factura']?></th>
                     <th><?php echo $idioma['Estado']?></th>
+                    <th><?php echo $idioma['Tipo']?></th>
                 </tr>
             </thead>
         	<tr>
@@ -41,9 +42,17 @@ var SeguroCambiarEstado="<?php echo $idioma['SeguroCambiarEstado']?>";
                     </select>
                 	<?php ?>
                 </td>
+                <td>
+                	<select name="Tipo" class="span12">
+                    	<option value=""><?php echo $idioma['Seleccionar']?></option>
+                        <option value="General"><?php echo $idioma['General']?></option>
+                        <option value="Personalizado"><?php echo $idioma['Personalizado']?></option>
+                    </select>
+                	<?php ?>
+                </td>
             </tr>
             <tr>
-            	<td colspan="5"><input type="submit" value="<?php echo $idioma['VerReporte']?>" class="btn btn-success"></td>
+            	<td colspan="6"><input type="submit" value="<?php echo $idioma['VerReporte']?>" class="btn btn-success"></td>
             </tr>
         </table>
     	

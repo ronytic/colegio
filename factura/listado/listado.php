@@ -25,6 +25,9 @@ if($Factura!=""){
 if($Estado!=""){
 	array_push($condi,"Estado LIKE '%$Estado%'");
 }
+if($Tipo!=""){
+	array_push($condi,"Tipo LIKE '%$Tipo%'");
+}
 $where=implode(" and ",$condi);
 include_once("../../class/factura.php");
 $factura=new factura;
@@ -56,7 +59,7 @@ if(count($fac)){
 	$can+=$f['Cancelado'];
 	$cambio+=$f['MontoDevuelto'];
 	?>
-	<tr>
+	<tr <?php echo $f['TotalBs']!=$f['Cancelado']?'class="error"':'';?>>
 		<td><?php echo $i?></td>
 		<td><?php echo fecha2Str($f['FechaFactura'])?></td>
 		<td><?php echo ($f['NFactura'])?></td>
@@ -66,7 +69,7 @@ if(count($fac)){
 		<td class="der"><?php echo number_format($f['Cancelado'],2)?></td>
 		<td class="der"><?php echo number_format($f['MontoDevuelto'],2)?></td>
 		<td>
-		<select class="estado input-small" rel="<?php echo $f['CodFactura']?>">
+		<select class="estado input-small" rel="<?php echo $f['CodFactura']?>" <?php echo $f['Estado']=="Anulado"?'disabled="disabled"':''?>>
         	<option value="Valido" <?php echo ($f['Estado']=="Valido")?'selected="selected"':'';?>><?php echo $idioma['Valido']?></option>
             <option value="Anulado" <?php echo ($f['Estado']=="Anulado")?'selected="selected"':'';?>><?php echo $idioma['Anulado']?></option>
         </select>
