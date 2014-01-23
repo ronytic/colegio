@@ -795,6 +795,8 @@ $idioma['Lenguaje']="Lenguaje";
 $idioma['SeparadorReforzamiento']="Separador de Reforzamiento";
 $idioma['SeparadorConReforzamiento']="Separador con Reforzamiento";
 $idioma['SeparadorDps']="Separador en Dps";
+$idioma['ReporteEstadisticoAccesos']="Reporte Estadístico de Accesos";
+$idioma['CantidadAccesos']="Cantidad de Accesos";
 //Tareas
 $idioma['NRegistroTareas']="Registro de Tareas";
 $idioma['Tarea']="Tarea";
@@ -1287,6 +1289,7 @@ $idioma['NoExistenFacturasRegistradas']="No Existen Facturas Registradas";
 $idioma['AlContado']="Al Contado";
 $idioma['RegistrarFacturaPersonalizada']="Registrar Factura Personalizada";
 $idioma['Personalizado']="Personalizado";
+$idioma['VerificarCodigosControl']="Verificar Codigos de Control";
 
 //Excel
 $idioma['TotalAlumnos']="Total de Alumnos";

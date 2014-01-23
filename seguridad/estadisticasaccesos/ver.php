@@ -14,6 +14,7 @@ if($_SESSION['Nivel']==1){
 }else{
 	$Tipo="1";
 }
+
 extract($_POST);
 $FechaInicio=fecha2Str($FechaInicio);
 $FechaFin=fecha2Str($FechaFin);
@@ -23,8 +24,14 @@ echo strtotime($FechaFin);
 echo "<br>";
 echo strtotime($FechaFin)- strtotime($FechaInicio);
 */
-if($_SESSION['Nivel']=="1"){$Inicio=1;}else{$Inicio=2;}
-for($j=$Inicio;$j<=7;$j++){
+if($Nivel==1 || $Nivel=="Todos"){
+	if($_SESSION['Nivel']=="1"){$Inicio=1;}else{$Inicio=2;}
+	$Fin=7;
+}else{
+	$Inicio=$Nivel;	
+	$Fin=$Nivel;
+}
+for($j=$Inicio;$j<=$Fin;$j++){
 	$val=array();
 	for($i=strtotime($FechaInicio);$i<=strtotime($FechaFin);$i=$i+86400){
 		$Fecha=date("Y-m-d",$i);	
@@ -69,7 +76,7 @@ $(function () {
                 type: 'line'
             },
             title: {
-                text: '<?php echo $idioma['ReporteEstadisticoAgenda']?>'
+                text: '<?php echo $idioma['ReporteEstadisticoAccesos']?>'
             },
             subtitle: {
                 text: '<?php echo $subtitulo?>'
@@ -84,7 +91,7 @@ $(function () {
             yAxis: {
 				min: 0,
                 title: {
-                    text: '<?php echo $idioma['CantidadObservaciones']?>'
+                    text: '<?php echo $idioma['CantidadAccesos']?>'
                 }
             },
             tooltip: {
@@ -108,7 +115,7 @@ $(function () {
 				?>
 				{
                 name: '<?php echo $k//.$i;?>',
-                data: [<?php echo $k?>]
+                data: [<?php echo $v?>]
             	}
 				<?php
 			}?>
