@@ -40,8 +40,10 @@ class alumno extends bd{
 	}
 	function contarInscritoNuevoCurso($CodCurso){
 		$this->tabla="alumno a,rude r";
+		//$this->tabla="alumno a,tmp_alumno tmp";
 		$this->campos=array('count(*) as CantidadNuevo');
 		return $this->getRecords("a.CodAlumno=r.CodAlumno and r.CodigoSie!='' and CodCurso=$CodCurso and Retirado=0",false,"CodCurso");
+		//return $this->getRecords("tmp.Paterno=a.Paterno and tmp.Materno=a.Materno  and tmp.Nombres=a.Nombres and a.CodCurso=$CodCurso and a.Retirado=0",false,"a.CodCurso");
 	}
 	function verInscritosNuevosCurso($CodCurso,$Retirado=0){
 		$this->tabla="alumno a,rude r";
