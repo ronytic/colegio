@@ -50,7 +50,7 @@ a{
 $CantidadCorrecto=0;
 $CantidadIncorrecto=0;
 $i=0;
-foreach($fac as $f){$i++;
+foreach($fac as $f){
 	
 	$CodAlumno=$f['CodAlumno'];
 	if($CodAlumno!=""){
@@ -81,9 +81,10 @@ foreach($fac as $f){$i++;
 		$CantidadIncorrecto++;
 		$TextoEstado="Error";
 	}
+	if($TextoEstado=="Error"){
+	$i++;
 	?>
     <tr style="<?php echo $CodigoControlGuardado!=$CodigoControlGenerado?'background-color:#F93':'';?>">
-    
     	<td><?php echo $i?></td>
     	<td><?php echo capitalizar($al['Paterno'])?></td>
         <td><?php echo capitalizar($al['Materno'])?></td>
@@ -102,9 +103,10 @@ foreach($fac as $f){$i++;
     	<td><?php echo $CodigoControlGuardado?></td>
         <td><?php echo $CodigoControlGenerado?></td>
         <td><?php echo $TextoEstado;?></td>
-        <td><?php if($TextoEstado=="Error"){?><a href="corregircodigo.php?CodFactura=<?php echo $CodFactura?>&CodigoControl=<?php echo $CodigoControlGenerado?>" target="_blank">Corregir</a><?php }?></td>
+        <!--<td><?php if($TextoEstado=="Error"){?><a href="corregircodigo.php?CodFactura=<?php echo $CodFactura?>&CodigoControl=<?php echo $CodigoControlGenerado?>" target="_blank">Corregir</a><?php }?></td>-->
     </tr>
     <?php
+	}
 }
 ?>
 <tr style="background-color:#6C9;font-size:30px;">
