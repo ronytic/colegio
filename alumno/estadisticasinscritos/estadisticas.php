@@ -56,14 +56,17 @@ if(!empty($_POST)){
 				
 				$CantidadTotalM+=$mujeres['Cantidad'];
 				$CantidadTotalV+=$varones['Cantidad'];
-				$CantidadNuevo+=$cn['CantidadNuevo'];
+				
+				//$CantidadNuevos=$CantidadCurso['CantidadCurso']-$cn['CantidadNuevo'];
+				$CantidadNuevos=$cn['CantidadNuevo'];
+				$CantidadNuevo+=$CantidadNuevos;
 				?>
         <tr class="contenido">
         	<td><?php  $cursos=array_shift($cur->mostrarCurso($CantidadCurso['CodCurso']));echo $cursos['Nombre'];?></td>
             <td><?php echo $CantidadCurso['CantidadCurso'];?> <?php echo $idioma['Alumnos']?></td>
 			<td><?php echo $varones['Cantidad'];?> <?php echo $idioma['Alumnos']?></td>
             <td><?php echo $mujeres['Cantidad']?> <?php echo $idioma['Alumnas']?></td>
-            <td class="text-right"><?php echo $cn['CantidadNuevo']?> </td>
+            <td class="text-right"><?php echo $CantidadNuevos?> </td>
             <td><a class="btn btn-mini vermasnuevo" title="<?php echo $idioma["VerAlumnosNuevos"]?>" rel="<?php echo $CantidadCurso['CodCurso']?>"><i class="icon-chevron-down"></i></a></td>
 
         </tr>
