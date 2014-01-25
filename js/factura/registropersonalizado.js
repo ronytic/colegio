@@ -44,7 +44,7 @@ $(document).ready(function(e) {
 	$(document).on("change",".NFactura",function(e){
 		$.post("verificarnumerofactura.php",{'NFactura':$("input[name=NFactura]").val()},function(data){
 			if(data.Estado=="Si"){
-				$("#Guardar").removeAttr("disabled");
+				//$("#Guardar").removeAttr("disabled");
 			}else{
 				alert(NFacturaDuplicado);	
 				$("input[name=NFactura]").focus();
