@@ -34,7 +34,7 @@ if(!empty($_POST['CodAlumno'])){
 						foreach($cuo as $c){
 							$Monto+=$c['MontoPagar'];
 						}
-						$cuo['CodCuota']="Todo";
+						$cuo['CodCuota']="2a10";
 						$cuo['MontoPagar']="$Monto";
 				
 						//$cuo=array_shift($cuo);		
