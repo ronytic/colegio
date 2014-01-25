@@ -981,6 +981,7 @@ $idioma['NuevoUsuario']="Nuevo Usuario";
 $idioma['NoExisteUsuariosRegistrados']="No Existen Usuarios Registrados";
 $idioma['ModificarUsuario']="Modificar Usuario";
 $idioma['NotaContrasena']="La Contraseña será Modificada si introduce una nueva, si lo deja vacio mantendra la contraseña asignada anteriormente";
+$idioma['NotaContrasenaNueva']="Introdusca la contraseña que le será asignado al Usuario";
 $idioma['Apodo']="Apodo";
 $idioma['Habilitado']="Habilitado";
 $idioma['MensajeEliminarUsuario']="¿Seguro que desea ELIMINAR este usuario?";

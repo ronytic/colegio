@@ -14,7 +14,7 @@ if(isset($_POST)){
 	
 	$sino=array(0=>$idioma['No'],1=>$idioma['Si']);
 	?>
-    <h2><?php echo $idioma['NuevaObservacion']?></h2>
+    <h2><?php echo $idioma['NuevoUsuario']?></h2>
     <form action="guardar.php" method="post" class="formulario">
     <table class="table table-bordered table-striped">
     	<tr>
@@ -41,7 +41,7 @@ if(isset($_POST)){
         <tr>
         	<td><?php echo $idioma['Contrasena']?><br>
         	<input type="text" value="" name="Pass" class="span12" placeholder="">
-            <small><?php echo $idioma['NotaContrasena']?></small></td>
+            <small><?php echo $idioma['NotaContrasenaNueva']?></small></td>
         </tr>
         <tr>
         	<td><?php echo $idioma['Apodo']?><br>

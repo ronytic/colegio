@@ -1,5 +1,6 @@
 $(document).on("ready",function(){
 	mostrar();	
+	
 	$(document).on("click",".eliminar",function(e){
 		e.preventDefault();
 		if(confirm(MensajeEliminar)){
@@ -12,14 +13,14 @@ $(document).on("ready",function(){
 		if(confirm(MensajeModificar)){
 			cargandoG("#configuracion");
 			var CodUsuario=$(this).attr("rel");
-			$.post("modificar.php",{'CodUsuario':CodUsuario},function(data){$(".configuracion").html(data);$("#Usuario")});
+			$.post("modificar.php",{'CodUsuario':CodUsuario},function(data){$(".configuracion").html(data);$("input[name=Usuario]").alpha({'allow':''});});
 		}
 	});
 	$(document).on("click","#nuevo",function(e){
 		e.preventDefault();
 		cargandoG("#configuracion");
 		var CodUsuario=$(this).attr("rel");
-		$.post("nuevo.php",{'CodUsuario':CodUsuario},function(data){$(".configuracion").html(data);$("#Usuario")});
+		$.post("nuevo.php",{'CodUsuario':CodUsuario},function(data){$(".configuracion").html(data);$("input[name=Usuario]").alpha({'allow':''});});
 	});
 });
 function mostrar(){
