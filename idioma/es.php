@@ -128,6 +128,7 @@ $idioma['NListadoAlumnosPorPagar']="Listado de Alumnos con Cuotas por Pagar";
 $idioma['NEstadisticasAccesos']="Estadísticas de Accesos";
 $idioma['NRegistrosEnEspera']="Registros de RUDE en Espera";
 $idioma['NRegistrarFacturaPersonalizada']="Registrar Factura Personalizada";
+$idioma['NVerificarCodigosControl']="Verificar Códigos de Control";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -1273,7 +1274,7 @@ $idioma['Cambio']="Cambio";
 $idioma['FechaLimiteEmision']="Fecha Límite de Emisión";
 $idioma['Cajero']="Cajero";
 $idioma['Sello']="Sello";
-$idioma['FechaFactura']="Fecha Factura";
+$idioma['FechaFactura']="Fecha de la Factura";
 $idioma['NTransaccion']="N Transacción";
 $idioma['Bolivianos']="Bolivianos";
 $idioma['NitCi']="NIT/CI";
@@ -1291,7 +1292,14 @@ $idioma['AlContado']="Al Contado";
 $idioma['RegistrarFacturaPersonalizada']="Registrar Factura Personalizada";
 $idioma['Personalizado']="Personalizado";
 $idioma['VerificarCodigosControl']="Verificar Codigos de Control";
-
+$idioma['CantidadCorrectos']="Cantidad de Correctos";
+$idioma['CantidadIncorrectos']="Cantidad de Incorrectos";
+$idioma['Correcto']="Correcto";
+$idioma['Error']="Error";
+$idioma['CodigoGenerado']="Código Generado";
+$idioma['CodigoCorrecto']="Código Correcto";
+$idioma['Correctos']="Correctos";
+$idioma['Incorrectos']="Incorrectos";
 //Excel
 $idioma['TotalAlumnos']="Total de Alumnos";
 $idioma['Aprobados']="Aprobados";
