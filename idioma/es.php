@@ -718,6 +718,7 @@ $idioma['RegistroAgenda']="Registro de la Agenda";
 $idioma['Periodo']="Periodo";
 $idioma['IngresarCodigoBarra']="Ingrese el código de Barra";
 $idioma['CodigoBarra']="Código de Barra";
+$idioma['CodigosBarra']="Códigos de Barra";
 $idioma['NoSeEncontroCodigo']="No se encontro el código de barra";
 $idioma['Urgente']="Urgente";
 $idioma['Citacion']="Citación";
