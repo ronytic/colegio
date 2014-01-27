@@ -106,13 +106,13 @@ switch($Nivel){
                         <?php
                         	foreach($menu->mostrar($Nivel,"Lateral") as $m){
 								?>
-                                <li class="funo <?php if ($rmenu==$m['Url']){ echo'active';}?>">
-                                	<a href="#" ><i class="<?php echo $m['Imagen'];?> "></i><span class=""> <?php echo $idioma[$m['Nombre']];?></span></a>
+                                <li class="funo <?php if ($rmenu==$m['Url']){$textomenu=$idioma[$m['Nombre']];echo'active';}?>">
+                                	<a href="#"><i class="<?php echo $m['Imagen'];?> "></i><span class=""> <?php echo $idioma[$m['Nombre']];?></span></a>
             					<?php 
 								$subm=$submenu->mostrar($Nivel,$m['CodMenu']);
 								if(count($subm)){
 									?>
-										<ul class="oculto submenu">
+									<ul class="oculto submenu">
 									<?php
 									foreach($subm as $sm){
 										$UrlInternet="";
@@ -120,7 +120,19 @@ switch($Nivel){
 											$UrlInternet="redirigir.php";	
 										}
 										?>
-                                        <li class="<?php echo $rsubmenu==$sm['Url']?'selecciona':'';?>"> <a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?><?php echo $UrlInternet?>"><i class="icon-chevron-right"></i><span><?php echo $idioma[$sm['Nombre']];?></span></a></li>
+                                        <li class="<?php if($rsubmenu==$sm['Url']){$textosubmenu=$idioma[$sm['Nombre']];echo 'selecciona';}?>"> 
+                                        	<a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?><?php echo $UrlInternet?>">
+                                            <div class="ssubmenu">
+                                            	<table>
+                                                	<tr>
+                                                    <td><i class="icon-chevron-right"></i></td>
+                                                	<td><?php echo $idioma[$sm['Nombre']];?></td>
+												
+                                                	</tr>
+                                                </table>
+                                            </div>
+                                            </a>
+                                        </li>
                                         <?php		
 									}
 									?>
@@ -143,14 +155,15 @@ switch($Nivel){
 	<div>
 		<ul class="breadcrumb">
             <li>
-                <a href="<?php echo $folder;?>"><?php echo $idioma['Inicio']?></a> <span class="divider">/</span>
+                <a href="<?php echo $folder;?>"><?php echo $idioma['Inicio']?></a> <span class="navegacion"> > <?php echo $textomenu!=""?$textomenu." >":''?> 
+			<?php echo $idioma[$titulo];?> </span>
             </li>
             <?php /*?>
             <li>
                 <a href="#">Dashboard</a> <span class="divider">/</span>
             </li>
 			<?php */?>
-			<?php echo $idioma[$titulo];?>
+           
 		</ul>
 	</div>
 <div class="sortable row-fluid">

@@ -43,6 +43,10 @@ $rurl=str_replace("/".$directory,"",$rurl);
 $rurl=explode("/",$rurl);
 $rmenu=array_shift($rurl)."/";
 $rsubmenu=implode("/",$rurl);
+//echo $rmenu;
+$textomenu="";
+$textosubmenu="";
+//echo $rsubmenu;
 /*Fin de Obtenemos para el Menu*/
 $Nivel=$_SESSION['Nivel'];
 $CodUsuario=$_SESSION['CodUsuarioLog'];
