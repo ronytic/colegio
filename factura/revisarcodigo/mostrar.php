@@ -92,7 +92,7 @@ foreach($fac as $f){
         <!--<td><?php echo $LlaveDosificacion?></td>-->
     	<td><strong><?php echo $CodigoControlGuardado?></strong></td>
         <td><strong><?php echo $CodigoControlGenerado?></strong></td>
-        <td><?php echo $$idioma[$TextoEstado];?></td>
+        <td><?php echo $idioma[$TextoEstado];?></td>
         <td><?php if($TextoEstado=="Error"){?><a href="corregircodigo.php?CodFactura=<?php echo $CodFactura?>&CodigoControl=<?php echo $CodigoControlGenerado?>" target="_blank" class="btn btn-small btn-danger">Corregir</a><?php }?></td>
     </tr>
     <tr>
