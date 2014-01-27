@@ -42,11 +42,14 @@ $rurl=str_replace("index.php","",$_SERVER['SCRIPT_NAME']);
 $rurl=str_replace("/".$directory,"",$rurl);
 $rurl=explode("/",$rurl);
 $rmenu=array_shift($rurl)."/";
+
 $rsubmenu=implode("/",$rurl);
 //echo $rmenu;
 $textomenu="";
 $textosubmenu="";
-//echo $rsubmenu;
+$urlSubMenu=explode("/",$rsubmenu);
+$urlSubMenu=$urlSubMenu[0]."/";
+//echo $urlSubMenu;
 /*Fin de Obtenemos para el Menu*/
 $Nivel=$_SESSION['Nivel'];
 $CodUsuario=$_SESSION['CodUsuarioLog'];

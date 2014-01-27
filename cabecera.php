@@ -120,7 +120,7 @@ switch($Nivel){
 											$UrlInternet="redirigir.php";	
 										}
 										?>
-                                        <li class="<?php if($rsubmenu==$sm['Url']){$textosubmenu=$idioma[$sm['Nombre']];echo 'selecciona';}?>"> 
+                                        <li class="<?php if($urlSubMenu==$sm['Url']){$textosubmenu=$idioma[$sm['Nombre']];echo 'selecciona';}?>"> 
                                         	<a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?><?php echo $UrlInternet?>">
                                             <div class="ssubmenu">
                                             	<table>
