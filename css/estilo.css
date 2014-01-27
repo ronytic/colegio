@@ -75,6 +75,9 @@ label.msg{
           	border-radius: 2px 2px 0px 0px;
 
 }
+.breadcrumb .navegacion{
+	text-shadow:none !important;
+}
 /*Fin de las Correcciones del Framework*/
 .nav li:link{
 	background-color:#F00;	
@@ -107,7 +110,17 @@ label.msg{
 	color:#333;
 	display:block;
 	transition:all color 5s;
+}
+.submenu li a div{
 	
+
+}
+.submenu li a .smenu1{
+	display:inline-block;	
+}
+.submenu li a .smenu2{
+	display:inline-block;
+	background-color:#F00;	
 }
 .submenu li:hover{
 	
