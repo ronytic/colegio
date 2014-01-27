@@ -58,7 +58,7 @@ var ContarAlumnos=<?php echo $contardividido-1?>;
         		<tr>
                 	<th><?php echo $idioma['Fecha']?>:<br><input type="text" class="fecha" name="FechaFactura" value="<?php echo fecha2Str()?>" required></th>
                 	<th><?php echo $idioma['NFactura']?>: <br><input type="text" class="derecha NFactura" name="NFactura" value="<?php echo $_GET['f']==1?$_GET['NFactura']:$NFactura?>" required></th>
-                    <th><?php echo $idioma['NReferencia']?>: <br><input type="text" class="derecha" name="NReferencia" readonly value="<?php echo $NReferencia?>" required></th>
+                    <th><?php echo $idioma['NReferencia']?>: <br><input type="text" class="derecha span12" name="NReferencia" readonly value="<?php echo $NReferencia?>" required></th>
                 </tr>
                 <tr>
                 	
@@ -78,7 +78,7 @@ var ContarAlumnos=<?php echo $contardividido-1?>;
             	<td class="resaltar der" colspan="4"><?php echo $idioma['TotalDescuento']?>: </td><td><input type="text" name="TotalDescuento" readonly class="input-small der TotalDescuento" value="0.00"></td><td></td>
             </tr>
             <tr>
-            	<td colspan="2" class="" rowspan="4"><span class="resaltar"><?php echo $idioma['Observacion']?></span>:<br><textarea name="Observacion" class="span12" rows="5"></textarea>
+            	<td colspan="2" class="" rowspan="4"><span class="resaltar"><?php echo $idioma['Observacion']?></span>:<br><textarea name="Observacion" class="span12" rows="5"></textarea><br>
                 <?php echo $idioma['FechaLimiteEmision']?>: <span class="resaltar"><?php echo fecha2Str($FechaLimiteEmision)?></span>
                 <?php if($FechaLimiteEmision<=date("Y-m-d")){?><div class="alert alert-error"><?php echo $idioma['FechaLimiteEmisionVencida']?></div><?php }?>
                 <br>
