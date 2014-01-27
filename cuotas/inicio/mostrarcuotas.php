@@ -26,8 +26,8 @@ if(count($cuotas)){
         <th><small><?php echo $idioma["Curso"]?></small></th>
         <th><small><?php echo $idioma["FechaPago"]?></small></th>
         <th><small><span title="<?php echo $idioma["Numero"]." ".$idioma["De"]." ".$idioma["Cuota"]?>"><?php echo sacarIniciales($idioma["Numero"])?>/<?php echo sacarIniciales($idioma["Cuota"])?></span></small></th>
-        <th><?php echo $idioma["Factura"]?></th>
-        <th><?php echo $idioma["Monto"]?></th>
+        <th><small><?php echo $idioma["Factura"]?></small></th>
+        <th><small><?php echo $idioma["Monto"]?></small></th>
         </tr>
     </thead>
 	<?php
