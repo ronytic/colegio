@@ -85,7 +85,7 @@ if(isset($_POST)){
     <table class="table table-hover table-bordered table-striped table-condensed inicio">
 
     	<tr class="resaltar"><th colspan="3"><?php echo $idioma['Fecha']?></th><th colspan="4"><?php echo fecha2Str($Fecha)?></th></tr>
-    	<tr class="cabecera"><th width="10" style="min-width:10px;"></th><th><?php echo $idioma['Nombre']?></th><th><?php echo recortarTexto($idioma['Curso'],3,"")?></th><th><?php echo recortarTexto($idioma['Materia'],3,"")?></th><th width="100"><?php echo recortarTexto($idioma['Observacion'],3,"")?></th><th><?php echo $idioma['Detalle']?></th><th></th></tr>
+    	<tr class="cabecera"><th width="10" style="min-width:10px;"></th><th><small><?php echo $idioma['Nombre']?></small></th><th><small><?php echo sacarToolTip($idioma['Curso'],"","0")?></small></th><th><small><?php echo sacarToolTip($idioma['Materia'],"","R",3)?></small></th><th width="100"><small><?php echo sacarToolTip($idioma['Observacion'],"","R",3)?></small></th><th><small><?php echo $idioma['Detalle']?></small></th><th></th></tr>
 
         <?php
 		if(!count($ag)){
