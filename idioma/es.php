@@ -427,6 +427,7 @@ $idioma['NumerosContacto']="Números de Contacto";
 //Rude
 $idioma['RegistrarRude']="Registrar Datos del RUDE";
 $idioma['ModificarRude']="Modificar Datos del RUDE";
+$idioma['DatosRude']="Datos del RUDE (Registro Único de Estudiantes)";
 $idioma['RudeAlumno']="RUDE del Alumno";
 $idioma['TodoEnMayusculas']="Todos los datos en Mayusculas";
 $idioma['RudeYaRegistrado']="YA SEA REGISTRADO EL RUDE DE ESTE ALUMNO";
