@@ -20,10 +20,10 @@ if(count($cuotas)){
     <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
 	<table class="table table-bordered table-striped table-hover inicio">
     <thead>
-    	<tr><th colspan="5" class="der"><?php echo $idioma['Total']?> <?php echo $idioma['Dia']?>: </th><th colspan="2" class="der"><?php echo $MontoTotal?></th></tr>
+    	<tr><th colspan="5" class="der"><?php echo $idioma['Total']?> <?php echo $idioma['Del']?> <?php echo $idioma['Dia']?> <?php echo $idioma['Recaudado']?>: </th><th colspan="2" class="der"><?php echo $MontoTotal?></th></tr>
     	<tr><th>N</th>
-		<th><?php echo $idioma["NombreCompleto"]?></th>
-        <th><?php echo $idioma["Curso"]?></th>
+		<th><small><?php echo $idioma["NombreCompleto"]?></small></th>
+        <th><small><?php echo $idioma["Curso"]?></small></th>
         <th><small><?php echo $idioma["FechaPago"]?></small></th>
         <th><small><span title="<?php echo $idioma["Numero"]." ".$idioma["De"]." ".$idioma["Cuota"]?>"><?php echo sacarIniciales($idioma["Numero"])?>/<?php echo sacarIniciales($idioma["Cuota"])?></span></small></th>
         <th><?php echo $idioma["Factura"]?></th>

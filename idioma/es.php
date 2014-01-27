@@ -1022,6 +1022,7 @@ $idioma['RegistrarNuevosPagos']="Registrar Nuevos Pagos";
 $idioma['RegistrarNuevaObservacion']="Registrar Nueva Observación";
 $idioma['NoHayPagoCuotasFecha']="No hay Pago de Cuotas en esta Fecha";
 $idioma['VerTodosLosAccesos']="Ver Todos los Accesos";
+$idioma['Recaudado']="Recaudado";
 /*Mensajes Globales Javascript*/
 $idioma['EliminarRegistro']="¿Seguro que desea eliminar este registro?";
 /*Fin Mensajes*/
