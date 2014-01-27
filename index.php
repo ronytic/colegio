@@ -21,9 +21,17 @@ $titulo="NPaginaPrincipal";
 	<div class="span6 box">
     	<div class="box-header"><h2><?php echo $idioma['EstadisticasInstantaneaPagoCuotas']?></h2><div class="box-icon"><a href="#" title="<?php echo $idioma['Actualizar']?>" id="actualizarcuotas"><i class="icon-refresh"></i></a></div></div>
         <div class="box-content">
-        	<?php echo $idioma['FechaCuotas']?>
-            <?php campo("FechaCuotas","text",date("d-m-Y"),"input-medium")?>
-            <a href="cuotas/pagar/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RegistrarNuevosPagos']?></a>
+        	<table>
+            	<tr>
+                	<td><?php echo $idioma['FechaCuotas']?><br><?php campo("FechaCuotas","text",date("d-m-Y"),"input-medium")?></td>
+                    <td><a href="factura/registro/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RegistrarFactura']?></a>
+                    	<a href="cuotas/pagar/" class="btn btn-mini"><i class="icon-plus"></i><?php echo $idioma['RegistrarNuevosPagos']?></a>
+                    </td>
+                </tr>
+            </table>
+        	
+           
+           
             <hr class="separador">
             <div id="listadocuotas" style="max-height:400px;overflow-y:auto"></div>
         </div>
