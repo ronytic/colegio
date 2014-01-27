@@ -9,7 +9,7 @@ if(!empty($_POST)){
 	$Valor=$_POST['Valor'];
 	$values=array("resaltar2"=>$Valor);
 	$agenda->actualizarAgendaE($values,"CodAgenda=$CodAgenda");
-	$valores=array("Mensaje"=>"OK","EnviadoSMS"=>$a['EnviadoSMS']);
+	$valores=array("Mensaje"=>"OK","EnviadoSMS"=>$a['EnviadoSMS'],"Accion"=>0);
 	echo json_encode($valores);
 }
 ?>

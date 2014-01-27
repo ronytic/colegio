@@ -73,7 +73,7 @@ function resultado(data){
 		mostrarAgenda();
 		if(EnvioSMS=="1"){
 			if(EstadoSms=="PorCadaObservacion"){
-				if(data.EnviadoSMS=="0"){
+				if(data.EnviadoSMS=="0" && data.Accion=="1"){
 					if(confirm(MensajeEnvioSMS)){
 						$.post("enviarsms.php",{"Codigo":data.Cod},function(dataenviar){if(dataenviar!=""){alert(dataenviar);}mostrarAgenda();});
 					}	
