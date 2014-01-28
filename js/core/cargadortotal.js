@@ -168,7 +168,7 @@ function inicio(){
         var table_html = html.replace(/ /g, '%20');
         a.href = data_type + ', ' + table_html;
         //setting the file name
-        a.download = 'tabla_exportada_' + postfix + '.xls';
+        a.download = TituloDocumento+'_' + postfix + '.xls';
         //triggering the function
         a.click();
         //just in case, prevent default behaviour
