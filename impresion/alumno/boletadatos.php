@@ -131,7 +131,7 @@ $pdf->CuadroCuerpo(40,capitalizar($al['Password']),0,"",$borde);
 $pdf->CuadroCuerpo(60,($UrlInternet),0,"",$borde,14);
 $pdf->ln(7);
 
-$pdf->CuadroCuerpo(40,($TextoCredito),0,"",$borde,7);
+//$pdf->CuadroCuerpo(40,($TextoCredito),0,"",$borde,7);
 $pdf->ln();
 
 $pdf->Output("Datos del Alumno.pdf","I");
