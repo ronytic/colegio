@@ -7,8 +7,10 @@ include_once("../../login/check.php");
 			global $idioma;
 			$this->Pagina();
 			$this->ln();
-			$this->TituloCabecera(15,"Nº");
-			$this->TituloCabecera(70,$idioma["NombreCompleto"]);
+			$this->TituloCabecera(15,"N");
+			$this->TituloCabecera(30,$idioma["Paterno"]);
+			$this->TituloCabecera(30,$idioma["Materno"]);
+			$this->TituloCabecera(40,$idioma["Nombres"]);
 			$this->TituloCabecera(30,$idioma["Curso"]);
 			$this->TituloCabecera(30,$idioma["MontoBeca"]);
 		}
@@ -27,7 +29,7 @@ include_once("../../login/check.php");
 		$CursoTexto=array_shift($curso->mostrarCurso($al['CodCurso']));
 		if($i%2==0){$relleno=1;}else{$relleno=0;}
 		$pdf->CuadroCuerpo(15,$i,$relleno,"R");
-		$pdf->CuadroNombre(70,$al['Paterno'],$al['Materno'],$al['Nombres'],1,$relleno);
+		$pdf->CuadroNombreSeparado(30,$al['Paterno'],30,$al['Materno'],40,$al['Nombres'],1,$relleno);
 		$pdf->CuadroCuerpo(30,$CursoTexto['Nombre'],$relleno);
 		$pdf->CuadroCuerpo(30,number_format($al['MontoBeca'],2),$relleno,"R");
 		$pdf->ln();

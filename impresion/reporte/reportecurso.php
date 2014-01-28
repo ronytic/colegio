@@ -40,5 +40,5 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 	$pdf->CuadroCuerpo(30,"",$relleno,"",1);
 	$pdf->ln();
 }
-$pdf->Output($titulo,"I");
+$pdf->Output($titulo." ".$curso['Nombre'],"I");
 ?>
