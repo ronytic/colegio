@@ -127,7 +127,8 @@ include_once("fpdf_protection.php");
 			$this->Cell($this->ancho,0,"",1,1);
 			$anio=date("Y");
 			$this->Cell(60,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"L");
-			$this->Cell($this->ancho-60-60,4,utf8_decode($lema),0,0,"C");
+			$this->Cell((round(($this->ancho-60)/2)),4,utf8_decode($lema),0,0,"C");
+			$this->Cell((round(($this->ancho-60)/2)),4,utf8_decode($idioma['TituloSistema']),"",0,"C");
 			//$this->Cell(60,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"R");
 			
 			if(in_array("Pie",get_class_methods($this))){
