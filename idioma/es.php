@@ -129,7 +129,7 @@ $idioma['NEstadisticasAccesos']="Estadísticas de Accesos";
 $idioma['NRegistrosEnEspera']="Registros de RUDE en Espera";
 $idioma['NRegistrarFacturaPersonalizada']="Registrar Factura Personalizada";
 $idioma['NVerificarCodigosControl']="Verificar Códigos de Control";
-$idioma['NReporteAsistencias']="Reporte de Asistencias";
+$idioma['NReporteFaltaAtrasos']="Reporte de Faltas, Atrasos y Licencias";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -361,6 +361,7 @@ $idioma['SoloParaMi']="Solo Para Mi";
 $idioma['ActividadesDel']="Actividades del";
 $idioma['ActividadesDelDia']="Actividades del Día";
 $idioma['SalirSistema']="Salir del Sistema";
+$idioma['ReporteFaltaAtrasos']="Reporte de Faltas, Atrasos y Licencias";
 //Alumno
 $idioma['SeparacionDatos']="La separación de varios datos se lo realiza con el \"/\" (shif+7)(Símbolo Dividido)";
 $idioma['NombresAdicionales']="Nombres Adicionales";

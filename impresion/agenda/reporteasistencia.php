@@ -12,7 +12,7 @@ if(isset($_GET)){
 	$observaciones=new observaciones;
 	$agenda=new agenda;
 	$cur=array_shift($curso->mostrarCurso($CodCurso));
-	$titulo=$idioma["AgendaReporteGeneral"];
+	$titulo=$idioma["ReporteFaltaAtrasos"];
 	class PDF extends PPDF{
 		function Cabecera(){
 			global $idioma,$cur;
