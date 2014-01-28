@@ -68,6 +68,6 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 			}
 		}
 	}
-	@$pdf->Output();
+	@$pdf->Output($titulo,"I");
 }
 ?>

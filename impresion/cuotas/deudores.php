@@ -76,6 +76,6 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 			$pdf->ln();
 		}
 	}
-	$pdf->Output();
+	$pdf->Output($titulo,"I");
 }
 ?>

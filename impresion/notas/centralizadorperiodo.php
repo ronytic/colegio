@@ -113,7 +113,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$pdf->CuadroCuerpo(5,$reprobadototalcurso,0,"C",1);
 	$pdf->CuadroCuerpoPersonalizado(5,number_format($promediototalcurso,0),0,"C",1);
 	//print_r($reprobadomaterias);
-	$pdf->Output();
+	$pdf->Output($titulo,"I");
 	////
 	
 }

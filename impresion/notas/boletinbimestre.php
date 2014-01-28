@@ -281,6 +281,6 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$pdf->Ln();
 	$pdf->SetX(15);
 	$pdf->Cell(150,5,"Se les insinua revisar constantemente las observaciones por Internet",0,1);
-	$pdf->Output();
+	$pdf->Output("Boletín Bimestre","I");
 }
 ?>

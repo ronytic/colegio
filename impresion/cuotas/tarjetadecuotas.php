@@ -87,6 +87,6 @@ if(!empty($_GET)){
 	$pdf->SetFont('Times','B',15);
 	$pdf->Cell(0,0,date("y"),$borde);
 	
-	$pdf->Output();
+	$pdf->Output("Tarjeta de Cuotas","I");
 }
 ?>

@@ -128,5 +128,5 @@ foreach($alumno->mostrarAlumnosCurso($CodCurso,$Sexo) as $al)
 
 }
 
-$pdf->Output();
+$pdf->Output($titulo,"I");
 ?>

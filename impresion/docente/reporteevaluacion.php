@@ -65,20 +65,6 @@ foreach($docentemateriacurso->mostrarDocenteGrupo($CodDocente,"CodCurso") as $dm
 				}
 			}
 			$pdf->CuadroCuerpo(15,$cant,0,"C",1);
-			/*	
-			
-			?>
-			<div class="horizontal centrar <?php echo $vrv==$max?'verde':''?>"><label><?php echo $vrk;?>
-                <hr class="separador">
-                <?php echo $vrv;?>
-            </label></div>
-			<?php }*//*
-			//print_r($valorrespuesta);
-			?><div class="horizontal centrar celeste"><label><?php echo $idioma['Total']?>
-            	<hr class="separador">
-                 <?php echo $cant;?>
-            </label></div><?php
-			*/
 			$pdf->Ln();
 		}
 		$pdf->Linea();
@@ -101,5 +87,5 @@ foreach($docentemateriacurso->mostrarDocenteGrupo($CodDocente,"CodCurso") as $dm
 			}
         }
 }
-$pdf->Output();
+$pdf->Output($titulo." ".capitalizar($doc['Paterno']." ".$doc['Materno']." ".$doc['Nombres']),"I");
 ?>

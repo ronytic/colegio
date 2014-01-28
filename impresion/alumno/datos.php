@@ -180,6 +180,6 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	$pdf->CuadroCuerpoMulti(100,capitalizar($doc['Observaciones']),0,"",$borde);
 	$pdf->ln();
 	
-	$pdf->Output();
+	$pdf->Output($titulo." ".capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']),"I");
 }
 ?>

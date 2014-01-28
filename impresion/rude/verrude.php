@@ -274,6 +274,6 @@ function escribe($x,$y,$t,$tam=12){
 	escribe(169,302,$anio[2],10);//E
 	escribe(173,302,$anio[3],10);//E
 	
-	$pdf->Output("Rude2012","I");
+	$pdf->Output("Registro del RUDE","I");
 
 ?>

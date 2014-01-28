@@ -126,7 +126,7 @@ if(isset($_GET)){
 		$pdf->CuadroCuerpoResaltar(15,$Total,1,"R",1,1);
 		$pdf->Ln();
 	}
-	$pdf->Ln(1);
+	$pdf->Linea();
 	$pdf->CuadroCuerpo(115,$idioma["Total"]." ".$idioma["Curso"],0,"R",0);
 	$pdf->CuadroCuerpo(15,$tObservaciones,$relleno,"R",1);
 	$pdf->CuadroCuerpo(15,$tfaltas,$relleno,"R",1);
@@ -136,6 +136,6 @@ if(isset($_GET)){
 	$pdf->CuadroCuerpo(15,$tNoRespondeTelf,$relleno,"R",1);
 	$pdf->CuadroCuerpo(15,$tFelicitaciones,$relleno,"R",1);
 	$pdf->CuadroCuerpoResaltar(15,$tTotal,1,"R",1,1);
-	$pdf->Output("agendareportegeneral.pdf","I");
+	$pdf->Output($titulo." ".$cur['Nombre'].".pdf","I");
 }
 ?>

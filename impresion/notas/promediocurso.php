@@ -74,6 +74,6 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 	@$totalpromedio=$tPromedio/$i;
 	$pdf->CuadroCuerpo(93,$idioma['PromedioTotalCurso'].":",0,"R",1);
 	$pdf->CuadroCuerpo(30,number_format(round($totalpromedio,2),2),0,"C",1);
-	@$pdf->Output();
+	@$pdf->Output($titulo,"I");
 }
 ?>

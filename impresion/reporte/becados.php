@@ -34,6 +34,6 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 		$pdf->CuadroCuerpo(30,number_format($al['MontoBeca'],2),$relleno,"R");
 		$pdf->ln();
 	}
-	$pdf->Output();
+	$pdf->Output($titulo,"I");
 }
 ?>

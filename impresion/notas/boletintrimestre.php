@@ -282,6 +282,6 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$pdf->Ln();
 	$pdf->SetX(15);
 	$pdf->Cell(150,5,utf8_decode($idioma["RevisarConstantemente"]),0,1);
-	$pdf->Output();
+	$pdf->Output("Boletín Trimestre","I");
 }
 ?>

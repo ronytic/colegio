@@ -73,6 +73,6 @@ if(!empty($_GET)){
 			$pdf->Ln();
 		}
 	}
-	$pdf->Output();
+	$pdf->Output($titulo,"I");
 }
 ?>

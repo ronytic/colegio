@@ -32,5 +32,5 @@ include_once("../../login/check.php");
 		$pdf->CuadroCuerpo(30,number_format($al['MontoBeca'],2),$relleno,"R");
 		$pdf->ln();
 	}
-	$pdf->Output();
+	$pdf->Output($titulo,"I");
 ?>

@@ -226,6 +226,6 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 			$pdf->CuadroCuerpo(10,sacariniciales($mensaje).$importante,0,"L",1,"B");
 			$pdf->Ln();
 	}
-	$pdf->Output();
+	$pdf->Output($titulo." ".capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']),"I");
 }
 ?>

@@ -99,6 +99,6 @@ if(!empty($_GET) && $_GET['lock']==md5('lock')){
 	$pdf->ln();
 	$pdf->CuadroCuerpoPersonalizado(40,$idioma["Observacion"].": ",0,"L",$borde,"B");
 	$pdf->CuadroCuerpo(100,$doc['Observacion'],0,"",$borde);
-	$pdf->Output();
+	$pdf->Output($titulo." ".capitalizar($doc['Paterno']." ".$doc['Materno']." ".$doc['Nombres']),"I");
 }
 ?>

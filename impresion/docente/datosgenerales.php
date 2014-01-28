@@ -60,6 +60,6 @@ if(isset($_POST)){
 		}
 		$pdf->ln();
 	}
-	$pdf->Output();
+	$pdf->Output($titulo,"I");
 }
 ?>

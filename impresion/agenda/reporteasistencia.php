@@ -97,6 +97,6 @@ if(isset($_GET)){
 	$pdf->CuadroCuerpo(15,$tAtrasos,$relleno,"R",1);
 	$pdf->CuadroCuerpo(15,$tLicencias,$relleno,"R",1);
 	$pdf->CuadroCuerpoResaltar(15,$tTotal,1,"R",1,1);
-	$pdf->Output("Reporte Agenda de Falta Atrasos ".$cur['Nombre'].".pdf","I");
+	$pdf->Output($titulo." ".$cur['Nombre'].".pdf","I");
 }
 ?>

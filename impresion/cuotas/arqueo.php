@@ -77,6 +77,6 @@ if(!empty($_GET) && $_GET['wsd']=='new'){
 	$pdf->Fuente("B");
 	$pdf->CuadroCuerpo(135,$idioma["Total"],0,"R",1);
 	$pdf->CuadroCuerpo(25,number_format($MontoTotal,2),0,"R",1);
-	$pdf->Output();
+	$pdf->Output($titulo,"I");
 }
 ?>

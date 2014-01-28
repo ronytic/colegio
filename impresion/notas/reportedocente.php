@@ -92,6 +92,6 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 
 		$pdf->Ln(5);
 	}
-	@$pdf->Output();
+	@$pdf->Output($titulo,"I");
 }
 ?>

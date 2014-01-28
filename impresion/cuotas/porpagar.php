@@ -28,5 +28,5 @@ foreach($cuota->porPagar() as $cuo){$i++;
 	$pdf->CuadroCuerpo(25,number_format($cuo['MontoPagar'],2),$nf,"R");
 	$pdf->Ln();
 }
-$pdf->Output();
+$pdf->Output($titulo,"I");
 ?>

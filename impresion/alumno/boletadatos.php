@@ -134,6 +134,6 @@ $pdf->ln(7);
 //$pdf->CuadroCuerpo(40,($TextoCredito),0,"",$borde,7);
 $pdf->ln();
 
-$pdf->Output("Datos del Alumno.pdf","I");
+$pdf->Output($titulo." ".capitalizar($al['Paterno']." ".$al['Materno']." ".$al['Nombres']),"I");
 }
 ?>

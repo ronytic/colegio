@@ -131,12 +131,8 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 		$pdf->ln();
 	}
 	
-	$pdf->Output();
+	$pdf->Output($titulo,"I");
 	////
 	
 }
-
-
-
-
 ?>

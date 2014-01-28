@@ -72,6 +72,6 @@ if(count($fac)){
 }else{
 	$pdf->CuadroCuerpo(120,$idioma['NoExistenFacturasRegistradas'],0,"R",0);
 }
-$pdf->Output();
+$pdf->Output($titulo,"I");
 
 ?>
