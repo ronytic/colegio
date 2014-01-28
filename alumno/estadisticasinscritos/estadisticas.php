@@ -20,7 +20,7 @@ if(!empty($_POST)){
         <tr class="contenido"><td><?php echo $CantidadTotal['CantidadTotal'];?> <?php echo $idioma['Alumnos']?></td></tr>
     </table>
     <div id="reporte"></div>
-	<a href="#" class="imprimir btn btn-info btn-mini"><?php echo $idioma['Imprimir']?></a>
+	<a href="#" class="imprimir btn btn-info btn-mini"><?php echo $idioma['Imprimir']?></a><br>
     <a href="#" class="btn btn-success btn-mini" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
     <table class="table table-condensed table-hover table-striped table-bordered">
     	<thead>
