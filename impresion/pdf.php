@@ -32,10 +32,10 @@ include_once("fpdf_protection.php");
 			$this->Image("../../imagenes/logos/".$logo,10,10,20,20);
 			$this->Fuente("",$tam);
 			$this->SetXY(34,12);
-			$this->Cell(55,4,utf8_decode($title));
+			$this->Cell(70,4,utf8_decode($title),0,0,"L");
 			$this->Fuente("B",8);
 			$this->SetXY(34,16);
-			$this->Cell(55,4,utf8_decode($gestion),0,0,"C");
+			$this->Cell(70,4,utf8_decode($gestion),0,0,"L");
 			$this->ln(10);	
 			$this->Fuente("B",18);
 			$this->Cell($this->ancho,4,utf8_decode($titulo.$this->orientation),0,5,"C");
@@ -122,13 +122,25 @@ include_once("fpdf_protection.php");
 			// Posición: a 1,5 cm del final
 			$this->SetY(-15);
 			// Arial italic 8
-			$this->Fuente("I",8);
+			
 			// Número de página
+			$this->Fuente("I",7.5);
 			$this->Cell($this->ancho,0,"",1,1);
-			$anio=date("Y");
-			$this->Cell(60,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"L");
-			$this->Cell((round(($this->ancho-60)/2)),4,utf8_decode($lema),0,0,"C");
-			$this->Cell((round(($this->ancho-60)/2)),4,utf8_decode($idioma['TituloSistema']),"",0,"C");
+			$this->Cell(50,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"L");
+			$this->Fuente("I",8);
+			$this->Cell((round(($this->ancho-50)/2)-10),4,utf8_decode($lema),0,0,"C");
+			$this->Fuente("I",7);
+			
+			
+			if($this->CurOrientation=="P"){
+				$this->Cell((round(($this->ancho-50)/2)+10),3,utf8_decode($idioma['TituloSistema'].""),0,0,"R");
+				$this->ln();
+				$this->Cell((round(($this->ancho-50)/2)+40),3,"",0,0,"R");
+				$this->Cell((round(($this->ancho-50)/2)+10),3,"Desarrollado por Ronald Nina",0,0,"R");
+			}else{
+				$this->Cell((round(($this->ancho-50)/2)+10),4,utf8_decode($idioma['TituloSistema']." - Desarrollado por Ronald Nina"),0,0,"R");	
+			}
+			
 			//$this->Cell(60,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"R");
 			
 			if(in_array("Pie",get_class_methods($this))){
