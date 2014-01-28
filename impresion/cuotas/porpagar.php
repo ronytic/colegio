@@ -18,9 +18,12 @@ class pdf extends PPDF{
 }
 $pdf=new pdf("P","mm","letter");
 $pdf->AddPage();
+$total=0;
 $i=0;
 foreach($cuota->porPagar() as $cuo){$i++;
 	if($i%2==0){$nf=1;}else{$nf=0;}
+	
+	$total+=$cuo['MontoPagar'];
 	$pdf->CuadroCuerpo(10,$i,$nf,"R");	
 	$pdf->CuadroNombreSeparado(30,$cuo['Paterno'],30,$cuo['Materno'],40,$cuo['Nombres'],1,$nf);	
 	$pdf->CuadroCuerpo(20,$cuo['Curso'],$nf,"");
@@ -28,5 +31,8 @@ foreach($cuota->porPagar() as $cuo){$i++;
 	$pdf->CuadroCuerpo(25,number_format($cuo['MontoPagar'],2),$nf,"R");
 	$pdf->Ln();
 }
+$pdf->Linea();
+$pdf->CuadroCuerpo(150,$idioma['Total'],$nf,"R");
+$pdf->CuadroCuerpo(25,number_format($total,2),$nf,"R");
 $pdf->Output($titulo,"I");
 ?>
