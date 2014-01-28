@@ -48,12 +48,12 @@ if(count($tmp)){
             	<?php if($_SESSION['Nivel']==1 || $_SESSION['Nivel']==2){?>
                 <!--<a href="cambiar.php?Ruta=../../alumno/inscribirhermano/inscribir.php&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small " ><?php echo $idioma['InscribirHermano']?></a>-->
             	<a href="cambiar.php?Ruta=../../factura/registro&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small " target="_blank" ><?php echo $idioma['Factura']?></a>
-                <a href="cambiar.php?Ruta=../../alumno/tarjetacuotas&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small " target="_blank"><?php echo $idioma['TarjetaCuotas']?></a>
+                <a href="cambiar.php?Ruta=../../cuotas/tarjetacuotas&CodAlumno=<?php echo $t['CodAlumno']?>" class="btn btn-small " target="_blank"><?php echo $idioma['TarjetaCuotas']?></a>
                 
                 <?php if($contarhermano>1){?>
                 <br />
                 	<a href="../../factura/registro/index2.php?CodAlumno=<?php echo $codhermanos?>" class="btn btn-small btn-info" target="_blank"><?php echo $idioma['RegistrarFacturaCombinada']?></a>
-            		<a href="../../impresion/alumno/tarjetadecuotas.php?CodAlumno=<?php echo $codhermanos?>" class="btn btn-small btn-info" target="_blank"><?php echo $idioma['ImprimirTarjetaCuotasCombinada']?></a>
+            		<a href="../../impresion/cuotas/tarjetadecuotas.php?CodAlumno=<?php echo $codhermanos?>" class="btn btn-small btn-info" target="_blank"><?php echo $idioma['ImprimirTarjetaCuotasCombinada']?></a>
                     
             	<?php }?>
                 

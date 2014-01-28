@@ -4,7 +4,7 @@ if(!empty($_POST)){
 	$CodAlumno=$_POST['CodAlumno'];
 	?>
     	<strong><?php echo $idioma['SeparacionDatos'];?></strong>
-    	<form action="../../impresion/alumno/tarjetaDeCuotas.php" method="get" target="pdf" class="form-horizontal">
+    	<form action="../../impresion/cuotas/tarjetaDeCuotas.php" method="get" target="pdf" class="form-horizontal">
         	<input type="hidden" name="CodAlumno" value="<?php echo $CodAlumno;?>"/>
             <table class="table">
             	<tr><td class="der"><label for="NombresAdicional"><?php echo $idioma["NombresAdicionales"]?> :</label></td><td><?php campo("NombresAdicional","text","","span8",0,$idioma['IngreseSus'].$idioma["NombresAdicionales"]);?></td></tr>
@@ -13,7 +13,7 @@ if(!empty($_POST)){
             </table>
         </form>
     	
-    	<iframe src="../../impresion/alumno/tarjetadecuotas.php?CodAlumno=<?php echo $CodAlumno;?>" height="400" width="100%" name="pdf"></iframe>
+    	<iframe src="../../impresion/cuotas/tarjetadecuotas.php?CodAlumno=<?php echo $CodAlumno;?>" height="400" width="100%" name="pdf"></iframe>
         <a href="#" class="btn" id="mostrarimpresion"><?php echo $idioma['MostrarImpresion']?></a>
 	<div id="respuestaimpresion"></div>
 	<?php	

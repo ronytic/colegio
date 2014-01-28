@@ -4,6 +4,6 @@ $titulo="NTarjetaCuotas";
 $subtitulo1="TarjetaCuotas";
 $folder="../../";
 $icono="icon-print";
-$jsFile="alumno/tarjetacuotas.js";
+$jsFile="cuotas/tarjetacuotas.js";
 include_once("../../listar/listado.php");
 ?>
