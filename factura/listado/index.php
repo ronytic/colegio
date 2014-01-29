@@ -27,9 +27,9 @@ var SeguroCambiarEstado="<?php echo $idioma['SeguroCambiarEstado']?>";
                 </tr>
             </thead>
         	<tr>
-            	<td><?php echo $idioma['Inicio']?>: 
+            	<td><?php echo $idioma['Desde']?>: 
                 <input type="text" name="FechaFacturaInicio" value="<?php echo fecha2Str();?>" class="fecha input-small"><br>
-				<?php echo $idioma['Final']?>: 
+				<?php echo $idioma['Hasta']?>: 
                 <input type="text" name="FechaFacturaFin" value="<?php echo fecha2Str();?>" class="fecha input-small"></td>
                 <td><input type="text" name="NFactura" id="fecha" value="" placeholder=""  class="span12"></td>
                 <td><input type="text" name="Nit" id="fecha" value="" placeholder="" class="span12"></td>

@@ -28,9 +28,9 @@ include_once($folder."cabecerahtml.php");
                 </tr>
             </thead>
             <tr>
-                <td><?php echo $idioma['Inicio']?>: 
+                <td><?php echo $idioma['Desde']?>: 
                     <input type="text" name="FechaFacturaInicio" value="<?php echo fecha2Str();?>" class="fecha input-small"><br>
-                    <?php echo $idioma['Final']?>: 
+                    <?php echo $idioma['Hasta']?>: 
                     <input type="text" name="FechaFacturaFin" value="<?php echo fecha2Str();?>" class="fecha input-small">
                 </td>
                 <td>
