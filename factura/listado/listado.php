@@ -51,7 +51,7 @@ $fac=$factura->mostrarFacturas($where)
         <th><?php echo $idioma['Cancelado']?></th>
         <th><?php echo $idioma['Cambio']?></th>
         <th><?php echo $idioma['Estado']?></th>
-        <th><a href="<?php echo $url?>" class="btn btn-info btn-small" target="_blank"><?php echo $idioma['Imprimir']?></a></th>
+        <th></th>
     </tr>
 </thead>
 <?php 
