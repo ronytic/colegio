@@ -132,6 +132,7 @@ $idioma['NVerificarCodigosControl']="Verificar Códigos de Control";
 $idioma['NReporteFaltaAtrasos']="Reporte de Faltas, Atrasos y Licencias";
 $idioma['NReporteFacturas']="Reporte de Facturas";
 $idioma['NListadoFacturas']="Listado de Facturas";
+$idioma['NHojaCasilleros']="Hoja de Casilleros";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -319,8 +320,7 @@ $idioma['Privada']="Privada";
 $idioma['Convenio']="Convenio";
 $idioma['Comunitaria']="Comunitaria";
 $idioma['Publica']="Pública";
-//Titulos de Página
-$idioma['HojaCasilleros']="Hoja de Casilleros";
+
 //Agenda de Actividades
 $idioma['CalendarioActividades']="Calendario de Actividades";
 $idioma['Eventos']="Eventos";
@@ -611,6 +611,13 @@ $idioma['Estadisticas']="Estadísticas";
 $idioma['Sugerencias']="Sugerencias";
 $idioma['Observaciones']="Observaciones";
 $idioma['RDA']="Registro de Docente Actualizado(RDA)";
+$idioma['NombreCompleto']="Nombre Completo";
+$idioma['CursoDicta']="Cursos en los que dicta";
+$idioma['MarqueeX']="Marque con una X";
+$idioma['MateriasDicta']="Materias que dicta";
+$idioma['CantidadCasilleros']="Cantidad de Casilleros que utilizará en sus registros. Defínalo correctamente";
+$idioma['NumeroCasilleros']="Número de Casilleros";
+$idioma['NumeroCasillerosNota']="cada casillero será evaluado sobre 60, 70 o 100 correspondiente a cada curso";
 
 //Notas
 $idioma['Limite']="Limite";
@@ -1048,7 +1055,7 @@ $idioma['Abreviado']="Abreviado";
 $idioma['CantidadEtapas']="Cantidad de Etapas";
 $idioma['MensajeEliminarCurso']="¿Seguro que desea ELIMINAR ESTE CURSO?";
 $idioma['MensajeModificarCurso']="¿Seguro que desea Modificar ESTE CURSO?";
-$idioma['NotaModificarCurso']="Nota: Es un Riegoso Modificar un curso, por que afectaria al correcto funcionamiento del Sistema con los datos registrado Anteriormente";
+$idioma['NotaModificarCurso']="Nota: Es un Riesgo Modificar un curso, por que afectaria al correcto funcionamiento del Sistema con los datos registrado anteriormente, se Recomienda realizarlo antes del inicio de La Gestión, antes de las Inscripciones";
 $idioma['NotaEliminarCurso']="Nota: Es Muy Riegoso eliminar un curso cuando se comenzo la Gestión Educativa, se Recomienda realizarlo antes del inicio de La Gestión, antes de las Inscripciones";
 $idioma['MensajeEliminar']="¿Seguro que desea ELIMINAR este MENSAJE?";
 $idioma['MensajeModificar']="¿Seguro que desea Modificar este MENSAJE?";
@@ -1059,7 +1066,7 @@ $idioma['MensajeModificarCursoArea']="¿Seguro que desea Modificar esta Área de
 $idioma['AreaCurso']="Área de Curso";
 $idioma['DescripcionEtapa']="La Cantidad de Etapas involucra la cantidad de Trimestre o la Cantidad de Bimestres respectivamente.";
 $idioma['Orden']="Orden o Posición";
-$idioma['DescripcionOrden']="Indica el Orden que saldra todos los cursos en la lista total y el posición que usted indique";
+$idioma['DescripcionOrden']="Indica el Orden que saldra todos los cursos en la lista total";
 $idioma['NuevoCurso']="Nuevo Curso";
 $idioma['ListadoAreaCursos']="Listado de Areas de Cursos";
 $idioma['EducacionInicial']="Educación Inicial";
@@ -1187,7 +1194,7 @@ $idioma['ReportesBecadosTotal']="Reportes de Becados Total";
 $idioma['ReprobadosObservaciones']="Reprobados con Observaciones";
 $idioma['ReporteParaImpresion']="Reporte para Impresión";
 $idioma['VerNotasImpresion']="Ver Notas Impresión";
-$idioma['HojaSolicitudCasilleros']="Hoja de Solicitud de casilleros";
+$idioma['HojaSolicitudCasilleros']="Hoja de solicitud de casilleros";
 $idioma['CambiarNombreCasilleros']="Cambiar Nombre de Casilleros";
 $idioma['MejoresPeoresPromediosAnual']="Mejores y Peores Promedios Anual";
 $idioma['CambiarNombreCasilleros']="Cambiar Nombre de Casilleros";
@@ -1253,6 +1260,7 @@ $idioma['EnEsperaRude']="Registros de Rude en Espera";
 $idioma['TelefonoColegio']="Teléfono de la Unidad Educativa";
 $idioma['RegistroPersonalizado']="Registro Personalizado";
 $idioma['ReporteFacturas']="Reporte de Facturas";
+$idioma['ResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
