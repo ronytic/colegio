@@ -130,6 +130,8 @@ $idioma['NRegistrosEnEspera']="Registros de RUDE en Espera";
 $idioma['NRegistrarFacturaPersonalizada']="Registrar Factura Personalizada";
 $idioma['NVerificarCodigosControl']="Verificar Códigos de Control";
 $idioma['NReporteFaltaAtrasos']="Reporte de Faltas, Atrasos y Licencias";
+$idioma['NReporteFacturas']="Reporte de Facturas";
+$idioma['NListadoFacturas']="Listado de Facturas";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -1250,6 +1252,7 @@ $idioma['EstadisticasAccesos']="Estadísticas de Accesos";
 $idioma['EnEsperaRude']="Registros de Rude en Espera";
 $idioma['TelefonoColegio']="Teléfono de la Unidad Educativa";
 $idioma['RegistroPersonalizado']="Registro Personalizado";
+$idioma['ReporteFacturas']="Reporte de Facturas";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
@@ -1306,6 +1309,7 @@ $idioma['CodigoGenerado']="Código Generado";
 $idioma['CodigoCorrecto']="Código Correcto";
 $idioma['Correctos']="Correctos";
 $idioma['Incorrectos']="Incorrectos";
+$idioma['RangoFecha']="Rango de Fecha";
 //Excel
 $idioma['TotalAlumnos']="Total de Alumnos";
 $idioma['Aprobados']="Aprobados";
