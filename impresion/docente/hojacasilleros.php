@@ -55,5 +55,12 @@ for($i=1;$i<=15;$i++){
 	$pdf->ln();	
 }
 
+$pdf->ln();	
+$pdf->ln();	
+$pdf->ln();	
+$pdf->ln();	
+$pdf->ln();	
+$pdf->ln();	
+$pdf->CuadroCuerpo(50,$idioma['Firma'],0,"C","T");
 $pdf->Output($titulo,"I");
 ?>
