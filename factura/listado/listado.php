@@ -36,6 +36,11 @@ $fac=$factura->mostrarFacturas($where)
 <a class="btn btn-mini btn-success" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
 <table class="table table-bordered table-hover table-striped">
 <thead>
+	<tr>
+    	<th colspan="2"><?php echo $idioma['RangoFecha']?>:</th>
+        <th colspan="2"><?php echo fecha2Str($FechaFacturaInicio)?> / <?php echo fecha2Str($FechaFacturaFin)?></th>
+        <th colspan="7"></th>
+    </tr>
     <tr>
         <th>N</th>
         <th><?php echo $idioma['FechaFactura']?></th>

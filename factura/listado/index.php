@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="ListadoFacturas";
+$titulo="NListadoFacturas";
 $folder="../../";
 include_once("../../class/factura.php");
 $factura=new factura;
