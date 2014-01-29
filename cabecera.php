@@ -119,7 +119,9 @@ switch($Nivel){
 										if($sm['Internet']=="1" && $Internet==0){
 											$UrlInternet="redirigir.php";	
 										}
+										//<hr class="separador">
 										?>
+                                        
                                         <li class="<?php if($urlSubMenu==$sm['Url']){$textosubmenu=$idioma[$sm['Nombre']];echo 'selecciona';}?>"> 
                                         	<a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?><?php echo $UrlInternet?>">
                                             <div class="ssubmenu">
