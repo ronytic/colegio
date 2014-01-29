@@ -33,7 +33,7 @@ class docentemateriacurso extends bd{
 	}
 	function mostrarDocenteGrupo($CodDocente,$Grupo=""){
 		$this->campos=array('*');
-		return $this->getRecords("CodDocente=$CodDocente and Activo=1",0,"$Grupo");
+		return $this->getRecords("CodDocente=$CodDocente and Activo=1","","$Grupo");
 	}
 	function mostrarDocenteMateria($CodDocente){
 		$this->campos=array("*");
