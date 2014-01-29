@@ -102,7 +102,7 @@ $pdf->CuadroCuerpo(60,capitalizar($al['Zona'].", ".$al['Calle']." Nº ".$al['Num
 
 $pdf->ln();
 $pdf->ln();
-$pdf->CuadroCuerpoPersonalizado(100,$idioma["DatosAccessoInternet"],1,"",0,"B");
+$pdf->CuadroCuerpoPersonalizado(100,$idioma["DatosAccesoInternet"],1,"",0,"B");
 
 $pdf->CuadroCuerpoPersonalizado(75,$idioma["TelefonoColegio"].": ",1,"L",$borde,"B");
 
