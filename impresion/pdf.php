@@ -69,16 +69,16 @@ include_once("fpdf_protection.php");
 			$this->Fuente("B",$tam);
 			$this->Cell($txtAncho,4,utf8_decode($txt),$borde,0,$align);	
 		}
-		function CuadroCuerpo($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tam=9){
-			$this->Fuente("",$tam);
+		function CuadroCuerpo($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tam=9,$tipo=""){
+			$this->Fuente($tipo,$tam);
 			$this->Cell($txtAncho,5,utf8_decode($txt),$borde,0,$align,$relleno);	
 		}
-		function CuadroCuerpoMulti($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tam=9){
-			$this->Fuente("",$tam);
+		function CuadroCuerpoMulti($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tam=9,$tipo=""){
+			$this->Fuente($tipo,$tam);
 			$this->MultiCell($txtAncho,5,utf8_decode($txt),$borde,$align,$relleno);	
 		}
-		function CuadroCuerpoPersonalizado($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tipo=""){
-			$this->Fuente($tipo);
+		function CuadroCuerpoPersonalizado($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tipo="",$tam=10){
+			$this->Fuente($tipo,$tam);
 			$this->Cell($txtAncho,5,utf8_decode($txt),$borde,0,$align,$relleno);	
 		}
 		function CuadroCuerpoResaltar($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$resaltar=2){
