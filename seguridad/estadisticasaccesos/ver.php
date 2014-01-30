@@ -54,7 +54,7 @@ for($j=$Inicio;$j<=$Fin;$j++){
 $ValoresFechas=array();
 for($i=strtotime($FechaInicio);$i<=strtotime($FechaFin);$i=$i+86400){
 	$Fecha=date("Y-m-d",$i);	
-	$F=strftime("'%A, %d de %B del %Y'",$i);
+	$F=utf8_encode(strftime("'%A, %d de %B del %Y'",$i));
 	
 	array_push($ValoresFechas,$F);
 }

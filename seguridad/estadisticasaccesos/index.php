@@ -16,8 +16,8 @@ include_once($folder."cabecerahtml.php");
             	<thead>
                 	<tr>
                     	<th><?php echo $idioma['NivelUsuario']?></th>
-                        <th><?php echo $idioma['FechaInicio']?></th>
-                        <th><?php echo $idioma['FechaFinal']?></th>
+                        <th><?php echo $idioma['Fecha']?> <?php echo $idioma['Desde']?></th>
+                        <th><?php echo $idioma['Fecha']?> <?php echo $idioma['Hasta']?></th>
                         <th></th>
                     </tr>
                 </thead>
