@@ -241,7 +241,7 @@ class bd{
 		endif;
 		return $this->getRecords("Cod".ucfirst(mb_strtolower($this->tabla,"utf8"))."=$Codigo ".$condicion);
 	}
-	function mostrarTodoRegistro($where='',$activo=1)
+	function mostrarTodoRegistro($where='',$activo=1,$orden="")
 	{
 			
 		if(empty($this->campos)){
@@ -262,7 +262,7 @@ class bd{
 				$condicion=" and Activo=0";	
 			}
 		endif;
-		return $this->getRecords($where.$condicion);
+		return $this->getRecords($where.$condicion,$orden);
 	}
 	function actualizarRegistro($values,$Where){
 		return $this->updateRow($values,$Where);	
