@@ -26,6 +26,10 @@ class docente extends bd{
 		$this->campos=array("count(*) as Can,CodDocente as CodUsuario");	
 		return $this->getRecords("Usuario='$Usuario' and Password='$Password'");
 	}
+	function mostrarTodosDocentes(){
+		$this->campos=array("*");
+			return $this->getRecords("Activo=1","Paterno,Materno,Nombres");
+	}
 	function actualizarDocente($values,$where){
 		return $this->updateRow($values,$where);	
 	}
