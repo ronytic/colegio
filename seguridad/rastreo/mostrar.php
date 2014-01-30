@@ -26,7 +26,9 @@ if(!empty($_POST)){
 	$cantidad=count($logr);
 	$i=$cantidad;
 	if($cantidad){
-		?><table class="table table-hover table-bordered table-striped table-condensed">
+		?>
+        <a href="#" id="exportarexcel" class="btn btn-mini btn-success"><?php echo $idioma['ExportarExcel']?></a>
+        <table class="table table-hover table-bordered table-striped table-condensed">
         <thead>
         <tr><th colspan="6"><?php echo $idioma['Fecha']?>: <?php echo $_POST['Fecha']?></th></tr>
         <tr>

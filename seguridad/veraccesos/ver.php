@@ -26,7 +26,11 @@ if(!count($logu)){
 exit();	
 }
 ?>
+<a href="#" id="exportarexcel" class="btn btn-mini btn-success"><?php echo $idioma['ExportarExcel']?></a>
 <table class="table">
+<thead>
+	<tr></tr>
+</thead>
 <?php
 foreach($logu as $lu){
 	
