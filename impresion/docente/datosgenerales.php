@@ -10,8 +10,8 @@ if(isset($_POST)){
 		function Cabecera(){
 			global $idioma,$listado;
 			$this->TituloCabecera(10,"N");
-		 	$this->TituloCabecera(25,$idioma["Paterno"]);
-			$this->TituloCabecera(25,$idioma["Materno"]);
+		 	$this->TituloCabecera(23,$idioma["Paterno"]);
+			$this->TituloCabecera(23,$idioma["Materno"]);
 			$this->TituloCabecera(35,$idioma["Nombres"]);
 			if($listado=="DatosPersonales"){
 				$this->TituloCabecera(10,$idioma['Sexo']);
@@ -20,11 +20,12 @@ if(isset($_POST)){
                 $this->TituloCabecera(35,$idioma['Telefono']);
                 $this->TituloCabecera(35,$idioma['Celular']);
 			}elseif($listado=="DatosFormacionProfesional"){
-				$this->TituloCabecera(60,$idioma['Universidad']);
+				$this->TituloCabecera(15,$idioma['Rda']);
+				$this->TituloCabecera(55,$idioma['Universidad']);
                 $this->TituloCabecera(15,$idioma['AñoI']);
                 $this->TituloCabecera(15,$idioma['AñoE']);
                 $this->TituloCabecera(15,$idioma['AñoT']);
-                $this->TituloCabecera(45,$idioma['Titulo']);
+                $this->TituloCabecera(40,$idioma['Titulo']);
 			}elseif($listado=="DatosTrabajo"){
             	$this->TituloCabecera(50,$idioma['Cargo']);
                 $this->TituloCabecera(30,$idioma['CargaHoraria']);
@@ -36,10 +37,10 @@ if(isset($_POST)){
 	$pdf=new PDF("L","mm","letter");
 	$pdf->AddPage();
 	$i=0;
-	foreach($docente->mostrarTodoRegistro() as $doc){$i++;	
+	foreach($docente->mostrarTodosDocentes() as $doc){$i++;	
 		if($i%2==0){$relleno=1;}else{$relleno=0;}
 		$pdf->CuadroCuerpo(10,$i,$relleno,"R");
-		$pdf->CuadroNombreSeparado(25,$doc['Paterno'],25,$doc['Materno'],35,$doc['Nombres'],1,$relleno);
+		$pdf->CuadroNombreSeparado(23,$doc['Paterno'],23,$doc['Materno'],35,$doc['Nombres'],1,$relleno);
 		if($listado=="DatosPersonales"){
 			$pdf->CuadroCuerpo(10,$doc['Sexo']=='0'?'F':'M',$relleno,"C");
 			$pdf->CuadroCuerpo(25,$doc['Ci'],$relleno);
@@ -47,11 +48,12 @@ if(isset($_POST)){
 			$pdf->CuadroCuerpo(35,$doc['Telefono'],$relleno,"L");
 			$pdf->CuadroCuerpo(35,$doc['Celular'],$relleno,"L");
 		}elseif($listado=="DatosFormacionProfesional"){
-			$pdf->CuadroCuerpo(60,$doc['DPUniversidad'],$relleno,"L");
+			$pdf->CuadroCuerpo(15,$doc['Rda'],$relleno,"L");
+			$pdf->CuadroCuerpo(55,$doc['DPUniversidad'],$relleno,"L");
 			$pdf->CuadroCuerpo(15,$doc['DPAnoIngreso'],$relleno,"C");
 			$pdf->CuadroCuerpo(15,$doc['DPAnoEgreso'],$relleno,"C");
 			$pdf->CuadroCuerpo(15,$doc['DPAnoTitulacion'],$relleno,"C");
-			$pdf->CuadroCuerpo(45,$doc['DPTitulo'],$relleno,"L");
+			$pdf->CuadroCuerpo(40,$doc['DPTitulo'],$relleno,"L");
 		}elseif($listado=="DatosTrabajo"){
 			$pdf->CuadroCuerpo(50,$doc['DTCargo'],$relleno,"L");
 			$pdf->CuadroCuerpo(30,$doc['DTCargaHoraria'],$relleno,"C");
