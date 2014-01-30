@@ -13,6 +13,7 @@ if(isset($_POST)){
             <?php if($listado=="DatosPersonales"){?>
             <th><?php echo $idioma['Sexo']?></th><th><?php echo $idioma['Ci']?></th><th><?php echo $idioma['FechaNac']?></th><th><?php echo $idioma['Telefono']?></th><th><?php echo $idioma['Celular']?></th>
             <?php }elseif($listado=="DatosFormacionProfesional"){?>
+            	<th><?php echo $idioma['Rda']?></th>
                 <th><?php echo $idioma['Universidad']?></th>
                 <th><?php echo $idioma['AñoIngreso']?></th>
                 <th><?php echo $idioma['AñoEgreso']?></th>
@@ -27,7 +28,7 @@ if(isset($_POST)){
             </tr>
         </thead>
     <?php
-	foreach($docente->mostrarTodoRegistro() as $doc){$i++
+	foreach($docente->mostrarTodosDocentes() as $doc){$i++
 	?>
     	<tr>
         	<td><?php echo $i?></td>
@@ -41,6 +42,7 @@ if(isset($_POST)){
             <td><?php echo capitalizar($doc['Telefono'])?></td>
             <td><?php echo capitalizar($doc['Celular'])?></td>
             <?php }elseif($listado=="DatosFormacionProfesional"){?>
+            <td><?php echo capitalizar($doc['Rda'])?></td>
             <td><?php echo capitalizar($doc['DPUniversidad'])?></td>	
             <td><?php echo capitalizar($doc['DPAnoIngreso'])?></td>
             <td><?php echo capitalizar($doc['DPAnoEgreso'])?></td>
