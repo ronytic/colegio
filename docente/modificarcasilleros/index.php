@@ -2,7 +2,7 @@
 include_once("../../login/check.php");
 $folder="../../";
 $jsFile="docente/modificarcasilleros.js";
-$titulo="NAsignacionCasilleros";
+$titulo="NModificarCasilleros";
 $subtitulo1="Listado";
 $subtitulo2="Configuracion";
 $direccion="-";
