@@ -134,6 +134,7 @@ $idioma['NReporteFaltaAtrasos']="Reporte de Faltas, Atrasos y Licencias";
 $idioma['NReporteFacturas']="Reporte de Facturas";
 $idioma['NListadoFacturas']="Listado de Facturas";
 $idioma['NHojaCasilleros']="Hoja de Casilleros";
+$idioma['NAlumnosNoReinscritos']="Alumnos No Reinscritos";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -1266,6 +1267,7 @@ $idioma['TelefonoColegio']="Teléfono de la Unidad Educativa";
 $idioma['RegistroPersonalizado']="Registro Personalizado";
 $idioma['ReporteFacturas']="Reporte de Facturas";
 $idioma['ResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
+$idioma['AlumnosNoReinscritos']="Alumnos No Reinscritos";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
