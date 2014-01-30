@@ -7,11 +7,11 @@ if(isset($_POST)):
     <br /><br />
     <input type="button" value="<?php echo $idioma['ModificarDatosDocente']?>" class="btn btn-info span12" id="modificardatos">
     <br /><br />
-    <input type="button" value="<?php echo $idioma['ReporteDatosDocente']?>" class="btn  span12" id="reportedatos">
-    <br /><br />
     <input type="button" value="<?php echo $idioma['RegistroNuevoDocente']?>" class="btn  span12 btn-inverse" id="nuevodocente">
     <br /><br />
-    <input type="button" value="<?php echo $idioma['ReporteDatosDocenteEntregar']?>" class="btn  span12 btn-warning" id="accesosistema">
+    <input type="button" value="<?php echo $idioma['ReporteDatosDocente']?>" class="btn  span12" id="reportedatos">
+    <br /><br />
+    <input type="button" value="<?php echo $idioma['ReporteDatosDocenteEntregar']?>" class="btn  span12 " id="accesosistema">
 <?php 
 endif
 ?>
