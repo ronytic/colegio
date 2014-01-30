@@ -14,6 +14,9 @@ function respuestaInicial(data){
 	.on("click","#reportedatos",function(){
 		$.post("reportedatos.php",{"CodDocente":CodDocente},function(data){$("#contenido2").html(data)});
 	})
+	.on("click","#accesosistema",function(){
+		$.post("reporteaccesos.php",{"CodDocente":CodDocente},function(data){$("#contenido2").html(data)});
+	})
 	.on("click","#nuevodocente",function(){
 		$.post("nuevo.php",{"CodDocente":CodDocente},function(data){$("#contenido2").html(data)
 		$(".fecha").datepicker({dateFormat:"dd-mm-yy"});
