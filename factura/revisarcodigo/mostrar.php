@@ -87,7 +87,7 @@ foreach($fac as $f){
     	<!--<td><?php echo $NAutorizacion?></td>-->
         <td><?php echo $NFactura?></td>
         <td><?php echo $Nit?></td>
-        <td><?php echo $FechaFactura?></td>
+        <td><?php echo fecha2Str($FechaFactura)?></td>
         <td><?php echo $Total?></td>
         <!--<td><?php echo $LlaveDosificacion?></td>-->
     	<td><strong><?php echo $CodigoControlGuardado?></strong></td>
