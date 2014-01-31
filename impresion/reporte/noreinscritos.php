@@ -22,7 +22,7 @@ class PDF extends PPDF{
 $pdf=new PDF("L","mm","letter");
 $pdf->AddPage();
 $i=0;
-foreach($tmp_alumno->mostrarTodoRegistro("",1,"CodCurso") as $tmpal){$i++;
+foreach($tmp_alumno->mostrarTodoRegistro("",1,"CodCurso,Paterno,Materno,Nombres") as $tmpal){$i++;
 	$cur=$curso->mostrarCurso($tmpal['CodCurso']);
 	$cur=array_shift($cur);
 	$relleno=$i%2==0?1:0;
