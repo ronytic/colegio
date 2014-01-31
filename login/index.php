@@ -50,9 +50,10 @@ $folder="../";
 	<div class="row-fluid">
     	<div class="offset1 span4">
             <div class="login">
-                <img src="../imagenes/logos/<?php echo $LogoInicio?>"  width="50" height="50" class="logo"/>
+                <a href="../"><img src="../imagenes/logos/<?php echo $LogoInicio?>"  width="50" height="50" class="logo"/>
                 <h4><?php echo $TipoUnidadLogin;?></h4>
                 <h2><?php echo $NombreUnidadLogin;?></h2>
+                </a>
                 <hr />
                 	<?php
                     if($idiomano==1){
