@@ -28,7 +28,7 @@ if(!empty($_POST)){
 	$Numero=$_POST['Numero'];
 	$TelefonoCasa=$_POST['TelefonoCasa'];
 	$Celular=$_POST['Celular'];
-	$CelularSMS='';
+	$CelularSMS=$_POST['CelularSMS'];
 	$ActivarSMS=1;
 	
 	//
