@@ -4,17 +4,25 @@ include_once("../../class/registronotasexcel.php");
 include_once("../../class/registronotas.php");
 include_once("../../class/casilleros.php");
 $CodigoRegistro=$_SESSION['CodigoRegistro'];
+
 $registronotasexcel=new registronotasexcel;
 $registronotas=new registronotas;
 $casilleros=new casilleros;
 $rne=$registronotasexcel->mostrarTodoRegistro("CodRegistroNotasExcel=".$CodigoRegistro);
 $rne=array_shift($rne);
-
-
 //print_r($rne);
 $NombreArchivo="archivos/".$rne['NombreArchivo'];
 date_default_timezone_set('America/La_Paz');
 
+print_r($rne);
+$NombreArchivo="archivos/16.xls";
+//exit();
+/*error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);*/
+
+set_time_limit(0);
+ini_set('memory_limit', '-1');
 
 /** Incluir PHPExcel */
 require_once 'Classes/PHPExcel.php';
@@ -107,6 +115,7 @@ print_r($notas);
 echo "</pre>";*/
 
 $registronotasexcel->actualizarRegistro(array("Correcto"=>"1"),"CodRegistroNotasExcel=".$CodigoRegistro);
+exit();
 if($rne['Direccion']=="modificarnotasadministrativo"){
 	header("Location:../".$rne['Direccion']."/vernota.php?c=".$codigocasilleros);
 }else{
