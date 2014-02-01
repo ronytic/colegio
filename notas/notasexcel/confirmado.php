@@ -1,5 +1,9 @@
 <?php
 include_once("../../login/check.php");
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+
 include_once("../../class/registronotasexcel.php");
 include_once("../../class/registronotas.php");
 include_once("../../class/casilleros.php");
@@ -15,19 +19,17 @@ $NombreArchivo="archivos/".$rne['NombreArchivo'];
 date_default_timezone_set('America/La_Paz');
 
 print_r($rne);
-$NombreArchivo="archivos/16.xls";
+$nombrearchivo="archivos/16.xls";
 //exit();
-/*error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);*/
 
-set_time_limit(0);
-ini_set('memory_limit', '-1');
 
+$vars = get_defined_vars();  
+  
 /** Incluir PHPExcel */
-require_once 'Classes/PHPExcel.php';
-require_once 'funciones/funciones.php';
-$objPHPExcel = PHPExcel_IOFactory::load($NombreArchivo);
+	require_once 'Classes/PHPExcel.php';
+	include_once 'funciones/funciones.php';
+	$objPHPExcel = PHPExcel_IOFactory::load($nombrearchivo);
+
 /*
 $objReader = new PHPExcel_Reader_Excel2007();
 $objPHPExcel = $objReader->load("simple.xlsx");
@@ -42,6 +44,10 @@ $codigodocentemateriacurso=$dact->getCell('G3')->getValue();
 $cantidadalumnos=$dact->getCell('E6')->getValue();
 $cantidadcasilleros=$dact->getCell('E7')->getValue();
 $notas=array();
+
+$CantidadAprobados=$dact->getCell('C7')->getCalculatedValue();
+$CantidadReprobados=$dact->getCell('C8')->getCalculatedValue();
+
 $totalalto=$cantidadalumnos+10;
 $columnacodigo=adicionar("D",$cantidadcasilleros+4);
 $columnanr=adicionar("D",$cantidadcasilleros+1);
@@ -103,9 +109,9 @@ foreach($notas as $nok=>$nov){
 	$val['NotaFinal']=$NotaFinal;
 
 	
-	/*echo "<pre>";
+	echo "<pre>";
 	print_r($val);
-	echo "</pre>";*/
+	echo "</pre>";
 	$registronotas->actualizarNota($val,"CodRegistroNotas=".$CodRegistroNotas);
 	
 }
