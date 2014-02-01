@@ -1,8 +1,8 @@
 <?php
 include_once("../../login/check.php");
-error_reporting(E_ALL);
+/*error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
+ini_set('display_startup_errors', TRUE);*/
 
 include_once("../../class/registronotasexcel.php");
 include_once("../../class/registronotas.php");
@@ -15,11 +15,11 @@ $casilleros=new casilleros;
 $rne=$registronotasexcel->mostrarTodoRegistro("CodRegistroNotasExcel=".$CodigoRegistro);
 $rne=array_shift($rne);
 //print_r($rne);
-$NombreArchivo="archivos/".$rne['NombreArchivo'];
+$nombrearchivo="archivos/".$rne['NombreArchivo'];
 date_default_timezone_set('America/La_Paz');
 
-print_r($rne);
-$nombrearchivo="archivos/16.xls";
+/*print_r($rne);
+$nombrearchivo="archivos/16.xls";*/
 //exit();
 
 
@@ -109,9 +109,9 @@ foreach($notas as $nok=>$nov){
 	$val['NotaFinal']=$NotaFinal;
 
 	
-	echo "<pre>";
+	/*echo "<pre>";
 	print_r($val);
-	echo "</pre>";
+	echo "</pre>";*/
 	$registronotas->actualizarNota($val,"CodRegistroNotas=".$CodRegistroNotas);
 	
 }
@@ -121,7 +121,7 @@ print_r($notas);
 echo "</pre>";*/
 
 $registronotasexcel->actualizarRegistro(array("Correcto"=>"1"),"CodRegistroNotasExcel=".$CodigoRegistro);
-exit();
+
 if($rne['Direccion']=="modificarnotasadministrativo"){
 	header("Location:../".$rne['Direccion']."/vernota.php?c=".$codigocasilleros);
 }else{
