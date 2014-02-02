@@ -72,7 +72,9 @@ if(!empty($_POST)){
     	<div class="box-header"><?php echo $idioma['DescargarNotas']?></div>
         <div class="box-content">
         	<div class="pequeno"><?php echo $idioma['DescargarNotasTexto']?></div>
-        	<a href="../notasexcel/exportar.php?d=docente&f=2007" target="_blank" class="btn btn-success btn-small" title="<?php echo $idioma['DescargarNotasTexto']?>"><?php echo $idioma['DescargarNotasFormatoExcel']?></a>
+        	<a href="../notasexcel/exportar.php?d=docente&f=2003" target="_blank" class="btn btn-success btn-small" title="<?php echo $idioma['DescargarNotasTexto']?>"><?php echo $idioma['DescargarNotasFormatoExcel2007']?></a>
+            <br /><br />
+            <a href="../notasexcel/exportar.php?d=docente&f=2007" target="_blank" class="btn btn-info btn-small" title="<?php echo $idioma['DescargarNotasTexto']?>"><?php echo $idioma['DescargarNotasFormatoExcel2010']?></a>
         </div>
     </div>
     <div class="span6">
