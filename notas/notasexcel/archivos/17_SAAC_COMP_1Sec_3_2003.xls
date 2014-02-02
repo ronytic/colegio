@@ -1,2 +1,0 @@
-<br />
-<b>Catchable fatal error</b>:  Argument 1 passed to PHPExcel_IOFactory::createWriter() must be an instance of PHPExcel, null given, called in C:\xampp\htdocs\colegio\notas\notasexcel\exportar.php on line 455 and defined in <b>C:\xampp\htdocs\colegio\notas\notasexcel\Classes\PHPExcel\IOFactory.php</b> on line <b>132</b><br />
