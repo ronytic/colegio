@@ -101,7 +101,6 @@ foreach($logu as $lu){
 	}
 	//print_r($ul);
 	$F="".$Foto;
-	
 	if(!is_file($F)){
 		
 		$F=$folder."imagenes/usuario/0.jpg";
