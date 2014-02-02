@@ -11,7 +11,7 @@ class docente extends bd{
 		return $this->getRecords("Activo=1","Paterno, Materno, Nombres");
 	}
 	function mostrarDocente($CodDocente){
-		$this->campos=array('CodDocente,LOWER(Paterno) as Paterno,LOWER(Materno) as Materno,LOWER(Nombres) as Nombres');
+		$this->campos=array('CodDocente,LOWER(Paterno) as Paterno,LOWER(Materno) as Materno,LOWER(Nombres) as Nombres,Foto');
 		return $this->getRecords(" CodDocente=$CodDocente","Paterno,Materno,Nombres");
 	}
 	function mostrarTodoDatosDocente($CodDocente){
