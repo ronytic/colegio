@@ -1,5 +1,6 @@
 <?php
 include_once("../../login/check.php");
+//print_r($_FILES);
 $archivoexcel=$_FILES['archivoexcel']['name'];
 $direccion=$_POST['direccion'];
 if($archivoexcel!=""){
@@ -28,12 +29,12 @@ if($archivoexcel!=""){
 	$PeriodoNotaHabilitadoBimestre=$config->mostrarConfig("PeriodoNotaHabilitadoBimestre",1);
 	
 	
-	//error_reporting(E_ALL);
-	//ini_set('display_errors', TRUE);
-	//ini_set('display_startup_errors', TRUE);
+	/*error_reporting(E_ALL);
+	ini_set('display_errors', TRUE);
+	ini_set('display_startup_errors', TRUE);*/
 	
 	date_default_timezone_set('America/La_Paz');
-	
+	//echo $nombrearchivo;
 	
 	/** Incluir PHPExcel */
 	require_once 'Classes/PHPExcel.php';

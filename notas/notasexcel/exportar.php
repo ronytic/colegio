@@ -118,7 +118,7 @@ $NombreMateria=$mat['Nombre'];
 
 $tipoarchivo=$f;
 
-$nombrearchivo="SAAC_".quitarSimbolos($materiaabreviado)."_".quitarSimbolos($cursoabreviado)."_".quitarSimbolos($periodoabreaviado)."_".$tipoarchivo;
+$nombrearchivo="SAAC_".quitarSimbolos($materiaabreviado)."_".quitarSimbolos($cursoabreviado)."_".quitarSimbolos($periodoabreaviado)."_".date("Y");
 $valores=array("NombreArchivo"=>"'$nombrearchivo'",
 				"Codigo"=>"'".md5($codigocasilleros)."'",
 				"CodDocenteMateriaCurso"=>"'$codigodocentemateriacurso'",
