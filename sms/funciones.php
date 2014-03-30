@@ -133,7 +133,8 @@ function callAT($cmd, $modem, $log = false, $end = 0x0D ){
 	  $cmd = $cmd.chr($end);
 	  if($log){webLog($cmd,"&gt;",true);}
       dio_write ($modem, $cmd);
-	  sleep(1);
+	  //sleep(1);
+	  usleep(500000);
       $cmd = dio_read ($modem);
 	  $cmd = trim($cmd);
 	  if($log){webLog($cmd,"&lt;");}

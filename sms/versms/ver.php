@@ -26,7 +26,18 @@ if(!count($smsu)){
 exit();	
 }
 ?>
-<table class="table">
+<a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
+<table class="table table-bordered table-striped table-hover">
+<thead>
+	<tr>
+    	<th>Nº</th>
+        <th><?php echo $idioma['Usuario']?></th>
+        <th><?php echo $idioma['Fecha']?></th>
+        <th><?php echo $idioma['Hora']?></th>
+        <th><?php echo $idioma['NumeroCelular']?></th>
+        <th><?php echo $idioma['Mensaje']?></th>
+    </tr>
+</thead>
 <?php
 foreach($smsu as $lu){$i++;
 	switch($lu['Nivel']){
@@ -105,16 +116,15 @@ foreach($smsu as $lu){$i++;
 	?>
     	
         <tr>
-        
+        <td class="der"><?php echo $i?></td>
         <td>
-        <span class="label label-warning"><?php echo $i?></span> <span class="label label-info"> <strong><?php echo $tipousuario?>:</strong></span> <a"><?php echo capitalizar($Paterno)?> <?php echo capitalizar($Materno)?> <?php echo capitalizar(($Nombres))?></a><br>
-        <strong><?php echo $idioma['Fecha']?>:</strong> <?php echo fecha2Str($lu['FechaRegistro'])?>
-        <br>
-        <strong><?php echo $idioma['Hora']?>:</strong> <?php echo $lu['HoraRegistro']?>
-        <br>
-        <strong><?php echo $idioma['NumeroCelular']?>:</strong> <?php echo $lu['Numero']?>
-        <br>
-        <strong><?php echo $idioma['Mensaje']?>:</strong> <?php echo $lu['Mensaje']?>
+        <span class="label label-warning"></span> <span class="label label-info"> <strong><?php echo $tipousuario?>:</strong></span> <br /><a"><?php echo capitalizar($Paterno)?> <?php echo capitalizar($Materno)?> <?php echo capitalizar(($Nombres))?></a><br>
+        </td>
+        <td><?php echo fecha2Str($lu['FechaRegistro'])?></td>
+        
+        <td><?php echo $lu['HoraRegistro']?></td>
+        <td><?php echo $lu['Numero']?></td>
+        <td><?php echo $lu['Mensaje']?>
         </td>
         </tr>
        

@@ -101,6 +101,7 @@ if(!empty($_POST)){
 			$_SESSION['LoginSistemaColegio']=1;
 			$_SESSION['Nivel']=$Nivel;
 			$_SESSION['Idioma']=$reg['Idioma'];
+			echo $logusuario->optimizarTablas();
 			header("Location:".$direccion);
 		}
 		else{

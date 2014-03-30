@@ -270,6 +270,19 @@ class bd{
 	function eliminarRegistro($Where){
 		return $this->updateRow(array("Activo"=>"0"),$Where);	
 	}
+	function optimizarTablas(){
+		global $tablas_optimizar;
+		//print_r($tablas_optimizar);
+		if(count($tablas_optimizar)>0){
+			foreach($tablas_optimizar as $to){
+				//echo $to;
+				mysql_query("FLUSH TABLE $to");	
+				mysql_query("OPTIMIZE TABLE $to");	
+				mysql_query("REPAIR TABLE $to");	
+			}
+		}
+		
+	}
 }
 
 ?>

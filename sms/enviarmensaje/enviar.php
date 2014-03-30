@@ -11,6 +11,7 @@ if(!empty($_POST)){
 	include_once("../../class/smsenviado.php");
 	$smsenviado=new smsenviado;
 	extract($_POST);
+	$Mensaje=quitarTilde($Mensaje);
 	$NumeroCelular=trim($NumeroCelular);
 	if($NumeroCelular!="" || !empty($NumeroCelular)){
 		$res=enviarSms("COM".$PuertoUsb,$NumeroCelular,$Mensaje);

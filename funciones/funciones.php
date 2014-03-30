@@ -473,6 +473,16 @@ function num2letras($num, $fem = false, $dec = true) {
    $end_num=ucfirst($tex).'  '.$decimal.'/100';
    return $end_num; 
 } 
+function quitarTilde($cadena){
+    $originales = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ
+ßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŔŕ';
+    $modificadas = 'aaaaaaaceeeeiiiidnoooooouuuuy
+bsaaaaaaaceeeeiiiidnoooooouuuyybyRr';
+    $cadena = utf8_decode($cadena);
+    $cadena = strtr($cadena, utf8_decode($originales), $modificadas);
+    //$cadena = strtolower($cadena);
+    return utf8_encode($cadena);
+}
 function cambiopalabra($numero){
 	switch($numero){
 		case "1":{$texto="Primera";}break;

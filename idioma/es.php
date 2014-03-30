@@ -1147,7 +1147,13 @@ $idioma['CitacionSMS']="Citación para SMS";
 $idioma['MensajeEnviadoCorrectamente']=" Mensaje enviado Correctamente";
 $idioma['MensajeEnviadoError']=" Error al  enviar el mensaje, Revise la configuración si se encuentra conectado el dispositivo USB";
 $idioma['MensajeEnvioSMS']="¿Desea enviar esta Observación por SMS al Padre de Familia?";
-
+$idioma['EnviarMensajes']="Enviar Mensajes";
+$idioma['NoEnviado']="No Enviado";
+$idioma['Enviado']="Enviado";
+$idioma['SoloNumeros']="Solo Números";
+$idioma['NotaSms']="El mensaje que desea enviar por favor redáctelo sin signos de puntuación ni tildes para evitar problemas con el envió de los mensajes ";
+$idioma['SeguroDeseaEnviarSMSCurso']="¿Esta seguro de ENVIAR este mensaje a TODO EL CURSO seleccionado?";
+$idioma['SeguroDeseaEnviarSMS']="¿Esta seguro de ENVIAR este mensaje?";
 //Menu Principal
 $idioma['Tareas']="Tareas";
 $idioma['MisClases']="Mis Clases";
@@ -1268,6 +1274,7 @@ $idioma['RegistroPersonalizado']="Registro Personalizado";
 $idioma['ReporteFacturas']="Reporte de Facturas";
 $idioma['ResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
 $idioma['AlumnosNoReinscritos']="Alumnos No Reinscritos";
+$idioma['EnvioMasivo']="Envío de sms por curso";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";

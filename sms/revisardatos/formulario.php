@@ -14,7 +14,7 @@ if(!empty($_POST)){
     	<table class="table table-bordered">
         	<tr class="success">
             	<td>
-            	<?php echo $idioma['NumeroCelularEnviar']?>:<br><input type="text" name="CelularSMS" value="<?php echo $al['CelularSMS']?>" maxlength="8"><br><small><?php echo $idioma['RecomendacionNumeroCelular']?></small>
+            	<?php echo $idioma['NumeroCelularEnviar']?>:<br><input type="text" name="CelularSMS" value="<?php echo $al['CelularSMS']?>" maxlength="8" pattern="[0-9]*" title="<?php echo $idioma['SoloNumeros']?>"><br><small><?php echo $idioma['RecomendacionNumeroCelular']?></small>
             	</td>
             </tr>
             <tr class="info">

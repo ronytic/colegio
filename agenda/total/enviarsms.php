@@ -35,7 +35,7 @@ Ronald Nina
 Obs: No Presento, Trabajo en Flash de Computacion 
 10-05-2013
 	*/
-	$mensaje=quitarSimbolos($idioma['Agenda'])." $Sigla: ".quitarSimbolos(capitalizar($al['Paterno']))." ".quitarSimbolos(capitalizar(acortarPalabra($al['Nombres']))).", Obs: ".quitarSimbolos($obs['Nombre'],false)." ".quitarSimbolos($ag['Detalle'],false).", ".quitarSimbolos($mat['Nombre'],false).", ".fecha2Str($ag['Fecha']);
+	$mensaje=quitarTilde($idioma['Agenda'])." $Sigla: ".quitarTilde(capitalizar($al['Paterno']))." ".quitarTilde(capitalizar(acortarPalabra($al['Nombres']))).", Obs: ".quitarTilde($obs['Nombre'],false)." ".quitarTilde($ag['Detalle'],false).", ".quitarTilde($mat['Nombre'],false).", ".date("Y-m-d",strtotime($ag['Fecha']));
 	$mensaje=($mensaje);
 	//echo $mensaje;
 	
