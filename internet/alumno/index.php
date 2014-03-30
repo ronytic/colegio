@@ -44,7 +44,7 @@ $FechaCuota10=($config->mostrarConfig("FechaCuota10",1));
 $mes=date("m");
 
 //echo 
-
+$Foto=$al['Foto']!=""?$al['Foto']:$al['Sexo'].".png";
 $v=$config->mostrarConfig("LogoIcono");
 $LogoIcono=$v['Valor'];
 $folder="../../";
@@ -63,7 +63,9 @@ $folder="../../";
 	<div class="span12">
     	<a name="datos"></a>
     	 <div class="cuerpo">
-         	<img src="../../imagenes/alumnos/<?php echo $al['Sexo'].".png"?>" class="foto"/>
+         	<div class=" span2">
+         	<img src="../../imagenes/alumnos/<?php echo $Foto?>" class="img-circle" width="70%"/>
+            </div>
          	<div class="datos">
             	
         		<h1 class="nombre"><?php echo ucwords($al['Paterno']." ".$al['Materno']." ".$al['Nombres'])?></h1>
