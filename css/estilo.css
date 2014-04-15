@@ -247,6 +247,9 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
 .verde{
 	background-color:#E8FFE9 !important;	
 }
+tr:hover td.verde{
+	background-color:#d0e9c6 !important;
+}
 .amarillo{
 	background-color:#FFFDF0 !important;	
 }

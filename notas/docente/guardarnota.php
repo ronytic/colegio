@@ -17,7 +17,7 @@ if(!empty($_POST)){
 	$CodAlumno=$_POST['CodAlumno'];
 	$NumeroNota=$_POST['NumeroNota'];
 	$Nota=$_POST['Nota'];
-	
+	$TipoNota=$_POST['TipoNota'];
 	//$al=array_shift($alumno->mostrarDatos($CodAlumno));
 	//$cur=array_shift($curso->mostrarCurso($al['CodCurso']));
 	
@@ -38,10 +38,25 @@ if(!empty($_POST)){
 	for($i=1;$i<=$casillas['Casilleros'];$i++){
 		$valuesNotas['casilla'.$i]=$regNotaAlumno['Nota'.$i];
 	}
+	
 	//print_r($docMateria);
 	//obtenemos formulafinalpromedio
-//	echo $docMateria['FormulaCalificaciones'];
-	$notaResultado=$fn->polaco($casillas['FormulaCalificaciones'],$valuesNotas);
+	//echo $docMateria['FormulaCalificaciones'];
+	//print_r($_POST);
+	if($TipoNota=="avanzado"){
+		//print_r($valuesNotas);
+		$PD1=round((($valuesNotas['casilla1']+$valuesNotas['casilla2']+$valuesNotas['casilla3']+$valuesNotas['casilla4']+$valuesNotas['casilla5'])/5)*0.2);
+			$P1=(($valuesNotas['casilla7']+$valuesNotas['casilla8'])/2);
+			$P2=(($valuesNotas['casilla10']+$valuesNotas['casilla11'])/2);
+		$PD2=round((($P1+$P2)/2)*0.3);
+		$PD3=round((($valuesNotas['casilla14']+$valuesNotas['casilla15'])/2)*0.3);
+		$PD4=round((($valuesNotas['casilla17']+$valuesNotas['casilla18'])/2)*0.2);
+		$PB=$PD1+$PD2+$PD3+$PD4;
+		//echo $PD1;
+		$notaResultado=$PB;
+	}else{
+		$notaResultado=$fn->polaco($casillas['FormulaCalificaciones'],$valuesNotas);
+	}
 	if($notaResultado<=22){
 		if($casillas['Dps']==1){
 			$notaResultado=22;// Sacamos nota Minima para cada Uno	
@@ -59,21 +74,27 @@ if(!empty($_POST)){
 		}
 		
 	}
-
-//	echo $docMateria['FormulaCalificaciones'];
-	//imprimimos resultados
-	if($casillas['Dps']==1){
-		$dps=$fn->dpsnota($notaResultado);
-		$notafinal=$notaResultado+$dps;
-		$valuesNotaDps=array("Resultado"=>$notaResultado,'Dps'=>$dps,'NotaFinal'=>$notafinal);
-		$regNota->actualizarNota($valuesNotaDps,$Where);
-		$resultado=array("CodAlumno"=>$CodAlumno,"Resultado"=>$notaResultado,'Dps'=>$dps,"NotaFinal"=>$notafinal);
-	}else{
-		$dps=0;
+	if($TipoNota=="avanzado"){
 		$notafinal=$notaResultado;
-		$valuesNotaDps=array("Resultado"=>$notaResultado,'Dps'=>$dps,'NotaFinal'=>$notafinal);
+		$valuesNotaDps=array("Nota6"=>$PD1,"Nota9"=>$P1,"Nota12"=>$P2,"Nota13"=>$PD2,"Nota16"=>$PD3,"Nota19"=>$PD4,"Resultado"=>$notaResultado,'Dps'=>"0",'NotaFinal'=>$notafinal);
 		$regNota->actualizarNota($valuesNotaDps,$Where);
-		$resultado=array("CodAlumno"=>$CodAlumno,"Resultado"=>$notaResultado,'Dps'=>$dps,"NotaFinal"=>$notafinal);	
+		$resultado=array("TipoNota"=>$TipoNota,"PD1"=>$PD1,"P1"=>$P1,"P2"=>$P2,"PD2"=>$PD2,"PD3"=>$PD3,"PD4"=>$PD4,"CodAlumno"=>$CodAlumno,"Resultado"=>$notaResultado,'Dps'=>"0","NotaFinal"=>$notafinal);	
+	}else{
+		//echo $docMateria['FormulaCalificaciones'];
+		//imprimimos resultados
+		if($casillas['Dps']==1){
+			$dps=$fn->dpsnota($notaResultado);
+			$notafinal=$notaResultado+$dps;
+			$valuesNotaDps=array("Resultado"=>$notaResultado,'Dps'=>$dps,'NotaFinal'=>$notafinal);
+			$regNota->actualizarNota($valuesNotaDps,$Where);
+			$resultado=array("CodAlumno"=>$CodAlumno,"Resultado"=>$notaResultado,'Dps'=>$dps,"NotaFinal"=>$notafinal);
+		}else{
+			$dps=0;
+			$notafinal=$notaResultado;
+			$valuesNotaDps=array("Resultado"=>$notaResultado,'Dps'=>$dps,'NotaFinal'=>$notafinal);
+			$regNota->actualizarNota($valuesNotaDps,$Where);
+			$resultado=array("CodAlumno"=>$CodAlumno,"Resultado"=>$notaResultado,'Dps'=>$dps,"NotaFinal"=>$notafinal);	
+		}
 	}
 	echo json_encode($resultado);
 }

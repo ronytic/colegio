@@ -137,12 +137,13 @@ function enviarNota(e){
 	var CodCasilleros=$(this).attr('data-cod');
 	var Tope=parseInt($('#t'+Col).attr("rel"));
 	var Minimo=parseInt($('#t'+Col).attr("rel-min"));
+	var TipoNota=$("#Tipo").val();
 	if(Nota<Minimo){
 		alert(NotaExcedidaMinimo+": "+Minimo)	;
 		$(this).focus().select();
 	}else{
 		if(Nota<=Tope){
-			$.post('guardarnota.php',{'CodAlumno':CodAlumno,'NumeroNota':Col,'CodCasilleros':CodCasilleros,'Nota':Nota,'Rand':Math.random()},evaluarNota,"json");
+			$.post('guardarnota.php',{'TipoNota':TipoNota,'CodAlumno':CodAlumno,'NumeroNota':Col,'CodCasilleros':CodCasilleros,'Nota':Nota,'Rand':Math.random()},evaluarNota,"json");
 		}else{
 			alert(NotaExcedidaLimite+": "+Tope)	;
 			$(this).focus().select();
@@ -151,6 +152,14 @@ function enviarNota(e){
 }
 function evaluarNota(data){
 	var NotaAprobacion=parseInt($("input[name=NotaAprobacion]").val());
+	if(data.TipoNota=="avanzado"){
+		$('.al_'+data.CodAlumno+'_6').val(data.PD1);
+		$('.al_'+data.CodAlumno+'_9').val(data.P1);
+		$('.al_'+data.CodAlumno+'_12').val(data.P2);
+		$('.al_'+data.CodAlumno+'_13').val(data.PD2);
+		$('.al_'+data.CodAlumno+'_16').val(data.PD3);
+		$('.al_'+data.CodAlumno+'_19').val(data.PD4);
+	}
 	$('#resultado'+data.CodAlumno).val(data.Resultado);
 	if(data.Dps!=0){$('#dps'+data.CodAlumno).val(data.Dps);}
 	$('#notaf'+data.CodAlumno).val(data.NotaFinal);
