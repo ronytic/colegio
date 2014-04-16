@@ -30,12 +30,20 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 			$this->TituloCabecera(24,$idioma['Materno']);
 			$this->TituloCabecera(35,$idioma['Nombres']);
 			if(count($Etiquetas)>0){
+				if(count($Etiquetas)>=15){
+					$ancho=6;	
+				}else{
+					$ancho=5;	
+				}
+				
 				foreach($Etiquetas as $et){
-					$this->TituloCabecera(5,$et,9);
+					$this->TituloCabecera($ancho,$et,7);
 				}
 			}
 			$this->TituloCabecera(8,recortarTexto($idioma['Promedio'],3,""));
+			if($cur['Dps']){
 			$this->TituloCabecera(8,$idioma['Dps']);
+			}
 			$this->TituloCabecera(8,sacarIniciales($idioma["NotaFinal"]));
 		}
 	}
@@ -65,7 +73,14 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 	for($i=1;$i<=$numcasilleros;$i++){
 		$Etiquetas[$i]=sacarIniciales($casillas['NombreCasilla'.$i]);
 	}
-	$pdf=new PDF("P","mm","letter");//612,792
+	if($numcasilleros>=15){
+		$orientacion="L";
+		$ancho=6;	
+	}else{
+		$orientacion="P";	
+		$ancho=5;
+	}
+	$pdf=new PDF($orientacion,"mm","letter");//612,792
 	$pdf->AddPage();
 	$relleno=0;
 	foreach($alumnos->mostrarAlumnosCurso($CodCurso,$Sexo) as $al){$na++;
@@ -77,11 +92,26 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 		$pdf->CuadroNombreSeparado(24,$al['Paterno'],24,$al['Materno'],35,$al['Nombres'],1,$relleno);
 		
 		for($i=1;$i<=$numcasilleros;$i++){
-			$pdf->CuadroCuerpo(5,$regNota['Nota'.$i],$relleno,"C");
+			if($casillas['TipoNota']=="avanzado"){
+				switch($i){
+					case 6:{$relleno2=1;}break;
+					case 13:{$relleno2=1;}break;
+					case 16:{$relleno2=1;}break;
+					case 19:{$relleno2=1;}break;
+					default:{$relleno2=0;}break;
+				}
+			}
+			if($relleno || $relleno2){
+				$relleno3=1;	
+			}else{
+				$relleno3=0;	
+			}
+			$pdf->CuadroCuerpoResaltar($ancho,$regNota['Nota'.$i],$relleno3,"C",0,$relleno2);
 		}
 		$pdf->CuadroCuerpo(8,$regNota['Resultado'],$relleno,"C");
+		if($cur['Dps']){
 		$pdf->CuadroCuerpo(8,$regNota['Dps'],$relleno,"C");
-		
+		}
 		if($regNota['NotaFinal']<$notaReprobado){
 			$pdf->SetFillColor(179,179,179);
 			$pdf->CuadroCuerpoResaltar(8,$regNota['NotaFinal'],1,"C",1);
