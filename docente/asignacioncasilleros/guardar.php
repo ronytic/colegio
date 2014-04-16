@@ -22,7 +22,10 @@ if(!empty($_POST)){
 	$CodDocenteMateriaCurso=$_POST['CodDocenteMateriaCurso'];
 	$Casillas=$_POST['Casillas'];
 	$Formula=$_POST['Formula'];
-
+	$TipoNota=$_POST['TipoNota'];
+	
+	//print_r($_POST);
+	//exit();
 	$docmateriacurso=$docentemateriacurso->mostrarCodDocenteMateriaCurso($CodDocenteMateriaCurso);
 	$docmateriacurso=array_shift($docmateriacurso);
 	//echo "<br>$CodDocenteMateria<br>";
@@ -46,24 +49,52 @@ if(!empty($_POST)){
         <?php
 		exit();
 	}
-
+	if($TipoNota=="avanzado"){
+		$Casillas=19;
+	}
 	$CodCasilleros=$casillas['Auto_increment'];
 	$valDM=array('CodCasilleros'=>$CodCasilleros,
 				'CodDocenteMateriaCurso'=>$docmateriacurso['CodDocenteMateriaCurso'],
 				'Casilleros'=>$Casillas,
 				'Trimestre'=>$Periodo,
 				'FormulaCalificaciones'=>"'$Formula'",
-				'Dps'=>$cur['Dps']
+				'Dps'=>$cur['Dps'],
+				'TipoNota'=>"'$TipoNota'"
 				);
 				
-	for($i=1;$i<=15;$i++){
+	for($i=1;$i<=25;$i++){
 		if($i<=$Casillas){
 			if($cur['Bimestre']){//Sacando para Cursos por Bimestre
-				switch($i){
-					case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=10;}break;
-					case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=15;}break;
-					case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=15;}break;
-					case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=10;}break;
+				if($TipoNota=="avanzado"){
+					switch($i){
+						case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Puntualidad']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['IniciativaYCreatividad']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Honestidad']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Disciplina']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 5:{$valDM['NombreCasilla'.$i]="'".$idioma['Civismo']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 6:{$valDM['NombreCasilla'.$i]="'".$idioma['']." ".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 7:{$valDM['NombreCasilla'.$i]="'".$idioma['EvaluacionPermanente1']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 8:{$valDM['NombreCasilla'.$i]="'".$idioma['EvaluacionPermanente2']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 9:{$valDM['NombreCasilla'.$i]="'".$idioma['PromedioEvaluacionesPermanentes']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 10:{$valDM['NombreCasilla'.$i]="'".$idioma['PrimerParcial']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 11:{$valDM['NombreCasilla'.$i]="'".$idioma['SegundoParcial']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 12:{$valDM['NombreCasilla'.$i]="'".$idioma['PromedioParciales']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 13:{$valDM['NombreCasilla'.$i]="'".$idioma['']." ".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 14:{$valDM['NombreCasilla'.$i]="'".'T P I 1'."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 15:{$valDM['NombreCasilla'.$i]="'".'T P I 2'."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 16:{$valDM['NombreCasilla'.$i]="'".$idioma['']." ".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 17:{$valDM['NombreCasilla'.$i]="'".'T P  G 1'."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 18:{$valDM['NombreCasilla'.$i]="'".'T P G 2'."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 19:{$valDM['NombreCasilla'.$i]="'".$idioma['']." ".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=0;}break;
+					}
+
+				}else{
+					switch($i){
+						case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=10;}break;
+						case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=15;}break;
+						case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=15;}break;
+						case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=10;}break;
+					}
 				}
 			}else{//Sacnado para Fines de Bimestre
 				$valDM['NombreCasilla'.$i]="'Casilla $i'";
@@ -86,7 +117,7 @@ if(!empty($_POST)){
 					'CodAlumno'=>$al['CodAlumno'],
 					'Trimestre'=>$Periodo,
 					);
-		for($i=1;$i<=15;$i++){
+		for($i=1;$i<=25;$i++){
 			$valRN['Nota'.$i]=0;	
 		}
 		//print_r($valRN);

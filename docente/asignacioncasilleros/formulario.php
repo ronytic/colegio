@@ -45,6 +45,7 @@ if(!empty($_POST['CodDocente'])){
 	?>
     </table>
     <table class="table table-bordered table-hover">
+    	
         <tr>
             <td><?php echo $idioma['PeriodoActual']?>:<br />
             	<select name="Periodo" class="span12">
@@ -62,10 +63,19 @@ if(!empty($_POST['CodDocente'])){
                 </select>
 			</td>
         </tr>
+        <tr id="FilaTipoNota" class="ocultar">
+            <td><?php echo $idioma['TipoBimestre']?>:<br />
+            	<select name="TipoNota" id="TipoNota" class="span12">
+					<option value=""><?php echo $idioma['BimestreNormal']?></option>
+                    <option value="avanzado" title="asd"><?php echo $idioma['BimestreAvanzado']?></option>
+                </select>
+                <div class="alert alert-error"><?php echo $idioma['NotaBimestreAvanzado']?></div>
+			</td>
+        </tr>
         <tr>
         	<td><?php echo $idioma['NumeroCasillas']?>:<br />
             <select name="casillas" class="span12">
-				<?php for($i=3;$i<=15;$i++){?>
+				<?php for($i=3;$i<=25;$i++){?>
                 <option value="<?php echo $i;?>"><?php echo $i;?></option>
                 <?php }?>
             </select>

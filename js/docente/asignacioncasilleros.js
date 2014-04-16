@@ -21,8 +21,12 @@ function respuestaInicial(data){
 	function cambiarCantidad(e) {
 		valorbimestre=parseInt($(this).attr("data-bimestre"));
 		if(valorbimestre==1){
+			$("#FilaTipoNota").show();
+			//$("#TipoNota").val("");
 			$("select[name=casillas]").val(4).attr("disabled","disabled");
 		}else{
+			$("#FilaTipoNota").hide();
+			$("#TipoNota").val("");
 			$("select[name=casillas]").val($("select[name=casillas]").val()).removeAttr("disabled");
 		}
 		$('#formula').click();
@@ -32,12 +36,13 @@ function respuestaInicial(data){
        $('#formula').click(); 
     });
 	$(".guardar").click(function(e) {
+		var TipoNota=$("#TipoNota").val();
 		var Periodo=$("select[name=Periodo]").val();
 		var Casillas=$("select[name=casillas]").val();
 		var Formula=$("textarea[name=formula]").val();
 		var CodDocenteMateriaCurso=$("input[name=CodDocenteMateriaCurso]:checked").val();
 		if(confirm(GuardarConfiguracionCasilleros+"\n"+NoSePodraModificar)){
-			$.post('guardar.php',{'Periodo':Periodo,'CodDocenteMateriaCurso':CodDocenteMateriaCurso,'Casillas':Casillas,'Formula':Formula},respuesta2);
+			$.post('guardar.php',{'TipoNota':TipoNota,'Periodo':Periodo,'CodDocenteMateriaCurso':CodDocenteMateriaCurso,'Casillas':Casillas,'Formula':Formula},respuesta2);
 		}
     });
 }
