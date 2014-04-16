@@ -4,7 +4,6 @@ if(!empty($_POST)){
 	extract($_POST);
 	include_once("../../class/materias.php");
 	$materias=new materias;
-	$Usuarios=implode(",",$Usuarios);
 	$valores=array("Nombre"=>"'$Nombre'",
 				"Abreviado"=>"'$Abreviado'",
 				"NombreAlterno1"=>"'$NombreAlterno1'",
