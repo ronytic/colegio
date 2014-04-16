@@ -582,6 +582,27 @@ $idioma['ConLosSiguientesDatos']="ConLosSiguientesDatos";
 $idioma['Casilleros']="Casilleros";
 $idioma['GuardarConfiguracionCasilleros']="¿Esta seguro de guardar esta configuración del Docente, Curso, Materia y el Tipo del Alumno?";
 $idioma['NoSePodraModificar']="NO SE PODRÁ CAMBIAR ESTA CONFIGURACIÓN POSTERIORMENTE";
+$idioma['TipoBimestre']="Tipo de Bimestre";
+$idioma['BimestreNormal']="Bimestre Normal";
+$idioma['BimestreAvanzado']="Bimestre Avanzado";
+$idioma['NotaBimestreAvanzado']="Si usted selecciona bimestre avanzado, el sistema será el encargado internamente de asignar  el número de casilleros y la metodología de calificación de acuerdo al cuaderno pedagógico del registro de notas ";
+
+$idioma['Puntualidad']="Puntualidad";
+$idioma['IniciativaYCreatividad']="Iniciativa Y Creatividad";
+$idioma['Honestidad']="Honestidad";
+$idioma['Disciplina']="Disciplina";
+$idioma['Civismo']="Civismo";
+$idioma['ActitudesPersonales']="Actitudes Personales";
+$idioma['PromedioActitudAptitud']="Promedio Actitud Aptitud";
+$idioma['EvaluacionPermanente1']="Evaluación Permanente 1";
+$idioma['EvaluacionPermanente2']="Evaluación Permanente 2";
+$idioma['PromedioEvaluacionesPermanentes']="Promedio de Evaluaciones Permanentes";
+$idioma['PrimerParcial']="Primer Parcial";
+$idioma['SegundoParcial']="Segundo Parcial";
+$idioma['PromedioParciales']="Promedio de Parciales";
+$idioma['Promedio']="Promedio";
+$idioma['TrabajosPracticos']="Trabajos Prácticos";
+$idioma['PromedioTrabajosPracticos']="Promedio Trabajos Prácticos";
 
 $idioma['Ser']="Ser";
 $idioma['Saber']="Saber";
