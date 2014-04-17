@@ -43,6 +43,7 @@ $codigocasilleros=$dact->getCell('F3')->getValue();
 $codigodocentemateriacurso=$dact->getCell('G3')->getValue();
 $cantidadalumnos=$dact->getCell('E6')->getValue();
 $cantidadcasilleros=$dact->getCell('E7')->getValue();
+$TipoNota=$dact->getCell('F7')->getValue();
 $notas=array();
 
 $CantidadAprobados=$dact->getCell('C7')->getCalculatedValue();
@@ -60,7 +61,20 @@ for($i=11;$i<=$totalalto;$i++){
 	$poscol="D";
 	for($j=1;$j<=$cantidadcasilleros;$j++){
 		$poscol=adicionar($poscol,1);
-		$vn=$dact->getCell($poscol.$i)->getValue();
+		if($TipoNota=="avanzado"){
+			//echo $j;
+			switch($j){
+				case 4: {$vn=$dact->getCell($poscol.$i)->getCalculatedValue();}break;
+				case 10:{$vn=$dact->getCell($poscol.$i)->getCalculatedValue();}break;
+				case 15:{$vn=$dact->getCell($poscol.$i)->getCalculatedValue();}break;
+				case 20:{$vn=$dact->getCell($poscol.$i)->getCalculatedValue();}break;
+				default:{
+					$vn=$dact->getCell($poscol.$i)->getValue();
+					}break;
+			}
+		}else{
+			$vn=$dact->getCell($poscol.$i)->getValue();
+		}
 		$n[$j]=$vn;
 	}
 	$notaresultado=$dact->getCell($columnanr.$i)->getCalculatedValue();
