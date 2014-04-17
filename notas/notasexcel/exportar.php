@@ -60,6 +60,9 @@ $RangoNotaDps4=$config->mostrarConfig("RangoNotaDps4",1);
 $RangoNotaDps5=$config->mostrarConfig("RangoNotaDps5",1);
 $RangoNotaDps6=$config->mostrarConfig("RangoNotaDps6",1);
 
+if($casillas['TipoNota']=="avanzado"){
+	$FormulaCalificaciones="n4 n10 + n15 + n20 +";
+}
 
 if($RegistroNotaHabilitado==1){
 	if($cur['Bimestre']){
@@ -241,6 +244,8 @@ $doc->getActiveSheet()->mergeCells('C7:D7')
 					->getStyle('C7:D7')->applyFromArray(estilo(11,"70ad47","B","FFFFFF","right","center",'thin','000000'));	
 $doc->getActiveSheet()->setCellValue('E7', $cantidadcasilleros)
 					->getStyle('E7')->applyFromArray(estilo(11,"FFFFFF","","FFFFFF","right","center",'none','000000'));	
+$doc->getActiveSheet()->setCellValue('F7', $casillas['TipoNota'])
+					->getStyle('F7')->applyFromArray(estilo(11,"FFFFFF","","FFFFFF","right","center",'none','000000'));	
 //Reprobados
 $doc->getActiveSheet()->mergeCells('A8:B8')
 					->setCellValue('A8', mayuscula($idioma['Reprobados']))
@@ -251,7 +256,7 @@ $doc->getActiveSheet()->mergeCells('C8:D8')
 $doc->getActiveSheet()->setCellValue('E8', $idioma['FirmaSelloDocente']);
 $doc->getActiveSheet()->mergeCells('E8:K8')->getStyle('E8:K8')->applyFromArray(estilo(11,"000000","","FFFFFF","center","center",'none','000000'));	
 //Alto de Subtitulo
-$doc->getActiveSheet()->getRowDimension('9')->setRowHeight(67.50);
+$doc->getActiveSheet()->getRowDimension('9')->setRowHeight(74.50);
 //Registro de Notas
 $doc->getActiveSheet()->mergeCells('A9:D9')
 					->setCellValue('A9', $idioma['RegistroNotas'])
@@ -274,16 +279,34 @@ $doc->getActiveSheet()->setCellValue('D10', mayuscula($idioma['Nombres']))
 $col='';
 $y='';					
 for($j=1;$j<=$cantidadcasilleros;$j++){
+	if($casillas['TipoNota']=="avanzado"){
+		if($j==4 || $j==10 || $j==15 || $j==20){
+			$TamanoLetra=18;
+			$colorfondo="c2ffc5";
+		}else{
+			if($j==3 || $j==9 || $j==14 || $j==19){
+				$TamanoLetra=11;
+				$colorfondo="d5eafd";	
+			}else{
+			$TamanoLetra=11;
+			$colorfondo="FFFFFF";	
+			}
+		}
+	}else{
+		$TamanoLetra=11;
+		$colorfondo="FFFFFF";
+	}
 	$col=adicionar('D',$j);
 	$y=$col;
 	$doc->getActiveSheet()->setCellValue($col.'10', sacarIniciales($casillas['NombreCasilla'.$j]))
-					->getStyle($col.'10')->applyFromArray(estilo(11,"000000","B","FFFFFF","center","center",'thin','000000'));
+					->getStyle($col.'10')->applyFromArray(estilo(11,"000000","B",$colorfondo,"center","center",'thin','000000'));
 	$doc->getActiveSheet()->setCellValue($col.'9', $casillas['NombreCasilla'.$j])
-					->getStyle($col.'9')->applyFromArray(estilo(11,"000000","B","FFFFFF","center","bottom",'thin','000000'))->getAlignment()->setTextRotation(90);
+					->getStyle($col.'9')->applyFromArray(estilo($TamanoLetra,"000000","B",$colorfondo,"center","bottom",'thin','000000'))->getAlignment()->setTextRotation(90);
 	$doc->getActiveSheet()->getColumnDimension($col)->setWidth(an(3.57));
 }
 //NotaResultado
 $col=adicionar($col,1);
+		
 	$doc->getActiveSheet()->setCellValue($col.'10', sacarIniciales($idioma['Nota']." ".$idioma['Resultado']))
 					->getStyle($col.'10')->applyFromArray(estilo(11,"000000","B","FFFFFF","center","center",'thin','000000'));
 	$doc->getActiveSheet()->setCellValue($col.'9', $idioma['Resultado'])
@@ -333,13 +356,49 @@ foreach($a as $al){$i++;
 						->getStyle('D'.$x)->applyFromArray(estilo(11,"000000","",$colorfondo,"left","center",'thin','000000'));
 	//echo "<br>";
 	for($j=1;$j<=$cantidadcasilleros;$j++){
-		$no=$regNota['Nota'.$j];
+		if($casillas['TipoNota']=="avanzado"){
+			if($j==4 || $j==10 || $j==15 || $j==20){
+				//POR SI es dimensión 
+				$TamanoLetra=18;
+				$colorfondo="c2ffc5";
+				$tipotexto="B";
+				$protegidodimension=1;
+				switch($j){
+					case 4:{$no="=ROUND(AVERAGE(E$x:G$x)*0.2,0)";}break;	
+					case 10:{$no="=ROUND(AVERAGE(I$x:M$x)*0.3,0)";}break;	
+					case 15:{$no="=ROUND(AVERAGE(O$x:R$x)*0.3,0)";}break;	
+					case 20:{$no="=ROUND(AVERAGE(T$x:W$x)*0.2,0)";}break;	
+				}
+				
+			}else{
+				if($j==3 || $j==9 || $j==14 || $j==19){//Por Autoevaluación
+					$TamanoLetra=11;
+					$colorfondo="d5eafd";	
+					$no=$regNota['Nota'.$j];
+					$tipotexto="";
+				}else{
+					$TamanoLetra=11;
+					$colorfondo=$i%2==0?'FFE699':'FFFFFF';
+					$no=$regNota['Nota'.$j];
+					$tipotexto="";
+					
+				}
+				$protegidodimension=0;
+			}
+		}else{
+			$TamanoLetra=11;
+			$colorfondo=$i%2==0?'FFE699':'FFFFFF';
+			$no=$regNota['Nota'.$j];
+			$tipotexto="";
+		}
+		
+		
 		//echo $no.",";
 		$col=adicionar('D',$j);
 		$y=$col;
 		//$no=60;
 		$doc->getActiveSheet()->setCellValue($col.$x, $no)
-						->getStyle($col.$x)->applyFromArray(estilo(11,"000000","",$colorfondo,"center","center",'thin','000000'));
+						->getStyle($col.$x)->applyFromArray(estilo(11,"000000",$tipotexto,$colorfondo,"center","center",'thin','000000'));
 		$notamin=$casillas['LimiteMinCasilla'.$j];
 		$notamax=$casillas['LimiteCasilla'.$j];
 		$notaminmax=$idioma['NotaEstarEntre']." ".$notamin." ".$idioma['Y']." ".$notamax;
@@ -360,9 +419,12 @@ foreach($a as $al){$i++;
 		
 		//Desprotejer
 		if(!$restringir){
-			$doc->getActiveSheet()->getStyle($col.$x)->getProtection()->setLocked('unprotected');
+			if(!$protegidodimension){
+				$doc->getActiveSheet()->getStyle($col.$x)->getProtection()->setLocked('unprotected');
+			}
 		}
 	}
+	$colorfondo=$i%2==0?'FFE699':'FFFFFF';
 	$resultadoformula="=ROUND(".convertir($formula,"E",$x).",0)";
 	//NotaResultado
 	$col=adicionar($col,1);
