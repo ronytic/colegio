@@ -94,10 +94,10 @@ if(!empty($_GET) && md5("lock")==$_GET['lock']){
 		for($i=1;$i<=$numcasilleros;$i++){
 			if($casillas['TipoNota']=="avanzado"){
 				switch($i){
-					case 6:{$relleno2=1;}break;
-					case 13:{$relleno2=1;}break;
-					case 16:{$relleno2=1;}break;
-					case 19:{$relleno2=1;}break;
+					case 4:{$relleno2=1;}break;
+					case 10:{$relleno2=1;}break;
+					case 15:{$relleno2=1;}break;
+					case 20:{$relleno2=1;}break;
 					default:{$relleno2=0;}break;
 				}
 			}
