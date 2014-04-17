@@ -68,7 +68,7 @@ if(!empty($_POST)){
     <span class="resaltar"><?php echo $idioma['NoExisteCasillerosRegistradosParaEste']?> <?php echo $idioma['Docente']?>, <?php echo $idioma['Curso']?>, <?php echo $idioma['Materia']?> <?php echo $idioma['Y']?> <?php echo $cur['Bimestre']?$idioma['Bimestre']:$idioma['Trimestre']?></span>
     <?php exit();}
 	?>
-    <?php /*?>
+    <?php ?>
     <div class="span6">
     	<div class="box-header"><?php echo $idioma['DescargarNotas']?></div>
         <div class="box-content">
@@ -93,7 +93,7 @@ if(!empty($_POST)){
 			}?>
         </div>
     </div>
-    <?php */?>
+    <?php ?>
     <input type="hidden" name="Tipo" id="Tipo" value="<?php echo $casillas['TipoNota']?>">
     <input type="hidden" name="NotaAprobacion" value="<?php echo $cur['NotaAprobacion']?>"/>
 	<table class="table table-bordered table-striped table-hover table-condensed">
@@ -131,17 +131,17 @@ if(!empty($_POST)){
             <td><?php echo capitalizar($al['Materno']);?></td>
             <td><?php echo capitalizar($al['Nombres']);?></td>
             <?php for($i=1;$i<=$numcasilleros;$i++){
-			if($i==6 ||  $i==13 || $i==16 || $i==19){
+			if($i==4 ||  $i==10 || $i==15 || $i==20){
 				$verde='verde';
 			}else{
 				$verde='';
 			}
-			if( $i==9 || $i==12 ){
+			if( $i==3 || $i==9 || $i==14 || $i==19){
 				$amarillo='amarillo';
 			}else{
 				$amarillo='';
 			}
-			if($i==6 || $i==9 || $i==12 || $i==13 || $i==16 || $i==19){
+			if($i==4 || $i==10 || $i==15 || $i==20){
 				$lectura='readonly="readonly"';
 				$tabindex="";
 			}else{

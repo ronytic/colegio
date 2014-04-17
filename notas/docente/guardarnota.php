@@ -45,12 +45,12 @@ if(!empty($_POST)){
 	//print_r($_POST);
 	if($TipoNota=="avanzado"){
 		//print_r($valuesNotas);
-		$PD1=round((($valuesNotas['casilla1']+$valuesNotas['casilla2']+$valuesNotas['casilla3']+$valuesNotas['casilla4']+$valuesNotas['casilla5'])/5)*0.2);
-			$P1=(($valuesNotas['casilla7']+$valuesNotas['casilla8'])/2);
-			$P2=(($valuesNotas['casilla10']+$valuesNotas['casilla11'])/2);
-		$PD2=round((($P1+$P2)/2)*0.3);
-		$PD3=round((($valuesNotas['casilla14']+$valuesNotas['casilla15'])/2)*0.3);
-		$PD4=round((($valuesNotas['casilla17']+$valuesNotas['casilla18'])/2)*0.2);
+		$PD1=round((($valuesNotas['casilla1']+$valuesNotas['casilla2']+$valuesNotas['casilla3'])/3)*0.2);
+			//$P1=(($valuesNotas['casilla7']+$valuesNotas['casilla8'])/2);
+			//$P2=(($valuesNotas['casilla10']+$valuesNotas['casilla11'])/2);
+		$PD2=round((($valuesNotas['casilla5']+$valuesNotas['casilla6']+$valuesNotas['casilla7']+$valuesNotas['casilla8']+$valuesNotas['casilla9'])/5)*0.3);
+		$PD3=round((($valuesNotas['casilla11']+$valuesNotas['casilla12']+$valuesNotas['casilla13']+$valuesNotas['casilla14'])/4)*0.3);
+		$PD4=round((($valuesNotas['casilla16']+$valuesNotas['casilla17']+$valuesNotas['casilla18']+$valuesNotas['casilla19'])/4)*0.2);
 		$PB=$PD1+$PD2+$PD3+$PD4;
 		//echo $PD1;
 		$notaResultado=$PB;
@@ -76,9 +76,9 @@ if(!empty($_POST)){
 	}
 	if($TipoNota=="avanzado"){
 		$notafinal=$notaResultado;
-		$valuesNotaDps=array("Nota6"=>$PD1,"Nota9"=>$P1,"Nota12"=>$P2,"Nota13"=>$PD2,"Nota16"=>$PD3,"Nota19"=>$PD4,"Resultado"=>$notaResultado,'Dps'=>"0",'NotaFinal'=>$notafinal);
+		$valuesNotaDps=array("Nota4"=>$PD1,"Nota10"=>$PD2,"Nota15"=>$PD3,"Nota20"=>$PD4,"Resultado"=>$notaResultado,'Dps'=>"0",'NotaFinal'=>$notafinal);
 		$regNota->actualizarNota($valuesNotaDps,$Where);
-		$resultado=array("TipoNota"=>$TipoNota,"PD1"=>$PD1,"P1"=>$P1,"P2"=>$P2,"PD2"=>$PD2,"PD3"=>$PD3,"PD4"=>$PD4,"CodAlumno"=>$CodAlumno,"Resultado"=>$notaResultado,'Dps'=>"0","NotaFinal"=>$notafinal);	
+		$resultado=array("TipoNota"=>$TipoNota,"PD1"=>$PD1,"PD2"=>$PD2,"PD3"=>$PD3,"PD4"=>$PD4,"CodAlumno"=>$CodAlumno,"Resultado"=>$notaResultado,'Dps'=>"0","NotaFinal"=>$notafinal);	
 	}else{
 		//echo $docMateria['FormulaCalificaciones'];
 		//imprimimos resultados
