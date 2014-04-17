@@ -604,6 +604,9 @@ $idioma['Promedio']="Promedio";
 $idioma['TrabajosPracticos']="Trabajos Prácticos";
 $idioma['PromedioTrabajosPracticos']="Promedio Trabajos Prácticos";
 
+$idioma['Valor']="Valor";
+$idioma['Autoevaluacion']="Autoevaluación";
+
 $idioma['Ser']="Ser";
 $idioma['Saber']="Saber";
 $idioma['Hacer']="Hacer";
