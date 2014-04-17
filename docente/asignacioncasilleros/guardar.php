@@ -50,7 +50,7 @@ if(!empty($_POST)){
 		exit();
 	}
 	if($TipoNota=="avanzado"){
-		$Casillas=19;
+		$Casillas=20;
 	}
 	$CodCasilleros=$casillas['Auto_increment'];
 	$valDM=array('CodCasilleros'=>$CodCasilleros,
@@ -67,25 +67,26 @@ if(!empty($_POST)){
 			if($cur['Bimestre']){//Sacando para Cursos por Bimestre
 				if($TipoNota=="avanzado"){
 					switch($i){
-						case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Puntualidad']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['IniciativaYCreatividad']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Honestidad']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Disciplina']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 5:{$valDM['NombreCasilla'.$i]="'".$idioma['Civismo']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 6:{$valDM['NombreCasilla'.$i]="'".$idioma['']." ".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 7:{$valDM['NombreCasilla'.$i]="'".$idioma['EvaluacionPermanente1']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 8:{$valDM['NombreCasilla'.$i]="'".$idioma['EvaluacionPermanente2']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 9:{$valDM['NombreCasilla'.$i]="'".$idioma['PromedioEvaluacionesPermanentes']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 10:{$valDM['NombreCasilla'.$i]="'".$idioma['PrimerParcial']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 11:{$valDM['NombreCasilla'.$i]="'".$idioma['SegundoParcial']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 12:{$valDM['NombreCasilla'.$i]="'".$idioma['PromedioParciales']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 13:{$valDM['NombreCasilla'.$i]="'".$idioma['']." ".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 14:{$valDM['NombreCasilla'.$i]="'".'T P I 1'."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 15:{$valDM['NombreCasilla'.$i]="'".'T P I 2'."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 16:{$valDM['NombreCasilla'.$i]="'".$idioma['']." ".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 17:{$valDM['NombreCasilla'.$i]="'".'T P  G 1'."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 18:{$valDM['NombreCasilla'.$i]="'".'T P G 2'."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
-						case 19:{$valDM['NombreCasilla'.$i]="'".$idioma['']." ".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 1'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 2'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Autoevaluacion']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 5:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 1'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 6:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 2"."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 7:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 3'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 8:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 4'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 9:{$valDM['NombreCasilla'.$i]="'".$idioma['Autoevaluacion']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 10:{$valDM['NombreCasilla'.$i]="'".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 11:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 1'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 12:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 2'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 13:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 3'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 14:{$valDM['NombreCasilla'.$i]="'".$idioma['Autoevaluacion']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 15:{$valDM['NombreCasilla'.$i]="'".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 16:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 1'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 17:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 2'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 18:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 3'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 19:{$valDM['NombreCasilla'.$i]="'".$idioma['Autoevaluacion']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
+						case 20:{$valDM['NombreCasilla'.$i]="'".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=0;}break;
 					}
 
 				}else{
