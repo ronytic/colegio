@@ -245,16 +245,16 @@ input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-se
 	background-color:#E8F7FF !important;
 }
 .verde{
-	background-color:#E8FFE9 !important;	
+	background-color:#d8ffda !important;	
 }
 tr:hover td.verde{
 	background-color:#d0e9c6 !important;
 }
 .amarillo{
-	background-color:#FFFDF0 !important;	
+	background-color:#fff5b7 !important;	
 }
 tr:hover td.amarillo{
-	background-color:#FFFCE1 !important;		
+	background-color:#fff2a3 !important;		
 }
 tr:hover td.celeste{
 	background-color:#DEF7FE !important;	
