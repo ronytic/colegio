@@ -38,7 +38,7 @@ if(!empty($_GET)){
 	class PDF extends PPDF{
 	
 	}
-$pdf=new PDF("P","mm",array(216, 140));
+$pdf=new PDF("L","mm",array(140, 216));
 //$pdf->SetProtection(array('print'));
 //array('print' => 4, 'modify' => 8, 'copy' => 16, 'annot-forms' => 32 );
 $pdf->AddPage();
