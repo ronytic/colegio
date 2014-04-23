@@ -25,7 +25,7 @@ include_once($folder."cabecerahtml.php");
                     </select>
                 	</td>
                     <td><?php echo $idioma['Fecha']?>:
-                    	<input type="text" name="Fecha" value="<?php echo fecha2Str()?>">
+                    	<input type="text" name="Fecha" value="<?php echo fecha2Str()?>" class="span8">
                     </td>
             		<td><input type="submit" class="btn" value="<?php echo $idioma['Ver']?>" id="ver"></td>
                 </tr>
