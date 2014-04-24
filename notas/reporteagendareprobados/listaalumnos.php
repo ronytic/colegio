@@ -34,6 +34,7 @@ if(!empty($_POST)){
 	$RN=$registronotas->notasCentralizadorAgenda($casillas['CodCasilleros'],$Periodo,$notareprobacion);
 	if(!count($RN)){?><div class="alert alert-success"><?php echo $idioma['NoExistenReprobadosParaEstaMateria']?></div><?php exit();}
 	?>
+    <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
     <table class="table table-bordered table-striped table-condensed">
     	<thead>
         <tr><th colspan="2"><?php echo $idioma['Materia']?>:</th><th colspan="6"><?php echo $mat['Nombre']?></th></tr>
