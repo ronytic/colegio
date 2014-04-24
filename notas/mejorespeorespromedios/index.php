@@ -16,13 +16,13 @@ include_once("../../cabecera.php");
     <div class="box-header"><h2><i class="icon-cog"></i><span class="break"></span>Configuración</h2></div>    
     <div class="box-content">
 		<?php echo $idioma['TipoReporte']?>:
-        <input type="search" class="span12" placeholder="<?php echo $idioma['BuscarOrdenPor']?>" name="tOrden"/>
+        <!--<input type="search" class="span12" placeholder="<?php echo $idioma['BuscarOrdenPor']?>" name="tOrden"/>-->
         <select name="Orden" class="span12">
             <option value="1"><?php echo $idioma['CuadroHonor']?></option>
             <option value="0"><?php echo $idioma['PromediosBajos']?></option>
         </select>
         <?php echo $idioma['Periodo']?>:
-        <input type="search" class="span12" placeholder="<?php echo $idioma['BuscarPeriodoPor']?>" name="tPeriodo"/>
+        <!--<input type="search" class="span12" placeholder="<?php echo $idioma['BuscarPeriodoPor']?>" name="tPeriodo"/>-->
         <select name="Periodo" class="span12">
 		<?php for($i=1;$i<=$TotalPeriodo;$i++){?>
             <option value="<?php echo $i?>"><?php echo $i?></option>
