@@ -56,7 +56,7 @@ if(isset($_POST))
 	}
 	?>
 	<?php echo $idioma['Periodo']?>:
-    <input type="search" name="tPeriodo" placeholder="<?php echo $idioma['BuscarPeriodoPor']?>" class="span12"/>
+    <!--<input type="search" name="tPeriodo" placeholder="<?php echo $idioma['BuscarPeriodoPor']?>" class="span12"/>-->
 	<select name="Periodo">
 		<?php for($i=1;$i<=$TotalPeriodo;$i++){?>
 		<option <?php echo $i==$tipo?'selected="selected"':'';?> value="<?php echo $i;?>"  ><?php echo $i;?></option>
