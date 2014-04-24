@@ -36,15 +36,27 @@ if(!empty($_POST)){
 	
 	$RegistroNotaHabilitado=$config->mostrarConfig("RegistroNotaHabilitado",1);
 	$PeriodoNotaHabilitado=$config->mostrarConfig("PeriodoNotaHabilitado",1);
-
+	$PeriodoNotaHabilitadoBimestre=$config->mostrarConfig("PeriodoNotaHabilitadoBimestre",1);
+	
 	//Enviar en la sesion
 	$_SESSION['CodCasilleros']=$CodCasilleros;
 	$_SESSION['CodPeriodo']=$CodPeriodo;
 	
 	if($RegistroNotaHabilitado==1){
-		if($CodPeriodo!=$PeriodoNotaHabilitado){
-			//$restringir='readonly="readonly" disabled="disabled"';
-		}else{$restringir='';}
+		if($cur['Bimestre']){
+			if($CodPeriodo!=$PeriodoNotaHabilitadoBimestre){
+				//$restringir='readonly="readonly" disabled="disabled"';
+			}else{
+				$restringir='';
+			}	
+		}else{
+			if($CodPeriodo!=$PeriodoNotaHabilitado){
+				//$restringir='readonly="readonly" disabled="disabled"';
+			}else{
+				$restringir='';
+			}
+		}
+		
 	}else{
 		//$restringir='readonly="readonly" disabled="disabled"';	
 	}
@@ -56,11 +68,12 @@ if(!empty($_POST)){
     <span class="resaltar"><?php echo $idioma['NoExisteCasillerosRegistradosParaEste']?> <?php echo $idioma['Docente']?>, <?php echo $idioma['Curso']?>, <?php echo $idioma['Materia']?> <?php echo $idioma['Y']?> <?php echo $cur['Bimestre']?$idioma['Bimestre']:$idioma['Trimestre']?></span>
     <?php exit();}
 	?>
+    <?php ?>
     <div class="span6">
     	<div class="box-header"><?php echo $idioma['DescargarNotas']?></div>
         <div class="box-content">
         	<div class="pequeno"><?php echo $idioma['DescargarNotasTexto']?></div>
-        	<a href="../notasexcel/exportar.php?d=modificarnotasadministrativo&f=2004" target="_blank" class="btn btn-success btn-small" title="<?php echo $idioma['DescargarNotasTexto']?>"><?php echo $idioma['DescargarNotasFormatoExcel2007']?></a>
+        	<a href="../notasexcel/exportar.php?d=modificarnotasadministrativo&f=2003" target="_blank" class="btn btn-success btn-small" title="<?php echo $idioma['DescargarNotasTexto']?>"><?php echo $idioma['DescargarNotasFormatoExcel2007']?></a>
             <br /><br />
             <a href="../notasexcel/exportar.php?d=modificarnotasadministrativo&f=2007" target="_blank" class="btn btn-info btn-small" title="<?php echo $idioma['DescargarNotasTexto']?>"><?php echo $idioma['DescargarNotasFormatoExcel2010']?></a>
         </div>
@@ -80,6 +93,8 @@ if(!empty($_POST)){
 			}?>
         </div>
     </div>
+    <?php ?>
+    <input type="hidden" name="Tipo" id="Tipo" value="<?php echo $casillas['TipoNota']?>">
     <input type="hidden" name="NotaAprobacion" value="<?php echo $cur['NotaAprobacion']?>"/>
 	<table class="table table-bordered table-striped table-hover table-condensed">
     	<thead>
@@ -115,21 +130,42 @@ if(!empty($_POST)){
             <td><?php echo capitalizar($al['Paterno']);?></td>
             <td><?php echo capitalizar($al['Materno']);?></td>
             <td><?php echo capitalizar($al['Nombres']);?></td>
-            <?php for($i=1;$i<=$numcasilleros;$i++){$numero++;?>
-            <td style="text-align:center;width:40px;">
-            <input type="text" size="3" maxlength="<?php echo strlen($cur['NotaTope'])?>" class="input-mini nota <?php echo($i==$numcasilleros)?'final':'';?>" value="<?php echo $regNota['Nota'.$i]?>" id="al[<?php echo $na;?>][n<?php echo $i;?>]" rel="<?php echo $al['CodAlumno']?>" data-col="<?php echo $i;?>" data-row="<?php echo $al['CodAlumno'];?>" data-cod="<?php echo $CodCasilleros;?>" <?php echo $restringir?> style="max-width:30px !important" tabindex="<?php echo $numero?>"/></td>
+            <?php for($i=1;$i<=$numcasilleros;$i++){
+			if($i==4 ||  $i==10 || $i==15 || $i==20){
+				$verde='verde';
+			}else{
+				$verde='';
+			}
+			if( $i==3 || $i==9 || $i==14 || $i==19){
+				$amarillo='amarillo';
+			}else{
+				$amarillo='';
+			}
+			if($i==4 || $i==10 || $i==15 || $i==20){
+				$lectura='readonly="readonly"';
+				$tabindex="";
+			}else{
+				$lectura='';
+				$verde='';
+				$numero++;
+				$tabindex='tabindex="'.$numero.'"';
+				
+			}
+			?>
+            <td style="text-align:center" class="<?php echo $verde." ".$amarillo?>">
+            <input type="text" size="3" maxlength="<?php echo strlen($casillas['LimiteCasilla'.$i])?>" class="input-mini nota <?php echo($i==$numcasilleros)?'final':'';?> al_<?php echo $al['CodAlumno']?>_<?php echo $i;?> " value="<?php echo $regNota['Nota'.$i]?>" id="al[<?php echo $na;?>][n<?php echo $i;?>]" rel="<?php echo $al['CodAlumno']?>" data-posicion="" data-col="<?php echo $i;?>" data-row="<?php echo $al['CodAlumno'];?>" data-cod="<?php echo $CodCasilleros;?>" <?php echo $restringir?> style="max-width:30px !important" <?php echo $tabindex?>" <?php echo $lectura?>/></td>
             <?php
 			}
 			?>
-            <td style="text-align:center;width:70px;" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Resultado']?>" id="resultado<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Resultado']?>" id="resultado<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
             <?php
 				if($Dps){
 			?>
-            <td style="text-align:center;width:40px;" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Dps']?>" id="dps<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center" class="amarillo"><input type="text" size="1" maxlength="2" readonly class="nota" value="<?php echo $regNota['Dps']?>" id="dps<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
             <?php
 				}
 			?>
-            <td style="text-align:center;width:40px;" class="celeste"><input type="text" size="1" maxlength="2" readonly class="nota <?php echo $regNota['NotaFinal']<$cur['NotaAprobacion']?"crojo reprobado":"";?>" value="<?php echo $regNota['NotaFinal']?>" id="notaf<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
+            <td style="text-align:center" class="celeste"><input type="text" size="1" maxlength="2" readonly class="nota <?php echo $regNota['NotaFinal']<$cur['NotaAprobacion']?"crojo reprobado":"";?>" value="<?php echo $regNota['NotaFinal']?>" id="notaf<?php echo $al['CodAlumno']?>" style="max-width:30px !important"/></td>
         </tr>
 	<?php
 	}
