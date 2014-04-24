@@ -7,6 +7,7 @@ function respuesta1(data){
 	$("#revisar").click(function(e) {
 		var Periodo=$("select[name=Periodo]").val();
 		var Orden=$("select[name=Orden]").val();
+		cargandoG("#respuesta");
         $.post("documento.php",{'CodCurso':CodCurso,'Periodo':Periodo,'Orden':Orden,"lock":"dce7c4174ce9323904a934a486c41288"},respuesta2);
     });
 	function respuesta2(data){
