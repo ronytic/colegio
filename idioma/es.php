@@ -1300,6 +1300,7 @@ $idioma['ReporteFacturas']="Reporte de Facturas";
 $idioma['ResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
 $idioma['AlumnosNoReinscritos']="Alumnos No Reinscritos";
 $idioma['EnvioMasivo']="Envío de sms por curso";
+$idioma['ArchivosNotasExcel']="Ver Archivos Excel de Notas";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
