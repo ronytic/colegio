@@ -23,7 +23,7 @@ include_once($folder."cabecerahtml.php");
             	<tr>
                     <td>
                     <?php echo $idioma['Docente']?>:<br>
-                    <select class="span6" name="CodDocente">
+                    <select class="span12" name="CodDocente">
                     <option value=""><?php echo $idioma['Seleccionar']?></option>
                     <?php foreach($doc as $d){?>
                     <option value="<?php echo $d['CodDocente']?>"><?php echo $d['Paterno']?> <?php echo $d['Materno']?> <?php echo $d['Nombres']?></option>
@@ -32,7 +32,7 @@ include_once($folder."cabecerahtml.php");
                 	</td>
                     <td>
                     <?php echo $idioma['Materia']?>:<br>
-                    <select class="span6" name="CodMateria">
+                    <select class="span12" name="CodMateria">
                     <option value=""><?php echo $idioma['Seleccionar']?></option>
                     <?php foreach($mat as $m){?>
                     <option value="<?php echo $m['CodMateria']?>"><?php echo $m['Nombre']?></option>
@@ -41,12 +41,16 @@ include_once($folder."cabecerahtml.php");
                 	</td>
                     <td>
                     <?php echo $idioma['Curso']?>:<br>
-                    <select class="span6" name="CodCurso">
+                    <select class="span12" name="CodCurso">
                     <option value=""><?php echo $idioma['Seleccionar']?></option>
                     <?php foreach($cur as $c){?>
                     <option value="<?php echo $c['CodCurso']?>"><?php echo $c['Nombre']?></option>
                     <?php }?>
                     </select>
+                	</td>
+                    <td>
+                    <?php echo $idioma['Fecha']?>:<br>
+                    <input type="text" class="span12 fechatope" name="Fecha">
                 	</td>
             		<td><input type="submit" class="btn" value="<?php echo $idioma['Ver']?>" id="ver"></td>
                 </tr>

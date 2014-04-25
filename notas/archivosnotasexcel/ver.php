@@ -13,9 +13,11 @@ $registronotasexcel=new registronotasexcel;
 $CodDocente=$CodDocente!=""?"CodDocente='$CodDocente'":"CodDocente LIKE '%'";
 $CodMateria=$CodMateria!=""?"CodMateria='$CodMateria'":"CodMateria LIKE '%'";
 $CodCurso=$CodCurso!=""?"CodCurso='$CodCurso'":"CodCurso LIKE '%'";
-$condicion="$CodDocente and $CodMateria and $CodCurso";
+$Fecha=$Fecha!=""?"FechaRegistro='".fecha2Str($Fecha,0)."'":"FechaRegistro LIKE '%'";
+
+$condicion="$CodDocente and $CodMateria and $CodCurso and $Fecha";
 //echo $condicion;
-$regnotasexcel=$registronotasexcel->mostrarTodoRegistro($condicion,1,"FechaRegistro");
+$regnotasexcel=$registronotasexcel->mostrarTodoRegistro($condicion,1,"FechaRegistro,HoraRegistro");
 ?>
 <?php
 if(!count($regnotasexcel)){
@@ -50,7 +52,7 @@ $i=0;
 	$c=array_shift($c);
 	?>
     <tr>
-    	<td><?php echo $i?></td>
+    	<td class="der"><?php echo $i?></td>
         <td><?php echo $rne['NombreArchivo']?>
         <?php if($rne['Ubicacion']=="Subida"){?>
         <a href="../notasexcel/archivos/<?php echo $rne['NombreArchivo']?>" class="btn btn-mini" target="_blank"><i class="icon-chevron-down"></i></a>
