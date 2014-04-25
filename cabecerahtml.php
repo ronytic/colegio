@@ -67,6 +67,10 @@ $LogoInicio=$config->mostrarConfig("LogoInicio",1);
 $LogoIcono=$config->mostrarConfig("LogoIcono",1);
 $Sigla=$config->mostrarConfig("Sigla",1);
 $Gestion=$config->mostrarConfig("Gestion",1);
+
+include_once("funciones/url.php");
+$UrlBase=url_todo();
+//$UrlBase=url_base().$directory;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +79,8 @@ $Gestion=$config->mostrarConfig("Gestion",1);
 	<meta charset="utf-8">
 	<title><?php echo $idioma['TituloSistema']?></title>
 	<meta name="description" content="Sistema de Académico Administrativo para Colegios">
-	<meta name="author" content="Ronald Nina Layme">
+	<meta name="author" content="Ronald Franz Nina Layme">
+    <?php /*?><base href="<?php echo $UrlBase?>" /><?php */?>
 	<!-- Fin: Meta -->
 	
 	<!-- Inicio: Version Mobile -->
