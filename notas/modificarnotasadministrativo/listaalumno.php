@@ -87,6 +87,7 @@ if(!empty($_POST)){
             <input type="hidden" name="direccion" value="modificarnotasadministrativo">
             <input type="file" name="archivoexcel" id="archivoexcel" title="<?php echo $idioma['ArchivoNotasLlenadoTexto']?>" class="btn btn-small">
             <input type="submit" class="btn btn-success" value="<?php echo $idioma['SubirArchivo']?>">
+            <div class="alert alert-info"><strong><?php echo $idioma['NotaSubidaArchivoNotas']?></strong></div>
             </form>
             <?php }else{
 			echo $idioma['RegistroNotasDesHabilitado'];	
