@@ -741,7 +741,7 @@ $idioma['CentralizadorPromedioFinal']="Centralizador Promedio Final";
 $idioma['NoDescargarNota']="No debe Descargar Notas de Internet en Internet";
 $idioma['GenerarReforzamiento']="Para Habilitar las Notas de Reforzamiento debe tener en cuenta debe de tener asignado las notas del tercer Trimestre en su totalidad, ya que se utilizará para generar las Notas Anuales. LAS NOTAS YA GENERADAS ANTERIORMENTE DE REFORZAMIENTO SE REEMPLAZARAN,TENGA CUIDADO";
 $idioma['RegistradoCorrectamente']="Registrado Correctamente";
-$idioma['NotaSubidaArchivoNotas']="El Archivo Excel que desea subir debe estar en su integridad al archivo descargado.<br>¡No! se permite que cambie el formato, color, tamaño, valor de fórmulas, orientación posición del texto ni copie de otro archivo excel para completar los casilleros ya que dañara el archivo y no podrá ser reconocido como un formato valido.";
+$idioma['NotaSubidaArchivoNotas']="El Archivo Excel que desea subir debe estar en su integridad al archivo descargado.<br>¡No! se permite que cambie el formato, color, tamaño, valor de fórmulas, orientación posición del texto ni copie de otro archivo excel para completar los casilleros, ni utilice números decimales en sus casilleros(solo se permite números enteros) ya que dañara el archivo y no podrá ser reconocido como un formato valido y es muy posible que no se registre sus notas en sus casilleros respectivos";
 //Agenda
 $idioma['EstadisticaGeneralAgenda']="Estadistica General de la Agenda";
 $idioma['EstadisticasAlumnos']="Estadisticas de Alumnos";
