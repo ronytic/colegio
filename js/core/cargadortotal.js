@@ -42,6 +42,8 @@ function inicio(){
 	//$(window).trigger('resize.stickyTableHeaders');
 	//$("table:not(.inicio)").stickyTableHeaders();
 	/*Fin Gestionar Tabla*/
+	$("input.fechatodo").datepicker({changeMonth: true,changeYear: true});
+	$("input.fechatope").datepicker({changeMonth: true,changeYear: true,"maxDate":'+0D',dateFormat: 'dd-mm-yy'});
 	//Al INICIO
 	$("table").stickyTableHeaders();
 	$("table.inicio").stickyTableHeaders('destroy');
@@ -65,6 +67,8 @@ function inicio(){
 		}
 		/*Fin de Redirigir*/
         $("input[type=date]").datepicker({changeMonth: true,changeYear: true,yearRange:"c-100:c+10"});
+		$("input.fechatodo").datepicker({changeMonth: true,changeYear: true});
+		$("input.fechatope").datepicker({changeMonth: true,changeYear: true,"maxDate":'+0D',dateFormat: 'dd-mm-yy'});
 		/*Gestionar Tabla*/
 		$(window).trigger('resize.stickyTableHeaders');
 		//alert($("table:not(.inicio)").length);
