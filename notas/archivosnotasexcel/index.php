@@ -1,7 +1,7 @@
 <?php
 include_once("../../login/check.php");
 $folder="../../";
-$titulo="NVerTodosLosAccesos";
+$titulo="NVerArchivosNotasExcel";
 include_once("../../class/docente.php");
 include_once("../../class/materias.php");
 include_once("../../class/curso.php");

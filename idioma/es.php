@@ -135,6 +135,7 @@ $idioma['NReporteFacturas']="Reporte de Facturas";
 $idioma['NListadoFacturas']="Listado de Facturas";
 $idioma['NHojaCasilleros']="Hoja de Casilleros";
 $idioma['NAlumnosNoReinscritos']="Alumnos No Reinscritos";
+$idioma['NVerArchivosNotasExcel']="Ver Archivos Excel de Notas";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
