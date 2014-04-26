@@ -19,6 +19,7 @@ if(isset($_POST)){
 	$cur=$curso->mostrarCurso($al['CodCurso']);
 	$cur=array_shift($cur);
 	//Cantidad de Observaciones
+	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(1);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);

@@ -41,6 +41,7 @@ if(!empty($_POST)){
 	foreach($alumno->mostrarAlumnosCurso($CodCurso) as $al){$i++;
 		$CodAl=$al['CodAlumno'];
 		//Cantidad de Observaciones
+	$Obser=array();
 	$CodObser=$observaciones->CodObservaciones(1);
 	foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 	$CodigosObservaciones=implode(",",$Obser);

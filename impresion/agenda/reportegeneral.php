@@ -54,6 +54,7 @@ if(isset($_GET)){
 		/*Inicio Agenda*/
 		$CodAl=$al['CodAlumno'];
 		//Cantidad de Observaciones
+		$Obser=array();
 		$CodObser=$observaciones->CodObservaciones(1);
 		foreach($CodObser as $CodO){$Obser[]=$CodO['CodObservacion'];}
 		$CodigosObservaciones=implode(",",$Obser);
@@ -94,6 +95,7 @@ if(isset($_GET)){
 		$CodigosObservaciones=implode(",",$Obser);
 		$CantNoContestan=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones);
 		$CantNoContestan=array_shift($CantNoContestan);
+		
 		//Cantidad de Felicitaciones
 		$Obser=array();
 		$CodObser=$observaciones->CodObservaciones(7);
@@ -101,6 +103,7 @@ if(isset($_GET)){
 		$CodigosObservaciones=implode(",",$Obser);
 		$CantFelicitacion=$agenda->CantidadObservaciones($CodAl,$CodigosObservaciones);
 		$CantFelicitacion=array_shift($CantFelicitacion);
+		
 		$Total=$CantObser['Cantidad']+$CantFaltas['Cantidad']+$CantAtrasos['Cantidad']+$CantLicencias['Cantidad']+$CantNotificacion['Cantidad']+$CantNoContestan['Cantidad']+$CantFelicitacion['Cantidad'];
 		/*Fin Agenda*/
 		$tObservaciones+=$CantObser['Cantidad'];
