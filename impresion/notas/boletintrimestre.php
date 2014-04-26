@@ -67,10 +67,10 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$pdf->Cell(120,5,$idioma["Nombre"].": ".mb_strtoupper(utf8_decode($al['Paterno']." ".$al['Materno']." ".$al['Nombres'])),$bordeC);
 	$pdf->SetXY($boletin1x+25,$boletin1y+53);
 	$pdf->Cell(120,5,utf8_decode($idioma["Curso"].": ".$cur['Nombre']),$bordeC);
-	$pdf->SetXY($boletin2x+145,$boletin2y+48);
+	$pdf->SetXY($boletin2x+130,$boletin2y+48);
 	$pdf->Cell(30,5,utf8_decode($idioma["Gestion"].": ".$anio),$bordeC);
-	$pdf->SetXY($boletin2x+145,$boletin2y+53);
-	$pdf->Cell(50,5,utf8_decode($idioma["Fecha"].": ".strftime("%d de %B de %Y")),$bordeC);
+	$pdf->SetXY($boletin2x+130,$boletin2y+53);
+	$pdf->Cell(50,5,utf8_decode($idioma["Fecha"].": ".strftime("%A, %d de %B de %Y")),$bordeC);
 	$i=0;
 	$pdf->SetFillColor(210,210,210);
 	foreach($cursomateria->mostrarMaterias($CodCurso) as $matbol){
