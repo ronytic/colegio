@@ -20,6 +20,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 			global $nombresMateriasBoletin;
 			$this->CuadroCabecera(30,$idioma["Curso"].":",30,$cur['Nombre']);
 			$this->Pagina();
+			$this->CuadroCabecera(20,$idioma["Periodo"].":",20,$Periodo);
 			$this->CuadroCabecera(1,"",30,sacarIniciales($idioma["Reprobados"])."=".$idioma["Reprobados"].", ".sacarIniciales($idioma["PromedioAlumno"])."=".$idioma["PromedioAlumno"]);
 			$this->ln();
 			$this->TituloCabecera(8,"Nº");
