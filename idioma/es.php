@@ -462,8 +462,9 @@ $idioma['ImprimirTarjetaCuotasCombinada']="Tarjeta de Cuotas Combinada";
 $idioma['RegistrarFacturaCombinada']="Factura Combinada";
 //Pdf
 $idioma['Pagina']="Página";
+$idioma['GeneradoPor']="Generado Por";
 $idioma['FechaActual']="Fecha Actual";
-$idioma['FechaReporte']="Fecha Reporte";
+$idioma['FechaReporte']="Fecha de Reporte";
 $idioma['Del']="del";
 $idioma['Primera']="Primera";
 $idioma['Segunda']="Segunda";
