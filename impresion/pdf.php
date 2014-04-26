@@ -40,7 +40,7 @@ include_once("fpdf_protection.php");
 			$this->Fuente("B",18);
 			$this->Cell($this->ancho,4,utf8_decode($titulo.$this->orientation),0,5,"C");
 			$this->ln(5);
-			$this->CuadroCabecera(30,$idioma['FechaReporte'].": ",20,utf8_encode($fecha));
+			$this->CuadroCabecera(32,$idioma['FechaReporte'].": ",50,utf8_encode($fecha));
 			$this->ln(5);
 			if(in_array("Cabecera",get_class_methods($this))){
 				$this->Cabecera();	
@@ -117,28 +117,41 @@ include_once("fpdf_protection.php");
 		}
 		function Footer()
 		{	global $lema,$idioma;
-			//$this->Cell($this->ancho,0,"",1,1);
+					include_once("../../funciones/usuarios.php");
+			$Nivel=$_SESSION['Nivel'];
+			$CodigoUsuario=$_SESSION['CodUsuarioLog'];
+			$DatosGenerador=DatosUsuario($Nivel,$CodigoUsuario);
+			$DatosUsuario=capitalizar($DatosGenerador['TipoUsuario'].", ".$DatosGenerador['Paterno']." ".$DatosGenerador['Materno']." ".$DatosGenerador['Nombres']);
 			
 			// Posición: a 1,5 cm del final
 			$this->SetY(-15);
 			// Arial italic 8
 			
-			// Número de página
+			$BordePie=0;
 			$this->Fuente("I",7.5);
 			$this->Cell($this->ancho,0,"",1,1);
-			$this->Cell(50,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"L");
+			if($this->CurOrientation=="P"){
+				$Resto=0;
+				$DatosReporteGenerado=utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s')." ";
+				$this->Cell(50,3,$DatosReporteGenerado,$BordePie,0,"L");
+			}else{
+				$Resto=35;
+				$DatosReporteGenerado=utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s')." ".$DatosUsuario;
+				$this->Cell(90,3,$DatosReporteGenerado,$BordePie,0,"L");
+			}
+			
 			$this->Fuente("I",8);
-			$this->Cell((round(($this->ancho-50)/2)-10),4,utf8_decode($lema),0,0,"C");
+			$this->Cell((round(($this->ancho-50)/2)-$Resto),3,utf8_decode($lema),$BordePie,0,"C");
 			$this->Fuente("I",7);
 			
 			
 			if($this->CurOrientation=="P"){
-				$this->Cell((round(($this->ancho-50)/2)+10),3,utf8_decode($idioma['TituloSistema'].""),0,0,"R");
+				$this->Cell((round(($this->ancho-50)/2)+0),3,utf8_decode($idioma['TituloSistema'].""),$BordePie,0,"R");
 				$this->ln();
-				$this->Cell((round(($this->ancho-50)/2)+40),3,"",0,0,"R");
-				$this->Cell((round(($this->ancho-50)/2)+10),3,"Desarrollado por Ronald Nina",0,0,"R");
+				$this->Cell((round(($this->ancho-50)/2)+50),3,$idioma['Por'].": ".$DatosUsuario,$BordePie,0,"L");
+				$this->Cell((round(($this->ancho-50)/2)+00),3,"Desarrollado por Ronald Nina",$BordePie,0,"R");
 			}else{
-				$this->Cell((round(($this->ancho-50)/2)+10),4,utf8_decode($idioma['TituloSistema']." - Desarrollado por Ronald Nina"),0,0,"R");	
+				$this->Cell((round(($this->ancho-50)/2)-5),3,utf8_decode($idioma['TituloSistema']." - Desarrollado por Ronald Nina"),$BordePie,0,"R");	
 			}
 			
 			//$this->Cell(60,4,utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s'),0,0,"R");
