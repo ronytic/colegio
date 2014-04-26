@@ -18,7 +18,7 @@ $idioma['AyudaTitulo']="Ayuda para Ingresar al Sistema";
 $idioma['PrimerProblemaAcceso']="Verifique el usuario y la contraseña esten bien escritos.";
 $idioma['SegundoProblemaAcceso']="Consulte el usuario y la contraseña si son correctos al Personal Administrativo de la Unidad Educativa.";
 $idioma['TercerProblemaAcceso']="Comuniquese con la Unidad Educativa al siguiente número de teléfono";
-$idioma['RecomendacionUsoSistema']="Para su Correcto funcionamiento del Sistema se recomienda Google Chrome, Firefox u otros navegadores actualizados y que el navegador se encuentre maximizado.";
+$idioma['RecomendacionUsoSistema']="Para su correcto funcionamiento del Sistema se recomienda Google Chrome, Firefox u otros navegadores actualizados y que la ventana del navegador se encuentre maximizado.";
 //Inicio
 $idioma['MostrarMenu']="Mostrar y Ocultar Menú";
 $idioma['TituloSistema']="Sistema Académico Administrativo para Colegios";
@@ -136,6 +136,7 @@ $idioma['NListadoFacturas']="Listado de Facturas";
 $idioma['NHojaCasilleros']="Hoja de Casilleros";
 $idioma['NAlumnosNoReinscritos']="Alumnos No Reinscritos";
 $idioma['NVerArchivosNotasExcel']="Ver Archivos Excel de Notas";
+$idioma['NAsesor']="Asesor";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -649,6 +650,8 @@ $idioma['CantidadCasilleros']="Cantidad de Casilleros que utilizará en sus regi
 $idioma['NumeroCasilleros']="Número de Casilleros";
 $idioma['NumeroCasillerosNota']="cada casillero será evaluado sobre 60, 70 o 100 correspondiente a cada curso";
 $idioma['Firma']="Firma";
+$idioma['Informacion']="Información";
+$idioma['NoEsAsesor']="Usted no fue designado como asesor a ningún curso.";
 
 //Notas
 $idioma['Limite']="Limite";
@@ -1302,6 +1305,7 @@ $idioma['ResultadosEvaluacionDocente']="Resultados de la Evaluación Docente";
 $idioma['AlumnosNoReinscritos']="Alumnos No Reinscritos";
 $idioma['EnvioMasivo']="Envío de sms por curso";
 $idioma['ArchivosNotasExcel']="Ver Archivos Excel de Notas";
+$idioma['Asesor']="Asesor";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
