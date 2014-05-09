@@ -14,6 +14,10 @@ include_once("fpdf_protection.php");
 	$lema=$cnf['Valor'];
 	$cnf=$config->mostrarConfig("Logo");
 	$logo=$cnf['Valor'];
+	include_once("../../funciones/usuarios.php");
+	$Nivel=$_SESSION['Nivel'];
+	$CodigoUsuario=$_SESSION['CodUsuarioLog'];
+	$DatosGenerador=DatosUsuario($Nivel,$CodigoUsuario);
 	class PPDF extends FPDF_Protection{
 		var $ancho=176;
 		function Header(){
@@ -116,11 +120,10 @@ include_once("fpdf_protection.php");
 			$this->Ln();	
 		}
 		function Footer()
-		{	global $lema,$idioma;
-					include_once("../../funciones/usuarios.php");
-			$Nivel=$_SESSION['Nivel'];
-			$CodigoUsuario=$_SESSION['CodUsuarioLog'];
-			$DatosGenerador=DatosUsuario($Nivel,$CodigoUsuario);
+		{	global $lema,$idioma,$DatosGenerador;
+			
+
+			
 			$DatosUsuario=capitalizar($DatosGenerador['TipoUsuario'].", ".$DatosGenerador['Paterno']." ".$DatosGenerador['Materno']." ".$DatosGenerador['Nombres']);
 			
 			// Posición: a 1,5 cm del final
