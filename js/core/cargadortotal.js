@@ -29,6 +29,10 @@ function inicio(){
 		 
 	});
 	/*Menu*/
+	$(".abrir").click(function(e) {
+        var url=$(this).attr("rel");
+		window.location=folder+url;
+    });
 	var menu=$("ul.nav-stacked li.funo > a");
 	menu.toggle(function(e) {
          $(this).parent().find('ul.oculto').slideDown("fast");
