@@ -107,7 +107,7 @@ switch($Nivel){
                         	foreach($menu->mostrar($Nivel,"Lateral") as $m){
 								?>
                                 <li class="funo <?php if ($rmenu==$m['Url']){$textomenu=$idioma[$m['Nombre']];echo'active';}?>">
-                                	<a href="#"><i class="<?php echo $m['Imagen'];?> "></i><span class=""> <?php echo $idioma[$m['Nombre']];?></span></a>
+                                	<a href="#"><i class="<?php echo $m['Imagen'];?> "></i><span class=""> <?php echo $idioma[$m['Nombre']];?></span> <span class="pull-right"><i class="icon-chevron-down abrir" rel="<?php echo $m['Url']?>"></i></span></a>
             					<?php 
 								$subm=$submenu->mostrar($Nivel,$m['CodMenu']);
 								if(count($subm)){
@@ -157,8 +157,8 @@ switch($Nivel){
 	<div>
 		<ul class="breadcrumb">
             <li>
-                <a href="<?php echo $folder;?>"><?php echo $idioma['Inicio']?></a> <span class="navegacion"> > <?php echo $textomenu!=""?$textomenu." >":''?> 
-			<?php echo $idioma[$titulo];?> </span>
+                <a href="<?php echo $folder;?>"><?php echo $idioma['Inicio']?></a> <span class="navegacion"> > <a href="<?php echo $folder;?><?php echo $rmenu;?>"><?php echo $textomenu!=""?$textomenu."":''?></a> <?php echo $textomenu!=""?">":''?>
+			<?php echo $idioma[$titulo]!=""?$idioma[$titulo]:$titulo;?> </span>
             </li>
             <?php /*?>
             <li>
