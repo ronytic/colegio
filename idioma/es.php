@@ -1232,7 +1232,7 @@ $idioma['VerBoletin']="Ver Boletín";
 $idioma['AsignarMaterias']="Asignar Materias";
 $idioma['RegistrarNotas']="Registrar Notas";
 $idioma['CentralizadorNotas']="Centralizador de Notas";
-$idioma['ReportesBecadosTotal']="Reportes de Becados Total";
+$idioma['ReportesBecadosTotal']="Total de Becados";
 $idioma['ReprobadosObservaciones']="Reprobados con Observaciones";
 $idioma['ReporteParaImpresion']="Reporte para Impresión";
 $idioma['VerNotasImpresion']="Ver Notas Impresión";
@@ -1388,4 +1388,7 @@ $idioma['SiEstoySeguro']="Sí, estoy Seguro(a)";
 $idioma['NoEstoySeguro']="No, Quiero Subir otro Archivo";
 $idioma['VolverSeleccionarArchivo']="Volver y Seleccionar otro Archivo";
 $idioma['RegistroNotasDesHabilitadoArchivo']="Puede ser debido a que seleccionó un archivo incorrecto o pertenece a otro periodo o el Administrador del Sistema Deshabilito el Registro de Notas, Verifique y vuelva Intentarlo";
+//Titulo Submodulos
+$idioma['Modulo']="Módulo";
+$idioma['IrA']="Ir a";
 ?>
