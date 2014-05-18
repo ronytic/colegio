@@ -26,5 +26,10 @@ class menu extends bd{
 			case "7":{return $this->getRecords("Url='$Directorio' and  Alumno=1 and Activo=1","Orden");}break;
 		}
 	}
+	function mostrarMenuUrl($Url=""){
+		$this->campos=array('CodMenu','Nombre','Url','SubMenu','Imagen');
+		$Posicion=(!empty($Posicion))?" and Posicion='$Posicion'":"";
+		return $this->getRecords(" Url='$Url' and Activo=1 $Posicion","Orden");
+	}
 }
 ?>
