@@ -2,8 +2,7 @@
 include_once("../../login/check.php");
 include_once("../../class/tmp_alumno.php");
 include_once("../../class/curso.php");
-$tmp_alumno=new tmp_alumno;
-$curso=new curso;
+
 $titulo=$idioma['AlumnosNoReinscritos'];
 include_once("../pdf.php");
 class PDF extends PPDF{
@@ -19,10 +18,16 @@ class PDF extends PPDF{
 		$this->TituloCabecera(30,"CelularM");
 	}
 }
+
+$tmp_alumno=new tmp_alumno;
+$curso=new curso;
 $pdf=new PDF("L","mm","letter");
 $pdf->AddPage();
 $i=0;
-foreach($tmp_alumno->mostrarTodoRegistro("",1,"CodCurso,Paterno,Materno,Nombres") as $tmpal){$i++;
+
+$ta=$tmp_alumno->mostrarTodoRegistro("",1,"CodCurso,Paterno,Materno,Nombres");
+
+foreach($ta as $tmpal){$i++;
 	$cur=$curso->mostrarCurso($tmpal['CodCurso']);
 	$cur=array_shift($cur);
 	$relleno=$i%2==0?1:0;
