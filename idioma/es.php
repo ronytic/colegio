@@ -263,6 +263,7 @@ $idioma['RegistrarAlumno']="Registrar Alumno";
 $idioma['Vaciar']="Vaciar";
 $idioma['Cancelar']="Cancelar";
 $idioma['Y']="y";
+$idioma['El']="el";
 $idioma['ImagenRecomendada']="Imágen Recomendada";
 $idioma['TipoArchivo']="Tipo de Archivo";
 $idioma['TamanoArchivo']="Tamaño Archivo";
@@ -324,6 +325,7 @@ $idioma['Privada']="Privada";
 $idioma['Convenio']="Convenio";
 $idioma['Comunitaria']="Comunitaria";
 $idioma['Publica']="Pública";
+$idioma['Opciones']="Opciones";
 
 //Agenda de Actividades
 $idioma['CalendarioActividades']="Calendario de Actividades";
@@ -432,6 +434,9 @@ $idioma['EstadisticasInscritos']="Estadísticas de Inscritos";
 $idioma['CantidadInscritos']="Cantidad de Inscritos";
 $idioma['Inscritos']="Inscritos";
 $idioma['NumerosContacto']="Números de Contacto";
+$idioma['ListadoAlumnos']="Listado de Alumnos";
+$idioma['BusquedaAlumnos']="Búsqueda de Alumnos";
+$idioma['AlumnoNoEncontrado']="Alumno no encontrado, con el criterio de búsqueda";
 //Rude
 $idioma['RegistrarRude']="Registrar Datos del RUDE";
 $idioma['ModificarRude']="Modificar Datos del RUDE";
