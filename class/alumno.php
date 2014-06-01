@@ -36,7 +36,7 @@ class alumno extends bd{
 		}else{
 			$Retiro="Retirado=$Retirado";	
 		}
-		return $this->getRecords(" CodAlumno=$CodAlumno and $Retiro");
+		return $this->getRecords(" CodAlumno=$CodAlumno and $Retiro","Paterno,Materno,Nombres");
 	}
 	function contarInscritoNuevoCurso($CodCurso){
 		$this->tabla="alumno a,rude r";
@@ -67,7 +67,7 @@ class alumno extends bd{
 		}else{
 			$this->campos=array("a.CodAlumno, UPPER(a.Paterno) as Paterno, UPPER(a.Materno) as Materno, UPPER(a.Nombres) as Nombres, UPPER(c.Nombre) as Nombre");
 		}
-		return $this->getRecords(" a.CodAlumno=$CodAlumno and a.CodCurso=c.CodCurso  and $Retiro");
+		return $this->getRecords(" a.CodAlumno=$CodAlumno and a.CodCurso=c.CodCurso  and $Retiro","Paterno,Materno,Nombres");
 	}
 	
 	function buscarHermanoApellidos($Paterno="",$Materno="",$Fecha="",$Retirado=0){
@@ -127,6 +127,22 @@ class alumno extends bd{
 		}
 		$this->campos=array('*');
 		return $this->getRecords("MontoBeca!=0 and $Retiro","CodCurso,Paterno,Materno,Nombres");
+	}
+	function mostrarDatosPorNombreOrden($Nombres="",$Orden='CodCurso',$Retirado=0){
+		if($Retirado==2){
+			$Retiro="Retirado=0 OR Retirado=1";
+		}else{
+			$Retiro="Retirado=$Retirado";	
+		}
+		$palabras=explode(' ',$Nombres); 
+		$Condicion=''; 
+		foreach ($palabras as $palabra) { 
+		if (''!=$Condicion) $Condicion.=' AND '; 
+		$Condicion.="(Nombres LIKE '%$palabra%' OR Paterno LIKE '%$palabra%' OR Materno LIKE '%$palabra%')"; 
+		} 
+		
+		$this->campos=array('CodAlumno,Nombres,Paterno,Materno,CodCurso');
+		return $this->getRecords("$Condicion and $Retiro","Paterno ASC,Materno ASC,Nombres ASC,$Orden ");
 	}
 	function mostrarDatosCodBarra($Where,$Retirado=0){
 		$this->campos=array('*');
