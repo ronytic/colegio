@@ -165,7 +165,15 @@ switch($Nivel){
                 <a href="#">Dashboard</a> <span class="divider">/</span>
             </li>
 			<?php */?>
-           
+            <?php if($Nivel==1 || $Nivel==2){?>
+           	<div class="pull-right input-append" style="margin-top:-5px;margin-bottom:5px;">
+           		<form action="<?php echo $folder?>alumno/busqueda/" method="post">
+                    <input type="search" name="Nombre" placeholder="<?php echo $idioma['Ingrese']?> <?php echo $idioma['El']?> <?php echo $idioma['NombreAlumno']?>">
+                    <input type="submit" class="btn" value="<?php echo $idioma['Buscar']?>">
+                </form>
+            </div>
+            <div class="clear"></div>
+            <?php }?>
 		</ul>
 	</div>
 <div class="sortable row-fluid">
