@@ -166,9 +166,9 @@ switch($Nivel){
             </li>
 			<?php */?>
             <?php if($Nivel==1 || $Nivel==2){?>
-           	<div class="pull-right input-append" style="margin-top:-5px;margin-bottom:5px;">
+           	<div class="pull-right input-append span5" style="margin-top:-5px;margin-bottom:5px;">
            		<form action="<?php echo $folder?>alumno/busqueda/" method="post">
-                    <input type="search" name="Nombre" placeholder="<?php echo $idioma['Ingrese']?> <?php echo $idioma['El']?> <?php echo $idioma['NombreAlumno']?>">
+                    <input type="search" name="Nombre" placeholder="<?php echo $idioma['Ingrese']?> <?php echo $idioma['El']?> <?php echo $idioma['NombreAlumno']?>" class="span9">
                     <input type="submit" class="btn" value="<?php echo $idioma['Buscar']?>">
                 </form>
             </div>
