@@ -96,6 +96,8 @@ $UrlBase=url_todo();
     
     <link id="bootstrap-style" href="<?php echo $folder;?>css/ui/jquery.ui.all.css" rel="stylesheet">
     <link id="bootstrap-style" href="<?php echo $folder;?>css/estilo.css" rel="stylesheet">
+    <link id="bootstrap-style" href="<?php echo $folder;?>css/offline-theme-chrome.css" rel="stylesheet">
+    <link id="bootstrap-style" href="<?php echo $folder;?>css/offline-language-spanish.css" rel="stylesheet">
 	<!-- Fin: CSS -->
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -106,4 +108,5 @@ $UrlBase=url_todo();
 	<!-- Inicio: Icono -->
 	<link rel="shortcut icon" href="<?php echo $folder;?>imagenes/logos/<?php echo $LogoIcono?>" />
 	<!-- Fin: Icono -->
+    <script src="<?php echo $folder;?>js/core/plugins/offline/offline.min.js" language="javascript"></script>
 	<script src="<?php echo $folder;?>js/core/framework/jquery.js" language="javascript" type="text/javascript"></script>
