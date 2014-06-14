@@ -2,43 +2,49 @@
 //include_once("../login/check.php");
 //enviar sms por MODEM
 function enviarSms($puerto,$cel, $text){
-    $text1 = substr($text,0,10);
-	$port = $puerto;
-	//$port = "COM5";
-    //webLog("PARAM: $cel: $text1...");
-	//webLog("PORT: $port");
-	$modem = null;
-	try{
-	  $config = "mode $port: baud=9600 data=8 stop=1 parity=n xon=on"; 
-	  //webLog($config);
-      exec($config);
-	  //==============================
-	  //webLog("OPEN $port");
-	  $modem = dio_open("$port:", O_RDWR);
-	  $c = 0;
-	  $res = 'NOK';
-	  while($c < 20 && $res != 'OK'){
-	    $c++;
-		$res = callAT("at", $modem, false);
-	  }
-	  if($res == 'OK'){
-		  $res = callAT("at", $modem);
-		  $res = callAT("at+cmgf=1", $modem);
-		  $res = callAT("at+cmgs=\"$cel\"", $modem);
-		  $res = callAT("$text", $modem, false, 0x1A);
-		  return true;
-	  } else {
-		  return false;
-	    //webLog("NO SINCRONIZADO....","MODEM");
-	  }
-	  //==============================
-	  //webLog("CLOSE $port");
-	  dio_close($modem);
-	}catch( Exception  $error ){
-		return false;
-	  //webLog($error, "ERROR");
+	$TextoSeparado=str_split($text,160);
+	foreach($TextoSeparado as $text){
+		
+	
+		$text1 = substr($text,0,10);
+		$port = $puerto;
+		//$port = "COM5";
+		//webLog("PARAM: $cel: $text1...");
+		//webLog("PORT: $port");
+		$modem = null;
+		try{
+		  $config = "mode $port: baud=9600 data=8 stop=1 parity=n xon=on"; 
+		  //webLog($config);
+		  exec($config);
+		  //==============================
+		  //webLog("OPEN $port");
+		  $modem = dio_open("$port:", O_RDWR);
+		  $c = 0;
+		  $res = 'NOK';
+		  while($c < 20 && $res != 'OK'){
+			$c++;
+			$res = callAT("at", $modem, false);
+		  }
+		  if($res == 'OK'){
+			  $res = callAT("at", $modem);
+			  $res = callAT("at+cmgf=1", $modem);
+			  $res = callAT("at+cmgs=\"$cel\"", $modem);
+			  $res = callAT("$text", $modem, false, 0x1A);
+			  return true;
+		  } else {
+			  return false;
+			//webLog("NO SINCRONIZADO....","MODEM");
+		  }
+		  //==============================
+		  //webLog("CLOSE $port");
+		  dio_close($modem);
+		}catch( Exception  $error ){
+			return false;
+		  //webLog($error, "ERROR");
+		}
+		//webLog("FIN del proceso..");
+		
 	}
-	//webLog("FIN del proceso..");
 }
 function comprobarConexion($Puerto){
 	$port = $Puerto;
