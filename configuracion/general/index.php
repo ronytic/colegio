@@ -499,8 +499,46 @@ include_once($folder."cabecerahtml.php");
             </tr>
             <tr>
             	<td><?php echo $idioma['LlaveDosificacion']?><div class="pequeno"><?php echo $idioma['LlaveDosificacionT']?></div></td>
-                <td><input type="text" class="span12" name="LlaveDosificacion" value="<?php echo (dato("LlaveDosificacion"))?>"></td>
+                <td><textarea class="span12" name="LlaveDosificacion" rows="4"><?php echo (dato("LlaveDosificacion"))?></textarea></td>
             </tr>
+            <tr>
+            	<td><?php echo $idioma['ImagenFondo']?><div class="pequeno"><?php echo $idioma['ImagenFondoT']?></div></td>
+                <td><select class="span12" name="ImagenFondoFactura">
+                	<option value="0" <?php echo (dato("ImagenFondoFactura"))==0?'selected':''?>><?php echo $idioma['No']?></option>
+                    <option value="1" <?php echo (dato("ImagenFondoFactura"))==1?'selected':''?>><?php echo $idioma['Si']?></option>
+                </select></td>
+            </tr>
+            <tr class="info">
+            	<td><?php echo $idioma['SistemaFacturacion']?><div class="pequeno"><?php echo $idioma['SistemaFacturacionT']?></div></td>
+                <td><select class="span12" name="SistemaFacturacion">
+                	<option value="Antiguo" <?php echo (dato("SistemaFacturacion"))=='Antiguo'?'selected':''?>><?php echo $idioma['SistemaFacturacionComputarizada']?></option>
+                    <option value="NuevoQR" <?php echo (dato("SistemaFacturacion"))=='NuevoQR'?'selected':''?>><?php echo $idioma['NuevoSistemaFacturacion']?></option>
+                </select></td>
+            </tr>
+            <tr class="success resaltar">
+                <td colspan="2"><hr class="separador"><br><?php echo $idioma['NuevoSistemaFacturacion']?></td>
+            </tr>
+            <tr>
+            	<td width="50%"><?php echo $idioma['NitEmisor']?>
+                <div class="pequeno"><?php echo $idioma['NitEmisorT']?></div></td>
+                <td><input type="text" class="span12" name="NitEmisor" value="<?php echo (dato("NitEmisor"))?>"></td>
+            </tr>
+            <tr>
+            	<td width="50%"><?php echo $idioma['RazonSocialEmisor']?>
+                <div class="pequeno"><?php echo $idioma['RazonSocialEmisorT']?></div></td>
+                <td><input type="text" class="span12" name="RazonSocialEmisor" value="<?php echo (dato("RazonSocialEmisor"))?>"></td>
+            </tr>
+            <tr>
+            	<td width="50%"><?php echo $idioma['ActividadEconomica']?>
+                <div class="pequeno"><?php echo $idioma['ActividadEconomicaT']?></div></td>
+                <td><input type="text" class="span12" name="ActividadEconomica" value="<?php echo (dato("ActividadEconomica"))?>"></td>
+            </tr>
+            <tr>
+            	<td width="50%"><?php echo $idioma['LeyendaPiePagina']?>
+                <div class="pequeno"><?php echo $idioma['LeyendaPiePaginaT']?></div></td>
+                <td><input type="text" class="span12" name="LeyendaPiePagina" value="<?php echo (dato("LeyendaPiePagina"))?>"></td>
+            </tr>
+            
             
         	<tr>
             	<td class="centrar" colspan="2"><input type="submit" class="btn btn-success" value="<?php echo $idioma['Guardar']?>"></td>
