@@ -19,6 +19,15 @@ if(!empty($_POST)){
 	$NumeroAutorizacion=$config->mostrarConfig("NumeroAutorizacion",1);
 	$LlaveDosificacion=$config->mostrarConfig("LlaveDosificacion",1);
 	$FechaLimiteEmision=$config->mostrarConfig("FechaLimiteEmision",1);
+	
+	$NitEmisor=$config->mostrarConfig("NitEmisor",1);
+	$RazonSocialEmisor=$config->mostrarConfig("RazonSocialEmisor",1);
+	$SistemaFacturacion=$config->mostrarConfig("SistemaFacturacion",1);
+	$ImagenFondoFactura=$config->mostrarConfig("ImagenFondoFactura",1);
+	
+	$ActividadEconomica=$config->mostrarConfig("ActividadEconomica",1);
+	$LeyendaPiePagina=$config->mostrarConfig("LeyendaPiePagina",1);
+	
 	$f=$factura->mostrarFacturas("NFactura='".trim($NFactura)."' and Estado='Activo'");
 	//echo count($f);
 	if(count($f)>=1){
@@ -29,6 +38,40 @@ if(!empty($_POST)){
 	include_once("../codigocontrol.class.php");
 	$CodigoControl=new CodigoControl($NumeroAutorizacion,$NFactura,$Nit,$FechaCodigo,$TotalBsCodigo,$LlaveDosificacion);
 	$TxtCodigoDeControl=$CodigoControl->generar();
+	
+	/*CódigoQR*/
+	include "../../funciones/phpqrcode/qrlib.php";
+	
+	$FechaEmision=date("d/m/Y",strtotime($FechaFactura));
+	$FechaLimiteEmision2=date("d/m/Y",strtotime($FechaLimiteEmision));
+	
+	$NitEmisor=($NitEmisor!="")?$NitEmisor:'0';
+	$RazonSocialEmisor=($RazonSocialEmisor!="")?$RazonSocialEmisor:'0';
+	$NFactura=($NFactura!="")?$NFactura:'0';
+	$NumeroAutorizacion=($NumeroAutorizacion!="")?$NumeroAutorizacion:'0';
+	$FechaEmision=($FechaEmision!="")?$FechaEmision:'0';
+	$TotalBs=($TotalBs!="")?$TotalBs:'0';
+	$TxtCodigoDeControl=($TxtCodigoDeControl!="")?$TxtCodigoDeControl:'0';
+	$FechaLimiteEmision2=($FechaLimiteEmision2!="")?$FechaLimiteEmision2:'0';
+	$Nit=($Nit!="")?$Nit:'0';
+	$NombreFactura=($NombreFactura!="")?$NombreFactura:'0';
+
+	$TextoCodigoQR=$NitEmisor."|";
+	$TextoCodigoQR.=$RazonSocialEmisor."|";
+	$TextoCodigoQR.=$NFactura."|";
+	$TextoCodigoQR.=$NumeroAutorizacion."|";
+	$TextoCodigoQR.=$FechaEmision."|";
+	$TextoCodigoQR.=$TotalBs."|";
+	$TextoCodigoQR.=$TxtCodigoDeControl."|";
+	$TextoCodigoQR.=$FechaLimiteEmision2."|";
+	$TextoCodigoQR.=$Nit."|";
+	$TextoCodigoQR.=$NombreFactura."|";
+	
+	$TextoCodigoQR=mayuscula($TextoCodigoQR);
+	//echo $TextoCodigoQR;
+	QRcode::png($TextoCodigoQR,"../../imagenes/factura/codigos/".$CodFactura.".png", 'H', 8, 0);
+	/*Fin CódigoQR*/
+	
 	$ValoresFactura=array(
 		"CodFactura"=>"'$CodFactura'",
 		"FechaFactura"=>"'".fecha2Str($FechaFactura,0)."'",
@@ -50,8 +93,18 @@ if(!empty($_POST)){
 		"LlaveDosificacion"=>"'$LlaveDosificacion'",
 		"CodigoControl"=>"'$TxtCodigoDeControl'",
 		"FechaLimiteEmision"=>"'$FechaLimiteEmision'",
-		"Tipo"=>"'Personalizado'"
+		"Tipo"=>"'Personalizado'",
+		
+		"NitEmisor"=>"'$NitEmisor'",
+		"RazonSocialEmisor"=>"'$RazonSocialEmisor'",
+		"ActividadEconomica"=>"'$ActividadEconomica'",
+		"LeyendaPiePagina"=>"'$LeyendaPiePagina'",
+		"TipoFactura"=>"'$SistemaFacturacion'",
+		"ImagenFondo"=>"'$ImagenFondoFactura'",
+		
 	);
+	
+	//exit();
 	/*echo "<pre>";
 	print_r($ValoresFactura);
 	echo "</pre>";*/
