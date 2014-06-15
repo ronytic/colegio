@@ -167,7 +167,7 @@ celda(10,$idioma['ActividadEconomica'].": ".capitalizar($ActividadEconomica),"B"
 $pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+73,15,15);
 
 /*Segunda Parte*/
-$y=123;
+$y=120;
 /*$pdf->Image("../../imagenes/logos/".$Logo,15,$y-5,20,20);
 $pdf->SetXY($x+15,$y);
 $pdf->Cell(110,5,utf8_decode($Titulo),0,0,"C");
