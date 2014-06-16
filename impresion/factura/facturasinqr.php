@@ -44,6 +44,56 @@ if($ImagenFondoFactura==1){
 //$pdf->Image("../../imagenes/factura/factura.jpg",0,0,217,330);
 $pdf->Image("../../imagenes/factura/factura2014.jpg",0,-4,217,330);
 }
+
+if(!file_exists("../../imagenes/factura/codigos/".$CodFactura.".png")){
+	//Si no Existe el Código QR
+	$TotalBs=number_format($f['TotalBs'],2);
+	$TxtCodigoDeControl=$f['CodigoControl'];
+	$Nit=$f['Nit'];
+	$NombreFactura=$f['Factura'];
+	/*CódigoQR*/
+	$NitEmisor=$config->mostrarConfig("NitEmisor",1);
+	$RazonSocialEmisor=$config->mostrarConfig("RazonSocialEmisor",1);
+	$SistemaFacturacion=$config->mostrarConfig("SistemaFacturacion",1);
+	$ImagenFondoFactura=$config->mostrarConfig("ImagenFondoFactura",1);
+	
+	$ActividadEconomica=$config->mostrarConfig("ActividadEconomica",1);
+	$LeyendaPiePagina=$config->mostrarConfig("LeyendaPiePagina",1);
+	
+	include "../../funciones/phpqrcode/qrlib.php";
+	
+	$FechaEmision=date("d/m/Y",strtotime($f['FechaFactura']));
+	$FechaLimiteEmision2=date("d/m/Y",strtotime($FechaLimiteEmision));
+	
+	$NitEmisor=($NitEmisor!="")?$NitEmisor:'0';
+	$RazonSocialEmisor=($RazonSocialEmisor!="")?mayuscula($RazonSocialEmisor):'0';
+	$NFactura=($f['NFactura']!="")?$f['NFactura']:'0';
+	$NumeroAutorizacion=($NumeroAutorizacion!="")?$NumeroAutorizacion:'0';
+	$FechaEmision=($FechaEmision!="")?$FechaEmision:'0';
+	$TotalBs=($TotalBs!="")?$TotalBs:'0';
+	$TxtCodigoDeControl=($TxtCodigoDeControl!="")?$TxtCodigoDeControl:'0';
+	$FechaLimiteEmision2=($FechaLimiteEmision2!="")?$FechaLimiteEmision2:'0';
+	$Nit=($Nit!="")?$Nit:'0';
+	$NombreFactura=($NombreFactura!="")?$NombreFactura:'0';
+
+	$TextoCodigoQR=$NitEmisor."|";
+	$TextoCodigoQR.=$RazonSocialEmisor."|";
+	$TextoCodigoQR.=$NFactura."|";
+	$TextoCodigoQR.=$NumeroAutorizacion."|";
+	$TextoCodigoQR.=$FechaEmision."|";
+	$TextoCodigoQR.=$TotalBs."|";
+	$TextoCodigoQR.=$TxtCodigoDeControl."|";
+	$TextoCodigoQR.=$FechaLimiteEmision2."|";
+	$TextoCodigoQR.=$Nit."|";
+	$TextoCodigoQR.=$NombreFactura;
+	
+	$TextoCodigoQR=mayuscula($TextoCodigoQR);
+	//echo $TextoCodigoQR;
+	
+	QRcode::png($TextoCodigoQR,"../../imagenes/factura/codigos/".$CodFactura.".png", 'H', 8, 0);
+	/*Fin CódigoQR*/
+	//echo "Si";	
+}
 /*Primera Parte*/
 $x=-4+$_GET['x'];
 $y=15+$_GET['y'];
