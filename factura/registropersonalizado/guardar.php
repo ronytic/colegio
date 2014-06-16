@@ -20,13 +20,7 @@ if(!empty($_POST)){
 	$LlaveDosificacion=$config->mostrarConfig("LlaveDosificacion",1);
 	$FechaLimiteEmision=$config->mostrarConfig("FechaLimiteEmision",1);
 	
-	$NitEmisor=$config->mostrarConfig("NitEmisor",1);
-	$RazonSocialEmisor=$config->mostrarConfig("RazonSocialEmisor",1);
-	$SistemaFacturacion=$config->mostrarConfig("SistemaFacturacion",1);
-	$ImagenFondoFactura=$config->mostrarConfig("ImagenFondoFactura",1);
 	
-	$ActividadEconomica=$config->mostrarConfig("ActividadEconomica",1);
-	$LeyendaPiePagina=$config->mostrarConfig("LeyendaPiePagina",1);
 	
 	$f=$factura->mostrarFacturas("NFactura='".trim($NFactura)."' and Estado='Activo'");
 	//echo count($f);
@@ -40,13 +34,21 @@ if(!empty($_POST)){
 	$TxtCodigoDeControl=$CodigoControl->generar();
 	
 	/*CódigoQR*/
+	$NitEmisor=$config->mostrarConfig("NitEmisor",1);
+	$RazonSocialEmisor=$config->mostrarConfig("RazonSocialEmisor",1);
+	$SistemaFacturacion=$config->mostrarConfig("SistemaFacturacion",1);
+	$ImagenFondoFactura=$config->mostrarConfig("ImagenFondoFactura",1);
+	
+	$ActividadEconomica=$config->mostrarConfig("ActividadEconomica",1);
+	$LeyendaPiePagina=$config->mostrarConfig("LeyendaPiePagina",1);
+	
 	include "../../funciones/phpqrcode/qrlib.php";
 	
 	$FechaEmision=date("d/m/Y",strtotime($FechaFactura));
 	$FechaLimiteEmision2=date("d/m/Y",strtotime($FechaLimiteEmision));
 	
 	$NitEmisor=($NitEmisor!="")?$NitEmisor:'0';
-	$RazonSocialEmisor=($RazonSocialEmisor!="")?$RazonSocialEmisor:'0';
+	$RazonSocialEmisor=($RazonSocialEmisor!="")?mayuscula($RazonSocialEmisor):'0';
 	$NFactura=($NFactura!="")?$NFactura:'0';
 	$NumeroAutorizacion=($NumeroAutorizacion!="")?$NumeroAutorizacion:'0';
 	$FechaEmision=($FechaEmision!="")?$FechaEmision:'0';
