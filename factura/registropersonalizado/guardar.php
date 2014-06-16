@@ -52,7 +52,7 @@ if(!empty($_POST)){
 	$NFactura=($NFactura!="")?$NFactura:'0';
 	$NumeroAutorizacion=($NumeroAutorizacion!="")?$NumeroAutorizacion:'0';
 	$FechaEmision=($FechaEmision!="")?$FechaEmision:'0';
-	$TotalBs=($TotalBs!="")?$TotalBs:'0';
+	$TotalBs=($TotalBs!="")?number_format($TotalBs,2):'0';
 	$TxtCodigoDeControl=($TxtCodigoDeControl!="")?$TxtCodigoDeControl:'0';
 	$FechaLimiteEmision2=($FechaLimiteEmision2!="")?$FechaLimiteEmision2:'0';
 	$Nit=($Nit!="")?$Nit:'0';
@@ -67,7 +67,7 @@ if(!empty($_POST)){
 	$TextoCodigoQR.=$TxtCodigoDeControl."|";
 	$TextoCodigoQR.=$FechaLimiteEmision2."|";
 	$TextoCodigoQR.=$Nit."|";
-	$TextoCodigoQR.=$NombreFactura."|";
+	$TextoCodigoQR.=$NombreFactura;
 	
 	$TextoCodigoQR=mayuscula($TextoCodigoQR);
 	//echo $TextoCodigoQR;

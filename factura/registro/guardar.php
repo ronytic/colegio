@@ -59,11 +59,11 @@ if(!empty($_POST)){
 	$TextoCodigoQR.=$NFactura."|";
 	$TextoCodigoQR.=$NumeroAutorizacion."|";
 	$TextoCodigoQR.=$FechaEmision."|";
-	$TextoCodigoQR.=$TotalBs."|";
+	$TextoCodigoQR.=number_format($TotalBs,2)."|";
 	$TextoCodigoQR.=$TxtCodigoDeControl."|";
 	$TextoCodigoQR.=$FechaLimiteEmision2."|";
 	$TextoCodigoQR.=$Nit."|";
-	$TextoCodigoQR.=$NombreFactura."|";
+	$TextoCodigoQR.=$NombreFactura;
 	
 	$TextoCodigoQR=mayuscula($TextoCodigoQR);
 	//echo $TextoCodigoQR;
