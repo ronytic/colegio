@@ -164,7 +164,7 @@ $pdf->SetXY($x+130,$y+13);
 celda(10,$idioma['ActividadEconomica'].": ".capitalizar($ActividadEconomica),"B","8");
 
 
-$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+73,15,15);
+$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+72,17,17);
 
 /*Segunda Parte*/
 $y=120;
@@ -284,7 +284,7 @@ $pdf->SetXY($x+130,$y+13);
 celda(10,$idioma['ActividadEconomica'].": ".capitalizar($ActividadEconomica),"B","8");
 
 
-$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+73,15,15);
+$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+72,17,17);
 
 
 
@@ -405,7 +405,7 @@ $pdf->SetXY($x+130,$y+13);
 celda(10,$idioma['ActividadEconomica'].": ".capitalizar($ActividadEconomica),"B","8");
 
 
-$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+73,15,15);
+$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+72,17,17);
 
 
 $pdf->Output("Factura","I");
