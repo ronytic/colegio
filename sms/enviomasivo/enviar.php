@@ -18,7 +18,7 @@ if(!empty($_POST)){
 	$Mensaje=quitarTilde($Mensaje);
 	
 if($NumeroSMS!="" || !empty($NumeroSMS)){
-	$res=enviarSms("COM".$PuertoUsb,$NumeroSMS,$Mensaje);
+	$res=enviarSms1("COM".$PuertoUsb,$NumeroSMS,$Mensaje);
 	//$res=true;
 }else{
 	$res=false;

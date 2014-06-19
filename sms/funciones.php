@@ -3,9 +3,17 @@
 //enviar sms por MODEM
 function enviarSms($puerto,$cel, $text){
 	$TextoSeparado=str_split($text,160);
+	//print_r($TextoSeparado);
+	$valor=false;
 	foreach($TextoSeparado as $text){
-		
-	
+		//echo "HOLA";
+		$valor=enviarSms1($puerto,$cel,$text);
+		//sleep(1000);
+	}
+	return $valor;
+}
+function enviarSms1($puerto,$cel, $text){
+	return true;
 		$text1 = substr($text,0,10);
 		$port = $puerto;
 		//$port = "COM5";
@@ -44,7 +52,7 @@ function enviarSms($puerto,$cel, $text){
 		}
 		//webLog("FIN del proceso..");
 		
-	}
+	
 }
 function comprobarConexion($Puerto){
 	$port = $Puerto;
