@@ -162,7 +162,7 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 		}
 		
 		$NombreAlumno=$al['Paterno']." ".$al['Materno']." ".$al['Nombres'];
-		$NombreCurso=$cur['Abreviado'];
+		$NombreCurso=quitarSimbolos($cur['Abreviado'],false);
 		$NombreCuota=cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'');
 		
 		$TextoDetalle=capitalizar($NombreAlumno." - ".$NombreCurso)." - ".$NombreCuota;
@@ -170,39 +170,39 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	celda(115,$TextoDetalle,"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
-$pdf->SetXY($x+20,$y+59);
+$pdf->SetXY($x+20,$y+55);
 celda(10,$idioma['Son'].": ","B");
 celda(110,mayuscula(num2letras($f['TotalBs']))." ".$idioma['Bolivianos'],"","8");
 celda(15,$idioma['TotalBs'].": ","B","8");
 celda(20,number_format($f['TotalBs'],2),"",10,"R");
-$pdf->SetXY($x+177,$y+59);
+$pdf->SetXY($x+177,$y+55);
 celda(12,$idioma['Cajero'].": ","B","8");
 celda(20,$Usuario,"",8,"");
 $pdf->Ln();
-$pdf->SetXY($x+140,$y+63);
+$pdf->SetXY($x+140,$y+59);
 celda(15,$idioma['Cancelado'].": ","B","8");
 celda(20,number_format($f['Cancelado'],2),"",10,"R");
 
-$pdf->SetXY($x+20,$y+67);
+$pdf->SetXY($x+20,$y+63);
 celda(37,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(15,fecha2Str($FechaLimiteEmision),"",8,"R");
 if($Credito){
-	$pdf->SetXY($x+100,$y+67);
+	$pdf->SetXY($x+100,$y+63);
 	celda(35,$TextoCredito,"","6");
 }
 
-$pdf->SetXY($x+20,$y+63);
+$pdf->SetXY($x+20,$y+59);
 celda(30,$idioma['CodigoControl'].": ","B","8");
 celda(55,$f['CodigoControl'],"",8,"");
-$pdf->SetXY($x+140,$y+67);
+$pdf->SetXY($x+140,$y+63);
 celda(15,$idioma['Cambio'].": ","B","8");
 celda(20,number_format($f['MontoDevuelto'],2),"",10,"R");
 
-$pdf->SetXY($x+177,$y+63);
+$pdf->SetXY($x+177,$y+59);
 celda(22,$idioma['NTransaccion'].": ","B","8");
 celda(10,(($f['NReferencia'])),"","8");
 
-$pdf->SetXY($x+177,$y+67);
+$pdf->SetXY($x+177,$y+63);
 celda(10,$idioma['Hora'].": ","B","8");
 celda(15,(($f['HoraRegistro'])),"","8");
 
@@ -214,7 +214,7 @@ $pdf->SetXY($x+130,$y+13);
 celda(10,$idioma['ActividadEconomica'].": ".capitalizar($ActividadEconomica),"B","8");
 
 
-$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+72,17,17);
+$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+22,$y+72,17,17);
 
 /*Segunda Parte*/
 $y=120;
@@ -282,7 +282,7 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 		}
 		
 		$NombreAlumno=$al['Paterno']." ".$al['Materno']." ".$al['Nombres'];
-		$NombreCurso=$cur['Abreviado'];
+		$NombreCurso=quitarSimbolos($cur['Abreviado'],false);
 		$NombreCuota=cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'');
 		
 		$TextoDetalle=capitalizar($NombreAlumno." - ".$NombreCurso)." - ".$NombreCuota;
@@ -290,39 +290,39 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	celda(115,$TextoDetalle,"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
-$pdf->SetXY($x+20,$y+59);
+$pdf->SetXY($x+20,$y+55);
 celda(10,$idioma['Son'].": ","B");
 celda(110,mayuscula(num2letras($f['TotalBs']))." ".$idioma['Bolivianos'],"","8");
 celda(15,$idioma['TotalBs'].": ","B","8");
 celda(20,number_format($f['TotalBs'],2),"",10,"R");
-$pdf->SetXY($x+177,$y+59);
+$pdf->SetXY($x+177,$y+55);
 celda(12,$idioma['Cajero'].": ","B","8");
 celda(20,$Usuario,"",8,"");
 $pdf->Ln();
-$pdf->SetXY($x+140,$y+63);
+$pdf->SetXY($x+140,$y+59);
 celda(15,$idioma['Cancelado'].": ","B","8");
 celda(20,number_format($f['Cancelado'],2),"",10,"R");
 
-$pdf->SetXY($x+20,$y+67);
+$pdf->SetXY($x+20,$y+63);
 celda(37,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(15,fecha2Str($FechaLimiteEmision),"",8,"R");
 if($Credito){
-	$pdf->SetXY($x+100,$y+67);
+	$pdf->SetXY($x+100,$y+63);
 	celda(35,$TextoCredito,"","6");
 }
 
-$pdf->SetXY($x+20,$y+63);
+$pdf->SetXY($x+20,$y+59);
 celda(30,$idioma['CodigoControl'].": ","B","8");
 celda(55,$f['CodigoControl'],"",8,"");
-$pdf->SetXY($x+140,$y+67);
+$pdf->SetXY($x+140,$y+63);
 celda(15,$idioma['Cambio'].": ","B","8");
 celda(20,number_format($f['MontoDevuelto'],2),"",10,"R");
 
-$pdf->SetXY($x+177,$y+63);
+$pdf->SetXY($x+177,$y+59);
 celda(22,$idioma['NTransaccion'].": ","B","8");
 celda(10,(($f['NReferencia'])),"","8");
 
-$pdf->SetXY($x+177,$y+67);
+$pdf->SetXY($x+177,$y+63);
 celda(10,$idioma['Hora'].": ","B","8");
 celda(15,(($f['HoraRegistro'])),"","8");
 
@@ -334,7 +334,7 @@ $pdf->SetXY($x+130,$y+13);
 celda(10,$idioma['ActividadEconomica'].": ".capitalizar($ActividadEconomica),"B","8");
 
 
-$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+72,17,17);
+$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+22,$y+72,17,17);
 
 
 
@@ -403,7 +403,7 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 		}
 		
 		$NombreAlumno=$al['Paterno']." ".$al['Materno']." ".$al['Nombres'];
-		$NombreCurso=$cur['Abreviado'];
+		$NombreCurso=quitarSimbolos($cur['Abreviado'],false);
 		$NombreCuota=cambiopalabra($cuo['Numero'])." ".$idioma['Cuota'].($cuo['Numero']=="Todo"?" - ".$idioma['AlContado']:'');
 		
 		$TextoDetalle=capitalizar($NombreAlumno." - ".$NombreCurso)." - ".$NombreCuota;
@@ -411,39 +411,39 @@ foreach($facturadetalle->mostrarFacturaDetalles("CodFactura=".$CodFactura) as $f
 	celda(115,$TextoDetalle,"","9");
 	celda(35,number_format($fd['Total'],2),"",10,"R");
 }
-$pdf->SetXY($x+20,$y+59);
+$pdf->SetXY($x+20,$y+55);
 celda(10,$idioma['Son'].": ","B");
 celda(110,mayuscula(num2letras($f['TotalBs']))." ".$idioma['Bolivianos'],"","8");
 celda(15,$idioma['TotalBs'].": ","B","8");
 celda(20,number_format($f['TotalBs'],2),"",10,"R");
-$pdf->SetXY($x+177,$y+59);
+$pdf->SetXY($x+177,$y+55);
 celda(12,$idioma['Cajero'].": ","B","8");
 celda(20,$Usuario,"",8,"");
 $pdf->Ln();
-$pdf->SetXY($x+140,$y+63);
+$pdf->SetXY($x+140,$y+59);
 celda(15,$idioma['Cancelado'].": ","B","8");
 celda(20,number_format($f['Cancelado'],2),"",10,"R");
 
-$pdf->SetXY($x+20,$y+67);
+$pdf->SetXY($x+20,$y+63);
 celda(37,$idioma['FechaLimiteEmision'].": ","B","8");
 celda(15,fecha2Str($FechaLimiteEmision),"",8,"R");
 if($Credito){
-	$pdf->SetXY($x+100,$y+67);
+	$pdf->SetXY($x+100,$y+63);
 	celda(35,$TextoCredito,"","6");
 }
 
-$pdf->SetXY($x+20,$y+63);
+$pdf->SetXY($x+20,$y+59);
 celda(30,$idioma['CodigoControl'].": ","B","8");
 celda(55,$f['CodigoControl'],"",8,"");
-$pdf->SetXY($x+140,$y+67);
+$pdf->SetXY($x+140,$y+63);
 celda(15,$idioma['Cambio'].": ","B","8");
 celda(20,number_format($f['MontoDevuelto'],2),"",10,"R");
 
-$pdf->SetXY($x+177,$y+63);
+$pdf->SetXY($x+177,$y+59);
 celda(22,$idioma['NTransaccion'].": ","B","8");
 celda(10,(($f['NReferencia'])),"","8");
 
-$pdf->SetXY($x+177,$y+67);
+$pdf->SetXY($x+177,$y+63);
 celda(10,$idioma['Hora'].": ","B","8");
 celda(15,(($f['HoraRegistro'])),"","8");
 
@@ -455,7 +455,7 @@ $pdf->SetXY($x+130,$y+13);
 celda(10,$idioma['ActividadEconomica'].": ".capitalizar($ActividadEconomica),"B","8");
 
 
-$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+25,$y+72,17,17);
+$pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+22,$y+72,17,17);
 
 
 $pdf->Output("Factura","I");
