@@ -87,7 +87,7 @@ if(!empty($_POST)){
 	$ru=$rude->mostrarTodoDatos($_POST['CodAlumno']);
 	if(count($ru)==0){
 		$rude->insertarAlumno($values);
-	}else{echo "Duplicado";}
+	}//else{echo "Duplicado";}
 
 	/*DOCUMENTOS*/
 	$CertificadoNac=$_POST['CertificadoNac'];if($CertificadoNac=="on")$CertificadoNac=1;else $CertificadoNac=0;

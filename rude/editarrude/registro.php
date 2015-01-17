@@ -29,7 +29,7 @@ if(!empty($_POST)){
 	
 	?>
     <div class="alert alert-info centrar"><strong><?php echo mayuscula($titulo)?></strong></div>	
-    <form action="<?php echo $archivo;?>" method="post" >
+    <form action="<?php echo $archivo;?>" method="post" target="_blank">
 		<input type="hidden" name="CodAlumno" value="<?php echo $CodAlumno;?>" />
         <strong><?php echo $idioma['TodoEnMayusculas'];?></strong>
     	<div class="box-header"><?php echo $idioma['DatosDelEstudiante'];?></div>
