@@ -1146,6 +1146,9 @@ $idioma['HoraEntradaSabado']="Hora Entrada Sábado";
 $idioma['HoraLimiteEsperaSabado']="Hora Limite Espera Sábado";
 $idioma['HoraEntradaDomingo']="Hora Entrada Domingo";
 $idioma['HoraLimiteEsperaDomingo']="Hora Limite Espera Domingo";
+$idioma['Paralelo']="Paralelo";
+$idioma['NotaNombreCurso']="Si en su Unidad Educativa maneja cursos con paralelos, se le recomienda seguido del nombre del curso asignar un identificar de Paralelo: Ej: 1 Primaria A, 1 Primaria B";
+$idioma['NotaParalelo']="La designación de este parámetro es propiamente para la identificación del RUDE";
 //Codigo
 $idioma['CodigoBarraActualizado']="Código de Barra Actualizado";
 $idioma['CodigosBarraCurso']="Códigos de Barra por Curso";

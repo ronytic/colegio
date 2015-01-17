@@ -15,6 +15,7 @@ if(isset($_POST)){
 	for($i=1;$i<=4;$i++){
 		$datos[$i]=$i;	
 	}
+	$paralelos=array("A"=>"A","B"=>"B","C"=>"C","D"=>"D","E"=>"E","F"=>"F","G"=>"G","H"=>"H","I"=>"I","J"=>"J","K"=>"K","L"=>"L");
 	?>
     <h2><?php echo $idioma['NuevoCurso']?></h2>
     <form action="guardar.php" method="post" class="formulario">
@@ -22,7 +23,9 @@ if(isset($_POST)){
     <table class="table table-bordered table-striped">
     	<tr>
         	<td><?php echo $idioma['Nombre']?><br>
-        	<input type="text" value="<?php echo $cur['Nombre']?>" name="Nombre" class="span12" placeholder="1 Primaria"></td>
+        	<input type="text" value="<?php echo $cur['Nombre']?>" name="Nombre" class="span12" placeholder="1 Primaria"><br>
+            <small><?php echo $idioma['NotaNombreCurso']?></small>
+			</td>
         </tr>
         <tr>
         	<td><?php echo $idioma['Abreviado']?><br>
@@ -31,6 +34,12 @@ if(isset($_POST)){
         <tr>
         	<td><?php echo $idioma['AreaCurso']?><br>
             <?php campo("CodCursoArea","select",$curarea,"span12",1,"",0,"",$cur['CodCursoArea'])?>
+        	</td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['Paralelo']?><br>
+            <?php campo("Paralelo","select",$paralelos,"span12",1,"",0,"",$cur['Paralelo'])?><br>
+            <small><?php echo $idioma['NotaParalelo']?></small>
         	</td>
         </tr>
         <tr>

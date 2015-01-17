@@ -7,6 +7,7 @@ if(!empty($_POST)){
 	$valores=array("Nombre"=>"'$Nombre'",
 				"Abreviado"=>"'$Abreviado'",
 				"CodCursoArea"=>"'$CodCursoArea'",
+				"Paralelo"=>"'$Paralelo'",
 				"Dps"=>"'$Dps'",
 				"Orden"=>"'$Orden'",
 				"Bimestre"=>"'$Bimestre'",
