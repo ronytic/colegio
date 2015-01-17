@@ -1,8 +1,8 @@
 <?php
 $host="localhost";
 $user="root";
-$pass="admina";
-$database="csb2014";
+$pass="";
+$database="colegio2015";
 
 /*$user="redcampu_csb";
 $pass="83034888";
