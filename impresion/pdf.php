@@ -36,7 +36,7 @@ include_once("fpdf_protection.php");
 			$this->Image("../../imagenes/logos/".$logo,10,10,20,20);
 			$this->Fuente("",$tam);
 			$this->SetXY(34,12);
-			$this->Cell(70,4,utf8_decode($title).$this->w.$this->CurOrientation,0,0,"L");
+			$this->Cell(70,4,utf8_decode($title),0,0,"L");
 			$this->Fuente("B",8);
 			$this->SetXY(34,16);
 			$this->Cell(70,4,utf8_decode($gestion),0,0,"L");
