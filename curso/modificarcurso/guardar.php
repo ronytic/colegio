@@ -12,6 +12,7 @@ if(!empty($_POST)){
 				"Bimestre"=>"'$Bimestre'",
 				"NotaTope"=>"'$NotaTope'",
 				"NotaAprobacion"=>"'$NotaAprobacion'",
+				"MontoCuota"=>"'$MontoCuota'",
 				"CantidadEtapas"=>"'$CantidadEtapas'"
 	);
 	if($curso->insertarRegistro($valores)){

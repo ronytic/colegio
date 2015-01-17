@@ -1111,7 +1111,7 @@ $idioma['CantidadEtapas']="Cantidad de Etapas";
 $idioma['MensajeEliminarCurso']="¿Seguro que desea ELIMINAR ESTE CURSO?";
 $idioma['MensajeModificarCurso']="¿Seguro que desea Modificar ESTE CURSO?";
 $idioma['NotaModificarCurso']="Nota: Es un Riesgo Modificar un curso, por que afectaria al correcto funcionamiento del Sistema con los datos registrado anteriormente, se Recomienda realizarlo antes del inicio de La Gestión, antes de las Inscripciones";
-$idioma['NotaEliminarCurso']="Nota: Es Muy Riegoso eliminar un curso cuando se comenzo la Gestión Educativa, se Recomienda realizarlo antes del inicio de La Gestión, antes de las Inscripciones";
+$idioma['NotaEliminarCurso']="Nota: Es Muy Riesgoso eliminar un curso cuando se comenzo la Gestión Educativa, se Recomienda realizarlo antes del inicio de la Gestión, antes de comenzar las Inscripciones";
 $idioma['MensajeEliminar']="¿Seguro que desea ELIMINAR este MENSAJE?";
 $idioma['MensajeModificar']="¿Seguro que desea Modificar este MENSAJE?";
 
@@ -1335,6 +1335,7 @@ $idioma['Senores']="Señores";
 $idioma['Buscar']="Buscar";
 $idioma['ImporteCobrado']="Importe Cobrado";
 $idioma['MontoCuota']="Monto Cuota";
+$idioma['MontoCuotaPagar']="Monto de Cuota a Pagar";
 $idioma['Interes']="Interes";
 $idioma['TotalDescuento']="Total Descuento";
 $idioma['TotalInteres']="Total Interes";

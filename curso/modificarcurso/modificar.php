@@ -2,9 +2,12 @@
 include_once("../../login/check.php");
 if(!empty($_POST['CodCurso'])){
 	include_once("../../class/curso.php");
+	include_once("../../class/config.php");
 	include_once("../../class/cursoarea.php");
 	$curso=new curso;
 	$cursoarea=new cursoarea;
+	$config=new config;
+	$Moneda=$config->mostrarConfig("Moneda",1);
 	$CodCurso=$_POST['CodCurso'];
 	$cur=$curso->mostrarCurso($CodCurso);
 	$cur=array_shift($cur);
@@ -48,6 +51,13 @@ if(!empty($_POST['CodCurso'])){
         <tr>
         	<td><?php echo $idioma['NotaAprobacion']?><br>
         	<input type="text" value="<?php echo $cur['NotaAprobacion']?>" name="NotaAprobacion" class="span12"></td>
+        </tr>
+        <tr>
+        	<td><?php echo $idioma['MontoCuotaPagar']?><br>
+             <div class="input-append">
+        	<input type="text" value="<?php echo $cur['MontoCuota']?>" name="MontoCuota" class="span12">
+            <div class="add-on"><?php echo $Moneda?></div>
+    </div></td>
         </tr>
         <tr>
         	<td><?php echo $idioma['CantidadEtapas']?><br>
