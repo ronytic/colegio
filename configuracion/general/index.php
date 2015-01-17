@@ -13,7 +13,7 @@ include_once($folder."cabecerahtml.php");
 <?php echo $idioma['DatosGuardadosCorrectamente']?><a class="close" data-dismiss="alert" href="#">&times;</a>
 </div>
 </div>
-<div class="row-fluid">
+
 <?php }?>
 <form action="guardar.php" method="post">
 <div class="span6 box">
@@ -143,15 +143,7 @@ include_once($folder."cabecerahtml.php");
             	<td><?php echo $idioma['Moneda']?></td>
                 <td><input type="text" class="span10" name="Moneda" value="<?php echo dato("Moneda")?>"></td>
             </tr>
-        	<tr>
-            	<td><?php echo $idioma['MontoKinder']?></td>
-                <td><input type="number" class="span10 der" name="MontoKinder" value="<?php echo dato("MontoKinder")?>"><?php echo dato("Moneda")?></td>
-            </tr>
-            <tr>
-            	<td><?php echo $idioma['MontoGeneral']?></td>
-                <td><input type="number" class="span10 der" name="MontoGeneral" value="<?php echo dato("MontoGeneral")?>"><?php echo dato("Moneda")?></td>
-            </tr>
-            <tr>
+			<tr>
             	<td><?php echo $idioma['FechaCuota1']?></td>
                 <td><input type="text" class="span6 fecha" name="FechaCuota1" value="<?php echo fecha2Str(dato("FechaCuota1"))?>"></td>
             </tr>
@@ -389,7 +381,7 @@ include_once($folder."cabecerahtml.php");
     <div class="box-content">
     	<table class="table table-bordered table-hover">
         	<tr>
-            	<td width="50%"><?php echo $idioma['TipoUnidadEducativa']?></div></td>
+            	<td width="50%"><?php echo $idioma['TipoUnidadEducativa']?></td>
                 <td><select name="TipoUnidadEducativa">
                 	<option value="Privada" <?php echo dato('TipoUnidadEducativa')=="Privada"?'selected="selected"':''?>><?php echo $idioma['Privada']?></option>
                     <option value="Convenio" <?php echo dato('TipoUnidadEducativa')=="Convenio"?'selected="selected"':''?>><?php echo $idioma['Convenio']?></option>
@@ -399,7 +391,7 @@ include_once($folder."cabecerahtml.php");
                 </td>
             </tr>
             <tr>
-            	<td width="50%"><?php echo $idioma['TurnoUnidad']?></div></td>
+            	<td width="50%"><?php echo $idioma['TurnoUnidad']?></td>
                 <td><select name="TurnoUnidad">
                 	<option value="Manana" <?php echo dato('TurnoUnidad')=="Manana"?'selected="selected"':''?>><?php echo $idioma['Manana']?></option>
                     <option value="Tarde" <?php echo dato('TurnoUnidad')=="Tarde"?'selected="selected"':''?>><?php echo $idioma['Tarde']?></option>
