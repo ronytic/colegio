@@ -32,8 +32,7 @@ $sinovalor=array(0=>$idioma["No"],1=>$idioma["Si"]);
 <?php include_once($folder."cabecerahtml.php");?>
 <script language="javascript" type="text/javascript" src="../../js/alumno/inscripcion.js"></script>
 <script language="javascript" type="text/javascript">
-var MontoKinder=<?php echo $confgKinder['Valor']?>;
-var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
+var MontoGeneral=0;
 </script>
 <?php include_once($folder."cabecera.php");?>
 <form action="../guardaralumno.php" method="post" onSubmit="if(this.Curso.value==0){alert('Selecciona el Curso');return false;}" enctype="multipart/form-data">
@@ -49,7 +48,13 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Curso']?></td>
-                <td><?php campo("Curso","select",$cursovalor,"span12",1)?></td>
+                <td><select name="Curso" id="Curso" class="span12">
+                	<?php foreach($curso->listar() as $cur){
+						?>
+                        <option value="<?php echo $cur['CodCurso']?>" rel-cuota="<?php echo $cur['MontoCuota']?>"><?php echo $cur['Nombre']?></option>
+                        <?php	
+					}?>
+                </select></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Paterno']?></td>

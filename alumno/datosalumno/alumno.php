@@ -37,8 +37,7 @@ if(!file_exists($ima) || empty($al['Foto'])){
 <?php include_once($folder."cabecerahtml.php");?>
 <script language="javascript" type="text/javascript" src="../../js/alumno/inscripcion.js"></script>
 <script language="javascript" type="text/javascript">
-var MontoKinder=<?php echo $confgKinder['Valor']?>;
-var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
+var MontoGeneral=0;
 </script>
 <?php include_once($folder."cabecera.php");?>
 <form action="../actualizaralumno.php" method="post" onSubmit="if(this.Curso.value==0){alert('Selecciona el Curso');return false;}" enctype="multipart/form-data">
@@ -55,7 +54,13 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Curso']?></td>
-                <td><?php campo("Curso","select",$cursovalor,"span12",1,"",1,"",$al['CodCurso'])?></td>
+                <td><select name="Curso" id="Curso" class="span12">
+                	<?php foreach($curso->listar() as $cur){
+						?>
+                        <option value="<?php echo $cur['CodCurso']?>" rel-cuota="<?php echo $cur['MontoCuota']?>" <?php echo $al['CodCurso']==$cur['CodCurso']?'selected="selected"':''?>><?php echo $cur['Nombre']?></option>
+                        <?php	
+					}?>
+                </select></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Paterno']?></td>
@@ -138,7 +143,7 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['MontoBeca']?></td>
-                <td><?php campo("MontoBeca","text",$al['MontoBeca'],"span5",0,"",0,array("maxlength"=>7,"readonly"=>"readonly"))?>Bs - <?php campo("PorcentajeBeca","text","0","span5",0,"",0,array("maxlength"=>6))?>%</td>
+                <td><?php campo("MontoBeca","text",$al['MontoBeca'],"span5",0,"",0,array("maxlength"=>7,"readonly"=>"readonly"))?>Bs - <?php campo("PorcentajeBeca","text",$al['PorcentajeBeca'],"span5",0,"",0,array("maxlength"=>6))?>%</td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['MontoPagar']?></td>

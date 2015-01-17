@@ -29,24 +29,21 @@ $(document).ready(function(e) {
 	//alert(MontoKinder);
 	verifica()
 	$("#Curso").change(function(e) {
-		//alert("asd");
+		
+
         verifica();
     });
 	function verifica(){
+		MontoGeneral=$("#Curso>option:selected").attr('rel-cuota');
+		$("#MontoPagar").val(MontoGeneral);
 		valor=$("#PorcentajeBeca").val();
-		if($("#Curso").val()!=1){
-			MontoBeca=(valor*MontoGeneral)/100;
-		}else{
-			MontoBeca=(valor*MontoKinder)/100;
-		}
-		if($("#MontoBeca").val()=="0.00"){
+		MontoBeca=(valor*MontoGeneral)/100;
+
+		//if($("#MontoBeca").val()=="0.00"){
 			$("#MontoBeca").val(MontoBeca.toFixed(2));
-		}
-		if($("#Curso").val()!=1){
-			$('#MontoPagar').val(MontoGeneral-($("#MontoBeca").val()));
-		}else{
-			$("#MontoPagar").val(MontoKinder-($("#MontoBeca").val()));
-		}
+		//}
+		$('#MontoPagar').val(MontoGeneral-($("#MontoBeca").val()));
+
 	}
 	//$('#MontoPagar').val(MontoGeneral-($("#MontoBeca").val()));
 	$("#MontoBeca").keyup(function(e) {
@@ -71,14 +68,10 @@ $(document).ready(function(e) {
 	
 	$("#PorcentajeBeca").keyup(function(e) {
 		var valor=$(this).val();
+		//alert(MontoGeneral);
 		var MontoBeca=0;
-		if($("#Curso").val()==1){
-			MontoBeca=(valor*MontoKinder)/100;
-			$('#MontoPagar').val(MontoKinder-(MontoBeca.toFixed(2)));
-		}else{
-			MontoBeca=(valor*MontoGeneral)/100;
-			$('#MontoPagar').val(MontoGeneral-(MontoBeca.toFixed(2)));
-		}
+		MontoBeca=(valor*MontoGeneral)/100;
+		$('#MontoPagar').val(MontoGeneral-(MontoBeca.toFixed(2)));
 		$("#MontoBeca").val(MontoBeca.toFixed(2));
 		
     });

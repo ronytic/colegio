@@ -51,6 +51,7 @@ if(!empty($_POST)){
 	$Traspaso=$_POST['Traspaso'];
 	$Becado=$_POST['Becado'];
 	$MontoBeca=$_POST['MontoBeca'];
+	$PorcentajeBeca=$_POST['PorcentajeBeca'];
 	$MontoPagar=$_POST['MontoPagar'];
 	$Retirado=$_POST['Retirado'];
 	$FechaRetiro=$_POST['FechaRetiro'];
@@ -139,6 +140,7 @@ if(!empty($_POST)){
 				'Traspaso'=>$Traspaso,
 				'Becado'=>$Becado,
 				'MontoBeca'=>$MontoBeca,
+				'PorcentajeBeca'=>$PorcentajeBeca,
 				'Retirado'=>$Retirado,
 				'FechaRetiro'=>"'$FechaRetiro'",
 				'Rude'=>"'$Rude'",

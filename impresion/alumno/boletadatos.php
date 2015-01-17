@@ -39,6 +39,8 @@ if(!empty($_GET)){
 	
 	}
 $pdf=new PDF("L","mm",array(140, 216));
+$pdf->OrientacionObligada="L";
+//$pdf=new PDF("P","mm","letter");
 //$pdf->SetProtection(array('print'));
 //array('print' => 4, 'modify' => 8, 'copy' => 16, 'annot-forms' => 32 );
 $pdf->AddPage();

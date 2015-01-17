@@ -27,7 +27,7 @@ include_once("fpdf_protection.php");
 			$this->SetSubject(utf8_decode("Sistema Académico Administrativo para Colegios Desarrollado por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
 			$this->SetCreator(utf8_decode("Sistema Académico Administrativo para Colegios Desarrollado por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
 			$this->SetProtection(array('print'));
-			if($this->CurOrientation=="P"){$this->ancho=176;}else{$this->ancho=246;}
+			if($this->CurOrientation=="P"){$this->ancho=$this->w-40;}else{$this->ancho=$this->w-33.4;}
 			$this->SetLeftMargin(18);
 			$this->SetAutoPageBreak(true,15);
 			global $title,$gestion,$titulo,$logo,$idioma;
@@ -36,13 +36,13 @@ include_once("fpdf_protection.php");
 			$this->Image("../../imagenes/logos/".$logo,10,10,20,20);
 			$this->Fuente("",$tam);
 			$this->SetXY(34,12);
-			$this->Cell(70,4,utf8_decode($title),0,0,"L");
+			$this->Cell(70,4,utf8_decode($title).$this->w.$this->CurOrientation,0,0,"L");
 			$this->Fuente("B",8);
 			$this->SetXY(34,16);
 			$this->Cell(70,4,utf8_decode($gestion),0,0,"L");
 			$this->ln(10);	
 			$this->Fuente("B",18);
-			$this->Cell($this->ancho,4,utf8_decode($titulo.$this->orientation),0,5,"C");
+			$this->Cell($this->ancho,4,utf8_decode($titulo),0,5,"C");
 			$this->ln(5);
 			$this->CuadroCabecera(32,$idioma['FechaReporte'].": ",50,utf8_encode($fecha));
 			$this->ln(5);
@@ -133,7 +133,7 @@ include_once("fpdf_protection.php");
 			$BordePie=0;
 			$this->Fuente("I",7.5);
 			$this->Cell($this->ancho,0,"",1,1);
-			if($this->CurOrientation=="P"){
+			if($this->CurOrientation=="P"||$this->OrientacionObligada=="L"){
 				$Resto=0;
 				$DatosReporteGenerado=utf8_decode($idioma['ReporteGenerado']).": ".date('d-m-Y H:i:s')." ";
 				$this->Cell(50,3,$DatosReporteGenerado,$BordePie,0,"L");
@@ -148,7 +148,7 @@ include_once("fpdf_protection.php");
 			$this->Fuente("I",7);
 			
 			
-			if($this->CurOrientation=="P"){
+			if($this->CurOrientation=="P" ||$this->OrientacionObligada=="L"){
 				$this->Cell((round(($this->ancho-50)/2)+0),3,utf8_decode($idioma['TituloSistema'].""),$BordePie,0,"R");
 				$this->ln();
 				$this->Cell((round(($this->ancho-50)/2)+50),3,$idioma['Por'].": ".$DatosUsuario,$BordePie,0,"L");

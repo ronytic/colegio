@@ -8,6 +8,7 @@ include_once("../class/tmp_alumno.php");
 include_once("../class/cuota.php");
 include_once("../class/documento.php");
 include_once("../class/config.php");
+include_once("../class/curso.php");
 if(!empty($_POST)){
 	$folder="../";
 	$al=new alumno;
@@ -15,6 +16,7 @@ if(!empty($_POST)){
 	$doc=new documento;
 	$tmpalumno=new tmp_alumno;
 	$conf=new config;
+	$curso=new curso;
 	if(isset($_POST['CodAlumno'])){$CodAl=$_POST['CodAlumno'];}
 	$Matricula=$_POST['Matricula'];
 	$CodCurso=$_POST['Curso'];
@@ -39,6 +41,7 @@ if(!empty($_POST)){
 	$Traspaso=$_POST['Traspaso'];
 	$Becado=$_POST['Becado'];
 	$MontoBeca=$_POST['MontoBeca'];
+	$PorcentajeBeca=$_POST['PorcentajeBeca'];
 	$MontoPagar=$_POST['MontoPagar'];
 	$Retirado=$_POST['Retirado'];
 	$FechaRetiro=$_POST['FechaRetiro'];
@@ -85,13 +88,9 @@ if(!empty($_POST)){
 		$UsuarioPadre="";
 	}
 	
-	if($CodCurso==1){
-		$cnf=$conf->mostrarConfig("MontoKinder");	
-		$MontoGeneral=$cnf['Valor'];
-	}else{
-		$cnf=$conf->mostrarConfig("MontoGeneral");	
-		$MontoGeneral=$cnf['Valor'];	
-	}
+	$cur=$curso->mostrarCurso($CodCurso);	
+	$cur=array_shift($cur);
+	$MontoGeneral=$cur['MontoCuota'];
 	
 	$valuesDoc=array('CodDocumento'=>'Null',
 					'CodAlumno'=>$CodAlumno,
@@ -125,6 +124,7 @@ if(!empty($_POST)){
 				'Traspaso'=>$Traspaso,
 				'Becado'=>$Becado,
 				'MontoBeca'=>$MontoBeca,
+				'PorcentajeBeca'=>$PorcentajeBeca,
 				'Retirado'=>$Retirado,
 				'FechaRetiro'=>"'$FechaRetiro'",
 				'Rude'=>"'$Rude'",

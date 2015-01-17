@@ -58,7 +58,13 @@ var MontoGeneral=<?php echo $confgGeneral['Valor']?>;
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Curso']?></td>
-                <td><?php campo("Curso","select",$cursovalor,"span12",1,"",1,"",$al['CodCurso']+1)?></td>
+                <td><select name="Curso" id="Curso" class="span12">
+                	<?php foreach($curso->listar() as $cur){
+						?>
+                        <option value="<?php echo $cur['CodCurso']?>" rel-cuota="<?php echo $cur['MontoCuota']?>" <?php echo $al['CodCurso']+1==$cur['CodCurso']?'selected="selected"':''?>><?php echo $cur['Nombre']?></option>
+                        <?php	
+					}?>
+                </select></td>
             </tr>
             <tr>
                 <td class="der"><?php echo $idioma['Paterno']?></td>
