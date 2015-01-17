@@ -8,12 +8,11 @@ function enviarSms($puerto,$cel, $text){
 	foreach($TextoSeparado as $text){
 		//echo "HOLA";
 		$valor=enviarSms1($puerto,$cel,$text);
-		//sleep(1000);
 	}
 	return $valor;
 }
 function enviarSms1($puerto,$cel, $text){
-	return true;
+
 		$text1 = substr($text,0,10);
 		$port = $puerto;
 		//$port = "COM5";
