@@ -12,6 +12,7 @@ if(!empty($_POST)){
 	$alumno=new alumno;
 	$doc=new documento;
 	$fechaReg=date("Y-m-d H:i:s");
+	
 	$values=array("CodRude"=>"NULL",
 		"CodAlumno"=>$_POST['CodAlumno'],
 		"PaisN"=>"'".mb_strtolower($_POST['paisNacA'],"UTF-8")."'",
@@ -83,7 +84,10 @@ if(!empty($_POST)){
 						);
 	//print_r($valuesAlumno);
 	$alumno->actualizarDatosAlumno($valuesAlumno,$_POST['CodAlumno']);
-	$rude->insertarAlumno($values);
+	$ru=$rude->mostrarTodoDatos($_POST['CodAlumno']);
+	if(count($ru)==0){
+		$rude->insertarAlumno($values);
+	}else{echo "Duplicado";}
 
 	/*DOCUMENTOS*/
 	$CertificadoNac=$_POST['CertificadoNac'];if($CertificadoNac=="on")$CertificadoNac=1;else $CertificadoNac=0;

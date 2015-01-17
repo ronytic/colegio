@@ -2,7 +2,7 @@
 include_once("bd.php");
 class curso extends bd{
 	var $tabla="curso";	
-	function listar($ini=1,$fin=13){
+	function listar($ini=1,$fin=26){
 		$this->campos=array('CodCurso','Nombre','MontoCuota');
 		return $this->getRecords("CodCurso BETWEEN $ini and $fin");
 	}

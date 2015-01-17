@@ -108,18 +108,18 @@ function escribe($x,$y,$t,$tam=12){
 	if(ereg("^6",mayuscula($cur['Nombre'])) && $curarea['Area']==3)escribe(80.3,125,"x",10);//6
 
 	switch($cur['Paralelo']){
-		case "1":{escribe(123.2,127,"x",10);}break;
-		case "2":{escribe(128,127,"x",10);}break;
-		case "3":{escribe(132.5,127,"x",10);}break;
-		case "4":{escribe(137,127,"x",10);}break;
-		case "5":{escribe(142,127,"x",10);}break;
-		case "6":{escribe(146.2,127,"x",10);}break;
-		case "7":{escribe(151,127,"x",10);}break;
-		case "8":{escribe(155.8,127,"x",10);}break;
-		case "9":{escribe(160.3,127,"x",10);}break;
-		case "10":{escribe(164.5,127,"x",10);}break;
-		case "11":{escribe(169,127,"x",10);}break;
-		case "12":{escribe(173.5,127,"x",10);}break;
+		case "A":{escribe(123.2,127,"x",10);}break;
+		case "B":{escribe(128,127,"x",10);}break;
+		case "C":{escribe(132.5,127,"x",10);}break;
+		case "D":{escribe(137,127,"x",10);}break;
+		case "E":{escribe(142,127,"x",10);}break;
+		case "F":{escribe(146.2,127,"x",10);}break;
+		case "G":{escribe(151,127,"x",10);}break;
+		case "H":{escribe(155.8,127,"x",10);}break;
+		case "I":{escribe(160.3,127,"x",10);}break;
+		case "J":{escribe(164.5,127,"x",10);}break;
+		case "K":{escribe(169,127,"x",10);}break;
+		case "L":{escribe(173.5,127,"x",10);}break;
 	}
 	
 	switch($TurnoUnidad){

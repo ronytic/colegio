@@ -17,10 +17,10 @@ if(!empty($_POST)){
 	$al=array_shift($al);
 	
 	if(count($alu)>=1){//Si ya hay algun registro
-		$archivo="actualizarRude.php";
+		$archivo="actualizarrude.php";
 		$titulo=$idioma['ModificarRude'];
 	}else{
-		$archivo="guardarRude.php";	
+		$archivo="guardarrude.php";	
 		$titulo=$idioma['RegistrarRude'];
 	}
 	
@@ -29,7 +29,7 @@ if(!empty($_POST)){
 	
 	?>
     <div class="alert alert-info centrar"><strong><?php echo mayuscula($titulo)?></strong></div>	
-    <form action="<?php echo $archivo;?>" method="post" onsubmit="javascript:return false;if(confirm('¿Esta seguro de Guardar los Datos?'))" target="_blank">
+    <form action="<?php echo $archivo;?>" method="post" >
 		<input type="hidden" name="CodAlumno" value="<?php echo $CodAlumno;?>" />
         <strong><?php echo $idioma['TodoEnMayusculas'];?></strong>
     	<div class="box-header"><?php echo $idioma['DatosDelEstudiante'];?></div>
@@ -57,7 +57,7 @@ if(!empty($_POST)){
         <div class="box-content">
 	    	<table class="table table-hover table-striped">
             	<tr><td><?php echo $idioma['Curso']?></td><td>::</td><td><select name="curso">
-								<?php foreach($cur->listar() as $curso){?><option value="<?php echo $curso['CodCurso'];?>" <?php if($al['CodCurso']==$curso['CodCurso']){echo 'selected="selected"';}?></option><?php echo mayuscula($curso['Nombre']);?></option><?php }?></select></td></tr>
+								<?php foreach($cur->listar() as $curso){?><option value="<?php echo $curso['CodCurso'];?>" <?php if($al['CodCurso']==$curso['CodCurso']){echo 'selected="selected"';}?>><?php echo mayuscula($curso['Nombre']);?></option><?php }?></select></td></tr>
     	    	<tr><td><?php echo $idioma['CodigoSieColegioAnterior']?></td><td>::</td><td><input type="text" name="codigoSIEA" value="<?php echo mayuscula($alu['CodigoSie']);?>" /></td></tr>
                 <tr><td><?php echo $idioma['NombreColegioAnterior']?></td><td>::</td><td><input type="text" name="unidadEducativaA" value="<?php echo mayuscula($alu['NombreUnidad']);?>" /></td></tr>
         	</table>
