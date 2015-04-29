@@ -70,7 +70,7 @@ if(!empty($_GET) && isset($_GET['mf']) && $_GET['mf']==md5("lock")){
 	$pdf->SetXY($boletin2x+130,$boletin2y+48);
 	$pdf->Cell(30,5,utf8_decode($idioma["Gestion"].": ".$anio),$bordeC);
 	$pdf->SetXY($boletin2x+130,$boletin2y+53);
-	$pdf->Cell(50,5,utf8_decode($idioma["Fecha"].": ".strftime("%A, %d de %B de %Y")),$bordeC);
+	$pdf->Cell(50,5,utf8_decode($idioma["Fecha"].": ".strftime("%d/%m/%Y")),$bordeC);
 	$i=0;
 	$pdf->SetFillColor(210,210,210);
 	foreach($cursomateria->mostrarMaterias($CodCurso) as $matbol){
