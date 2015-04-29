@@ -20,8 +20,9 @@ function respuestaInicial(data){
 				if(data!=""){
 					alert(data);
 				}
+                mostrar();
 			});
-			mostrar();
+			
 		}
     });
 	$('#actualizar').click(function(e) {
