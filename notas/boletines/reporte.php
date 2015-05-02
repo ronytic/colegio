@@ -5,11 +5,19 @@ if(isset($_POST)){
 	$CodCurso=$_POST['CodCurso'];
 	include_once("../../class/curso.php");
 	$curso=new curso;
+    include_once("../../class/config.php");
+	$config=new config;
 	$cur=array_shift($curso->mostrarCurso($CodCurso));
+    $boletinmediacarta=$config->mostrarConfig("BoletinMediaCarta",1);
+    if($boletinmediacarta){
+        $ar="mediacarta";    
+    }else{
+        $ar="";    
+    }
 	if($cur['Bimestre']==1){
-		$nombrearchivo="boletinbimestre.php";
+		$nombrearchivo="boletinbimestre$ar.php";
 	}else{
-		$nombrearchivo="boletintrimestre.php";	
+		$nombrearchivo="boletintrimestre$ar.php";	
 	}
 	$url="../../impresion/notas/$nombrearchivo?CodAlumno=$CodAlumno&CodCurso=$CodCurso&mf=". md5("lock");
 	?>
