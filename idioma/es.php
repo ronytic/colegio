@@ -593,6 +593,8 @@ $idioma['NoSePodraModificar']="NO SE PODRÁ CAMBIAR ESTA CONFIGURACIÓN POSTERIO
 $idioma['TipoBimestre']="Tipo de Bimestre";
 $idioma['BimestreNormal']="Bimestre Normal";
 $idioma['BimestreAvanzado']="Bimestre Avanzado";
+$idioma['BimestreLiteral']="Bimestre Literal";
+$idioma['Literal']="Literal";
 $idioma['NotaBimestreAvanzado']="Si usted selecciona bimestre avanzado, el sistema será el encargado internamente de asignar  el número de casilleros y la metodología de calificación de acuerdo al cuaderno pedagógico del registro de notas ";
 
 $idioma['Puntualidad']="Puntualidad";
@@ -1411,6 +1413,8 @@ $idioma['SiEstoySeguro']="Sí, estoy Seguro(a)";
 $idioma['NoEstoySeguro']="No, Quiero Subir otro Archivo";
 $idioma['VolverSeleccionarArchivo']="Volver y Seleccionar otro Archivo";
 $idioma['RegistroNotasDesHabilitadoArchivo']="Puede ser debido a que seleccionó un archivo incorrecto o pertenece a otro periodo o el Administrador del Sistema Deshabilito el Registro de Notas, Verifique y vuelva Intentarlo";
+
+$idioma['BoletinBimestral']="Boletín Bimestral";
 //Titulo Submodulos
 $idioma['Modulo']="Módulo";
 $idioma['IrA']="Ir a";
