@@ -65,7 +65,8 @@ if(!empty($_POST)){
 	for($i=1;$i<=25;$i++){
 		if($i<=$Casillas){
 			if($cur['Bimestre']){//Sacando para Cursos por Bimestre
-				if($TipoNota=="avanzado"){
+				switch($TipoNota){
+                case "avanzado":{
 					switch($i){
 						case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 1'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
 						case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Valor']." 2'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=0;}break;
@@ -89,13 +90,21 @@ if(!empty($_POST)){
 						case 20:{$valDM['NombreCasilla'.$i]="'".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=0;}break;
 					}
 
-				}else{
+				}break;
+                case "literal":{
+                    switch($i){
+						case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Literal']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=10;}break;
+						case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Nota']."'";$valDM['LimiteCasilla'.$i]=100;$valDM['LimiteMinCasilla'.$i]=10;}break;
+					}
+                }break;
+                default:{
 					switch($i){
 						case 1:{$valDM['NombreCasilla'.$i]="'".$idioma['Ser']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=10;}break;
 						case 2:{$valDM['NombreCasilla'.$i]="'".$idioma['Saber']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=15;}break;
 						case 3:{$valDM['NombreCasilla'.$i]="'".$idioma['Hacer']."'";$valDM['LimiteCasilla'.$i]=30;$valDM['LimiteMinCasilla'.$i]=15;}break;
 						case 4:{$valDM['NombreCasilla'.$i]="'".$idioma['Decidir']."'";$valDM['LimiteCasilla'.$i]=20;$valDM['LimiteMinCasilla'.$i]=10;}break;
 					}
+                }
 				}
 			}else{//Sacnado para Fines de Bimestre
 				$valDM['NombreCasilla'.$i]="'Casilla $i'";
@@ -109,8 +118,10 @@ if(!empty($_POST)){
 			$valDM['LimiteMinCasilla'.$i]=0;
 		}
 	}
-	$casilleros->insertarRegistro($valDM);
-	//print_r($valDM);
+	//$casilleros->insertarRegistro($valDM);
+	echo "<pre>";
+    print_r($valDM);
+    echo "</pre>";
 	//print_r($valDM);
 	foreach($alumno->mostrarAlumnosCurso($docmateriacurso['CodCurso'],$docmateriacurso['SexoAlumno'],2) as $al){
 		$valRN=array('CodRegistroNotas'=>'NULL',
@@ -125,7 +136,7 @@ if(!empty($_POST)){
 		$valRN['Resultado']=0;
 		$valRN['Dps']=0;
 		$valRN['NotaFinal']=0;
-		$registroNotas->insertarRegistro($valRN);
+		//$registroNotas->insertarRegistro($valRN);
 	}
 	//print_r($_POST);
 	

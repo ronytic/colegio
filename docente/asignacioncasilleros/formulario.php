@@ -67,7 +67,8 @@ if(!empty($_POST['CodDocente'])){
             <td><?php echo $idioma['TipoBimestre']?>:<br />
             	<select name="TipoNota" id="TipoNota" class="span12">
 					<option value=""><?php echo $idioma['BimestreNormal']?></option>
-                    <option value="avanzado" title="asd"><?php echo $idioma['BimestreAvanzado']?></option>
+                    <option value="avanzado"><?php echo $idioma['BimestreAvanzado']?></option>
+                    <option value="literal"><?php echo $idioma['BimestreLiteral']?></option>
                 </select>
                 <div class="alert alert-error"><?php echo $idioma['NotaBimestreAvanzado']?></div>
 			</td>
