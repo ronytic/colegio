@@ -11,10 +11,18 @@ if(!empty($_POST)){
 	$cuota=new cuota;
 	$cur=$curso->mostrarCurso($CodCurso);
 	$cur=array_shift($cur);
+    include_once("../../class/config.php");
+	$config=new config;
+    $boletinmediacarta=$config->mostrarConfig("BoletinMediaCarta",1);
+    if($boletinmediacarta){
+        $ar="mediacarta";    
+    }else{
+        $ar="";    
+    }
 	if($cur['Bimestre']==1){
-		$Boletin="boletinbimestre.php";	
+		$Boletin="boletinbimestre$ar.php";	
 	}else{
-		$Boletin="boletintrimestre.php";	
+		$Boletin="boletintrimestre$ar.php";	
 	}
 	?>
     <a href="#" id="exportarexcel" class="btn btn-success btn-mini"><?php echo $idioma['ExportarExcel']?></a>
