@@ -20,8 +20,9 @@ include_once("fpdf_protection.php");
 	$DatosGenerador=DatosUsuario($Nivel,$CodigoUsuario);
 	class PPDF extends FPDF_Protection{
 		var $ancho=176;
+        var $altocelda=5;
 		function Header(){
-			global $idioma;
+			global $idioma,$FechaReporte;
 			$this->SetTitle(utf8_decode("Sistema Académico Administrativo para Colegios"),true);
 			$this->SetAuthor(utf8_decode("Sistema Académico Administrativo para Colegios Desarrollado por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
 			$this->SetSubject(utf8_decode("Sistema Académico Administrativo para Colegios Desarrollado por Ronald Nina Layme. Cel: 73230568 - www.facebook.com/ronaldnina"),true);
@@ -44,8 +45,11 @@ include_once("fpdf_protection.php");
 			$this->Fuente("B",18);
 			$this->Cell($this->ancho,4,utf8_decode($titulo),0,5,"C");
 			$this->ln(5);
-			$this->CuadroCabecera(32,$idioma['FechaReporte'].": ",50,utf8_encode($fecha));
-			$this->ln(5);
+            if(!isset($FechaReporte)){
+			    $this->CuadroCabecera(32,$idioma['FechaReporte'].": ",50,utf8_encode($fecha));
+                $this->ln(5);
+            }
+			
 			if(in_array("Cabecera",get_class_methods($this))){
 				$this->Cabecera();	
 			}
@@ -59,6 +63,9 @@ include_once("fpdf_protection.php");
 			$this->AliasNbPages();
 			$this->CuadroCabecera(15,$idioma['Pagina'].":",20,$this->PageNo()." ".$idioma['De']." {nb}");
 		}
+        function AltoCelda($a){
+            $this->altocelda=$a;    
+        }
 		function Fuente($tipo="B",$tam=10){
 			$this->SetFillColor(234,234,234);
 			$this->SetFont("Arial",$tipo,$tam);	
@@ -74,8 +81,9 @@ include_once("fpdf_protection.php");
 			$this->Cell($txtAncho,4,utf8_decode($txt),$borde,0,$align);	
 		}
 		function CuadroCuerpo($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tam=9,$tipo=""){
+
 			$this->Fuente($tipo,$tam);
-			$this->Cell($txtAncho,5,utf8_decode($txt),$borde,0,$align,$relleno);	
+    		$this->Cell($txtAncho,$this->altocelda,utf8_decode($txt),$borde,0,$align,$relleno);	
 		}
 		function CuadroCuerpoMulti($txtAncho,$txt,$relleno=0,$align="L",$borde=0,$tam=9,$tipo=""){
 			$this->Fuente($tipo,$tam);
