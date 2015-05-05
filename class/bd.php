@@ -157,7 +157,7 @@ class bd{
 		}
 		$datos=implode(",",$data);
 		$nombretabla=mb_strtolower($this->tabla,"utf8");
-		//echo "UPDATE {$nombretabla} SET $datos $where"."<br>";
+		//echo "UPDATE {$nombretabla} SET $datos $where ;"."<br>";
 		return mysql_query ("UPDATE $nombretabla SET $datos $where");
 	}
 	public function vaciar(){
