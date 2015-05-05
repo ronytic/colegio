@@ -93,6 +93,7 @@ foreach($notas as $nok=>$nov){
 	$val=array();
 	for($i=1;$i<=$cantidadcasilleros;$i++){
 		$NotaValor=$nov['notas'][$i];
+        $NotaValor=$NotaValor!=""?$NotaValor:0;
 		$val["Nota".$i]=$NotaValor;
 		
 	}
