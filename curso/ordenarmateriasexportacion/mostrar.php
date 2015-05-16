@@ -15,7 +15,7 @@ if(!empty($_POST)){
     
     <table class="table table-bordered table-striped table-hover">
     	<thead>
-    		<tr><th>N</th><th><?php echo $idioma['Materias']?></th><th width="50"></th></tr>
+    		<tr><th width="15">N</th><th><?php echo $idioma['Materias']?></th><th width="150"><?php echo $idioma["MateriaCombinada"];?></th><th width="50"></th></tr>
 	    </thead>
 	<?php
 	$i=0;
@@ -25,15 +25,19 @@ if(!empty($_POST)){
 		$materia=array_shift($materia);
 		?>
 		<tr>
-			<td><?php echo $i;?></td>
+			<td class="der"><?php echo $i;?></td>
         	<td>
-            	<?php
-                if($matbol['CodMateria']=="1000"){
-					echo $idioma["MateriaCombinada"];
-				}else{
-					?><?php echo $materia['Nombre'];?><?php
-				}
-				?>
+                <?php echo $materia['Nombre'];?>
+            </td>
+            <td>
+                <select name="Combinada" class="combinada" data-rel="<?php echo $CodMatBol;?>">
+                    <option value="0" <?php echo $matbol['Combinada']=="0"?'selected="selected"':''?>><?php echo $idioma['Ninguno']?></option>
+                    <option value="1" <?php echo $matbol['Combinada']=="1"?'selected="selected"':''?>><?php echo $idioma["MateriaCombinada"];?> 1</option>
+                    <option value="2" <?php echo $matbol['Combinada']=="2"?'selected="selected"':''?>><?php echo $idioma["MateriaCombinada"];?> 2</option>
+                    <option value="3" <?php echo $matbol['Combinada']=="3"?'selected="selected"':''?>><?php echo $idioma["MateriaCombinada"];?> 3</option>
+                    <option value="4" <?php echo $matbol['Combinada']=="4"?'selected="selected"':''?>><?php echo $idioma["MateriaCombinada"];?> 4</option>
+                    <option value="5" <?php echo $matbol['Combinada']=="5"?'selected="selected"':''?>><?php echo $idioma["MateriaCombinada"];?> 5</option>
+                </select>
             </td>
             <td><a href="#" class="btn btn-mini eliminar" rel="<?php echo $CodMatBol;?>"><?php echo $idioma['Eliminar']?></a></td></tr>
 		<?php	

@@ -31,6 +31,12 @@ function respuesta2(data){
 		}else
 		e.preventDefault();
     });
+    $(".combinada").change(function(e) {
+        var Cod=$(this).data("rel");
+        var Val=$(this).val();
+        //alert(Cod+" "+Val);
+        $.post("cambiarcombinada.php",{'Cod':Cod,'Val':Val});
+    });
 }
 function eliminar(data){
 	$.post("mostrar.php",{"CodCurso":CodCurso},respuesta2);

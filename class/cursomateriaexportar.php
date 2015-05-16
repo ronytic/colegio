@@ -12,6 +12,9 @@ class cursomateriaexportar extends bd{
 	function cambiarNombre($Numero,$where){
 		$this->updateRow(array("Alterno"=>$Numero),$where);
 	}
+    function cambiarCombinada($Numero,$where){
+		$this->updateRow(array("Combinada"=>$Numero),$where);
+	}
 	function actualizar($where){
 		$this->updateRow(array("Activo"=>0),$where);
 	}
