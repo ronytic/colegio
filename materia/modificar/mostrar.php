@@ -8,6 +8,13 @@ $mat=$materias->mostrarMaterias('all');
         <table class="table table-bordered table-striped table-hover table-condensed">
 		<thead>
             <tr>
+                <th><small>N</small></th>
+                <th><small><?php echo $idioma['Nombre']?></small></th>
+                <th><small><?php echo $idioma['Abreviado']?></small></th>
+                <th><small><?php echo $idioma['NombreAlterno']?>1</small></th>
+                <th><small><?php echo $idioma['NombreAlterno']?>2</small></th>
+                <th><small><?php echo $idioma['PromedioCiencias']?></small></th>
+                <th><small><?php echo $idioma['Valido']?></small></th>
                 <th></th>
             </tr></thead>
 		<?php
