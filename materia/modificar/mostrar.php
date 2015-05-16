@@ -6,7 +6,10 @@ $mat=$materias->mostrarMaterias('all');
     if(count($mat)){
 		?><a href="#" class="btn btn-mini btn-success" id="exportarexcel"><?php echo $idioma['ExportarExcel']?></a>
         <table class="table table-bordered table-striped table-hover table-condensed">
-		<thead><tr><th>N</th><th><?php echo $idioma['Nombre']?></th><th><?php echo $idioma['Abreviado']?></th><th><?php echo $idioma['NombreAlterno']?>1</th><th><?php echo $idioma['NombreAlterno']?>2</th><th><?php echo $idioma['PromedioCiencias']?></th><th><?php echo $idioma['Valido']?></th><th></th></tr></thead>
+		<thead>
+            <tr>
+                <th></th>
+            </tr></thead>
 		<?php
 		foreach($mat as $m){$i++;
 			?>
