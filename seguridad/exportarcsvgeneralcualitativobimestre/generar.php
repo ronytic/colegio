@@ -139,18 +139,13 @@ if(!empty($_GET)){
 			$i=0;
 			foreach($cursomateriaexportar->mostrarMaterias($CodCurso) as $CurMatExp){$i++;
 				
-			if($SeparadorMateria!=""){
-				$fila[]=$SeparadorMateria;	
-			}
-			foreach($Trimestre as $Tri){
-			$fila[]="N".$Tri."_".$i;
-			}
-			//$fila[]="Dps".$Trimestre;
-			
-			/*$fila[]="Dias Trabajados";
-			$fila[]="Falta C/Lic";
-			$fila[]="Falta S/Lic";
-			$fila[]="Atrasos";*/
+                print_r($CurMatExp);
+			    if($SeparadorMateria!=""){
+				    $fila[]=$SeparadorMateria;	
+			    }
+			    foreach($Trimestre as $Tri){
+			        $fila[]="N".$Tri."_".$i;
+			    }
 			}
 			if(!empty($SeparadorCualitativo)){
 					$fila[]=$SeparadorCualitativo;	
