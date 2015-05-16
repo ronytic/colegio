@@ -1415,6 +1415,7 @@ $idioma['VolverSeleccionarArchivo']="Volver y Seleccionar otro Archivo";
 $idioma['RegistroNotasDesHabilitadoArchivo']="Puede ser debido a que seleccionó un archivo incorrecto o pertenece a otro periodo o el Administrador del Sistema Deshabilito el Registro de Notas, Verifique y vuelva Intentarlo";
 
 $idioma['BoletinBimestral']="Boletín Bimestral";
+$idioma['Combinada']="Combinada";
 //Titulo Submodulos
 $idioma['Modulo']="Módulo";
 $idioma['IrA']="Ir a";
