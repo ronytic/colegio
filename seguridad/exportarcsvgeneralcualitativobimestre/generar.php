@@ -60,23 +60,25 @@ if(!empty($_GET)){
     $anterior=0;
     $total=count($cursosExportar);
     $cantidad=array();
-    foreach($cursosExportar as $v){$cont++;
-        if($v['Combinada']==0){
-            if($anterior!=0){
-                array_push($cantidad,$i);
+    foreach($Trimestre as $Tri){
+        foreach($cursosExportar as $v){$cont++;
+            if($v['Combinada']==0){
+                if($anterior!=0){
+                    array_push($cantidad,$i);
+                }
+                    $i=1;
+                    array_push($cantidad,$i); 
+                    $i=0; 
+                    $anterior=$v['Combinada']; 
+                
+            }else{
+                $i++;
+                if($total==$cont){
+                    array_push($cantidad,$i);
+                }
+                $anterior=$v['Combinada'];
+                continue;
             }
-                $i=1;
-                array_push($cantidad,$i); 
-                $i=0; 
-                $anterior=$v['Combinada']; 
-            
-        }else{
-            $i++;
-            if($total==$cont){
-                array_push($cantidad,$i);
-            }
-            $anterior=$v['Combinada'];
-            continue;
         }
     }
     /*echo "<pre>";
@@ -92,10 +94,12 @@ if(!empty($_GET)){
 		$fila[]=$idioma["Apellidos"]." ".$idioma["Nombres"];
     }
 		//print_r($_GET);
-		
+    /*echo "<pre>";
+    print_r($CurMatExp);
+    echo "</pre>";*/
 	if($Cabecera=="si"){
 	    $i=0;
-		foreach($cantidad as $CurMatExp){$i++;
+		for($i=1;$i<=count($cantidad)/count($Trimestre) ;$i++){;
             //print_r($CurMatExp);
 			if($SeparadorMateria!=""){
 			    $fila[]=$SeparadorMateria;	
@@ -125,23 +129,29 @@ if(!empty($_GET)){
         
 		$sw=0;
         $j=0;
-        $pos=0;$actual=$cantidad[$pos];
+        $pos=0;
+        $actual=$cantidad[$pos];
 		$fila=array();
 		if($Numeracion=="si"){
 			$fila[]=$i;	
 		}
 			
 		$fila[]=ucwords($al['Paterno'])." ".ucwords($al['Materno'])." ".ucwords($al['Nombres']);
-        $NotaSumada=0;
+        
         $Totales["Cantidad_".$Tri]=0;
          $Totales[$Tri]=0;
-		foreach($cursosExportar as $CurMatExp){$j++;
+         //echo count($Trimestre);
+         $postabla=1;
+         $post=1;
+         foreach($Trimestre as $Tri){$post++;
+             $postabla=$post;
+		    $NotaSumada=0;
             //echo $j." - ".$pos." - ".$actual."<br>";
             //print_r($cantidad);
             if($SeparadorMateria!=""){
                 $fila[]=$SeparadorMateria;	
             }
-            foreach($Trimestre as $Tri){
+            foreach($cursosExportar as $CurMatExp){$j++;
                 //print_r($CurMatExp);
                 $cas=array_shift($casilleros->mostrarMateriaCursoSexoTrimestre($CurMatExp['CodMateria'],$CodCurso,$al['Sexo'],$Tri));
                 /*print_r($cas);
@@ -150,22 +160,31 @@ if(!empty($_GET)){
                 //print_r($r);
                 $NotaSumada+=$r['NotaFinal'];
                 //$Totales["Cantidad_".$Tri]++;
-                
+               // echo $r['NotaFinal']."|".$NotaSumada."/".$j."|".$actual." - ";
+                if($actual==$j){
+                    $NotaFinal=promedio($NotaSumada,$actual);
+                    $Totales[$Tri]+=$NotaFinal;
+                    $Totales["Cantidad_".$Tri]++;
+                    //echo "-<b>$NotaFinal</b>-";
+                    
+                    //echo $postabla."-";
+                    //$fila[$postabla]=$NotaFinal."-$Tri";
+                    $fila[$postabla]=$NotaFinal;
+                    $postabla+=count($Trimestre);
+                    $NotaSumada=0;
+                   
+                     $pos++;
+                     $actual=$cantidad[$pos];
+                     $j=0;
+                }
             }
             
-            if($actual==$j){
-                $NotaFinal=promedio($NotaSumada,$actual);
-                $Totales[$Tri]+=$NotaFinal;
-                $Totales["Cantidad_".$Tri]++;
-                $fila[]=$NotaFinal;
-                
-                $NotaSumada=0;
-               
-                 $pos++;
-                 $actual=$cantidad[$pos];
-                 $j=0;
-            }
+            
         }
+        /*echo "<pre>";
+        print_r($fila);
+        echo "</pre>";*/
+        //echo "<br><br><br>";
 		if(!empty($SeparadorCualitativo)){
 		    $fila[]=$SeparadorCualitativo;	
 		}
@@ -186,6 +205,7 @@ if(!empty($_GET)){
                 $fila[]=mayuscula($ncuali['CuartoRango']);
             }
 		}
+        ksort($fila);
         array_push($datos,$fila);
     }
 			
@@ -199,7 +219,10 @@ if(!empty($_GET)){
 	}
 }
 function tabla($datos){
-	echo "<table border=1>";
+    ?>
+    <a href="#" class="btn btn-success btn-mini" id="exportarexcel">Exportar a Excel</a>
+        <?php
+	echo "<table border=1><thead></thead>";
 	foreach($datos as $d){
 		echo "<tr>";
 		foreach($d as $v){
