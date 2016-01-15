@@ -167,7 +167,8 @@ if(!empty($_POST)){
 				'CodBarra'=>"'$CodBarra'",
 				'Password'=>"'$Password'",
 				'PasswordP'=>"'$PasswordP'",
-				'UsuarioPadre'=>"'$UsuarioPadre'"
+				'UsuarioPadre'=>"'$UsuarioPadre'",
+                'Activo'=>"'1'"
 			);
 	
 	$fechaCuota=date("Y-m-d H:i:s");
