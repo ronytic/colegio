@@ -42,9 +42,8 @@ $pdf->AddPage();
 $pdf->SetFont("Tahoma","",10);
 if($ImagenFondoFactura==1){
 //$pdf->Image("../../imagenes/factura/factura.jpg",0,0,217,330);
-$pdf->Image("../../imagenes/factura/factura2014.jpg",0,-4,217,330);
+$pdf->Image("../../imagenes/factura/factura2016qr.jpg",0,-4,217,330);
 }
-
 if(!file_exists("../../imagenes/factura/codigos/".$CodFactura.".png")){
 	//Si no Existe el Código QR
 	$TotalBs=number_format($f['TotalBs'],2);
@@ -458,7 +457,7 @@ celda(10,$idioma['ActividadEconomica'].": ".capitalizar($ActividadEconomica),"B"
 $pdf->Image("../../imagenes/factura/codigos/".$CodFactura.".png",$x+22,$y+72,17,17);
 
 
-$pdf->Output("Factura","I");
+$pdf->Output("Factura.pdf","I");
 }
 function celda($ancho,$texto,$estilo="",$tam=10,$ali=""){
 	global $pdf;
