@@ -137,6 +137,8 @@ $idioma['NHojaCasilleros']="Hoja de Casilleros";
 $idioma['NAlumnosNoReinscritos']="Alumnos No Reinscritos";
 $idioma['NVerArchivosNotasExcel']="Ver Archivos Excel de Notas";
 $idioma['NAsesor']="Asesor";
+$idioma['NCerrarGestion']="Cerrar Gestión";
+$idioma['NNuevaGestion']="Nueva Gestión";
 //Generales
 $idioma['Formato']="Formato";
 $idioma['Tabla']="Tabla";
@@ -1331,6 +1333,7 @@ $idioma['AlumnosNoReinscritos']="Alumnos No Reinscritos";
 $idioma['EnvioMasivo']="Envío de sms por curso";
 $idioma['ArchivosNotasExcel']="Ver Archivos Excel de Notas";
 $idioma['Asesor']="Asesor";
+$idioma['CerrarGestion']="Cerrar Gestión";
 //Factura
 $idioma['RegistrarFactura']="Registrar Factura";
 $idioma['NFactura']="Número de Factura";
@@ -1419,4 +1422,11 @@ $idioma['Combinada']="Combinada";
 //Titulo Submodulos
 $idioma['Modulo']="Módulo";
 $idioma['IrA']="Ir a";
+$idioma['CreandoArchivos']="Creando Archivos";
+$idioma['SeguroCerrarGestion']="¿Esta Seguro de Cerrar la Gestión?";
+$idioma['GestionCerradaCorrectamente']="Gestión Cerrada Correctamente";
+$idioma['IniciarNuevaGestion']="Iniciar Nueva Gestión";
+$idioma['NuevaGestion']="Nueva Gestión";
+$idioma['SeguroNuevaGestion']="¿Esta Seguro de Crear una Nueva Gestión?";
+$idioma['GestionCreadaCorrectamente']="Gestión Creada Correctamente";
 ?>
