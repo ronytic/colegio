@@ -147,7 +147,8 @@ if(!empty($_POST)){
 				'CodBarra'=>"'$CodBarra'",
 				'Password'=>"'$Password'",
 				'PasswordP'=>"'$PasswordP'",
-				'UsuarioPadre'=>"'$UsuarioPadre'"
+				'UsuarioPadre'=>"'$UsuarioPadre'",
+                'Activo'=>"'".$Retirado==1?"0":"1"."'"
 			);
 	
 
