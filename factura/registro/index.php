@@ -57,7 +57,7 @@ var ContarAlumnos=<?php echo $contardividido-1?>;
         	<thead>
         		<tr>
                 	<th><?php echo $idioma['Fecha']?>:<br><input type="text" class="fecha" name="FechaFactura" value="<?php echo fecha2Str()?>" required></th>
-                	<th><?php echo $idioma['NFactura']?>: <br><input type="text" class="derecha NFactura" name="NFactura" value="<?php echo $_GET['f']==1?$_GET['NFactura']:$NFactura?>" required class="span12"></th>
+                	<th><?php echo $idioma['NFactura']?>: <br><input type="text" class="derecha NFactura " name="NFactura" value="<?php echo $_GET['f']==1?$_GET['NFactura']:$NFactura?>" required></th>
                     <th><?php echo $idioma['NReferencia']?>: <br><input type="text" class="derecha span12" name="NReferencia" readonly value="<?php echo $NReferencia?>" required ></th>
                 </tr>
                 <tr>
