@@ -2,7 +2,9 @@
 <?php
 include_once(RAIZ."class/curso.php");
 $curso=new curso;
-
+if(isset($_GET['CodCurso'])){
+	$CodCurso=$_GET['CodCurso'];
+}
 include_once($folder."cabecerahtml.php");?>
 <script language="javascript" src="<?php echo $folder?>js/listar/curso.js"></script>
 <script language="javascript" src="<?php echo $folder?>js/<?php echo $jsFile?>"></script>
@@ -30,7 +32,7 @@ include_once($folder."cabecerahtml.php");?>
             <?php
 			$i=0;
             foreach($curso->mostrar() as $cu){$i++;
-                ?><option value="<?php echo $cu['CodCurso'];?>" <?php echo $i==1?'selected="selected"':'';?> rel="<?php echo $cu['caArea']?>"><?php echo $cu['Nombre'];?></option><?php
+                ?><option value="<?php echo $cu['CodCurso'];?>" <?php echo $i==1 || $CodCurso==$cu['CodCurso']?'selected="selected"':'';?> rel="<?php echo $cu['caArea']?>"><?php echo $cu['Nombre'];?></option><?php
             }
             ?>
             </select>
