@@ -86,7 +86,7 @@ $idioma['NAsignacionNotasCualitativasBimestre']="Asignación Notas Cualitativas 
 $idioma['NAsignacionMateriasBoletines']="Asignación de Materias";
 $idioma['NAsignacionMateriasDocente']="Asignación de Materias a Docente";
 $idioma['NMarcarAsistencia']="Marcar Asistencia";
-$idioma['NCerrarMarcarAsistencia']="Cerrar el control de Asistencias";
+$idioma['NRegistroFaltas']="Registro de Faltas";
 $idioma['NReporteAsistencias']="Reporte de Asistencias";
 $idioma['NMisClases']="Mis Clases";
 $idioma['NAsignarCodigoBarra']="Asignar Código de Barra";
@@ -910,6 +910,12 @@ $idioma['Todos']="Todos";
 $idioma['NoHayResultados']="La búsqueda no produjo ningun resultado";
 $idioma['Usuario']="Usuario";
 $idioma['Referencia']="Referencia";
+$idioma['FechaFalta']="Fecha de las Faltas";
+$idioma['HoraIngreso']="Hora de Ingreso";
+$idioma['FechaRevisar']="Fecha a Revisar";
+$idioma['ConfirmarFalta']="Confirmar Falta";
+$idioma['RegistrarFaltas']="Registrar Faltas";
+$idioma['SeguroRegistrarFaltas']="¿Esta Seguro de Registrar a los Alumnos seleccionados con Falta en la fecha?";
 
 //Clases
 $idioma['MisArchivosClases']="Mis Archivos de Clases";
@@ -1429,4 +1435,5 @@ $idioma['IniciarNuevaGestion']="Iniciar Nueva Gestión";
 $idioma['NuevaGestion']="Nueva Gestión";
 $idioma['SeguroNuevaGestion']="¿Esta Seguro de Crear una Nueva Gestión?";
 $idioma['GestionCreadaCorrectamente']="Gestión Creada Correctamente";
+
 ?>
