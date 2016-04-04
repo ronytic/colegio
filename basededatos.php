@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $pass="";
-$database="colegio2015";
+$database="colegio2016";
 
 /*$user="redcampu_csb";
 $pass="83034888";
