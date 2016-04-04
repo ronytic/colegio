@@ -187,7 +187,8 @@ if(isset($_POST)){
             	<td class="<?php echo $resaltar?>"><?php echo $m['Nombre']?></td>
                 <td class="<?php echo $resaltar?>"><?php echo $o['Nombre']?></td>
                 <td class="<?php echo $resaltar?>"><?php echo $a['Detalle'];?></td>
-                <td class="<?php echo $resaltar?>"><?php echo date("d-m-Y",strtotime($a['Fecha']));?></td>
+                <td class="<?php echo $resaltar?> der"><?php echo date("d-m-Y",strtotime($a['Fecha']));?> <?php echo date("H:i:s",strtotime($a['HoraRegistro']));?></td>
+                
                 <td class="centrar">
                 	<?php if(trim($al['CelularSMS'])!="" && $al['ActivarSMS']){?>
                 	<a href="#" class="btn btn-mini enviarmsg <?php echo $a['EnviadoSMS']?'disabled btn-danger':''?>" rel="<?php echo $a['CodAgenda'];?>" title="<?php echo $idioma['EnviarSMS']?>"><i class="icon-envelope"></i></a>
