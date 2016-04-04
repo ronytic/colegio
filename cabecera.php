@@ -45,7 +45,7 @@ switch($Nivel){
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
-				<a class="brand" href="<?php echo $folder?>"> <img alt="<?php echo $Titulo?>" src="<?php echo $folder;?>imagenes/logos/<?php echo $LogoInicio;?>" width="50" height="50" style="width:50" class="logo"/> <span><?php echo $Titulo?> <span class="pequeno"><?php echo $Gestion?></span></span></a>
+				<a class="brand" href="<?php echo $folder?>"> <img alt="<?php echo $Titulo?>" src="<?php echo $folder;?>imagenes/logos/<?php echo $LogoInicio;?>" width="50" height="50" style="width:50" class="logo"/> <span><?php echo $Titulo?> <span class="pequeno"><?php echo $Gestion?> - <?php echo $VersionSistema?></span></span></a>
 								
 				<!-- Inicio: Cabecera de Menu -->
 				<div class="btn-group pull-right" >

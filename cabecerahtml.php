@@ -67,6 +67,8 @@ $LogoInicio=$config->mostrarConfig("LogoInicio",1);
 $LogoIcono=$config->mostrarConfig("LogoIcono",1);
 $Sigla=$config->mostrarConfig("Sigla",1);
 $Gestion=$config->mostrarConfig("Gestion",1);
+$VersionSistema=$config->mostrarConfig("VersionSistema",1);
+
 
 include_once("funciones/url.php");
 $UrlBase=url_todo();
