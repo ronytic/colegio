@@ -118,10 +118,10 @@ if(!empty($_POST)){
 			$valDM['LimiteMinCasilla'.$i]=0;
 		}
 	}
-	//$casilleros->insertarRegistro($valDM);
-	echo "<pre>";
+	$casilleros->insertarRegistro($valDM);
+	/*echo "<pre>";
     print_r($valDM);
-    echo "</pre>";
+    echo "</pre>";*/
 	//print_r($valDM);
 	foreach($alumno->mostrarAlumnosCurso($docmateriacurso['CodCurso'],$docmateriacurso['SexoAlumno'],2) as $al){
 		$valRN=array('CodRegistroNotas'=>'NULL',
@@ -136,7 +136,7 @@ if(!empty($_POST)){
 		$valRN['Resultado']=0;
 		$valRN['Dps']=0;
 		$valRN['NotaFinal']=0;
-		//$registroNotas->insertarRegistro($valRN);
+		$registroNotas->insertarRegistro($valRN);
 	}
 	//print_r($_POST);
 	
