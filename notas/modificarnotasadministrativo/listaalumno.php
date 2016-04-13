@@ -132,7 +132,8 @@ if(!empty($_POST)){
             <td><?php echo capitalizar($al['Materno']);?></td>
             <td><?php echo capitalizar($al['Nombres']);?></td>
             <?php for($i=1;$i<=$numcasilleros;$i++){
-			if($i==4 ||  $i==10 || $i==15 || $i==20){
+			
+            if($i==4 ||  $i==10 || $i==15 || $i==20){
 				$verde='verde';
 			}else{
 				$verde='';
@@ -142,15 +143,27 @@ if(!empty($_POST)){
 			}else{
 				$amarillo='';
 			}
-			if($i==4 || $i==10 || $i==15 || $i==20){
+            
+            if($casillas['TipoNota']==""){
+               if( $i==1 || $i==3){
+				$amarillo='amarillo';
+                }else{
+                    $amarillo='';
+                } 
+                if($i==2 ||  $i==4){
+				    $verde='verde';
+                }else{
+                    $verde='';
+                }    
+            }
+			if(($i==4 || $i==10 || $i==15 || $i==20) & $casillas['TipoNota']=="avanzado"){
 				$lectura='readonly="readonly"';
 				$tabindex="";
 			}else{
 				$lectura='';
-				$verde='';
+				//$verde='';
 				$numero++;
-				$tabindex='tabindex="'.$numero.'"';
-				
+				$tabindex='tabindex="'.$numero.'"';	
 			}
 			?>
             <td style="text-align:center" class="<?php echo $verde." ".$amarillo?>">
